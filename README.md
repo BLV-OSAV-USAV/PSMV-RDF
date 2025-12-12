@@ -34,7 +34,7 @@ psmv-rdf/
 │   └── run_rdf_pipeline.sh             # Pipeline launcher
 │
 ├── src/
-│   └── psmv_converter/
+│   └── psmv-converter/
 │       ├── __init__.py
 │       ├── converter.py
 │       ├── validator.py
