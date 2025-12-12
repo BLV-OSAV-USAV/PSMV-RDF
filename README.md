@@ -84,21 +84,6 @@ LINDAS_GRAPH=https://lindas.admin.ch/ppproducts/
 ```
 
 
-## CLI Usage
-
-```bash
-# Convert CSV to RDF
-psmv-converter convert products.csv output.ttl --format turtle
-
-# Validate CSV data
-psmv-converter validate products.csv
-
-# Publish to LINDAS
-psmv-converter publish products.csv --graph https://lindas.admin.ch/ppproducts/
-
-etc...
-```
-
 ## CSV Data Format
 
 The module expects Swiss plant protection product CSV files with the following structure:
