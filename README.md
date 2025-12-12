@@ -71,37 +71,18 @@ psmv-rdf/
 
 ```
 
-### Configuration
-
-Set up your LINDAS credentials:
-
-```bash
-# Create .env file
-LINDAS_ENDPOINT=https://lindas.admin.ch/sparql
-LINDAS_USERNAME=your_username
-LINDAS_PASSWORD=your_password
-LINDAS_GRAPH=https://lindas.admin.ch/ppproducts/
-```
-
-
-## CSV Data Format
+## CSV Data Format (To be defined)
 
 The module expects Swiss plant protection product CSV files with the following structure:
 
-### Required Columns (To be defined)
+### Required Columns 
 - `Zulassungsnummer` - Registration number
 - `Produktname` - Product name
-- `Zulassungsinhaber` - Authorization holder
-- `Wirkstoff` - Active ingredient(s)
-- `Anwendungsbereich` - Application area
-- `Kultur` - Crop type
-- `Zulassungsdatum` - Authorization date
-- `Ablaufdatum` - Expiry date
-- `Status` - Current status
-
+- etc
+- ...
 See `examples/sample_data.csv` for a complete example.
 
-## RDF Schema
+## RDF Schema (To be defined)
 
 The converter uses the following ontologies and vocabularies:
 
@@ -128,30 +109,8 @@ The converter uses the following ontologies and vocabularies:
     dcterms:issued "2020-01-15"^^xsd:date .
 ```
 
-## Documentation
 
-Full documentation is available at io site (To be done)
-
-### Examples
-
-Check the `examples/` directory for usage examples:
-
-- `basic_conversion.py` - Simple CSV to RDF conversion
-- `lindas_publishing.py` - Publishing to LINDAS
-- `custom_mappings.py` - Using custom field mappings
-- `data_validation.py` - Validating CSV data
-
-
-## Dependencies
-
-- `rdflib` - RDF library for Python
-- `pandas` - CSV data processing
-- `requests` - HTTP requests for LINDAS API
-- `pyyaml` - Configuration file parsing
-- `pyshacl` - SHACL validation
-
-
-## SHACL Validation
+## SHACL Validation (To be defined)
 
 The module includes SHACL (Shapes Constraint Language) validation to ensure data quality before publishing to LINDAS.
 
@@ -234,6 +193,28 @@ SHACL shape files are located in the `shapes/` directory:
 - `shapes/ppp_shapes.ttl` - Core plant protection product shapes
 - `shapes/ingredient_shapes.ttl` - Active ingredient validation
 - `shapes/authorization_shapes.ttl` - Authorization and regulatory shapes
+
+## Documentation (To be defined)
+
+Full documentation is available at io site (To be done)
+
+### Examples (To be defined)
+
+Check the `examples/` directory for usage examples:
+
+- `basic_conversion.py` - Simple CSV to RDF conversion
+- `lindas_publishing.py` - Publishing to LINDAS
+- `custom_mappings.py` - Using custom field mappings
+- `data_validation.py` - Validating CSV data
+
+
+## Dependencies
+
+- `rdflib` - RDF library for Python
+- `pandas` - CSV data processing
+- `requests` - HTTP requests for LINDAS API
+- `pyyaml` - Configuration file parsing
+- `pyshacl` - SHACL validation
 
 ## Acknowledgments
 
