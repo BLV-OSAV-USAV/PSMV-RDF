@@ -138,7 +138,7 @@ else:
     print(results_text)
 ```
 
-### SHACL Shapes
+### SHACL Shapes (To be defined)
 
 The module includes predefined SHACL shapes for plant protection products:
 
@@ -208,7 +208,7 @@ Check the `examples/` directory for usage examples:
 - `data_validation.py` - Validating CSV data
 
 
-## Dependencies
+## Dependencies (To be defined)
 
 - `rdflib` - RDF library for Python
 - `pandas` - CSV data processing
@@ -216,7 +216,7 @@ Check the `examples/` directory for usage examples:
 - `pyyaml` - Configuration file parsing
 - `pyshacl` - SHACL validation
 
-## Acknowledgments
+## Acknowledgments 
 
 - Built with [rdflib](https://github.com/RDFLib/rdflib)
 - Integrates with [LINDAS](https://lindas.admin.ch/) - Swiss Federal Linked Data Service
