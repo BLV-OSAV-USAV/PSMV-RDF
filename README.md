@@ -25,7 +25,7 @@ A Python module for converting Swiss plant protection product data from CSV form
 psmv-rdf/
 ├── .github/
 │   └── workflows/
-│       ├── ci.yml                  # CI: tests, lint, type-checking
+│       ├── ci.yml                  
 │       └── scheduled.yml           # Scheduled daily tasks
 │
 ├── scripts/
