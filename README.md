@@ -8,9 +8,7 @@ A Python module for converting Swiss plant protection product data from CSV form
 
 - **CSV to RDF Conversion**: Transform Swiss plant protection product CSV data to RDF format
 - **LINDAS Integration**: Direct publishing to the Swiss Federal Linked Data Service (LINDAS)
-- **Data Validation**: Validate plant protection product data against Swiss standards
-- **CLI Interface**: Command-line tool for batch processing and publishing
-- **Extensible Mappings**: Configure custom CSV-to-RDF mappings
+- **SHAQL Validation**: Validate rdf plant protection product data 
 
 ## Roadmap
 
