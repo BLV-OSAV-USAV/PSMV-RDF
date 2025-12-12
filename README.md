@@ -12,6 +12,11 @@ A Python module for converting Swiss plant protection product data from CSV form
 - **CLI Interface**: Command-line tool for batch processing and publishing
 - **Extensible Mappings**: Configure custom CSV-to-RDF mappings
 
+## Roadmap
+
+- [ ] Automated daily sync with official Swiss registry
+- [ ] SPARQL query templates for common queries
+- [ ] Data quality reports and validation
 
 ### Configuration
 
@@ -105,37 +110,6 @@ Check the `examples/` directory for usage examples:
 - `custom_mappings.py` - Using custom field mappings
 - `data_validation.py` - Validating CSV data
 
-## Development
-
-### Setup Development Environment
-
-```bash
-# Clone repository
-git clone https://github.com/yourusername/rdf-transformer.git
-cd rdf-transformer
-
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
-pip install -e ".[dev]"
-```
-
-### Running Tests
-
-```bash
-# Run all tests
-pytest
-
-# Run with coverage
-pytest --cov=rdf_transformer
-
-# Run specific test file
-pytest tests/test_core/test_transformer.py
-```
-
-
 
 ## Dependencies
 
@@ -153,11 +127,7 @@ pytest tests/test_core/test_transformer.py
 - Integrates with [LINDAS](https://lindas.admin.ch/) - Swiss Federal Linked Data Service
 - Orignial ontology and pipeline by Damian Oswald with [plant protection pipeline](https://github.com/blw-ofag-ufag/plant-protection)
 
-## Roadmap
 
-- [ ] Automated daily sync with official Swiss registry
-- [ ] SPARQL query templates for common queries
-- [ ] Data quality reports and validation
 
 ## SHACL Validation
 
