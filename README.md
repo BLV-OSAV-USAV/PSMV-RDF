@@ -23,7 +23,6 @@ A Python module for converting Swiss plant protection product data from CSV form
 ## Project Structure
 ```bash
 psmv-rdf/
-psmv-rdf/
 ├── .github/
 │   └── workflows/
 │       ├── get-data.yml             # 1. Fetch raw CSV/source data
