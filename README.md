@@ -18,6 +18,22 @@ A Python module for converting Swiss plant protection product data from CSV form
 - [ ] SPARQL query templates for common queries
 - [ ] Data quality reports and validation
 
+## Project Structure
+psmv-rdf/
+├── psmv-converter/
+│   ├── __init__.py
+│   ├── converter.py        # CSV to RDF conversion
+│   ├── validator.py        # SHACL validation
+│   ├── publisher.py        # LINDAS publishing
+│   └── cli.py             # CLI interface
+├── shapes/                # SHACL shape files
+├── examples/              # Usage examples
+├── tests/                 # Test suite
+├── docs/                  # Documentation
+├── setup.py
+├── README.md
+└── requirements.txt
+
 ### Configuration
 
 Set up your LINDAS credentials:
@@ -35,22 +51,22 @@ LINDAS_GRAPH=https://lindas.admin.ch/ppproducts/
 
 ```bash
 # Convert CSV to RDF
-swiss-ppp convert products.csv output.ttl --format turtle
+psmv-converter convert products.csv output.ttl --format turtle
 
 # Validate CSV data
-swiss-ppp validate products.csv
+psmv-converter validate products.csv
 
 # Publish to LINDAS
-swiss-ppp publish products.csv --graph https://lindas.admin.ch/ppproducts/
+psmv-converter publish products.csv --graph https://lindas.admin.ch/ppproducts/
 
 # Publish with custom config
-swiss-ppp publish products.csv --config lindas_config.yaml
+psmv-converter publish products.csv --config lindas_config.yaml
 
 # Download existing data from LINDAS
-swiss-ppp download --graph https://lindas.admin.ch/ppproducts/ --output current.ttl
+psmv-converter download --graph https://lindas.admin.ch/ppproducts/ --output current.ttl
 
 # Batch processing
-swiss-ppp batch --input-dir ./csv_files/ --output-dir ./rdf_output/
+psmv-converter batch --input-dir ./csv_files/ --output-dir ./rdf_output/
 ```
 
 ## CSV Data Format
@@ -136,7 +152,7 @@ The module includes SHACL (Shapes Constraint Language) validation to ensure data
 ### Running SHACL Validation
 
 ```python
-from swiss_ppp_rdf import PPPConverter, SHACLValidator
+from psmv-converter import PPPConverter, SHACLValidator
 
 # Convert CSV to RDF
 converter = PPPConverter()
@@ -161,13 +177,13 @@ else:
 
 ```bash
 # Validate CSV data before conversion
-swiss-ppp validate products.csv --shapes shapes/ppp_shapes.ttl
+psmv-converter validate products.csv --shapes shapes/ppp_shapes.ttl
 
 # Validate and show detailed report
-swiss-ppp validate products.csv --shapes shapes/ppp_shapes.ttl --verbose
+psmv-converter validate products.csv --shapes shapes/ppp_shapes.ttl --verbose
 
 # Validate RDF output
-swiss-ppp validate-rdf output.ttl --shapes shapes/ppp_shapes.ttl
+psmv-converter validate-rdf output.ttl --shapes shapes/ppp_shapes.ttl
 ```
 
 ### SHACL Shapes
@@ -246,7 +262,7 @@ Validation Result in PlantProtectionProductShape:
 You can define custom validation shapes:
 
 ```python
-from swiss_ppp_rdf import SHACLValidator
+from psmv-converter import SHACLValidator
 
 # Load custom shapes
 validator = SHACLValidator()
@@ -274,7 +290,7 @@ conforms, results_graph, results_text = validator.validate(rdf_graph)
 ### Automated Validation in Publishing Workflow
 
 ```python
-from swiss_ppp_rdf import PPPConverter, SHACLValidator, LINDASPublisher
+from psmv-converter import PPPConverter, SHACLValidator, LINDASPublisher
 
 # Convert CSV
 converter = PPPConverter()
