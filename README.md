@@ -245,28 +245,6 @@ ppp:PlantProtectionProductShape
     ] .
 ```
 
-### Validation Reports
-
-When validation fails, detailed reports are generated:
-
-```
-Validation Report
-Conforms: False
-
-Validation Result in PlantProtectionProductShape:
-	Severity: sh:Violation
-	Source Shape: [ sh:path dcterms:identifier ]
-	Focus Node: <https://lindas.admin.ch/ppproducts/product/12345>
-	Result Path: dcterms:identifier
-	Message: Registration number must match pattern W-XXXX
-	
-Validation Result in PlantProtectionProductShape:
-	Severity: sh:Violation
-	Source Shape: [ sh:path schema:name ]
-	Focus Node: <https://lindas.admin.ch/ppproducts/product/67890>
-	Result Path: schema:name
-	Message: Product name is required
-```
 
 ### Shape Files Location
 
