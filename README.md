@@ -65,6 +65,7 @@ psmv-rdf/
 │   └── usage.md
 │
 ├── pyproject.toml
+├── .gitignore
 ├── README.md
 └── requirements.txt
 
