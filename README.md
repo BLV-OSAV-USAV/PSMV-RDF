@@ -23,19 +23,45 @@ A Python module for converting Swiss plant protection product data from CSV form
 ## Project Structure
 ```bash
 psmv-rdf/
-├── psmv-converter/
-│   ├── __init__.py
-│   ├── converter.py        # CSV to RDF conversion
-│   ├── validator.py        # SHACL validation
-│   ├── publisher.py        # LINDAS publishing
-│   └── cli.py             # CLI interface
-├── shapes/                # SHACL shape files
-├── examples/              # Usage examples
-├── tests/                 # Test suite
-├── docs/                  # Documentation
-├── setup.py
+├── .github/
+│   └── workflows/
+│       ├── ci.yml                  # CI: tests, lint, type-checking
+│       ├── release.yml             # Build + publish package
+│       └── scheduled.yml           # Scheduled daily tasks
+│
+├── scripts/
+│   └── run_pipeline.sh             # Pipeline launcher
+│
+├── src/
+│   └── psmv_converter/
+│       ├── __init__.py
+│       ├── converter.py
+│       ├── validator.py
+│       ├── publisher.py
+│       ├── cli.py
+│       └── utils/
+│           ├── __init__.py
+│           └── helpers.py
+│
+├── shapes/                         # SHACL shapes
+├── examples/                       # Example inputs/outputs
+├── tests/
+│   ├── test_converter.py
+│   ├── test_validator.py
+│   ├── test_publisher.py
+│   └── data/
+│       └── sample.csv
+│
+├── docs/
+│   ├── architecture.md
+│   ├── usage.md
+│   └── api/
+│       └── converter.md
+│
+├── pyproject.toml
 ├── README.md
 └── requirements.txt
+
 ```
 
 ### Configuration
