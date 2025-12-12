@@ -187,19 +187,6 @@ else:
     print(results_text)
 ```
 
-### CLI Validation
-
-```bash
-# Validate CSV data before conversion
-psmv-converter validate products.csv --shapes shapes/ppp_shapes.ttl
-
-# Validate and show detailed report
-psmv-converter validate products.csv --shapes shapes/ppp_shapes.ttl --verbose
-
-# Validate RDF output
-psmv-converter validate-rdf output.ttl --shapes shapes/ppp_shapes.ttl
-```
-
 ### SHACL Shapes
 
 The module includes predefined SHACL shapes for plant protection products:
