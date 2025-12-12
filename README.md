@@ -1,4 +1,4 @@
-# PSMV-RDF
+# PSMV-RDF (need a better name)
 ## Plant Protection Products (PSMV) as Linked Data
 
 A Python module for converting Swiss plant protection product data from CSV format to RDF and publishing it to the LINDAS Linked Data Service.
@@ -25,26 +25,33 @@ A Python module for converting Swiss plant protection product data from CSV form
 psmv-rdf/
 ├── .github/
 │   └── workflows/
-│       ├── get-data.yml             # 1. Fetch raw CSV/source data
+│       ├── fetch-data.yml           # 1. Fetch raw CSV/source data
 │       ├── run-rdf-pipeline.yml     # 2. Convert CSV → RDF
 │       ├── shacl-validate.yml       # 3. Validate RDF using SHACL
 │       └── lindas-publication.yml   # 4. Publish validated RDF to LINDAS
 │
+├── data/
+│   ├── raw/
+│   ├── rdf/
+│   └── validated/
+│
 ├── scripts/
-│   └── run_rdf_pipeline.sh             # Pipeline launcher
+│   └── fetch_data.py
+│   └── run_rdf_pipeline.py             # Pipeline launcher
 │
 ├── src/
 │   └── psmv-converter/
 │       ├── __init__.py
+│       ├── fetcher.py
 │       ├── converter.py
 │       ├── validator.py
 │       ├── publisher.py
-│       ├── cli.py
 │       └── utils/
 │           ├── __init__.py
 │           └── helpers.py
 │
 ├── shapes/                         # SHACL shapes
+│   └──shapes/README.md
 ├── examples/                       # Example inputs/outputs
 ├── tests/
 │   ├── test_converter.py
