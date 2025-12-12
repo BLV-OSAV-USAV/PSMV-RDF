@@ -19,6 +19,7 @@ A Python module for converting Swiss plant protection product data from CSV form
 - [ ] Data quality reports and validation
 
 ## Project Structure
+```bash
 psmv-rdf/
 ├── psmv-converter/
 │   ├── __init__.py
@@ -33,6 +34,7 @@ psmv-rdf/
 ├── setup.py
 ├── README.md
 └── requirements.txt
+```
 
 ### Configuration
 
