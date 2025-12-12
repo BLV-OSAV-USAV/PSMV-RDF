@@ -14,9 +14,11 @@ A Python module for converting Swiss plant protection product data from CSV form
 
 ## Roadmap
 
-- [ ] Automated daily sync with official Swiss registry
+- [ ] Automated daily sync with SFTP server to get csv
+- [ ] Implement ontologies
 - [ ] SPARQL query templates for common queries
 - [ ] Data quality reports and validation
+- [ ] Pipeline for LINDAS publication
 
 ## Project Structure
 ```bash
