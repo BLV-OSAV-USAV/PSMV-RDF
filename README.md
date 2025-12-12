@@ -61,21 +61,14 @@ psmv-converter validate products.csv
 # Publish to LINDAS
 psmv-converter publish products.csv --graph https://lindas.admin.ch/ppproducts/
 
-# Publish with custom config
-psmv-converter publish products.csv --config lindas_config.yaml
-
-# Download existing data from LINDAS
-psmv-converter download --graph https://lindas.admin.ch/ppproducts/ --output current.ttl
-
-# Batch processing
-psmv-converter batch --input-dir ./csv_files/ --output-dir ./rdf_output/
+etc...
 ```
 
 ## CSV Data Format
 
 The module expects Swiss plant protection product CSV files with the following structure:
 
-### Required Columns
+### Required Columns (To be defined)
 - `Zulassungsnummer` - Registration number
 - `Produktname` - Product name
 - `Zulassungsinhaber` - Authorization holder
@@ -134,17 +127,8 @@ Check the `examples/` directory for usage examples:
 - `rdflib` - RDF library for Python
 - `pandas` - CSV data processing
 - `requests` - HTTP requests for LINDAS API
-- `python-dotenv` - Environment configuration
-- `click` - CLI framework
 - `pyyaml` - Configuration file parsing
-
-
-## Acknowledgments
-
-- Built with [rdflib](https://github.com/RDFLib/rdflib)
-- Integrates with [LINDAS](https://lindas.admin.ch/) - Swiss Federal Linked Data Service
-- Orignial ontology and pipeline by Damian Oswald with [plant protection pipeline](https://github.com/blw-ofag-ufag/plant-protection)
-
+- `pyshacl` - SHACL validation
 
 
 ## SHACL Validation
@@ -259,68 +243,21 @@ Validation Result in PlantProtectionProductShape:
 	Message: Product name is required
 ```
 
-### Custom SHACL Shapes
-
-You can define custom validation shapes:
-
-```python
-from psmv-converter import SHACLValidator
-
-# Load custom shapes
-validator = SHACLValidator()
-validator.load_shapes('custom_shapes.ttl')
-
-# Or define shapes programmatically
-custom_shape = """
-@prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix ppp: <https://lindas.admin.ch/ppproducts/ontology/> .
-
-ppp:CustomProductShape
-    a sh:NodeShape ;
-    sh:targetClass ppp:PlantProtectionProduct ;
-    sh:property [
-        sh:path ppp:activeIngredient ;
-        sh:minCount 1 ;
-        sh:message "At least one active ingredient is required"@en ;
-    ] .
-"""
-
-validator.load_shapes_from_string(custom_shape)
-conforms, results_graph, results_text = validator.validate(rdf_graph)
-```
-
-### Automated Validation in Publishing Workflow
-
-```python
-from psmv-converter import PPPConverter, SHACLValidator, LINDASPublisher
-
-# Convert CSV
-converter = PPPConverter()
-converter.load_csv('products.csv')
-rdf_graph = converter.to_rdf()
-
-# Validate before publishing
-validator = SHACLValidator()
-validator.load_shapes('shapes/ppp_shapes.ttl')
-conforms, _, results_text = validator.validate(rdf_graph)
-
-if not conforms:
-    print("Validation failed. Fix errors before publishing:")
-    print(results_text)
-    exit(1)
-
-# Only publish if validation passes
-publisher = LINDASPublisher()
-publisher.upload(rdf_graph, graph_uri='https://lindas.admin.ch/ppproducts/')
-print("✓ Successfully published to LINDAS")
-```
-
 ### Shape Files Location
 
 SHACL shape files are located in the `shapes/` directory:
 - `shapes/ppp_shapes.ttl` - Core plant protection product shapes
 - `shapes/ingredient_shapes.ttl` - Active ingredient validation
 - `shapes/authorization_shapes.ttl` - Authorization and regulatory shapes
+
+## Acknowledgments
+
+- Built with [rdflib](https://github.com/RDFLib/rdflib)
+- Integrates with [LINDAS](https://lindas.admin.ch/) - Swiss Federal Linked Data Service
+- Orignial ontology and pipeline by Damian Oswald with [plant protection pipeline](https://github.com/blw-ofag-ufag/plant-protection)
+
+
+
 
 
 
