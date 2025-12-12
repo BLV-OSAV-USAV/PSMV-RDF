@@ -23,13 +23,16 @@ A Python module for converting Swiss plant protection product data from CSV form
 ## Project Structure
 ```bash
 psmv-rdf/
+psmv-rdf/
 ├── .github/
 │   └── workflows/
-│       ├── ci.yml                  
-│       └── scheduled.yml           # Scheduled daily tasks
+│       ├── get-data.yml             # 1. Fetch raw CSV/source data
+│       ├── run-rdf-pipeline.yml     # 2. Convert CSV → RDF
+│       ├── shacl-validate.yml       # 3. Validate RDF using SHACL
+│       └── lindas-publication.yml   # 4. Publish validated RDF to LINDAS
 │
 ├── scripts/
-│   └── run_pipeline.sh             # Pipeline launcher
+│   └── run_rdf_pipeline.sh             # Pipeline launcher
 │
 ├── src/
 │   └── psmv_converter/
