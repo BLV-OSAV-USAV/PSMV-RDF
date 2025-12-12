@@ -26,7 +26,6 @@ psmv-rdf/
 ├── .github/
 │   └── workflows/
 │       ├── ci.yml                  # CI: tests, lint, type-checking
-│       ├── release.yml             # Build + publish package
 │       └── scheduled.yml           # Scheduled daily tasks
 │
 ├── scripts/
@@ -54,9 +53,7 @@ psmv-rdf/
 │
 ├── docs/
 │   ├── architecture.md
-│   ├── usage.md
-│   └── api/
-│       └── converter.md
+│   └── usage.md
 │
 ├── pyproject.toml
 ├── README.md
