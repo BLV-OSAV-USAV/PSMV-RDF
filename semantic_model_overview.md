@@ -1,3 +1,7 @@
+Ein **Produkt** (chemisch oder biologisch) hat eine **eidgenössische Zulassungsnummer**, einen **Verkaufsbewilligungshalter (Organisation)**, ggf. **Gefahrenhinweise** und hat 0..n **Indikationen**, die die erlaubten Anwendungen (Kulturgruppe × Schadverursacher × Anwendungsgebiet + Dosierung/Fristen/Auflagen) beschreiben.
+
+
+
 ```mermaid
 classDiagram
 
