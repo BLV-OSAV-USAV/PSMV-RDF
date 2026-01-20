@@ -1,0 +1,1615 @@
+@prefix : <https://agriculture.ld.admin.ch/plant-protection/> .
+@prefix CHEBI: <http://purl.obolibrary.org/obo/CHEBI_> .
+@prefix chebi: <http://purl.obolibrary.org/obo/chebi/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix srppp: <https://agriculture.ld.admin.ch/plant-protection/> .
+@prefix wikidata: <http://www.wikidata.org/entity/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+CHEBI:24431 a owl:Class ;
+    rdfs:label "Chemische Entität"@de,
+        "Chemical entity"@en,
+        "Entité chimique"@fr,
+        "Entità chimica"@it ;
+    rdfs:comment """
+        Eine chemische Entität, wie in der CheBI-Ontologie definiert, dient als Referenzpunkt zur Identifizierung und Klassifizierung von Substanzen.
+        """@de,
+        """
+        A chemical entity as defined in the CheBI ontology, serving as a reference point for identifying and classifying substances.
+        """@en,
+        """
+        Une entité chimique, telle que définie dans l'ontologie CheBI, servant de point de référence pour l'identification et la classification des substances.
+        """@fr,
+        """
+        Un'entità chimica come definita nell'ontologia CheBI, che funge da punto di riferimento per l'identificazione e la classificazione delle sostanze.
+        """@it .
+
+schema:Country a owl:Class ;
+    rdfs:label "Land"@de,
+        "Country"@en,
+        "Pays"@fr,
+        "Paese"@it .
+
+schema:Organization a owl:Class ;
+    rdfs:label "Organisation"@de,
+        "Organization"@en,
+        "Organisation"@fr,
+        "Organizzazione"@it ;
+    rdfs:comment """
+        Repräsentiert jede formelle Einheit, wie Unternehmen, Institutionen oder Vereinigungen, die im landwirtschaftlichen Bereich des Pflanzenschutzrahmens tätig sind.
+        """@de,
+        """
+        Represents any formal entity, such as companies, institutions, or associations, involved in the agricultural sector within the crop protection framework.
+        """@en,
+        """
+        Représente toute entité formelle, comme des entreprises, des institutions ou des associations, impliquée dans le secteur agricole dans le cadre de la protection des cultures.
+        """@fr,
+        """
+        Rappresenta qualsiasi entità formale, come aziende, istituzioni o associazioni, coinvolta nel settore agricolo nell'ambito della protezione delle colture.
+        """@it ;
+    rdfs:scopeNote """
+        Diese Klasse ist zur Modellierung von Organisationen im Pflanzenschutz vorgesehen. 
+        Sofern möglich, sollten Instanzen aus dem Schweizer zentralen Firmenindex (Zefix) wiederverwendet werden, um Konsistenz und Integration mit bestehenden Schweizer Organisationsdaten zu gewährleisten.
+        """@de,
+        """
+        This class is intended to model organizations involved in crop protection. 
+        Whenever possible, instances from the Swiss central company index (Zefix) should be reused to ensure consistency and integration with existing Swiss organizational data.
+        """@en,
+        """
+        Cette classe est destinée à modéliser les organisations impliquées dans la protection des cultures. 
+        Dans la mesure du possible, il convient de réutiliser les instances du registre central suisse des entreprises (Zefix) pour garantir la cohérence et l'intégration avec les données organisationnelles suisses existantes.
+        """@fr,
+        """
+        Questa classe è destinata a modellare le organizzazioni coinvolte nella protezione delle colture. 
+        Ove possibile, si dovrebbero riutilizzare le istanze del registro centrale svizzero delle imprese (Zefix) per garantire coerenza e integrazione con i dati organizzativi esistenti in Svizzera.
+        """@it .
+
+schema:PostalAddress a owl:Class ;
+    rdfs:label "Postadresse"@de,
+        "Postal address"@en,
+        "Adresse postale"@fr,
+        "Indirizzo postale"@it .
+
+schema:QuantitativeValue a owl:Class ;
+    rdfs:label "Quantitativer Wert"@de,
+        "Quantitative value"@en ;
+    rdfs:comment "A point value or interval for product characteristics and other purposes."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom :Unit ;
+            owl:onProperty schema:unitCode ] .
+
+wikidata:Q16521 a owl:Class ;
+    rdfs:label "Biologisches Taxon"@de,
+        "Biological taxon"@en,
+        "Taxon biologique"@fr,
+        "Taxon biologico"@it ;
+    rdfs:comment """
+        Gruppe von einem oder mehreren Organismen, die ein Taxonom als Einheit betrachtet.
+        """@de,
+        """
+        Group of one or more organism(s), which a taxonomist adjudges to be a unit.
+        """@en,
+        """
+        Groupe d'un ou plusieurs organismes qu'un taxonomiste considère comme une unité.
+        """@fr,
+        """
+        Gruppo di uno o più organismi che un tassonomista considera come un'unità.
+        """@it .
+
+:AbioticStressor a owl:Class ;
+    rdfs:label "Abiotischer Schadverursacher"@de,
+        "Abiotic crop stressor"@en,
+        "Facteur de stress abiotique pour les cultures"@fr,
+        "Fattore di stress abiotico per le colture"@it ;
+    rdfs:comment """
+        Negative Auswirkungen nicht lebender Faktoren auf die Kulturpflanze in einer bestimmten Umgebung.
+        """@de,
+        """
+        Negative impact of non-living factors on the crop in a specific environment.
+        """@en,
+        """
+        Effets négatifs de facteurs non vivants sur les cultures dans un environnement donné.
+        """@fr,
+        """
+        Impatto negativo di fattori non viventi sulle colture in un determinato ambiente.
+        """@it ;
+    rdfs:isDefinedBy wikidata:Q4667893 ;
+    rdfs:seeAlso <https://en.wikipedia.org/wiki/Abiotic_stress> ;
+    rdfs:subClassOf :CropStressor ;
+    owl:disjointWith :BioticStressor .
+
+:Acaricide a owl:Class ;
+    rdfs:label "Akarizid"@de,
+        "Acaricide"@en,
+        "Acaricide"@fr,
+        "Acaricida"@it ;
+    rdfs:comment """
+        Ein Akarizid ist ein chemisches Pflanzenschutzmittel, das zur Bekämpfung von Milben und Zecken eingesetzt wird, die häufig Schäden an landwirtschaftlichen Kulturen verursachen.
+        """@de,
+        """
+        An acaricide is a chemical crop protection product used to control mites and ticks, which often cause damage to agricultural crops.
+        """@en,
+        """
+        Un acaricide est un produit chimique de protection des cultures utilisé pour lutter contre les acariens et les tiques, qui causent souvent des dommages aux cultures agricoles.
+        """@fr,
+        """
+        Un acaricida è un prodotto chimico per la protezione delle colture utilizzato per controllare acari e zecche, che spesso danneggiano le colture agricole.
+        """@it ;
+    rdfs:subClassOf :ChemicalProduct .
+
+:AdhesionAgents a owl:Class ;
+    rdfs:label "Netz- und Haftmittel"@de,
+        "Wetting and adhesion agents"@en,
+        "Agents mouillants et adhésifs"@fr,
+        "Agenti bagnanti e adesivi"@it ;
+    rdfs:comment """
+        Netz- und Haftmittel sind chemische Produkte, die verwendet werden, um Pflanzenschutzmittel gleichmässig auf Pflanzenoberflächen zu verteilen und deren Anhaftung zu verbessern.
+        Sie erhöhen die Effizienz und Wirksamkeit von Behandlungen.
+        """@de,
+        """
+        Wetting and adhesion agents are chemical products used to distribute crop protection products evenly on plant surfaces and enhance their adhesion.
+        They improve the efficiency and effectiveness of treatments.
+        """@en,
+        """
+        Les agents mouillants et adhésifs sont des produits chimiques utilisés pour répartir uniformément les produits phytosanitaires sur les surfaces des plantes et améliorer leur adhérence.
+        Ils augmentent l'efficacité et la performance des traitements.
+        """@fr,
+        """
+        Gli agenti bagnanti e adesivi sono prodotti chimici utilizzati per distribuire uniformemente i prodotti fitosanitari sulle superfici delle piante e migliorarne l'adesione.
+        Aumentano l'efficienza e l'efficacia dei trattamenti.
+        """@it ;
+    rdfs:subClassOf :ChemicalProduct .
+
+:ApplicationArea a owl:Class ;
+    rdfs:label "Anwendungsgebiet"@de,
+        "Application area"@en,
+        "Domaine d'application"@fr,
+        "Ambito di applicazione"@it ;
+    rdfs:comment """
+        Klassifiziert den Bereich, in dem eine Pflanzenschutzmassnahme angewendet wird, wie z. B. Beerenbau, Feldbau oder Nichtkulturland.
+        Die Klassifikation dient der Einordnung von Anwendungen nach landwirtschaftlichen, forstwirtschaftlichen oder sonstigen Nutzungskontexten.
+        """@de,
+        """
+        Classifies the area in which a plant protection measure is applied, such as berry farming, arable farming, or non-cultivated land.
+        This classification is used to categorize treatments by agricultural, forestry, or other usage contexts.
+        """@en,
+        """
+        Classe la zone dans laquelle une mesure de protection des plantes est appliquée, comme la culture des baies, les grandes cultures ou les terrains non cultivés.
+        Cette classification permet de regrouper les traitements selon des contextes agricoles, forestiers ou autres.
+        """@fr,
+        """
+        Classifica l'ambito in cui viene applicata una misura di protezione delle colture, come la coltivazione di bacche, la coltivazione in pieno campo o le aree non coltivate.
+        Questa classificazione serve a inquadrare i trattamenti in contesti agricoli, forestali o di altro tipo.
+        """@it .
+
+:ApplicationComment a owl:Class ;
+    rdfs:label "Anwendungskommentar"@de,
+        "Application comment"@en ;
+    rdfs:subClassOf :Notice .
+
+:BCAAgainstFungi a owl:Class ;
+    rdfs:label "Produkte gegen Pilze"@de,
+        "Products against fungi"@en,
+        "Produits contre les champignons"@fr,
+        "Prodotti contro i funghi"@it ;
+    rdfs:comment """
+        Produkte gegen Pilze sind biologische Schädlingsbekämpfungsmittel, die verwendet werden, um Pflanzen vor schädlichen Pilzen zu schützen.
+        Sie basieren auf natürlichen Organismen oder deren Nebenprodukten und fördern nachhaltige landwirtschaftliche Praktiken.
+        """@de,
+        """
+        Products against fungi are biological control agents used to protect plants from harmful fungi.
+        They are based on natural organisms or their byproducts and support sustainable agricultural practices.
+        """@en,
+        """
+        Les produits contre les champignons sont des agents de lutte biologique utilisés pour protéger les plantes contre les champignons nuisibles.
+        Ils sont à base d'organismes naturels ou de leurs sous-produits et soutiennent des pratiques agricoles durables.
+        """@fr,
+        """
+        I prodotti contro i funghi sono agenti di controllo biologico utilizzati per proteggere le piante dai funghi dannosi.
+        Si basano su organismi naturali o loro sottoprodotti e promuovono pratiche agricole sostenibili.
+        """@it ;
+    rdfs:subClassOf :BiologicalControlAgent ;
+    skos:altLabel "Antifungal biological agents"@en .
+
+:BCABacteria a owl:Class ;
+    rdfs:label "Bakterienprodukte"@de,
+        "Bacterial products"@en,
+        "Produits bactériens"@fr,
+        "Prodotti batterici"@it ;
+    rdfs:comment """
+        Bakterienprodukte sind biologische Schädlingsbekämpfungsmittel, die aus Bakterien bestehen oder von ihnen abgeleitet sind.
+        Sie bekämpfen Schädlinge oder Krankheiten durch Mechanismen wie Konkurrenz, Produktion antimikrobieller Substanzen oder Förderung der Pflanzengesundheit.
+        """@de,
+        """
+        Bacterial products are biological control agents composed of or derived from bacteria.
+        They combat pests or diseases through mechanisms such as competition, production of antimicrobial substances, or enhancement of plant health.
+        """@en,
+        """
+        Les produits bactériens sont des agents de lutte biologique composés de bactéries ou dérivés de celles-ci.
+        Ils combattent les ravageurs ou les maladies par des mécanismes tels que la concurrence, la production de substances antimicrobiennes ou le renforcement de la santé des plantes.
+        """@fr,
+        """
+        I prodotti batterici sono agenti di controllo biologico composti da batteri o derivati da essi.
+        Combattono parassiti o malattie attraverso meccanismi come la competizione, la produzione di sostanze antimicrobiche o il miglioramento della salute delle piante.
+        """@it ;
+    rdfs:subClassOf :BiologicalControlAgent .
+
+:BCAFungi a owl:Class ;
+    rdfs:label "Pilzprodukte"@de,
+        "Fungal products"@en,
+        "Produits fongiques"@fr,
+        "Prodotti fungini"@it ;
+    rdfs:comment """
+        Pilzprodukte sind biologische Schädlingsbekämpfungsmittel, die aus Pilzen bestehen oder von ihnen abgeleitet sind.
+        Sie bekämpfen Schädlinge, Krankheiten oder Unkräuter durch Mechanismen wie Antagonismus, Parasitismus oder die Förderung der Pflanzengesundheit.
+        """@de,
+        """
+        Fungal products are biological control agents composed of or derived from fungi.
+        They combat pests, diseases, or weeds through mechanisms such as antagonism, parasitism, or enhancement of plant health.
+        """@en,
+        """
+        Les produits fongiques sont des agents de lutte biologique composés de champignons ou dérivés de ceux-ci.
+        Ils luttent contre les ravageurs, les maladies ou les mauvaises herbes par des mécanismes tels que l'antagonisme, le parasitisme ou le renforcement de la santé des plantes.
+        """@fr,
+        """
+        I prodotti fungini sono agenti di controllo biologico composti da funghi o derivati da essi.
+        Combattono parassiti, malattie o infestanti attraverso meccanismi come l'antagonismo, il parassitismo o il miglioramento della salute delle piante.
+        """@it ;
+    rdfs:subClassOf :BiologicalControlAgent .
+
+:BCAInsectViruses a owl:Class ;
+    rdfs:label "Insektenvirenprodukte"@de,
+        "Insect virus products"@en,
+        "Produits à base de virus d'insectes"@fr,
+        "Prodotti a base di virus per insetti"@it ;
+    rdfs:comment """
+        Insektenvirenprodukte sind biologische Schädlingsbekämpfungsmittel, die Viren enthalten, die gezielt Insekten schädigen.
+        Sie bieten eine umweltfreundliche Alternative zu chemischen Insektiziden, da sie spezifisch auf Schadinsekten wirken und andere Organismen schonen.
+        """@de,
+        """
+        Insect virus products are biological control agents containing viruses that specifically harm insects.
+        They provide an environmentally friendly alternative to chemical insecticides, as they target pests while being harmless to other organisms.
+        """@en,
+        """
+        Les produits à base de virus d'insectes sont des agents de lutte biologique contenant des virus ciblant spécifiquement les insectes.
+        Ils offrent une alternative écologique aux insecticides chimiques, car ils agissent uniquement sur les ravageurs sans nuire aux autres organismes.
+        """@fr,
+        """
+        I prodotti a base di virus per insetti sono agenti di controllo biologico che contengono virus che colpiscono specificamente gli insetti.
+        Offrono un'alternativa ecologica agli insetticidi chimici, poiché mirano ai parassiti senza danneggiare altri organismi.
+        """@it ;
+    rdfs:subClassOf :BiologicalControlAgent .
+
+:BCAInsects a owl:Class ;
+    rdfs:label "Insektenprodukte"@de,
+        "Insect products"@en,
+        "Produits à base d'insectes"@fr,
+        "Prodotti a base di insetti"@it ;
+    rdfs:comment """
+        Insektenprodukte sind biologische Schädlingsbekämpfungsmittel, die lebende oder abgeleitete Insektenarten enthalten, welche zur Bekämpfung anderer Schädlinge eingesetzt werden.
+        Sie werden gezielt zur Schädlingsregulation eingesetzt und unterstützen ökologische Anbaustrategien.
+        """@de,
+        """
+        Insect products are biological control agents consisting of live or derived insect species used to combat other pests.
+        They are applied specifically for pest control and support ecological farming practices.
+        """@en,
+        """
+        Les produits à base d'insectes sont des agents de lutte biologique composés d'insectes vivants ou dérivés, utilisés pour combattre d'autres ravageurs.
+        Ils sont utilisés spécifiquement pour la régulation des nuisibles et soutiennent des pratiques agricoles écologiques.
+        """@fr,
+        """
+        I prodotti a base di insetti sono agenti di controllo biologico costituiti da specie di insetti vivi o derivati, utilizzati per combattere altri parassiti.
+        Vengono impiegati specificamente per la regolazione dei parassiti e supportano pratiche agricole ecologiche.
+        """@it ;
+    rdfs:subClassOf :BiologicalControlAgent .
+
+:BCAMites a owl:Class ;
+    rdfs:label "Milbenprodukte"@de,
+        "Mite products"@en,
+        "Produits à base d'acariens"@fr,
+        "Prodotti a base di acari"@it ;
+    rdfs:comment """
+        Milbenprodukte sind biologische Schädlingsbekämpfungsmittel, die nützliche Milbenarten enthalten, die zur Bekämpfung schädlicher Insekten oder anderer Milben eingesetzt werden.
+        Sie sind ein wichtiger Bestandteil integrierter Pflanzenschutzstrategien.
+        """@de,
+        """
+        Mite products are biological control agents containing beneficial mite species used to control harmful insects or other mites.
+        They are an important component of integrated pest management strategies.
+        """@en,
+        """
+        Les produits à base d'acariens sont des agents de lutte biologique contenant des espèces d'acariens utiles utilisées pour lutter contre les insectes nuisibles ou d'autres acariens.
+        Ils constituent un élément important des stratégies de lutte intégrée.
+        """@fr,
+        """
+        I prodotti a base di acari sono agenti di controllo biologico che contengono specie di acari utili, impiegate per contrastare insetti dannosi o altri acari.
+        Rappresentano una componente fondamentale delle strategie di difesa integrata.
+        """@it ;
+    rdfs:subClassOf :BiologicalControlAgent .
+
+:BCANematodes a owl:Class ;
+    rdfs:label "Nematodenprodukte"@de,
+        "Nematode products"@en,
+        "Produits à base de nématodes"@fr,
+        "Prodotti a base di nematodi"@it ;
+    rdfs:comment """
+        Nematodenprodukte sind biologische Schädlingsbekämpfungsmittel, die lebende Nematoden enthalten, die gezielt gegen Schadinsekten im Boden oder in Pflanzen wirken.
+        Sie sind eine umweltfreundliche Alternative zu chemischen Bodeninsektiziden.
+        """@de,
+        """
+        Nematode products are biological control agents containing live nematodes that specifically target harmful insects in soil or plants.
+        They provide an environmentally friendly alternative to chemical soil insecticides.
+        """@en,
+        """
+        Les produits à base de nématodes sont des agents de lutte biologique contenant des nématodes vivants qui ciblent spécifiquement les insectes nuisibles dans le sol ou les plantes.
+        Ils constituent une alternative écologique aux insecticides chimiques du sol.
+        """@fr,
+        """
+        I prodotti a base di nematodi sono agenti di controllo biologico contenenti nematodi vivi che colpiscono specificamente gli insetti nocivi nel suolo o nelle piante.
+        Offrono un'alternativa ecologica agli insetticidi chimici del suolo.
+        """@it ;
+    rdfs:subClassOf :BiologicalControlAgent .
+
+:Bactericide a owl:Class ;
+    rdfs:label "Bakterizid"@de,
+        "Bactericide"@en,
+        "Bactéricide"@fr,
+        "Battericida"@it ;
+    rdfs:comment """
+        Ein Bakterizid ist ein chemisches Pflanzenschutzmittel, das verwendet wird, um bakterielle Krankheitserreger zu bekämpfen, die landwirtschaftliche Kulturen schädigen.
+        Es wird häufig eingesetzt, um bakterielle Infektionen wie Feuerbrand zu verhindern oder zu kontrollieren.
+        """@de,
+        """
+        A bactericide is a chemical crop protection product used to combat bacterial pathogens that harm agricultural crops.
+        It is often applied to prevent or control bacterial infections such as fire blight.
+        """@en,
+        """
+        Un bactéricide est un produit chimique de protection des cultures utilisé pour lutter contre les agents pathogènes bactériens qui nuisent aux cultures agricoles.
+        Il est souvent appliqué pour prévenir ou contrôler des infections bactériennes telles que le feu bactérien.
+        """@fr,
+        """
+        Un battericida è un prodotto chimico per la protezione delle colture utilizzato per combattere i patogeni batterici dannosi per le colture agricole.
+        Viene spesso impiegato per prevenire o controllare infezioni batteriche come il colpo di fuoco batterico.
+        """@it ;
+    rdfs:subClassOf :ChemicalProduct .
+
+:BiologicalControlAgent a owl:Class ;
+    rdfs:label "Biokontroll-Agenten"@de,
+        "Biological control agent"@en,
+        "Agent de lutte biologique"@fr,
+        "Agente di controllo biologico"@it ;
+    rdfs:comment """
+        Ein Organismus für die biologische Schädlingsbekämpfung ist ein lebender Organismus oder ein daraus abgeleitetes Produkt, das zur Bekämpfung von Pflanzenschädlingen oder Krankheitserregern eingesetzt wird.
+        Solche Organismen umfassen nützliche Insekten, Milben, Nematoden, Pilze, Bakterien oder Viren.
+        Sie stellen eine umweltfreundliche Alternative zu chemischen Pflanzenschutzmitteln dar.
+        """@de,
+        """
+        A biological control agent is a living organism or a product derived from it used to combat plant pests or pathogens.
+        These include beneficial insects, mites, nematodes, fungi, bacteria, or viruses.
+        They offer an environmentally friendly alternative to chemical crop protection products.
+        """@en,
+        """
+        Un agent de lutte biologique est un organisme vivant ou un produit qui en est dérivé, utilisé pour lutter contre les ravageurs ou les agents pathogènes des plantes.
+        Il peut s'agir d'insectes utiles, d'acariens, de nématodes, de champignons, de bactéries ou de virus.
+        Ils représentent une alternative écologique aux produits phytosanitaires chimiques.
+        """@fr,
+        """
+        Un agente di controllo biologico è un organismo vivente o un prodotto derivato da esso utilizzato per combattere i parassiti o i patogeni delle piante.
+        Comprende insetti utili, acari, nematodi, funghi, batteri o virus.
+        Rappresenta un'alternativa ecologica ai prodotti fitosanitari chimici.
+        """@it ;
+    rdfs:subClassOf :Product ;
+    owl:disjointWith :ChemicalProduct .
+
+:BioticStressor a owl:Class ;
+    rdfs:label "Biotischer Schadverursacher"@de,
+        "Biotic crop stressor"@en,
+        "Facteur de stress biotique pour les cultures"@fr,
+        "Fattore di stress biotico per le colture"@it ;
+    rdfs:comment """
+        Biotische Schadverursacher sind lebende Organismen wie Insekten, Pilze, Bakterien oder Viren, die Pflanzen infizieren oder schädigen.
+        Sie verursachen biotischen Stress und können das Wachstum und die Ernteerträge erheblich beeinträchtigen.
+        """@de,
+        """
+        Biotic stressors are living organisms such as insects, fungi, bacteria, or viruses that infect or damage crops.
+        They cause biotic stress and can significantly impact plant growth and crop yields.
+        """@en,
+        """
+        Les agents de stress biotique sont des organismes vivants tels que les insectes, les champignons, les bactéries ou les virus qui infectent ou endommagent les cultures.
+        Ils provoquent un stress biotique et peuvent affecter considérablement la croissance des plantes et les rendements.
+        """@fr,
+        """
+        I fattori di stress biotico sono organismi viventi come insetti, funghi, batteri o virus che infettano o danneggiano le colture.
+        Causano stress biotico e possono compromettere significativamente la crescita delle piante e le rese agricole.
+        """@it ;
+    rdfs:isDefinedBy wikidata:Q3500367 ;
+    rdfs:seeAlso <https://en.wikipedia.org/wiki/Biotic_stress> ;
+    rdfs:subClassOf :CropStressor .
+
+:ChemicalProduct a owl:Class ;
+    rdfs:label "Chemisches Produkt"@de,
+        "Chemical product"@en,
+        "Produit chimique"@fr,
+        "Prodotto chimico"@it ;
+    rdfs:comment """
+        Jedes Produkt, das sich einigermassen gut durch seine (chemischen) Inhaltsstoffe beschreiben lässt.
+        """@de,
+        """
+        Any product that can be reasonably well described by its (chemical) ingredients.
+        """@en,
+        """
+        Tout produit pouvant être raisonnablement bien décrit par ses composants (chimiques).
+        """@fr,
+        """
+        Qualsiasi prodotto che può essere ragionevolmente descritto dai suoi ingredienti (chimici).
+        """@it ;
+    rdfs:subClassOf :Product .
+
+:CodeR a owl:Class ;
+    rdfs:label "R-Satz"@de,
+        "R phrase"@en,
+        "Phrase R"@fr,
+        "Frase R"@it ;
+    rdfs:comment """
+        Ein R-Satz (= Risiko-Satz) ist eine standardisierte Risikobeschreibung für gefährliche chemische Stoffe, die spezifische Gefahren wie Toxizität oder Entflammbarkeit angibt.
+        Diese wurden in der Europäischen Union verwendet, um Risiken auf Sicherheitsdatenblättern und Etiketten zu kennzeichnen.
+        """@de,
+        """
+        An R phrase (= risk phrase) is a standardized description of the risks associated with hazardous chemical substances, indicating specific dangers such as toxicity or flammability.
+        These were used in the European Union to denote risks on safety data sheets and labels.
+        """@en,
+        """
+        Une phrase R (= phrase de risque) est une description normalisée des risques liés aux substances chimiques dangereuses, indiquant des dangers spécifiques comme la toxicité ou l'inflammabilité.
+        Elles étaient utilisées dans l'Union européenne pour signaler les risques sur les fiches de données de sécurité et les étiquettes.
+        """@fr,
+        """
+        Una frase R (= frase di rischio) è una descrizione standardizzata dei rischi associati a sostanze chimiche pericolose, indicante pericoli specifici come la tossicità o l'infiammabilità.
+        Queste frasi venivano usate nell'Unione Europea per indicare i rischi sulle schede di sicurezza e sulle etichette.
+        """@it ;
+    rdfs:seeAlso <https://ec.europa.eu/taxation_customs/dds2/SAMANCTA/EN/Safety/RS_EN.htm>,
+        <https://en.wikipedia.org/wiki/List_of_R-phrases> ;
+    rdfs:subClassOf :HazardStatement .
+
+:CodeS a owl:Class ;
+    rdfs:label "S-Satz"@de,
+        "S phrase"@en,
+        "Phrase S"@fr,
+        "Frase S"@it ;
+    rdfs:comment """
+        Ein S-Satz (= Sicherheits-Satz) ist ein standardisierter Sicherheitshinweis für den Umgang mit gefährlichen chemischen Stoffen.
+        Diese Sätze wurden in der Europäischen Union verwendet, um sichere Handhabung, Lagerung und Notfallmassnahmen auf Sicherheitsdatenblättern und Etiketten zu empfehlen.
+        """@de,
+        """
+        An S phrase (= safety phrase) is a standardized safety instruction for handling hazardous chemical substances.
+        These phrases were used in the European Union to recommend safe handling, storage, and emergency measures on safety data sheets and labels.
+        """@en,
+        """
+        Une phrase S (= phrase de sécurité) est une instruction de sécurité standardisée pour la manipulation des substances chimiques dangereuses.
+        Ces phrases étaient utilisées dans l'Union européenne pour recommander des mesures sûres de manipulation, de stockage et d'urgence sur les fiches de données de sécurité et les étiquettes.
+        """@fr,
+        """
+        Una frase S (= frase di sicurezza) è un'istruzione di sicurezza standardizzata per la gestione delle sostanze chimiche pericolose.
+        Queste frasi venivano usate nell'Unione Europea per raccomandare una manipolazione sicura, lo stoccaggio e le misure di emergenza sulle schede di sicurezza e sulle etichette.
+        """@it ;
+    rdfs:seeAlso <https://ec.europa.eu/taxation_customs/dds2/SAMANCTA/EN/Safety/RS_EN.htm>,
+        <https://en.wikipedia.org/wiki/List_of_S-phrases> ;
+    rdfs:subClassOf :HazardStatement .
+
+:ComponentPortion a owl:Class ;
+    rdfs:label "Component",
+        "Komponent"@de .
+
+:CropGroup a owl:Class ;
+    rdfs:label "Landwirtschaftliche Kultur"@de,
+        "Crop"@en,
+        "Culture agricole"@fr,
+        "Coltura agricola"@it ;
+    rdfs:comment """
+        Repräsentiert eine Kategorie von landwirtschaftlichen Pflanzen, die innerhalb des Pflanzenschutzrahmens gemeinsame Merkmale, Anbaumethoden oder Verwendungszwecke teilen.
+        """@de,
+        """
+        Represents a category of agricultural plants that share common characteristics, cultivation methods, or purposes within the crop protection framework.
+        """@en,
+        """
+        Représente une catégorie de plantes agricoles partageant des caractéristiques, des méthodes de culture ou des usages communs dans le cadre de la protection des cultures.
+        """@fr,
+        """
+        Rappresenta una categoria di piante agricole che condividono caratteristiche comuni, metodi di coltivazione o scopi nell'ambito della protezione delle colture.
+        """@it ;
+    rdfs:scopeNote """
+        Entwickelt zur Modellierung von Kulturgruppen, die aufgrund von Ähnlichkeiten in ihren biologischen Eigenschaften,
+        Wachstumsanforderungen oder den für ihren Schutz eingesetzten Strategien gemeinsam bewirtschaftet werden.
+        """@de,
+        """
+        Designed to model groups of crops that are managed collectively due to similarities in their biological attributes,
+        growth requirements, or the strategies employed for their protection against stressors.
+        """@en,
+        """
+        Conçu pour modéliser des groupes de cultures gérés collectivement en raison de similitudes dans leurs caractéristiques biologiques,
+        leurs exigences de croissance ou les stratégies de protection mises en œuvre.
+        """@fr,
+        """
+        Progettato per modellare gruppi di colture gestiti collettivamente a causa di somiglianze nei loro attributi biologici,
+        nei requisiti di crescita o nelle strategie adottate per proteggerle dagli agenti di stress.
+        """@it .
+
+:CropStressor a owl:Class ;
+    rdfs:label "Schadverursacher"@de,
+        "Crop stressor"@en,
+        "Facteur de stress des cultures"@fr,
+        "Fattore di stress delle colture"@it ;
+    rdfs:comment """
+        Repräsentiert jeden Faktor oder Agenten, der die Pflanzengesundheit, den Ertrag oder die Qualität im landwirtschaftlichen Rahmen negativ beeinflusst.
+        """@de,
+        """
+        Represents any factor or agent that negatively impacts crop health, yield, or quality within the agricultural framework.
+        """@en,
+        """
+        Représente tout facteur ou agent ayant un impact négatif sur la santé, le rendement ou la qualité des cultures dans un cadre agricole.
+        """@fr,
+        """
+        Rappresenta qualsiasi fattore o agente che influisce negativamente sulla salute, la resa o la qualità delle colture nel contesto agricolo.
+        """@it ;
+    rdfs:scopeNote """
+        Diese Klasse ist zur Modellierung verschiedener Stressoren vorgesehen, die Pflanzen betreffen, einschliesslich biotischer und abiotischer Elemente.
+        Sie erleichtert die Identifizierung und das Management von Faktoren, die die landwirtschaftliche Produktivität beeinträchtigen.
+        """@de,
+        """
+        This class is intended to model various stressors affecting crops, including both biotic and abiotic elements.
+        It facilitates the identification and management of factors that compromise agricultural productivity.
+        """@en,
+        """
+        Cette classe est destinée à modéliser divers facteurs de stress affectant les cultures, y compris les éléments biotiques et abiotiques.
+        Elle facilite l'identification et la gestion des facteurs compromettant la productivité agricole.
+        """@fr,
+        """
+        Questa classe è destinata a modellare vari fattori di stress che colpiscono le colture, inclusi elementi biotici e abiotici.
+        Facilita l'identificazione e la gestione dei fattori che compromettono la produttività agricola.
+        """@it .
+
+:DangerSymbol a owl:Class ;
+    rdfs:label "Gefahrensymbol"@de,
+        "Danger symbol"@en ;
+    rdfs:subClassOf :Notice .
+
+:Desinfectant a owl:Class ;
+    rdfs:label "Desinfektionsmittel"@de,
+        "Desinfectant"@en,
+        "Désinfectant"@fr,
+        "Disinfettante"@it ;
+    rdfs:subClassOf :ChemicalProduct .
+
+:Fungicide a owl:Class ;
+    rdfs:label "Fungizid"@de,
+        "Fungicide"@en,
+        "Fongicide"@fr,
+        "Fungicida"@it ;
+    rdfs:comment """
+        Ein Fungizid ist ein chemisches Pflanzenschutzmittel, das zur Bekämpfung von Pilzkrankheiten in der Landwirtschaft eingesetzt wird.
+        Es tötet Pilze oder hemmt ihr Wachstum, um Ernteerträge und -qualität zu schützen.
+        Fungizide spielen eine zentrale Rolle im integrierten Pflanzenschutz.
+        """@de,
+        """
+        A fungicide is a chemical crop protection product used to combat fungal diseases in agriculture.
+        It kills fungi or inhibits their growth to protect crop yields and quality.
+        Fungicides play a central role in integrated pest management.
+        """@en,
+        """
+        Un fongicide est un produit phytosanitaire chimique utilisé pour lutter contre les maladies fongiques en agriculture.
+        Il tue les champignons ou inhibe leur croissance afin de protéger les rendements et la qualité des récoltes.
+        Les fongicides jouent un rôle central dans la protection intégrée des cultures.
+        """@fr,
+        """
+        Un fungicida è un prodotto chimico per la protezione delle colture usato per combattere le malattie fungine in agricoltura.
+        Uccide i funghi o ne inibisce la crescita per proteggere la resa e la qualità del raccolto.
+        I fungicidi svolgono un ruolo centrale nella protezione integrata delle colture.
+        """@it ;
+    rdfs:subClassOf :ChemicalProduct .
+
+:HazardStatement a owl:Class ;
+    rdfs:label "Sicherheitshinweise für Gefahrstoffe"@de,
+        "Hazard statements"@en,
+        "Mentions de danger"@fr,
+        "Indicazioni di pericolo"@it ;
+    rdfs:comment """
+        H-Sätze (Gefahrenhinweise) und die ergänzenden EUH-Sätze sind standardisierte Beschreibungen der spezifischen Gefahren, die von chemischen Stoffen oder Gemischen ausgehen, wie z. B. Toxizität, Entflammbarkeit oder Umweltschädlichkeit.
+        Sie sind Teil des Global Harmonisierten Systems (GHS) und gewährleisten eine klare, einheitliche Kommunikation chemischer Gefahren weltweit.
+        """@de,
+        """
+        H-statements (Hazard Statements) and the complementary EUH-statements are standardized descriptions of the specific dangers posed by chemical substances or mixtures, such as toxicity, flammability, or environmental harm.
+        They are part of the Globally Harmonized System (GHS) and ensure clear, consistent communication of chemical hazards worldwide.
+        """@en,
+        """
+        Les mentions de danger H et les mentions complémentaires EUH sont des descriptions normalisées des dangers spécifiques que présentent les substances ou mélanges chimiques, comme la toxicité, l'inflammabilité ou les dommages environnementaux.
+        Elles font partie du Système général harmonisé (SGH) et assurent une communication claire et cohérente des dangers chimiques à l'échelle mondiale.
+        """@fr,
+        """
+        Le frasi di rischio H e le frasi complementari EUH sono descrizioni standardizzate dei pericoli specifici associati a sostanze o miscele chimiche, come la tossicità, l'infiammabilità o i danni ambientali.
+        Fanno parte del Sistema Globale Armonizzato (GHS) e garantiscono una comunicazione chiara e uniforme dei pericoli chimici a livello mondiale.
+        """@it ;
+    rdfs:seeAlso <https://en.wikipedia.org/wiki/Globally_Harmonized_System_of_Classification_and_Labelling_of_Chemicals> ;
+    rdfs:subClassOf :Notice .
+
+:Herbicide a owl:Class ;
+    rdfs:label "Herbizid"@de,
+        "Herbicide"@en,
+        "Herbicide"@fr,
+        "Erbicida"@it ;
+    rdfs:comment """
+        Ein Herbizid ist ein chemisches Pflanzenschutzmittel, das zur Bekämpfung unerwünschter Pflanzen (Unkräuter) eingesetzt wird.
+        Es hilft, das Wachstum von Unkräutern zu hemmen oder sie abzutöten, um die Erträge und Qualität der Kulturpflanzen zu schützen.
+        Herbizide sind ein zentraler Bestandteil des integrierten Unkrautmanagements.
+        """@de,
+        """
+        A herbicide is a chemical crop protection product used to control unwanted plants (weeds).
+        It helps inhibit the growth of weeds or eliminate them to protect the yields and quality of cultivated crops.
+        Herbicides are a key component of integrated weed management.
+        """@en,
+        """
+        Un herbicide est un produit phytosanitaire chimique utilisé pour contrôler les plantes indésirables (mauvaises herbes).
+        Il aide à inhiber leur croissance ou à les éliminer afin de protéger les rendements et la qualité des cultures.
+        Les herbicides sont un élément essentiel de la gestion intégrée des mauvaises herbes.
+        """@fr,
+        """
+        Un erbicida è un prodotto chimico per la protezione delle colture utilizzato per controllare le piante indesiderate (erbacce).
+        Aiuta a inibire la crescita delle erbacce o a eliminarle per proteggere la resa e la qualità delle colture.
+        Gli erbicidi sono un componente fondamentale della gestione integrata delle infestanti.
+        """@it ;
+    rdfs:subClassOf :ChemicalProduct .
+
+:Indication a owl:Class ;
+    rdfs:label "Indikation"@de,
+        "Indication"@en,
+        "Indication"@fr,
+        "Indicazione"@it ;
+    rdfs:comment """
+       Im Pflanzenschutzmittel ist eine Indikation eine erlaubte Anwendung eines einzigen bestimmten Produktes auf bestimmten Kulturen gegen bestimmte Schadverursacher.
+       """@de ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom :IndicationNotice ;
+            owl:onProperty :notice ] .
+
+:IndicationNotice a owl:Class ;
+    rdfs:label "Hinweis zur Anwendung"@de,
+        "Indication notice"@en ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( :Obligation :ApplicationComment ) ] .
+
+:Insecticide a owl:Class ;
+    rdfs:label "Insektizid"@de,
+        "Insecticide"@en,
+        "Insecticide"@fr,
+        "Insetticida"@it ;
+    rdfs:subClassOf :ChemicalProduct .
+
+:ModeOfActionTerm a owl:Class ;
+    rdfs:label "Wirkungsweise-Begriff"@de,
+        "Mode of Action Term"@en ;
+    rdfs:comment """
+        A generic class representing any entry in the IRAC Mode of Action classification 
+        scheme, i.e. both main groups and sub‑groups (if these exist). Each instance
+        carries its unique IRAC code (e.g. "1", "1A", "4B") via the `schema:identifier` 
+        property, and may be linked hierarchically using `schema:isPartOf`/`schema:hasPart`.
+        """@en ;
+    rdfs:seeAlso <https://irac-online.org/documents/moa-classification/> .
+
+:Molluscicide a owl:Class ;
+    rdfs:label "Molluskizid"@de,
+        "Molluscicide"@en,
+        "Molluscicide"@fr,
+        "Molluschicida"@it ;
+    rdfs:comment """
+        Ein Molluskizid ist ein chemisches Pflanzenschutzmittel, das zur Bekämpfung von Weichtieren, insbesondere Schnecken und Nacktschnecken, eingesetzt wird.
+        Es schützt landwirtschaftliche Kulturen vor Schäden, die durch diese Schädlinge verursacht werden.
+        """@de,
+        """
+        A molluscicide is a chemical crop protection product used to control mollusks, particularly slugs and snails.
+        It protects agricultural crops from damage caused by these pests.
+        """@en,
+        """
+        Un molluscicide est un produit phytosanitaire chimique utilisé pour lutter contre les mollusques, en particulier les limaces et les escargots.
+        Il protège les cultures agricoles des dommages causés par ces ravageurs.
+        """@fr,
+        """
+        Un molluschicida è un prodotto fitosanitario chimico usato per controllare i molluschi, in particolare le lumache e le chiocciole.
+        Protegge le colture agricole dai danni causati da questi parassiti.
+        """@it ;
+    rdfs:subClassOf :ChemicalProduct .
+
+:NaturalDefenseStimulator a owl:Class ;
+    rdfs:label "Stimulator der natürlichen Abwehrkräfte"@de,
+        "Stimulator of natural defenses"@en,
+        "Stimulant des défenses naturelles"@fr,
+        "Stimolatore delle difese naturali"@it ;
+    rdfs:comment """
+        Ein Stimulator der natürlichen Abwehrkräfte ist ein chemisches Produkt, das die natürlichen Abwehrmechanismen von Pflanzen aktiviert.
+        Durch die Stimulierung des pflanzeneigenen Immunsystems erhöhen diese Produkte die Resistenz der Pflanzen gegen Krankheiten und Schädlinge, ohne direkt auf die Pathogene einzuwirken.
+        """@de,
+        """
+        A stimulator of natural defenses is a chemical product that activates the natural defense mechanisms of plants.
+        By stimulating the plant's own immune system, these products enhance the plant's resistance to diseases and pests without directly targeting the pathogens.
+        """@en,
+        """
+        Un stimulant des défenses naturelles est un produit chimique qui active les mécanismes de défense naturels des plantes.
+        En stimulant le système immunitaire propre à la plante, ces produits augmentent sa résistance aux maladies et aux ravageurs sans agir directement sur les agents pathogènes.
+        """@fr,
+        """
+        Uno stimolatore delle difese naturali è un prodotto chimico che attiva i meccanismi di difesa naturali delle piante.
+        Stimolando il sistema immunitario della pianta, questi prodotti ne aumentano la resistenza a malattie e parassiti senza agire direttamente sugli agenti patogeni.
+        """@it ;
+    rdfs:subClassOf :ChemicalProduct .
+
+:Nematicide a owl:Class ;
+    rdfs:label "Nematizid"@de,
+        "Nematicide"@en,
+        "Nématicide"@fr,
+        "Nematicida"@it ;
+    rdfs:comment """
+        Ein Nematizid ist ein chemisches Pflanzenschutzmittel, das zur Bekämpfung von Nematoden (Fadenwürmern) eingesetzt wird.
+        Diese Mittel sind entscheidend für den Schutz von Kulturpflanzen, da Nematoden erhebliche Schäden an Wurzelsystemen verursachen und die Ernteerträge mindern können.
+        """@de,
+        """
+        A nematicide is a chemical crop protection product used to control nematodes (roundworms).
+        These agents are crucial for protecting cultivated plants, as nematodes can cause significant damage to root systems and reduce crop yields.
+        """@en,
+        """
+        Un nématicide est un produit phytosanitaire chimique utilisé pour lutter contre les nématodes (vers ronds).
+        Ces agents sont essentiels pour protéger les plantes cultivées, car les nématodes peuvent causer des dommages importants aux systèmes racinaires et réduire les rendements.
+        """@fr,
+        """
+        Un nematicida è un prodotto fitosanitario chimico utilizzato per controllare i nematodi (vermi cilindrici).
+        Questi agenti sono fondamentali per proteggere le colture, poiché i nematodi possono danneggiare gravemente i sistemi radicali e ridurre le rese.
+        """@it ;
+    rdfs:subClassOf :ChemicalProduct .
+
+:NonChemicalSubstance a owl:Class ;
+    rdfs:label "Chemisch nicht definierbare Substanz"@de ;
+    rdfs:comment "Generische Klasse für Substanzen, Gemische oder Formulierungsbestandteile, die sich nicht auf eine oder wenige klar definierte chemische Verbindung beziehen."@de ;
+    rdfs:subClassOf :Substance .
+
+:Notice a owl:Class ;
+    rdfs:label "Hinweis"@de,
+        "Notice"@en .
+
+:Obligation a owl:Class ;
+    rdfs:label "Auflage zu Behandlungen"@de,
+        "Application requirement"@en,
+        "Exigence d'application"@fr,
+        "Requisito di applicazione"@it ;
+    rdfs:comment """
+        Eine Auflage ist eine spezifische Bedingung oder Anforderung, die für die sachgemässe Anwendung eines Pflanzenschutzmittels gemäss dem Schweizer Pflanzenschutzmittelverzeichnis erfüllt werden muss.
+        Diese Auflagen sollen die sichere und effektive Verwendung des Produkts gewährleisten und Risiken für Mensch, Tier und Umwelt minimieren.
+        """@de,
+        """
+        An application requirement is a specific condition or obligation that must be met for the proper use of a plant protection product according to the Swiss Plant Protection Product Register.
+        These requirements are intended to ensure the safe and effective use of the product, minimizing risks to human health, animals, and the environment.
+        """@en,
+        """
+        Une exigence d'application est une condition ou obligation spécifique à respecter pour l'utilisation appropriée d'un produit phytosanitaire selon le registre suisse des produits phytosanitaires.
+        Ces exigences visent à garantir une utilisation sûre et efficace du produit, en minimisant les risques pour la santé humaine, les animaux et l'environnement.
+        """@fr,
+        """
+        Un requisito di applicazione è una condizione o obbligo specifico da rispettare per l’uso corretto di un prodotto fitosanitario secondo il registro svizzero dei prodotti fitosanitari.
+        Questi requisiti mirano a garantire un uso sicuro ed efficace del prodotto, riducendo al minimo i rischi per la salute umana, gli animali e l’ambiente.
+        """@it ;
+    rdfs:subClassOf :Notice .
+
+:ParallelImport a owl:Class ;
+    rdfs:label "Parallelimport"@de,
+        "Parallel import"@en,
+        "Importation parallèle"@fr,
+        "Importazione parallela"@it ;
+    rdfs:comment """
+        Ein Parallelimport bezeichnet den Import von Pflanzenschutzmitteln, die in einem Land rechtmässig zugelassen sind und ohne ausdrückliche Zustimmung des Rechteinhabers in ein anderes Land eingeführt werden, sofern sie in Zusammensetzung und Zulassungsanforderungen einem bereits im Einfuhrland zugelassenen Produkt entsprechen.
+        In der Schweiz erfordert ein solcher Import eine Generaleinfuhrbewilligung sowie die Einhaltung spezifischer Vorschriften zu Kennzeichnung, Verpackung und Verwendung gemäss dem schweizerischen Referenzprodukt.
+        Dieses System gewährleistet die Verfügbarkeit von Produkten und berücksichtigt gleichzeitig Sicherheits-, Zulassungs- und Schutzrechte des geistigen Eigentums.
+        """@de,
+        """
+        A parallel import refers to the importation of pesticide products that are legally authorized in one country and are brought into another without the direct consent of the intellectual property holder, provided they meet the same composition and regulatory standards as a product already authorized in the importing country.
+        In Switzerland, such imports require a general import permit and compliance with specific labeling, packaging, and usage regulations aligned with the Swiss-approved reference product.
+        This system ensures product availability while maintaining safety, regulatory adherence, and respect for intellectual property rights.
+        """@en,
+        """
+        Une importation parallèle désigne l'importation de produits phytosanitaires légalement autorisés dans un pays, introduits dans un autre pays sans le consentement explicite du détenteur des droits, à condition qu'ils répondent aux mêmes exigences de composition et de réglementation qu'un produit déjà autorisé dans le pays importateur.
+        En Suisse, une telle importation nécessite une autorisation générale d'importation ainsi que le respect des exigences spécifiques en matière d'étiquetage, d'emballage et d'utilisation selon le produit de référence suisse.
+        Ce système garantit la disponibilité des produits tout en assurant la sécurité, la conformité réglementaire et le respect des droits de propriété intellectuelle.
+        """@fr,
+        """
+        Un'importazione parallela si riferisce all'importazione di prodotti fitosanitari legalmente autorizzati in un paese e introdotti in un altro senza il consenso diretto del titolare dei diritti di proprietà intellettuale, purché rispettino la stessa composizione e gli standard normativi di un prodotto già autorizzato nel paese importatore.
+        In Svizzera, tali importazioni richiedono un'autorizzazione generale all'importazione e il rispetto delle norme specifiche relative all'etichettatura, all'imballaggio e all'uso secondo il prodotto di riferimento svizzero approvato.
+        Questo sistema garantisce la disponibilità dei prodotti, mantenendo al contempo la sicurezza, la conformità normativa e il rispetto dei diritti di proprietà intellettuale.
+        """@it ;
+    rdfs:seeAlso <https://www.fedlex.admin.ch/eli/cc/2010/340/de#art_36> ;
+    rdfs:subClassOf :Product .
+
+:Pheromone a owl:Class ;
+    rdfs:label "Pheromon"@de,
+        "Pheromone"@en,
+        "Phéromone"@fr,
+        "Feromone"@it ;
+    rdfs:comment """
+        Pheromone sind chemische Substanzen, die von Insekten abgesondert werden, um mit Artgenossen zu kommunizieren.
+        Sie beeinflussen Verhaltensweisen wie Paarung, Aggregation oder Spurverfolgung.
+        In der Schädlingsbekämpfung werden synthetische Pheromone als Lockstoffe eingesetzt, um Schädlingspopulationen zu überwachen oder zu kontrollieren.
+        """@de,
+        """
+        Pheromones are chemical substances secreted by insects to communicate with conspecifics.
+        They influence behaviors such as mating, aggregation, or trail following.
+        In pest management, synthetic pheromones are used as attractants to monitor or control pest populations.
+        """@en,
+        """
+        Les phéromones sont des substances chimiques sécrétées par les insectes pour communiquer avec leurs congénères.
+        Elles influencent des comportements comme l'accouplement, l'agrégation ou le suivi de pistes.
+        En lutte antiparasitaire, des phéromones synthétiques sont utilisées comme attractifs pour surveiller ou contrôler les populations de nuisibles.
+        """@fr,
+        """
+        Le feromoni sono sostanze chimiche secrete dagli insetti per comunicare con i loro simili.
+        Influenzano comportamenti come l'accoppiamento, l'aggregazione o il tracciamento.
+        Nella lotta ai parassiti, i feromoni sintetici sono usati come attrattivi per monitorare o controllare le popolazioni infestanti.
+        """@it ;
+    rdfs:subClassOf :Insecticide ;
+    skos:altLabel "Insektenlockstoffe"@de,
+        "Insect Attractant"@en,
+        "Attractif pour insectes"@fr,
+        "Attrattivo per insetti"@it .
+
+:Phytoregulator a owl:Class ;
+    rdfs:label "Phytoregulator"@de,
+        "Phytoregulator"@en,
+        "Phytorégulateur"@fr,
+        "Fitorregolatore"@it ;
+    rdfs:subClassOf :ChemicalProduct .
+
+:Product a owl:Class ;
+    rdfs:label "Produkt"@de,
+        "Product"@en,
+        "Produit"@fr,
+        "Prodotto"@it ;
+    rdfs:comment """
+        Repräsentiert jedes Element im Rahmen des Pflanzenschutzes, das mit einer eidgenössischen Zulassungsnummer registriert ist und spezifische Berechtigungen hinsichtlich der nicht-beruflichen Verwendung aufweist.
+        """@de,
+        """
+        Represents any item within the crop protection framework that is registered with a federal admission number and has specified permissions regarding non-professional use.
+        """@en,
+        """
+        Représente tout élément dans le cadre de la protection des cultures, enregistré avec un numéro d'autorisation fédéral et disposant d'autorisations spécifiques pour l'utilisation non professionnelle.
+        """@fr,
+        """
+        Rappresenta qualsiasi elemento nell'ambito della protezione delle colture, registrato con un numero di autorizzazione federale e con specifici permessi per l'uso non professionale.
+        """@it ;
+    rdfs:scopeNote """
+        Diese Klasse ist für die Modellierung aller Pflanzenschutzmittel vorgesehen, die eine eidgenössische Registrierung erfordern und Einschränkungen oder Berechtigungen für die nicht-berufliche Nutzung gemäss den Schweizer Vorschriften aufweisen können.
+        """@de,
+        """
+        This class is intended for modeling all crop protection products requiring federal registration and that may have restrictions or allowances for non-professional usage as defined by Swiss regulations.
+        """@en,
+        """
+        Cette classe est destinée à modéliser tous les produits phytosanitaires nécessitant une autorisation fédérale et pouvant comporter des restrictions ou autorisations pour une utilisation non professionnelle conformément à la réglementation suisse.
+        """@fr,
+        """
+        Questa classe è destinata a modellare tutti i prodotti fitosanitari che richiedono una registrazione federale e che possono avere restrizioni o autorizzazioni per l'uso non professionale secondo le normative svizzere.
+        """@it ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom :ProductNotice ;
+            owl:onProperty :notice ] ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :federalAdmissionNumber ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :isNonProfessionallyAllowed ] .
+
+:ProductNotice a owl:Class ;
+    rdfs:label "Hinweise zum Produkt"@de,
+        "Product notice"@en ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( :HazardStatement :DangerSymbol :SignalWords ) ] .
+
+:Rodenticide a owl:Class ;
+    rdfs:label "Rodentizid"@de,
+        "Rodenticide"@en,
+        "Rodenticide"@fr,
+        "Rodenticida"@it ;
+    rdfs:subClassOf :ChemicalProduct .
+
+:SeedDressing a owl:Class ;
+    rdfs:label "Saatbeizmittel"@de,
+        "Seed dressing"@en,
+        "Traitement des semences"@fr,
+        "Concia delle sementi"@it ;
+    rdfs:subClassOf :ChemicalProduct .
+
+:SignalWords a owl:Class ;
+    rdfs:label "Signalwort"@de,
+        "Signal word"@en ;
+    rdfs:comment """
+        Im Global harmonisierten System (GHS) verwendete Signalwörter zur Gefahrenkommunikation, z.B. 'Gefahr' und 'Warnung'.
+        """@de,
+        """
+        Signal words used in the Globally Harmonized System (GHS) for hazard communication, e.g. 'Danger' and 'Warning'.
+        """@en ;
+    rdfs:subClassOf :Notice .
+
+:SoapProduct a owl:Class ;
+    rdfs:label "Seifenpräparat-Insektizide"@de,
+        "Soap product insecticides"@en,
+        "Insecticides à base de savon"@fr,
+        "Insetticidi a base di sapone"@it ;
+    rdfs:subClassOf :Insecticide .
+
+:StorageProtectors a owl:Class ;
+    rdfs:label "Vorratsschutzmittel"@de,
+        "Storage protectors"@en,
+        "Produits de protection des stocks"@fr,
+        "Prodotti per la protezione delle scorte"@it ;
+    rdfs:subClassOf :ChemicalProduct .
+
+:Substance a owl:Class ;
+    rdfs:label "Substanz"@de,
+        "Substance"@en ;
+    rdfs:comment """
+    Substances are what the components of plant protection products are made of.
+    """@en .
+
+:Unit a owl:Class ;
+    rdfs:label "Einheit"@de,
+        "Unit"@en .
+
+:Viricide a owl:Class ;
+    rdfs:label "Virizid"@de,
+        "Viricide"@en,
+        "Virucide"@fr,
+        "Viricida"@it ;
+    rdfs:subClassOf :ChemicalProduct .
+
+_:n6368d8c23b8048d6858c853bf9596736b13 a owl:Class ;
+    owl:oneOf ( :AdditiveToDeclare :Synergist :Safener :ActiveIngredient ) .
+
+schema:addressLocality a owl:DatatypeProperty ;
+    rdfs:label "Ortschaft"@de,
+        "Postal locality"@en,
+        "Localité postale"@fr,
+        "Località postale"@it ;
+    rdfs:domain schema:PostalAddress ;
+    rdfs:range xsd:string .
+
+schema:email a owl:DatatypeProperty ;
+    rdfs:label "Email-Adresse"@de,
+        "Email address"@en,
+        "Adresse e-mail"@fr,
+        "Indirizzo e-mail"@it ;
+    rdfs:domain schema:Organization ;
+    rdfs:range xsd:string .
+
+schema:faxNumber a owl:DatatypeProperty ;
+    rdfs:label "Fax-Nummer"@de,
+        "Fax number"@en,
+        "Numéro de fax"@fr,
+        "Numero di fax"@it ;
+    rdfs:comment """
+        Die Faxnummer des Unternehmens, formatiert gemäss RFC 3966.
+        """@de,
+        """
+        The fax number of the company, formatted as per RFC 3966.
+        """@en,
+        """
+        Le numéro de fax de l'entreprise, formaté selon la norme RFC 3966.
+        """@fr,
+        """
+        Il numero di fax dell'azienda, formattato secondo la RFC 3966.
+        """@it ;
+    rdfs:domain schema:Organization ;
+    rdfs:isDefinedBy <https://www.rfc-editor.org/rfc/rfc3966> ;
+    rdfs:range xsd:string .
+
+schema:legalName a owl:DatatypeProperty ;
+    rdfs:label "Rechtlicher Name"@de,
+        "Legal name"@en,
+        "Nom légal"@fr,
+        "Nome legale"@it ;
+    rdfs:comment """
+        Der offizielle Name der Organisation, z. B. der eingetragene Firmenname.
+        """@de,
+        """
+        The official name of the organization, e.g. the registered company name.
+        """@en,
+        """
+        Le nom officiel de l'organisation, par exemple le nom commercial enregistré.
+        """@fr,
+        """
+        Il nome ufficiale dell'organizzazione, ad esempio il nome commerciale registrato.
+        """@it ;
+    rdfs:domain schema:Organization ;
+    rdfs:range xsd:string .
+
+schema:postOfficeBoxNumber a owl:DatatypeProperty ;
+    rdfs:label "Postfachnummer"@de,
+        "Post office box number"@en,
+        "Numéro de boîte postale"@fr,
+        "Numero della casella postale"@it ;
+    rdfs:comment """
+        Die Postfachnummer für Postfachadressen.
+        """@de,
+        """
+        The post office box number for PO box addresses.
+        """@en,
+        """
+        Le numéro de la boîte postale pour les adresses avec boîte postale.
+        """@fr,
+        """
+        Il numero della casella postale per indirizzi con casella postale.
+        """@it ;
+    rdfs:domain schema:PostalAddress ;
+    rdfs:range xsd:string .
+
+schema:postalCode a owl:DatatypeProperty ;
+    rdfs:label "Postleitzahl"@de,
+        "Postal code"@en,
+        "Code postal"@fr,
+        "Codice postale"@it ;
+    rdfs:domain schema:PostalAddress ;
+    rdfs:range xsd:string .
+
+schema:streetAddress a owl:DatatypeProperty ;
+    rdfs:label "Strassenadresse"@de,
+        "Street address"@en,
+        "Adresse de rue"@fr,
+        "Indirizzo stradale"@it ;
+    rdfs:domain schema:PostalAddress ;
+    rdfs:range xsd:string .
+
+schema:telephone a owl:DatatypeProperty ;
+    rdfs:label "Telefonnummer"@de,
+        "Phone number"@en,
+        "Numéro de téléphone"@fr,
+        "Numero di telefono"@it ;
+    rdfs:comment """
+        Die Telefonnummer des Unternehmens, formatiert gemäss RFC 3966.
+        """@de,
+        """
+        The telephone number of the company, formatted as per RFC 3966.
+        """@en,
+        """
+        Le numéro de téléphone de l'entreprise, formaté selon la RFC 3966.
+        """@fr,
+        """
+        Il numero di telefono dell'azienda, formattato secondo la RFC 3966.
+        """@it ;
+    rdfs:domain schema:Organization ;
+    rdfs:isDefinedBy <https://www.rfc-editor.org/rfc/rfc3966> ;
+    rdfs:range xsd:string .
+
+:CAS a owl:DatatypeProperty ;
+    rdfs:label "CAS-Nummer"@de,
+        "CAS registry number"@en ;
+    rdfs:comment """
+        Die CAS-Nummer (auch CAS-Registrierungsnummer und CAS-Registernummer, engl. CAS Registry Number,
+        CAS = Chemical Abstracts Service) ist ein internationaler Bezeichnungsstandard für chemische Stoffe.
+        Für jeden in der CAS-Datenbank registrierten chemischen Stoff (auch Biosequenzen, Legierungen, Polymere)
+        existiert eine eindeutige CAS-Nummer.
+        """@de ;
+    rdfs:seeAlso <https://en.wikipedia.org/wiki/CAS_Registry_Number> .
+
+:dosage a owl:DatatypeProperty ;
+    rdfs:label "Dosierung"@de,
+        "Dosage"@en ;
+    rdfs:domain :Indication ;
+    rdfs:range schema:QuantitativeValue .
+
+:eppo a owl:DatatypeProperty ;
+    rdfs:label "EPPO-Code"@de,
+        "EPPO code"@en ;
+    rdfs:comment """
+        Der EPPO-Code ist ein standardisierter alphanumerischer Code,
+        der von der Europäischen und mediterranen Pflanzenschutzorganisation (EPPO)
+        zur einheitlichen Identifizierung von Pflanzen, Schädlingen und
+        Krankheitserregern verwendet wird.
+        """@de,
+        """
+        The EPPO code is a standardized alphanumeric identifier assigned
+        by the European and Mediterranean Plant Protection Organization (EPPO)
+        to uniquely identify plants, pests, and pathogens.
+        """@en .
+
+:exhaustionDeadline a owl:DatatypeProperty ;
+    rdfs:label "Ablaufdatum der Nutzung"@de,
+        "Exhaustion deadline"@en ;
+    rdfs:comment """
+        Das Datum, an dem das Produkt nicht mehr genutzt werden darf, in der Regel nach der Widerrufung der Produktregistrierung.
+        """@de,
+        """
+        The date by which the product must no longer be used, typically after the product registration has been revoked.
+        """@en ;
+    rdfs:domain :Product ;
+    rdfs:range xsd:date .
+
+:expenditure a owl:DatatypeProperty ;
+    rdfs:label "Ausbringungsmenge"@de,
+        "Expenditure"@en ;
+    rdfs:domain :Indication ;
+    rdfs:range schema:QuantitativeValue .
+
+:federalAdmissionNumber a owl:DatatypeProperty ;
+    rdfs:label "Eidgenössische Zulassungsnummer"@de,
+        "Federal admission number"@en,
+        "Numéro d'autorisation fédérale"@fr,
+        "Numero di autorizzazione federale"@it ;
+    rdfs:comment """
+        Die eidgenössische Zulassungsnummer identifiziert eine Produktregistrierung eindeutig.
+        Sie ist entweder als W-Nummer im Fall von Bundeszulassungen (z. B. W-18) oder als Parallelimportnummer mit dem Anfangsbuchstaben des Ursprungslandes im Code im Fall von Parallelimporten (z. B. I-2789 für einen Parallelimport aus Italien) aufgebaut. 
+        Nummern mit einem Bindestrich (z. B. W-18-1, W-18-2) stehen für gleichwertige Produkte, die sich im Besitz verschiedener juristischer Personen befinden, während Nummern ohne Bindestrich (z. B. W-18) für die ursprüngliche Registrierung stehen.
+        """@de,
+        """
+        The federal admission number uniquely identifies a product registration.
+        It is either constructed as a W-Number in the case of federal admissions (e.g., W-18) or as a parallel import number with the country of origin's initial letter in the code in the case of parallel imports (e.g., I-2789 for a parallel import from Italy).
+        Numbers with a dash (e.g., W-18-1, W-18-2) represent equivalent products held by different legal entities, while numbers without a dash (e.g., W-18) represent the original registration.
+        """@en ;
+    rdfs:domain :Product ;
+    rdfs:range xsd:NCName .
+
+:foreignAdmissionNumber a owl:DatatypeProperty ;
+    rdfs:label "Ausländische Zulassungsnummer"@de,
+        "Foreign admission number"@en,
+        "Numéro d'autorisation étrangère"@fr,
+        "Numero di autorizzazione estera"@it ;
+    rdfs:comment """
+        Diese Eigenschaft gibt die Zulassungs- oder Registrierungsnummer an, die dem Produkt in seinem Herkunftsland zugewiesen wurde.
+        """@de,
+        """
+        This property specifies the admission or registration number assigned to the product in its country of origin.
+        """@en ;
+    rdfs:domain :ParallelImport ;
+    rdfs:range xsd:string .
+
+:hasGrammPerLitre a owl:DatatypeProperty ;
+    rdfs:label "Anteil [g/L]"@de,
+        "Portion [g/L]"@en,
+        "Proportion [g/L]"@fr,
+        "Percentuale [g/L]"@it ;
+    rdfs:domain :ComponentPortion ;
+    rdfs:range xsd:decimal .
+
+:hasHazardStatementCode a owl:DatatypeProperty ;
+    rdfs:label "Code bezüglich Gefahrenhinweise"@de,
+        "Hazard statement code"@en,
+        "Code des mentions de danger"@fr,
+        "Codice delle indicazioni di pericolo"@it ;
+    rdfs:domain :HazardStatement ;
+    rdfs:range xsd:string .
+
+:hasPercentage a owl:DatatypeProperty ;
+    rdfs:label "Anteil [%]"@de,
+        "Portion [%]"@en,
+        "Proportion [%]"@fr,
+        "Percentuale [%]"@it ;
+    rdfs:domain :ComponentPortion ;
+    rdfs:range xsd:decimal .
+
+:isNonProfessionallyAllowed a owl:DatatypeProperty ;
+    rdfs:label "Erlaubnis für die nicht-berufliche Verwendung"@de,
+        "Allowance for non-professional use"@en,
+        "Autorisation pour l'utilisation non professionnelle"@fr,
+        "Autorizzazione per l'uso non professionale"@it ;
+    rdfs:comment """
+        Diese Eigenschaft gibt an, ob ein Produkt für die nicht-berufliche Verwendung zugelassen ist, wie in Artikel 64 der Schweizer Pflanzenschutzmittelverordnung (PSMV) definiert.
+        """@de,
+        """
+        This property indicates whether a product is permitted for non-professional use, as defined by Article 64 of the Swiss Plant Protection Products Ordinance (PSMV).
+        """@en,
+        """
+        Cette propriété indique si un produit est autorisé pour une utilisation non professionnelle, comme défini à l'article 64 de l'Ordonnance suisse sur les produits phytosanitaires (OPPh).
+        """@fr,
+        """
+        Questa proprietà indica se un prodotto è autorizzato per l'uso non professionale, come definito all'articolo 64 dell'Ordinanza svizzera sui prodotti fitosanitari (OPF).
+        """@it ;
+    rdfs:domain :Product ;
+    rdfs:range xsd:boolean ;
+    rdfs:seeAlso <https://www.fedlex.admin.ch/eli/cc/2010/340/de#art_64> .
+
+:iupac a owl:DatatypeProperty ;
+    rdfs:label "IUPAC-Name"@de,
+        "IUPAC name"@en,
+        "Nom IUPAC"@fr,
+        "Nome IUPAC"@it ;
+    rdfs:comment """
+        Systematische Bezeichnung der chemischen Verbindung gemäss den Regeln der IUPAC‑Nomenklatur.
+        """@de,
+        """
+        The systematic IUPAC name of the chemical substance, following IUPAC nomenclature rules.
+        """@en,
+        """
+        Dénomination systématique de la substance chimique selon les règles de la nomenclature IUPAC.
+        """@fr,
+        """
+        Denominazione sistematica della sostanza chimica secondo le regole della nomenclatura IUPAC.
+        """@it ;
+    rdfs:domain :ComponentPortion ;
+    rdfs:range xsd:string .
+
+:packageInsertNumber a owl:DatatypeProperty ;
+    rdfs:label "Packungsbeilagenummer"@de,
+        "Package insert number"@en,
+        "Numéro de la notice"@fr,
+        "Numero del foglietto illustrativo"@it ;
+    rdfs:domain :Product ;
+    rdfs:range xsd:string .
+
+:soldoutDeadline a owl:DatatypeProperty ;
+    rdfs:label "Ausverkauft-Frist"@de,
+        "Sold out deadline"@en,
+        "Date limite de vente"@fr,
+        "Termine ultimo di vendita"@it ;
+    rdfs:comment """
+        Das Datum, an dem das Produkt nicht mehr verkauft werden darf, in der Regel nach der Widerrufung der Produktregistrierung.
+        """@de,
+        """
+        The date by which the product can no longer be sold, typically after the product registration has been revoked.
+        """@en,
+        """
+        La date à partir de laquelle le produit ne peut plus être vendu, généralement après le retrait de l'enregistrement du produit.
+        """@fr,
+        """
+        La data entro la quale il prodotto non può più essere venduto, di solito dopo la revoca della registrazione del prodotto.
+        """@it ;
+    rdfs:domain :Product ;
+    rdfs:range xsd:date .
+
+:waitingPeriod a owl:DatatypeProperty ;
+    rdfs:label "Minimale Wartezeit"@de,
+        "Minimal waiting period"@en ;
+    rdfs:comment "Das minimal erforderliche Zeitintervall nach einer Behandlung, in dem dasselbe Produkt nicht erneut auf dieselbe Kulturpflanze angewendet werden sollte."@de,
+        "The required time interval after a treatment during which the same product should not be applied again to the same crop."@en ;
+    rdfs:domain :Indication ;
+    rdfs:range schema:QuantitativeValue .
+
+schema:address a owl:ObjectProperty ;
+    rdfs:label "hat Adresse"@de,
+        "has address"@en,
+        "a une adresse"@fr,
+        "ha un indirizzo"@it ;
+    rdfs:domain schema:Organization ;
+    rdfs:range schema:PostalAddress .
+
+schema:addressCountry a owl:ObjectProperty ;
+    rdfs:label "befindet sich in Land"@de,
+        "is located in country"@en,
+        "se trouve dans le pays"@fr,
+        "si trova nel paese"@it ;
+    rdfs:domain schema:PostalAddress ;
+    rdfs:range schema:Country .
+
+:activeIngredients a owl:ObjectProperty ;
+    rdfs:label "Aktivsubstanz"@de,
+        "Active ingredients"@en .
+
+:applicationArea a owl:ObjectProperty ;
+    rdfs:label "Anwendungsgebiet"@de,
+        "Application area"@en ;
+    rdfs:domain :Indication ;
+    rdfs:range :ApplicationArea .
+
+:cropGroup a owl:ObjectProperty ;
+    rdfs:label "Kulturgruppe"@de,
+        "Crop group"@en,
+        "Groupe de cultures"@fr,
+        "Gruppo colturale"@it ;
+    rdfs:domain :Indication ;
+    rdfs:range :CropGroup .
+
+:cropStressor a owl:ObjectProperty ;
+    rdfs:label "Schadverursacher"@de,
+        "Cause of damage"@en,
+        "Cause du dommage"@fr,
+        "Causa del danno"@it ;
+    rdfs:domain :Indication ;
+    rdfs:range :CropStressor .
+
+:formulation a owl:ObjectProperty ;
+    rdfs:label "Formulierung"@de,
+        "Formulation"@en,
+        "Formulation"@fr,
+        "Formulazione"@it ;
+    rdfs:domain :Formulation ;
+    rdfs:range :Product .
+
+:hasChebiIdentity a owl:ObjectProperty ;
+    rdfs:label "CheBI-Identität"@de,
+        "CheBI identity"@en ;
+    rdfs:comment "Verknüpft eine Substanz mit der entsprechenden chemischen Entität in der CheBI-Ontologie und erleichtert so eine standardisierte chemische Identifizierung."@de,
+        "Associates a substance with its corresponding chemical entity in the CheBI ontology, facilitating standardized chemical identification."@en ;
+    rdfs:domain :Substance ;
+    rdfs:range CHEBI:24431 .
+
+:hasChildCropGroup a owl:ObjectProperty ;
+    rdfs:label "Untergruppe"@de,
+        "Cild crop group"@en ;
+    rdfs:comment "Diese Eigenschaft zeigt an, dass eine Kulturgruppe eine andere Kulturgruppe als Untergruppe enthält."@de,
+        "This property indicates that a crop group includes another crop group as its subgroup."@en ;
+    rdfs:domain :CropGroup ;
+    rdfs:range :CropGroup ;
+    owl:inverseOf :hasParentCropGroup .
+
+:hasComponentPortion a owl:ObjectProperty ;
+    rdfs:label "hat Komponentenportion"@de,
+        "has component portion"@en ;
+    rdfs:comment "Verknüpft ein Gemisch mit einer seiner Komponentenportionen, wobei jede Portion eine Bestandssubstanz und deren Prozentsatz angibt."@de,
+        "Links a mixture to one of its component portions, each detailing a component substance and its percentage."@en ;
+    rdfs:domain :ChemicalProduct ;
+    rdfs:range :ComponentPortion .
+
+:hasCountryOfOrigin a owl:ObjectProperty ;
+    rdfs:label "Herkunftsland"@de,
+        "Country of origin"@en,
+        "Pays d'origine"@fr,
+        "Paese di origine"@it ;
+    rdfs:comment """
+        Diese Eigenschaft gibt das Land an, aus dem das Produkt stammt.
+        """@de,
+        """
+        This property indicates the country where the product originates.
+        """@en,
+        """
+        Cette propriété indique le pays d'où provient le produit.
+        """@fr,
+        """
+        Questa proprietà indica il paese da cui proviene il prodotto.
+        """@it ;
+    rdfs:domain :Product ;
+    rdfs:range schema:Country .
+
+:hasParentCropGroup a owl:ObjectProperty ;
+    rdfs:label "Übergruppe"@de,
+        "Parent crop group"@en,
+        "Groupe de cultures parent"@fr,
+        "Gruppo colturale genitore"@it ;
+    rdfs:domain :CropGroup ;
+    rdfs:range :CropGroup .
+
+:hasPermissionHolder a owl:ObjectProperty ;
+    rdfs:label "Verkaufsbewilligungshalter"@de,
+        "Permission holder"@en,
+        "Titulaire de l'autorisation de vente"@fr,
+        "Titolare dell'autorizzazione alla vendita"@it ;
+    rdfs:comment """
+        Diese Eigenschaft verknüpft ein Produkt mit der Firma, die berechtigt ist, es zu verkaufen.
+        """@de,
+        """
+        This property links a product to the company authorized to sell it.
+        """@en,
+        """
+        Cette propriété relie un produit à l'entreprise autorisée à le vendre.
+        """@fr,
+        """
+        Questa proprietà collega un prodotto all'azienda autorizzata a venderlo.
+        """@it ;
+    rdfs:domain :Product ;
+    rdfs:range schema:Organization ;
+    owl:inverseOf :holdsPermissionToSell .
+
+:hasUnit a owl:ObjectProperty ;
+    rdfs:label "Einheit"@de,
+        "Unit"@en,
+        "Unité"@fr,
+        "Unità"@it ;
+    rdfs:domain :TreatmentConstraint .
+
+:holdsPermissionToSell a owl:ObjectProperty ;
+    rdfs:label "PSM-Verkaufsbewilligungen"@de,
+        "PPP selling permission"@en,
+        "Autorisation de vente de produits phytosanitaires"@fr,
+        "Autorizzazione alla vendita di prodotti fitosanitari"@it ;
+    rdfs:comment """
+        Diese Eigenschaft verknüpft eine Organisation mit den Produkten, für die sie zum Verkauf berechtigt ist.
+        """@de,
+        """
+        This property links an organization to the products it is authorized to sell.
+        """@en,
+        """
+        Cette propriété relie une organisation aux produits qu'elle est autorisée à vendre.
+        """@fr,
+        """
+        Questa proprietà collega un'organizzazione ai prodotti che è autorizzata a vendere.
+        """@it ;
+    rdfs:domain schema:Organization ;
+    rdfs:range :Product ;
+    owl:inverseOf :hasPermissionHolder .
+
+:indication a owl:ObjectProperty ;
+    rdfs:label "Indikation"@de,
+        "Indication"@en,
+        "Indication"@fr,
+        "Indicazione"@it ;
+    rdfs:range :Indication ;
+    owl:inverseOf :product .
+
+:isDefinedByBiologicalTaxon a owl:ObjectProperty ;
+    rdfs:label "Biologische Taxon"@de,
+        "Biological taxon"@en,
+        "Taxon biologique"@fr,
+        "Taxon biologico"@it ;
+    rdfs:range wikidata:Q16521 .
+
+:isSameProductAs a owl:ObjectProperty,
+        owl:SymmetricProperty ;
+    rdfs:label "ist dasselbe Produkt wie"@de,
+        "is the same product as"@en,
+        "est le même produit que"@fr,
+        "è lo stesso prodotto di"@it ;
+    rdfs:comment """
+        Gibt an, dass zwei Produkte in ihrer chemischen Zusammensetzung oder in ihrem Organismus identisch sind, aber unter verschiedenen Namen verkauft werden.
+        Solche zwei Produkte haben auch die gleiche Basis der Bundeszulassungsnummer.
+        Zum Beispiel haben die Produkte mit den Zulassungsnummern W-6761 und W-6761-1 die gleiche chemische Zusammensetzung.
+        """@de,
+        """
+        Indicates that two products are identical in their chemical composition or the contained organism but are sold under different names.
+        Such two products also share the same federal admission number base.
+        For example, the products with admission numbers W-6761 and W-6761-1 have the same chemical composition.
+        """@en,
+        """
+        Indique que deux produits sont identiques dans leur composition chimique ou leur organisme contenu, mais sont vendus sous des noms différents.
+        Ces deux produits partagent également la même base de numéro d'autorisation fédérale.
+        Par exemple, les produits avec les numéros d'autorisation W-6761 et W-6761-1 ont la même composition chimique.
+        """@fr,
+        """
+        Indica che due prodotti sono identici nella composizione chimica o nell'organismo contenuto, ma sono venduti con nomi diversi.
+        Tali prodotti condividono anche la stessa base del numero di autorizzazione federale.
+        Ad esempio, i prodotti con i numeri di autorizzazione W-6761 e W-6761-1 hanno la stessa composizione chimica.
+        """@it ;
+    rdfs:domain :Product ;
+    rdfs:range :Product .
+
+:notice a owl:ObjectProperty ;
+    rdfs:label "Hinweis"@de,
+        "Notice"@en ;
+    rdfs:range :Notice .
+
+:partialChebiIdentity a owl:ObjectProperty ;
+    rdfs:label "Partielle CheBI-Identität"@de,
+        "Partial CheBI identity"@en .
+
+:product a owl:ObjectProperty ;
+    rdfs:label "PSM-Produkt"@de,
+        "PPP product"@en,
+        "Produit PPP"@fr,
+        "Prodotto PPP"@it ;
+    rdfs:comment """
+        Verknüpft eine erlaubte Anwendung von PSM-Produkten (Indikation) mit dem jeweiligen Produkt.
+        """@de,
+        """
+        Links an authorized use of PPP products (indication) to the respective product.
+        """@en,
+        """
+        Lie un usage autorisé de produits PPP (indication) au produit correspondant.
+        """@fr,
+        """
+        Collega un uso autorizzato dei prodotti PPP (indicazione) al rispettivo prodotto.
+        """@it ;
+    rdfs:range :Product ;
+    owl:inverseOf :indication .
+
+:role a owl:ObjectProperty ;
+    rdfs:label "Rolle"@de,
+        "Role"@en ;
+    rdfs:comment "The role that a particular component plays in a mixture."@en ;
+    rdfs:domain :ComponentPortion ;
+    rdfs:range _:n6368d8c23b8048d6858c853bf9596736b13 .
+
+:substance a owl:ObjectProperty ;
+    rdfs:label "Substanz"@de,
+        "Substance"@en ;
+    rdfs:domain :ComponentPortion ;
+    rdfs:range :Substance .
+
+srppp: a owl:Ontology ;
+    dcterms:creator "Federal Office for Agriculture" ;
+    dcterms:description """
+        Diese Ontologie veranschaulicht den Wert einer umfassenden und gut strukturierten Ontologieentwicklung für das Bundesamt für Landwirtschaft (und allgemein den Schweizer Agrar- und Lebensmittelsektor). Durch die formale Modellierung der Komplexität des Pflanzenschutzes (mit Schwerpunkt auf zugelassenen Produkten) verbessert sie das Verständnis der aktuellen Regeln und ermöglicht deren effektive Kommunikation über IT-Dienste.
+        """@de,
+        """
+        This ontology exemplifies the value of comprehensive and well-structured ontology development for the Swiss Federal Office for Agriculture (and more broadly the Swiss agri-food sector). By capturing the complexities of crop protection (with a focus on registered products) in a formal model, it enhances understanding of current rules and allows their effective communication via IT-services.
+        """@en,
+        """
+        Cette ontologie illustre la valeur d'un développement ontologique complet et bien structuré pour l'Office fédéral de l'agriculture (et plus largement pour le secteur agroalimentaire suisse). En modélisant formellement les complexités de la protection des cultures (avec un accent sur les produits enregistrés), elle améliore la compréhension des règles actuelles et permet leur communication efficace via des services informatiques.
+        """@fr,
+        """
+        Questa ontologia dimostra il valore di uno sviluppo ontologico completo e ben strutturato per l'Ufficio federale dell'agricoltura (e più in generale per il settore agroalimentare svizzero). Modellando formalmente le complessità della protezione delle colture (con un focus sui prodotti registrati), migliora la comprensione delle regole attuali e ne consente la comunicazione efficace tramite servizi informatici.
+        """@it ;
+    dcterms:title "Eine (demonstrative) Ontologie für den Pflanzenschutz in der Schweiz"@de,
+        "A (demonstrative) ontology for crop protection in Switzerland"@en,
+        "Une ontologie (démonstrative) pour la protection des cultures en Suisse"@fr,
+        "Un'ontologia (dimostrativa) per la protezione delle colture in Svizzera"@it ;
+    rdfs:seeAlso <https://raw.githubusercontent.com/blw-ofag-ufag/plant-protection/refs/heads/main/rdf/ontology.ttl> ;
+    owl:versionInfo "0.11" .
+
+chebi:formula rdfs:label "Formel"@de,
+        "Formula"@en .
+
+chebi:smiles rdfs:label "SMILES-Code"@de,
+        "SMILES code"@en .
+
+schema:image rdfs:label "Bild"@de,
+        "Image"@en .
+
+schema:maxValue rdfs:label "Maximaler Wert"@de,
+        "Maximal value"@en .
+
+schema:minValue rdfs:label "Minimaler Wert"@de,
+        "Minimal value"@en .
+
+schema:validFrom schema:name "Valid from"@en .
+
+schema:validTo schema:name "Valid to"@en .
+
+schema:value rdfs:label "Wert"@de,
+        "Value"@en .
+
+schema:unitCode rdfs:label "Einheitencode"@de,
+        "Unit code"@en .
+
+:ActiveIngredient rdfs:label "Aktivsubstanz"@de,
+        "Active substance"@en,
+        "Substance active"@fr,
+        "Sostanza attiva"@it ;
+    rdfs:comment """
+        Aktivsubstanzen (auch Wirkstoffe genannt) sind biologisch aktive Verbindungen, die in geringen Konzentrationen biochemische und physiologische Prozesse in pflanzlichen, tierischen und menschlichen Organismen quantitativ und/oder qualitativ in Form von Hemmung oder Aktivierung beeinflussen.
+        """@de,
+        """
+        Active substances (also known as active ingredients) are biologically active compounds which, in low concentrations, influence biochemical and physiological processes in plant, animal and human organisms quantitatively and/or qualitatively in the form of inhibition or activation.
+        """@en,
+        """
+        Les substances actives (également appelées principes actifs) sont des composés biologiquement actifs qui, à faibles concentrations, influencent les processus biochimiques et physiologiques des organismes végétaux, animaux et humains, de manière quantitative et/ou qualitative, par inhibition ou activation.
+        """@fr,
+        """
+        Le sostanze attive (note anche come principi attivi) sono composti biologicamente attivi che, in basse concentrazioni, influenzano quantitativamente e/o qualitativamente i processi biochimici e fisiologici negli organismi vegetali, animali e umani sotto forma di inibizione o attivazione.
+        """@it ;
+    rdfs:isDefinedBy <https://www.scienceindustries.ch/_file/27381/201903-begriffsklaerung-final-en.pdf> ;
+    skos:altLabel "Wirkstoff"@de,
+        "Active ingredient"@en,
+        "Principe actif"@fr,
+        "Principio attivo"@it .
+
+:AdditiveToDeclare rdfs:label "Zu deklarierende Additive"@de,
+        "Additives to declare"@en,
+        "Additifs à déclarer"@fr,
+        "Additivi da dichiarare"@it ;
+    rdfs:comment """
+        Additive, die in einem Produkt enthalten sind und deklariert werden müssen, beispielsweise aufgrund ihrer chemischen Eigenschaften oder potenziellen Auswirkungen.
+        """@de,
+        """
+        Additives that are included in a product and must be declared, for example due to their chemical properties or potential effects.
+        """@en,
+        """
+        Additifs présents dans un produit et devant être déclarés, par exemple en raison de leurs propriétés chimiques ou de leurs effets potentiels.
+        """@fr,
+        """
+        Additivi contenuti in un prodotto che devono essere dichiarati, ad esempio a causa delle loro proprietà chimiche o dei potenziali effetti.
+        """@it .
+
+:Safener rdfs:label "Safener"@de,
+        "Safener"@en .
+
+:Synergist rdfs:label "Synergist"@de,
+        "Synergist"@en,
+        "Synergiste"@fr,
+        "Sinergetico"@it ;
+    rdfs:comment """
+        Ein Synergist ist eine Substanz, die selbst keine oder nur geringe insektizide Wirkung besitzt, aber die Wirksamkeit von Insektiziden erhöht.
+        Synergisten wirken, indem sie die Entgiftungsmechanismen von Schädlingen hemmen, wodurch die Toxizität der Insektizide verstärkt wird.
+        """@de,
+        """
+        A synergist is a substance that has little or no insecticidal effect on its own but enhances the efficacy of insecticides.
+        Synergists function by inhibiting the detoxification mechanisms of pests, thereby increasing the toxicity of the insecticides.
+        """@en,
+        """
+        Un synergiste est une substance qui n'a que peu ou pas d'effet insecticide par elle-même, mais qui augmente l'efficacité des insecticides.
+        Les synergistes agissent en inhibant les mécanismes de détoxification des nuisibles, augmentant ainsi la toxicité des insecticides.
+        """@fr,
+        """
+        Un sinergetico è una sostanza che da sola ha un effetto insetticida nullo o minimo, ma aumenta l'efficacia degli insetticidi.
+        I sinergetici agiscono inibendo i meccanismi di disintossicazione dei parassiti, aumentando così la tossicità degli insetticidi.
+        """@it .
+
