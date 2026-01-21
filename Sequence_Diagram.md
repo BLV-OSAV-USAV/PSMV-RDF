@@ -30,7 +30,7 @@ sequenceDiagram
         ReasoningScript->>Repo: Reads, sorts and writes<br>all `.ttl` files
     deactivate ReasoningScript
 
-    UploadScript->>Repo: SHACL validation
+    UploadScript->>Repo: SHACL validation `graph.ttl`
     UploadScript->>LINDAS: Clears the existing graph
     UploadScript->>LINDAS: Uploads the new `graph.ttl`
 ```
