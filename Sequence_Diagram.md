@@ -26,10 +26,11 @@ sequenceDiagram
     activate ReasoningScript
         ReasoningScript->>Repo: Loads `.ttl` files<br>(`ontology.ttl`, foreign triples<br>from `rdf/foreign/*.ttl`, and manual<br>mappings from `rdf/mapping/*.ttl`)
         ReasoningScript->>ReasoningScript: Merges all RDF data
-        ReasoningScript->>ReasoningScript: Performs RDFS/OWL reasoning<br>(subclass, subproperty, inverseOf)<br>SHACL validation
+        ReasoningScript->>ReasoningScript: Performs RDFS/OWL reasoning<br>(subclass, subproperty, inverseOf)
         ReasoningScript->>Repo: Reads, sorts and writes<br>all `.ttl` files
     deactivate ReasoningScript
 
+    UploadScript->>Repo: SHACL validation
     UploadScript->>LINDAS: Clears the existing graph
     UploadScript->>LINDAS: Uploads the new `graph.ttl`
 ```
