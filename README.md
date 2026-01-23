@@ -23,40 +23,40 @@ A Python module for converting Swiss plant protection product data from CSV form
 psmv-rdf/
 ├── .github/
 │   └── workflows/
-│       ├── fetch-data.yml           # 1. Fetch raw CSV/source data
-│       ├── run-rdf-pipeline.yml     # 2. Convert CSV → RDF
-│       ├── shacl-validate.yml       # 3. Validate RDF using SHACL
-│       └── lindas-publication.yml   # 4. Publish validated RDF to LINDAS
+│       ├── fetch_data.yml           # 1. Fetch raw CSV/source data
+│       ├── run_rdf_pipeline.yml     # 2. Convert CSV → RDF
+│       ├── shacl_validate.yml       # 3. Validate RDF using SHACL
+│       └── lindas_publication.yml   # 4. Publish validated RDF to LINDAS
 │
 ├── data/
 │   ├── raw/
 │   ├── rdf/
-│   └── validated/
-│
-├── scripts/
-│   └── fetch_data.py
+│   └── processed/
+│ 
+├── services/
 │   └── run_rdf_pipeline.py             # Pipeline launcher
 │
 ├── src/
-│   └── psmv-converter/
-│       ├── __init__.py
-│       ├── fetcher.py
-│       ├── converter.py
-│       ├── validator.py
-│       ├── publisher.py
-│       └── utils/
-│           ├── __init__.py
-│           └── helpers.py
+│    ├── psmv_converter/
+│        ├── __init__.py              # Marks this as a Python package
+│        ├── scripts/
+│            ├── fetch_data.py  
+│            ├── validate_rdf.py  
+│        │   └── publish_rdf.py        # Standalone script for fetching data
+│        ├── converter.py             # Core module for conversion logic
+│        └── utils/
+│            ├── __init__.py          # Makes `utils` a subpackage
+│            └── functions.py         # Helper/utility functions used across the package
 │
 ├── shapes/                         # SHACL shapes
 │   └──shapes/README.md
-├── examples/                       # Example inputs/outputs
+│
 ├── tests/
 │   ├── test_converter.py
 │   ├── test_validator.py
 │   ├── test_publisher.py
-│   └── data/
-│       └── sample.csv
+│   └── data/                       # do wee need that?
+│       └── sample.csv              # do wee need that?
 │
 ├── docs/
 │   ├── architecture.md
@@ -65,7 +65,7 @@ psmv-rdf/
 ├── pyproject.toml
 ├── .gitignore
 ├── README.md
-└── requirements.txt
+└── environment.yml
 
 ```
 
