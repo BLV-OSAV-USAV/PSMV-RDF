@@ -23,13 +23,13 @@ def get_ssh_client():
     """Create and configure SSH client with host key verification."""
     client = SSHClient()
     
-    # Option A: Use known_hosts file
+    # Use known_hosts file
     known_hosts_path = os.path.expanduser('~/.ssh/known_hosts')
     if os.path.exists(known_hosts_path):
         client.load_host_keys(known_hosts_path)
         print(f"✓ Loaded host keys from {known_hosts_path}")
     
-    # Option B: Use host key from environment (CI/CD)
+    # Use host key from environment (CI/CD)
     elif os.getenv("SFTP_HOST_KEY"):
         import tempfile
         host_key = os.getenv("SFTP_HOST_KEY")
