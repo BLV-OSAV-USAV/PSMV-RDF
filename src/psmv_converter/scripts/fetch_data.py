@@ -6,7 +6,7 @@ from paramiko import SSHClient, AutoAddPolicy
 # Set the project root 
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../"))
 
-# Local path - can be overridden by environment variable
+# Local path
 DEFAULT_LOCAL_DIR = os.path.join(ROOT_DIR, "data/raw")
 LOCAL_DIR = os.getenv("LOCAL_DIR", DEFAULT_LOCAL_DIR)
 os.makedirs(LOCAL_DIR, exist_ok=True)
