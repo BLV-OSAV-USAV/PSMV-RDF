@@ -1,0 +1,12 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+CONSTRUCT {
+  ?object ?inverseProperty ?subject .
+}
+WHERE {
+  ?property owl:inverseOf ?inverseProperty .
+  ?subject ?property ?object .
+  FILTER NOT EXISTS {
+    ?object ?inverseProperty ?subject
+  }
+}
