@@ -19,3 +19,12 @@ Once your work is ready:
 2. Summarize your changes clearly in the description.
 3. Link the PR to the issue it resolves (e.g. `Closes #42`).
 4. Ensure there are no merge conflicts and all tests are passed before you change to status to standard pull request.
+
+## Ontology naming conventions
+
+Aligning with standard Semantic Web conventions, we enforce the following casing rules for URI local names:
+
+- **Classes** (e.g., `owl:Class`): Use **PascalCase** (a.k.a. UpperCamelCase).
+- **Properties** (e.g., `owl:ObjectProperty`, `owl:DatatypeProperty`): Use **camelCase** (a.k.a. lowerCamelCase).
+
+Ensure identifiers are semantically meaningful and descriptive to facilitate readability and improve [DX](https://en.wikipedia.org/wiki/Developer_experience).
