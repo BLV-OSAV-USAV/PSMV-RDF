@@ -1,0 +1,34 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX ghs: <https://agriculture.ld.admin.ch/plant-protection/ghs/>
+PREFIX schema: <http://schema.org/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX hint: <http://www.bigdata.com/queryHints#>
+
+CONSTRUCT {
+  ?subject a ghs:HazardStatement ;
+    schema:identifier ?codeTyped ;
+    schema:name ?name .
+}
+WHERE {
+  {
+    SELECT ?item ?code ?codeTyped ?subject ?name
+    WHERE {
+      hint:Query hint:optimizer "None" .
+
+      ?item wdt:P31 wd:Q28360 .
+      ?item wdt:P1813 ?codeLit .
+      FILTER(LANG(?codeLit)="mul")
+      BIND(STR(?codeLit) AS ?code)
+
+      FILTER(REGEX(?code, "^(EUH|H)\\d{3}[A-Za-z]{0,3}([+].+)?$"))
+
+      ?item wdt:P1448 ?name .
+      FILTER(LANG(?name) IN ("de","en","fr","it"))
+
+      BIND(IRI(CONCAT("https://agriculture.ld.admin.ch/plant-protection/ghs/", ?code)) AS ?subject)
+      BIND(STRDT(?code, xsd:string) AS ?codeTyped)
+    }
+    ORDER BY ?code
+  }
+}
