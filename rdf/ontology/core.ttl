@@ -23,50 +23,118 @@
     owl:versionInfo "1.0.0" .
 
 # ==============================================================================
-# CORE PHYTOSANITARY CONCEPTS AS CLASSES
+# CORE PHYTOSANITARY CLASSES & PROPERTIES
 # ==============================================================================
 
-:Stressor a owl:Class .
+:Product a owl:Class ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:allValuesFrom :GHSStatements ;
+        owl:onProperty :comment
+    ] .
 
-:Damage a owl:Class .
+:ParallelImport a owl:Class ;
+    rdfs:subClassOf :Product .
 
-:Host a owl:Class .
+:Cultivation a owl:Class .
 
-:Crop a owl:Class ;
-    rdfs:subClassOf :Host .
+:Pest a owl:Class .
 
-:Application a owl:Class ; 
-    rdfs:subClassOf :Intervention .
+:Indication a owl:Class ;
+    skos:altLabel "Application"@en ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:allValuesFrom :ApplicationComment ;
+        owl:onProperty :comment
+    ] .
 
-:ApplicationComment a owl:Class .
+:ApplicationComment a owl:Class ;
+    rdfs:label "Anwendungskommentare (Dosierungshinweise, etc.)"@de .
+
+:Obligation a owl:Class ;
+    rdfs:label "Auflagen"@de .
+
+:ApplicationArea a owl:Class .
+
+:Ingredients a owl:Class .
+
+:indication a owl:ObjectProperty ;
+    rdfs:domain :Product ;
+    rdfs:range :Indication .
+
+:pest a owl:ObjectProperty ;
+    rdfs:domain :Indication ;
+    rdfs:range :Pest .
+
+:cultivation a owl:ObjectProperty ;
+    rdfs:domain :Indication ;
+    rdfs:range :Cultivation .
+
+:comment a owl:ObjectProperty .
 
 # ==============================================================================
-# LINKING PROPERTIES
+# PERMISSION HOLDERS
 # ==============================================================================
 
-:allowedFor a owl:ObjectProperty ;
-    rdfs:domain :PlantProtectionProduct ;
-    rdfs:range :Application .
-
-:concerns a owl:ObjectProperty ;
-    rdfs:domain :ApplicationComment ;
-    rdfs:range :Application .
-
-:mitigates a owl:ObjectProperty ;
-    rdfs:domain :Intervention ;
-    rdfs:range :Damage .
-
-:impairs a owl:ObjectProperty ;
-    rdfs:domain :Damage ;
-    rdfs:range :Host .
-
-:induces a owl:ObjectProperty ;
-    rdfs:domain :Stressor ;
-    rdfs:range :Damage .
+:permissionHolder a owl:ObjectProperty ;
+    rdfs:label "Verkaufsbewilligungshalter"@de,
+        "Permission holder"@en,
+        "Titulaire de l'autorisation de vente"@fr,
+        "Titolare dell'autorizzazione alla vendita"@it ;
+    rdfs:comment """
+        Diese Eigenschaft verknüpft ein Produkt mit der Firma, die berechtigt ist, es zu verkaufen.
+        """@de,
+        """
+        This property links a product to the company authorized to sell it.
+        """@en,
+        """
+        Cette propriété relie un produit à l'entreprise autorisée à le vendre.
+        """@fr,
+        """
+        Questa proprietà collega un prodotto all'azienda autorizzata a venderlo.
+        """@it ;
+    rdfs:domain :Product ;
+    rdfs:range schema:Organization .
 
 # ==============================================================================
-# PRODUCT TAXONOMY
+# PRODUCT HAZARD CLASSIFICATION
 # ==============================================================================
 
-:PlantProtectionProduct a owl:Class ;
+:GHSStatements a owl:Class .
+
+:HazardStatement a owl:Class ;
+    rdfs:label "Hazard statements"@en ;
+    skos:altLabel "R-Satz"@de,
+        "R phrase"@en,
+        "Phrase R"@fr,
+        "Frase R"@it ;
+    rdfs:comment
+        """
+        An R phrase (= risk phrase) is a standardized description of the risks associated with hazardous chemical substances, indicating specific dangers such as toxicity or flammability.
+        These were used in the European Union to denote risks on safety data sheets and labels.
+        """@en ;
+    rdfs:seeAlso <https://ec.europa.eu/taxation_customs/dds2/SAMANCTA/EN/Safety/RS_EN.htm>,
+        <https://en.wikipedia.org/wiki/List_of_R-phrases> ;
+    rdfs:subClassOf :GHSStatements .
+
+:PrecautionaryStatement a owl:Class ;
+    rdfs:label "Precautionary statements"@en ;
+    skos:altLabel "Code S"@en ;
+    rdfs:comment """
+        A precautionary statement is a standardized safety instruction for handling hazardous chemical substances.
+        These phrases were used in the European Union to recommend safe handling, storage, and emergency measures on safety data sheets and labels.
+        """@en ;
+    rdfs:seeAlso <https://ec.europa.eu/taxation_customs/dds2/SAMANCTA/EN/Safety/RS_EN.htm>,
+        <https://en.wikipedia.org/wiki/List_of_S-phrases> ;
+    rdfs:subClassOf :GHSStatements .
+
+:HazardPictogram a owl:Class ;
+    rdfs:seeAlso <https://en.wikipedia.org/wiki/GHS_hazard_pictograms> ;
+    rdfs:subClassOf :GHSStatements .
+
+# ==============================================================================
+# PRODUCT TAXONOMY AND PROPERTIES (Herbicides, Insecticides etc.)
+# ==============================================================================
+
+:Product a owl:Class ;
     rdfs:subClassOf schema:Product .
