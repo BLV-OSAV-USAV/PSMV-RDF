@@ -22,4 +22,4 @@ df = pd.read_csv(DATANAME,
 
 print(df.head(10))
 
-df.to_csv("data/processed/test.csv")
+df.to_csv("data/processed/test.csv", index=False)
