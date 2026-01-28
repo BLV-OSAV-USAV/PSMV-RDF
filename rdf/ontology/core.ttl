@@ -1,0 +1,72 @@
+@prefix : <https://agriculture.ld.admin.ch/plant-protection/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+# ==============================================================================
+# ONTOLOGY METADATA
+# ------------------------------------------------------------------------------
+# Use <https://semver.org/> as a reference for version number
+# ==============================================================================
+
+: a owl:Ontology ;
+    dcterms:creator "Martin Hertach",
+        "Ingrid Nyfeler",
+        "Damian Oswald",
+        "Sara Schärrer",
+        "Guy Schnidrig" ;
+    dcterms:title "Crop protection product ontology"@en ;
+    owl:versionInfo "1.0.0" .
+
+# ==============================================================================
+# CORE PHYTOSANITARY CONCEPTS AS CLASSES
+# ==============================================================================
+
+:Stressor a owl:Class .
+
+:Damage a owl:Class .
+
+:Host a owl:Class .
+
+:Crop a owl:Class ;
+    rdfs:subClassOf :Host .
+
+:Application a owl:Class ; 
+    rdfs:subClassOf :Intervention .
+
+:ApplicationComment a owl:Class .
+
+# ==============================================================================
+# LINKING PROPERTIES
+# ==============================================================================
+
+:allowedFor a owl:ObjectProperty ;
+    rdfs:domain :PlantProtectionProduct ;
+    rdfs:range :Application .
+
+:concerns a owl:ObjectProperty ;
+    rdfs:domain :ApplicationComment ;
+    rdfs:range :Application .
+
+:mitigates a owl:ObjectProperty ;
+    rdfs:domain :Intervention ;
+    rdfs:range :Damage .
+
+:impairs a owl:ObjectProperty ;
+    rdfs:domain :Damage ;
+    rdfs:range :Host .
+
+:induces a owl:ObjectProperty ;
+    rdfs:domain :Stressor ;
+    rdfs:range :Damage .
+
+# ==============================================================================
+# PRODUCT TAXONOMY
+# ==============================================================================
+
+:PlantProtectionProduct a owl:Class ;
+    rdfs:subClassOf schema:Product .

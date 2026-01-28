@@ -1,0 +1,3 @@
+*.ttl linguist-detectable=true
+*.rq linguist-detectable=true
+*.sparql linguist-detectable=true
