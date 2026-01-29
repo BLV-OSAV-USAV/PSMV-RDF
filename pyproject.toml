@@ -9,6 +9,7 @@ description = "This is a pipeline for converting the Swiss plant protection prod
 authors = [
   {name = "Martin Hertach", email = "martin.hertach@blv.admin.ch"},
   {name = "Sara Schärrer", email = "sara.schaerrer@blv.admin.ch"},
+  {name = "Ingrid Nyfeler", email = "ingrid.nyfeler@blv.admin.ch"},
   {name = "Damian Oswald", email = "damian.owsald@blw.admin.ch"},
   {name = "Guy Schnidrig", email = "guy.schnirig@blv.admin.ch"}
 ]
