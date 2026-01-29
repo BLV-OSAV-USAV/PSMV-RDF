@@ -28,3 +28,7 @@ Aligning with standard Semantic Web conventions, we enforce the following casing
 - **Properties** (e.g., `owl:ObjectProperty`, `owl:DatatypeProperty`): Use **camelCase** (a.k.a. lowerCamelCase).
 
 Ensure identifiers are semantically meaningful and descriptive to facilitate readability and improve [DX](https://en.wikipedia.org/wiki/Developer_experience).
+
+## Naming things
+
+Only use `schema:name` and `schema:description`, never `rdfs:label` and `rdfs:comment`!
