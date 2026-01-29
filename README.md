@@ -1,4 +1,6 @@
-# PSMV-RDF (need a better name)
+# PSMV-RDF (need a better name) 🚧 Work in Progress
+> This repository is under active development. Features, documentation, and structure will change frequently.
+
 ## Plant Protection Products (PSMV) as Linked Data
 
 A Python module for converting Swiss plant protection product data from CSV format to RDF and publishing it to the LINDAS Linked Data Service.
@@ -36,39 +38,28 @@ psmv-rdf/
 │
 ├── data/
 │   ├── raw/
-│   ├── rdf/
+│   ├── mapping/
 │   └── processed/
 │ 
 ├── services/
-│   └── run_rdf_pipeline.py             # Pipeline launcher
+│   └── pipeline.py       
 │
 ├── src/
-│    ├── psmv_converter/
-│        ├── __init__.py              # Marks this as a Python package
-│        ├── scripts/
-│            ├── fetch_data.py  
-│            ├── validate_rdf.py  
-│        │   └── publish_rdf.py        # Standalone script for fetching data
-│        ├── converter.py             # Core module for conversion logic
-│        └── utils/
-│            ├── __init__.py          # Makes `utils` a subpackage
-│            └── functions.py         # Helper/utility functions used across the package
+│    ├── sparql
+│    ├── python/
+│        ├── __init__.py
+│        ├── fetch_data.py         
+│        ├── validate_rdf.py  
+│        └── publish_rdf.py        
 │
-├── shapes/                         # SHACL shapes
-│   └──shapes/README.md
+├── rdf/
+│   ├── ontology/
+│   └── shapes                      
 │
 ├── tests/
-│   ├── test_converter.py
-│   ├── test_validator.py
-│   ├── test_publisher.py
-│   └── data/                       # do wee need that?
-│       └── sample.csv              # do wee need that?
 │
 ├── docs/
-│   ├── architecture.md
-│   └── usage.md
 │
-├── pyproject.toml
 ├── .gitignore
 ├── README.md
 └── environment.yml
