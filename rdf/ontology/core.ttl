@@ -20,53 +20,81 @@
         "Sara Schärrer",
         "Guy Schnidrig" ;
     dcterms:title "Crop protection product ontology"@en ;
-    owl:versionInfo "1.0.0" .
+    owl:versionInfo "3.0.0" .
 
 # ==============================================================================
-# CORE PHYTOSANITARY CONCEPTS AS CLASSES
+# CORE PHYTOSANITARY CLASSES & PROPERTIES
 # ==============================================================================
 
-:Stressor a owl:Class .
+:ParallelImport a owl:Class ;
+    rdfs:subClassOf :Product .
 
-:Damage a owl:Class .
+:Cultivation a owl:Class ;
+    schema:name "Cultivation"@en .
 
-:Host a owl:Class .
+:Pest a owl:Class ;
+    schema:name "Pest"@en .
 
-:Crop a owl:Class ;
-    rdfs:subClassOf :Host .
+:Indication a owl:Class ;
+    schema:alternateName "Application"@en ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:allValuesFrom :ApplicationComment ;
+        owl:onProperty :comment
+    ] .
 
-:Application a owl:Class ; 
-    rdfs:subClassOf :Intervention .
+:ApplicationComment a owl:Class ;
+    schema:name "Anwendungskommentare (Dosierungshinweise, etc.)"@de .
 
-:ApplicationComment a owl:Class .
+:Obligation a owl:Class ;
+    schema:name "Auflagen"@de .
+
+:ApplicationArea a owl:Class ;
+    schema:name "Application Area"@en .
+
+:applicationArea a owl:ObjectProperty ;
+    schema:name "Application area"@en ;
+    rdfs:domain :Indication ;
+    rdfs:range :ApplicationArea .
+
+:Ingredients a owl:Class ;
+    schema:name "Ingredients"@en .
+
+:indication a owl:ObjectProperty ;
+    schema:name "has indications"@en ;
+    rdfs:domain :Product ;
+    rdfs:range :Indication .
+
+:pest a owl:ObjectProperty ;
+    schema:name "allowed against pests"@en ;
+    rdfs:domain :Indication ;
+    rdfs:range :Pest .
+
+:cultivation a owl:ObjectProperty ;
+    schema:name "allowed on cultivations"@en ;
+    rdfs:domain :Indication ;
+    rdfs:range :Cultivation .
+
+:comment a owl:ObjectProperty .
 
 # ==============================================================================
-# LINKING PROPERTIES
+# PERMISSION HOLDERS
 # ==============================================================================
 
-:allowedFor a owl:ObjectProperty ;
-    rdfs:domain :PlantProtectionProduct ;
-    rdfs:range :Application .
-
-:concerns a owl:ObjectProperty ;
-    rdfs:domain :ApplicationComment ;
-    rdfs:range :Application .
-
-:mitigates a owl:ObjectProperty ;
-    rdfs:domain :Intervention ;
-    rdfs:range :Damage .
-
-:impairs a owl:ObjectProperty ;
-    rdfs:domain :Damage ;
-    rdfs:range :Host .
-
-:induces a owl:ObjectProperty ;
-    rdfs:domain :Stressor ;
-    rdfs:range :Damage .
+:permissionHolder a owl:ObjectProperty ;
+    schema:name "Verkaufsbewilligungshalter"@de,
+        "Permission holder"@en ;
+    rdfs:domain :Product ;
+    rdfs:range schema:Organization .
 
 # ==============================================================================
-# PRODUCT TAXONOMY
+# PRODUCT TAXONOMY AND PROPERTIES (Herbicides, Insecticides etc.)
 # ==============================================================================
 
-:PlantProtectionProduct a owl:Class ;
-    rdfs:subClassOf schema:Product .
+:Product a owl:Class ;
+    schema:name "Product"@en ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:allValuesFrom :GHSStatements ;
+        owl:onProperty :comment
+    ] .
