@@ -1,0 +1,17 @@
+source,target
+NK_PRODUCT,product_id
+wNbr,work_number
+NK_PI_Product,product_internal_id
+NK_SP_PRODUCT,service_provider_product_id
+NK_PRODUCT_IND,product_indicator
+ID,record_id
+CODE,product_code
+TYPE,product_type
+NAME,product_name
+admissionnumber,admission_number
+producingCountryPrimaryKey,producing_country_id
+exhaustionDeadline,exhaustion_deadline
+soldoutDeadline,sold_out_deadline
+isSalePermission,sale_permission
+packageInsert,package_insert_flag
+terminationReason,termination_reason

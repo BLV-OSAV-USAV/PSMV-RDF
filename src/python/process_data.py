@@ -9,10 +9,10 @@ def process_data():
     """
 
     data_name = "data/raw/AllProducts280126.csv"
-    mapping_table = "data/mapping/mapping.csv"
+    mapping_table = "data/mapping/mapped_columns.csv"
 
     # Read data
-    d = pd.read_csv(data_name,
+    df = pd.read_csv(data_name,
         header=0,
         na_values=["NULL"],
         sep=';'
@@ -24,17 +24,13 @@ def process_data():
         sep=','
     )
 
-    for col in mapping_df["column"].unique():
-            mapping = (
-                mapping_df[mapping_df["column"] == col].set_index("old_value")["new_value"].to_dict()
-            )
-    
-    
-    df = df.rename(columns=dict(zip(mapping.source, mapping.target)))
-
+    # Map cols
+    df = df.rename(columns=dict(zip(mapping_df.source, mapping_df.target)))
 
     print(df.head(10))
 
+    # Save processed file
+    df.to_csv("data/processed/AllProducts280126_mapped.csv", index=False)
 
 
 if __name__ == "__main__":
