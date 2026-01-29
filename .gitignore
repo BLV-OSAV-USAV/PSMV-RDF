@@ -61,3 +61,6 @@ coverage.xml
 .env
 .env.*
 .venv/
+
+# Processed RDF data
+rdf/processed/

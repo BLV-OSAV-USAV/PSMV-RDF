@@ -1,0 +1,145 @@
+@prefix : <https://agriculture.ld.admin.ch/plant-protection/> .
+@prefix code: <https://agriculture.ld.admin.ch/plant-protection/code/> .
+@prefix company: <https://agriculture.ld.admin.ch/plant-protection/company/> .
+@prefix schema: <http://schema.org/> .
+@prefix substance: <https://agriculture.ld.admin.ch/plant-protection/substance/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix zefix: <https://register.ld.admin.ch/zefix/company/> .
+
+:A-1101 a :Acaricide,
+        :Fungicide,
+        :ParallelImport ;
+    schema:name "Cosan-Super Kolloid-Netzschwefel" ;
+    :federalAdmissionNumber "A-1101" ;
+    :foreignAdmissionNumber "238-0" ;
+    :formulation code:6485 ;
+    :hasComponentPortion [ :hasPercentage 80.0 ;
+            :role :ActiveIngredient ;
+            :substance substance:338 ] ;
+    :hasCountryOfOrigin <https://ld.admin.ch/country/AUT> ;
+    :hasPermissionHolder company:11907 ;
+    :isSameProductAs :A-2014,
+        :A-3710,
+        :A-4229,
+        :D-2016,
+        :D-6394,
+        :D-6395,
+        :F-2040,
+        :F-2299,
+        :F-5411,
+        :F-6147,
+        :F-6883,
+        :I-1107,
+        :I-4266,
+        :W-4495,
+        :W-4495-1 ;
+    :notice code:6145 ;
+    :packageInsertNumber "4571" .
+
+:A-2014 a :Acaricide,
+        :Fungicide,
+        :ParallelImport ;
+    schema:name "Kumulus WG" ;
+    :federalAdmissionNumber "A-2014" ;
+    :foreignAdmissionNumber "396-0" ;
+    :formulation code:6485 ;
+    :hasComponentPortion [ :hasPercentage 80.0 ;
+            :role :ActiveIngredient ;
+            :substance substance:338 ] ;
+    :hasCountryOfOrigin <https://ld.admin.ch/country/AUT> ;
+    :hasPermissionHolder company:10281 ;
+    :isSameProductAs :A-1101,
+        :A-3710,
+        :A-4229,
+        :D-2016,
+        :D-6394,
+        :D-6395,
+        :F-2040,
+        :F-2299,
+        :F-5411,
+        :F-6147,
+        :F-6883,
+        :I-1107,
+        :I-4266,
+        :W-4495,
+        :W-4495-1 ;
+    :notice code:6145 ;
+    :packageInsertNumber "4571" .
+
+:A-3617 a :Acaricide,
+        :AdhesionAgents,
+        :Insecticide,
+        :ParallelImport ;
+    schema:name "Schädlingsfrei Obst & Gemüse Konzentrat" ;
+    :federalAdmissionNumber "A-3617" ;
+    :foreignAdmissionNumber "2568-0" ;
+    :formulation code:6427 ;
+    :hasComponentPortion [ :hasGrammPerLitre 776.0 ;
+            :hasPercentage 85.0 ;
+            :role :ActiveIngredient ;
+            :substance substance:1226 ] ;
+    :hasCountryOfOrigin <https://ld.admin.ch/country/AUT> ;
+    :hasPermissionHolder company:11906 ;
+    :isSameProductAs :W-4678 ;
+    :notice code:6145 ;
+    :packageInsertNumber "4477" .
+
+:A-3710 a :Acaricide,
+        :Fungicide,
+        :ParallelImport ;
+    schema:name "Thiovit Jet" ;
+    :federalAdmissionNumber "A-3710" ;
+    :foreignAdmissionNumber "2632-0" ;
+    :formulation code:6485 ;
+    :hasComponentPortion [ :hasPercentage 80.0 ;
+            :role :ActiveIngredient ;
+            :substance substance:338 ] ;
+    :hasCountryOfOrigin <https://ld.admin.ch/country/AUT> ;
+    :hasPermissionHolder company:7180 ;
+    :isSameProductAs :A-1101,
+        :A-2014,
+        :A-4229,
+        :D-2016,
+        :D-6394,
+        :D-6395,
+        :F-2040,
+        :F-2299,
+        :F-5411,
+        :F-6147,
+        :F-6883,
+        :I-1107,
+        :I-4266,
+        :W-4495,
+        :W-4495-1 ;
+    :notice code:6145 ;
+    :packageInsertNumber "4571" .
+
+:A-4229 a :Acaricide,
+        :Fungicide,
+        :ParallelImport ;
+    schema:name "Netzschwefel Stulln" ;
+    :federalAdmissionNumber "A-4229" ;
+    :foreignAdmissionNumber "2915-0" ;
+    :formulation code:6485 ;
+    :hasComponentPortion [ :hasPercentage 80.0 ;
+            :role :ActiveIngredient ;
+            :substance substance:338 ] ;
+    :hasCountryOfOrigin <https://ld.admin.ch/country/AUT> ;
+    :hasPermissionHolder company:10885 ;
+    :isSameProductAs :A-1101,
+        :A-2014,
+        :A-3710,
+        :D-2016,
+        :D-6394,
+        :D-6395,
+        :F-2040,
+        :F-2299,
+        :F-5411,
+        :F-6147,
+        :F-6883,
+        :I-1107,
+        :I-4266,
+        :W-4495,
+        :W-4495-1 ;
+    :notice code:6145 ;
+    :packageInsertNumber "4571" .
