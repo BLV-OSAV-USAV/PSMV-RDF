@@ -12,37 +12,42 @@
 # ==============================================================================
 
 ghs: a owl:Ontology ;
-        dcterms:title "GHS phrase classification scheme"@en .
+    dcterms:title "GHS phrase classification scheme"@en .
 
 # ==============================================================================
 # GHS CLASSIFICATION
 # ==============================================================================
 
-ghs:GHSStatement a owl:Class .
+ghs:GHSStatement a owl:Class ;
+    schema:name "GHS statement"@en .
 
 ghs:HazardPictogram a owl:Class ;
+    schema:name "Hazard pictogram"@en ;
     rdfs:seeAlso <https://en.wikipedia.org/wiki/GHS_hazard_pictograms> ;
     rdfs:subClassOf ghs:GHSStatement .
 
 ghs:HazardStatement a owl:Class ;
     schema:name "Hazard statements"@en ;
     schema:alternateName "R phrase"@en ;
-    rdfs:comment "A hazard statement is a standardized description of the risks associated with hazardous chemical substances, indicating specific dangers such as toxicity or flammability. These were used in the European Union to denote risks on safety data sheets and labels."@en ;
+    schema:description "A hazard statement is a standardized description of the risks associated with hazardous chemical substances, indicating specific dangers such as toxicity or flammability. These were used in the European Union to denote risks on safety data sheets and labels."@en ;
     rdfs:subClassOf ghs:GHSStatement .
 
 ghs:PrecautionaryStatement a owl:Class ;
     schema:name "Precautionary statements"@en ;
     schema:alternateName "S phrase"@en ;
-    rdfs:comment "A precautionary statement is a standardized safety instruction for handling hazardous chemical substances. These phrases were used in the European Union to recommend safe handling, storage, and emergency measures on safety data sheets and labels."@en ;
+    schema:description "A precautionary statement is a standardized safety instruction for handling hazardous chemical substances. These phrases were used in the European Union to recommend safe handling, storage, and emergency measures on safety data sheets and labels."@en ;
     rdfs:subClassOf ghs:GHSStatement .
 
 ghs:SignalWord a owl:Class ;
+    schema:name "Signal word"@en ;
     rdfs:subClassOf ghs:GHSStatement .
 
 ghs:PrecautionaryStatementCombination a owl:Class ;
+    schema:name "Combinations of precautionary statements"@en ;
     rdfs:subClassOf ghs:PrecautionaryStatement .
 
 ghs:HazardStatementCombination a owl:Class ;
+    schema:name "Combinations of hazard statements"@en ;
     rdfs:subClassOf ghs:HazardStatement .
 
 # ==============================================================================
@@ -142,12 +147,12 @@ ghs:GHS09 a ghs:HazardPictogram ;
 # ==============================================================================
 
 ghs:H200 a ghs:HazardStatement ;
-  schema:identifier "H200" ;
-  schema:name
-    "Instabil, explosiv"@de ,
-    "Unstable explosives"@en ,
-    "Explosif instable"@fr ,
-    "Esplosivo instabile"@it .
+    schema:identifier "H200" ;
+    schema:name
+        "Instabil, explosiv"@de ,
+        "Unstable explosives"@en ,
+        "Explosif instable"@fr ,
+        "Esplosivo instabile"@it .
 
 ghs:H201 a ghs:HazardStatement ;
   schema:identifier "H201" ;

@@ -27,6 +27,7 @@
 # ==============================================================================
 
 :ParallelImport a owl:Class ;
+    schema:name "Parallel import"@en ;
     rdfs:subClassOf :Product .
 
 :Cultivation a owl:Class ;
@@ -36,6 +37,7 @@
     schema:name "Pest"@en .
 
 :Indication a owl:Class ;
+    schema:name "Indication"@en ;
     schema:alternateName "Application"@en ;
     rdfs:subClassOf [
         a owl:Restriction ;
@@ -44,10 +46,10 @@
     ] .
 
 :ApplicationComment a owl:Class ;
-    schema:name "Anwendungskommentare (Dosierungshinweise, etc.)"@de .
+    schema:name "Application comments (dosage, etc.)"@en .
 
 :Obligation a owl:Class ;
-    schema:name "Auflagen"@de .
+    schema:name "Obligation"@en .
 
 :ApplicationArea a owl:Class ;
     schema:name "Application Area"@en .
@@ -75,15 +77,15 @@
     rdfs:domain :Indication ;
     rdfs:range :Cultivation .
 
-:comment a owl:ObjectProperty .
+:comment a owl:ObjectProperty ;
+    schema:name "Comment"@en .
 
 # ==============================================================================
 # PERMISSION HOLDERS
 # ==============================================================================
 
 :permissionHolder a owl:ObjectProperty ;
-    schema:name "Verkaufsbewilligungshalter"@de,
-        "Permission holder"@en ;
+    schema:name "Permission holder"@en ;
     rdfs:domain :Product ;
     rdfs:range schema:Organization .
 
