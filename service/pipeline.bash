@@ -1,4 +1,9 @@
+#!/bin/bash
+set -e # immediately exit on error
 source .env
+
+echo "Validate syntax of turtle files"
+python3 src/python/validate.py rdf
 
 echo "Create a dedicated ontology file for subsequent WebVOWL visualization"
 python3 src/python/reason.py \
