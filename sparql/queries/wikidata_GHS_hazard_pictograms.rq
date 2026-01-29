@@ -1,0 +1,23 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX ghs: <https://agriculture.ld.admin.ch/plant-protection/ghs/>
+PREFIX schema: <http://schema.org/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+CONSTRUCT {
+  ?subject a ghs:HazardPictogram ;
+    schema:image ?image ;
+    schema:identifier ?cleanIdentifier ;
+    schema:name ?name .
+}
+WHERE {
+  ?item wdt:P31 wd:Q19360817 . # Instance of GHS hazard pictogram
+  ?item wdt:P1448 ?name .      # Official Name
+  ?item wdt:P2910 ?image .     # Image
+  ?item wdt:P1813 ?rawIdentifier . # Short name (e.g., "GHS01"@mul)
+
+  FILTER(LANG(?rawIdentifier)="mul" && LANG(?name) IN ("en", "de", "fr", "it"))
+  BIND(STR(?rawIdentifier) AS ?idString)
+  BIND(IRI(CONCAT("https://agriculture.ld.admin.ch/plant-protection/ghs/", ?idString)) AS ?subject)
+  BIND(STRDT(?idString, xsd:string) AS ?cleanIdentifier)
+}

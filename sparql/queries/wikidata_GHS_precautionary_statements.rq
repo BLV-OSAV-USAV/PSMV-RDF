@@ -1,0 +1,39 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX ghs: <https://agriculture.ld.admin.ch/plant-protection/ghs/>
+PREFIX schema: <http://schema.org/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX hint: <http://www.bigdata.com/queryHints#>
+
+CONSTRUCT {
+  ?subject a ghs:PrecautionaryStatement ;
+    schema:identifier ?codeTyped ;
+    schema:name ?name .
+}
+WHERE {
+  {
+    SELECT ?item ?code ?codeTyped ?subject ?name
+    WHERE {
+      hint:Query hint:optimizer "None" .
+
+      # Alle GHS Precautionary Statements (P-Sätze)
+      ?item wdt:P31 wd:Q2467204 .
+
+      # Code (Pxxx, Pxxx+Pyyy, ...)
+      ?item wdt:P1813 ?codeLit .
+      FILTER(LANG(?codeLit)="mul")
+      BIND(STR(?codeLit) AS ?code)
+
+      # optional: nur echte P-Codes, inkl. Kombis
+      FILTER(REGEX(?code, "^P\\d{3}([+].+)?$"))
+
+      # Text (mehrsprachig)
+      ?item wdt:P1448 ?name .
+      FILTER(LANG(?name) IN ("de","en","fr","it"))
+
+      BIND(IRI(CONCAT("https://agriculture.ld.admin.ch/plant-protection/ghs/", ?code)) AS ?subject)
+      BIND(STRDT(?code, xsd:string) AS ?codeTyped)
+    }
+    ORDER BY ?code
+  }
+}
