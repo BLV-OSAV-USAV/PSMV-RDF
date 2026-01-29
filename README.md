@@ -1,4 +1,12 @@
 # PSMV-RDF (need a better name)
+
+## Setup
+
+``` bash
+conda env create -f environment.yml
+conda activate psmw-rdf
+```
+
 ## Plant Protection Products (PSMV) as Linked Data
 
 A Python module for converting Swiss plant protection product data from CSV format to RDF and publishing it to the LINDAS Linked Data Service.
