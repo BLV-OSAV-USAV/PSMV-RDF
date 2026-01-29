@@ -1,0 +1,21 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <http://schema.org/>
+
+DELETE {
+  ?subject schema:name ?name .
+  ?subject schema:description ?description .
+}
+INSERT {
+  ?subject rdfs:label ?name .
+  ?subject rdfs:comment ?description .
+}
+WHERE {
+  # Attempt to match name
+  OPTIONAL { ?subject schema:name ?name . }
+  
+  # Attempt to match description
+  OPTIONAL { ?subject schema:description ?description . }
+  
+  # Ensure we matched at least one of them to avoid useless operations
+  FILTER (BOUND(?name) || BOUND(?description))
+}
