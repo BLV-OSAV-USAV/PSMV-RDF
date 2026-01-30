@@ -1,0 +1,6 @@
+source_entity,source_field,target_class,target_property
+AllProducts280126.csv,ID,:PlantProtectionProduct,schema:identifier
+AllProducts280126.csv,NAME,:PlantProtectionProduct,schema:name@de
+AllProducts280126.csv,NAME,:PlantProtectionProduct,schema:name@fr
+AllProducts280126.csv,NAME,:PlantProtectionProduct,schema:name@it
+AllProducts280126.csv,NAME,:PlantProtectionProduct,schema:name@en

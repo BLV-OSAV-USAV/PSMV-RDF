@@ -1,0 +1,7 @@
+product_type:
+  A: audio
+  V: video
+
+sale_permission:
+  Y: true
+  N: false
