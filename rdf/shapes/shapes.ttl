@@ -54,9 +54,9 @@ shapes:2 a sh:NodeShape ;
     ] .
 
 shapes:3 a sh:NodeShape ;
-    sh:targetClass :Fungicide ;
+    sh:targetClass :Product ;
     sh:property [
-        sh:name "Federal Admission Number syntax"@en ;
+        sh:name "Federal admission number syntax"@en ;
         sh:path :federalAdmissionNumber ;
         sh:datatype xsd:string ;
         sh:pattern "^[A-Z]-[0-9]{4}(-[0-9]{1,2})?$" ;
