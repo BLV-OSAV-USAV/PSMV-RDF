@@ -1,5 +1,7 @@
 @prefix : <https://agriculture.ld.admin.ch/plant-protection/> .
-@prefix code: <https://agriculture.ld.admin.ch/plant-protection/code/> .
+@prefix product: <https://agriculture.ld.admin.ch/plant-protection/> .
+@prefix substance: <https://agriculture.ld.admin.ch/plant-protection/substance/> .
+
 @prefix company: <https://agriculture.ld.admin.ch/plant-protection/company/> .
 @prefix schema: <http://schema.org/> .
 @prefix substance: <https://agriculture.ld.admin.ch/plant-protection/substance/> .
@@ -7,38 +9,30 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix zefix: <https://register.ld.admin.ch/zefix/company/> .
 
-:W-6761 a :Fungicide ;
+product:W-6761 a :Fungicide ;
     schema:name "Aviator Xpro"@en ;
     :permissionHolder zefix:16124 ;
     :federalAdmissionNumber "W-6761" ;
     :ingredient [
         :substance [
-            # placeholder, will get a URI
-            a :Substance ;
             schema:name "Prothioconazole"@de
         ] ;
         :share [
-            a schema:QuantitativeValue ;
             schema:value 14.85 ;
             schema:unitCode unit:PERCENT
         ], [
-            a schema:QuantitativeValue ;
             schema:value 150 ;
             schema:unitCode unit:GM-PER-L
         ]
     ] ,
     [
         :substance [
-            # placeholder, will get a URI
-            a :Substance ;
             schema:name "Bixafen"@de
         ] ;
         :share [
-            a schema:QuantitativeValue ;
             schema:value 7.43 ;
             schema:unitCode unit:PERCENT
         ], [
-            a schema:QuantitativeValue ;
             schema:value 75 ;
             schema:unitCode unit:GM-PER-L
         ]
