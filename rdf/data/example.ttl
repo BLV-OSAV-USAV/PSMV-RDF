@@ -9,14 +9,18 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix zefix: <https://register.ld.admin.ch/zefix/company/> .
 
+substance:1 a :Substance ;
+    schema:name "Prothioconazole"@de .
+
+substance:2 a :Substance ;
+    schema:name "Bixafen"@de .
+
 product:W-6761 a :Fungicide ;
     schema:name "Aviator Xpro"@en ;
     :permissionHolder zefix:16124 ;
     :federalAdmissionNumber "W-676" ;
     :ingredient [
-        :substance [
-            schema:name "Prothioconazole"@de
-        ] ;
+        :substance substance:1 ;
         schema:value [
             schema:value 14.85 ;
             schema:unitCode unit:PERCENT
@@ -26,9 +30,7 @@ product:W-6761 a :Fungicide ;
         ]
     ] ,
     [
-        :substance [
-            schema:name "Bixafen"@de
-        ] ;
+        :substance substance:2 ;
         schema:value [
             schema:value 7.43 ;
             schema:unitCode unit:PERCENT
