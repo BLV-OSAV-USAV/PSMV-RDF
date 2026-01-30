@@ -1,7 +1,12 @@
-@prefix shapes: <https://agriculture.ld.admin.ch/plant-protection/shapes/> .
+@prefix : <https://agriculture.ld.admin.ch/plant-protection/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix shapes: <https://agriculture.ld.admin.ch/plant-protection/shapes/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix schema: <http://schema.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 shapes:1 a sh:NodeShape ;
     schema:name "Ontology documentation rules"@en ;
@@ -28,4 +33,72 @@ shapes:1 a sh:NodeShape ;
         sh:path schema:description ;
         sh:uniqueLang true ;
         sh:message "A class or property can have at most one description per language."@en ;
+    ] .
+
+shapes:2 a sh:NodeShape ;
+    schema:name "Prohibition of RDFS annotations"@en ;
+    sh:targetClass owl:Class,
+        owl:ObjectProperty,
+        owl:DatatypeProperty ;
+    sh:property [
+        schema:name "Forbid rdfs:label"@en ;
+        sh:path rdfs:label ;
+        sh:maxCount 0 ;
+        sh:message "Any use of rdfs:label is forbidden; the preferred property is schema:name."@en ;
+    ] ;
+    sh:property [
+        schema:name "Forbid rdfs:comment"@en ;
+        sh:path rdfs:comment ;
+        sh:maxCount 0 ;
+        sh:message "Any use of rdfs:comment is forbidden; the preferred property is schema:comment."@en ;
+    ] .
+
+shapes:3 a sh:NodeShape ;
+    sh:targetClass :Fungicide ;
+    sh:property [
+        sh:name "Federal Admission Number syntax"@en ;
+        sh:path :federalAdmissionNumber ;
+        sh:datatype xsd:string ;
+        sh:pattern "^[A-Z]-[0-9]{4}(-[0-9]{1,2})?$" ;
+        sh:message "The federal admission number must match the pattern 'L-DDDD' or 'L-DDDD-D', where L is an uppercase letter and D a digit."@en ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:name "Ingredient validation"@en ;
+        sh:path :ingredient ;
+        sh:node shapes:IngredientShape ;
+        sh:minCount 1 ;
+    ] .
+
+shapes:4 a sh:NodeShape ;
+    sh:property [
+        sh:name "Substance reference"@en ;
+        sh:path :substance ;
+        sh:class :Substance ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:name "Share (Quantitative Value)"@en ;
+        sh:path :share ;
+        sh:node shapes:ShareShape ;
+        sh:minCount 1 ;
+    ] .
+
+shapes:5 a sh:NodeShape ;
+    sh:targetClass schema:QuantitativeValue ;
+    sh:property [
+        schema:name "Positive value constraint"@en ;
+        sh:path schema:value ;
+        sh:minExclusive 0 ;
+        sh:message "The ingredient share value must be strictly greater than 0."@en ;
+    ] ;
+    sh:property [
+        schema:name "Unit validation"@en ;
+        sh:path schema:unitCode ;
+        sh:in ( unit:PERCENT unit:GM-PER-L ) ; 
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "The unit must be either % or g/l represented as a `qudt:Unit`."@en ;
     ] .
