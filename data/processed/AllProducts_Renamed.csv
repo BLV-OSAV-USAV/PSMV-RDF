@@ -1,4 +1,4 @@
-product_id,work_number,product_internal_id,service_provider_product_id,product_indicator,record_id,product_code,product_type,product_name,admission_number,producing_country_id,exhaustion_deadline,sold_out_deadline,sale_permission,package_insert_flag,termination_reason
+product_id,w_number,product_internal_id,service_provider_product_id,product_indicator,record_id,product_code,product_type,product_name,admission_number,producing_country_id,exhaustion_deadline,sold_out_deadline,sale_permission,package_insert_flag,termination_reason
 41D270CE-5051-4262-B3DE-5386EF999ADA,4495,330BCC9C-CE4E-4DF8-8651-0F53F6325FE9,,,A-1101,,PARALLEL_IMPORT,Cosan-Super Kolloid-Netzschwefel,238-0,29738aa2-5393-438d-be07-9d6b56d2accf,,,False,4571.0,
 41D270CE-5051-4262-B3DE-5386EF999ADA,4495,752F3A1C-3719-4241-AAFD-08FD647491AA,,,A-2014,,PARALLEL_IMPORT,Kumulus WG,396-0,29738aa2-5393-438d-be07-9d6b56d2accf,,,False,4571.0,
 6267C2BC-DA78-472A-AF3D-7676AF84F74A,6168,59720AE8-BAD2-47B6-AE87-BB936F222621,,,A-2249,,PARALLEL_IMPORT,Defi,2525-1,29738aa2-5393-438d-be07-9d6b56d2accf,,,False,7105.0,

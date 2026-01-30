@@ -1,0 +1,4991 @@
+@prefix : <https://agriculture.ld.admin.ch/plant-protection/> .
+@prefix product: <https://agriculture.ld.admin.ch/plant-protection/product/> .
+@prefix schema1: <http://schema.org/> .
+
+product:00CAE2E6-762B-492B-B54C-5384776F29EB a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Capito Moosvertilger Rasen P"@de,
+        "Gesal Unkrautvertilger Super Rapid Konzentrat"@de .
+
+product:0131949D-2AA1-48B4-8003-E8A3846A7460 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Brevis"@de .
+
+product:0179EC0D-2395-4E0E-9F3D-D40B24A1D003 a :REGULAR ;
+    schema1:name "Tricera"@de .
+
+product:01D5F1BA-6E12-4177-A06E-8371C94B95D3 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Dicotex"@de,
+        "Dicotex P"@de,
+        "Erpax Quattro"@de,
+        "Proclean Turf N"@de,
+        "Progazon"@de,
+        "Rasenrein"@de,
+        "Selectox Royal P"@de .
+
+product:021E3C74-C569-4185-A21D-6E0CE21848B5 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Hussar Duo"@de,
+        "Hussar Pro"@de .
+
+product:023DE78F-8641-4725-921D-F132BB9608A4 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Anti-Rumex Red"@de,
+        "Banol M"@de,
+        "Rumex contra"@de .
+
+product:023FC57A-408F-4E0C-805D-EB9C19BD374D a :REGULAR ;
+    schema1:name "Gesal Schildlaus- und Milben-Stop"@de .
+
+product:03B66B7E-B8B9-4D50-8621-B7B1C8C4CF1F a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Pirimicarb 50 WG"@de,
+        "Pirimor G"@de .
+
+product:03DDED7F-9FDB-44AD-B21B-F88A3053F3BD a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Capito Präparat gegen Wickler"@de,
+        "Coop Oecoplan Biocontrol Präparat gegen Obstmaden"@de,
+        "Madex 4"@de .
+
+product:044B0EE2-4C90-4A6A-BD3F-05CEF11403DB a :REGULAR ;
+    schema1:name "Hysan SC"@de .
+
+product:049ABC0F-5B2C-4100-BD0A-EAC48B9AC4AC a :REGULAR ;
+    schema1:name "Statuspak"@de .
+
+product:049F0E4F-A770-401E-B8D3-740EC1650ED3 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Tricho-Drop"@de,
+        "TrichoKugel Omya"@de .
+
+product:04CE20D0-B6F1-46D9-979E-FE92552D47B4 a :REGULAR ;
+    schema1:name "Mandate"@de .
+
+product:04F7A5B6-F281-478D-9E0D-238638EED274 a :REGULAR ;
+    schema1:name "Isonet L Plus"@de .
+
+product:055905F3-5071-48DA-B676-A03A6E9DE188 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Difenamid"@de,
+        "Mandipropamid + Difenoconazol"@de,
+        "Revus Top"@de .
+
+product:05E0149E-9537-40C4-B885-2FB572409323 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Gesal Insektizid Spritzmittel"@de,
+        "Naturinsektizid Gesal Naturale"@de .
+
+product:05EDBA73-7501-4445-994D-ADF3A9941887 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Awali"@de,
+        "Kerb Flo"@de,
+        "Kilefait"@de .
+
+product:0607FC9C-6E81-4722-BF6B-07ADDD4EBB3E a :REGULAR ;
+    schema1:name "Alibi Flora"@de .
+
+product:06174428-FB44-4852-A484-F78D4D38F7F8 a :REGULAR ;
+    schema1:name "Lunar"@de .
+
+product:0692F1DF-E949-44BC-B863-68A04D01BDC8 a :REGULAR ;
+    schema1:name "Crisopak"@de .
+
+product:0693D7E1-12DB-4A12-80B9-33DA2EE3B85E a :REGULAR ;
+    schema1:name "Melonem"@de .
+
+product:06A9CC3E-F0FE-4C53-A704-0A8145553C04 a :REGULAR ;
+    schema1:name "Diagonal"@de .
+
+product:06EC806F-DFBD-4A17-BB56-22B8F3D67849 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "ARNOLD"@de,
+        "Antilope"@de,
+        "Araldo"@de,
+        "Battle Delta"@de,
+        "Fosburi"@de,
+        "Herold SC"@de,
+        "Miranda"@de .
+
+product:06b826f7-ec46-4298-9286-78b4b057ad52 a :REGULAR ;
+    schema1:name "Alfil WG"@de .
+
+product:07065F56-8A04-4E75-9F8F-827F56153D6E a :REGULAR ;
+    schema1:name "Nemastar"@de .
+
+product:070E4A43-E7D8-4469-A3E8-C26BF0DE46B9 a :REGULAR ;
+    schema1:name "Vitene Triplo R"@de .
+
+product:07421AB3-F610-42C6-8DBC-768D016A7AB8 a :REGULAR ;
+    schema1:name "Tricho-C"@de .
+
+product:07481EB3-438B-4870-B41C-F5BB9C1880B6 a :REGULAR ;
+    schema1:name "Meta Gold"@de .
+
+product:077739CF-19B7-4750-975D-042A5EE64ED8 a :REGULAR ;
+    schema1:name "Novodor 3 FC"@de .
+
+product:081173F2-04CF-4C40-9623-DEFB52137F2C a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Atlantis Xpert"@de,
+        "Bocage Xpert"@de,
+        "Inixio Xpert"@de,
+        "Pacifica Plus"@de,
+        "Pacifica Xpert"@de,
+        "Pacifica xpert"@de .
+
+product:08353B23-23DB-4433-A9EB-B17A193BDC1F a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Capito Totalherbizid Konzentrat"@de,
+        "Finalsan RasenMoosfrei"@de,
+        "Finalsan UnkrautLos SPEED"@de,
+        "Finalsan Unkrautfrei"@de,
+        "Jardin Royal UnkrautFrei Konzentrat"@de,
+        "Mioplant Unkrautvertilger"@de .
+
+product:083A5232-F56A-4734-AE8C-43F9BD769139 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Glyphosate"@de,
+        "Imperium SL"@de,
+        "Seccherba 360"@de,
+        "Solado Gold"@de .
+
+product:085C90C6-35F4-4F6D-A530-7C6B46268421 a :REGULAR ;
+    schema1:name "Galipan"@de .
+
+product:086AE789-E56A-48F4-9D36-390A768AF93F a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Atena Etephon"@de,
+        "Etephon Médol"@de,
+        "Ethrel"@de,
+        "Phon-Choc"@de .
+
+product:087B11C3-5BC4-4ACB-876C-3AAEC6B321C1 a :REGULAR ;
+    schema1:name "Ascra Xpro"@de .
+
+product:088FA484-0A20-4FBC-B8EE-BFD3C33E1867 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Bretteur"@de,
+        "Dancor 70 WG"@de,
+        "Metriphar 70 WG"@de,
+        "Milentus Metribuzin"@de,
+        "Mistral"@de,
+        "Patanet"@de,
+        "Saturn"@de .
+
+product:089203D2-6BB3-487F-A3DC-D8FBDF58B9B8 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Biorga Contra Schwefel"@de,
+        "Capito Bio-Schwefel"@de,
+        "Gesal Schrotschuss Spezial"@de,
+        "Sanoplant Schwefel"@de,
+        "Sufralo"@de,
+        "Thiovit Jet"@de .
+
+product:0913DF1B-5E55-4897-B565-3265A920CA1C a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Fulgur Rex"@de,
+        "Granat"@de,
+        "Nizo S"@de,
+        "Proper Flo"@de .
+
+product:092BB820-C1E0-4D17-AD91-AB76235F0FB7 a :REGULAR ;
+    schema1:name "Dormir"@de .
+
+product:0943E71F-A131-4DBA-AD5B-9B98C621A321 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Mildicut"@de .
+
+product:095B6DD7-E5EB-47DC-AB78-AB5CB36AB82E a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Ibiza SC"@de,
+        "Torga"@de .
+
+product:0A7AFBDA-D936-4769-BC2D-3E5E5BE86008 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "DELAN PRO"@de,
+        "Delan Pro"@de,
+        "Dithi-Kali"@de,
+        "Norec"@de .
+
+product:0A8E4A58-2761-442E-BC6B-C84AF4DBC6D6 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Metamitrone Flow"@de,
+        "Métamitrone Médol"@de .
+
+product:0AD9FB1C-EBBF-42EC-8F64-1AC44642A13B a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Fluxapyroxad"@de,
+        "Rondo Sky"@de,
+        "Sercadis"@de,
+        "Tofa"@de .
+
+product:0AE16714-223B-4341-94E9-3E4C60964B8A a :REGULAR ;
+    schema1:name "Timeline FX"@de .
+
+product:0AEF6CFA-AE0A-4939-9E58-AE1A985BA27B a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Melody Combi"@de,
+        "Melody combi"@de .
+
+product:0B073948-3AD7-4EBC-90D7-09D23178AD6E a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Favor DUO"@de,
+        "Garlon 2000"@de .
+
+product:0B107F3A-C90F-4A6C-85CB-7748E735869C a :REGULAR ;
+    schema1:name "Isomate P"@de .
+
+product:0B85828D-F36D-43DB-AC74-9EA7E5DFA95C a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Butisan S"@de,
+        "Metaza"@de .
+
+product:0B8A9253-4ACB-4996-B1ED-56A79D893B04 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Elatus Era"@de,
+        "Ombral Era"@de .
+
+product:0B94A940-D6EC-4D41-83AB-30A92C61A9D3 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Concert SX"@de,
+        "Thifensulfuron + Metsulfuron"@de .
+
+product:0C028C1C-FC28-42AA-B06D-E636ED2AABFC a :REGULAR ;
+    schema1:name "ProFume"@de .
+
+product:0C57335D-0C3F-4844-AAEF-1D5A8C3C8F19 a :REGULAR ;
+    schema1:name "Minusa"@de .
+
+product:0C5C83DE-6451-426A-869A-5859BF7EA89D a :REGULAR ;
+    schema1:name "Eretmocerus eremicus"@de .
+
+product:0C97247A-5365-4B6B-BCD9-E0183F2924D7 a :REGULAR ;
+    schema1:name "Goltix compact"@de .
+
+product:0CCA38BC-B0DC-4ECB-9995-682C1C4AEECC a :REGULAR ;
+    schema1:name "Traxos 50 EC"@de .
+
+product:0CEF1E11-4F49-4860-B006-AFED5AD5D414 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Champ Flow"@de,
+        "Cupromaag Liquid"@de,
+        "Cuprum Flow"@de,
+        "Gesal Kupfer-Pilzschutz"@de,
+        "Palisad"@de .
+
+product:0D24140B-3E0E-4AD0-9477-5A7EE2D09F52 a :REGULAR ;
+    schema1:name "Maxim XL"@de .
+
+product:0D2B194C-72EB-4181-B7EA-E1D2B7523F11 a :REGULAR ;
+    schema1:name "Tachigaren"@de .
+
+product:0D4856E6-4BF5-4714-AB6B-AFDC1EC4680E a :REGULAR ;
+    schema1:name "Revive"@de .
+
+product:0D4BBFE4-3403-4F9E-8ECD-1448E5937B2E a :REGULAR ;
+    schema1:name "Ovitex"@de .
+
+product:0D78171D-FA90-424E-9EBA-1C24011CE2F5 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Botector"@de .
+
+product:0DE09DB1-F9CD-4216-8822-E8890DA88FC5 a :REGULAR ;
+    schema1:name "Chrysopa"@de .
+
+product:0E49C80D-1EA3-4EF9-BEFB-553F15F522C5 a :REGULAR ;
+    schema1:name "Captan 80 WDG"@de .
+
+product:0E4C7139-8C38-42A8-B9BF-6E39CC71E2F7 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Malibu"@de,
+        "STAR Pendimethalin + Flufenacet"@de .
+
+product:0EB8DE7D-33D2-4A89-9FBD-D0709E3EBB0C a :REGULAR ;
+    schema1:name "Alibi"@de .
+
+product:0F4D062C-71AA-4127-93E2-5960BE8D5CBC a :REGULAR ;
+    schema1:name "Cupro-Folpet Ultra SC"@de .
+
+product:0F6BD7A3-15A3-453A-B0C7-BE09F83E5519 a :REGULAR ;
+    schema1:name "Anderline"@de .
+
+product:0FEEEDD8-8684-4CBF-BA78-09E395FC92B9 a :REGULAR ;
+    schema1:name "Cleranda"@de .
+
+product:0d2ae32a-a877-4690-9766-9fdaf9a9caf0 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Capito Garden Silver"@de,
+        "Schädlingsfrei Obst und Gemüse Konzentrat"@de .
+
+product:0f09faaf-fe58-4a55-8f20-3c612c102ad9 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Capito Total-Herbizid"@de,
+        "Deserpan Rasant"@de,
+        "Gesal Unkrautvertilger Natur-Rapid"@de,
+        "Rasan Bio HG"@de .
+
+product:10645A4A-908F-40E6-BEA1-26D35A370235 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Elden"@de,
+        "Executive"@de,
+        "Rimsam"@de,
+        "Rimsulf +"@de,
+        "Rimsulf 250"@de,
+        "STAR Rimsulfuron"@de,
+        "Titus"@de,
+        "Titus 25 DF"@de,
+        "rambo"@de .
+
+product:108064DD-37CF-4D3A-A6E7-DD9039EC0FB3 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Herbasan"@de,
+        "Lentagran WP"@de .
+
+product:1097C776-B7FC-4755-AA8F-3249427499A2 a :REGULAR ;
+    schema1:name "Legacy"@de .
+
+product:10B5EC4E-2966-4BA3-9F10-DB7185599A19 a :REGULAR ;
+    schema1:name "Falkon"@de .
+
+product:10E03CA6-2EA9-4860-8E91-98C5AA7440E0 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Life Scientific Trinexapac"@de,
+        "Moxa"@de,
+        "Regulastar"@de .
+
+product:10F1E6B6-E31D-4AED-AF6A-01E92A69D2C0 a :REGULAR ;
+    schema1:name "StoreGuard"@de .
+
+product:10F9EE3B-FEDB-484A-8354-5B8AFE782B9F a :REGULAR ;
+    schema1:name "Captan 80 WDG"@de .
+
+product:1102653C-AF46-409C-9AD9-8C23D48EBCAA a :REGULAR ;
+    schema1:name "Surfy"@de .
+
+product:11170E95-AFE8-47D4-9A07-359172391011 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Fontelis"@de,
+        "Furioso"@de .
+
+product:111D1FE6-4B79-4F5B-B355-982B1F78BAE0 a :REGULAR ;
+    schema1:name "Force 20 CS"@de .
+
+product:11AD0C7C-EE8A-4DFF-844D-3B7E43BF4D01 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Alar"@de,
+        "Dazide enhance"@de .
+
+product:11DA1377-7586-4649-BE15-70E33B14CA85 a :REGULAR ;
+    schema1:name "Arco"@de .
+
+product:11E05E33-B926-4BFB-99B3-3F007D86BCB0 a :REGULAR ;
+    schema1:name "Trichomix Gewächshaus"@de .
+
+product:11E3B0FE-801D-4A8C-822A-C8ED68CCF555 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Aprex FL"@de,
+        "Devrinol FL"@de,
+        "Nikkel"@de .
+
+product:11a04cd9-c55a-47d1-9a10-789dc3786750 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Schildlaus-und Milben-Stopp"@de,
+        "Telmion HG"@de .
+
+product:1219B29E-AD9F-48D5-8957-AFBCB0B39FBD a :REGULAR ;
+    schema1:name "Dacnusa sibirica"@de .
+
+product:123259B9-93EF-49C3-8F36-2DFAFF7F5F66 a :REGULAR ;
+    schema1:name "Taifun"@de .
+
+product:1285AEB1-8ACB-4EEB-AFC0-39678641CF12 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Dasul"@de,
+        "Divli 4 SC"@de,
+        "Fornet 040 SC"@de,
+        "Glitter"@de,
+        "Maisnet"@de,
+        "Nisshin"@de,
+        "Pampa"@de .
+
+product:12D35973-311E-48EA-BBAB-B1A5EC0C1FA4 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Amega 360"@de,
+        "Clinic TF"@de,
+        "Clinic free"@de,
+        "Lotus Clinic Top"@de,
+        "Nufosate"@de,
+        "Rodeo"@de .
+
+product:13313B15-D5D9-42AB-B9A8-1888BB7E0CA8 a :REGULAR ;
+    schema1:name "Folpet Stähler WG"@de .
+
+product:1343F2D4-2E4B-4993-9564-26A961A9CEA3 a :REGULAR ;
+    schema1:name "Lenacil"@de .
+
+product:134CC9FB-4BC8-4EA6-AB76-B7172F02D63C a :REGULAR ;
+    schema1:name "Diglyphus isaea"@de .
+
+product:138D3097-15F2-4B03-91B7-700F1A895ECF a :REGULAR ;
+    schema1:name "Pronematus ubiquitus"@de .
+
+product:13C07C2C-B36D-4C47-8135-CAC1F8A4341C a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Goltix Compact"@de,
+        "Goltix compact"@de .
+
+product:13CD442E-0555-4450-A379-D40E760890D7 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Prado"@de,
+        "Successor T"@de .
+
+product:14316695-B18B-4B3F-BAB7-0C988C85672D a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Bolt"@de,
+        "Enilor"@de,
+        "Escape"@de,
+        "Jantil"@de,
+        "Praktis Pro"@de,
+        "Proline"@de .
+
+product:14370F2A-7AE0-421D-B56D-004D67FAF03B a :REGULAR ;
+    schema1:name "Primo Maxx"@de .
+
+product:147A53F7-EEC1-4AC6-8D2A-3735D52D5BEB a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Oxykupfer 35 WG"@de,
+        "Verdram Hi Bio"@de .
+
+product:14D3EAD0-6381-4206-89B7-0D85B1A02691 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Flutola"@de,
+        "Fungifend"@de .
+
+product:151AF6C4-CBBF-4E47-9FE6-3D0D57FC81E3 a :REGULAR ;
+    schema1:name "Orius laevigatus"@de .
+
+product:151FA6B1-77D7-44CC-B51F-03738FA0F672 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Auxilior Rex"@de,
+        "Fusilade Max"@de,
+        "Fusilade Profi"@de,
+        "Ruitor"@de,
+        "Trade 125"@de,
+        "Xenturion"@de .
+
+product:157AA0E2-523D-4E6B-8BD9-407C7326D6EB a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Ampexio"@de .
+
+product:157E3236-FF4B-4A2F-8674-CBA7C9373D16 a :REGULAR ;
+    schema1:name "Ervipak"@de .
+
+product:15CE96BF-04F6-4624-AD8C-508E12B92233 a :REGULAR ;
+    schema1:name "Rubin Plus"@de .
+
+product:169AFE3A-6E86-465A-9767-5B01DEDC61CE a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Roxy 800 EC"@de,
+        "Roxy EC"@de .
+
+product:16AE2B4B-AA25-4702-8492-DECAA3EB41C5 a :REGULAR ;
+    schema1:name "Leptomastix dactylopii"@de .
+
+product:16AEB9F0-571E-45FF-82C4-619D88727204 a :REGULAR ;
+    schema1:name "MCPB Omya"@de .
+
+product:16C35AB5-1239-4B9D-A86C-2E4079F9DD6D a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Isomate CLR"@de,
+        "Isomate CLR Max"@de .
+
+product:170334B7-CEBE-4DBD-BCFA-EC88FBD2B64E a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Baroud SC"@de,
+        "Pendimethalin SA-400 SC"@de,
+        "Prowl 400"@de,
+        "Sharpen 40% SC"@de,
+        "Stomp"@de .
+
+product:17428367-0B5C-47F6-A695-B7581562FA4B a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Capito Garden Silver"@de,
+        "Schädlingsfrei Obst & Gemüse Konzentrat"@de .
+
+product:175AA24C-671C-46C2-B5A7-B9B67E1EE48D a :REGULAR ;
+    schema1:name "Dirager Plus"@de .
+
+product:17E3CEDF-B08C-4DCD-9794-1B2CD7ABE6AA a :REGULAR ;
+    schema1:name "Racer CS"@de .
+
+product:1837281B-77E6-4928-9815-29B7B4710183 a :REGULAR ;
+    schema1:name "Aphidius colemani"@de .
+
+product:186263AC-E5DD-43C7-8637-54D8E68716BE a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "BIOHOP DelSAN"@de,
+        "Quassan"@de .
+
+product:186D90CE-C2FF-4CB3-8EEE-3191F05A07D6 a :REGULAR ;
+    schema1:name "Rimuron"@de .
+
+product:18CA0130-308C-441C-9E72-9C5C71CA5629 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Alaxon Gold"@de,
+        "BIOHOP DelTRIN"@de,
+        "Biorga Contra Insektizid Konzentrat"@de,
+        "Capito Bio Insektizid Konzentrat"@de,
+        "Deril"@de,
+        "Sanoplant Bio-Spritzmittel"@de .
+
+product:18DFFC1C-8413-4CCB-A586-1F7C28193CA4 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "MaxCel"@de,
+        "MaxCel 2SL"@de,
+        "Maxcel"@de .
+
+product:18EA3188-796D-4CD2-A109-EB30E702C461 a :REGULAR ;
+    schema1:name "Magma Triple"@de .
+
+product:1949511A-0097-4814-9C42-A71ABE69C80A a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Kumulus WG"@de,
+        "Solfovit WG"@de .
+
+product:194D7B96-375C-46FE-B29D-CBDB1C103132 a :REGULAR ;
+    schema1:name "Zwei, 4 - D - Dicopur"@de .
+
+product:196EA0CB-64DF-4041-B0C0-BA6886761921 a :REGULAR ;
+    schema1:name "Maxim 480 FS"@de .
+
+product:197131F2-ECE1-4B6D-8737-198AD0DF7E82 a :REGULAR ;
+    schema1:name "VerdaProtect"@de .
+
+product:198DB394-F9EF-47D5-BB0C-ADE782CDB893 a :REGULAR ;
+    schema1:name "Maag Bio Marienkäfer gegen Wollläuse"@de .
+
+product:1996E563-D087-489C-8B41-46FDB9C1F550 a :REGULAR ;
+    schema1:name "Flipper"@de .
+
+product:19C981FB-3DC6-4AEF-9FFE-AFBCDEECF28D a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Gesal Milben-Spray"@de,
+        "Kiron RTU"@de,
+        "Spomil Milbenspray"@de .
+
+product:1A421BAF-17E4-4386-A661-4679A4D59DC6 a :REGULAR ;
+    schema1:name "Banvel M"@de .
+
+product:1AC55C5A-5941-420B-A062-8D5E04D581E4 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Aspect"@de,
+        "Mien"@de,
+        "Pyran"@de,
+        "Subitex"@de .
+
+product:1B0A500F-2368-451D-B2FF-22587B56B4BE a :REGULAR ;
+    schema1:name "Cycocel extra"@de .
+
+product:1B45CDFC-61EF-47E5-A23F-92B4F2480ECD a :REGULAR ;
+    schema1:name "Alial 80 WG"@de .
+
+product:1B6DAE32-033E-442A-89FA-DD19D227A98B a :REGULAR ;
+    schema1:name "Axial One"@de .
+
+product:1C47EA6B-A634-4225-BCE2-8C0F99217000 a :REGULAR ;
+    schema1:name "Capsanem"@de .
+
+product:1C75021B-E29C-4B59-A1AE-F2698DBF21B5 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "C5flex"@de,
+        "Stabilan 460 SL"@de .
+
+product:1D16A666-F3ED-44BE-A098-7A15F95B830F a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Pandorra"@de,
+        "Zantara"@de .
+
+product:1D247C04-C91D-4DD9-A470-FE1E325C72B4 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Coop Oecoplan Biocontrol Nützlinge gegen Trauermückenlarven"@de,
+        "Madonem"@de,
+        "Traunem"@de .
+
+product:1D35DF86-F329-44F0-A8CB-2E9E16D225CF a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Cirontil"@de,
+        "Dicamba + Nicosulfuron + Rimsulfuron"@de,
+        "Hector Max"@de,
+        "Rinidi"@de .
+
+product:1DA70A18-DAF1-41A0-8646-F0FEE7F94100 a :REGULAR ;
+    schema1:name "Exochomus quadripustulatus"@de .
+
+product:1E079B09-9E5E-4301-AD88-BE14D9A778A1 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Adexar®Top"@de,
+        "Bronco Top"@de,
+        "Vastimo"@de .
+
+product:1EC060D5-9022-4553-B6C0-987525CFC0D9 a :REGULAR ;
+    schema1:name "Cupro-folpet TB"@de .
+
+product:1F1AD70C-F1F3-479A-BE38-5D01B282F072 a :REGULAR ;
+    schema1:name "Folpet 80 WDG"@de .
+
+product:1F3711E1-5D10-43B2-BABA-A3FE391B53EA a :REGULAR ;
+    schema1:name "Netzmittel RS-16"@de .
+
+product:1FF25EBB-05D0-4EC9-AA15-F30B61BCDD03 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Compil"@de,
+        "Diflanil 500 SC"@de,
+        "HM DFF"@de,
+        "HM DFF2"@de,
+        "Mamut"@de,
+        "Toiseau"@de .
+
+product:201B5F84-8793-486D-B3B8-2EACBDCA52D6 a :REGULAR ;
+    schema1:name "Booster SF"@de .
+
+product:2020B3E4-9D04-4F9A-A1DD-A07D10AA0D1C a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Activus SC"@de,
+        "Pendiwin"@de .
+
+product:2076E9E5-8313-490B-8C9C-B029F150286C a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Coop Oecoplan Biocontrol Läuse-Stop"@de,
+        "Rapisal AF"@de .
+
+product:20AA2292-AAB8-4463-87B8-643499CC2D06 a :REGULAR ;
+    schema1:name "Dicazin 4S"@de .
+
+product:20D71522-02B0-4EA6-9C2C-452D79FF3E86 a :REGULAR ;
+    schema1:name "Spark"@de .
+
+product:21080757-CAF2-45B2-9487-9630232E3E0F a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "CAPTAN 80 WDG"@de,
+        "Captan 80 WDG"@de .
+
+product:21221AEF-1464-46C6-A3EA-C91DA8D7CD23 a :REGULAR ;
+    schema1:name "BIOOtwin L"@de .
+
+product:21519F93-D0B8-4C84-B6B6-4840853686CF a :REGULAR ;
+    schema1:name "Lalstop Contans WG"@de .
+
+product:217CA269-9F24-4762-8F98-4D130A6614EB a :REGULAR ;
+    schema1:name "ColeoStop"@de .
+
+product:21BBB173-B72A-4DBE-BCC1-F30709C26A63 a :REGULAR ;
+    schema1:name "Milo"@de .
+
+product:21C61128-C21A-4A4C-875A-BA8A363422F9 a :REGULAR ;
+    schema1:name "Trichocap-Kapseln zum Werfen"@de .
+
+product:21CCAA19-F217-4E38-8594-BF58502B9B9B a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Consist"@de,
+        "Flint"@de,
+        "Gesal Flint Pilzschutz"@de,
+        "Natchez"@de,
+        "Tega"@de,
+        "Trifloxy"@de,
+        "Trifloxystrobin 500"@de .
+
+product:21FEDC62-A6AD-4C54-BC09-E6541DDA56E2 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Clio 100"@de,
+        "Cliophar 100"@de,
+        "Diclopyr"@de,
+        "Euralid"@de,
+        "Glopyralid 100 SL"@de,
+        "Life scientific Clopyralid"@de,
+        "Lontrel 100"@de .
+
+product:2239864B-6130-4DF8-8CF1-2DF6EC723937 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Dipel DF"@de .
+
+product:2248c654-74d7-48d4-9142-483c45b9437a a :REGULAR ;
+    schema1:name "Beaupro"@de .
+
+product:22744D79-D665-4864-A40B-4097AB48BDFF a :REGULAR ;
+    schema1:name "Dicoherb Super"@de .
+
+product:2311f92f-4642-480a-8a17-3b0d9b6b12bb a :REGULAR ;
+    schema1:name "Cobra Forte"@de .
+
+product:2315FE39-C5A6-488F-AF6C-9EAF36BD40F5 a :REGULAR ;
+    schema1:name "Biox-M"@de .
+
+product:2340FB60-76F5-4C41-8E58-B3A77F90D4C7 a :REGULAR ;
+    schema1:name "Dicavel SL"@de .
+
+product:23741490-0F6F-4335-A986-ACA003E5F1F6 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Fenpyraz"@de,
+        "Fenpyrazamine 500"@de,
+        "Prolectus"@de,
+        "Prolectus 50 WG"@de .
+
+product:23952C3A-4FF3-4489-9505-3CA44C4DDA92 a :REGULAR ;
+    schema1:name "Matox"@de .
+
+product:23AC25F9-D00A-4E60-91A6-967ECFD90D64 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Rhodofix"@de .
+
+product:23C5CCB9-3863-42DB-9688-17565978C5C7 a :REGULAR ;
+    schema1:name "Orondis Ultra"@de .
+
+product:246ECF14-69D0-45A8-90F0-062EDE32F422 a :REGULAR ;
+    schema1:name "Instrata Elite"@de .
+
+product:24DF9479-2B7A-4BBB-9DC3-54B2E83E93E9 a :REGULAR ;
+    schema1:name "KENDO GOLD XTRA"@de .
+
+product:2540EA5E-0BEB-41FC-9791-88BDA40AA44E a :REGULAR ;
+    schema1:name "Silwet L-77"@de .
+
+product:2557ED7B-D8D9-43AD-BCB6-DE87A71BD105 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Isomate Ofm Rosso Flex"@de,
+        "Isomate-OFM Rosso"@de .
+
+product:255B5DF1-C528-4BF0-96BF-AB7489A5934C a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Fortissimo Schneckenkorn 3%"@de,
+        "MIOPLANT Schneckenkörner"@de .
+
+product:2568EBE2-9100-4510-9F4B-391B45F69B41 a :REGULAR ;
+    schema1:name "Mäusetod"@de .
+
+product:2605e3c4-6cac-4f50-91b2-24afe71db3c3 a :REGULAR ;
+    schema1:name "Armicarb SG Jardin"@de .
+
+product:261533ED-6608-4036-96EF-597218EDC11C a :REGULAR ;
+    schema1:name "Telmion"@de .
+
+product:2635579D-9411-4CC6-BC9D-5638FC1CEBB0 a :REGULAR ;
+    schema1:name "Spidend"@de .
+
+product:26A71937-B7AA-4595-A783-4E96CE61BDD6 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "MycoSan-S"@de,
+        "Netzschwefel Stulln"@de .
+
+product:26B71255-2117-4705-8A58-3D178ADABAB1 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Actiol"@de,
+        "Soufre FL"@de .
+
+product:26DB30D3-0FBD-4052-B625-902D28D006C4 a :REGULAR ;
+    schema1:name "Californiline"@de .
+
+product:280A1463-BF6F-4BB0-B24A-10463ACCA691 a :REGULAR ;
+    schema1:name "Difend Extra"@de .
+
+product:2919A58F-3AE2-494E-BB46-E96E50068E69 a :REGULAR ;
+    schema1:name "Techno"@de .
+
+product:29668A8C-C954-4FE2-AB47-49F071B71D59 a :REGULAR ;
+    schema1:name "Cryptoline"@de .
+
+product:29DC0510-4EA9-417E-B51C-4F3C27E7CEEC a :REGULAR ;
+    schema1:name "Detia Gas-Ex-P"@de .
+
+product:29FD0AC8-7C9B-4582-A96E-B69FCC646C06 a :REGULAR ;
+    schema1:name "Revystar® XL"@de .
+
+product:2A0F58E8-D206-4B42-A911-6D1C0BE76A05 a :REGULAR ;
+    schema1:name "Thripor-L"@de .
+
+product:2A367687-FBC6-445D-A172-05CD3735D90C a :REGULAR ;
+    schema1:name "Lalstop K61 WP"@de .
+
+product:2A5BDD33-B856-4992-8ACC-50A91E668653 a :REGULAR ;
+    schema1:name "Taifun"@de .
+
+product:2A7FA096-6AD4-48B0-9FE6-66F0FA6BCFFA a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Gesal Rasen-Unkrautvernichter"@de,
+        "Herba>ProXX C"@de,
+        "MIOPLANT Rasen-Unkrautvertilger"@de,
+        "Njett"@de .
+
+product:2A86EDC4-8624-4B36-9DAA-103D11693473 a :REGULAR ;
+    schema1:name "Sempra"@de .
+
+product:2A8B97E2-AD7D-4902-8A9D-756DCCF24043 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Capito Totalherbizid Konzentrat S"@de,
+        "Finalsan Konzentrat UnkrautFrei Plus"@de,
+        "Finalsan Plus Konzentrat"@de .
+
+product:2B72AEC1-FE3B-44AA-87CE-6499A562BA79 a :REGULAR ;
+    schema1:name "Gesal Insektizid für Rosen und Zierpflanzen"@de .
+
+product:2B8061E2-0A6F-41CC-9D11-70947F721DBF a :REGULAR ;
+    schema1:name "Rondo HG"@de .
+
+product:2B8E577C-3971-47B2-A522-59AC8A921A62 a :REGULAR ;
+    schema1:name "Dasul Extra 6 OD"@de .
+
+product:2BA673ED-AAB2-495A-89AB-C8E96386832B a :REGULAR ;
+    schema1:name "Racer CS"@de .
+
+product:2C46966F-CBEA-4FA3-9122-E21D874C7492 a :REGULAR ;
+    schema1:name "Larvanem"@de .
+
+product:2CA7C614-60D8-4411-866F-C7EF1DB9B415 a :REGULAR ;
+    schema1:name "Kerb Flo"@de .
+
+product:2D057992-A6BA-4667-A113-B1262E4DFF04 a :REGULAR ;
+    schema1:name "Berone"@de .
+
+product:2D3E8CA9-EC3B-4147-883A-A642892BD0CA a :REGULAR ;
+    schema1:name "Stratiopak"@de .
+
+product:2D5765C3-3CF2-402F-A1A3-D8201983139D a :REGULAR ;
+    schema1:name "Thripor"@de .
+
+product:2D7A6BD1-A7A5-43EC-B813-87E3686A4881 a :REGULAR ;
+    schema1:name "Cleave"@de .
+
+product:2D9FDAB8-C44A-4975-9647-5DB7221AD19E a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Chekker"@de,
+        "Hoestar Super"@de .
+
+product:2DE94C18-8392-4B07-98BE-5EF0796F4DF8 a :REGULAR ;
+    schema1:name "Thripex"@de .
+
+product:2E0C01AE-563A-4159-9329-612F0D7CBE01 a :REGULAR ;
+    schema1:name "Oléoc"@de .
+
+product:2E4DB717-B70C-49AE-92B4-ECC622E23FDD a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Extralugec Granulés Techn'o"@de,
+        "Extralugec SR"@de,
+        "Schneckenkorn 5% Lonza"@de .
+
+product:2E64A6A5-A9FC-4D24-8C7E-EEDC3CBB9DA0 a :REGULAR ;
+    schema1:name "Pergado C"@de .
+
+product:2E97AD02-E6A9-4429-AD5C-37C0150BD821 a :REGULAR ;
+    schema1:name "Beni"@de .
+
+product:2EC2CCCB-0D6C-452D-851C-C74AC17A5C65 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Equip Power"@de,
+        "MaisTer Power"@de,
+        "MaisTer power"@de .
+
+product:2F12CDBF-B34F-44FB-AE61-2FD50E8EACCE a :REGULAR ;
+    schema1:name "Mildicut"@de .
+
+product:2F3B8348-DE79-4ED6-96B3-1055FC2E4BDA a :REGULAR ;
+    schema1:name "Pokerpak"@de .
+
+product:2F4717E1-D8B2-4348-A884-1EE28917B573 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Dicash"@de .
+
+product:2F7EE044-141B-483B-9D7F-682CD5EB03D9 a :REGULAR ;
+    schema1:name "Miglyphus"@de .
+
+product:2FE88048-63B9-478E-BAA6-2FDDEF10BD1C a :REGULAR ;
+    schema1:name "Ally Tabs"@de .
+
+product:309B0A65-5D33-409F-B9E7-D41BCF72F705 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Nicosh 4 OD"@de,
+        "Victus OD"@de .
+
+product:3162EEEB-71AB-4B27-9A45-2240A983DFF2 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Actirob B"@de .
+
+product:3162F2B8-B7B7-4BC9-911E-D4A3F24DFE0C a :REGULAR ;
+    schema1:name "Siplant"@de .
+
+product:318182F1-33BA-4532-88B3-1A1E9F4654A4 a :REGULAR ;
+    schema1:name "Roundup Optima"@de .
+
+product:31B302FF-F172-46E7-B7BA-C7E2F424FD45 a :REGULAR ;
+    schema1:name "Ferramol Schneckenkorn PROFI"@de .
+
+product:31C421DA-278D-4C74-9D5E-10062E3609FB a :REGULAR ;
+    schema1:name "Topas"@de .
+
+product:323BA0A6-4AC6-4C03-8C57-1EC83839C704 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Dirigol - N"@de,
+        "Phytonic"@de .
+
+product:32D09609-6FC1-46A9-AF60-E2C7CFEF824A a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Aerofleur Natura Spray"@de,
+        "MAAG Schildlaus-Stopp Spray"@de .
+
+product:32E9006A-4B12-4D8E-A818-5D98E2FE8B1E a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Balaya"@de,
+        "Enduro"@de,
+        "Revycare"@de .
+
+product:3333BF6C-7E3B-43D5-BF47-E7893B6085B4 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "APC-09CD"@de,
+        "Armicarb"@de,
+        "Armicarb jardin"@de,
+        "BIOHOP FungiCARB"@de,
+        "Belrose Pilz-Stopp"@de,
+        "Biorga Contra gegen Pilzkrankheiten"@de,
+        "Capito Armicarb"@de,
+        "Rondo Natura"@de .
+
+product:33779B93-9827-4C3F-AD1F-9A088B6A4AB4 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Amaline Flow"@de .
+
+product:3377F108-7A93-4CBF-AE3B-A1B0F79C010E a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Goltix Gold"@de,
+        "Sugaro Gold"@de .
+
+product:33B97941-A41D-4419-87A7-1294011F2114 a :REGULAR ;
+    schema1:name "Gazelle 120 FL"@de .
+
+product:346072b1-54cc-4d32-b104-92063ca91ee4 a :REGULAR ;
+    schema1:name "Majestik Indoor"@de .
+
+product:34704FBE-690E-469E-8DD5-A26BCFEB923C a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Fezan"@de,
+        "Tebuconazole Omya"@de .
+
+product:34A5B471-37D2-41AC-A73D-78B48F3DBF82 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Adalia"@de,
+        "Capito Marienkäferlarven"@de,
+        "Coop Oecoplan Biocontrol Nützlinge gegen Blattläuse"@de .
+
+product:34B860CC-C164-4637-B8D7-516121CD878C a :REGULAR ;
+    schema1:name "LE 846"@de .
+
+product:34BAF11B-7639-4987-B610-A2E77C83BBA7 a :REGULAR ;
+    schema1:name "Husar Plus"@de .
+
+product:3559DAFF-6B3A-4C75-A12E-F921BB6A3412 a :REGULAR ;
+    schema1:name "Tebusha 25% EW"@de .
+
+product:356EB539-DB95-4513-AEE3-9C395F15910A a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Basagran SG"@de,
+        "Benta+"@de,
+        "Blast SG"@de,
+        "Effican SG"@de,
+        "Hm Basa"@de,
+        "Kusak SG"@de,
+        "Pedian SG"@de,
+        "Rigron SG"@de .
+
+product:358843AB-95AD-4724-ADB8-5575AF528BA6 a :REGULAR ;
+    schema1:name "Maestro"@de .
+
+product:35AA16CC-306F-49DD-BDFD-52D7F8A3DFBF a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Biorga Contra Winteröl"@de,
+        "Capito Winterspritzmittel"@de,
+        "Promanal HP"@de,
+        "Zofal D"@de .
+
+product:35B1B86F-1BA1-4075-9984-BD10C53249B2 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Bengala"@de .
+
+product:35FC8D7C-D06B-4718-B7DC-B62D0EDF0B8D a :REGULAR ;
+    schema1:name "Scomrid-Spray"@de .
+
+product:360D52B2-748E-4895-ADF6-27C2D0855B42 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Isomate CTT"@de,
+        "Isomate-CTT"@de .
+
+product:363E776A-D53C-4299-BBC7-D33BC783376F a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Baso"@de,
+        "Chanon"@de,
+        "Dacthal SC"@de .
+
+product:366EB4D2-D57F-49F4-A3EA-15534EA0772A a :REGULAR ;
+    schema1:name "Quick 5% EC"@de .
+
+product:366FE139-F8FA-49D3-8D53-F3194FBACFEA a :REGULAR ;
+    schema1:name "Aphidoletes aphidimyza"@de .
+
+product:37498683-1BE3-4463-A29E-0CC90F8721F5 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Caramba"@de,
+        "Life Scientific Metconazole"@de,
+        "Life Scientific Metconazole 60"@de .
+
+product:376DC038-BE5E-45A1-85F9-C577A7E8E719 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Syllit"@de .
+
+product:37ADF047-8D53-4B0C-B7DE-BAAF9678D73A a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Centium 36 CS"@de,
+        "Clomastar"@de,
+        "Clomate"@de,
+        "Clomazone 360"@de,
+        "Klom 36"@de,
+        "Mazone 360"@de,
+        "STAR Clomazone"@de .
+
+product:381F6F98-ADEF-4933-89AE-708B48B8F4D9 a :REGULAR ;
+    schema1:name "Task"@de .
+
+product:387CC896-7E5F-41A5-B3AC-BE5227DCDBF0 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Aligator"@de,
+        "Deltaphar"@de,
+        "Deltastar"@de,
+        "Poleci"@de .
+
+product:38BECDE1-3C8A-409C-8B8C-53EDD4EF957B a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Biorga Contra Spray gegen Unkräuter"@de,
+        "Express Spray"@de,
+        "Natrel Garden Spray"@de .
+
+product:38F2633D-3B19-4F9F-BF68-6D57692BD206 a :REGULAR ;
+    schema1:name "Aphelinus abdominalis"@de .
+
+product:39185B29-FF74-44E3-89B2-A4650F5CC554 a :REGULAR ;
+    schema1:name "ErosionControl EC-1000"@de .
+
+product:395824C9-2C4B-40FB-81D9-4EB5F4126CE8 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Cuprofix Fluid"@de,
+        "Flowbrix"@de .
+
+product:39ADD145-1AD7-45D1-AA8E-A2FAFA08E722 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Clomazone + Metribuzin"@de,
+        "Metric"@de .
+
+product:39D54692-1D07-4056-A4C6-431EF7152DD8 a :REGULAR ;
+    schema1:name "LBG-51FCm"@de .
+
+product:3A2A1A6A-17A9-4EF0-900F-B2033740C2F9 a :REGULAR ;
+    schema1:name "Erviline"@de .
+
+product:3A2EAA6B-6038-433C-B6AB-2556E4232933 a :REGULAR ;
+    schema1:name "Fantom-E"@de .
+
+product:3A3DEC7A-536C-4400-B022-C883FB051D3B a :REGULAR ;
+    schema1:name "Flurostar 180"@de .
+
+product:3A78447E-FFCF-461E-B37D-570C04902A6E a :REGULAR ;
+    schema1:name "Microterys flavus"@de .
+
+product:3A9EA976-60E4-4A88-8353-BA8E5FCCED13 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "KARATE XFLOW"@de,
+        "Karate Zeon"@de,
+        "Karate avec technologie Zéon"@de,
+        "Kendo"@de,
+        "Lambdastar"@de .
+
+product:3AA1778A-F21C-4539-9C57-4DB91D3D2171 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Metapro"@de,
+        "Metarhizium Schweizer"@de .
+
+product:3AF79922-2B7D-4F3A-A1BB-19E844FC834C a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "BIOHOP MaltoMITE"@de,
+        "Belrose Natura"@de,
+        "Eradicoat"@de,
+        "Gesal Insektizid für Rosen und Zierpflanzen Majestik"@de,
+        "Glumalt SL"@de,
+        "Majestik"@de .
+
+product:3BD0E5A9-A01D-4F80-9FD2-661D540A8B83 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Espiro Plus"@de,
+        "Faban"@de,
+        "Venturex"@de,
+        "Vision Plus"@de .
+
+product:3C15E1E8-DF3F-42AA-9356-64E1F49F7C0B a :REGULAR ;
+    schema1:name "Asulam"@de .
+
+product:3C173170-CE24-4AE7-A9C3-832EFCE2907C a :REGULAR ;
+    schema1:name "Legado"@de .
+
+product:3C2B878F-D907-468F-89AB-4D11AAC0E268 a :REGULAR ;
+    schema1:name "Airone Garten"@de .
+
+product:3C9CCEE3-3F59-4AE0-BFCC-6B3C15BF5202 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Bandsen HG"@de,
+        "BioHOP Orion"@de,
+        "Gesal Käfer- und Raupen-Stop"@de,
+        "MAAG Käfer-Stopp"@de,
+        "Perfetto HG"@de .
+
+product:3CF8A678-0CBE-40D4-A1F5-570074D2963B a :REGULAR ;
+    schema1:name "Armicarb SG"@de .
+
+product:3D2F2F76-BA54-416E-84D3-3C324BA61F18 a :REGULAR ;
+    schema1:name "Coral Extra"@de .
+
+product:3D413DE5-87DF-45A6-8DFB-53C8543782F0 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Alaxon Spray"@de,
+        "Kendo Spray"@de,
+        "MIOPLANT Spray gegen Schädlinge"@de,
+        "Resolva Spray gegen Schädlinge"@de .
+
+product:3D6A7B85-83AC-40BB-8AAE-713138F97F93 a :REGULAR ;
+    schema1:name "Metamit WG 70"@de .
+
+product:3E2A38B7-5921-4DFE-AD3C-1BD759D048BC a :REGULAR ;
+    schema1:name "CCC"@de .
+
+product:3E3CAD4D-EF8D-4A61-A3FE-DB87347A98BD a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Huntar"@de,
+        "Proxanil"@de,
+        "Proxanil SC"@de .
+
+product:3E8889C5-EAD6-4B95-99F5-720A71BA56EE a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Hysan Aqua"@de,
+        "Pendaqua"@de,
+        "Pendi 455"@de,
+        "Stomp Aqua"@de .
+
+product:3EB62675-F0D9-4A87-B498-71A312616AA0 a :REGULAR ;
+    schema1:name "Devrinol Plus"@de .
+
+product:3F892DBC-E8AA-45B1-A16E-A635CE1A6C38 a :REGULAR ;
+    schema1:name "Amarel Kupfer DF"@de .
+
+product:3FA37197-E681-4135-B7CC-4A0C75562662 a :REGULAR ;
+    schema1:name "Mizapak"@de .
+
+product:3cf2a4c4-fbe9-41ae-ac01-0152dd716474 a :REGULAR ;
+    schema1:name "Meginem Cold"@de .
+
+product:4049E253-FC2D-45AA-9D1D-D402D633E89A a :REGULAR ;
+    schema1:name "Maza 4% SL"@de .
+
+product:4087F4B3-19D5-4C36-A3D6-E1BFD0ADC95F a :PARALLEL_IMPORT ;
+    schema1:name "Columbus"@de .
+
+product:40B0C357-7A34-468A-B279-18F51D30DD11 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Heading perfectLawn"@de,
+        "Mamba Due"@de,
+        "Proclean Turf Duo"@de .
+
+product:41038260-EF36-409B-9A2D-3854AC280BFB a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Capito Garden Gold"@de,
+        "Cythrin Garden"@de .
+
+product:413B51DA-7A50-40F6-AFB6-E9CA519A83E3 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Camposan Top"@de,
+        "Cerone 660"@de,
+        "Dartilon S"@de,
+        "Elotin"@de,
+        "Ethephon 6"@de,
+        "Ethephon 6S"@de .
+
+product:4182269D-D509-468A-A850-F11948D32573 a :REGULAR ;
+    schema1:name "Omazon"@de .
+
+product:418B0D31-5F46-4A2A-9CE5-FE9921430394 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "MaisNico"@de,
+        "Nicogan"@de .
+
+product:41D270CE-5051-4262-B3DE-5386EF999ADA a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Acoidal"@de,
+        "Acoidal WG"@de,
+        "BIOHOP ProTECT S"@de,
+        "Cosan-Super Kolloid-Netzschwefel"@de,
+        "Kumulus DF"@de,
+        "Kumulus WG"@de,
+        "Kumulus jardin"@de,
+        "Mycosan-S"@de,
+        "Netz-Schwefelit WG"@de,
+        "Netzschwefel Stulln"@de,
+        "Schwefel 80 WG / Soufre 80 WG"@de,
+        "Thiovit Jet"@de,
+        "Thiovit Jet Micro Billes"@de,
+        "Visul GD 80"@de .
+
+product:41e2602c-5adc-48bc-b119-10bc51c884df a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Heading perfectLawn"@de,
+        "Herba Duo"@de,
+        "Proclean Turf Duo"@de .
+
+product:423978B6-4388-4A7E-AA47-8AB7E55E8A95 a :REGULAR ;
+    schema1:name "Primo Maxx"@de .
+
+product:425E61A3-36A0-410A-9F90-2921A03A19F9 a :REGULAR ;
+    schema1:name "Isomate-C/OFM"@de .
+
+product:42D069B6-F672-4CF5-B26C-F3A23EF497E7 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Florasustar"@de,
+        "Globus"@de .
+
+product:42E32536-2726-4117-B8C4-2ECC2D04A956 a :REGULAR ;
+    schema1:name "Beauveria-Maschinenring"@de .
+
+product:43123EC4-D757-4952-A8E7-9CE04E0F6D27 a :REGULAR ;
+    schema1:name "Goltix Gold"@de .
+
+product:433C84FC-D050-467C-9A26-DED9E2930011 a :REGULAR ;
+    schema1:name "Bacchus"@de .
+
+product:43527146-C9B7-4F47-9EB9-F0B51B0B91A9 a :REGULAR ;
+    schema1:name "Trissolcus basalis"@de .
+
+product:436F9B8A-A639-4D70-AF4A-242BAA46B230 a :REGULAR ;
+    schema1:name "Cryptobug"@de .
+
+product:4373C751-470C-4222-98A0-4345DBDA8447 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Ironmax Pro"@de .
+
+product:439805AF-7E73-47E6-97FD-183EE3A161E9 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Askon"@de,
+        "Priori Top"@de .
+
+product:440d68e9-d990-484c-8af7-bce09553a68f a :REGULAR ;
+    schema1:name "Cupro-Folpet Ultra SC"@de .
+
+product:4411E34B-EB58-4D3A-845E-17EE2F7110E5 a :REGULAR ;
+    schema1:name "Solvit"@de .
+
+product:4449CF09-D4FA-4908-BB29-84309D18B7E2 a :REGULAR ;
+    schema1:name "Prestop"@de .
+
+product:4468176E-A004-49B0-A5B7-DC502D64377E a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Pledge"@de .
+
+product:4476BAFF-90CE-4BDB-80C0-8265ADE22EE3 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Metobrom"@de,
+        "Proman"@de,
+        "Ramba"@de,
+        "Soleto"@de .
+
+product:449F61CF-41AC-4D48-A0EE-B1BA7B001D5A a :REGULAR ;
+    schema1:name "Talisma EC"@de .
+
+product:44A2FF17-15CF-486F-BFE3-26C38B188E94 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Adengo"@de,
+        "Adengo 315 SC"@de,
+        "Adengo 465 SC"@de,
+        "Adengo S"@de,
+        "CORNCARE"@de,
+        "Isoxazone"@de .
+
+product:44BBAE8D-7615-4CEE-BB3A-8B94765D40BC a :REGULAR ;
+    schema1:name "Nemalo"@de .
+
+product:44EC34FC-C967-40E2-9414-076ABF87B355 a :REGULAR ;
+    schema1:name "Resanol"@de .
+
+product:45582429-4384-4933-8932-B2461B7883B7 a :REGULAR ;
+    schema1:name "Nematop Käfer-Stopp"@de .
+
+product:4558DE6D-3108-48E0-BBBB-8A50194C36E1 a :REGULAR ;
+    schema1:name "Capirel"@de .
+
+product:458FC5C9-2DC7-4CB0-9E8E-970DBC05EA9E a :REGULAR ;
+    schema1:name "Bredola"@de .
+
+product:45C8D11B-CD05-4731-9013-A88B84F1B57A a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Beta Super 3"@de,
+        "Phemo"@de .
+
+product:45DE1BF0-E979-4053-93A8-44B5F1B7C5F4 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Tebuconazol + Prothioconazol"@de,
+        "Tilmor"@de .
+
+product:46002737-F9C7-45B3-8EE4-C632DF96BFE8 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Carax"@de,
+        "Caryx"@de,
+        "Dakar"@de,
+        "Mepiconazol"@de,
+        "Mepiquat + Metconazol"@de .
+
+product:462C2BF9-57C5-46CF-B921-5786FA603D25 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Baltazar"@de,
+        "Corail"@de,
+        "Folicur"@de,
+        "Horizon EW"@de,
+        "Horizont"@de,
+        "Tebu Super 250 EW"@de .
+
+product:46323A5D-FD55-4DAD-929C-9E01A29E380B a :REGULAR ;
+    schema1:name "Eretline"@de .
+
+product:46948565-6025-4671-AC28-53F51C0A4731 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "FLUOCARE"@de,
+        "Fluozol"@de,
+        "Orpist"@de,
+        "Propulse"@de .
+
+product:46F45D33-BEA2-4361-BF45-2FFDEF7B770E a :REGULAR ;
+    schema1:name "Vacciplant"@de .
+
+product:4723E25D-3949-4ED6-BB85-6EF402DD7FE2 a :REGULAR ;
+    schema1:name "BIOOtwin L+"@de .
+
+product:472F4B23-0C11-4AB9-87C4-A6097836AF0C a :REGULAR ;
+    schema1:name "Tribel 100 EC"@de .
+
+product:47B5CD0F-DB0A-41D1-A43D-C7A8F693065B a :REGULAR ;
+    schema1:name "Milbeknock"@de .
+
+product:47E95FD7-994C-46E2-8558-CF54C1EEB0E4 a :REGULAR ;
+    schema1:name "Secur"@de .
+
+product:48724120-DC91-41C8-838E-9CB0A35D215E a :REGULAR ;
+    schema1:name "Dacnusa sibirica"@de .
+
+product:487E067C-3B99-4C7B-92D0-2E0905A74B31 a :REGULAR ;
+    schema1:name "Thripex Plus"@de .
+
+product:48DA2DFE-420B-47CE-A784-A77F0115624A a :REGULAR ;
+    schema1:name "Alfil WG"@de .
+
+product:48DA3781-5CE6-4B7C-8C35-C523CB27FA3A a :REGULAR ;
+    schema1:name "Amblyseius swirskii"@de .
+
+product:492A67E2-D097-431B-93BC-C1431EEF15B3 a :REGULAR ;
+    schema1:name "Thripor L"@de .
+
+product:49566ADC-2CAD-40FF-917D-641D1498DE5F a :REGULAR ;
+    schema1:name "Agil"@de .
+
+product:498AE4BA-D032-45D3-87A8-0FE12996840A a :REGULAR ;
+    schema1:name "Cito RTU"@de .
+
+product:4A211ED7-F030-4471-B7CE-046214BE4B72 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Milltox Royal"@de,
+        "Ready Germiplus"@de .
+
+product:4A5BBF3A-B71A-4E59-A768-BCEAAAC5DFAB a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Calaris"@de .
+
+product:4A95053D-8E35-483C-8FD5-D4787492247F a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Oblix 200 EC"@de .
+
+product:4AB1771E-7F17-4CBD-A419-BF4A2B45CAD0 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Medax Max"@de,
+        "Paudor"@de,
+        "Prodax"@de .
+
+product:4AE0FCB8-AD44-4051-A709-355E4FE9921F a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Fluidosoufre"@de .
+
+product:4B32694C-ECF4-43A3-9DDC-0CCF561F78CE a :REGULAR ;
+    schema1:name "Proradix"@de .
+
+product:4B63B7C6-C2C9-4B8D-AF84-07C8619D3B1F a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Antarion"@de,
+        "Biohop DelEXX HP"@de,
+        "Ironmax Pro"@de,
+        "Sluxx HP"@de .
+
+product:4B859E88-0340-42F0-8DC2-D71FD5B03A66 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Braxol"@de,
+        "Genol Plant"@de,
+        "Sanoplant Winteröl"@de,
+        "Zofal R"@de .
+
+product:4BAB624E-8F37-4361-BF1E-03A4F2948CB7 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Animo 200 SC"@de,
+        "Coragen"@de,
+        "Coragen 20 SC"@de,
+        "Vesticor"@de .
+
+product:4BABC787-2871-49DF-9A85-7F7D143A7437 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Roundup 120"@de .
+
+product:4BCCFF42-8333-43D8-91B9-B5C1FF8DB70D a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Archipel"@de,
+        "Cossack OD"@de,
+        "Cossack Pro"@de .
+
+product:4C7EF26C-BE0E-4C2D-A98D-F7055CFC49F0 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Avoxa"@de,
+        "Pinosulam"@de .
+
+product:4CE994F8-341C-4708-8F11-D3F8B59EB925 a :REGULAR ;
+    schema1:name "Rondo Combi L"@de .
+
+product:4CED5323-5D69-422A-B72F-CEF692001703 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Conviso One"@de,
+        "Conviso one"@de .
+
+product:4DFA1108-46AD-42C8-A761-F6244FDE9991 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Gesal Milben-Stop"@de,
+        "Gesal Schädlings-Stop für Zimmerpflanzen"@de,
+        "Rapisal AF"@de .
+
+product:4E134EDE-905C-4AE8-A279-BF4401A41607 a :REGULAR ;
+    schema1:name "Amblyseius degenerans"@de .
+
+product:4E146607-BAD4-40F3-8784-9D29C4A0D736 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Windenvertilger coloré / Anti-liseron coloré"@de,
+        "Windweg Konzentrat"@de .
+
+product:4E6B37DC-8B91-425E-8643-61F6C49FDEF6 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Neudosan Neu"@de,
+        "Neudosan Obst &Gemüse Schädlingsfrei"@de,
+        "Neudosan Obst- & GemüseSchädlingsfrei"@de,
+        "Spruzit Rosen-SchädlingsFrei"@de,
+        "Spruzit SchädlingsFrei"@de .
+
+product:4EA9FCDF-DC99-4CB1-BB48-7749E4748214 a :REGULAR ;
+    schema1:name "Squall"@de .
+
+product:4EBAAF03-083F-4A9F-9ADF-2ECA4B961F37 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Airone"@de,
+        "Biorga Contra Kupfer Duo"@de .
+
+product:4EC263C8-8D7C-4BAB-9225-E7D7FE6D28BC a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Banaril Blanco"@de,
+        "Carmina"@de,
+        "Carmina 640"@de,
+        "Carmina Max"@de,
+        "Steel"@de,
+        "Tarak"@de .
+
+product:4F654F31-3B26-46E8-942B-01D12F584627 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Infinito"@de,
+        "Propamocarb + Fluopicolide"@de .
+
+product:4FA0D97D-2598-4FF8-A3FC-5A4B44285CC2 a :REGULAR ;
+    schema1:name "Dash"@de .
+
+product:4FC427FF-55F3-4CB3-9E6E-F858A133A62A a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Dirager S"@de,
+        "Dirager SL"@de .
+
+product:4FE5B498-BE6B-4878-8728-40C18C290B9B a :REGULAR ;
+    schema1:name "Adjuvant Médol"@de .
+
+product:4bf38984-da06-4527-8bb7-5fb53c20b8b3 a :REGULAR ;
+    schema1:name "Capito Garden Special Spray"@de .
+
+product:4c0c4991-ae82-4317-800b-ef80787615ad a :REGULAR ;
+    schema1:name "Exhibitline Ph"@de .
+
+product:50617451-D2D7-4E40-A748-4B81101B4016 a :REGULAR ;
+    schema1:name "Curatio"@de .
+
+product:5096E868-263D-4EAD-80D0-54CAB1A31099 a :REGULAR ;
+    schema1:name "Amarel-Folpet DF"@de .
+
+product:50B314C8-2A50-4E8D-AE87-20E860576361 a :REGULAR ;
+    schema1:name "Schädlingsfrei Forte"@de .
+
+product:50C1CE9A-D6E2-42D3-B742-6BCBFD837C65 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Retrieve"@de,
+        "Tomigan 20"@de .
+
+product:50F23916-06B4-4E93-9ECA-B32B2622C754 a :REGULAR ;
+    schema1:name "CeraSulfur"@de .
+
+product:50F7E072-576C-4A57-83C3-FA3D6AE09727 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Prox"@de,
+        "Spirox"@de .
+
+product:5114BA88-F2B2-4E00-BBA0-E61DA10FA650 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Buzzin"@de,
+        "Buzzin 70 WG"@de .
+
+product:51188853-5FD9-45C0-A954-2D4DD4FF0C8A a :REGULAR ;
+    schema1:name "DuoControl"@de .
+
+product:513B56C2-7FDE-46D1-9ED6-2FD116F44DE8 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Durano TF"@de,
+        "Roundup Prime"@de .
+
+product:514C62E3-9487-42D4-98F3-133467E0CE56 a :REGULAR ;
+    schema1:name "Amblyline"@de .
+
+product:514F6D1C-9BA2-4FC3-BE25-B3DD322ED5E1 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "BIOHOP DelMON PRONTO"@de,
+        "Biorga Contra Schädlingsfrei Spray"@de,
+        "Capito Pflanzen-Insektizid"@de,
+        "Coop Oecoplan Biocontrol Insectizid"@de,
+        "Gesal Kräuter, Obst und Gemüse Insektizid"@de,
+        "Insect-Ex"@de,
+        "Oleate RTU Spray"@de .
+
+product:51752E26-276F-4992-BB8C-64F07AADA851 a :REGULAR ;
+    schema1:name "Lobesia Pro Spray"@de .
+
+product:51B6B01C-DBD2-41AB-B3B2-9932A9CF1E2E a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Folpet 80 WDG"@de,
+        "Phaltan 80 WDG"@de .
+
+product:51BCF100-296A-4D00-A818-832ACC541D79 a :REGULAR ;
+    schema1:name "Milo"@de .
+
+product:528F0244-34BF-4E4B-A509-2BFE6DA21CA7 a :REGULAR ;
+    schema1:name "Traxos 50 EC"@de .
+
+product:52D1E053-1432-4771-9723-A0A6B6E5B516 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "BIOHOP NemaSCHNAK"@de,
+        "Bio Garden Älchen gegen Werren und Erdraupen"@de,
+        "Carponem"@de .
+
+product:5309315B-7AE0-4717-A3D1-DD86076ADE7B a :REGULAR ;
+    schema1:name "Legacy"@de .
+
+product:5320BA84-DBBE-4F92-A4F7-E63A7DE7CD9B a :REGULAR ;
+    schema1:name "Entomite-M"@de .
+
+product:5344BAF3-2C2F-4F53-8ABB-0253EBDC4A64 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "BIOHOP HelioSOUFRE"@de,
+        "Heliosoufre S"@de,
+        "Thiovit Liquid"@de .
+
+product:53931FFF-3082-4939-BB41-FD2196A63658 a :REGULAR ;
+    schema1:name "Brevis"@de .
+
+product:53AF704E-721F-4879-A848-48F555CDE8AC a :REGULAR ;
+    schema1:name "Azbany"@de .
+
+product:53B0523F-116C-4A34-8341-81EE6BCBCD8B a :REGULAR ;
+    schema1:name "Goltix compact"@de .
+
+product:541409BB-9BE4-4119-8C4F-EADCBE46CD4B a :REGULAR ;
+    schema1:name "Lentagran"@de .
+
+product:541CB924-030C-4ABE-BFB5-4EC612DCD09A a :REGULAR ;
+    schema1:name "LBG-42FFm"@de .
+
+product:544ABE2D-8FF7-42C2-A2D8-B69F75301333 a :REGULAR ;
+    schema1:name "MCPB LG"@de .
+
+product:545BB6D3-D6F9-4170-8CEC-D67399BAA708 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Quantum"@de,
+        "Successor 600"@de .
+
+product:54F5B294-6D6F-4E39-B7EE-16B14F554039 a :REGULAR ;
+    schema1:name "Metarhizium-Maschinenring"@de .
+
+product:54FA99BA-F0AB-416B-8815-5D3FE5185962 a :REGULAR ;
+    schema1:name "Legacy"@de .
+
+product:54FAB045-7C19-4734-BCF8-70CE7180E3D4 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "MIOPLANT Windenvertilger"@de,
+        "Volpan"@de .
+
+product:550F43C3-60E1-4595-8672-E58171449155 a :REGULAR ;
+    schema1:name "Ohayo"@de .
+
+product:551E194B-6E42-430D-B5D0-6380C0CDC67B a :REGULAR ;
+    schema1:name "Effigo"@de .
+
+product:556BD081-14A0-4144-A98B-C0B754BAB87F a :REGULAR ;
+    schema1:name "Maag Bio Raubmilben gegen Spinnmilben"@de .
+
+product:55AAA240-65A4-4D5E-AE3D-1F3B65D7915C a :REGULAR ;
+    schema1:name "ELASTO G5"@de .
+
+product:55B40336-195A-45AC-9527-3F05C0F09A4B a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Microthiol Special Disperss"@de,
+        "Microthiol Spécial Disperss"@de .
+
+product:55F9B0E7-0872-45F1-8689-41AAC30B7DC0 a :REGULAR ;
+    schema1:name "Amblypak"@de .
+
+product:5668E2B9-6881-4088-8D59-73AC857CF23B a :REGULAR ;
+    schema1:name "Oriline M"@de .
+
+product:568021B9-79F4-4219-A5AF-75E35F49BC00 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Camposan Extra"@de,
+        "Elotin"@de .
+
+product:56920A32-E2D3-4A01-A438-FF73851670AE a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Capito Total-Herbizid"@de,
+        "Deserpan Rasant"@de,
+        "Gesal Unkrautvertilger Natur-Rapid"@de,
+        "Mioplant Natura Unkrautvernichter gebrauchsfertig"@de,
+        "Rasan Bio"@de .
+
+product:56F5B048-BC7D-4749-B8E5-253C1ACA0291 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "BIOHOP DeITRIN forte"@de,
+        "Gesal Natur-Insektizid"@de,
+        "Parexan N"@de,
+        "Piretro MAAG"@de .
+
+product:570ADE9D-F50B-403C-BA01-A3C5E6BDD525 a :REGULAR ;
+    schema1:name "Blinker"@de .
+
+product:57BDB469-F84A-43FD-98B3-77AD239A83B9 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Pergado"@de,
+        "Pergado F"@de,
+        "Pergado F Pepite"@de,
+        "Pergado S"@de .
+
+product:58176B79-85D2-4D22-BF9F-EA1E288CAEF3 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Magnello"@de .
+
+product:581CF293-DD64-43C2-BCD2-EDB077970C89 a :REGULAR ;
+    schema1:name "DETIA-GAS-EX B"@de .
+
+product:582F9011-B922-4039-A35D-761D03795788 a :REGULAR ;
+    schema1:name "Degesch Plate"@de .
+
+product:583988FA-1CDB-4623-869C-F98C8A31C350 a :REGULAR ;
+    schema1:name "BioAct WG"@de .
+
+product:584BB1CF-1BC5-4A35-B80D-0A29FF5784F4 a :REGULAR ;
+    schema1:name "Additiv ME-25"@de .
+
+product:587D233D-1A3C-4BFF-8A92-9A4CC7198A86 a :REGULAR ;
+    schema1:name "Maag Bio Raubwanzen gegen Thrips"@de .
+
+product:58D56A94-F9C4-4437-B1AB-D8BD7664A302 a :REGULAR ;
+    schema1:name "Isomate R"@de .
+
+product:59078787-F7B6-4A81-8B9C-C0E04E92AEA3 a :REGULAR ;
+    schema1:name "Orius majusculus"@de .
+
+product:5930A268-6A22-4B91-AE30-705E54D66323 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Goltix WG 70"@de,
+        "Metamitron"@de .
+
+product:5957A7D8-622C-41D4-902B-3D54085D7453 a :REGULAR ;
+    schema1:name "Kendo Gold"@de .
+
+product:59978EC7-B63F-471E-8AFD-DAB9E46EE346 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Beetup C"@de,
+        "Corzal"@de,
+        "Mentor Uno SE"@de,
+        "Phenmedipham SE"@de .
+
+product:59E7FF17-72AB-416E-ACAF-74146DA5DD59 a :REGULAR ;
+    schema1:name "Madex Twin"@de .
+
+product:59E96F36-887F-41FC-9ECB-1DBF9D8DE6EC a :REGULAR ;
+    schema1:name "Madex Max"@de .
+
+product:5A092328-7C30-4DE2-A47E-99EA9377B615 a :REGULAR ;
+    schema1:name "Starane XL"@de .
+
+product:5A45CE18-3F51-4922-B893-279D2B296D58 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Mistral 70 WG"@de,
+        "STAR Metribuzin"@de .
+
+product:5A829243-C0AB-403F-8539-51F67E7BDCF6 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Marox SX"@de,
+        "Refine Extra SX"@de .
+
+product:5AD2FDC9-2572-4813-83FE-748EBCDFC4E8 a :REGULAR ;
+    schema1:name "Kalif 360 CS"@de .
+
+product:5B044D80-C427-481A-B523-0406C74B0B66 a :REGULAR ;
+    schema1:name "Divopan"@de .
+
+product:5B0DCBC7-935E-49AA-9B60-F332FC209E2C a :REGULAR ;
+    schema1:name "Chamane"@de .
+
+product:5B26BE8B-144F-4765-A436-9A2BAE3C395C a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Belrose gegen Pilzkrankheiten"@de,
+        "Mioplant Rosenpflege Fungizid"@de .
+
+product:5B30A524-26BC-46CB-B055-7921FB0202FC a :REGULAR ;
+    schema1:name "Amistar Max"@de .
+
+product:5CA28314-C844-4D58-8219-28F3BD18C251 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Axcela"@de .
+
+product:5CA2960D-5D7D-456F-BCD7-DA5FD8F85BF2 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Kyleo"@de .
+
+product:5CA38A6F-3C3D-4C54-887D-E370CF7ED55F a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Principal"@de .
+
+product:5CECF71F-3F5E-4A03-ADF8-6C0506B3C961 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Previcur Energy"@de .
+
+product:5D08DED9-D6C7-4C22-95E4-18312592E72D a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Biorga Contra gegen Unkräuter"@de,
+        "Capito Totalherbizid Konzentrat Forte"@de,
+        "Cloronet"@de,
+        "Natrel Garden"@de .
+
+product:5D1F0343-09C1-4336-8A0F-7EE03F3F9C07 a :REGULAR ;
+    schema1:name "RipeLock Tabs 2.0"@de .
+
+product:5DAF231C-2C21-447D-808C-6F254DA3AB95 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Cyprodinil 750"@de,
+        "Unix"@de .
+
+product:5E3AF527-04CA-4AEF-B932-4320BF7CE795 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Corex"@de,
+        "Toprex"@de .
+
+product:5E3C3432-584D-4AE6-8B79-065E84CF7106 a :REGULAR ;
+    schema1:name "EFA Universal"@de .
+
+product:5E40F1D3-5D1D-4FD8-9A04-D47137C637F8 a :REGULAR ;
+    schema1:name "Geramid Top"@de .
+
+product:5F98AA20-5419-43DA-91CF-7B17067DFA34 a :REGULAR ;
+    schema1:name "Divo"@de .
+
+product:5a63a17c-9422-4174-945e-d6574c0e4a45 a :REGULAR ;
+    schema1:name "Legado"@de .
+
+product:600BA1B7-5E1F-45D5-B3A9-B0CBE0C6641E a :REGULAR ;
+    schema1:name "Lumisena"@de .
+
+product:61470528-3091-4307-B017-84D5AF845408 a :REGULAR ;
+    schema1:name "Eupeodes corollae"@de .
+
+product:61471B21-F252-4F29-9BBD-3616AF062E86 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "BIO Spray gegen Orchideenschädlinge"@de,
+        "Oecoplan Läuse-Stop"@de,
+        "Promanal AF GrünpflanzenSchädlingsfrei"@de,
+        "Promanal AF Neu"@de,
+        "Spruzit AF Orchideen SchädlingsFrei"@de .
+
+product:615AC051-CFDD-4708-9CAB-8AE2095D1B7F a :REGULAR ;
+    schema1:name "SanoPlant Bio Konzentrat"@de .
+
+product:61AD0684-40DF-4D75-B801-F5D98E3BA173 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Racer CS"@de .
+
+product:61BABB3C-9BFE-475A-8BD7-2777EB1422B1 a :REGULAR ;
+    schema1:name "Cythrin Max"@de .
+
+product:620A8198-E013-4064-9A0A-73692755E6E9 a :REGULAR ;
+    schema1:name "Titan"@de .
+
+product:6267C2BC-DA78-472A-AF3D-7676AF84F74A a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Agro Prosulfocarb"@de,
+        "Arcade"@de,
+        "Boxer"@de,
+        "Defi"@de,
+        "Duel +"@de,
+        "Fidele"@de,
+        "Golaprex Basic"@de,
+        "boxer"@de .
+
+product:62838699-3F4C-4786-B08C-60E82EF95892 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Brocar 240"@de,
+        "Mandate"@de .
+
+product:629ED2F7-A52C-490E-96D0-63242296E39C a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Codacide"@de,
+        "Vegoil+"@de .
+
+product:629F11A0-8035-4C90-9581-4FC8FAFA0AA0 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Floramite 240 SC"@de .
+
+product:62BE589E-D41C-4554-B7C6-CA51DD7B5218 a :REGULAR ;
+    schema1:name "Rapper"@de .
+
+product:62E1502C-394E-4AE2-BB7F-25CFA6AC95A9 a :REGULAR ;
+    schema1:name "Deserpan TD"@de .
+
+product:63174C88-3042-4584-BDD0-0BBEFA0DDB49 a :REGULAR ;
+    schema1:name "Herold Flex"@de .
+
+product:632ECE57-F118-45BE-8CCD-B54368F31D05 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Luna Sensation"@de,
+        "Moon Sensation"@de .
+
+product:633639BC-D427-4994-92FB-4FC4C0DE3AA3 a :REGULAR ;
+    schema1:name "Carakol 5"@de .
+
+product:634C15DE-75F0-4690-990C-EC73BC818F1E a :REGULAR ;
+    schema1:name "Majuscupak"@de .
+
+product:63729D04-1A4A-43EB-9715-48A2945162FA a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Bellis"@de,
+        "Pyraclostrobin + Boscalid"@de,
+        "Pyralid"@de,
+        "TWINKLE"@de .
+
+product:63AAB256-DB9D-4382-8475-B5DACE889B03 a :REGULAR ;
+    schema1:name "Starskii"@de .
+
+product:63B87B0E-0339-4B32-8890-B8C5B244B467 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Armicarb Spray"@de,
+        "Armisan AF PilzFrei"@de,
+        "BIOHOP FungiCARB PRONTO"@de,
+        "Belrose Pilz-Stopp Spray"@de,
+        "Biorga Contra Spray gegen Pilzkrankheiten"@de,
+        "Capito Armicarb Pilzfrei Spray"@de,
+        "Coop Oecoplan Biocontrol Pilz-Frei"@de,
+        "Gesal Anti-Pilz für Obst und Gemüse"@de,
+        "MAAG Pilz-Stopp"@de,
+        "Migros Bio Garden Spray gegen Pilzkrankheiten"@de,
+        "MycoStop Spray"@de,
+        "SanoPlant Spray gegen Krankheiten"@de .
+
+product:63D502B0-EBFF-4EA1-BA84-2AC6A6AC77D9 a :REGULAR ;
+    schema1:name "Captan 80 WG"@de .
+
+product:63D70F81-32CF-465E-8D0B-23214F766CE3 a :REGULAR ;
+    schema1:name "Etalfix Pro"@de .
+
+product:640CB278-4FC5-43A2-8D78-E601582410A0 a :REGULAR ;
+    schema1:name "Tomigan"@de .
+
+product:643497F2-DF22-49B6-9C78-8254067CA454 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Kudos"@de .
+
+product:643D832A-9AF7-40D0-A1A7-D668093E96E3 a :REGULAR ;
+    schema1:name "XenTari WG"@de .
+
+product:644978EF-4B81-4CE0-A2F0-9E5C06A3BDA1 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Harmony 50 SX"@de,
+        "Harmony SX"@de .
+
+product:64750B8A-558F-4392-AA1E-48325F366B4A a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Landmaster Supreme 480 TF"@de,
+        "Roundup Platinum"@de,
+        "Roundup PowerFlex"@de,
+        "Roundup PowerMax"@de,
+        "Roundup Powerflex"@de,
+        "Roundup UltraPro"@de .
+
+product:6479CB11-E444-42E9-8C98-1A98936CCAE1 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Hoestar"@de .
+
+product:64FA3BFB-7EAE-46A1-AF5D-7570AFE67F6F a :REGULAR ;
+    schema1:name "Clap Forte"@de .
+
+product:652BF85E-1F0F-4A80-8148-49311E2A4EA0 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Biplay SX"@de .
+
+product:655EAE37-32A8-4148-8C39-BC4EBF00876D a :REGULAR ;
+    schema1:name "Mister L"@de .
+
+product:657A70EB-95AA-45F4-BB1A-5C0C9410F5D6 a :REGULAR ;
+    schema1:name "Nematop"@de .
+
+product:6587DE0F-5A9B-405E-B614-15CCA62E7BA7 a :REGULAR ;
+    schema1:name "TrichoControl"@de .
+
+product:65BC099C-D854-4729-836A-D2A00C64EBFF a :REGULAR ;
+    schema1:name "AnisoControl"@de .
+
+product:65EB307F-BA96-4CE7-A7CA-00F7AC799621 a :REGULAR ;
+    schema1:name "Falgro Tabs"@de .
+
+product:6645F84B-9240-491D-8630-F00BB9EB3290 a :REGULAR ;
+    schema1:name "Bio Unkrautfrei"@de .
+
+product:66602037-3BC7-4FEB-B45B-EE26170CE44D a :REGULAR ;
+    schema1:name "Gastrotox 6%"@de .
+
+product:6667F140-F419-493B-B0BC-8D4EEC1A8B59 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Capito Cupro Flow"@de,
+        "Champ Flow"@de,
+        "Cupromaag Liquid"@de,
+        "Cuprum Flow"@de,
+        "Gesal Kupfer-Pilzschutz"@de .
+
+product:66865A4F-541C-4C90-BA27-4CBD23EBEC55 a :REGULAR ;
+    schema1:name "Bettix WG"@de .
+
+product:66AA3A3B-C58F-4133-888E-DA031DE10A63 a :REGULAR ;
+    schema1:name "Priapak"@de .
+
+product:66B43959-57D8-4212-A066-AC22352E8359 a :REGULAR ;
+    schema1:name "Nematop Cool"@de .
+
+product:66C3AFCA-E9FD-4FA4-BE2A-FDCC01B87C04 a :REGULAR ;
+    schema1:name "Spidex"@de .
+
+product:66e23ea7-64dd-4519-a92b-b3461797bdd2 a :REGULAR ;
+    schema1:name "Metapro"@de .
+
+product:67110DFD-8B62-4352-9D6F-054FB8F75E4A a :REGULAR ;
+    schema1:name "Venzar 500 SC"@de .
+
+product:6773545B-E803-4212-A465-D220846DC7E1 a :REGULAR ;
+    schema1:name "Activus SC"@de .
+
+product:67930326-16A6-4CF9-8438-AFEB1239EE08 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Heritage"@de,
+        "Heritage Royal"@de .
+
+product:679663A1-4B3D-43DE-8C26-FF1204E26CE5 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Metarex Inov"@de .
+
+product:685A53F0-5B09-4CC8-8A04-380CD4F2628F a :REGULAR ;
+    schema1:name "Vineto"@de .
+
+product:688F24F0-EE32-4B64-A539-EE8F3B81D552 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Fenhexamid 500"@de,
+        "Teldor"@de,
+        "Trezor"@de .
+
+product:690D1EEA-4057-45AD-9E4D-3E9955DCA8B3 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Roundup Prime S"@de,
+        "Roundup Ultra Max"@de .
+
+product:6949F7EF-811A-4109-9B24-538BB22E79E0 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Caramba"@de,
+        "Sirena EC"@de .
+
+product:696A975F-52B8-4E23-BA10-9196CD7AE0A9 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Proflubix"@de,
+        "Variano Xpro"@de .
+
+product:697D9F96-0D6C-4E6A-80E0-F7A165B0456B a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Apell STE"@de,
+        "Flurox"@de .
+
+product:69EDC442-DF85-47F4-9F69-8EFB90C37E4E a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Cyrano"@de,
+        "Valiant flash"@de .
+
+product:6A1F21C0-22C0-4AE6-99B2-2EF4BE835C62 a :REGULAR ;
+    schema1:name "Rodolia cardinalis"@de .
+
+product:6AD44124-6F40-4AAE-B114-0464F268485E a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "KELVIN"@de,
+        "Kelvin"@de,
+        "Victus"@de .
+
+product:6B674813-EA70-4F84-BDD2-4B30DC83160F a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Belrose gegen Blattläuse"@de,
+        "MIOPLANT Rosenpflege gegen Blattläuse"@de .
+
+product:6B69AD14-F947-4931-8A71-ECD34D32FD1A a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Biorga Contra Kupfer"@de,
+        "CUPROFIX 35"@de,
+        "Capito Cupro"@de,
+        "Gesal Tomaten-Pilzschutz Vitigran"@de,
+        "Oxykupfer 35"@de,
+        "Vitigran 35"@de .
+
+product:6B844FAC-A1B7-43CE-B577-BA20147E624A a :REGULAR ;
+    schema1:name "Aphipar"@de .
+
+product:6B86DFA3-0E5A-49E0-B099-58C71AD36DC5 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "LBG-42FFm"@de,
+        "Stamina Viti"@de .
+
+product:6C10B098-86D9-4F71-860D-FA15B4C8C72F a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Belrose Blattlaus-Stopp"@de,
+        "Gesal Natur-Insektizid"@de,
+        "SIVA Natura"@de,
+        "Siva 50"@de,
+        "Universal-Insektizid"@de,
+        "Vesol Pro"@de,
+        "Vista"@de .
+
+product:6C2427D9-A3F4-4424-B4DA-0AEADDF6D3D2 a :REGULAR ;
+    schema1:name "Levipak"@de .
+
+product:6C83A608-6547-45D8-AAD3-56C97398DFAB a :REGULAR ;
+    schema1:name "Entonem"@de .
+
+product:6CE4BA2C-FA86-40E4-8F7A-8394CADF4B14 a :REGULAR ;
+    schema1:name "Asulam"@de .
+
+product:6D73F588-9CC5-4505-8578-9F02056F53D9 a :REGULAR ;
+    schema1:name "Herbizid - Zusatzöl"@de .
+
+product:6DB24FFF-7182-48DF-91EA-88B500FF0D7D a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Avero"@de,
+        "Axial 50 EC"@de,
+        "Pinoxaden 50"@de,
+        "Radial"@de .
+
+product:6DD04205-D4AB-429B-9359-B441AC5F1254 a :REGULAR ;
+    schema1:name "FZB 24 flüssig"@de .
+
+product:6DDEB587-5FF6-440D-A7E4-789FEDBD681A a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Oxidia"@de,
+        "Sumo"@de .
+
+product:6DE5ECC1-9D83-4ABF-9F9C-C5BAAC7B97C3 a :REGULAR ;
+    schema1:name "CheckMate Puffer Leaf Multi"@de .
+
+product:6DE77D6E-90E0-4B64-AEA1-4C67ABECE1CA a :REGULAR ;
+    schema1:name "Diabolo"@de .
+
+product:6E1AD00A-879D-41B0-886B-8F059EE1A04B a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "BIOHOP DelFIN"@de,
+        "Bio Garden Delfin gegen Buchsbaumzünsler"@de,
+        "Biorga Contra Buchsbaumzünsler-Stop"@de,
+        "Coop Oecoplan Biocontrol Delfin gegen Buchsbaumzünsler"@de,
+        "Delfin"@de,
+        "Delfin jardin"@de,
+        "Wasco WG"@de .
+
+product:6E1B8BF4-5B40-478F-9374-FD401414080A a :REGULAR ;
+    schema1:name "Heliofix"@de .
+
+product:6E404302-CA58-4FB6-BF1A-D79FB2F2876E a :REGULAR ;
+    schema1:name "Steiner Quad"@de .
+
+product:6E6888B2-29D5-420D-8878-327764F080F9 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Dagonis"@de,
+        "Taifen"@de .
+
+product:6F35A787-BD56-4CDF-AE51-7DAB8E87DEF3 a :REGULAR ;
+    schema1:name "Bordeaubrühe WG - Bouillie bordelaise WG"@de .
+
+product:6F6F9A37-B7EA-44A8-82F8-90D4EA1F80B6 a :REGULAR ;
+    schema1:name "THIOVIT"@de .
+
+product:6FD9D19D-3FD5-4B26-A3CD-F63378EB3E2A a :REGULAR ;
+    schema1:name "Nemamax"@de .
+
+product:6ed4b558-8b45-499d-b522-1a04c528ae61 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Orchideen-Spray"@de,
+        "Zimmerpflanzen-Spray"@de .
+
+product:7063F03B-BE5B-4EE8-91C3-F62A9FC36206 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Talendo"@de .
+
+product:709D34C9-C338-40DB-82A3-B59691514FAD a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Biathlon 4D"@de,
+        "Canopia"@de,
+        "Olympique"@de .
+
+product:70AF745A-F1E2-4D65-8323-F19D2420A5B8 a :REGULAR ;
+    schema1:name "Menno Florades"@de .
+
+product:70b7810e-c061-4282-bd56-e131ccabcc85 a :REGULAR ;
+    schema1:name "Finalsan HP"@de .
+
+product:71017F16-2E4F-454B-A91F-C6A67366855E a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Kocide 2000"@de .
+
+product:71224C0C-65BE-4B2C-8B08-AFB6B5A539EA a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Averel"@de,
+        "Valis F"@de .
+
+product:71426C43-130D-4CFB-A5A6-D8350F96EDFE a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Zwei, 4 - D - Dicopur"@de,
+        "Zwei-4D flüssig"@de .
+
+product:719D17C2-853E-48AB-91AC-401FF1584ED6 a :REGULAR ;
+    schema1:name "Trend"@de .
+
+product:71D4CDC4-BB61-4789-800B-6C5562B660A5 a :REGULAR ;
+    schema1:name "Gesal Rasen-Moosvertilger"@de .
+
+product:71E412B1-562F-4382-8A7B-FFE552303DE5 a :REGULAR ;
+    schema1:name "Fitopak"@de .
+
+product:7215C465-F91F-44CE-B233-307EAFFEC239 a :REGULAR ;
+    schema1:name "Spical Plus"@de .
+
+product:723A53DA-EE75-4DC2-8E7C-9DF564BC98BC a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Enervin SC"@de,
+        "Gladiator"@de .
+
+product:727A68BF-8B39-4680-B78F-134FF6C9A00F a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Microthiol LG"@de,
+        "Microthiol Special Liquid"@de .
+
+product:7294B341-A2DA-4384-A94F-FC78846E495C a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Altorex"@de,
+        "Beyond"@de,
+        "Bolero"@de,
+        "HM Imaza"@de,
+        "Listego"@de,
+        "Pulsar 40"@de,
+        "Tuareg"@de .
+
+product:7314DBC2-C510-49BA-B740-F5A87D24E684 a :REGULAR ;
+    schema1:name "2,4-D Plus"@de .
+
+product:7331506C-0446-4222-AFD1-469485C91868 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Metafol Super"@de,
+        "Oblix MT"@de .
+
+product:73457658-C7D4-4927-A296-D5D0325E6EB5 a :REGULAR ;
+    schema1:name "RAK 3"@de .
+
+product:737FC9CB-1186-4B67-BAF5-00D80388D686 a :REGULAR ;
+    schema1:name "Aphiline Mix"@de .
+
+product:73AE565E-6801-4374-8AE7-E883AE180A32 a :PARALLEL_IMPORT ;
+    schema1:name "Schädlingsfrei Obst & Gemüse Konzentrat"@de .
+
+product:73ae565e-6801-4374-8ae7-e883ae180a32 a :REGULAR ;
+    schema1:name "Telmion"@de .
+
+product:740DEE9E-6C19-4FBD-9BBB-0DAFDE2090CB a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Aric 480 L.S."@de,
+        "Banvel 480 S"@de,
+        "Banvel 4S"@de,
+        "Cambel 480 S"@de,
+        "Dialen"@de,
+        "Joker 480"@de,
+        "Manivel 480"@de,
+        "Mondak 480 S"@de .
+
+product:7436BF63-D2B8-4898-BB4B-8CAC93BCB8AA a :REGULAR ;
+    schema1:name "Grid"@de .
+
+product:7445E825-E1F8-43AB-95D7-2E67DB405D05 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Folpan Gold"@de,
+        "Ridomil Vino"@de .
+
+product:748A328C-F49B-42A2-8830-6EC52F52DCC2 a :REGULAR ;
+    schema1:name "Aphidend"@de .
+
+product:74C2F8DC-A931-4C76-9439-B29CED318146 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Amilon 3"@de,
+        "Limax Special"@de .
+
+product:74D50950-C313-4858-9D92-E288726F81F0 a :REGULAR ;
+    schema1:name "Coop Oecoplan Biocontrol Läuse-Stop"@de .
+
+product:74D604E4-53E8-43ED-9532-A2AB4411DC82 a :REGULAR ;
+    schema1:name "Madex I12"@de .
+
+product:74DAF057-2B8F-4162-BB1D-531D3FA73A94 a :REGULAR ;
+    schema1:name "Limax Ferro"@de .
+
+product:7612B734-BD5A-449C-95D2-9EEC554A39A7 a :REGULAR ;
+    schema1:name "Pirimor"@de .
+
+product:762B010A-380C-4B6C-B7A3-C2F842F09225 a :REGULAR ;
+    schema1:name "Laguna"@de .
+
+product:76514BCF-7554-4845-BA4F-2BAA38C20CB3 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Fandango"@de,
+        "Fluoxastrobin + Prothioconazol"@de .
+
+product:769DF2D7-FDBC-49E1-8DA4-A08308F0DF1E a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Campa"@de,
+        "Vulkan- Wühlmauspatrone"@de .
+
+product:76EE5674-57E3-49AE-A629-F800D12D4C44 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Quadris Max"@de,
+        "Universalis"@de .
+
+product:770E77EE-7682-426B-87F1-CC62B66F1F02 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Ally Power"@de,
+        "Granstar Trio"@de,
+        "Pointer Plus"@de .
+
+product:77220372-712A-4706-BF63-8041E1F326C8 a :REGULAR ;
+    schema1:name "Diglypak"@de .
+
+product:774ECEDF-7CB4-4EE8-9611-E6AFD2A8C1E3 a :REGULAR ;
+    schema1:name "Komet"@de .
+
+product:7778764E-7847-4A2E-80E6-ED7E05D3EFA0 a :REGULAR ;
+    schema1:name "RAK 2 New"@de .
+
+product:785312D2-11F3-4CDB-BFE3-1CDE40C0766A a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Bioslug"@de,
+        "Coop Oecoplan Biocontrol Nützlinge gegen kleine Nacktschnecken"@de .
+
+product:78813EE8-05E9-4F7A-97D6-72C9CE44B7E4 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Aragon"@de,
+        "Cobalt"@de,
+        "Pyrabos"@de,
+        "Signum"@de .
+
+product:78B2516E-8F26-43B1-8FE9-A6EF24DBBA2F a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Capito Garden Gold Natura"@de,
+        "Oleate 20"@de .
+
+product:78C0D55A-7993-49C1-BDDA-89538F3497AC a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Blackol"@de,
+        "Blackout"@de,
+        "Mamba Due Colore"@de,
+        "Windweg Konzentrat"@de .
+
+product:78C19416-1F1B-4533-8B79-B1B9F688628B a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Optikugel"@de,
+        "Tricho-Sfera"@de .
+
+product:78F24480-4F99-440C-B30C-79EB3FFA28F1 a :REGULAR ;
+    schema1:name "Terpal"@de .
+
+product:79142524-3018-48EA-A90C-115D699C8917 a :REGULAR ;
+    schema1:name "Bouillie bordelaise"@de .
+
+product:7987CCE3-3190-47DF-B507-5992898F17A6 a :REGULAR ;
+    schema1:name "LMA"@de .
+
+product:79AFE5D0-6F92-47FC-A23A-3AA60366BAB0 a :REGULAR ;
+    schema1:name "OrnaProtect"@de .
+
+product:7A03630A-A7C7-4828-A3DD-CEF1FC34005B a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Arcade"@de,
+        "Arcade 880 EC"@de .
+
+product:7A2901D7-884E-4593-8AA1-D8C6086E0BED a :REGULAR ;
+    schema1:name "Lentagran WP"@de .
+
+product:7A98B25A-BDB7-4288-9011-D4ED9A00F8EA a :REGULAR ;
+    schema1:name "Phoscap"@de .
+
+product:7ACEBEF5-30CD-491A-B653-32042FBB18E9 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Dirigent SX"@de,
+        "Express Max SX"@de .
+
+product:7AD9F613-FBE6-4128-8604-8DCC4878E6E6 a :REGULAR ;
+    schema1:name "Adaliapak"@de .
+
+product:7AF60ED5-3596-461D-921F-4F5D329E0FDF a :REGULAR ;
+    schema1:name "Banvel M Omya"@de .
+
+product:7B14B5BE-21EF-4586-B9A9-A0931F62E1B1 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Venzar"@de .
+
+product:7BAAA383-DEE3-4EEA-AAEE-B63DDA95E244 a :REGULAR ;
+    schema1:name "Weissöl"@de .
+
+product:7BE4CB64-BB75-470C-A5A6-84075BA220DC a :REGULAR ;
+    schema1:name "Nimrod"@de .
+
+product:7BF7CC77-0D86-4DF3-9675-C355E8456498 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Life Scientific Pirimicarb"@de,
+        "Pirimicarb"@de,
+        "Pirimor"@de,
+        "Pirimor 50"@de .
+
+product:7BF989DA-9E2B-4E20-BF17-3674BF04D725 a :REGULAR ;
+    schema1:name "Vladipak"@de .
+
+product:7C214E51-67F9-4663-90FA-EA4FFCEAAD65 a :REGULAR ;
+    schema1:name "AdvanStore"@de .
+
+product:7C295E2C-36CF-429C-930A-2B7D96B01180 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Fluonazol"@de,
+        "Fluopyram + Tebuconazol"@de,
+        "Luna Experience"@de,
+        "Moon Experience"@de .
+
+product:7C7145D3-6847-4E18-9FAF-5146B7A0AAA0 a :REGULAR ;
+    schema1:name "Pseudaphycus maculipennis"@de .
+
+product:7CE34E44-611D-4393-B15F-5419D8DF0FE3 a :REGULAR ;
+    schema1:name "Kupfer 50 S"@de .
+
+product:7D0AF88C-D01D-4E3E-9323-B79C3564CB05 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Gondor"@de .
+
+product:7D216222-0E20-46EE-9CBA-F60487B46A51 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Captain 80 WG"@de,
+        "Captan 80 WG"@de,
+        "Kaplan"@de,
+        "Merpan 80 WDG"@de .
+
+product:7D604B58-4DC0-42B7-BD7A-2F03367FAAE1 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Capito Schneckenkorn Bio S"@de,
+        "Gesal Schnecken-Stop Ferplus"@de .
+
+product:7D9677B9-6D28-4529-BDFB-55FA60D3E350 a :REGULAR ;
+    schema1:name "Hypoaspis"@de .
+
+product:7DAC9C13-1F9C-4EB6-A39D-5BE4ACEB6716 a :REGULAR ;
+    schema1:name "Gesal Insect-Stop"@de .
+
+product:7DB7A472-AD4B-49D5-B076-61DF48DD0BB3 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Sanoplant Spray Gold"@de,
+        "Zimmerpflanzen Spray"@de .
+
+product:7DFBA282-70C3-432F-8D5E-5A530D3C10A4 a :REGULAR ;
+    schema1:name "Enpak"@de .
+
+product:7E1D56DD-7BAF-4642-980F-FD6ACE39C9F5 a :REGULAR ;
+    schema1:name "Funguran Flow HG Divers"@de .
+
+product:7E313FA6-B924-4EB1-A0B5-355D3B3EB802 a :REGULAR ;
+    schema1:name "Cryptolaemus montrouzieri"@de .
+
+product:7E500698-E75F-4D68-A06E-22D70F7FBF1F a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Prohexa"@de,
+        "Prohexadion-Ca 100"@de,
+        "Regalis Plus"@de,
+        "Regalis Plus 10 WG"@de .
+
+product:7E670050-29F2-48AE-9638-2E1BAD36FE21 a :REGULAR ;
+    schema1:name "Phaltan 80 WDG"@de .
+
+product:7F7EE4A4-E61E-4F32-B6A4-7E4E7E693157 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "GO/ON Schneckenkorn"@de,
+        "Gesal Schneckenkorn"@de,
+        "Jardin Royal Schneckenkorn"@de,
+        "Settle"@de .
+
+product:7F8154D7-D807-4B8A-8C3D-7009640F9E4E a :REGULAR ;
+    schema1:name "Blackomat"@de .
+
+product:7F9E8987-B3C7-42E2-A6FC-18B26999A307 a :REGULAR ;
+    schema1:name "Goltix compact"@de .
+
+product:7FBBA5EE-CCEF-4EA3-A74B-510540862FBA a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Pitstop"@de,
+        "Proplant"@de .
+
+product:7FF0DB3C-3CBC-43A6-B83E-A804DC29D79C a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Medax"@de,
+        "Medax Top"@de .
+
+product:7FFB0EFA-2DB9-48B3-AA25-2E02AC3FD2D8 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Menno Florades"@de,
+        "MennoFlorades"@de .
+
+product:80F356A6-0D14-4997-A6FA-C53A6AF34FF5 a :REGULAR ;
+    schema1:name "Isonet-E"@de .
+
+product:81A31CC5-B125-4A40-87D7-E4C2296B91E3 a :REGULAR ;
+    schema1:name "Biosyl"@de .
+
+product:81B6D016-2036-413A-83B4-ED15C4434377 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Azur Mais"@de,
+        "Cubix"@de,
+        "Equip"@de,
+        "Monsoon"@de .
+
+product:81FEBEF3-9F02-4662-A107-48540E353AB6 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "FOLPET 80 WDG"@de,
+        "Folpan 80 WDG"@de,
+        "Folpet 80 WDG"@de .
+
+product:820738A5-3222-484F-BB8E-7BF07291B1CB a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Alginure"@de,
+        "Alginure Bio Schutz"@de .
+
+product:825ADAA7-C6E5-4BED-924C-86CA46ABFAF5 a :REGULAR ;
+    schema1:name "Cryptopak"@de .
+
+product:82B2D234-FB8B-44AA-9AF3-11AF85EBDF69 a :REGULAR ;
+    schema1:name "PMV-01"@de .
+
+product:82F5DAD8-9796-4B7D-A040-7E36691F2CC7 a :REGULAR ;
+    schema1:name "Gesal Anti - Pilz Forte"@de .
+
+product:83986AF1-31A5-469B-947E-01E4A2BA2709 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Akris"@de,
+        "Spectrum Gold"@de,
+        "Terbu-P"@de .
+
+product:842BA77F-66EE-458E-977B-5358ED1941C4 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Avatar"@de,
+        "Botryl"@de,
+        "CIPROCARE"@de,
+        "Cyprodinil + Fludioxonil"@de,
+        "Cyprodinil + Fludioxonil WG"@de,
+        "Cyproxinil"@de,
+        "Cyproxonil"@de,
+        "Life Scientific Cyprodinil/Fludioxonil"@de,
+        "Pan Rouge"@de,
+        "Play"@de,
+        "SINCLARE"@de,
+        "Serenva"@de,
+        "Society"@de,
+        "Switch"@de,
+        "Switch 62,5 WG"@de .
+
+product:845B78E7-2746-44F0-ACD4-09DDB9CFDE75 a :REGULAR ;
+    schema1:name "Trax"@de .
+
+product:84831CEE-4353-4270-B3BB-9F645F32CF38 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Difenoconazol + Cyflufenamid"@de,
+        "Dynali"@de .
+
+product:84900ABE-4DCB-4BD9-84BF-7F9D866753E1 a :REGULAR ;
+    schema1:name "XenTari WG"@de .
+
+product:84B01161-1BCB-4A51-BECB-5ECAB7BE9E32 a :REGULAR ;
+    schema1:name "Break-Thru"@de .
+
+product:856F5EE1-BCE6-4DEC-AEF8-29680CB7AA48 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Fazor"@de,
+        "Germstop"@de .
+
+product:859D9639-C8B5-4579-B583-602F591E864E a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Capito Garden Silver Spray"@de,
+        "Schädlingsfrei Obst & Gemüse"@de .
+
+product:85A36A3E-BE75-4992-98A6-8CF62F878CCD a :REGULAR ;
+    schema1:name "Atilla"@de .
+
+product:860D9A40-F9BD-4CD0-90B5-54785635F692 a :REGULAR ;
+    schema1:name "Pheroprax Ampulle"@de .
+
+product:860F7EDA-7A8C-46AC-A695-9E6D70BF643D a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Agiliti"@de,
+        "Atlantis Flex"@de,
+        "Monolith"@de .
+
+product:86593195-8380-4EF4-9972-8EB8721C5D49 a :REGULAR ;
+    schema1:name "Gibberellin A3"@de .
+
+product:868C7A17-A3F9-46A0-8362-58F2F055E051 a :REGULAR ;
+    schema1:name "Coop Oecoplan Schneckenkorn"@de .
+
+product:8753D2C4-61AE-4109-9355-B0698FFAB415 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Sticker"@de .
+
+product:8793A222-4365-4852-B408-DE95F66135C7 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Elosal Supra"@de,
+        "Microthiol Spécial Disperss"@de .
+
+product:87D3A29A-D889-417D-BB73-70D1E2278317 a :REGULAR ;
+    schema1:name "Nemapom"@de .
+
+product:881DB25A-9BB2-45A5-94E1-E8807E145ECF a :REGULAR ;
+    schema1:name "Epoque"@de .
+
+product:88232554-7FFF-450E-A521-6F2C07F96C9D a :REGULAR ;
+    schema1:name "Cypermethrin"@de .
+
+product:88364672-0969-49C4-8102-E38EB930CCB9 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Condoral SC"@de,
+        "METRIBUZIN SC"@de,
+        "Sencor 600 SC"@de,
+        "Sencor Liquid 600 SC"@de,
+        "Sencor SC"@de,
+        "Sencor liquid"@de .
+
+product:8882C7F9-6E03-4B10-A2AC-B905213B675F a :REGULAR ;
+    schema1:name "Kalif 360 CS"@de .
+
+product:88E3AB0F-E222-4ABB-943B-FE07FE44FA98 a :REGULAR ;
+    schema1:name "Harvista 1.3 SC"@de .
+
+product:88FAF07F-E1F5-4B01-8513-CF88DA5B03C7 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Starane Max"@de .
+
+product:897534C2-863B-457F-9948-4DBE671A358C a :REGULAR ;
+    schema1:name "Certosan"@de .
+
+product:897C9F3D-4771-4CE8-B100-9B00D4CA6AE0 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Dartilon"@de,
+        "Ethefon S"@de,
+        "Ethephon LG"@de .
+
+product:8A14E137-2370-4315-9FC8-6D1D2EEF0C19 a :REGULAR ;
+    schema1:name "Cerall"@de .
+
+product:8A76AFD4-3CB0-4D70-9552-54AE7467EB27 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "HM Mandipro 250"@de,
+        "Mandimid"@de,
+        "Mandipropamid 250"@de,
+        "Pergado SC"@de,
+        "Revus"@de,
+        "Versam"@de .
+
+product:8B34D908-D656-43A7-9602-DA40F8C718A4 a :REGULAR ;
+    schema1:name "Rhodofix"@de .
+
+product:8B4DB1F6-E11A-4496-AFC9-0B02BAA69F62 a :REGULAR ;
+    schema1:name "Fazor"@de .
+
+product:8B6C6781-A174-4701-828B-BC9A6E4500EF a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Casac"@de,
+        "Prosaro"@de,
+        "Prosaro 250 EC"@de .
+
+product:8BD59764-DF84-448D-B123-8E3F186DBB6C a :REGULAR ;
+    schema1:name "Aphidipak"@de .
+
+product:8BF1EF41-5325-449C-A528-BC4433E15910 a :REGULAR ;
+    schema1:name "Lalguard M52 GR"@de .
+
+product:8C247A1C-1BF6-48E4-8EDD-77DAB4D70FF7 a :REGULAR ;
+    schema1:name "CephiTop"@de .
+
+product:8C2C1F6C-D76B-444A-9C7A-D5017F1DFC4C a :REGULAR ;
+    schema1:name "Trifolin"@de .
+
+product:8C443FD8-E5BB-4831-870A-170F9EA0FAEC a :REGULAR ;
+    schema1:name "Hiva"@de .
+
+product:8C744785-DA61-400B-A825-83F0997570E5 a :REGULAR ;
+    schema1:name "Metaphycus helvolus"@de .
+
+product:8C95E453-30B6-4137-852A-4060E1193FAB a :REGULAR ;
+    schema1:name "Premazor Turbo"@de .
+
+product:8CB49297-F4CB-44E5-B11E-63051994066E a :REGULAR ;
+    schema1:name "Encarsia formosa"@de .
+
+product:8CE37E1E-F762-4FD9-A026-DF47667077CC a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Bio Garden Pilz-Stopp"@de,
+        "Coop Oecoplan Biocontrol Fungizid"@de,
+        "Kalisan"@de,
+        "RosaSan"@de,
+        "VitiSan"@de,
+        "Vitisan"@de .
+
+product:8D07616B-D367-4479-8892-DFE6411E7F3C a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Tricho-Fix"@de,
+        "Tricho-Force"@de .
+
+product:8D1E0AEF-0843-4CFA-960D-F06FBAB5ED4C a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Bonzi"@de .
+
+product:8D5FE45B-3BEC-44AB-8E02-02D8C7927A19 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "BRAUDIO"@de,
+        "Solanis"@de,
+        "TOMAHAWK"@de,
+        "Tanaris"@de,
+        "Zeppelin"@de .
+
+product:8D61C2B6-A144-458B-9DB4-E582027210C4 a :REGULAR ;
+    schema1:name "Aphidoline"@de .
+
+product:8D9AF2CF-9EB6-4056-A086-07627BB084D0 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Comfort"@de,
+        "Input"@de,
+        "Prosaro Plus"@de,
+        "Spirozol"@de,
+        "input Classic"@de .
+
+product:8DA92335-9420-4728-9CD2-ABCD0D796B3D a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Booster"@de,
+        "Capito Stamina"@de,
+        "Gesal Kupfer-Ersatz"@de,
+        "Hecken-Kur"@de,
+        "LBG-01F34"@de,
+        "Patronus SL"@de,
+        "Pilz-Stopp"@de,
+        "Quartet Lux"@de,
+        "Stamina S"@de .
+
+product:8E026DFD-DC5D-4DFF-9446-8389A6F622A2 a :REGULAR ;
+    schema1:name "Carakol 3"@de .
+
+product:8E31EF9E-4D5E-4B2C-9417-A01A11B10150 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Pronto Plus"@de .
+
+product:8E50F079-5F6F-4EE5-8C4D-8664591CF240 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Broadway"@de,
+        "Sprinter"@de .
+
+product:8E8ECF06-445D-4A0E-A888-A0902A33E372 a :REGULAR ;
+    schema1:name "Cueva"@de .
+
+product:8EA02D51-6F83-4C1B-84A5-4721D277B128 a :REGULAR ;
+    schema1:name "Mäusetod - Patronen"@de .
+
+product:8EBE0707-7376-4E14-B13B-10514FD99BB1 a :REGULAR ;
+    schema1:name "Amblyseius cucumeris"@de .
+
+product:8EEE4E42-F6FF-4FE5-A68F-B45779960AB1 a :REGULAR ;
+    schema1:name "RAK 1 + 2 M"@de .
+
+product:8F0D3D12-42C3-40EB-A43D-B33105183495 a :REGULAR ;
+    schema1:name "LarioControl"@de .
+
+product:8F707F5B-4715-46B6-B8E2-45A2515C8836 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Astor"@de,
+        "Gardian"@de .
+
+product:8FBBFB53-2537-494B-984C-E4B2E5025EDE a :REGULAR ;
+    schema1:name "LarioTop"@de .
+
+product:8FBE6DA8-85C0-4916-B4CD-5B1BA3EA2DF2 a :REGULAR ;
+    schema1:name "Macroline"@de .
+
+product:8FEBCFCB-5533-4572-ABC9-EAE81C58A8FE a :REGULAR ;
+    schema1:name "Metriphar 70 WG"@de .
+
+product:8b5a4436-a10a-4808-a78f-ed3c6a798189 a :REGULAR ;
+    schema1:name "Haftöl S"@de .
+
+product:8cff6e64-6091-45dd-8e54-ee6dbd026705 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Cypermethrin"@de,
+        "Cypermethrin SF"@de .
+
+product:9027A21E-7611-487C-BAFD-81826ADB16A2 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Fonganil"@de,
+        "Santhal"@de .
+
+product:90478123-7B5A-4908-AA28-354478D18F30 a :REGULAR ;
+    schema1:name "En-Strip"@de .
+
+product:90CD4900-EA95-431B-A5CF-24737D16D8F6 a :REGULAR ;
+    schema1:name "Pixxaro EC"@de .
+
+product:913A6811-6D51-4109-8D6E-6841F6023B5E a :REGULAR ;
+    schema1:name "Amylo-X"@de .
+
+product:917324C8-27F9-4FC7-BC05-2517EF14564C a :REGULAR ;
+    schema1:name "Glifonex TF"@de .
+
+product:91A911C6-DE29-422D-AF26-4E55D5AC7B58 a :REGULAR ;
+    schema1:name "Bengala"@de .
+
+product:91DCD7F1-5358-40EB-BE56-124CB25E5BA7 a :REGULAR ;
+    schema1:name "Techno 10 CS"@de .
+
+product:91FBE5BB-4C4A-46E5-9254-6144B8309D0B a :REGULAR ;
+    schema1:name "K-Obiol ULV6"@de .
+
+product:923591AF-79B3-40BA-B2E4-D75BD8DD600B a :REGULAR ;
+    schema1:name "Spidex Vital"@de .
+
+product:92C2E862-0B77-4ED3-8F8B-37B36A7CD9C9 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Click Premium"@de,
+        "Topcorn"@de .
+
+product:9300C235-68D7-4482-AAFA-6C50CB97B876 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Focus Ultra"@de,
+        "Focus Ultra A"@de,
+        "RUGA"@de,
+        "STAR Cycloxydim"@de,
+        "Stratos Ultra"@de .
+
+product:9315BE4C-417B-4206-9BB3-3EB00ECC9555 a :REGULAR ;
+    schema1:name "Vineto"@de .
+
+product:934D3069-41D3-42C6-A264-BEF55D312E74 a :REGULAR ;
+    schema1:name "Smart Fresh"@de .
+
+product:937CC049-24C6-4A8C-9C52-0034944E8D82 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Mikal"@de,
+        "Mikal Flash"@de .
+
+product:938899F3-91C4-400C-A26C-5612D60DFA3F a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Belrose Spray gegen Blattläuse"@de,
+        "MIOPLANT Laus-Stopp"@de .
+
+product:939751BC-1F61-470C-A4D7-845C6D6BF30C a :REGULAR ;
+    schema1:name "LON20001M"@de .
+
+product:93E2AA3C-78BE-4CDD-9B4E-7C168F535728 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Steiner Gold"@de,
+        "Steiner Ultra"@de .
+
+product:93EB2158-0B0E-44D3-BFE8-76D8DA90EB5C a :REGULAR ;
+    schema1:name "Switch HG"@de .
+
+product:945B9616-475E-468B-AD91-6327C6568755 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Boscalid"@de,
+        "Cantus"@de .
+
+product:94633C0E-4802-4D01-A779-85EC2048C30E a :REGULAR ;
+    schema1:name "Folpet 80 WDG"@de .
+
+product:947F1689-98C0-469B-980C-3BB0DD0EC9C8 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Beetup 160 EC"@de,
+        "Betam LG"@de,
+        "Betasana EC"@de,
+        "Mentor Uno"@de,
+        "Phenmedipham EC"@de .
+
+product:948F5994-34AB-47BA-8E18-7AD19A65C6B3 a :REGULAR ;
+    schema1:name "MCPB 400"@de .
+
+product:951A675B-E9C7-48F6-AB26-BFACB997C19B a :REGULAR ;
+    schema1:name "Epsom"@de .
+
+product:95208CB6-E6A0-4E5B-BAA2-C59D18D3D594 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Legan"@de,
+        "Legan WG"@de,
+        "Rucolan"@de .
+
+product:954453E8-1600-4266-8513-B995D4FD5830 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "APELL 200"@de,
+        "Retrieve"@de,
+        "Tomigan 200"@de .
+
+product:9548961F-439B-44FF-9169-197B7DFBE4DF a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "AVERO"@de,
+        "Avacco"@de,
+        "Axial 50 EC"@de,
+        "Derux"@de,
+        "Grant"@de,
+        "Pinoxaden"@de .
+
+product:954F595D-F40D-4435-9D9A-174E44E10F32 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Goltix 700 SC"@de,
+        "Metamitron 700 SC"@de,
+        "Metamitron 700 flüssig"@de .
+
+product:95AB8972-062F-496C-A4CD-D54374E7B2BB a :REGULAR ;
+    schema1:name "Xerondo Forst"@de .
+
+product:95C2F859-9684-4E38-8ACB-808F7A76F7F9 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Aduka"@de,
+        "Diflufen"@de,
+        "Diflunacet"@de,
+        "Naceto"@de .
+
+product:9608F6A0-1793-43C6-9AC4-81F25C5B37A7 a :REGULAR ;
+    schema1:name "Anthopak"@de .
+
+product:9642BF8C-03E3-4612-B0E1-A86543517E60 a :REGULAR ;
+    schema1:name "Caryx"@de .
+
+product:9683BBCA-F058-4D57-B173-3F0DDC08C55A a :REGULAR ;
+    schema1:name "Serifel"@de .
+
+product:96B49024-45C3-4868-A5EB-CFCDBB5EFD0E a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Alial WG"@de,
+        "Aliette WG"@de,
+        "Aliette flash"@de,
+        "Contender 80 WG"@de,
+        "Fosim"@de,
+        "Gesal Aliette Re-Vital Pflanzen Pilz-Schutz"@de,
+        "Hallig 80 WG"@de .
+
+product:96EFB719-4132-4F2B-9585-534D0054AB87 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Cypermethrin S"@de,
+        "Cypermetrine"@de .
+
+product:9789DB95-896A-49ED-BF36-6FD84D6A22C6 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Oikos"@de,
+        "Sicid Neem"@de .
+
+product:97B03202-2F8D-446C-B2D4-25EDFCCFA3C4 a :REGULAR ;
+    schema1:name "Lumino"@de .
+
+product:97B93F22-E664-465B-8057-5D2193B19624 a :REGULAR ;
+    schema1:name "Shalimar"@de .
+
+product:98074729-8125-4F9A-BD3C-D8155C77E5B8 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Beta Omya"@de,
+        "Goltix 700 SC"@de .
+
+product:98193041-CD63-40A4-AEF2-43E95FB64F89 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "BIOHOP DelMONAL"@de,
+        "Promanal Neu"@de .
+
+product:98A282E1-CC55-439D-9FFA-A26BF74E9FDC a :REGULAR ;
+    schema1:name "Netzmittel Sprinter"@de .
+
+product:98DE76E0-2FF7-410D-AA4D-0106E77C291B a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Aliton"@de,
+        "Flexity"@de,
+        "Vivando"@de .
+
+product:991CCDBE-368E-406A-B2D2-88CB5E6FBDF6 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "2,4-D Plus"@de,
+        "U 46 D Fluid"@de .
+
+product:992D5963-E2FA-4464-914B-A2D5833F3570 a :REGULAR ;
+    schema1:name "Lentagran 600 EC"@de .
+
+product:994F6379-2703-4883-9E18-C0DDF3B98EB6 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Argolem"@de,
+        "Myco-Sin"@de .
+
+product:999BB8CE-48A9-4E28-AC35-649F4A7632B1 a :REGULAR ;
+    schema1:name "Novagib"@de .
+
+product:99B830CE-BBBF-48EA-8A47-C602CCE07303 a :REGULAR ;
+    schema1:name "Zurin"@de .
+
+product:99D1F54E-9E78-4685-8FFA-E3351B00C750 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Biorga Contra Raupen-Stopp"@de,
+        "Capito Raupenfrei"@de,
+        "Wormox"@de .
+
+product:99DA7105-778E-443A-8D35-3126E4754478 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "MCCP Combi"@de,
+        "Médox"@de .
+
+product:9A972F4F-EE1F-4F5C-9FED-B3E350540E12 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Midas"@de,
+        "Zepter"@de .
+
+product:9ACA17C3-7D0C-44EA-981A-8E8541D8A146 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Audienz"@de,
+        "BIOHOP AudiENZ"@de,
+        "Elvis"@de,
+        "Laser"@de,
+        "Spin Tor"@de,
+        "Spino"@de,
+        "Spinosad 480"@de,
+        "Spintor"@de,
+        "Success 4"@de .
+
+product:9B13934B-1738-4B01-B3A5-74F803A0AFB8 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Devoid"@de,
+        "Goltix 700 SC"@de,
+        "MetaCare"@de,
+        "Metamitron 700 SC"@de,
+        "Tornado SC"@de .
+
+product:9B4B098A-3DE7-466D-AE08-76F34B0004B9 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Agridif 250"@de,
+        "Bogard"@de,
+        "Conazol+"@de,
+        "Concaz"@de,
+        "Divo"@de,
+        "SCORE PROFI"@de,
+        "SICO"@de,
+        "Score"@de,
+        "Score 25 EC"@de,
+        "Score Profi"@de,
+        "Slick"@de,
+        "Sponsor"@de .
+
+product:9C205498-F909-400B-9F4E-8C13BCFE068E a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Gesal Schildlaus-Stop"@de,
+        "Rapisal"@de,
+        "Rappol Plus"@de .
+
+product:9C29EACB-4A26-4F66-A9A2-6620C4697343 a :REGULAR ;
+    schema1:name "Madex Top"@de .
+
+product:9CA18D8E-5831-46BD-A269-7CA4FDC60E48 a :REGULAR ;
+    schema1:name "Arnold"@de .
+
+product:9CF76024-9F37-4D08-A550-46EB4F0CF78A a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Elumis"@de .
+
+product:9D3C49C5-7F39-409E-8BE2-5996AAC1D242 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Finalsan AF UnkrautLos SPEED"@de,
+        "Finalsan RasenMoosfrei AF"@de,
+        "Finalsan Unkrautfrei AF"@de,
+        "Jardin Royal UnkrautFrei Spray"@de,
+        "Mioplant Unkrautvertilger-Spray"@de .
+
+product:9D66D6E2-742A-4D93-AE8D-C23ADD7893B4 a :PARALLEL_IMPORT ;
+    schema1:name "Capri Twin"@de,
+        "Florapyrox"@de,
+        "Pyroflor"@de,
+        "Pyroxsulam + Florasulam"@de .
+
+product:9DBDA93F-CEB4-4BD5-BB23-61AA653FE9C9 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Nova>proXX C"@de,
+        "Plüsstar"@de .
+
+product:9E28DE26-3827-478C-AF32-B107B4DD4D0C a :REGULAR ;
+    schema1:name "Rinidi WG"@de .
+
+product:9E516054-4F96-4D50-AE80-B124A71ADC7F a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Alliage"@de,
+        "Corsil"@de,
+        "Quimera"@de,
+        "Stroby DF"@de,
+        "Stroby WG"@de,
+        "Synthese +"@de .
+
+product:9E861B55-73B4-4606-88B0-D62B22AD599D a :REGULAR ;
+    schema1:name "Gesal Unkrautvertilger Super Rapid"@de .
+
+product:9F021596-14CF-4B87-9A1D-9425E375D930 a :REGULAR ;
+    schema1:name "Gesal Rosen-Pilzschutz Forte"@de .
+
+product:9F9A40E9-5644-4550-BD44-0FE59F251AFB a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Beaupro liquid"@de,
+        "Beauveria FL-Maschinenring"@de .
+
+product:9FB0336B-6DB7-4171-93A9-B953C1BC8201 a :REGULAR ;
+    schema1:name "Devrinol Top"@de .
+
+product:9FD3A8CD-04EE-4AAA-B4CF-B8ACC9BE6E0D a :REGULAR ;
+    schema1:name "BIOOtwin LE"@de .
+
+product:9FD4E2CC-308F-46B7-A912-47A1FD15BD56 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "BIOHOP WinterOIL"@de,
+        "Weissöl Omya / Huile blanche Omya / Olio bianco Omya"@de .
+
+product:9FF3BFC3-4CA2-4A39-BC41-ECADDB5F4A7A a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Allstar"@de,
+        "Amistar"@de,
+        "Azbany"@de,
+        "Azoxy 250"@de,
+        "Azoxystar"@de,
+        "Azoxystrobin 250"@de,
+        "Hortosan"@de,
+        "MAAG Rasen-Pilzschutz"@de,
+        "Mirador SC"@de,
+        "Ortiva"@de,
+        "Ortiva Hobby"@de,
+        "Ortolan"@de,
+        "Quadris"@de,
+        "STAR Azoxy 250"@de,
+        "STAR Azoxystrobin"@de,
+        "Sinstar"@de,
+        "Tazer 250 SC"@de,
+        "Zoxy 250"@de .
+
+product:A075EED9-2412-49AA-9A05-F0457E689844 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Finy"@de .
+
+product:A0814C71-F727-4622-8471-713852C3E178 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Prosper"@de,
+        "Prosper 500 EC"@de,
+        "Spirox"@de .
+
+product:A2175B87-2039-4861-BC53-C03361E3D0F9 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Difcor"@de,
+        "Difcor 250"@de,
+        "Difcor 250 EC"@de,
+        "Genius Rex"@de .
+
+product:A242B195-A630-4577-992F-79E0AE7058A4 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Algedi"@de,
+        "Arrat"@de .
+
+product:A24749EE-A0B6-4D6B-885F-8A5F8F665BF8 a :REGULAR ;
+    schema1:name "Nicosh OD"@de .
+
+product:A2868DCC-B60C-4268-802D-9A9C18E78C6C a :REGULAR ;
+    schema1:name "Betron WDG"@de .
+
+product:A2921C09-C008-4B30-8177-A2BA1C6F7733 a :REGULAR ;
+    schema1:name "Rasenrein KV"@de .
+
+product:A33504DA-06CF-4EC7-B016-DE11780D1A42 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Crop Saphir"@de,
+        "Litar 10 EC"@de,
+        "Noidio Gold 10 EC"@de,
+        "Penco"@de,
+        "STAR Penconazol"@de,
+        "Scudex"@de,
+        "Topas 10 EC"@de,
+        "Topas Vino"@de,
+        "Topaze"@de .
+
+product:A335FF55-1EDF-4EFB-8176-64BF6366E79C a :REGULAR ;
+    schema1:name "Rotstop"@de .
+
+product:A35D1599-42F4-4C43-98FA-22CB92EEAC69 a :REGULAR ;
+    schema1:name "Miglyphus"@de .
+
+product:A4936042-F857-4E83-9DBD-F0783B28BD28 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Roundup Gel"@de .
+
+product:A4BA85E0-882B-4F5A-BB83-400C98636D37 a :REGULAR ;
+    schema1:name "Trichocap Plus"@de .
+
+product:A4D759E7-B3DD-485C-BD30-B3464222C343 a :REGULAR ;
+    schema1:name "Pyrethrum FS"@de .
+
+product:A51533DE-4C21-4E5A-9231-D72635E0648A a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Aerofleur Spray gegen Krankheiten"@de,
+        "Capito Pilzfrei Spray"@de,
+        "MIOPLANT Spray gegen Pilzkrankheiten"@de,
+        "Resolva Spray gegen Pilzkrankheiten"@de .
+
+product:A5729F18-CADE-43A4-9BF2-C5F1EAF7776B a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "BIO Spray gegen Rosenschädlinge"@de,
+        "BIO Spray gegen Schädlinge"@de,
+        "Capito Insektizid Bio Spray"@de,
+        "Migros Bio Garden Spray gegen Blattläuse"@de,
+        "Neudosan AF Neu"@de,
+        "Oecoplan Insektizid"@de,
+        "Spruzit AF Rosen-SchädlingsFrei"@de,
+        "Spruzit AF SchädlingsFrei"@de .
+
+product:A57A2ED0-E566-40EA-8852-48CAC37F8D86 a :REGULAR ;
+    schema1:name "Propaq"@de .
+
+product:A58BBC94-EE19-4E25-80CD-0FC47E7E1A4E a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Atollan"@de,
+        "Dithianon 70 WG"@de .
+
+product:A5E15B83-FFF0-45D5-9D20-04F05CB3E037 a :REGULAR ;
+    schema1:name "Mandolin"@de .
+
+product:A5EA2B8C-8FBB-4E9F-BB4B-54E869EEBADA a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Escort"@de,
+        "Lieto"@de,
+        "Reboot"@de .
+
+product:A6237BB5-E31D-4F87-9300-63215ADD7187 a :REGULAR ;
+    schema1:name "Isonet-LE"@de .
+
+product:A62C202C-A7A7-4F1D-9EB9-0EC80C50FCA4 a :REGULAR ;
+    schema1:name "Aphiscout"@de .
+
+product:A6360BC9-C8B7-4E37-8B28-B6923DC3818B a :REGULAR ;
+    schema1:name "Californipak"@de .
+
+product:A6507080-EE1D-461B-BA27-121D10858661 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Cameo SX"@de,
+        "Express SX"@de,
+        "Pointer SX"@de,
+        "Taxi SX"@de .
+
+product:A6576F9C-2AE5-4A76-8072-C1F588EBD4CD a :REGULAR ;
+    schema1:name "Korit 420 FS"@de .
+
+product:A66F0A9A-D54B-4815-85A4-5078B6951FAF a :REGULAR ;
+    schema1:name "CheckMate CM-F"@de .
+
+product:A6911AA5-EE80-4A0B-AFC3-E67D5A74A4F7 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Serenade ASO"@de .
+
+product:A7168090-C39F-4836-893C-66E025180A6A a :REGULAR ;
+    schema1:name "Cerelex"@de .
+
+product:A732ECD0-AF9D-4FEB-B2CD-C8FDC3576CF2 a :REGULAR ;
+    schema1:name "Fibro"@de .
+
+product:A7B9515D-1668-464D-B739-A3AA6677E02C a :REGULAR ;
+    schema1:name "BerryProtect"@de .
+
+product:A7C93272-EB62-4B77-A90A-7EF0ECC5457B a :REGULAR ;
+    schema1:name "Aerofleur Spray gegen Pilzkrankheiten"@de .
+
+product:A85F82E9-BA05-4BCB-B807-AC345D6A7A2E a :REGULAR ;
+    schema1:name "CheckMate Puffer CM"@de .
+
+product:A94C814A-5E5A-4DA0-881C-AE1655E7A3DF a :REGULAR ;
+    schema1:name "Talisma UL"@de .
+
+product:A94E4C79-82F6-4DB9-A523-06327C981695 a :REGULAR ;
+    schema1:name "Cupro-Folpet flüssig"@de .
+
+product:A97A4371-B1B7-475C-A1C5-C23CFB9A9385 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Blocker"@de,
+        "Etofenprox"@de,
+        "Trebon 30 EC"@de .
+
+product:A9F71480-165B-4CB4-AEC2-5182F55B23BC a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Brasan Duo"@de,
+        "Colzaphen"@de,
+        "Dousco"@de,
+        "Nero"@de,
+        "Rodino ready"@de .
+
+product:AA16570D-AA70-49DE-8D1A-3D986EAE9B8D a :REGULAR ;
+    schema1:name "Phenmédiphame"@de .
+
+product:AA19609C-6B32-4C19-ADA4-DBE38B49E9E0 a :REGULAR ;
+    schema1:name "Difend FS"@de .
+
+product:AA3831B4-2835-4A98-8319-0586B1182324 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Fluazinam 500"@de,
+        "Fluazinam 500 II"@de,
+        "Flunam 500 II"@de,
+        "Flunam 500 III"@de,
+        "Frowncide"@de,
+        "Iowa"@de,
+        "Ohayo"@de,
+        "Shirlan"@de,
+        "Tarame"@de,
+        "Terminus"@de,
+        "Tisca"@de,
+        "Winby"@de,
+        "Winner"@de,
+        "Zignal"@de .
+
+product:AA406F90-B3F3-4A4E-AC6E-D26771F18264 a :REGULAR ;
+    schema1:name "GranMet GR"@de .
+
+product:AA55C16C-89A8-4E8A-AE60-C4B411DA848C a :REGULAR ;
+    schema1:name "Apheline"@de .
+
+product:AA868C31-5B12-4C09-9282-A20B17A6F253 a :REGULAR ;
+    schema1:name "Feltiella acarisuga"@de .
+
+product:AAF2CFB6-1D95-438E-B513-C4205A4E8BEC a :REGULAR ;
+    schema1:name "Axial One"@de .
+
+product:AB711EF7-8605-4DE8-9964-23CEF288CD2D a :REGULAR ;
+    schema1:name "Herba Power"@de .
+
+product:ABF8E183-AB08-498A-8BCA-ABADA0A472CA a :REGULAR ;
+    schema1:name "Malvin WG"@de .
+
+product:ABFEA1BA-E988-4816-A05B-17D5EFF22D6F a :REGULAR ;
+    schema1:name "Taegro"@de .
+
+product:AC04149F-49B6-4EBA-AF8B-1C4DAD115C93 a :REGULAR ;
+    schema1:name "Mirical"@de .
+
+product:ACD1F8C8-7A8C-4FE0-BD78-1E31D49625AF a :REGULAR ;
+    schema1:name "Cyd-X X-tra"@de .
+
+product:AD073F6E-D5AE-43AE-BE3A-93A5D77DD050 a :REGULAR ;
+    schema1:name "Mamba Due Colore"@de .
+
+product:AD57E95B-933C-4322-AD0B-9AD70429719E a :REGULAR ;
+    schema1:name "Insektol-pyrho-fluid"@de .
+
+product:AD6AFA21-E14A-448C-A972-738CA4304272 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Mapro"@de .
+
+product:ADFD2592-7368-4500-9A0C-44EFB569A098 a :REGULAR ;
+    schema1:name "Schnecken-Linsen / Lentilles Antilimaces / Lenticelle Antilumache"@de .
+
+product:AE120798-34AA-47AE-9203-134885001A4A a :REGULAR ;
+    schema1:name "BasilProtect"@de .
+
+product:AE9D9D27-974C-40B4-816C-8309423156B9 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Espiro"@de,
+        "Papyrus"@de,
+        "Pyrimet"@de,
+        "Pyrimethanil 400"@de,
+        "Pyrus 400 SC"@de,
+        "Scala"@de .
+
+product:AED0176F-5221-445B-8E8D-CFA0C966320A a :REGULAR ;
+    schema1:name "Cocana"@de .
+
+product:AEDEF0CA-20CA-4075-B0C1-AEA96FF079C8 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Absolut"@de,
+        "Aviator Xpro"@de,
+        "Proxafen"@de,
+        "Saintex"@de .
+
+product:AF1F1711-6956-4BDE-BBFA-1C38C8FD4B8D a :REGULAR ;
+    schema1:name "Heliosol"@de .
+
+product:AF47B47F-EF66-45D8-91C7-6D1DC49D57D3 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Brasan Trio"@de,
+        "Colzor Trio"@de,
+        "Galipan 3"@de .
+
+product:B01D8B87-6436-4631-90F5-BE459A0F4DFA a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Flurostar 200"@de,
+        "Fluroxypyr 200"@de,
+        "Hatchet Xtra"@de,
+        "Retrieve 20"@de,
+        "Starane 200"@de,
+        "Tomagan"@de,
+        "Tomigan 20"@de .
+
+product:B0244DAC-A521-4BA6-A2C2-76B79115081A a :REGULAR ;
+    schema1:name "Aphelipak"@de .
+
+product:B0F8ED99-8F5A-41B5-BC69-8F752AB62738 a :REGULAR ;
+    schema1:name "Aphidend"@de .
+
+product:B1274A6A-3AF5-4AC6-BD6A-FA1E75EBBE06 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Cyazofam"@de,
+        "Ranman Top"@de,
+        "Slowgirl"@de .
+
+product:B14E1893-A573-4050-91E7-82C08D785520 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Migros Bio Garden Spray gegen Orchideenschädlinge"@de,
+        "Migros Bio Garden Spray gegen Rosenschädlinge"@de,
+        "Migros Bio Garden Spray gegen Schädlinge"@de,
+        "Spruzit AF OrchideenSchädlingsSpray"@de,
+        "Spruzit AF OrchideenSchädlingsfrei"@de,
+        "Spruzit AF Rosen-Schädlingsfrei"@de,
+        "Spruzit AF Schädlingsfrei"@de .
+
+product:B193431A-98DC-4A81-9E5E-44CDBA041BCF a :REGULAR ;
+    schema1:name "Ervipar"@de .
+
+product:B1A6D8C4-3FD1-4D3F-BCC3-4B47AB53B746 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Centurion 240 Neo"@de,
+        "Select"@de .
+
+product:B1AD79E6-CE5E-488F-A779-3D4B798848F6 a :REGULAR ;
+    schema1:name "Feltiline"@de .
+
+product:B244D552-B907-487C-95D3-2F2B7BC781BF a :REGULAR ;
+    schema1:name "Banarg 4%"@de .
+
+product:B2510ADB-9679-4F95-A314-DC459012EA60 a :REGULAR ;
+    schema1:name "CCC Extra"@de .
+
+product:B28DEF6D-B096-44A2-B43D-C9C89C158629 a :REGULAR ;
+    schema1:name "Mister C"@de .
+
+product:B2BBD0DF-0899-4A8B-AF1C-9536365A9B34 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Capito Rasen Unkrautfrei Spray S"@de,
+        "Exelor Jardin Profi RTU"@de,
+        "Gesal Rasenunkraut-Spray"@de,
+        "Selectox Royal Spray"@de,
+        "Windweg Pronto"@de .
+
+product:B2CEE875-D648-4617-9E94-BC0EEB94859B a :REGULAR ;
+    schema1:name "Ratron Sticks"@de .
+
+product:B361B6E5-34C5-492C-B0E2-34C8B4E5AA46 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Costello"@de,
+        "Cymbal Flow"@de,
+        "Cyxa 225"@de .
+
+product:B370F223-4CB7-4945-918F-B2C58A6FFCB8 a :REGULAR ;
+    schema1:name "Ercal"@de .
+
+product:B3E3A747-17A2-4984-8F26-5E6119682A52 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Simplex"@de .
+
+product:B3F2AECF-2787-4E6E-884C-1BB47EFA6DFE a :REGULAR ;
+    schema1:name "En-Strip"@de .
+
+product:B4011071-BA95-4C15-9156-86EA35003B6E a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Pendi"@de,
+        "Pentium Flo"@de .
+
+product:B405501B-E930-441B-AF30-39B13CE8279A a :REGULAR ;
+    schema1:name "Misto 20"@de .
+
+product:B425359C-AB71-4EF5-8467-5074DDC567FC a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Gesal Loredo Rasen-Unkrautvernichter gegen Problem-Unkraut"@de,
+        "Mondera"@de,
+        "PIXIE"@de,
+        "Pixie"@de .
+
+product:B4271664-18E8-483E-9056-6F2320DC1D9E a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Capito Schneckenkorn Bio"@de,
+        "Ferramol Schneckenkorn"@de,
+        "Ferrimax"@de,
+        "Migros Bio Garden Schneckenkörner"@de .
+
+product:B42C2DDE-BC2F-4D88-BA22-9EEB5EFCD4AC a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Sesto"@de,
+        "Stavento"@de .
+
+product:B4987E3B-BB6F-463D-A1DF-645DD9C3C10D a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Talis"@de .
+
+product:B49D98BB-8C0F-4056-9464-3E70F8AA342D a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Agro Thianon"@de,
+        "Atollan S"@de,
+        "Delan 70 WG"@de,
+        "Delan WG"@de,
+        "Dilan"@de,
+        "Dion 700"@de,
+        "Dithianon 700"@de,
+        "Lirus"@de .
+
+product:B4BA0E5C-0A0D-44CC-9C4E-810948D91D43 a :REGULAR ;
+    schema1:name "Ethephon"@de .
+
+product:B4EEF3D7-F979-4D5B-9A5D-A1E91130CE28 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Digi>proXX"@de,
+        "Hirsen-Vertilger Gesal"@de,
+        "Puma extra"@de,
+        "Ralon Super"@de .
+
+product:B5325C33-AF8C-4983-AAD2-D975C31C60E4 a :REGULAR ;
+    schema1:name "Chrysoperla"@de .
+
+product:B534934E-1293-4111-9B59-D5E856AA1A4E a :REGULAR ;
+    schema1:name "Ferramol Schneckenkorn Compact"@de .
+
+product:B581EFAD-4136-438B-AF0C-88C561412375 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Amphore Flex"@de,
+        "Remiltine Flex"@de .
+
+product:B592E752-6862-4DB8-9AF9-757EEEB1805C a :REGULAR ;
+    schema1:name "Duplosan KV-Combi"@de .
+
+product:B5B12D54-A3AC-4B3D-A9A0-E646ED1A1448 a :REGULAR ;
+    schema1:name "Transeius montdorensis"@de .
+
+product:B5E46CCF-1B4E-46AB-A5C6-0ABFD0E78A9A a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Nicogan"@de,
+        "Pampa"@de,
+        "SL 950"@de .
+
+product:B6319E7A-7D73-4259-A4AB-191700CD2925 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Cymbal 45"@de,
+        "Cymbal WG"@de,
+        "Sporex"@de .
+
+product:B6495F99-3B65-415B-8D0F-79629C10F1EB a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Ceromat"@de,
+        "Distel Star"@de,
+        "Drako"@de,
+        "Garlon L60"@de,
+        "Garlon Pro"@de,
+        "Picobello"@de,
+        "Ronx"@de,
+        "Semille"@de,
+        "Spicanet EV"@de .
+
+product:B65E5F39-1056-4B31-A595-069858E59433 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Centurion Prim"@de,
+        "Centurion R"@de .
+
+product:B6636EE0-F0A3-49B3-A366-4BDCDD906163 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Cymboxanil"@de,
+        "Cymoxanil WG"@de,
+        "Dauphin 45"@de,
+        "Sandoro"@de,
+        "Tambourin"@de .
+
+product:B66EA2BF-AA6C-4F02-9185-61111495BB4A a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "MCPA Plus"@de,
+        "U 46 M Fluid"@de .
+
+product:B6728413-C60A-485B-B8AD-7A527087E15F a :REGULAR ;
+    schema1:name "FytoSol"@de .
+
+product:B7964C77-8BBB-40CF-AF63-EDB885E93D82 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Downwind-perfectLawn"@de,
+        "Exelor"@de .
+
+product:B79A5D99-6F95-4AF4-840A-F245D282C255 a :REGULAR ;
+    schema1:name "Brevis"@de .
+
+product:B7B62586-C364-41E8-BFAA-03E74A0BE6FB a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Capone"@de,
+        "Caravel"@de,
+        "Cargon S"@de .
+
+product:B7C1892F-109A-4534-A7B1-DCCB30693CB1 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Capito Cupro L"@de,
+        "Vitigran 35 HG Gemüse"@de .
+
+product:B7C841A1-EE5B-4182-8225-E3BFD975E8A6 a :REGULAR ;
+    schema1:name "Isonet-Z"@de .
+
+product:B7E91274-6264-4EB6-879B-7753D0BCB47A a :REGULAR ;
+    schema1:name "Maxim Quattro"@de .
+
+product:B7F2FF74-1081-4FD3-98CD-983BE3059F0B a :REGULAR ;
+    schema1:name "Gala"@de .
+
+product:B8D402F4-F938-4EDC-B30E-E52B42516C91 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Herba>proXX C"@de,
+        "Njett Pro"@de .
+
+product:B8D93B08-976D-4704-8068-514556A012F4 a :REGULAR ;
+    schema1:name "Avella"@de .
+
+product:B91C2508-E0DE-45FE-9604-6353DB5C0563 a :REGULAR ;
+    schema1:name "Alial Triplo"@de .
+
+product:B9352333-3ABE-4814-98E9-736FD28E61EF a :REGULAR ;
+    schema1:name "SmartFresh ProTabs"@de .
+
+product:B93C39F6-80C2-4A58-8466-FC45228550A6 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Flint Max"@de,
+        "Flint max"@de,
+        "Nativo"@de .
+
+product:B93CDC50-C62C-4C9E-96A1-4C0194819949 a :REGULAR ;
+    schema1:name "Andersonipak"@de .
+
+product:B9CC8DF7-0458-446B-8833-F99AA8EC65C9 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "BIOHOP NemaGAL"@de,
+        "Bio Garden Älchen gegen Dickmaulrüssler-Larven"@de,
+        "Biorga Contra Nematoden gegen Dickmaulrüssler"@de,
+        "Coop Oecoplan Biocontrol Nützlinge gegen Dickmaulrüsslerlarven"@de,
+        "Dickmaulrüssler-Nematoden"@de,
+        "Galanem"@de,
+        "Meganem"@de,
+        "Meginem Pro"@de .
+
+product:B9D0969B-FFD7-4A16-9563-02187C53A20A a :REGULAR ;
+    schema1:name "Omnera"@de .
+
+product:B9DF5AEE-CC89-419B-8871-AACB10E30546 a :REGULAR ;
+    schema1:name "Silico-Sec"@de .
+
+product:B9E2BFAC-4FC9-45BC-B01E-9AA19C78BCA8 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Baymat Plus"@de,
+        "Gesal Langzeit-Pilzschutz Folicur"@de .
+
+product:BA004CAE-54B0-4F1D-9058-31915133C305 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Affirm"@de,
+        "Affirm Profi"@de,
+        "Atac"@de,
+        "Rapid"@de .
+
+product:BA4C8CB0-0E05-42D6-8150-7A3E3C5150AC a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Capito Schneckenkörner 3"@de,
+        "Carakol 3"@de,
+        "Gesal Schneckenkörner"@de .
+
+product:BA4D72DA-6CF1-4015-B8A1-E9BE202666FF a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Kocide Opti"@de .
+
+product:BA5EF4C8-023D-4ECE-9507-487FF1D8D4DE a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Glyphosat 360 TF"@de,
+        "Imperium TF"@de .
+
+product:BA80AE79-09DF-4C18-98C3-0A948FB0EBD5 a :REGULAR ;
+    schema1:name "Tribe 75 WG"@de .
+
+product:BA869BB5-D06A-458E-B7F4-921E121814A5 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Fantic F"@de,
+        "Fantic F WG"@de .
+
+product:BB1AABC4-8640-4EA8-BC00-2AB4DA3E0509 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Nimrod"@de,
+        "Nimrod EC"@de .
+
+product:BB2B388C-CC31-495A-A52F-3786A30AAAA6 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Basamid"@de,
+        "Basamid Granulat"@de,
+        "Basamid Granule"@de,
+        "Basamid-Granulat"@de .
+
+product:BB48937A-A97F-448C-8125-DB34C7225058 a :REGULAR ;
+    schema1:name "Iodus 40"@de .
+
+product:BB64B1E7-F00A-4904-8F60-913446A3D76D a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Carzone"@de,
+        "Shark"@de,
+        "Spotlight Plus"@de .
+
+product:BB6C1A31-3558-4A38-87CE-CC039EEF2D0D a :REGULAR ;
+    schema1:name "Prev-AM"@de .
+
+product:BB8EC1A6-343B-4E8C-8BE2-E953607F7297 a :REGULAR ;
+    schema1:name "Miripak"@de .
+
+product:BBF127EB-8046-4CC1-8EF5-FD8E5EE8D36A a :REGULAR ;
+    schema1:name "Zorro"@de .
+
+product:BC029153-723C-4AA0-B5AA-5BD9A0FB984D a :REGULAR ;
+    schema1:name "Cedomon"@de .
+
+product:BC0E52E7-69F5-4A7C-A0C4-D2D0519541B0 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Insignia"@de,
+        "Pyra>proXX"@de .
+
+product:BC12E7F8-EB10-4024-9C0A-ECF5B4B06A4A a :REGULAR ;
+    schema1:name "Scenic Gold"@de .
+
+product:BC95CB07-F25D-4FBE-A76B-FD45B4E6658D a :REGULAR ;
+    schema1:name "Floramite 240 SC"@de .
+
+product:BC9BAF49-51CF-4B65-A084-BD962ADC042D a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "NIMROD"@de,
+        "Nimrod"@de .
+
+product:BCD54F1A-AFD9-4743-B6B1-4768F1C0B5BD a :REGULAR ;
+    schema1:name "Aphidius ervi"@de .
+
+product:BCE08502-DAD4-4428-9CE4-4A74680BABC9 a :REGULAR ;
+    schema1:name "Profital"@de .
+
+product:BD0A0BFD-FCBA-4B5A-856E-9A31831DCD2C a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Bordeaux S"@de,
+        "Kupfer-Bordo LG / Bouillie bordelaise LG"@de .
+
+product:BD6C1EDD-8BBC-455A-A349-0180A6493973 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Carakol 5"@de,
+        "Limax Power"@de .
+
+product:BDA28FBD-AB1C-48D7-952E-88A3A4B88245 a :REGULAR ;
+    schema1:name "Hypoline"@de .
+
+product:BDA75450-DA11-4BDF-88F7-9DF01EC03173 a :REGULAR ;
+    schema1:name "Macrolophus"@de .
+
+product:BE600CC3-0238-4DF3-A093-E29FDCA584BF a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Credo"@de,
+        "Nissostar"@de,
+        "Stiker flow"@de,
+        "Vittoria 24 SC"@de .
+
+product:BE93D72E-CE75-4180-806A-C074D581F682 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Luna Privilege"@de,
+        "Moon Privilege"@de .
+
+product:BEF60360-BC47-493C-AEB6-5FDA5282538D a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Beta Omya UP"@de,
+        "Metafol SC"@de,
+        "Metamitron flüssig"@de,
+        "Metatron SC"@de,
+        "Nymeo"@de .
+
+product:BFC454F3-A1FD-479E-8212-F290BFB12183 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Belrose Blattlaus Spray"@de,
+        "SanoPlant Spray gegen Schädlinge"@de,
+        "Universal-Insektizid Spray"@de .
+
+product:BFF7DFAE-632D-4588-AC41-198B8475430E a :REGULAR ;
+    schema1:name "Spical"@de .
+
+product:C04B8145-16BA-4A1F-B454-2F70A34146C0 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Aceta 200"@de,
+        "Acetamiprid 200"@de,
+        "Barritus Rex"@de,
+        "Gazelle SG"@de,
+        "Gepard"@de,
+        "Mospilan SG"@de,
+        "Oryx Pro"@de,
+        "Pistol"@de,
+        "Supreme 20 SG"@de .
+
+product:C058EDA5-D227-488E-9EB3-838634E9B0C6 a :REGULAR ;
+    schema1:name "Encarsia citrina"@de .
+
+product:C07ED140-4335-42C5-B63D-0DBEA87F271A a :REGULAR ;
+    schema1:name "Sphaerophoria rueppelli"@de .
+
+product:C0A80966-225E-4EBC-8947-F6CEB5E8BE53 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Beaupro"@de,
+        "Beauveria-Schweizer"@de .
+
+product:C0BF357B-4100-4191-9EA3-7F4A351C5FB2 a :REGULAR ;
+    schema1:name "Trico"@de .
+
+product:C10AAA6C-589E-48AA-9848-671CD840B971 a :REGULAR ;
+    schema1:name "Monitor"@de .
+
+product:C10BDEA3-50CE-476C-9165-42BD8842FBC3 a :REGULAR ;
+    schema1:name "Duplosan KV Combi"@de .
+
+product:C10D8ECB-563A-4951-85E5-4D51E25D7E16 a :REGULAR ;
+    schema1:name "Capex 2"@de .
+
+product:C124AD39-C540-4581-A654-CC5F959A6931 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Cuproxat flüssig"@de,
+        "Cutril Top"@de .
+
+product:C1521255-4420-49A8-8918-81C9977AB091 a :REGULAR ;
+    schema1:name "Frowncide"@de .
+
+product:C16FD86E-4728-4D47-A9FF-C57843E1230E a :REGULAR ;
+    schema1:name "Paket"@de .
+
+product:C1AB08E1-149A-4A7B-9BAD-0FE927917AE9 a :REGULAR ;
+    schema1:name "Aphipar"@de .
+
+product:C1B13D39-1745-4DC2-8349-22575EED5F84 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Fludio"@de,
+        "Maxim 025 FS"@de,
+        "Spirato 25 FS"@de .
+
+product:C1BECF8A-9664-4739-A21D-9AD60476DECB a :REGULAR ;
+    schema1:name "Goltix Gold"@de .
+
+product:C1E9AFE2-3297-493D-B161-00BE49633BAD a :REGULAR ;
+    schema1:name "Celest Trio"@de .
+
+product:C1FB6C2D-26F8-4537-A500-7878BF835C0B a :REGULAR ;
+    schema1:name "Swirskipak"@de .
+
+product:C2CFD7C5-0F42-4849-BA23-7BBA46518862 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "K-Obiol EC25"@de .
+
+product:C2CFEEED-145C-440F-B50F-973B0C02CBA6 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Tebucur 250"@de,
+        "Tebucur 250 EW"@de .
+
+product:C3092CFB-685D-48C8-ABB3-7B3978B1694B a :REGULAR ;
+    schema1:name "Erpax Duo"@de .
+
+product:C424299C-7E5F-4596-93AC-8D1D4CFEF0E0 a :REGULAR ;
+    schema1:name "Encarline Mix"@de .
+
+product:C455A926-6B8A-4933-A533-EB9292300339 a :REGULAR ;
+    schema1:name "Eretmocerus mundus"@de .
+
+product:C4E92D2E-6F12-4B32-8F66-4A4A754A61F1 a :REGULAR ;
+    schema1:name "Sanoplant Winteröl"@de .
+
+product:C522E421-BD3D-49DE-B90C-8AEA76EA64B0 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Bio Buxus"@de,
+        "Gesal Buchsbaumzünsler Stop DiPel DF"@de .
+
+product:C54DBC18-8F85-4EE6-8AD3-8A99A9BFAD90 a :REGULAR ;
+    schema1:name "Temsa SC"@de .
+
+product:C566E2CA-03D0-439C-9A9B-3E3927209507 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Chlortoluron + Diflufenican + Pendimethalin"@de,
+        "Diclomet"@de,
+        "Pentocan"@de,
+        "Trinity"@de .
+
+product:C5717D72-3E76-4310-8E69-F4B4A9C9E593 a :REGULAR ;
+    schema1:name "Anthocoris"@de .
+
+product:C5B156E5-C1C1-46E0-96AF-75C81BE7FC1A a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Bettix SC"@de,
+        "Sugaro Gamma"@de .
+
+product:C64663AC-03A1-473E-A5EF-C77910AECD9A a :REGULAR ;
+    schema1:name "CheckMate Puffer Fruit Multi"@de .
+
+product:C715DBA4-EEB3-4759-BF34-64E863E09C4B a :REGULAR ;
+    schema1:name "Vivolt"@de .
+
+product:C7460D99-AF1C-4302-B6CE-98CCA5F7219D a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Kiron HG"@de,
+        "Spomil K"@de .
+
+product:C7949A51-F8F3-4DB1-84F9-9D04B16E66E5 a :REGULAR ;
+    schema1:name "Aphidius ervi"@de .
+
+product:C7BA37DB-20AE-4B23-AF56-B6CCF976068A a :REGULAR ;
+    schema1:name "Redigo"@de .
+
+product:C809377F-97C2-4111-A1BC-EE4B9CC825EB a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Bio Raupen Stopp"@de,
+        "Buchsbaumzünsler-Frei"@de,
+        "Gesal Raupen-Stop"@de,
+        "MAAG Dipel"@de .
+
+product:C8118FE7-7A61-4C73-8B15-60A7642523B5 a :REGULAR ;
+    schema1:name "Schneckenkorn 6% Lonza"@de .
+
+product:C82D79C1-01BC-4F42-869D-DC7E3D775BFD a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Arigo"@de .
+
+product:C8321A04-3442-4741-8407-848703C0A705 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Biohop DelTRUM"@de,
+        "Spruzit"@de .
+
+product:C862AB80-3B6A-43E7-9147-07C6A8AC1959 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Beetup Duo"@de,
+        "Beta Star"@de,
+        "Rübex"@de,
+        "Sugaro Duo"@de,
+        "Wizard EC"@de .
+
+product:C8D8DAAA-4A58-457D-9BDD-6FC694767C72 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Calma"@de,
+        "Trimaxx"@de,
+        "Trinex 175"@de,
+        "Trinexapac-ethyl 175"@de,
+        "Trinexx Top"@de .
+
+product:C8F8513D-FCCC-4F03-A574-63E140ECCAFD a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Capito Garden Gold Spray"@de,
+        "Cythrin Garden Spray"@de,
+        "Gesal Insect-Stop"@de .
+
+product:C908A4B9-EB56-481F-B9E0-BFF80EA326C5 a :REGULAR ;
+    schema1:name "Aphiline"@de .
+
+product:C959016C-B3C4-4D1E-92F3-1B43B1CA3ED6 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Crown MH"@de,
+        "Itcan SL 270"@de .
+
+product:C9901EBA-D28F-48CC-9FAE-43DF136947C5 a :PARALLEL_IMPORT ;
+    schema1:name "Safari"@de .
+
+product:CA3F98D4-B043-4D60-8D88-766816726E9A a :REGULAR ;
+    schema1:name "Isonet-L"@de .
+
+product:CAB33D0A-DDDA-4512-9185-069EC52F659C a :REGULAR ;
+    schema1:name "Swirski-Mite"@de .
+
+product:CAF0186D-F4F0-4E39-AF4F-95E29BF5D4EA a :REGULAR ;
+    schema1:name "Bracotop"@de .
+
+product:CAFBD9BC-16EB-43DC-A2BC-CA160A78A672 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Frontier X2"@de,
+        "Loper"@de,
+        "Mazil"@de,
+        "STAR Dimethenamid-P"@de,
+        "Spectrum"@de,
+        "specrtum"@de .
+
+product:CB84292F-2B0A-4AC3-864E-A3A6469B0D15 a :REGULAR ;
+    schema1:name "Cidely Top"@de .
+
+product:CBAE04A9-88AF-4BDF-9440-BF79ADAB227D a :REGULAR ;
+    schema1:name "LBG-51FCm"@de .
+
+product:CC43428B-9C2C-4308-9AD3-6E2EBB65544C a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Ethofol 500 SC"@de,
+        "Stemat"@de .
+
+product:CD213BD1-83C6-4FCA-923D-9E45A62E3CA2 a :REGULAR ;
+    schema1:name "Mero"@de .
+
+product:CDD5EACF-9AA5-4864-BF4C-DE7339BFE9C5 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Kusabi"@de .
+
+product:CDDBF7CF-E0E2-4138-A0F5-D350AFBAB9B8 a :REGULAR ;
+    schema1:name "Captan S WG"@de .
+
+product:CE655ECC-99D9-447C-89A2-CF08BE55366E a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Decis Protech"@de,
+        "Gesal Gemüse-Insektizid Decis"@de .
+
+product:CE6ACB98-4301-4390-8FE0-A0DFCA70A706 a :REGULAR ;
+    schema1:name "Naturalis-L"@de .
+
+product:CEC5A841-92D2-4DF1-AC33-6685BB042DF6 a :REGULAR ;
+    schema1:name "Weissöl S"@de .
+
+product:CED96029-439B-4FF6-ADDD-FBF936FD0D02 a :REGULAR ;
+    schema1:name "Captan WG"@de .
+
+product:CF28C82A-ADBA-436F-BF01-3E7FB57084BB a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Agil"@de,
+        "Index"@de,
+        "Obsidio Rex"@de,
+        "Propaq"@de .
+
+product:CF4826A8-4C98-4C99-AD83-D239F47B3487 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Rapisal"@de,
+        "Rappol Plus"@de .
+
+product:CF74A49F-E1D5-4DDA-8733-BF09E69712A4 a :REGULAR ;
+    schema1:name "Melody Super"@de .
+
+product:CFD13007-DF03-45E2-BC80-AC903B1CC9F8 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Chikara 25 WG"@de,
+        "Karachi"@de .
+
+product:D05FE796-09D0-4126-B4DE-2B6C1ECF8078 a :REGULAR ;
+    schema1:name "Diabolo Plus"@de .
+
+product:D0743782-A6FB-4F61-897D-74758D94E779 a :REGULAR ;
+    schema1:name "Biopower"@de .
+
+product:D080065B-A536-4A10-BFC2-B4AFA5A420EC a :REGULAR ;
+    schema1:name "Legan HG"@de .
+
+product:D0A8BCF8-3455-47BF-85A8-4B46169CF4F2 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Cidely"@de,
+        "Cyflamid"@de,
+        "Cyflodium"@de,
+        "Nissodium"@de,
+        "Pican"@de .
+
+product:D124A1E8-65DC-44A9-87F6-F608D7909C8E a :REGULAR ;
+    schema1:name "Wish Top"@de .
+
+product:D12576A7-CA77-4E6C-BD22-C027015AE6F8 a :REGULAR ;
+    schema1:name "Ally SX"@de .
+
+product:D149906A-4467-43B3-B47D-AC54744C4C22 a :REGULAR ;
+    schema1:name "Pheroprax Ampulle"@de .
+
+product:D18C5758-F99C-4591-B79A-505AA35E5D3F a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Coop Oecoplan Biocontrol Nützlinge gegen Spinnmilben"@de,
+        "Phytoseiulus persimilis"@de .
+
+product:D370014E-1EA6-4C2A-ADD8-A68F174AB2B8 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Dicomil Royal Ultra P"@de,
+        "Foxtrot"@de,
+        "Hirso MAXX"@de,
+        "Pushback-perfectLawn"@de .
+
+product:D39C7071-FF0A-4FA4-9783-CAEC2C1826C7 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "BIOHOP OriON"@de,
+        "Bandsen"@de,
+        "Perfetto"@de .
+
+product:D3AEB2EE-92A0-4BDD-B071-56D028689733 a :REGULAR ;
+    schema1:name "Heritage Flow"@de .
+
+product:D3C80201-54F2-41B5-BBEE-7FC61D57DA56 a :REGULAR ;
+    schema1:name "Garlon 120"@de .
+
+product:D3DE3C2C-A098-496E-931A-3241921912D9 a :REGULAR ;
+    schema1:name "Dazide Enhance"@de .
+
+product:D45BD2E8-B827-4767-AA99-96E5379D4105 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Surround"@de,
+        "Surround WP Crop Protectant"@de .
+
+product:D4A9229E-B456-4276-991C-073EE484B0DC a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Azimut"@de,
+        "Flip"@de,
+        "Fragma"@de,
+        "Nikos"@de,
+        "Primus"@de,
+        "Suprim"@de,
+        "Troller"@de .
+
+product:D4B97428-0E05-4E79-9E6D-E89A58FB257E a :REGULAR ;
+    schema1:name "Acramite 480 SC"@de .
+
+product:D4CB0A7D-C18D-47D8-B8F9-F1075F28A0CF a :REGULAR ;
+    schema1:name "Aktuan"@de .
+
+product:D5092BA2-119F-4124-B61E-D7338EE85362 a :REGULAR ;
+    schema1:name "Silwet L-77"@de .
+
+product:D520EF81-431B-4592-AABE-E58FD1EDD987 a :REGULAR ;
+    schema1:name "Coop Oecoplan Biocontrol Insectizid"@de .
+
+product:D57C20BA-D6EA-4A10-8A91-94709E6D8F96 a :REGULAR ;
+    schema1:name "Applaud SC"@de .
+
+product:D5CDED0E-8268-4AAC-8CBA-A884F4C6FA74 a :REGULAR ;
+    schema1:name "Apron XL"@de .
+
+product:D5D70625-E43F-44FC-930E-84CF3218768D a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Gibbalin SL"@de,
+        "Promalin"@de .
+
+product:D5FFF4B1-71D1-4CC5-858E-1685BAF9F194 a :REGULAR ;
+    schema1:name "Pyridate 45 WP"@de .
+
+product:D639BEC3-9851-4E86-8F74-CD02A0EC6302 a :REGULAR ;
+    schema1:name "Agree WP"@de .
+
+product:D64AC1CF-9C5F-4410-BF06-EFAEA512713D a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Bio Garden Trauermücken-Stopp"@de,
+        "Biorga Contra Trauermücken"@de,
+        "Coop Oecoplan Biocontrol Mücken-Tabletten"@de,
+        "Solbac-Tabs"@de .
+
+product:D67BCDC8-F321-45B9-A5C9-BC5968E5A579 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Roundup Alphee"@de .
+
+product:D67D40BD-8AB6-4342-AFD4-F2A6E9424B11 a :REGULAR ;
+    schema1:name "Asulox"@de .
+
+product:D6A94A70-03CE-478B-9306-BBE7B7EDA6CF a :REGULAR ;
+    schema1:name "AG-CDF1-480 EC"@de .
+
+product:D6EEEE2F-E03B-4243-93F7-FE0C4297166A a :REGULAR ;
+    schema1:name "Captan 80 WDG"@de .
+
+product:D70B169E-4226-4AC4-9F33-5F9D16E1F074 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Chorus"@de,
+        "Chorus 50 WG"@de .
+
+product:D744C6D9-7A1E-4824-BDFC-03B192399650 a :REGULAR ;
+    schema1:name "Duroschneck Longlife"@de .
+
+product:D7B1B069-2CD5-43C7-9BF0-DD55B7105A86 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Coop Oecoplan Biocontrol Präparat gegen Obstmaden"@de,
+        "Madex 2"@de .
+
+product:D7B9EEAD-F67E-40DB-9DC0-044CB2C9D6CE a :REGULAR ;
+    schema1:name "Digline"@de .
+
+product:D7DDDEC6-DBBD-4EBF-B783-D137F5935380 a :REGULAR ;
+    schema1:name "Nematom"@de .
+
+product:D7EC94A3-E7A0-4A97-87F1-E2F274100DB0 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Dunovum"@de,
+        "Firebird Plus"@de,
+        "Mizuki"@de,
+        "Sunrise"@de .
+
+product:D7F7A8B7-1E78-4A08-99F3-E7B7438F82E7 a :REGULAR ;
+    schema1:name "Trimaxx"@de .
+
+product:D81604C0-0AB6-4F29-B668-5EB993B141B1 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Cuprafor Micro"@de,
+        "Curenox 50 WG"@de .
+
+product:D83C5BA7-600C-4D6D-AADD-09BEDD38FDF6 a :REGULAR ;
+    schema1:name "Oriline L"@de .
+
+product:D909DDAE-BD6E-4A37-922B-F1EF3C365916 a :REGULAR ;
+    schema1:name "Priori Star"@de .
+
+product:D91C2FB9-143C-40A0-91E3-F51ECE8C5A7F a :REGULAR ;
+    schema1:name "Coccophagus scutellaris"@de .
+
+product:D95A185F-105F-47C1-B63F-7A4D01D6DE45 a :REGULAR ;
+    schema1:name "Amilon 5"@de .
+
+product:D9A68907-6631-4F89-A4EA-D69A119540D3 a :REGULAR ;
+    schema1:name "Piretro Verde"@de .
+
+product:DA1B07AE-CE8D-4C9F-9B22-AE8DA864B4C9 a :REGULAR ;
+    schema1:name "Monitor"@de .
+
+product:DA94C058-22A8-4A53-A92D-6D31451D2111 a :REGULAR ;
+    schema1:name "Leptomastidea abnormis"@de .
+
+product:DAB4C957-8799-49A4-9641-D30062361C5D a :REGULAR ;
+    schema1:name "Maxim 100 FS"@de .
+
+product:DADAE700-383A-4062-9855-57581BF141CD a :REGULAR ;
+    schema1:name "Cito Pro"@de .
+
+product:DB0B33E0-4DAA-4729-B21A-B4497C5E11F8 a :REGULAR ;
+    schema1:name "Forester"@de .
+
+product:DB781815-3297-407B-8071-AA17446F4CD7 a :REGULAR ;
+    schema1:name "Mister LE"@de .
+
+product:DBF45DB7-4433-4532-891F-E803B7F96BC1 a :REGULAR ;
+    schema1:name "Saphire"@de .
+
+product:DC2FB913-373F-485B-BF7D-C77DB32A229B a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Belrose Cupro"@de,
+        "Copac"@de .
+
+product:DC85F7D2-51F7-4699-9E92-198DA23A5751 a :REGULAR ;
+    schema1:name "Cobra Forte"@de .
+
+product:DD11003C-F6F9-472B-9828-1BDB82760DD5 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Devrinol F"@de,
+        "Napronol"@de,
+        "Phalanx Rex"@de .
+
+product:DD20D6D8-34B1-4AC7-83EB-4A9FD2879090 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Amisu"@de,
+        "Leimay"@de .
+
+product:DDE0FC89-2348-4A21-B9A3-B63A58D89678 a :REGULAR ;
+    schema1:name "Thripex Plus"@de .
+
+product:DE2BC4E8-4A92-4DA2-B9A5-EA1541DA0275 a :REGULAR ;
+    schema1:name "Antak"@de .
+
+product:DE96C3F9-B32F-4C7D-991E-E634A7A48511 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Capito Unkrautvernichter für Rasen"@de,
+        "Exelor Jardin Profi"@de,
+        "Rasenrein Profi"@de,
+        "grass green"@de .
+
+product:DEC5CE6D-4DB1-4555-A647-EDAEE5ADB3B4 a :REGULAR ;
+    schema1:name "Madex Plus"@de .
+
+product:DECC98D1-F23E-4A04-ACB2-8648FECBD826 a :REGULAR ;
+    schema1:name "Cypermethrin"@de .
+
+product:DED0E102-D140-479B-B905-841FBE79D20B a :REGULAR ;
+    schema1:name "Captan WDG Omya"@de .
+
+product:E01DEA0D-E18D-4F0A-A557-69BFC01257E8 a :REGULAR ;
+    schema1:name "Nemaplus"@de .
+
+product:E0D6B883-16A6-430B-B0FC-2DCC90CB113C a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Agil"@de,
+        "Napaqui"@de,
+        "Shogun"@de .
+
+product:E0D89C11-E228-4100-8705-2C1DD3D520AA a :REGULAR ;
+    schema1:name "Fixin"@de .
+
+product:E0E3B8E8-FA9D-4BCC-B1F4-282ED55249D8 a :REGULAR ;
+    schema1:name "Gesal Universal Insektizid"@de .
+
+product:E11941C0-C85E-49F1-8D96-404E712C6A6F a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Coop Oecoplan Biocontrol Nützlinge gegen Dickmaulrüsslerlarven"@de,
+        "Meginem"@de,
+        "Mioplant Natura Älchen gegen Dickmaulrüsslerlarven"@de .
+
+product:E162D9A8-963A-48DC-A40B-F5CA6D5813D9 a :REGULAR ;
+    schema1:name "Mirical-N"@de .
+
+product:E1A21386-2D7B-4BF9-A340-633D8F047D87 a :REGULAR ;
+    schema1:name "Adaline"@de .
+
+product:E23E3747-ACDE-4207-ABEA-6CAC220DF7E1 a :REGULAR ;
+    schema1:name "Deposan"@de .
+
+product:E241364F-0A74-45EE-95A6-B0E3867C12C2 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Carbofort"@de,
+        "GHEKKO"@de .
+
+product:E28BCDA4-66FD-4A1C-A790-D454F1A83C16 a :REGULAR ;
+    schema1:name "Winsum"@de .
+
+product:E29339D7-45AD-4A2B-A22D-1BF90265080C a :REGULAR ;
+    schema1:name "Encarline"@de .
+
+product:E29A8248-CC41-4FB6-8433-EA037334F488 a :REGULAR ;
+    schema1:name "Detmolin P"@de .
+
+product:E2D177C6-F649-42F5-B0BE-C31EBDE3A2F4 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Biorga Contra Spray gegen Schädlinge"@de,
+        "Resolva Bio Spray gegen Schädlinge"@de,
+        "SanoPlant Spray"@de .
+
+product:E2D67EF7-2020-42F2-8172-69D60A7E545B a :REGULAR ;
+    schema1:name "CheckMate Puffer LB/EA"@de .
+
+product:E32192E3-258B-4AC5-A197-56D3BF15AA26 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Blossom Protect"@de .
+
+product:E32D25C4-3334-4361-A6C0-FEBA4249009A a :REGULAR ;
+    schema1:name "Valis F"@de .
+
+product:E331ABFA-5740-4374-B7D1-9BBC51B2B1DF a :REGULAR ;
+    schema1:name "Medallion TL"@de .
+
+product:E398D514-8F2A-40FC-B7EF-D72EC9FBDAD5 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Grecale"@de,
+        "Nospor Combi"@de .
+
+product:E3B2E99D-85FA-4379-BAAE-9527C93325F9 a :REGULAR ;
+    schema1:name "Finalsan AF UnkrautFrei Plus"@de .
+
+product:E47BC551-B10C-4233-A1D7-3522B7CECFC1 a :REGULAR ;
+    schema1:name "FresaProtect"@de .
+
+product:E4E3699C-AA17-41E4-84A8-C0EC151DAF62 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Erpax Quattro Spray"@de,
+        "MIOPLANT-Rasen-Unkrautvertilger Spray"@de,
+        "Option"@de .
+
+product:E4E4F5B8-49C8-4A8D-92F6-3FE8165B09CC a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Ranman Top"@de .
+
+product:E4FEB06E-25C5-428D-B295-DAA14B05A1C3 a :REGULAR ;
+    schema1:name "Viviful"@de .
+
+product:E503DB08-2CBD-42D8-8C2A-A44D8573FBD1 a :REGULAR ;
+    schema1:name "Novodor 3 % FC"@de .
+
+product:E507882A-4447-49CB-8D7E-B7F2C7625308 a :REGULAR ;
+    schema1:name "EVA-Tricho fürs Lager"@de .
+
+product:E5745147-A56D-49C0-AE5C-995C077DB991 a :REGULAR ;
+    schema1:name "Eremipak"@de .
+
+product:E60A95C1-6735-4E58-8401-75F0240EE4DE a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Auralis"@de,
+        "FytoSave"@de .
+
+product:E6148C0B-6227-42DE-8228-59D8768717FD a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Butisan"@de,
+        "Colzanet"@de,
+        "Metazachlor 500"@de,
+        "Rapsan 500 SC"@de,
+        "Sultan"@de .
+
+product:E61DF369-78F7-40C8-8383-FA5D5253C3A0 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Blacken Star"@de,
+        "Blackout Extra"@de,
+        "Blackout extra"@de,
+        "Plüvel"@de .
+
+product:E68EED58-56CA-4A28-B87B-34F76BFDF1D7 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Arlit"@de,
+        "Dinagam 700"@de,
+        "Tolit"@de .
+
+product:E6DAA04C-D478-411B-A907-43D43375DFDC a :REGULAR ;
+    schema1:name "Vertimec Gold"@de .
+
+product:E72A084B-28CE-44AD-8401-CA800E9AE541 a :REGULAR ;
+    schema1:name "Tricho-Sol"@de .
+
+product:E7609C89-F1B6-4FCC-83A4-092AC7D61D9A a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "BIOHOP FungiCUR"@de,
+        "Bio Garden Pilz-Stopp"@de,
+        "Capito Bio PilzFrei Konzentrat"@de,
+        "Coop Oecoplan Biocontrol Fungizid"@de,
+        "Fenicur"@de .
+
+product:E7BCACF3-A05C-496D-8788-37E6C19358BC a :REGULAR ;
+    schema1:name "Phytoline"@de .
+
+product:E82E547B-2548-40C3-9269-3C78F7C72962 a :REGULAR ;
+    schema1:name "Aphiline Veg"@de .
+
+product:E843AF61-AE75-4269-81D4-1ACE2BA305E7 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Milbeknock"@de,
+        "Milbemectin"@de .
+
+product:E8D06C03-622A-4BBD-8944-588A88A4779F a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Copalim SR"@de,
+        "Extralugec SR"@de,
+        "Gastrotox 5%"@de,
+        "LIMAX POWER"@de,
+        "Metacid"@de,
+        "Metadene"@de,
+        "Metarol Schneckenkorn"@de,
+        "Primedic SR"@de,
+        "Semalim SR"@de .
+
+product:E8FB5C9C-8198-4164-89F5-742E80E23266 a :REGULAR ;
+    schema1:name "Next"@de .
+
+product:E904E066-6AC9-440F-9714-5AEC80FFD58E a :REGULAR ;
+    schema1:name "Tecto 500"@de .
+
+product:E9143646-39BA-45C4-B9C2-4DC43F297443 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Dasul Extra 6 OD"@de,
+        "Fornet Extra 6 OD"@de,
+        "Nisshin Extra 6 OD"@de,
+        "Samson Extra"@de,
+        "Samson Extra 6 Od"@de .
+
+product:E93365B7-A206-4F07-9C83-1C7A8A254778 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Movento"@de,
+        "Movento Gold"@de,
+        "Movento SC"@de .
+
+product:E9360EF6-CF33-44E4-9C90-8E435F31771A a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Asulam"@de,
+        "Asulam LG"@de,
+        "Asulam S"@de,
+        "Ruman"@de,
+        "Trifulox"@de .
+
+product:E9FD5158-01F1-4FF3-A5E5-4A26A16B30FD a :REGULAR ;
+    schema1:name "TrichoKarte Omya"@de .
+
+product:EA1BA868-54B8-4B1B-9CCF-26213B65DAD5 a :REGULAR ;
+    schema1:name "Maag Bio Schlupfwespen gegen Weisse Fliegen"@de .
+
+product:EA223105-BBDD-4C83-A520-4942414661B0 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Hysan SC"@de,
+        "Sitradol SC"@de,
+        "Sitradol Tec"@de .
+
+product:EA2CD256-D947-48AF-9C48-771C4FA09017 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "BIOHOP DelMON"@de,
+        "LOTIQ"@de,
+        "Natural"@de,
+        "Oecoplan Schädlingsfrei"@de .
+
+product:EAB498A8-B627-4F72-BA58-8AAF57C7B3EA a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Flonicamid 500"@de,
+        "Teppeki"@de .
+
+product:EAC26B7E-D594-4E5A-AA8E-55A6BA985BAD a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Confirm"@de,
+        "Mimic"@de,
+        "Mimic HG"@de .
+
+product:EB0A383D-1B90-4737-A863-F2C2D10529FF a :REGULAR ;
+    schema1:name "Swirski-Mite plus"@de .
+
+product:EB5AFD61-5403-42FA-9B8C-629C7BCD48E5 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Caramba"@de,
+        "Sirocco"@de .
+
+product:EB7DDE99-5526-469F-9350-C7A799C77D0F a :REGULAR ;
+    schema1:name "Windenvertilger Gesal"@de .
+
+product:EBBCDDFC-C4A8-43DB-84C5-3B5A31957C9D a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "CropCover CC-2000"@de .
+
+product:EBEA1BB8-76A7-435A-AC61-CEF4E7F28F57 a :REGULAR ;
+    schema1:name "Chikara 25 WG"@de .
+
+product:EC2E7E47-1783-45AA-A483-FCE0F141874C a :REGULAR ;
+    schema1:name "Globaztar SC"@de .
+
+product:ECC0709F-41EC-43A0-8AF8-EE416B1C6F72 a :REGULAR ;
+    schema1:name "HabroControl"@de .
+
+product:ECE536FB-6493-44BC-B047-D72B557281B8 a :REGULAR ;
+    schema1:name "Folpet 80 WG"@de .
+
+product:ED03C441-3562-47BD-87AB-2C55003A803B a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Artist"@de .
+
+product:ED1B4E95-C811-4F64-B236-5253DB1A790E a :REGULAR ;
+    schema1:name "Phostoxin Pellets"@de .
+
+product:ED33A324-8A6D-4B72-97E9-9E7005F64861 a :REGULAR ;
+    schema1:name "TAK 50 EG"@de .
+
+product:ED7C2BBC-9D9A-454D-AABB-F9FF346A1A65 a :REGULAR ;
+    schema1:name "Biox-M"@de .
+
+product:ED97690D-C8E3-4159-AEC5-FCE1E25A2528 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Ariane C"@de,
+        "universe"@de .
+
+product:EDF55A3F-9C33-45A4-8486-81A559DBDD31 a :REGULAR ;
+    schema1:name "Flurox 200"@de .
+
+product:EDF90661-F78E-4CA0-ADE5-D8C0C1F08A4F a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Contreverse"@de,
+        "Stabilan S"@de,
+        "Stabilan plus"@de .
+
+product:EDF98C8C-EF2B-4BB9-980F-018E940EA461 a :REGULAR ;
+    schema1:name "Aphilin"@de .
+
+product:EEB4CF18-9C56-465F-8D44-B6A13F70BF13 a :REGULAR ;
+    schema1:name "Sweeper"@de .
+
+product:EED36261-4429-43D7-A6FE-0C86F6306F0D a :REGULAR ;
+    schema1:name "Winby"@de .
+
+product:EEE1A88E-86D2-45CD-B1A5-E5786F6E6974 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Callisto"@de,
+        "Clue"@de,
+        "Mesostar"@de .
+
+product:EF17B886-B7A7-4A16-95EA-B6228EFB7FBA a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Othello"@de .
+
+product:EF210AE7-0734-47D5-8618-8F87F39D4DEF a :REGULAR ;
+    schema1:name "Score 250 EC"@de .
+
+product:EF70BF31-947F-4213-AF70-40539CAF94E6 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Applaud"@de,
+        "Applaud Plus"@de .
+
+product:EFA56011-E939-4F35-8A77-87BCBE6CE52F a :REGULAR ;
+    schema1:name "MCPA Plus Omya"@de .
+
+product:EFB6E0C7-65F2-446A-AABB-639B3C00C815 a :REGULAR ;
+    schema1:name "CheckMate CM-XL"@de .
+
+product:EFDDEA76-9F1A-480D-BB3F-5E660C498C45 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Ethosan"@de,
+        "Sheriff"@de,
+        "Spyrale"@de .
+
+product:EFF23FBB-4B45-48EC-83C2-EFE1DE9B27A1 a :REGULAR ;
+    schema1:name "Interest"@de .
+
+product:F007BB55-58CC-4A56-88B0-2CD9D3FA25C7 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Agroneem"@de,
+        "BIOHOP DelNEEM"@de,
+        "Biorga Contra Neem"@de,
+        "Coop Oecoplan Biocontrol Neem Insektizid"@de,
+        "MAAG Neem"@de,
+        "Neem MAAG"@de,
+        "NeemAzal-T/S"@de,
+        "Sanoplant Neem"@de .
+
+product:F0198E97-4978-4D59-8EBF-DFFEE9DA6B51 a :REGULAR ;
+    schema1:name "Isonet T"@de .
+
+product:F052B412-148D-4ECB-BD43-4CF5A7D19DFA a :REGULAR ;
+    schema1:name "Break Thru Bio SP 133"@de .
+
+product:F05CACC8-581B-448E-AF2E-252BA6E497CB a :REGULAR ;
+    schema1:name "Mandate"@de .
+
+product:F07EA6C2-F878-47E6-B02C-DE54571414D6 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Funguran Flow"@de,
+        "Gesal Kupfer-Pilzschutz"@de .
+
+product:F0A1F222-D63B-4D15-B828-9F98138E1B49 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "BIOHOP CuproXAT"@de,
+        "Belrose Winter"@de,
+        "Cupric Flow"@de,
+        "Cuproxat flüssig"@de,
+        "Sanoplant Kupfer"@de .
+
+product:F112DF09-9794-4B7A-8310-82A62016EC7E a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "CLEAVE"@de,
+        "Cleave"@de .
+
+product:F130C98C-A053-44F2-B236-910DEA531B37 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Barst"@de,
+        "Laudis"@de .
+
+product:F18122A8-B85E-42D7-AF90-819D5BAD0907 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Isomate C Plus"@de,
+        "Isomate-C Plus"@de .
+
+product:F1963294-ACC7-47AB-B0FB-BA939FCDF35A a :REGULAR ;
+    schema1:name "Fluxyr 200 EC"@de .
+
+product:F20F46DE-9D27-455F-8A70-9B3A56547528 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Cloronet forte"@de,
+        "Headdown"@de,
+        "Natrel"@de .
+
+product:F26319A8-D93C-4A0F-B1D9-0A9C93AAD3AE a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Deserpan Quattro"@de,
+        "Touchdown System 4"@de .
+
+product:F26BED74-DB35-4D1B-9397-AABB63B49799 a :REGULAR ;
+    schema1:name "Blackex"@de .
+
+product:F2D6D388-6D2D-4112-B680-0D205D4EAB8F a :REGULAR ;
+    schema1:name "CCC-Stabilan LG"@de .
+
+product:F3003B19-7CA4-4D80-84BE-F24E3D54C0FA a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Aclon 600"@de,
+        "Bandur"@de,
+        "Challenge"@de,
+        "Challenge 600"@de .
+
+product:F3592E2D-CA44-47EB-82F1-A8EFA5FFCCA6 a :REGULAR ;
+    schema1:name "Oxychlorure de cuivre"@de .
+
+product:F3923D17-161D-46F2-AAD7-085DB3E80C68 a :REGULAR ;
+    schema1:name "Gesal Langzeit Unkraut-Stop"@de .
+
+product:F40387E5-97C8-4C60-9507-C3E58D8303DD a :REGULAR ;
+    schema1:name "Netzmittel S"@de .
+
+product:F4952CC3-C858-4F8F-8A1F-254F2CE17CA9 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Atlantis Star"@de .
+
+product:F499D3C8-C673-4219-8453-C398F0A59D6E a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Schneckenkorn Longlife"@de,
+        "Schneckenkorn-Carasint"@de .
+
+product:F4C8F106-3D64-4024-90FE-8A57A0EE7F93 a :REGULAR ;
+    schema1:name "Chrysoline"@de .
+
+product:F4EEB943-6FC4-4AA1-BF88-97FF4CC09637 a :REGULAR ;
+    schema1:name "Maag Bio Marienkäfer gegen Blattläuse"@de .
+
+product:F501AEF4-6B38-4799-BB77-C5869BBF3997 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "BIOHOP SprayOIL"@de,
+        "Spray Oil 7-E"@de .
+
+product:F50CCB3A-DCEB-4315-92BA-E8E964B55547 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Cossack Star"@de,
+        "Othello Star"@de .
+
+product:F54A4671-3F00-48CD-8246-BE12E700B652 a :REGULAR ;
+    schema1:name "Celos"@de .
+
+product:F54FDF9A-C190-4D1C-8042-30CDB8858EE4 a :REGULAR ;
+    schema1:name "Helicovex"@de .
+
+product:F5A2C032-46CE-4593-B47F-C31D4F4DAF6C a :REGULAR ;
+    schema1:name "Carpovirusine Evo 2"@de .
+
+product:F5BC59D9-2E3F-409B-8627-F0ADBAB356C2 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Moddus Start"@de,
+        "Trinex DC"@de .
+
+product:F5C2F7F7-93A6-4C5F-A47C-378CC8092070 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Linear"@de,
+        "Metro class"@de,
+        "Moddus"@de .
+
+product:F6A5F7A5-6419-461D-BE75-5329AC1DD841 a :REGULAR ;
+    schema1:name "Tervanol F"@de .
+
+product:F6F4BFC9-A643-4D3F-AC43-641A4A911374 a :REGULAR ;
+    schema1:name "Tarak"@de .
+
+product:F736E1BF-3777-47AC-82A0-132A01B5AE3C a :REGULAR ;
+    schema1:name "Nemagreen"@de .
+
+product:F75DF9E9-37D2-47D6-B718-76A5BF872EC7 a :REGULAR ;
+    schema1:name "CropCover CC-1000"@de .
+
+product:F78CA395-86C6-4536-B59A-798DAA7355A8 a :REGULAR ;
+    schema1:name "Kanemite"@de .
+
+product:F7C44382-6A24-41E1-AAD4-F7FFD71D8754 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Alopex"@de,
+        "Lontrel 720 SG"@de .
+
+product:F907A042-D0F8-48A0-87D9-CA4DE79470D2 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Kunshi"@de .
+
+product:F90AF80B-0265-4AC4-9221-3480776F069B a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "CHA 8830"@de,
+        "Cuadro NT"@de .
+
+product:F9950EA1-F7C1-476C-A00C-67D4E64987F8 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Follow 80 WG"@de,
+        "Folpan 80 WDG"@de,
+        "Solofol"@de .
+
+product:F9D15D36-96BE-4E84-98A4-9344D1F3C068 a :REGULAR ;
+    schema1:name "Elosal Supra"@de .
+
+product:FA752EDC-A9AE-47DA-A013-641168C7B8C0 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Danitron"@de,
+        "Kiron"@de,
+        "Pirox 5"@de,
+        "Spomil"@de .
+
+product:FA8D94CA-645E-4449-9779-5CD261F63D20 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Effigo"@de .
+
+product:FAE2CFA4-C3B1-4B29-A1D8-2643FBE1A7CE a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Capito Anti-Trauermückenkonzentrat"@de,
+        "Gesal Trauermücken-Stop"@de,
+        "Solbac"@de .
+
+product:FB25CB8D-1E33-4656-A34D-91E31C5C8D0E a :REGULAR ;
+    schema1:name "Wakil XL"@de .
+
+product:FB40D351-CFCA-44E5-9BD6-E9EB8DC5F776 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Spruzit Rosen-Schädlingsfrei"@de,
+        "Spruzit Schädlingsfrei"@de .
+
+product:FB558EFB-65E4-411A-AF01-C3A03272900D a :REGULAR ;
+    schema1:name "Ecometal"@de .
+
+product:FBA51FF3-4770-4652-8845-2B2C5AE9B8E0 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Captan 80 WDG"@de,
+        "Captan WDG Omya"@de .
+
+product:FBB4431F-E794-47E3-BEC8-2D4A427B17E3 a :REGULAR ;
+    schema1:name "Isomate CLR OFM"@de .
+
+product:FBDA6077-CFFA-491F-A4F9-9E46F8C36C6D a :REGULAR ;
+    schema1:name "Rasenrein Quattro"@de .
+
+product:FC095585-C382-4A7D-902D-9D11B0211FED a :REGULAR ;
+    schema1:name "Laudis WG"@de .
+
+product:FC2006F0-432B-415B-8462-F79578935658 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Chikara 25 WG"@de,
+        "Flaza 250"@de,
+        "Kihara"@de,
+        "Life Scientific Flazasulfuron"@de,
+        "Sonara"@de .
+
+product:FC2B0E8A-B81A-4EF8-8A03-49362EDC894F a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Shirudo"@de,
+        "Zenar"@de .
+
+product:FCA5023E-75D9-427D-83DF-0C96CA03118E a :REGULAR ;
+    schema1:name "Difol"@de .
+
+product:FCEF1D68-2ADA-4C24-B554-05C307DBEFF8 a :PARALLEL_IMPORT,
+        :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Bonafide"@de,
+        "Cantus"@de,
+        "Filan"@de,
+        "Filan WG"@de,
+        "Tropic"@de,
+        "Tucsan"@de .
+
+product:FD0C8CB8-ACDB-493B-B42B-1739045399D8 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Metapro liquid"@de,
+        "Metarhizium FL-Maschinenring"@de .
+
+product:FD1C2154-77FE-4B70-AB21-86E9AA4FB1BD a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Misto 12"@de,
+        "Parafol"@de .
+
+product:FD2340E8-BE8C-4DF7-AAC6-E0A3B3D335B6 a :REGULAR ;
+    schema1:name "Goltix WG 70"@de .
+
+product:FDEB3D1A-3251-4B7E-B64F-204E1898A064 a :REGULAR ;
+    schema1:name "AQ 10"@de .
+
+product:FE288626-CBBE-4F1D-BB35-FF0DE0961DCB a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Arlit"@de,
+        "Dinagam 700"@de .
+
+product:FE414F4E-CB14-4C30-9706-1B7A910D2F29 a :PARALLEL_IMPORT,
+        :REGULAR ;
+    schema1:name "Elegant 05 EC"@de,
+        "Targa Super"@de .
+
+product:FE5260B8-FCA4-4BD0-ABA4-8FEE59D75C84 a :REGULAR ;
+    schema1:name "Ravane 50"@de .
+
+product:FE8B91EC-F5BC-4BFD-A328-148916F8A227 a :REGULAR ;
+    schema1:name "Roundup 360"@de .
+
+product:FE9FC855-8C42-4D9D-9EBB-D40D2C35C08E a :REGULAR ;
+    schema1:name "Amblyseius californicus"@de .
+
+product:FEC366AE-5688-4292-B0C1-D07207649D63 a :REGULAR ;
+    schema1:name "Melocont GR"@de .
+
+product:FF2E1D0B-8F89-482B-8822-2A3B32443024 a :REGULAR ;
+    schema1:name "Optibox"@de .
+
+product:FFBC75F5-3CDB-48B5-8A98-DEE61AA1B0BF a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Capito Schneckenkorn L"@de,
+        "Gesal Schneckenkorn"@de,
+        "Limax M"@de,
+        "Metarex M"@de,
+        "Mioplant Schneckenkorn M / Mioplant Antilimaces M / Mioplant Granuli antilumache M"@de .
+
+product:FFCC9309-EDF4-4862-BF96-5050D4EBDC69 a :REGULAR ;
+    schema1:name "Dipel DF"@de .
+
+product:a89ba7e9-4a59-4c45-9f31-34a3c7df57b0 a :REGULAR ;
+    schema1:name "Tural"@de .
+
+product:c670aa0e-d0a0-4c95-a177-016f68ca8126 a :REGULAR ;
+    schema1:name "Schädlingsfrei Forte"@de .
+
+product:d07956e6-0028-42c0-9f81-afbc96465bba a :REGULAR ;
+    schema1:name "Brex"@de .
+
+product:d176faf9-81b4-4757-8b9b-50f224332a76 a :REGULAR ;
+    schema1:name "Scomrid-Spray"@de .
+
+product:d9aa7097-f5b9-4008-8a99-83fd8538a6a8 a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Capito Garden Silver Spray"@de,
+        "Schädlingsfrei Obst und Gemüse"@de .
+
+product:ea0ff9cd-073e-4800-b6ad-db439c2d264c a :REGULAR,
+        :SALE_PERMISSION ;
+    schema1:name "Bio Unkrautfrei"@de,
+        "Express Spray"@de .
+
+product:ef5afb9f-c49f-4bf9-8810-268eed41d9c6 a :REGULAR ;
+    schema1:name "Cupro-Folpet S"@de .
+
