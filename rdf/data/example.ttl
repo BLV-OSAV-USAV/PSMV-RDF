@@ -1,0 +1,42 @@
+@prefix : <https://agriculture.ld.admin.ch/plant-protection/> .
+@prefix product: <https://agriculture.ld.admin.ch/plant-protection/product/> .
+@prefix substance: <https://agriculture.ld.admin.ch/plant-protection/substance/> .
+
+@prefix company: <https://agriculture.ld.admin.ch/plant-protection/company/> .
+@prefix schema: <http://schema.org/> .
+@prefix substance: <https://agriculture.ld.admin.ch/plant-protection/substance/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix zefix: <https://register.ld.admin.ch/zefix/company/> .
+
+substance:1 a :Substance ;
+    schema:name "Prothioconazole"@de .
+
+substance:2 a :Substance ;
+    schema:name "Bixafen"@de .
+
+product:W-6761 a :Fungicide ;
+    schema:name "Aviator Xpro"@en ;
+    :permissionHolder zefix:16124 ;
+    :federalAdmissionNumber "W-6761" ;
+    :ingredient [
+        :substance substance:1 ;
+        schema:value [
+            schema:value 14.85 ;
+            schema:unitCode unit:PERCENT
+        ], [
+            schema:value 150 ;
+            schema:unitCode unit:GM-PER-L
+        ]
+    ] ,
+    [
+        :substance substance:2 ;
+        schema:value [
+            schema:value 7.43 ;
+            schema:unitCode unit:PERCENT
+        ], [
+            schema:value 75 ;
+            schema:unitCode unit:GM-PER-L
+        ]
+    ] .
+

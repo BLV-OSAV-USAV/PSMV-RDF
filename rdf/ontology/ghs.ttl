@@ -12,37 +12,42 @@
 # ==============================================================================
 
 ghs: a owl:Ontology ;
-        dcterms:title "GHS phrase classification scheme"@en .
+    dcterms:title "GHS phrase classification scheme"@en .
 
 # ==============================================================================
 # GHS CLASSIFICATION
 # ==============================================================================
 
-ghs:GHSStatement a owl:Class .
+ghs:GHSStatement a owl:Class ;
+    schema:name "GHS statement"@en .
 
 ghs:HazardPictogram a owl:Class ;
+    schema:name "Hazard pictogram"@en ;
     rdfs:seeAlso <https://en.wikipedia.org/wiki/GHS_hazard_pictograms> ;
     rdfs:subClassOf ghs:GHSStatement .
 
 ghs:HazardStatement a owl:Class ;
     schema:name "Hazard statements"@en ;
     schema:alternateName "R phrase"@en ;
-    rdfs:comment "A hazard statement is a standardized description of the risks associated with hazardous chemical substances, indicating specific dangers such as toxicity or flammability. These were used in the European Union to denote risks on safety data sheets and labels."@en ;
+    schema:description "A hazard statement is a standardized description of the risks associated with hazardous chemical substances, indicating specific dangers such as toxicity or flammability. These were used in the European Union to denote risks on safety data sheets and labels."@en ;
     rdfs:subClassOf ghs:GHSStatement .
 
 ghs:PrecautionaryStatement a owl:Class ;
     schema:name "Precautionary statements"@en ;
     schema:alternateName "S phrase"@en ;
-    rdfs:comment "A precautionary statement is a standardized safety instruction for handling hazardous chemical substances. These phrases were used in the European Union to recommend safe handling, storage, and emergency measures on safety data sheets and labels."@en ;
+    schema:description "A precautionary statement is a standardized safety instruction for handling hazardous chemical substances. These phrases were used in the European Union to recommend safe handling, storage, and emergency measures on safety data sheets and labels."@en ;
     rdfs:subClassOf ghs:GHSStatement .
 
 ghs:SignalWord a owl:Class ;
+    schema:name "Signal word"@en ;
     rdfs:subClassOf ghs:GHSStatement .
 
 ghs:PrecautionaryStatementCombination a owl:Class ;
+    schema:name "Combinations of precautionary statements"@en ;
     rdfs:subClassOf ghs:PrecautionaryStatement .
 
 ghs:HazardStatementCombination a owl:Class ;
+    schema:name "Combinations of hazard statements"@en ;
     rdfs:subClassOf ghs:HazardStatement .
 
 # ==============================================================================
@@ -66,72 +71,72 @@ ghs:danger a ghs:SignalWord ;
 # ==============================================================================
 
 ghs:GHS01 a ghs:HazardPictogram ;
-    schema:image <http://commons.wikimedia.org/wiki/Special:FilePath/GHS-pictogram-explos.svg> ;
     schema:identifier "GHS01" ;
+    schema:image <http://commons.wikimedia.org/wiki/Special:FilePath/GHS-pictogram-explos.svg> ;
     schema:name "explodierende Bombe"@de,
         "exploding bomb"@en,
         "bombe explosant"@fr,
         "bomba che esplode"@it .
 
 ghs:GHS02 a ghs:HazardPictogram ;
-    schema:image <http://commons.wikimedia.org/wiki/Special:FilePath/GHS-pictogram-flamme.svg> ;
     schema:identifier "GHS02" ;
-    schema:name "flame"@en,
-        "fiamma"@it,
+    schema:image <http://commons.wikimedia.org/wiki/Special:FilePath/GHS-pictogram-flamme.svg> ;
+    schema:name "Flamme"@de,
+        "flame"@en,
         "flamme"@fr,
-        "Flamme"@de .
+        "fiamma"@it .
 
 ghs:GHS03 a ghs:HazardPictogram ;
-    schema:image <http://commons.wikimedia.org/wiki/Special:FilePath/GHS-pictogram-rondflam.svg> ;
     schema:identifier "GHS03" ;
+    schema:image <http://commons.wikimedia.org/wiki/Special:FilePath/GHS-pictogram-rondflam.svg> ;
     schema:name "Flamme über einem Kreis"@de,
         "flame over circle"@en,
         "flamme au-dessus d'un cercle"@fr,
         "fiamma su cerchio"@it .
 
 ghs:GHS04 a ghs:HazardPictogram ;
-    schema:image <http://commons.wikimedia.org/wiki/Special:FilePath/GHS-pictogram-bottle.svg> ;
     schema:identifier "GHS04" ;
-    schema:name "bouteille à gaz"@fr,
-        "bombola per gas"@it,
+    schema:image <http://commons.wikimedia.org/wiki/Special:FilePath/GHS-pictogram-bottle.svg> ;
+    schema:name "Gasflasche"@de,
         "gas cylinder"@en,
-        "Gasflasche"@de .
+        "bouteille à gaz"@fr,
+        "bombola per gas"@it .
 
 ghs:GHS05 a ghs:HazardPictogram ;
-    schema:image <http://commons.wikimedia.org/wiki/Special:FilePath/GHS-pictogram-acid.svg> ;
     schema:identifier "GHS05" ;
+    schema:image <http://commons.wikimedia.org/wiki/Special:FilePath/GHS-pictogram-acid.svg> ;
     schema:name "Ätzwirkung"@de,
         "corrosion"@en,
-        "corrosione"@it,
-        "corrosion"@fr .
+        "corrosion"@fr,
+        "corrosione"@it .
 
 ghs:GHS06 a ghs:HazardPictogram ;
-    schema:image <http://commons.wikimedia.org/wiki/Special:FilePath/GHS-pictogram-skull.svg> ;
     schema:identifier "GHS06" ;
-    schema:name "skull and crossbones"@en,
-        "teschio e tibie incrociate"@it,
-        "Totenkopf mit gekreuzten Knochen"@de,
-        "tête de mort sur deux tibias"@fr .
+    schema:image <http://commons.wikimedia.org/wiki/Special:FilePath/GHS-pictogram-skull.svg> ;
+    schema:name "Totenkopf mit gekreuzten Knochen"@de,
+        "skull and crossbones"@en,
+        "tête de mort sur deux tibias"@fr,
+        "teschio e tibie incrociate"@it .
 
 ghs:GHS07 a ghs:HazardPictogram ;
-    schema:image <http://commons.wikimedia.org/wiki/Special:FilePath/GHS-pictogram-exclam.svg> ;
     schema:identifier "GHS07" ;
-    schema:name "point d'exclamation"@fr,
-        "punto esclamativo"@it,
-        "Ausrufezeichen"@de,
-        "exclamation mark"@en .
+    schema:image <http://commons.wikimedia.org/wiki/Special:FilePath/GHS-pictogram-exclam.svg> ;
+    schema:name "Ausrufezeichen"@de,
+        "exclamation mark"@en,
+        "point d'exclamation"@fr,
+        "punto esclamativo"@it .
 
 ghs:GHS08 a ghs:HazardPictogram ;
-    schema:image <http://commons.wikimedia.org/wiki/Special:FilePath/GHS-pictogram-silhouette.svg> ;
     schema:identifier "GHS08" ;
+    schema:image <http://commons.wikimedia.org/wiki/Special:FilePath/GHS-pictogram-silhouette.svg> ;
     schema:name "Gesundheitsgefahr"@de,
         "health hazard"@en,
         "danger pour la santé"@fr,
         "pericolo per la salute"@it .
 
 ghs:GHS09 a ghs:HazardPictogram ;
-    schema:image <http://commons.wikimedia.org/wiki/Special:FilePath/GHS-pictogram-pollu.svg> ;
     schema:identifier "GHS09" ;
+    schema:image <http://commons.wikimedia.org/wiki/Special:FilePath/GHS-pictogram-pollu.svg> ;
     schema:name "umwelt"@de,
         "environment"@en,
         "environnement"@fr,
@@ -142,1848 +147,1688 @@ ghs:GHS09 a ghs:HazardPictogram ;
 # ==============================================================================
 
 ghs:H200 a ghs:HazardStatement ;
-  schema:identifier "H200" ;
-  schema:name
-    "Instabil, explosiv"@de ,
-    "Unstable explosives"@en ,
-    "Explosif instable"@fr ,
-    "Esplosivo instabile"@it .
+    schema:identifier "H200" ;
+    schema:name "Instabil, explosiv"@de,
+        "Unstable explosives"@en,
+        "Explosif instable"@fr,
+        "Esplosivo instabile"@it .
 
 ghs:H201 a ghs:HazardStatement ;
-  schema:identifier "H201" ;
-  schema:name
-    "Explosiv, Gefahr der Massenexplosion"@de ,
-    "Explosive; mass explosion hazard"@en ,
-    "Explosif; danger d'explosion en masse"@fr ,
-    "Esplosivo; pericolo di esplosione di massa"@it .
+    schema:identifier "H201" ;
+    schema:name "Explosiv, Gefahr der Massenexplosion"@de,
+        "Explosive; mass explosion hazard"@en,
+        "Explosif; danger d'explosion en masse"@fr,
+        "Esplosivo; pericolo di esplosione di massa"@it .
 
 ghs:H202 a ghs:HazardStatement ;
-  schema:identifier "H202" ;
-  schema:name
-    "Explosiv; große Gefahr durch Splitter, Spreng- und Wurfstücke"@de ,
-    "Explosive, severe projection hazard"@en ,
-    "Explosif; danger sérieux de projection"@fr ,
-    "Esplosivo; grave pericolo di proiezione"@it .
+    schema:identifier "H202" ;
+    schema:name "Explosiv; große Gefahr durch Splitter, Spreng- und Wurfstücke"@de,
+        "Explosive, severe projection hazard"@en,
+        "Explosif; danger sérieux de projection"@fr,
+        "Esplosivo; grave pericolo di proiezione"@it .
 
 ghs:H203 a ghs:HazardStatement ;
-  schema:identifier "H203" ;
-  schema:name
-    "Explosiv; Gefahr durch Feuer, Luftdruck oder Splitter, Spreng- und Wurfstücke"@de ,
-    "Explosive; fire, blast or projection hazard"@en ,
-    "Explosif; danger d'incendie, d'effet de souffle ou de projection"@fr ,
-    "Esplosivo; pericolo di incendio, di spostamento d'aria o di proiezione"@it .
+    schema:identifier "H203" ;
+    schema:name "Explosiv; Gefahr durch Feuer, Luftdruck oder Splitter, Spreng- und Wurfstücke"@de,
+        "Explosive; fire, blast or projection hazard"@en,
+        "Explosif; danger d'incendie, d'effet de souffle ou de projection"@fr,
+        "Esplosivo; pericolo di incendio, di spostamento d'aria o di proiezione"@it .
 
 ghs:H204 a ghs:HazardStatement ;
-  schema:identifier "H204" ;
-  schema:name
-    "Gefahr durch Feuer oder Splitter, Spreng- und Wurfstücke"@de ,
-    "Fire or projection hazard"@en ,
-    "Danger d'incendie ou de projection"@fr ,
-    "Pericolo di incendio o di proiezione"@it .
+    schema:identifier "H204" ;
+    schema:name "Gefahr durch Feuer oder Splitter, Spreng- und Wurfstücke"@de,
+        "Fire or projection hazard"@en,
+        "Danger d'incendie ou de projection"@fr,
+        "Pericolo di incendio o di proiezione"@it .
 
 ghs:H205 a ghs:HazardStatement ;
-  schema:identifier "H205" ;
-  schema:name
-    "Gefahr der Massenexplosion bei Feuer"@de ,
-    "May mass explode in fire"@en ,
-    "Danger d'explosion en masse en cas d'incendie"@fr ,
-    "Pericolo di esplosione di massa in caso d'incendio"@it .
+    schema:identifier "H205" ;
+    schema:name "Gefahr der Massenexplosion bei Feuer"@de,
+        "May mass explode in fire"@en,
+        "Danger d'explosion en masse en cas d'incendie"@fr,
+        "Pericolo di esplosione di massa in caso d'incendio"@it .
 
 ghs:H220 a ghs:HazardStatement ;
-  schema:identifier "H220" ;
-  schema:name
-    "Extrem entzündbares Gas"@de ,
-    "Extremely flammable gas"@en ,
-    "Gaz extrêmement inflammable"@fr ,
-    "Gas altamente infiammabile"@it .
+    schema:identifier "H220" ;
+    schema:name "Extrem entzündbares Gas"@de,
+        "Extremely flammable gas"@en,
+        "Gaz extrêmement inflammable"@fr,
+        "Gas altamente infiammabile"@it .
 
 ghs:H221 a ghs:HazardStatement ;
-  schema:identifier "H221" ;
-  schema:name
-    "Entzündbares Gas"@de ,
-    "Flammable gas"@en ,
-    "Gaz inflammable"@fr ,
-    "Gas infiammabile"@it .
+    schema:identifier "H221" ;
+    schema:name "Entzündbares Gas"@de,
+        "Flammable gas"@en,
+        "Gaz inflammable"@fr,
+        "Gas infiammabile"@it .
 
 ghs:H222 a ghs:HazardStatement ;
-  schema:identifier "H222" ;
-  schema:name
-    "Extrem entzündbares Aerosol"@de ,
-    "Extremely flammable aerosol"@en ,
-    "Aérosol extrêmement inflammable"@fr ,
-    "Aerosol altamente infiammabile"@it .
+    schema:identifier "H222" ;
+    schema:name "Extrem entzündbares Aerosol"@de,
+        "Extremely flammable aerosol"@en,
+        "Aérosol extrêmement inflammable"@fr,
+        "Aerosol altamente infiammabile"@it .
 
 ghs:H223 a ghs:HazardStatement ;
-  schema:identifier "H223" ;
-  schema:name
-    "Entzündbares Aerosol"@de ,
-    "Flammable aerosol"@en ,
-    "Aérosol inflammable"@fr ,
-    "Aerosol infiammabile"@it .
+    schema:identifier "H223" ;
+    schema:name "Entzündbares Aerosol"@de,
+        "Flammable aerosol"@en,
+        "Aérosol inflammable"@fr,
+        "Aerosol infiammabile"@it .
 
 ghs:H224 a ghs:HazardStatement ;
-  schema:identifier "H224" ;
-  schema:name
-    "Flüssigkeit und Dampf extrem entzündbar"@de ,
-    "Extremely flammable liquid and vapour"@en ,
-    "Liquide et vapeurs extrêmement inflammables"@fr ,
-    "Liquido e vapori altamente infiammabili"@it .
+    schema:identifier "H224" ;
+    schema:name "Flüssigkeit und Dampf extrem entzündbar"@de,
+        "Extremely flammable liquid and vapour"@en,
+        "Liquide et vapeurs extrêmement inflammables"@fr,
+        "Liquido e vapori altamente infiammabili"@it .
 
 ghs:H225 a ghs:HazardStatement ;
-  schema:identifier "H225" ;
-  schema:name
-    "Flüssigkeit und Dampf leicht entzündbar"@de ,
-    "Highly flammable liquid and vapour"@en ,
-    "Liquide et vapeurs très inflammables"@fr ,
-    "Liquido e vapori facilmente infiammabili"@it .
+    schema:identifier "H225" ;
+    schema:name "Flüssigkeit und Dampf leicht entzündbar"@de,
+        "Highly flammable liquid and vapour"@en,
+        "Liquide et vapeurs très inflammables"@fr,
+        "Liquido e vapori facilmente infiammabili"@it .
 
 ghs:H226 a ghs:HazardStatement ;
-  schema:identifier "H226" ;
-  schema:name
-    "Flüssigkeit und Dampf entzündbar"@de ,
-    "Flammable liquid and vapour"@en ,
-    "Liquide et vapeurs inflammables"@fr ,
-    "Liquido e vapori infiammabili"@it .
+    schema:identifier "H226" ;
+    schema:name "Flüssigkeit und Dampf entzündbar"@de,
+        "Flammable liquid and vapour"@en,
+        "Liquide et vapeurs inflammables"@fr,
+        "Liquido e vapori infiammabili"@it .
 
 ghs:H228 a ghs:HazardStatement ;
-  schema:identifier "H228" ;
-  schema:name
-    "Entzündbarer Feststoff"@de ,
-    "Flammable solid"@en ,
-    "Matière solide inflammable"@fr ,
-    "Solido infiammabile"@it .
+    schema:identifier "H228" ;
+    schema:name "Entzündbarer Feststoff"@de,
+        "Flammable solid"@en,
+        "Matière solide inflammable"@fr,
+        "Solido infiammabile"@it .
 
 ghs:H229 a ghs:HazardStatement ;
-  schema:identifier "H229" ;
-  schema:name
-    "Behälter steht unter Druck: Kann bei Erwärmung bersten"@de ,
-    "Pressurised container: May burst if heated"@en ,
-    "Récipient sous pression: peut éclater sous l’effet de la chaleur"@fr ,
-    "Contenitore pressurizzato: può esplodere se riscaldato"@it .
+    schema:identifier "H229" ;
+    schema:name "Behälter steht unter Druck: Kann bei Erwärmung bersten"@de,
+        "Pressurised container: May burst if heated"@en,
+        "Récipient sous pression: peut éclater sous l’effet de la chaleur"@fr,
+        "Contenitore pressurizzato: può esplodere se riscaldato"@it .
 
 ghs:H230 a ghs:HazardStatement ;
-  schema:identifier "H230" ;
-  schema:name
-    "Kann auch in Abwesenheit von Luft explosionsartig reagieren"@de ,
-    "May react explosively even in the absence of air"@en ,
-    "Peut exploser même en l’absence d’air"@fr ,
-    "Può esplodere anche in assenza di aria"@it .
+    schema:identifier "H230" ;
+    schema:name "Kann auch in Abwesenheit von Luft explosionsartig reagieren"@de,
+        "May react explosively even in the absence of air"@en,
+        "Peut exploser même en l’absence d’air"@fr,
+        "Può esplodere anche in assenza di aria"@it .
 
 ghs:H231 a ghs:HazardStatement ;
-  schema:identifier "H231" ;
-  schema:name
-    "Kann auch in Abwesenheit von Luft bei erhöhtem Druck und/oder erhöhter Temperatur explosionsartig reagieren"@de ,
-    "May react explosively even in the absence of air at elevated pressure and/or temperature"@en ,
-    "Peut exploser même en l’absence d’air à une pression et/ou température élevée(s)"@fr ,
-    "Può esplodere anche in assenza di aria a pressione e/o temperatura elevata"@it .
+    schema:identifier "H231" ;
+    schema:name "Kann auch in Abwesenheit von Luft bei erhöhtem Druck und/oder erhöhter Temperatur explosionsartig reagieren"@de,
+        "May react explosively even in the absence of air at elevated pressure and/or temperature"@en,
+        "Peut exploser même en l’absence d’air à une pression et/ou température élevée(s)"@fr,
+        "Può esplodere anche in assenza di aria a pressione e/o temperatura elevata"@it .
 
 ghs:H240 a ghs:HazardStatement ;
-  schema:identifier "H240" ;
-  schema:name
-    "Erwärmung kann Explosion verursachen"@de ,
-    "Heating may cause an explosion"@en ,
-    "Peut exploser sous l'effet de la chaleur"@fr ,
-    "Rischio di esplosione per riscaldamento"@it .
+    schema:identifier "H240" ;
+    schema:name "Erwärmung kann Explosion verursachen"@de,
+        "Heating may cause an explosion"@en,
+        "Peut exploser sous l'effet de la chaleur"@fr,
+        "Rischio di esplosione per riscaldamento"@it .
 
 ghs:H241 a ghs:HazardStatement ;
-  schema:identifier "H241" ;
-  schema:name
-    "Erwärmung kann Brand oder Explosion verursachen"@de ,
-    "Heating may cause a fire or explosion"@en ,
-    "Peut s'enflammer ou exploser sous l'effet de la chaleur"@fr ,
-    "Rischio d'incendio o di esplosione per riscaldamento"@it .
+    schema:identifier "H241" ;
+    schema:name "Erwärmung kann Brand oder Explosion verursachen"@de,
+        "Heating may cause a fire or explosion"@en,
+        "Peut s'enflammer ou exploser sous l'effet de la chaleur"@fr,
+        "Rischio d'incendio o di esplosione per riscaldamento"@it .
 
 ghs:H242 a ghs:HazardStatement ;
-  schema:identifier "H242" ;
-  schema:name
-    "Erwärmung kann Brand verursachen"@de ,
-    "Heating may cause a fire"@en ,
-    "Peut s'enflammer sous l'effet de la chaleur"@fr ,
-    "Rischio d'incendio per riscaldamento"@it .
+    schema:identifier "H242" ;
+    schema:name "Erwärmung kann Brand verursachen"@de,
+        "Heating may cause a fire"@en,
+        "Peut s'enflammer sous l'effet de la chaleur"@fr,
+        "Rischio d'incendio per riscaldamento"@it .
 
 ghs:H250 a ghs:HazardStatement ;
-  schema:identifier "H250" ;
-  schema:name
-    "Entzündet sich in Berührung mit Luft von selbst"@de ,
-    "Catches fire spontaneously if exposed to air"@en ,
-    "S'enflamme spontanément au contact de l'air"@fr ,
-    "Spontaneamente infiammabile all'aria"@it .
+    schema:identifier "H250" ;
+    schema:name "Entzündet sich in Berührung mit Luft von selbst"@de,
+        "Catches fire spontaneously if exposed to air"@en,
+        "S'enflamme spontanément au contact de l'air"@fr,
+        "Spontaneamente infiammabile all'aria"@it .
 
 ghs:H251 a ghs:HazardStatement ;
-  schema:identifier "H251" ;
-  schema:name
-    "Selbsterhitzungsfähig; kann in Brand geraten"@de ,
-    "Self-heating: may catch fire"@en ,
-    "Matière auto-échauffante; peut s'enflammer"@fr ,
-    "Autoriscaldante; può infiammarsi"@it .
+    schema:identifier "H251" ;
+    schema:name "Selbsterhitzungsfähig; kann in Brand geraten"@de,
+        "Self-heating: may catch fire"@en,
+        "Matière auto-échauffante; peut s'enflammer"@fr,
+        "Autoriscaldante; può infiammarsi"@it .
 
 ghs:H252 a ghs:HazardStatement ;
-  schema:identifier "H252" ;
-  schema:name
-    "In großen Mengen selbsterhitzungsfähig; kann in Brand geraten"@de ,
-    "Self-heating in large quantities; may catch fire"@en ,
-    "Matière auto-échauffante en grandes quantités; peut s'enflammer"@fr ,
-    "Autoriscaldante in grandi quantità; può infiammarsi"@it .
+    schema:identifier "H252" ;
+    schema:name "In großen Mengen selbsterhitzungsfähig; kann in Brand geraten"@de,
+        "Self-heating in large quantities; may catch fire"@en,
+        "Matière auto-échauffante en grandes quantités; peut s'enflammer"@fr,
+        "Autoriscaldante in grandi quantità; può infiammarsi"@it .
 
 ghs:H260 a ghs:HazardStatement ;
-  schema:identifier "H260" ;
-  schema:name
-    "In Berührung mit Wasser entstehen entzündbare Gase, die sich spontan entzünden können"@de ,
-    "In contact with water releases flammable gases which may ignite spontaneously"@en ,
-    "Dégage au contact de l'eau des gaz inflammables qui peuvent s'enflammer spontanément"@fr ,
-    "A contatto con l'acqua libera gas infiammabili che possono infiammarsi spontaneamente"@it .
+    schema:identifier "H260" ;
+    schema:name "In Berührung mit Wasser entstehen entzündbare Gase, die sich spontan entzünden können"@de,
+        "In contact with water releases flammable gases which may ignite spontaneously"@en,
+        "Dégage au contact de l'eau des gaz inflammables qui peuvent s'enflammer spontanément"@fr,
+        "A contatto con l'acqua libera gas infiammabili che possono infiammarsi spontaneamente"@it .
 
 ghs:H261 a ghs:HazardStatement ;
-  schema:identifier "H261" ;
-  schema:name
-    "In Berührung mit Wasser entstehen entzündbare Gase"@de ,
-    "In contact with water releases flammable gases"@en ,
-    "Dégage au contact de l'eau des gaz inflammables"@fr ,
-    "A contatto con l'acqua libera gas infiammabili"@it .
+    schema:identifier "H261" ;
+    schema:name "In Berührung mit Wasser entstehen entzündbare Gase"@de,
+        "In contact with water releases flammable gases"@en,
+        "Dégage au contact de l'eau des gaz inflammables"@fr,
+        "A contatto con l'acqua libera gas infiammabili"@it .
 
 ghs:H270 a ghs:HazardStatement ;
-  schema:identifier "H270" ;
-  schema:name
-    "Kann Brand verursachen oder verstärken; Oxidationsmittel"@de ,
-    "May cause or intensify fire; oxidiser"@en ,
-    "Peut provoquer ou aggraver un incendie; comburant"@fr ,
-    "Può provocare o aggravare un incendio; comburente"@it .
+    schema:identifier "H270" ;
+    schema:name "Kann Brand verursachen oder verstärken; Oxidationsmittel"@de,
+        "May cause or intensify fire; oxidiser"@en,
+        "Peut provoquer ou aggraver un incendie; comburant"@fr,
+        "Può provocare o aggravare un incendio; comburente"@it .
 
 ghs:H271 a ghs:HazardStatement ;
-  schema:identifier "H271" ;
-  schema:name
-    "Kann Brand oder Explosion verursachen; starkes Oxidationsmittel"@de ,
-    "May cause fire or explosion; strong oxidiser"@en ,
-    "Peut provoquer un incendie ou une explosion; comburant puissant"@fr ,
-    "Può provocare un incendio o un'esplosione; molto comburente"@it .
+    schema:identifier "H271" ;
+    schema:name "Kann Brand oder Explosion verursachen; starkes Oxidationsmittel"@de,
+        "May cause fire or explosion; strong oxidiser"@en,
+        "Peut provoquer un incendie ou une explosion; comburant puissant"@fr,
+        "Può provocare un incendio o un'esplosione; molto comburente"@it .
 
 ghs:H272 a ghs:HazardStatement ;
-  schema:identifier "H272" ;
-  schema:name
-    "Kann Brand verstärken; Oxidationsmittel"@de ,
-    "May intensify fire; oxidiser"@en ,
-    "Peut aggraver un incendie; comburant"@fr ,
-    "Può aggravare un incendio; comburente"@it .
+    schema:identifier "H272" ;
+    schema:name "Kann Brand verstärken; Oxidationsmittel"@de,
+        "May intensify fire; oxidiser"@en,
+        "Peut aggraver un incendie; comburant"@fr,
+        "Può aggravare un incendio; comburente"@it .
 
 ghs:H280 a ghs:HazardStatement ;
-  schema:identifier "H280" ;
-  schema:name
-    "Enthält Gas unter Druck; kann bei Erwärmung explodieren"@de ,
-    "Contains gas under pressure; may explode if heated"@en ,
-    "Contient un gaz sous pression; peut exploser sous l'effet de la chaleur"@fr ,
-    "Contiene gas sotto pressione; può esplodere se riscaldato"@it .
+    schema:identifier "H280" ;
+    schema:name "Enthält Gas unter Druck; kann bei Erwärmung explodieren"@de,
+        "Contains gas under pressure; may explode if heated"@en,
+        "Contient un gaz sous pression; peut exploser sous l'effet de la chaleur"@fr,
+        "Contiene gas sotto pressione; può esplodere se riscaldato"@it .
 
 ghs:H281 a ghs:HazardStatement ;
-  schema:identifier "H281" ;
-  schema:name
-    "Enthält tiefgekühltes Gas; kann Kälteverbrennungen oder -verletzungen verursachen"@de ,
-    "Contains refrigerated gas; may cause cryogenic burns or injury"@en ,
-    "Contient un gaz réfrigéré; peut causer des brûlures ou blessures cryogéniques"@fr ,
-    "Contiene gas refrigerato; può provocare ustioni o lesioni criogeniche"@it .
+    schema:identifier "H281" ;
+    schema:name "Enthält tiefgekühltes Gas; kann Kälteverbrennungen oder -verletzungen verursachen"@de,
+        "Contains refrigerated gas; may cause cryogenic burns or injury"@en,
+        "Contient un gaz réfrigéré; peut causer des brûlures ou blessures cryogéniques"@fr,
+        "Contiene gas refrigerato; può provocare ustioni o lesioni criogeniche"@it .
 
 ghs:H290 a ghs:HazardStatement ;
-  schema:identifier "H290" ;
-  schema:name
-    "Kann gegenüber Metallen korrosiv sein"@de ,
-    "May be corrosive to metals"@en ,
-    "Peut être corrosif pour les métaux"@fr ,
-    "Può essere corrosivo per i metalli"@it .
+    schema:identifier "H290" ;
+    schema:name "Kann gegenüber Metallen korrosiv sein"@de,
+        "May be corrosive to metals"@en,
+        "Peut être corrosif pour les métaux"@fr,
+        "Può essere corrosivo per i metalli"@it .
 
 ghs:H300 a ghs:HazardStatement ;
-  schema:identifier "H300" ;
-  schema:name
-    "Lebensgefahr bei Verschlucken"@de ,
-    "Fatal if swallowed"@en ,
-    "Mortel en cas d'ingestion"@fr ,
-    "Letale se ingerito"@it .
+    schema:identifier "H300" ;
+    schema:name "Lebensgefahr bei Verschlucken"@de,
+        "Fatal if swallowed"@en,
+        "Mortel en cas d'ingestion"@fr,
+        "Letale se ingerito"@it .
 
 ghs:H301 a ghs:HazardStatement ;
-  schema:identifier "H301" ;
-  schema:name
-    "Giftig bei Verschlucken"@de ,
-    "Toxic if swallowed"@en ,
-    "Toxique en cas d'ingestion"@fr ,
-    "Tossico se ingerito"@it .
+    schema:identifier "H301" ;
+    schema:name "Giftig bei Verschlucken"@de,
+        "Toxic if swallowed"@en,
+        "Toxique en cas d'ingestion"@fr,
+        "Tossico se ingerito"@it .
 
 ghs:H302 a ghs:HazardStatement ;
-  schema:identifier "H302" ;
-  schema:name
-    "Gesundheitsschädlich bei Verschlucken"@de ,
-    "Harmful if swallowed"@en ,
-    "Nocif en cas d'ingestion"@fr ,
-    "Nocivo se ingerito"@it .
+    schema:identifier "H302" ;
+    schema:name "Gesundheitsschädlich bei Verschlucken"@de,
+        "Harmful if swallowed"@en,
+        "Nocif en cas d'ingestion"@fr,
+        "Nocivo se ingerito"@it .
 
 ghs:H304 a ghs:HazardStatement ;
-  schema:identifier "H304" ;
-  schema:name
-    "Kann bei Verschlucken und Eindringen in die Atemwege tödlich sein"@de ,
-    "May be fatal if swallowed and enters airways"@en ,
-    "Peut être mortel en cas d'ingestion et de pénétration dans les voies respiratoires"@fr ,
-    "Lenyelve és a légutakba kerülve halálos lehet"@it .
+    schema:identifier "H304" ;
+    schema:name "Kann bei Verschlucken und Eindringen in die Atemwege tödlich sein"@de,
+        "May be fatal if swallowed and enters airways"@en,
+        "Peut être mortel en cas d'ingestion et de pénétration dans les voies respiratoires"@fr,
+        "Lenyelve és a légutakba kerülve halálos lehet"@it .
 
 ghs:H310 a ghs:HazardStatement ;
-  schema:identifier "H310" ;
-  schema:name
-    "Lebensgefahr bei Hautkontakt"@de ,
-    "Fatal in contact with skin"@en ,
-    "Mortel par contact cutané"@fr ,
-    "Bőrrel érintkezve halálos"@it .
+    schema:identifier "H310" ;
+    schema:name "Lebensgefahr bei Hautkontakt"@de,
+        "Fatal in contact with skin"@en,
+        "Mortel par contact cutané"@fr,
+        "Bőrrel érintkezve halálos"@it .
 
 ghs:H311 a ghs:HazardStatement ;
-  schema:identifier "H311" ;
-  schema:name
-    "Giftig bei Hautkontakt"@de ,
-    "Toxic in contact with skin"@en ,
-    "Toxique par contact cutané"@fr ,
-    "Tossico per contatto con la pelle"@it .
+    schema:identifier "H311" ;
+    schema:name "Giftig bei Hautkontakt"@de,
+        "Toxic in contact with skin"@en,
+        "Toxique par contact cutané"@fr,
+        "Tossico per contatto con la pelle"@it .
 
 ghs:H312 a ghs:HazardStatement ;
-  schema:identifier "H312" ;
-  schema:name
-    "Gesundheitsschädlich bei Hautkontakt"@de ,
-    "Harmful in contact with skin"@en ,
-    "Nocif par contact cutané"@fr ,
-    "Nocivo per contatto con la pelle"@it .
+    schema:identifier "H312" ;
+    schema:name "Gesundheitsschädlich bei Hautkontakt"@de,
+        "Harmful in contact with skin"@en,
+        "Nocif par contact cutané"@fr,
+        "Nocivo per contatto con la pelle"@it .
 
 ghs:H314 a ghs:HazardStatement ;
-  schema:identifier "H314" ;
-  schema:name
-    "Verursacht schwere Verätzungen der Haut und schwere Augenschäden"@de ,
-    "Causes severe skin burns and eye damage"@en ,
-    "Provoque des brûlures de la peau et de graves lésions des yeux"@fr ,
-    "Provoca gravi ustioni cutanee e gravi lesioni oculari"@it .
+    schema:identifier "H314" ;
+    schema:name "Verursacht schwere Verätzungen der Haut und schwere Augenschäden"@de,
+        "Causes severe skin burns and eye damage"@en,
+        "Provoque des brûlures de la peau et de graves lésions des yeux"@fr,
+        "Provoca gravi ustioni cutanee e gravi lesioni oculari"@it .
 
 ghs:H315 a ghs:HazardStatement ;
-  schema:identifier "H315" ;
-  schema:name
-    "Verursacht Hautreizungen"@de ,
-    "Causes skin irritation"@en ,
-    "Provoque une irritation cutanée"@fr ,
-    "Provoca irritazione cutanea"@it .
+    schema:identifier "H315" ;
+    schema:name "Verursacht Hautreizungen"@de,
+        "Causes skin irritation"@en,
+        "Provoque une irritation cutanée"@fr,
+        "Provoca irritazione cutanea"@it .
 
 ghs:H317 a ghs:HazardStatement ;
-  schema:identifier "H317" ;
-  schema:name
-    "Kann allergische Hautreaktionen verursachen"@de ,
-    "May cause an allergic skin reaction"@en ,
-    "Peut provoquer une allergie cutanée"@fr ,
-    "Può provocare una reazione allergica cutanea"@it .
+    schema:identifier "H317" ;
+    schema:name "Kann allergische Hautreaktionen verursachen"@de,
+        "May cause an allergic skin reaction"@en,
+        "Peut provoquer une allergie cutanée"@fr,
+        "Può provocare una reazione allergica cutanea"@it .
 
 ghs:H318 a ghs:HazardStatement ;
-  schema:identifier "H318" ;
-  schema:name
-    "Verursacht schwere Augenschäden"@de ,
-    "Causes serious eye damage"@en ,
-    "Provoque de graves lésions des yeux"@fr ,
-    "Provoca gravi lesioni oculari"@it .
+    schema:identifier "H318" ;
+    schema:name "Verursacht schwere Augenschäden"@de,
+        "Causes serious eye damage"@en,
+        "Provoque de graves lésions des yeux"@fr,
+        "Provoca gravi lesioni oculari"@it .
 
 ghs:H319 a ghs:HazardStatement ;
-  schema:identifier "H319" ;
-  schema:name
-    "Verursacht schwere Augenreizung"@de ,
-    "Causes serious eye irritation"@en ,
-    "Provoque une sévère irritation des yeux"@fr ,
-    "Provoca grave irritazione oculare"@it .
+    schema:identifier "H319" ;
+    schema:name "Verursacht schwere Augenreizung"@de,
+        "Causes serious eye irritation"@en,
+        "Provoque une sévère irritation des yeux"@fr,
+        "Provoca grave irritazione oculare"@it .
 
 ghs:H330 a ghs:HazardStatement ;
-  schema:identifier "H330" ;
-  schema:name
-    "Lebensgefahr bei Einatmen"@de ,
-    "Fatal if inhaled"@en ,
-    "Mortel par inhalation"@fr ,
-    "Letale se inalato"@it .
+    schema:identifier "H330" ;
+    schema:name "Lebensgefahr bei Einatmen"@de,
+        "Fatal if inhaled"@en,
+        "Mortel par inhalation"@fr,
+        "Letale se inalato"@it .
 
 ghs:H331 a ghs:HazardStatement ;
-  schema:identifier "H331" ;
-  schema:name
-    "Giftig bei Einatmen"@de ,
-    "Toxic if inhaled"@en ,
-    "Toxique par inhalation"@fr ,
-    "Tossico se inalato"@it .
+    schema:identifier "H331" ;
+    schema:name "Giftig bei Einatmen"@de,
+        "Toxic if inhaled"@en,
+        "Toxique par inhalation"@fr,
+        "Tossico se inalato"@it .
 
 ghs:H332 a ghs:HazardStatement ;
-  schema:identifier "H332" ;
-  schema:name
-    "Gesundheitsschädlich bei Einatmen"@de ,
-    "Harmful if inhaled"@en ,
-    "Nocif par inhalation"@fr ,
-    "Nocivo se inalato"@it .
+    schema:identifier "H332" ;
+    schema:name "Gesundheitsschädlich bei Einatmen"@de,
+        "Harmful if inhaled"@en,
+        "Nocif par inhalation"@fr,
+        "Nocivo se inalato"@it .
 
 ghs:H334 a ghs:HazardStatement ;
-  schema:identifier "H334" ;
-  schema:name
-    "Kann bei Einatmen Allergie, asthmaartige Symptome oder Atembeschwerden verursachen"@de ,
-    "May cause allergy or asthma symptoms or breathing difficulties if inhaled"@en ,
-    "Peut provoquer des symptômes allergiques ou d'asthme ou des difficultés respiratoires par inhalation"@fr ,
-    "Può provocare sintomi allergici o asmatici o difficoltà respiratorie se inalato"@it .
+    schema:identifier "H334" ;
+    schema:name "Kann bei Einatmen Allergie, asthmaartige Symptome oder Atembeschwerden verursachen"@de,
+        "May cause allergy or asthma symptoms or breathing difficulties if inhaled"@en,
+        "Peut provoquer des symptômes allergiques ou d'asthme ou des difficultés respiratoires par inhalation"@fr,
+        "Può provocare sintomi allergici o asmatici o difficoltà respiratorie se inalato"@it .
 
 ghs:H335 a ghs:HazardStatement ;
-  schema:identifier "H335" ;
-  schema:name
-    "Kann die Atemwege reizen"@de ,
-    "May cause respiratory irritation"@en ,
-    "Peut irriter les voies respiratoires"@fr ,
-    "Può irritare le vie respiratorie"@it .
+    schema:identifier "H335" ;
+    schema:name "Kann die Atemwege reizen"@de,
+        "May cause respiratory irritation"@en,
+        "Peut irriter les voies respiratoires"@fr,
+        "Può irritare le vie respiratorie"@it .
 
 ghs:H336 a ghs:HazardStatement ;
-  schema:identifier "H336" ;
-  schema:name
-    "Kann Schläfrigkeit und Benommenheit verursachen"@de ,
-    "May cause drowsiness or dizziness"@en ,
-    "Peut provoquer somnolence ou vertiges"@fr ,
-    "Può provocare sonnolenza o vertigini"@it .
+    schema:identifier "H336" ;
+    schema:name "Kann Schläfrigkeit und Benommenheit verursachen"@de,
+        "May cause drowsiness or dizziness"@en,
+        "Peut provoquer somnolence ou vertiges"@fr,
+        "Può provocare sonnolenza o vertigini"@it .
 
 ghs:H340 a ghs:HazardStatement ;
-  schema:identifier "H340" ;
-  schema:name
-    "Kann genetische Defekte verursachen"@de ,
-    "May cause genetic defects"@en ,
-    "Peut induire des anomalies génétiques"@fr ,
-    "Può provocare alterazioni genetiche"@it .
+    schema:identifier "H340" ;
+    schema:name "Kann genetische Defekte verursachen"@de,
+        "May cause genetic defects"@en,
+        "Peut induire des anomalies génétiques"@fr,
+        "Può provocare alterazioni genetiche"@it .
 
 ghs:H341 a ghs:HazardStatement ;
-  schema:identifier "H341" ;
-  schema:name
-    "Kann vermutlich genetische Defekte verursachen"@de ,
-    "Suspected of causing genetic defects"@en ,
-    "Susceptible d'induire des anomalies génétiques"@fr ,
-    "Sospettato di provocare alterazioni genetiche"@it .
+    schema:identifier "H341" ;
+    schema:name "Kann vermutlich genetische Defekte verursachen"@de,
+        "Suspected of causing genetic defects"@en,
+        "Susceptible d'induire des anomalies génétiques"@fr,
+        "Sospettato di provocare alterazioni genetiche"@it .
 
 ghs:H350 a ghs:HazardStatement ;
-  schema:identifier "H350" ;
-  schema:name
-    "Kann Krebs erzeugen"@de ,
-    "May cause cancer"@en ,
-    "Peut provoquer le cancer"@fr ,
-    "Può provocare il cancro"@it .
+    schema:identifier "H350" ;
+    schema:name "Kann Krebs erzeugen"@de,
+        "May cause cancer"@en,
+        "Peut provoquer le cancer"@fr,
+        "Può provocare il cancro"@it .
 
 ghs:H350i a ghs:HazardStatement ;
-  schema:identifier "H350i" ;
-  schema:name
-    "Kann bei Einatmen Krebs erzeugen"@de ,
-    "May cause cancer by inhalation"@en ,
-    "Peut provoquer le cancer par inhalation"@fr ,
-    "Può provocare il cancro se inalato"@it .
+    schema:identifier "H350i" ;
+    schema:name "Kann bei Einatmen Krebs erzeugen"@de,
+        "May cause cancer by inhalation"@en,
+        "Peut provoquer le cancer par inhalation"@fr,
+        "Può provocare il cancro se inalato"@it .
 
 ghs:H351 a ghs:HazardStatement ;
-  schema:identifier "H351" ;
-  schema:name
-    "Kann vermutlich Krebs erzeugen"@de ,
-    "Suspected of causing cancer"@en ,
-    "Susceptible de provoquer le cancer"@fr ,
-    "Sospettato di provocare il cancro"@it .
+    schema:identifier "H351" ;
+    schema:name "Kann vermutlich Krebs erzeugen"@de,
+        "Suspected of causing cancer"@en,
+        "Susceptible de provoquer le cancer"@fr,
+        "Sospettato di provocare il cancro"@it .
 
 ghs:H360 a ghs:HazardStatement ;
-  schema:identifier "H360" ;
-  schema:name
-    "Kann die Fruchtbarkeit beeinträchtigen oder das Kind im Mutterleib schädigen"@de ,
-    "May damage fertility or the unborn child"@en ,
-    "Peut nuire à la fertilité ou au fœtus"@fr ,
-    "Può nuocere alla fertilità o al feto"@it .
+    schema:identifier "H360" ;
+    schema:name "Kann die Fruchtbarkeit beeinträchtigen oder das Kind im Mutterleib schädigen"@de,
+        "May damage fertility or the unborn child"@en,
+        "Peut nuire à la fertilité ou au fœtus"@fr,
+        "Può nuocere alla fertilità o al feto"@it .
 
 ghs:H360D a ghs:HazardStatement ;
-  schema:identifier "H360D" ;
-  schema:name
-    "Kann das Kind im Mutterleib schädigen"@de ,
-    "May damage the unborn child"@en ,
-    "Peut nuire au fœtus"@fr ,
-    "Può nuocere al feto"@it .
+    schema:identifier "H360D" ;
+    schema:name "Kann das Kind im Mutterleib schädigen"@de,
+        "May damage the unborn child"@en,
+        "Peut nuire au fœtus"@fr,
+        "Può nuocere al feto"@it .
 
 ghs:H360Df a ghs:HazardStatement ;
-  schema:identifier "H360Df" ;
-  schema:name
-    "Kann das Kind im Mutterleib schädigen. Kann vermutlich die Fruchtbarkeit beeinträchtigen"@de ,
-    "May damage the unborn child. Suspected of damaging fertility"@en ,
-    "Peut nuire au fœtus. Susceptible de nuire à la fertilité"@fr ,
-    "Può nuocere al feto. Sospettato di nuocere alla fertilità"@it .
+    schema:identifier "H360Df" ;
+    schema:name "Kann das Kind im Mutterleib schädigen. Kann vermutlich die Fruchtbarkeit beeinträchtigen"@de,
+        "May damage the unborn child. Suspected of damaging fertility"@en,
+        "Peut nuire au fœtus. Susceptible de nuire à la fertilité"@fr,
+        "Può nuocere al feto. Sospettato di nuocere alla fertilità"@it .
 
 ghs:H360F a ghs:HazardStatement ;
-  schema:identifier "H360F" ;
-  schema:name
-    "Kann die Fruchtbarkeit beeinträchtigen"@de ,
-    "May damage fertility"@en ,
-    "Peut nuire à la fertilité"@fr ,
-    "Può nuocere alla fertilità"@it .
+    schema:identifier "H360F" ;
+    schema:name "Kann die Fruchtbarkeit beeinträchtigen"@de,
+        "May damage fertility"@en,
+        "Peut nuire à la fertilité"@fr,
+        "Può nuocere alla fertilità"@it .
 
 ghs:H360FD a ghs:HazardStatement ;
-  schema:identifier "H360FD" ;
-  schema:name
-    "Kann die Fruchtbarkeit beeinträchtigen. Kann das Kind im Mutterleib schädigen"@de ,
-    "May damage fertility. May damage the unborn child"@en ,
-    "Peut nuire à la fertilité. Peut nuire au fœtus"@fr ,
-    "Può nuocere alla fertilità. Può nuocere al feto"@it .
+    schema:identifier "H360FD" ;
+    schema:name "Kann die Fruchtbarkeit beeinträchtigen. Kann das Kind im Mutterleib schädigen"@de,
+        "May damage fertility. May damage the unborn child"@en,
+        "Peut nuire à la fertilité. Peut nuire au fœtus"@fr,
+        "Può nuocere alla fertilità. Può nuocere al feto"@it .
 
 ghs:H360Fd a ghs:HazardStatement ;
-  schema:identifier "H360Fd" ;
-  schema:name
-    "Kann die Fruchtbarkeit beeinträchtigen. Kann vermutlich das Kind im Mutterleib schädigen"@de ,
-    "May damage fertility. Suspected of damaging the unborn child"@en ,
-    "Peut nuire à la fertilité. Susceptible de nuire au fœtus"@fr ,
-    "Può nuocere alla fertilità. Sospettato di nuocere al feto"@it .
+    schema:identifier "H360Fd" ;
+    schema:name "Kann die Fruchtbarkeit beeinträchtigen. Kann vermutlich das Kind im Mutterleib schädigen"@de,
+        "May damage fertility. Suspected of damaging the unborn child"@en,
+        "Peut nuire à la fertilité. Susceptible de nuire au fœtus"@fr,
+        "Può nuocere alla fertilità. Sospettato di nuocere al feto"@it .
 
 ghs:H361 a ghs:HazardStatement ;
-  schema:identifier "H361" ;
-  schema:name
-    "Kann vermutlich die Fruchtbarkeit beeinträchtigen oder das Kind im Mutterleib schädigen"@de ,
-    "Suspected of damaging fertility or the unborn child"@en ,
-    "Susceptible de nuire à la fertilité ou au fœtus"@fr ,
-    "Sospettato di nuocere alla fertilità o al feto"@it .
+    schema:identifier "H361" ;
+    schema:name "Kann vermutlich die Fruchtbarkeit beeinträchtigen oder das Kind im Mutterleib schädigen"@de,
+        "Suspected of damaging fertility or the unborn child"@en,
+        "Susceptible de nuire à la fertilité ou au fœtus"@fr,
+        "Sospettato di nuocere alla fertilità o al feto"@it .
 
 ghs:H361d a ghs:HazardStatement ;
-  schema:identifier "H361d" ;
-  schema:name
-    "Kann vermutlich das Kind im Mutterleib schädigen"@de ,
-    "Suspected of damaging the unborn child"@en ,
-    "Susceptible de nuire au fœtus"@fr ,
-    "Sospettato di nuocere al feto"@it .
+    schema:identifier "H361d" ;
+    schema:name "Kann vermutlich das Kind im Mutterleib schädigen"@de,
+        "Suspected of damaging the unborn child"@en,
+        "Susceptible de nuire au fœtus"@fr,
+        "Sospettato di nuocere al feto"@it .
 
 ghs:H361f a ghs:HazardStatement ;
-  schema:identifier "H361f" ;
-  schema:name
-    "Kann vermutlich die Fruchtbarkeit beeinträchtigen"@de ,
-    "Suspected of damaging fertility"@en ,
-    "Susceptible de nuire à la fertilité"@fr ,
-    "Sospettato di nuocere alla fertilità"@it .
+    schema:identifier "H361f" ;
+    schema:name "Kann vermutlich die Fruchtbarkeit beeinträchtigen"@de,
+        "Suspected of damaging fertility"@en,
+        "Susceptible de nuire à la fertilité"@fr,
+        "Sospettato di nuocere alla fertilità"@it .
 
 ghs:H361fd a ghs:HazardStatement ;
-  schema:identifier "H361fd" ;
-  schema:name
-    "Kann vermutlich die Fruchtbarkeit beeinträchtigen. Kann vermutlich das Kind im Mutterleib schädigen"@de ,
-    "Suspected of damaging fertility. Suspected of damaging the unborn child"@en ,
-    "Susceptible de nuire à la fertilité. Susceptible de nuire au fœtus"@fr ,
-    "Sospettato di nuocere alla fertilità. Sospettato di nuocere al feto"@it .
+    schema:identifier "H361fd" ;
+    schema:name "Kann vermutlich die Fruchtbarkeit beeinträchtigen. Kann vermutlich das Kind im Mutterleib schädigen"@de,
+        "Suspected of damaging fertility. Suspected of damaging the unborn child"@en,
+        "Susceptible de nuire à la fertilité. Susceptible de nuire au fœtus"@fr,
+        "Sospettato di nuocere alla fertilità. Sospettato di nuocere al feto"@it .
 
 ghs:H362 a ghs:HazardStatement ;
-  schema:identifier "H362" ;
-  schema:name
-    "Kann Säuglinge über die Muttermilch schädigen"@de ,
-    "May cause harm to breast-fed children"@en ,
-    "Peut être nocif pour les bébés nourris au lait maternel"@fr ,
-    "Può essere nocivo per i lattanti allattati al seno"@it .
+    schema:identifier "H362" ;
+    schema:name "Kann Säuglinge über die Muttermilch schädigen"@de,
+        "May cause harm to breast-fed children"@en,
+        "Peut être nocif pour les bébés nourris au lait maternel"@fr,
+        "Può essere nocivo per i lattanti allattati al seno"@it .
 
 ghs:H370 a ghs:HazardStatement ;
-  schema:identifier "H370" ;
-  schema:name
-    "Schädigt die Organe"@de ,
-    "Causes damage to organs"@en ,
-    "Risque avéré d'effets graves pour les organes"@fr ,
-    "Provoca danni agli organi"@it .
+    schema:identifier "H370" ;
+    schema:name "Schädigt die Organe"@de,
+        "Causes damage to organs"@en,
+        "Risque avéré d'effets graves pour les organes"@fr,
+        "Provoca danni agli organi"@it .
 
 ghs:H371 a ghs:HazardStatement ;
-  schema:identifier "H371" ;
-  schema:name
-    "Kann die Organe schädigen"@de ,
-    "May cause damage to organs"@en ,
-    "Risque présumé d'effets graves pour les organes"@fr ,
-    "Può provocare danni agli organi"@it .
+    schema:identifier "H371" ;
+    schema:name "Kann die Organe schädigen"@de,
+        "May cause damage to organs"@en,
+        "Risque présumé d'effets graves pour les organes"@fr,
+        "Può provocare danni agli organi"@it .
 
 ghs:H372 a ghs:HazardStatement ;
-  schema:identifier "H372" ;
-  schema:name
-    "Schädigt die Organe bei längerer oder wiederholter Exposition"@de ,
-    "Causes damage to organs through prolonged or repeated exposure"@en ,
-    "Risque avéré d'effets graves pour les organes à la suite d'expositions répétées ou d'une exposition prolongée"@fr ,
-    "Provoca danni agli organi in caso di esposizione prolungata o ripetuta"@it .
+    schema:identifier "H372" ;
+    schema:name "Schädigt die Organe bei längerer oder wiederholter Exposition"@de,
+        "Causes damage to organs through prolonged or repeated exposure"@en,
+        "Risque avéré d'effets graves pour les organes à la suite d'expositions répétées ou d'une exposition prolongée"@fr,
+        "Provoca danni agli organi in caso di esposizione prolungata o ripetuta"@it .
 
 ghs:H373 a ghs:HazardStatement ;
-  schema:identifier "H373" ;
-  schema:name
-    "Kann die Organe schädigen bei längerer oder wiederholter Exposition"@de ,
-    "May cause damage to organs through prolonged or repeated exposure"@en ,
-    "Risque présumé d'effets graves pour les organes à la suite d'expositions répétées ou d'une exposition prolongée"@fr ,
-    "Può provocare danni agli organi in caso di esposizione prolungata o ripetuta"@it .
+    schema:identifier "H373" ;
+    schema:name "Kann die Organe schädigen bei längerer oder wiederholter Exposition"@de,
+        "May cause damage to organs through prolonged or repeated exposure"@en,
+        "Risque présumé d'effets graves pour les organes à la suite d'expositions répétées ou d'une exposition prolongée"@fr,
+        "Può provocare danni agli organi in caso di esposizione prolungata o ripetuta"@it .
 
 ghs:H400 a ghs:HazardStatement ;
-  schema:identifier "H400" ;
-  schema:name
-    "Sehr giftig für Wasserorganismen"@de ,
-    "Very toxic to aquatic life"@en ,
-    "Très toxique pour les organismes aquatiques"@fr ,
-    "Molto tossico per gli organismi acquatici"@it .
+    schema:identifier "H400" ;
+    schema:name "Sehr giftig für Wasserorganismen"@de,
+        "Very toxic to aquatic life"@en,
+        "Très toxique pour les organismes aquatiques"@fr,
+        "Molto tossico per gli organismi acquatici"@it .
 
 ghs:H410 a ghs:HazardStatement ;
-  schema:identifier "H410" ;
-  schema:name
-    "Sehr giftig für Wasserorganismen mit langfristiger Wirkung"@de ,
-    "Very toxic to aquatic life with long lasting effects"@en ,
-    "Très toxique pour les organismes aquatiques, entraîne des effets néfastes à long terme"@fr ,
-    "Molto tossico per gli organismi acquatici con effetti di lunga durata"@it .
+    schema:identifier "H410" ;
+    schema:name "Sehr giftig für Wasserorganismen mit langfristiger Wirkung"@de,
+        "Very toxic to aquatic life with long lasting effects"@en,
+        "Très toxique pour les organismes aquatiques, entraîne des effets néfastes à long terme"@fr,
+        "Molto tossico per gli organismi acquatici con effetti di lunga durata"@it .
 
 ghs:H411 a ghs:HazardStatement ;
-  schema:identifier "H411" ;
-  schema:name
-    "Giftig für Wasserorganismen, mit langfristiger Wirkung"@de ,
-    "Toxic to aquatic life with long lasting effects"@en ,
-    "Toxique pour les organismes aquatiques, entraîne des effets néfastes à long terme"@fr ,
-    "Tossico per gli organismi acquatici con effetti di lunga durata"@it .
+    schema:identifier "H411" ;
+    schema:name "Giftig für Wasserorganismen, mit langfristiger Wirkung"@de,
+        "Toxic to aquatic life with long lasting effects"@en,
+        "Toxique pour les organismes aquatiques, entraîne des effets néfastes à long terme"@fr,
+        "Tossico per gli organismi acquatici con effetti di lunga durata"@it .
 
 ghs:H412 a ghs:HazardStatement ;
-  schema:identifier "H412" ;
-  schema:name
-    "Schädlich für Wasserorganismen, mit langfristiger Wirkung"@de ,
-    "Harmful to aquatic life with long lasting effects"@en ,
-    "Nocif pour les organismes aquatiques, entraîne des effets néfastes à long terme"@fr ,
-    "Nocivo per gli organismi acquatici con effetti di lunga durata"@it .
+    schema:identifier "H412" ;
+    schema:name "Schädlich für Wasserorganismen, mit langfristiger Wirkung"@de,
+        "Harmful to aquatic life with long lasting effects"@en,
+        "Nocif pour les organismes aquatiques, entraîne des effets néfastes à long terme"@fr,
+        "Nocivo per gli organismi acquatici con effetti di lunga durata"@it .
 
 ghs:H413 a ghs:HazardStatement ;
-  schema:identifier "H413" ;
-  schema:name
-    "Kann für Wasserorganismen schädlich sein, mit langfristiger Wirkung"@de ,
-    "May cause long lasting harmful effects to aquatic life"@en ,
-    "Peut être nocif à long terme pour les organismes aquatiques"@fr ,
-    "Può essere nocivo per gli organismi acquatici con effetti di lunga durata"@it .
+    schema:identifier "H413" ;
+    schema:name "Kann für Wasserorganismen schädlich sein, mit langfristiger Wirkung"@de,
+        "May cause long lasting harmful effects to aquatic life"@en,
+        "Peut être nocif à long terme pour les organismes aquatiques"@fr,
+        "Può essere nocivo per gli organismi acquatici con effetti di lunga durata"@it .
 
 ghs:H420 a ghs:HazardStatement ;
-  schema:identifier "H420" ;
-  schema:name
-    "Schädigt die öffentliche Gesundheit und die Umwelt durch Ozonabbau in der äußeren Atmosphäre"@de ,
-    "Harms public health and the environment by destroying ozone in the upper atmosphere"@en ,
-    "Nuit à la santé publique et à l'environnement en détruisant l'ozone dans la haute atmosphère"@fr ,
-    "Nuoce alla salute pubblica e all'ambiente distruggendo l'ozono dello strato superiore dell'atmosfera"@it .
-
-ghs:H302H312 a ghs:HazardStatementCombination ;
-  schema:identifier "H302+H312" ;
-  schema:name
-    "Gesundheitsschädlich bei Verschlucken oder Hautkontakt"@de ,
-    "Harmful if swallowed or in contact with skin"@en ,
-    "Nocif en cas d'ingestion ou de contact cutané"@fr ,
-    "Nocivo se ingerito o a contatto con la pelle"@it ;
-  ghs:hasPart ghs:H302, ghs:H312 .
-
-ghs:H302H332 a ghs:HazardStatementCombination ;
-  schema:identifier "H302+H332" ;
-  schema:name
-    "Gesundheitsschädlich bei Verschlucken oder Einatmen"@de ,
-    "Harmful if swallowed or if inhaled"@en ,
-    "Nocif en cas d'ingestion ou d'inhalation"@fr ,
-    "Nocivo se ingerito o inalato"@it ;
-  ghs:hasPart ghs:H302, ghs:H332 .
-
-ghs:H312H332 a ghs:HazardStatementCombination ;
-  schema:identifier "H312+H332" ;
-  schema:name
-    "Gesundheitsschädlich bei Hautkontakt oder Einatmen"@de ,
-    "Harmful in contact with skin or if inhaled"@en ,
-    "Nocif en cas de contact cutané ou d'inhalation"@fr ,
-    "Nocivo a contatto con la pelle o se inalato"@it ;
-  ghs:hasPart ghs:H312, ghs:H332 .
-
-ghs:H302H312H332 a ghs:HazardStatementCombination ;
-  schema:identifier "H302+H312+H332" ;
-  schema:name
-    "Gesundheitsschädlich bei Verschlucken, Hautkontakt oder Einatmen"@de ,
-    "Harmful if swallowed, in contact with skin or if inhaled"@en ,
-    "Nocif en cas d'ingestion, de contact cutané ou d'inhalation"@fr ,
-    "Nocivo se ingerito, a contatto con la pelle o se inalato"@it ;
-  ghs:hasPart ghs:H302, ghs:H312, ghs:H332 .
-
-ghs:H301H311 a ghs:HazardStatementCombination ;
-  schema:identifier "H301+H311" ;
-  schema:name
-    "Giftig bei Verschlucken oder Hautkontakt"@de ,
-    "Toxic if swallowed or in contact with skin"@en ,
-    "Toxique par ingestion ou par contact cutané"@fr ,
-    "Tossico se ingerito o a contatto con la pelle"@it ;
-  ghs:hasPart ghs:H301, ghs:H311 .
-
-ghs:H301H331 a ghs:HazardStatementCombination ;
-  schema:identifier "H301+H331" ;
-  schema:name
-    "Giftig bei Verschlucken oder Einatmen"@de ,
-    "Toxic if swallowed or if inhaled"@en ,
-    "Toxique par ingestion ou par inhalation"@fr ,
-    "Tossico se ingerito o inalato"@it ;
-  ghs:hasPart ghs:H301, ghs:H331 .
-
-ghs:H311H331 a ghs:HazardStatementCombination ;
-  schema:identifier "H311+H331" ;
-  schema:name
-    "Giftig bei Hautkontakt oder Einatmen"@de ,
-    "Toxic in contact with skin or if inhaled"@en ,
-    "Toxique par contact cutané ou par inhalation"@fr ,
-    "Tossico a contatto con la pelle o se inalato"@it ;
-  ghs:hasPart ghs:H311, ghs:H331 .
-
-ghs:H301H311H331 a ghs:HazardStatementCombination ;
-  schema:identifier "H301+H311+H331" ;
-  schema:name
-    "Giftig bei Verschlucken, Hautkontakt oder Einatmen"@de ,
-    "Toxic if swallowed, in contact with skin or if inhaled"@en ,
-    "Toxique par ingestion, par contact cutané ou par inhalation"@fr ,
-    "Tossico se ingerito, a contatto con la pelle o se inalato"@it ;
-  ghs:hasPart ghs:H301, ghs:H311, ghs:H331 .
+    schema:identifier "H420" ;
+    schema:name "Schädigt die öffentliche Gesundheit und die Umwelt durch Ozonabbau in der äußeren Atmosphäre"@de,
+        "Harms public health and the environment by destroying ozone in the upper atmosphere"@en,
+        "Nuit à la santé publique et à l'environnement en détruisant l'ozone dans la haute atmosphère"@fr,
+        "Nuoce alla salute pubblica e all'ambiente distruggendo l'ozono dello strato superiore dell'atmosfera"@it .
 
 ghs:H300H310 a ghs:HazardStatementCombination ;
-  schema:identifier "H300+H310" ;
-  schema:name
-    "Lebensgefahr bei Verschlucken oder Hautkontakt"@de ,
-    "Fatal if swallowed or in contact with skin"@en ,
-    "Mortel par ingestion ou par contact cutané"@fr ,
-    "Mortale in caso di ingestione o a contatto con la pelle"@it ;
-  ghs:hasPart ghs:H300, ghs:H310 .
-
-ghs:H300H330 a ghs:HazardStatementCombination ;
-  schema:identifier "H300+H330" ;
-  schema:name
-    "Lebensgefahr bei Verschlucken oder Einatmen"@de ,
-    "Fatal if swallowed or if inhaled"@en ,
-    "Mortel par ingestion ou par inhalation"@fr ,
-    "Mortale se ingerito o inalato"@it ;
-  ghs:hasPart ghs:H300, ghs:H330 .
-
-ghs:H310H330 a ghs:HazardStatementCombination ;
-  schema:identifier "H310+H330" ;
-  schema:name
-    "Lebensgefahr bei Hautkontakt oder Einatmen"@de ,
-    "Fatal in contact with skin or if inhaled"@en ,
-    "Mortel par contact cutané ou par inhalation"@fr ,
-    "Mortale a contatto con la pelle o in caso di inalazione"@it ;
-  ghs:hasPart ghs:H310, ghs:H330 .
+    schema:identifier "H300+H310" ;
+    schema:name "Lebensgefahr bei Verschlucken oder Hautkontakt"@de,
+        "Fatal if swallowed or in contact with skin"@en,
+        "Mortel par ingestion ou par contact cutané"@fr,
+        "Mortale in caso di ingestione o a contatto con la pelle"@it ;
+    ghs:hasPart ghs:H300,
+        ghs:H310 .
 
 ghs:H300H310H330 a ghs:HazardStatementCombination ;
-  schema:identifier "H300+H310+H330" ;
-  schema:name
-    "Lebensgefahr bei Verschlucken, Hautkontakt oder Einatmen"@de ,
-    "Fatal if swallowed, in contact with skin or if inhaled"@en ,
-    "Mortel par ingestion, par contact cutané ou par inhalation"@fr ,
-    "Mortale se ingerito, a contatto con la pelle o se inalato"@it ;
-  ghs:hasPart ghs:H300, ghs:H310, ghs:H330 .
+    schema:identifier "H300+H310+H330" ;
+    schema:name "Lebensgefahr bei Verschlucken, Hautkontakt oder Einatmen"@de,
+        "Fatal if swallowed, in contact with skin or if inhaled"@en,
+        "Mortel par ingestion, par contact cutané ou par inhalation"@fr,
+        "Mortale se ingerito, a contatto con la pelle o se inalato"@it ;
+    ghs:hasPart ghs:H300,
+        ghs:H310,
+        ghs:H330 .
 
+ghs:H300H330 a ghs:HazardStatementCombination ;
+    schema:identifier "H300+H330" ;
+    schema:name "Lebensgefahr bei Verschlucken oder Einatmen"@de,
+        "Fatal if swallowed or if inhaled"@en,
+        "Mortel par ingestion ou par inhalation"@fr,
+        "Mortale se ingerito o inalato"@it ;
+    ghs:hasPart ghs:H300,
+        ghs:H330 .
+
+ghs:H301H311 a ghs:HazardStatementCombination ;
+    schema:identifier "H301+H311" ;
+    schema:name "Giftig bei Verschlucken oder Hautkontakt"@de,
+        "Toxic if swallowed or in contact with skin"@en,
+        "Toxique par ingestion ou par contact cutané"@fr,
+        "Tossico se ingerito o a contatto con la pelle"@it ;
+    ghs:hasPart ghs:H301,
+        ghs:H311 .
+
+ghs:H301H311H331 a ghs:HazardStatementCombination ;
+    schema:identifier "H301+H311+H331" ;
+    schema:name "Giftig bei Verschlucken, Hautkontakt oder Einatmen"@de,
+        "Toxic if swallowed, in contact with skin or if inhaled"@en,
+        "Toxique par ingestion, par contact cutané ou par inhalation"@fr,
+        "Tossico se ingerito, a contatto con la pelle o se inalato"@it ;
+    ghs:hasPart ghs:H301,
+        ghs:H311,
+        ghs:H331 .
+
+ghs:H301H331 a ghs:HazardStatementCombination ;
+    schema:identifier "H301+H331" ;
+    schema:name "Giftig bei Verschlucken oder Einatmen"@de,
+        "Toxic if swallowed or if inhaled"@en,
+        "Toxique par ingestion ou par inhalation"@fr,
+        "Tossico se ingerito o inalato"@it ;
+    ghs:hasPart ghs:H301,
+        ghs:H331 .
+
+ghs:H302H312 a ghs:HazardStatementCombination ;
+    schema:identifier "H302+H312" ;
+    schema:name "Gesundheitsschädlich bei Verschlucken oder Hautkontakt"@de,
+        "Harmful if swallowed or in contact with skin"@en,
+        "Nocif en cas d'ingestion ou de contact cutané"@fr,
+        "Nocivo se ingerito o a contatto con la pelle"@it ;
+    ghs:hasPart ghs:H302,
+        ghs:H312 .
+
+ghs:H302H312H332 a ghs:HazardStatementCombination ;
+    schema:identifier "H302+H312+H332" ;
+    schema:name "Gesundheitsschädlich bei Verschlucken, Hautkontakt oder Einatmen"@de,
+        "Harmful if swallowed, in contact with skin or if inhaled"@en,
+        "Nocif en cas d'ingestion, de contact cutané ou d'inhalation"@fr,
+        "Nocivo se ingerito, a contatto con la pelle o se inalato"@it ;
+    ghs:hasPart ghs:H302,
+        ghs:H312,
+        ghs:H332 .
+
+ghs:H302H332 a ghs:HazardStatementCombination ;
+    schema:identifier "H302+H332" ;
+    schema:name "Gesundheitsschädlich bei Verschlucken oder Einatmen"@de,
+        "Harmful if swallowed or if inhaled"@en,
+        "Nocif en cas d'ingestion ou d'inhalation"@fr,
+        "Nocivo se ingerito o inalato"@it ;
+    ghs:hasPart ghs:H302,
+        ghs:H332 .
+
+ghs:H310H330 a ghs:HazardStatementCombination ;
+    schema:identifier "H310+H330" ;
+    schema:name "Lebensgefahr bei Hautkontakt oder Einatmen"@de,
+        "Fatal in contact with skin or if inhaled"@en,
+        "Mortel par contact cutané ou par inhalation"@fr,
+        "Mortale a contatto con la pelle o in caso di inalazione"@it ;
+    ghs:hasPart ghs:H310,
+        ghs:H330 .
+
+ghs:H311H331 a ghs:HazardStatementCombination ;
+    schema:identifier "H311+H331" ;
+    schema:name "Giftig bei Hautkontakt oder Einatmen"@de,
+        "Toxic in contact with skin or if inhaled"@en,
+        "Toxique par contact cutané ou par inhalation"@fr,
+        "Tossico a contatto con la pelle o se inalato"@it ;
+    ghs:hasPart ghs:H311,
+        ghs:H331 .
+
+ghs:H312H332 a ghs:HazardStatementCombination ;
+    schema:identifier "H312+H332" ;
+    schema:name "Gesundheitsschädlich bei Hautkontakt oder Einatmen"@de,
+        "Harmful in contact with skin or if inhaled"@en,
+        "Nocif en cas de contact cutané ou d'inhalation"@fr,
+        "Nocivo a contatto con la pelle o se inalato"@it ;
+    ghs:hasPart ghs:H312,
+        ghs:H332 .
 
 # ==============================================================================
 # GHS PRECAUTIONARY STATEMENTS
 # ==============================================================================
 
 ghs:P101 a ghs:PrecautionaryStatement ;
-  schema:identifier "P101" ;
-  schema:name
-    "Ist ärztlicher Rat erforderlich, Verpackung oder Kennzeichnungsetikett bereithalten"@de ,
-    "If medical advice is needed, have product container or label at hand"@en ,
-    "En cas de consultation d’un médecin, garder à disposition le récipient ou l’étiquette"@fr ,
-    "In caso di consultazione di un medico, tenere a disposizione il contenitore o l'etichetta del prodotto"@it .
+    schema:identifier "P101" ;
+    schema:name "Ist ärztlicher Rat erforderlich, Verpackung oder Kennzeichnungsetikett bereithalten"@de,
+        "If medical advice is needed, have product container or label at hand"@en,
+        "En cas de consultation d’un médecin, garder à disposition le récipient ou l’étiquette"@fr,
+        "In caso di consultazione di un medico, tenere a disposizione il contenitore o l'etichetta del prodotto"@it .
 
 ghs:P102 a ghs:PrecautionaryStatement ;
-  schema:identifier "P102" ;
-  schema:name
-    "Darf nicht in die Hände von Kindern gelangen"@de ,
-    "Keep out of reach of children"@en ,
-    "Tenir hors de portée des enfants"@fr ,
-    "Tenere fuori dalla portata dei bambini"@it .
+    schema:identifier "P102" ;
+    schema:name "Darf nicht in die Hände von Kindern gelangen"@de,
+        "Keep out of reach of children"@en,
+        "Tenir hors de portée des enfants"@fr,
+        "Tenere fuori dalla portata dei bambini"@it .
 
 ghs:P103 a ghs:PrecautionaryStatement ;
-  schema:identifier "P103" ;
-  schema:name
-    "Vor Gebrauch Kennzeichnungsetikett lesen"@de ,
-    "Read label before use"@en ,
-    "Lire l’étiquette avant utilisation"@fr ,
-    "Leggere l’etichetta prima dell’uso"@it .
+    schema:identifier "P103" ;
+    schema:name "Vor Gebrauch Kennzeichnungsetikett lesen"@de,
+        "Read label before use"@en,
+        "Lire l’étiquette avant utilisation"@fr,
+        "Leggere l’etichetta prima dell’uso"@it .
 
 ghs:P201 a ghs:PrecautionaryStatement ;
-  schema:identifier "P201" ;
-  schema:name
-    "Vor Gebrauch besondere Anweisungen einholen"@de ,
-    "Obtain special instructions before use"@en ,
-    "Se procurer les instructions spéciales avant utilisation"@fr ,
-    "Procurarsi istruzioni specifiche prima dell’uso"@it .
+    schema:identifier "P201" ;
+    schema:name "Vor Gebrauch besondere Anweisungen einholen"@de,
+        "Obtain special instructions before use"@en,
+        "Se procurer les instructions spéciales avant utilisation"@fr,
+        "Procurarsi istruzioni specifiche prima dell’uso"@it .
 
 ghs:P202 a ghs:PrecautionaryStatement ;
-  schema:identifier "P202" ;
-  schema:name
-    "Vor Gebrauch alle Sicherheitshinweise lesen und verstehen"@de ,
-    "Do not handle until all safety precautions have been read and understood"@en ,
-    "Ne pas manipuler avant d’avoir lu et compris toutes les précautions de sécurité"@fr ,
-    "Non manipolare prima di avere letto e compreso tutte le avvertenze"@it .
+    schema:identifier "P202" ;
+    schema:name "Vor Gebrauch alle Sicherheitshinweise lesen und verstehen"@de,
+        "Do not handle until all safety precautions have been read and understood"@en,
+        "Ne pas manipuler avant d’avoir lu et compris toutes les précautions de sécurité"@fr,
+        "Non manipolare prima di avere letto e compreso tutte le avvertenze"@it .
 
 ghs:P203 a ghs:PrecautionaryStatement ;
-  schema:identifier "P203" ;
-  schema:name
-    "Obtain, read and follow all safety instructions before use"@en .
+    schema:identifier "P203" ;
+    schema:name "Obtain, read and follow all safety instructions before use"@en .
 
 ghs:P210 a ghs:PrecautionaryStatement ;
-  schema:identifier "P210" ;
-  schema:name
-    "Von Hitze, heißen Oberflächen, Funken, offenen Flammen sowie anderen Zündquellenarten fernhalten. Nicht rauchen"@de ,
-    "Keep away from heat, hot surfaces, sparks, open flames and other ignition sources. No smoking"@en ,
-    "Tenir à l’écart de la chaleur, des surfaces chaudes, des étincelles, des flammes nues et de toute autre source d’inflammation. Ne pas fumer"@fr ,
-    "Tenere lontano da fonti di calore, superfici calde, scintille, fiamme libere o altre fonti di accensione. Non fumare"@it .
+    schema:identifier "P210" ;
+    schema:name "Von Hitze, heißen Oberflächen, Funken, offenen Flammen sowie anderen Zündquellenarten fernhalten. Nicht rauchen"@de,
+        "Keep away from heat, hot surfaces, sparks, open flames and other ignition sources. No smoking"@en,
+        "Tenir à l’écart de la chaleur, des surfaces chaudes, des étincelles, des flammes nues et de toute autre source d’inflammation. Ne pas fumer"@fr,
+        "Tenere lontano da fonti di calore, superfici calde, scintille, fiamme libere o altre fonti di accensione. Non fumare"@it .
 
 ghs:P211 a ghs:PrecautionaryStatement ;
-  schema:identifier "P211" ;
-  schema:name
-    "Nicht gegen offene Flamme oder andere Zündquelle sprühen"@de ,
-    "Do not spray on an open flame or other ignition source"@en ,
-    "Ne pas vaporiser sur une flamme nue ou sur toute autre source d’ignition"@fr ,
-    "Non vaporizzare su una fiamma libera o altra fonte di accensione"@it .
+    schema:identifier "P211" ;
+    schema:name "Nicht gegen offene Flamme oder andere Zündquelle sprühen"@de,
+        "Do not spray on an open flame or other ignition source"@en,
+        "Ne pas vaporiser sur une flamme nue ou sur toute autre source d’ignition"@fr,
+        "Non vaporizzare su una fiamma libera o altra fonte di accensione"@it .
 
 ghs:P220 a ghs:PrecautionaryStatement ;
-  schema:identifier "P220" ;
-  schema:name
-    "Von Kleidung und anderen brennbaren Materialien fernhalten"@de ,
-    "Keep away from clothing and other combustible materials"@en ,
-    "Tenir à l'écart des vêtements et d'autres matières combustibles"@fr ,
-    "Tenere lontano da indumenti e altri materiali combustibili"@it .
+    schema:identifier "P220" ;
+    schema:name "Von Kleidung und anderen brennbaren Materialien fernhalten"@de,
+        "Keep away from clothing and other combustible materials"@en,
+        "Tenir à l'écart des vêtements et d'autres matières combustibles"@fr,
+        "Tenere lontano da indumenti e altri materiali combustibili"@it .
 
 ghs:P222 a ghs:PrecautionaryStatement ;
-  schema:identifier "P222" ;
-  schema:name
-    "Keinen Kontakt mit Luft zulassen"@de ,
-    "Do not allow contact with air"@en ,
-    "Ne pas laisser au contact de l’air"@fr ,
-    "Evitare il contatto con l’aria"@it .
+    schema:identifier "P222" ;
+    schema:name "Keinen Kontakt mit Luft zulassen"@de,
+        "Do not allow contact with air"@en,
+        "Ne pas laisser au contact de l’air"@fr,
+        "Evitare il contatto con l’aria"@it .
 
 ghs:P223 a ghs:PrecautionaryStatement ;
-  schema:identifier "P223" ;
-  schema:name
-    "Keinen Kontakt mit Wasser zulassen"@de ,
-    "Do not allow contact with water"@en ,
-    "Éviter tout contact avec l’eau"@fr ,
-    "Evitare qualunque contatto con l’acqua"@it .
+    schema:identifier "P223" ;
+    schema:name "Keinen Kontakt mit Wasser zulassen"@de,
+        "Do not allow contact with water"@en,
+        "Éviter tout contact avec l’eau"@fr,
+        "Evitare qualunque contatto con l’acqua"@it .
 
 ghs:P230 a ghs:PrecautionaryStatement ;
-  schema:identifier "P230" ;
-  schema:name
-    "Feucht halten mit …"@de ,
-    "Keep wetted with…"@en ,
-    "Maintenir humidifié avec…"@fr ,
-    "Mantenere umido con…"@it .
+    schema:identifier "P230" ;
+    schema:name "Feucht halten mit …"@de,
+        "Keep wetted with…"@en,
+        "Maintenir humidifié avec…"@fr,
+        "Mantenere umido con…"@it .
 
 ghs:P231 a ghs:PrecautionaryStatement ;
-  schema:identifier "P231" ;
-  schema:name
-    "Inhalt unter inertem Gas/… handhaben und aufbewahren"@de ,
-    "Handle under inert gas."@en ,
-    "Manipuler et stocker le contenu sous gaz inerte/…"@fr ,
-    "Manipolare e conservare in atmosfera di gas inerte/…"@it .
+    schema:identifier "P231" ;
+    schema:name "Inhalt unter inertem Gas/… handhaben und aufbewahren"@de,
+        "Handle under inert gas."@en,
+        "Manipuler et stocker le contenu sous gaz inerte/…"@fr,
+        "Manipolare e conservare in atmosfera di gas inerte/…"@it .
 
 <https://agriculture.ld.admin.ch/plant-protection/ghs/P231+P232> a ghs:PrecautionaryStatement ;
-  schema:identifier "P231+P232" ;
-  schema:name
-    "Inhalt unter inertem Gas/… handhaben und aufbewahren. Vor Feuchtigkeit schützen"@de ,
-    "Handle under inert gas/... Protect from moisture."@en ,
-    "Manipuler et stocker le contenu sous gaz inerte/… Protéger de l'humidité"@fr ,
-    "Manipolare e conservare in atmosfera di gas inerte/…. Tenere al riparo dall'umidità"@it .
+    schema:identifier "P231+P232" ;
+    schema:name "Inhalt unter inertem Gas/… handhaben und aufbewahren. Vor Feuchtigkeit schützen"@de,
+        "Handle under inert gas/... Protect from moisture."@en,
+        "Manipuler et stocker le contenu sous gaz inerte/… Protéger de l'humidité"@fr,
+        "Manipolare e conservare in atmosfera di gas inerte/…. Tenere al riparo dall'umidità"@it .
 
 ghs:P232 a ghs:PrecautionaryStatement ;
-  schema:identifier "P232" ;
-  schema:name
-    "Vor Feuchtigkeit schützen"@de ,
-    "Protect from moisture"@en ,
-    "Protéger de l’humidité"@fr ,
-    "Proteggere dall’umidità"@it .
+    schema:identifier "P232" ;
+    schema:name "Vor Feuchtigkeit schützen"@de,
+        "Protect from moisture"@en,
+        "Protéger de l’humidité"@fr,
+        "Proteggere dall’umidità"@it .
 
 ghs:P233 a ghs:PrecautionaryStatement ;
-  schema:identifier "P233" ;
-  schema:name
-    "Behälter dicht verschlossen halten"@de ,
-    "Keep container tightly closed"@en ,
-    "Maintenir le récipient fermé de manière étanche"@fr ,
-    "Tenere il recipiente ben chiuso"@it .
+    schema:identifier "P233" ;
+    schema:name "Behälter dicht verschlossen halten"@de,
+        "Keep container tightly closed"@en,
+        "Maintenir le récipient fermé de manière étanche"@fr,
+        "Tenere il recipiente ben chiuso"@it .
 
 ghs:P234 a ghs:PrecautionaryStatement ;
-  schema:identifier "P234" ;
-  schema:name
-    "Nur in Originalverpackung aufbewahren"@de ,
-    "Keep only in original container."@en ,
-    "Conserver uniquement dans l'emballage d'origine"@fr ,
-    "Conservare soltanto nell'imballaggio originale"@it .
+    schema:identifier "P234" ;
+    schema:name "Nur in Originalverpackung aufbewahren"@de,
+        "Keep only in original container."@en,
+        "Conserver uniquement dans l'emballage d'origine"@fr,
+        "Conservare soltanto nell'imballaggio originale"@it .
 
 ghs:P235 a ghs:PrecautionaryStatement ;
-  schema:identifier "P235" ;
-  schema:name
-    "Kühl halten"@de ,
-    "Keep cool"@en ,
-    "Tenir au frais"@fr ,
-    "Conservare in luogo fresco"@it .
+    schema:identifier "P235" ;
+    schema:name "Kühl halten"@de,
+        "Keep cool"@en,
+        "Tenir au frais"@fr,
+        "Conservare in luogo fresco"@it .
 
 ghs:P240 a ghs:PrecautionaryStatement ;
-  schema:identifier "P240" ;
-  schema:name
-    "Behälter und zu befüllende Anlage erden"@de ,
-    "Ground and bond container and receiving equipment"@en ,
-    "Mise à la terre et liaison équipotentielle du récipient et du matériel de réception"@fr ,
-    "Mettere a terra e a massa il contenitore e il dispositivo ricevente"@it .
+    schema:identifier "P240" ;
+    schema:name "Behälter und zu befüllende Anlage erden"@de,
+        "Ground and bond container and receiving equipment"@en,
+        "Mise à la terre et liaison équipotentielle du récipient et du matériel de réception"@fr,
+        "Mettere a terra e a massa il contenitore e il dispositivo ricevente"@it .
 
 ghs:P241 a ghs:PrecautionaryStatement ;
-  schema:identifier "P241" ;
-  schema:name
-    "Explosionsgeschützte [elektrische/Lüftungs-/Beleuchtungs-/…] Geräte verwenden"@de ,
-    "Use explosion-proof [electrical/ventilating/lighting/…] equipment"@en ,
-    "Utiliser du matériel [électrique/de ventilation/d'éclairage/…] antidéflagrant"@fr ,
-    "Utilizzare impianti [elettrici/di ventilazione/d'illuminazione/…] a prova di esplosione"@it .
+    schema:identifier "P241" ;
+    schema:name "Explosionsgeschützte [elektrische/Lüftungs-/Beleuchtungs-/…] Geräte verwenden"@de,
+        "Use explosion-proof [electrical/ventilating/lighting/…] equipment"@en,
+        "Utiliser du matériel [électrique/de ventilation/d'éclairage/…] antidéflagrant"@fr,
+        "Utilizzare impianti [elettrici/di ventilazione/d'illuminazione/…] a prova di esplosione"@it .
 
 ghs:P242 a ghs:PrecautionaryStatement ;
-  schema:identifier "P242" ;
-  schema:name
-    "Funkenarmes Werkzeug verwenden"@de ,
-    "Use only non-sparking tools."@en ,
-    "Utiliser des outils ne produisant pas d'étincelles"@fr ,
-    "Utilizzare utensili antiscintillamento"@it .
+    schema:identifier "P242" ;
+    schema:name "Funkenarmes Werkzeug verwenden"@de,
+        "Use only non-sparking tools."@en,
+        "Utiliser des outils ne produisant pas d'étincelles"@fr,
+        "Utilizzare utensili antiscintillamento"@it .
 
 ghs:P243 a ghs:PrecautionaryStatement ;
-  schema:identifier "P243" ;
-  schema:name
-    "Maßnahmen gegen elektrostatische Entladungen treffen"@de ,
-    "Take precautionary measures against static discharge."@en ,
-    "Prendre des mesures de précaution contre les décharges électrostatiques"@fr ,
-    "Fare in modo di prevenire le scariche elettrostatiche"@it .
+    schema:identifier "P243" ;
+    schema:name "Maßnahmen gegen elektrostatische Entladungen treffen"@de,
+        "Take precautionary measures against static discharge."@en,
+        "Prendre des mesures de précaution contre les décharges électrostatiques"@fr,
+        "Fare in modo di prevenire le scariche elettrostatiche"@it .
 
 ghs:P244 a ghs:PrecautionaryStatement ;
-  schema:identifier "P244" ;
-  schema:name
-    "Ventile und Ausrüstungsteile öl- und fettfrei halten"@de ,
-    "Keep valves and fittings free from oil and grease"@en ,
-    "Ni huile, ni graisse sur les robinets et raccords"@fr ,
-    "Mantenere le valvole e i raccordi liberi da olio e grasso"@it .
+    schema:identifier "P244" ;
+    schema:name "Ventile und Ausrüstungsteile öl- und fettfrei halten"@de,
+        "Keep valves and fittings free from oil and grease"@en,
+        "Ni huile, ni graisse sur les robinets et raccords"@fr,
+        "Mantenere le valvole e i raccordi liberi da olio e grasso"@it .
 
 ghs:P250 a ghs:PrecautionaryStatement ;
-  schema:identifier "P250" ;
-  schema:name
-    "Nicht schleifen/stoßen/reiben/…"@de ,
-    "Do not subject to grinding/shock/friction/…"@en ,
-    "Éviter les abrasions/les chocs/les frottements/…"@fr ,
-    "Evitare le abrasioni/gli urti/gli attriti/…"@it .
+    schema:identifier "P250" ;
+    schema:name "Nicht schleifen/stoßen/reiben/…"@de,
+        "Do not subject to grinding/shock/friction/…"@en,
+        "Éviter les abrasions/les chocs/les frottements/…"@fr,
+        "Evitare le abrasioni/gli urti/gli attriti/…"@it .
 
 ghs:P260 a ghs:PrecautionaryStatement ;
-  schema:identifier "P260" ;
-  schema:name
-    "Staub/Rauch/Gas/Nebel/Dampf/Aerosol nicht einatmen"@de ,
-    "Do not breathe dust/fume/gas/mist/vapours/spray"@en ,
-    "Ne pas respirer les poussières/fumées/gaz/brouillards/vapeurs/aérosols"@fr ,
-    "Non respirare la polvere/i fumi/i gas/la nebbia/i vapori/gli aerosol"@it .
+    schema:identifier "P260" ;
+    schema:name "Staub/Rauch/Gas/Nebel/Dampf/Aerosol nicht einatmen"@de,
+        "Do not breathe dust/fume/gas/mist/vapours/spray"@en,
+        "Ne pas respirer les poussières/fumées/gaz/brouillards/vapeurs/aérosols"@fr,
+        "Non respirare la polvere/i fumi/i gas/la nebbia/i vapori/gli aerosol"@it .
 
 ghs:P261 a ghs:PrecautionaryStatement ;
-  schema:identifier "P261" ;
-  schema:name
-    "Einatmen von Staub/Rauch/Gas/Nebel/Dampf/Aerosol vermeiden"@de ,
-    "Avoid breathing dust/fume/gas/mist/vapours/spray"@en ,
-    "Éviter de respirer les poussières/fumées/gaz/brouillards/vapeurs/aérosols"@fr ,
-    "Evitare di respirare la polvere/i fumi/i gas/la nebbia/i vapori/gli aerosol"@it .
+    schema:identifier "P261" ;
+    schema:name "Einatmen von Staub/Rauch/Gas/Nebel/Dampf/Aerosol vermeiden"@de,
+        "Avoid breathing dust/fume/gas/mist/vapours/spray"@en,
+        "Éviter de respirer les poussières/fumées/gaz/brouillards/vapeurs/aérosols"@fr,
+        "Evitare di respirare la polvere/i fumi/i gas/la nebbia/i vapori/gli aerosol"@it .
 
 ghs:P262 a ghs:PrecautionaryStatement ;
-  schema:identifier "P262" ;
-  schema:name
-    "Nicht in die Augen, auf die Haut oder auf die Kleidung gelangen lassen"@de ,
-    "Do not get in eyes, on skin, or on clothing"@en ,
-    "Éviter tout contact avec les yeux, la peau ou les vêtements"@fr ,
-    "Evitare il contatto con gli occhi, la pelle o gli indumenti"@it .
+    schema:identifier "P262" ;
+    schema:name "Nicht in die Augen, auf die Haut oder auf die Kleidung gelangen lassen"@de,
+        "Do not get in eyes, on skin, or on clothing"@en,
+        "Éviter tout contact avec les yeux, la peau ou les vêtements"@fr,
+        "Evitare il contatto con gli occhi, la pelle o gli indumenti"@it .
 
 ghs:P263 a ghs:PrecautionaryStatement ;
-  schema:identifier "P263" ;
-  schema:name
-    "Berührung während Schwangerschaft und Stillzeit vermeiden"@de ,
-    "Avoid contact during pregnancy and while nursing"@en ,
-    "Éviter tout contact avec la substance au cours de la grossesse et pendant l'allaitement"@fr ,
-    "Evitare il contatto durante la gravidanza e l'allattamento"@it .
+    schema:identifier "P263" ;
+    schema:name "Berührung während Schwangerschaft und Stillzeit vermeiden"@de,
+        "Avoid contact during pregnancy and while nursing"@en,
+        "Éviter tout contact avec la substance au cours de la grossesse et pendant l'allaitement"@fr,
+        "Evitare il contatto durante la gravidanza e l'allattamento"@it .
 
 ghs:P264 a ghs:PrecautionaryStatement ;
-  schema:identifier "P264" ;
-  schema:name
-    "Nach Gebrauch … gründlich waschen"@de ,
-    "Wash … thoroughly after handling"@en ,
-    "Se laver … soigneusement après manipulation"@fr ,
-    "Lavare accuratamente … dopo l’uso"@it .
+    schema:identifier "P264" ;
+    schema:name "Nach Gebrauch … gründlich waschen"@de,
+        "Wash … thoroughly after handling"@en,
+        "Se laver … soigneusement après manipulation"@fr,
+        "Lavare accuratamente … dopo l’uso"@it .
 
 ghs:P270 a ghs:PrecautionaryStatement ;
-  schema:identifier "P270" ;
-  schema:name
-    "Bei Gebrauch nicht essen, trinken oder rauchen"@de ,
-    "Do not eat, drink or smoke when using this product."@en ,
-    "Ne pas manger, boire ou fumer en manipulant ce produit"@fr ,
-    "Non mangiare, né bere, né fumare durante l’uso"@it .
+    schema:identifier "P270" ;
+    schema:name "Bei Gebrauch nicht essen, trinken oder rauchen"@de,
+        "Do not eat, drink or smoke when using this product."@en,
+        "Ne pas manger, boire ou fumer en manipulant ce produit"@fr,
+        "Non mangiare, né bere, né fumare durante l’uso"@it .
 
 ghs:P271 a ghs:PrecautionaryStatement ;
-  schema:identifier "P271" ;
-  schema:name
-    "Nur im Freien oder in gut belüfteten Räumen verwenden"@de ,
-    "Use only outdoors or in a well-ventilated area"@en ,
-    "Utiliser seulement en plein air ou dans un endroit bien ventilé"@fr ,
-    "Utilizzare soltanto all’aperto o in luogo ben ventilato"@it .
+    schema:identifier "P271" ;
+    schema:name "Nur im Freien oder in gut belüfteten Räumen verwenden"@de,
+        "Use only outdoors or in a well-ventilated area"@en,
+        "Utiliser seulement en plein air ou dans un endroit bien ventilé"@fr,
+        "Utilizzare soltanto all’aperto o in luogo ben ventilato"@it .
 
 ghs:P272 a ghs:PrecautionaryStatement ;
-  schema:identifier "P272" ;
-  schema:name
-    "Kontaminierte Arbeitskleidung nicht außerhalb des Arbeitsplatzes tragen"@de ,
-    "Contaminated work clothing should not be allowed out of the workplace"@en ,
-    "Les vêtements de travail contaminés ne devraient pas sortir du lieu de travail"@fr ,
-    "Gli indumenti da lavoro contaminati non devono essere portati fuori dal luogo di lavoro"@it .
+    schema:identifier "P272" ;
+    schema:name "Kontaminierte Arbeitskleidung nicht außerhalb des Arbeitsplatzes tragen"@de,
+        "Contaminated work clothing should not be allowed out of the workplace"@en,
+        "Les vêtements de travail contaminés ne devraient pas sortir du lieu de travail"@fr,
+        "Gli indumenti da lavoro contaminati non devono essere portati fuori dal luogo di lavoro"@it .
 
 ghs:P273 a ghs:PrecautionaryStatement ;
-  schema:identifier "P273" ;
-  schema:name
-    "Freisetzung in die Umwelt vermeiden"@de ,
-    "Avoid release to the environment"@en ,
-    "Éviter le rejet dans l’environnement"@fr ,
-    "Non disperdere nell’ambiente"@it .
+    schema:identifier "P273" ;
+    schema:name "Freisetzung in die Umwelt vermeiden"@de,
+        "Avoid release to the environment"@en,
+        "Éviter le rejet dans l’environnement"@fr,
+        "Non disperdere nell’ambiente"@it .
 
 ghs:P280 a ghs:PrecautionaryStatement ;
-  schema:identifier "P280" ;
-  schema:name
-    "Schutzhandschuhe/Schutzkleidung/Augenschutz/Gesichtsschutz tragen"@de ,
-    "Wear protective gloves/protective clothing/eye protection/face protection"@en ,
-    "Porter des gants de protection/des vêtements de protection/un équipement de protection des yeux/du visage"@fr ,
-    "Indossare guanti/indumenti protettivi/Proteggere gli occhi/il viso"@it .
+    schema:identifier "P280" ;
+    schema:name "Schutzhandschuhe/Schutzkleidung/Augenschutz/Gesichtsschutz tragen"@de,
+        "Wear protective gloves/protective clothing/eye protection/face protection"@en,
+        "Porter des gants de protection/des vêtements de protection/un équipement de protection des yeux/du visage"@fr,
+        "Indossare guanti/indumenti protettivi/Proteggere gli occhi/il viso"@it .
 
 ghs:P282 a ghs:PrecautionaryStatement ;
-  schema:identifier "P282" ;
-  schema:name
-    "Schutzhandschuhe mit Kälteisolierung und zusätzlich Gesichtsschild oder Augenschutz tragen"@de ,
-    "Wear cold insulating gloves and either face shield or eye protection"@en ,
-    "Porter des gants isolants contre le froid et un équipement de protection du visage ou des yeux"@fr ,
-    "Utilizzare guanti termici e schermo facciale o protezione per gli occhi"@it .
+    schema:identifier "P282" ;
+    schema:name "Schutzhandschuhe mit Kälteisolierung und zusätzlich Gesichtsschild oder Augenschutz tragen"@de,
+        "Wear cold insulating gloves and either face shield or eye protection"@en,
+        "Porter des gants isolants contre le froid et un équipement de protection du visage ou des yeux"@fr,
+        "Utilizzare guanti termici e schermo facciale o protezione per gli occhi"@it .
 
 ghs:P283 a ghs:PrecautionaryStatement ;
-  schema:identifier "P283" ;
-  schema:name
-    "Schwer entflammbare oder flammhemmende Kleidung tragen"@de ,
-    "Wear fire resistant or flame retardant clothing"@en ,
-    "Porter des vêtements résistant au feu ou à retard de flamme"@fr ,
-    "Indossare indumenti completamente ignifughi o in tessuti ritardanti di fiamma"@it .
+    schema:identifier "P283" ;
+    schema:name "Schwer entflammbare oder flammhemmende Kleidung tragen"@de,
+        "Wear fire resistant or flame retardant clothing"@en,
+        "Porter des vêtements résistant au feu ou à retard de flamme"@fr,
+        "Indossare indumenti completamente ignifughi o in tessuti ritardanti di fiamma"@it .
 
 ghs:P284 a ghs:PrecautionaryStatement ;
-  schema:identifier "P284" ;
-  schema:name
-    "[Bei unzureichender Belüftung] Atemschutz tragen"@de ,
-    "[In case of inadequate ventilation] wear respiratory protection"@en ,
-    "[Lorsque la ventilation du local est insuffisante] porter un équipement de protection respiratoire"@fr ,
-    "[Quando la ventilazione del locale è insufficiente] indossare un apparecchio di protezione respiratoria"@it .
+    schema:identifier "P284" ;
+    schema:name "[Bei unzureichender Belüftung] Atemschutz tragen"@de,
+        "[In case of inadequate ventilation] wear respiratory protection"@en,
+        "[Lorsque la ventilation du local est insuffisante] porter un équipement de protection respiratoire"@fr,
+        "[Quando la ventilazione del locale è insufficiente] indossare un apparecchio di protezione respiratoria"@it .
 
 ghs:P301 a ghs:PrecautionaryStatement ;
-  schema:identifier "P301" ;
-  schema:name
-    "BEI VERSCHLUCKEN:"@de ,
-    "IF SWALLOWED:"@en ,
-    "EN CAS D’INGESTION:"@fr ,
-    "IN CASO DI INGESTIONE:"@it .
+    schema:identifier "P301" ;
+    schema:name "BEI VERSCHLUCKEN:"@de,
+        "IF SWALLOWED:"@en,
+        "EN CAS D’INGESTION:"@fr,
+        "IN CASO DI INGESTIONE:"@it .
 
 ghs:P302 a ghs:PrecautionaryStatement ;
-  schema:identifier "P302" ;
-  schema:name
-    "BEI BERÜHRUNG MIT DER HAUT:"@de ,
-    "IF ON SKIN:"@en ,
-    "EN CAS DE CONTACT AVEC LA PEAU:"@fr ,
-    "IN CASO DI CONTATTO CON LA PELLE:"@it .
+    schema:identifier "P302" ;
+    schema:name "BEI BERÜHRUNG MIT DER HAUT:"@de,
+        "IF ON SKIN:"@en,
+        "EN CAS DE CONTACT AVEC LA PEAU:"@fr,
+        "IN CASO DI CONTATTO CON LA PELLE:"@it .
 
 ghs:P303 a ghs:PrecautionaryStatement ;
-  schema:identifier "P303" ;
-  schema:name
-    "BEI BERÜHRUNG MIT DER HAUT (oder dem Haar):"@de ,
-    "IF ON SKIN (or hair):"@en ,
-    "EN CAS DE CONTACT AVEC LA PEAU (ou les cheveux):"@fr ,
-    "IN CASO DI CONTATTO CON LA PELLE (o con i capelli):"@it .
+    schema:identifier "P303" ;
+    schema:name "BEI BERÜHRUNG MIT DER HAUT (oder dem Haar):"@de,
+        "IF ON SKIN (or hair):"@en,
+        "EN CAS DE CONTACT AVEC LA PEAU (ou les cheveux):"@fr,
+        "IN CASO DI CONTATTO CON LA PELLE (o con i capelli):"@it .
 
 ghs:P304 a ghs:PrecautionaryStatement ;
-  schema:identifier "P304" ;
-  schema:name
-    "BEI EINATMEN:"@de ,
-    "IF INHALED:"@en ,
-    "EN CAS D’INHALATION:"@fr ,
-    "IN CASO DI INALAZIONE:"@it .
+    schema:identifier "P304" ;
+    schema:name "BEI EINATMEN:"@de,
+        "IF INHALED:"@en,
+        "EN CAS D’INHALATION:"@fr,
+        "IN CASO DI INALAZIONE:"@it .
 
 ghs:P305 a ghs:PrecautionaryStatement ;
-  schema:identifier "P305" ;
-  schema:name
-    "BEI KONTAKT MIT DEN AUGEN:"@de ,
-    "IF IN EYES:"@en ,
-    "EN CAS DE CONTACT AVEC LES YEUX:"@fr ,
-    "IN CASO DI CONTATTO CON GLI OCCHI:"@it .
+    schema:identifier "P305" ;
+    schema:name "BEI KONTAKT MIT DEN AUGEN:"@de,
+        "IF IN EYES:"@en,
+        "EN CAS DE CONTACT AVEC LES YEUX:"@fr,
+        "IN CASO DI CONTATTO CON GLI OCCHI:"@it .
 
 ghs:P306 a ghs:PrecautionaryStatement ;
-  schema:identifier "P306" ;
-  schema:name
-    "BEI KONTAKT MIT DER KLEIDUNG:"@de ,
-    "IF ON CLOTHING:"@en ,
-    "EN CAS DE CONTACT AVEC LES VÊTEMENTS:"@fr ,
-    "IN CASO DI CONTATTO CON GLI INDUMENTI:"@it .
+    schema:identifier "P306" ;
+    schema:name "BEI KONTAKT MIT DER KLEIDUNG:"@de,
+        "IF ON CLOTHING:"@en,
+        "EN CAS DE CONTACT AVEC LES VÊTEMENTS:"@fr,
+        "IN CASO DI CONTATTO CON GLI INDUMENTI:"@it .
 
 ghs:P308 a ghs:PrecautionaryStatement ;
-  schema:identifier "P308" ;
-  schema:name
-    "BEI Exposition oder falls betroffen"@de ,
-    "IF exposed or concerned:"@en ,
-    "EN CAS d’exposition prouvée ou suspectée:"@fr ,
-    "IN CASO di esposizione o di possibile esposizione:"@it .
+    schema:identifier "P308" ;
+    schema:name "BEI Exposition oder falls betroffen"@de,
+        "IF exposed or concerned:"@en,
+        "EN CAS d’exposition prouvée ou suspectée:"@fr,
+        "IN CASO di esposizione o di possibile esposizione:"@it .
 
 ghs:P310 a ghs:PrecautionaryStatement ;
-  schema:identifier "P310" ;
-  schema:name
-    "Sofort GIFTINFORMATIONSZENTRUM/Arzt/…/anrufen."@de ,
-    "Immediately call a POISON CENTER/doctor/…"@en ,
-    "Appeler immédiatement un CENTRE ANTIPOISON/un médecin/…"@fr ,
-    "Contattare immediatamente un CENTRO ANTIVELENI/un medico…"@it .
+    schema:identifier "P310" ;
+    schema:name "Sofort GIFTINFORMATIONSZENTRUM/Arzt/…/anrufen."@de,
+        "Immediately call a POISON CENTER/doctor/…"@en,
+        "Appeler immédiatement un CENTRE ANTIPOISON/un médecin/…"@fr,
+        "Contattare immediatamente un CENTRO ANTIVELENI/un medico…"@it .
 
 ghs:P311 a ghs:PrecautionaryStatement ;
-  schema:identifier "P311" ;
-  schema:name
-    "GIFTINFORMATIONSZENTRUM/Arzt/…/anrufen."@de ,
-    "Call a POISON CENTER/doctor/…"@en ,
-    "Appeler un CENTRE ANTIPOISON/un médecin/…"@fr ,
-    "Contattare un CENTRO ANTIVELENI/un medico/…"@it .
+    schema:identifier "P311" ;
+    schema:name "GIFTINFORMATIONSZENTRUM/Arzt/…/anrufen."@de,
+        "Call a POISON CENTER/doctor/…"@en,
+        "Appeler un CENTRE ANTIPOISON/un médecin/…"@fr,
+        "Contattare un CENTRO ANTIVELENI/un medico/…"@it .
 
 ghs:P312 a ghs:PrecautionaryStatement ;
-  schema:identifier "P312" ;
-  schema:name
-    "Bei Unwohlsein GIFTINFORMATIONSZENTRUM/Arzt/… anrufen"@de ,
-    "Call a POISON CENTRE/doctor/… if you feel unwell"@en ,
-    "Appeler un CENTRE ANTIPOISON/un médecin/… en cas de malaise"@fr ,
-    "In caso di malessere, contattare un CENTRO ANTIVELENI/un medico/…"@it .
+    schema:identifier "P312" ;
+    schema:name "Bei Unwohlsein GIFTINFORMATIONSZENTRUM/Arzt/… anrufen"@de,
+        "Call a POISON CENTRE/doctor/… if you feel unwell"@en,
+        "Appeler un CENTRE ANTIPOISON/un médecin/… en cas de malaise"@fr,
+        "In caso di malessere, contattare un CENTRO ANTIVELENI/un medico/…"@it .
 
 ghs:P313 a ghs:PrecautionaryStatement ;
-  schema:identifier "P313" ;
-  schema:name
-    "Ärztlichen Rat einholen/ärztliche Hilfe hinzuziehen"@de ,
-    "Get medical advice/attention"@en ,
-    "Consulter un médecin"@fr ,
-    "Consultare un medico"@it .
+    schema:identifier "P313" ;
+    schema:name "Ärztlichen Rat einholen/ärztliche Hilfe hinzuziehen"@de,
+        "Get medical advice/attention"@en,
+        "Consulter un médecin"@fr,
+        "Consultare un medico"@it .
 
 ghs:P314 a ghs:PrecautionaryStatement ;
-  schema:identifier "P314" ;
-  schema:name
-    "Bei Unwohlsein ärztlichen Rat einholen/ärztliche Hilfe hinzuziehen"@de ,
-    "Get medical advice/attention if you feel unwell"@en ,
-    "Consulter un médecin en cas de malaise"@fr ,
-    "In caso di malessere, consultare un medico"@it .
+    schema:identifier "P314" ;
+    schema:name "Bei Unwohlsein ärztlichen Rat einholen/ärztliche Hilfe hinzuziehen"@de,
+        "Get medical advice/attention if you feel unwell"@en,
+        "Consulter un médecin en cas de malaise"@fr,
+        "In caso di malessere, consultare un medico"@it .
 
 ghs:P315 a ghs:PrecautionaryStatement ;
-  schema:identifier "P315" ;
-  schema:name
-    "Sofort ärztlichen Rat einholen/ärztliche Hilfe hinzuziehen"@de ,
-    "Get immediate medical advice/attention"@en ,
-    "Consulter immédiatement un médecin"@fr ,
-    "Consultare immediatamente un medico"@it .
+    schema:identifier "P315" ;
+    schema:name "Sofort ärztlichen Rat einholen/ärztliche Hilfe hinzuziehen"@de,
+        "Get immediate medical advice/attention"@en,
+        "Consulter immédiatement un médecin"@fr,
+        "Consultare immediatamente un medico"@it .
 
 ghs:P316 a ghs:PrecautionaryStatement ;
-  schema:identifier "P316" ;
-  schema:name
-    "Get emergency medical help immediately"@en .
+    schema:identifier "P316" ;
+    schema:name "Get emergency medical help immediately"@en .
 
 ghs:P317 a ghs:PrecautionaryStatement ;
-  schema:identifier "P317" ;
-  schema:name
-    "Get medical help."@en ,
-    "Obtenez de l’aide médicale."@fr .
+    schema:identifier "P317" ;
+    schema:name "Get medical help."@en,
+        "Obtenez de l’aide médicale."@fr .
 
 ghs:P318 a ghs:PrecautionaryStatement ;
-  schema:identifier "P318" ;
-  schema:name
-    "Obtain, read and follow all safety instructions before use"@en .
+    schema:identifier "P318" ;
+    schema:name "Obtain, read and follow all safety instructions before use"@en .
 
 ghs:P319 a ghs:PrecautionaryStatement ;
-  schema:identifier "P319" ;
-  schema:name
-    "Obtain, read and follow all safety instructions before use"@en .
+    schema:identifier "P319" ;
+    schema:name "Obtain, read and follow all safety instructions before use"@en .
 
 ghs:P320 a ghs:PrecautionaryStatement ;
-  schema:identifier "P320" ;
-  schema:name
-    "Besondere Behandlung dringend erforderlich (siehe … auf diesem Kennzeichnungsetikett)"@de ,
-    "Specific treatment is urgent (see … on this label)"@en ,
-    "Un traitement spécifique est urgent (voir … sur cette étiquette)"@fr ,
-    "Trattamento specifico urgente (vedere… su questa etichetta)"@it .
+    schema:identifier "P320" ;
+    schema:name "Besondere Behandlung dringend erforderlich (siehe … auf diesem Kennzeichnungsetikett)"@de,
+        "Specific treatment is urgent (see … on this label)"@en,
+        "Un traitement spécifique est urgent (voir … sur cette étiquette)"@fr,
+        "Trattamento specifico urgente (vedere… su questa etichetta)"@it .
 
 ghs:P321 a ghs:PrecautionaryStatement ;
-  schema:identifier "P321" ;
-  schema:name
-    "Besondere Behandlung (siehe … auf diesem Kennzeichnungsetikett)"@de ,
-    "Specific treatment (see … on this label)"@en ,
-    "Traitement spécifique (voir … sur cette étiquette)"@fr ,
-    "Trattamento specifico (vedere …su questa etichetta)"@it .
+    schema:identifier "P321" ;
+    schema:name "Besondere Behandlung (siehe … auf diesem Kennzeichnungsetikett)"@de,
+        "Specific treatment (see … on this label)"@en,
+        "Traitement spécifique (voir … sur cette étiquette)"@fr,
+        "Trattamento specifico (vedere …su questa etichetta)"@it .
 
 ghs:P330 a ghs:PrecautionaryStatement ;
-  schema:identifier "P330" ;
-  schema:name
-    "Mund ausspülen"@de ,
-    "Rinse mouth"@en ,
-    "Rincer la bouche"@fr ,
-    "Sciacquare la bocca"@it .
+    schema:identifier "P330" ;
+    schema:name "Mund ausspülen"@de,
+        "Rinse mouth"@en,
+        "Rincer la bouche"@fr,
+        "Sciacquare la bocca"@it .
 
 ghs:P331 a ghs:PrecautionaryStatement ;
-  schema:identifier "P331" ;
-  schema:name
-    "KEIN Erbrechen herbeiführen"@de ,
-    "Do NOT induce vomiting"@en ,
-    "NE PAS faire vomir"@fr ,
-    "NON provocare il vomito"@it .
+    schema:identifier "P331" ;
+    schema:name "KEIN Erbrechen herbeiführen"@de,
+        "Do NOT induce vomiting"@en,
+        "NE PAS faire vomir"@fr,
+        "NON provocare il vomito"@it .
 
 ghs:P332 a ghs:PrecautionaryStatement ;
-  schema:identifier "P332" ;
-  schema:name
-    "Bei Hautreizung:"@de ,
-    "If skin irritation occurs:"@en ,
-    "En cas d’irritation cutanée:"@fr ,
-    "In caso di irritazione della pelle:"@it .
+    schema:identifier "P332" ;
+    schema:name "Bei Hautreizung:"@de,
+        "If skin irritation occurs:"@en,
+        "En cas d’irritation cutanée:"@fr,
+        "In caso di irritazione della pelle:"@it .
 
 ghs:P333 a ghs:PrecautionaryStatement ;
-  schema:identifier "P333" ;
-  schema:name
-    "Bei Hautreizung oder -ausschlag:"@de ,
-    "If skin irritation or rash occurs:"@en ,
-    "En cas d’irritation ou d’éruption cutanée:"@fr ,
-    "In caso di irritazione o eruzione della pelle:"@it .
+    schema:identifier "P333" ;
+    schema:name "Bei Hautreizung oder -ausschlag:"@de,
+        "If skin irritation or rash occurs:"@en,
+        "En cas d’irritation ou d’éruption cutanée:"@fr,
+        "In caso di irritazione o eruzione della pelle:"@it .
 
 ghs:P334 a ghs:PrecautionaryStatement ;
-  schema:identifier "P334" ;
-  schema:name
-    "In kaltes Wasser tauchen [oder nassen Verband anlegen]"@de ,
-    "Immerse in cool water [or wrap in wet bandages]"@en ,
-    "Rincer à l'eau fraîche [ou poser une compresse humide]"@fr ,
-    "Immergere in acqua fredda [o avvolgere con un bendaggio umido]"@it .
+    schema:identifier "P334" ;
+    schema:name "In kaltes Wasser tauchen [oder nassen Verband anlegen]"@de,
+        "Immerse in cool water [or wrap in wet bandages]"@en,
+        "Rincer à l'eau fraîche [ou poser une compresse humide]"@fr,
+        "Immergere in acqua fredda [o avvolgere con un bendaggio umido]"@it .
 
 ghs:P335 a ghs:PrecautionaryStatement ;
-  schema:identifier "P335" ;
-  schema:name
-    "Lose Partikel von der Haut abbürsten"@de ,
-    "Brush off loose particles from skin"@en ,
-    "Enlever avec précaution les particules déposées sur la peau"@fr ,
-    "Rimuovere le particelle depositate sulla pelle"@it .
+    schema:identifier "P335" ;
+    schema:name "Lose Partikel von der Haut abbürsten"@de,
+        "Brush off loose particles from skin"@en,
+        "Enlever avec précaution les particules déposées sur la peau"@fr,
+        "Rimuovere le particelle depositate sulla pelle"@it .
 
 ghs:P336 a ghs:PrecautionaryStatement ;
-  schema:identifier "P336" ;
-  schema:name
-    "Vereiste Bereiche mit lauwarmem Wasser auftauen. Betroffenen Bereich nicht reiben"@de ,
-    "Thaw frosted parts with lukewarm water. Do no rub affected area"@en ,
-    "Dégeler les parties gelées avec de l’eau tiède. Ne pas frotter les zones touchées"@fr ,
-    "Sgelare le parti congelate usando acqua tiepida. Non sfregare la parte interessata"@it .
+    schema:identifier "P336" ;
+    schema:name "Vereiste Bereiche mit lauwarmem Wasser auftauen. Betroffenen Bereich nicht reiben"@de,
+        "Thaw frosted parts with lukewarm water. Do no rub affected area"@en,
+        "Dégeler les parties gelées avec de l’eau tiède. Ne pas frotter les zones touchées"@fr,
+        "Sgelare le parti congelate usando acqua tiepida. Non sfregare la parte interessata"@it .
 
 ghs:P337 a ghs:PrecautionaryStatement ;
-  schema:identifier "P337" ;
-  schema:name
-    "Bei anhaltender Augenreizung:"@de ,
-    "If eye irritation persists:"@en ,
-    "Si l’irritation oculaire persiste:"@fr ,
-    "Se l’irritazione degli occhi persiste:"@it .
+    schema:identifier "P337" ;
+    schema:name "Bei anhaltender Augenreizung:"@de,
+        "If eye irritation persists:"@en,
+        "Si l’irritation oculaire persiste:"@fr,
+        "Se l’irritazione degli occhi persiste:"@it .
 
 ghs:P338 a ghs:PrecautionaryStatement ;
-  schema:identifier "P338" ;
-  schema:name
-    "Eventuell Vorhandene Kontaktlinsen nach Möglichkeit entfernen. Weiter ausspülen"@de ,
-    "Remove contact lenses, if present and easy to do. Continue rinsing"@en ,
-    "Enlever les lentilles de contact si la victime en porte et si elles peuvent être facilement enlevées. Continuer à rincer"@fr ,
-    "Togliere le eventuali lenti a contatto se è agevole farlo. Continuare a sciacquare"@it .
+    schema:identifier "P338" ;
+    schema:name "Eventuell Vorhandene Kontaktlinsen nach Möglichkeit entfernen. Weiter ausspülen"@de,
+        "Remove contact lenses, if present and easy to do. Continue rinsing"@en,
+        "Enlever les lentilles de contact si la victime en porte et si elles peuvent être facilement enlevées. Continuer à rincer"@fr,
+        "Togliere le eventuali lenti a contatto se è agevole farlo. Continuare a sciacquare"@it .
 
 ghs:P340 a ghs:PrecautionaryStatement ;
-  schema:identifier "P340" ;
-  schema:name
-    "Die Person an die frische Luft bringen und für ungehinderte Atmung sorgen"@de ,
-    "Remove person to fresh air and keep comfortable for breathing"@en ,
-    "Transporter la personne à l’extérieur et la maintenir dans une position où elle peut confortablement respirer"@fr ,
-    "Trasportare l’infortunato all’aria aperta e mantenerlo a riposo in posizione che favorisca la respirazione"@it .
+    schema:identifier "P340" ;
+    schema:name "Die Person an die frische Luft bringen und für ungehinderte Atmung sorgen"@de,
+        "Remove person to fresh air and keep comfortable for breathing"@en,
+        "Transporter la personne à l’extérieur et la maintenir dans une position où elle peut confortablement respirer"@fr,
+        "Trasportare l’infortunato all’aria aperta e mantenerlo a riposo in posizione che favorisca la respirazione"@it .
 
 ghs:P342 a ghs:PrecautionaryStatement ;
-  schema:identifier "P342" ;
-  schema:name
-    "Bei Symptomen der Atemwege:"@de ,
-    "If experiencing respiratory symptoms:"@en ,
-    "En cas de symptômes respiratoires:"@fr ,
-    "In caso di sintomi respiratori:"@it .
+    schema:identifier "P342" ;
+    schema:name "Bei Symptomen der Atemwege:"@de,
+        "If experiencing respiratory symptoms:"@en,
+        "En cas de symptômes respiratoires:"@fr,
+        "In caso di sintomi respiratori:"@it .
 
 ghs:P351 a ghs:PrecautionaryStatement ;
-  schema:identifier "P351" ;
-  schema:name
-    "Einige Minuten lang behutsam mit Wasser ausspülen"@de ,
-    "Rinse cautiously with water for several minutes"@en ,
-    "Rincer avec précaution à l’eau pendant plusieurs minutes"@fr ,
-    "Sciacquare accuratamente per parecchi minuti"@it .
+    schema:identifier "P351" ;
+    schema:name "Einige Minuten lang behutsam mit Wasser ausspülen"@de,
+        "Rinse cautiously with water for several minutes"@en,
+        "Rincer avec précaution à l’eau pendant plusieurs minutes"@fr,
+        "Sciacquare accuratamente per parecchi minuti"@it .
 
 ghs:P352 a ghs:PrecautionaryStatement ;
-  schema:identifier "P352" ;
-  schema:name
-    "Mit viel Wasser/…/waschen"@de ,
-    "Wash with plenty of water/…"@en ,
-    "Laver abondamment à l’eau/…"@fr ,
-    "Lavare abbondantemente con acqua/…"@it .
+    schema:identifier "P352" ;
+    schema:name "Mit viel Wasser/…/waschen"@de,
+        "Wash with plenty of water/…"@en,
+        "Laver abondamment à l’eau/…"@fr,
+        "Lavare abbondantemente con acqua/…"@it .
 
 ghs:P353 a ghs:PrecautionaryStatement ;
-  schema:identifier "P353" ;
-  schema:name
-    "Haut mit Wasser abwaschen [oder duschen]"@de ,
-    "Rinse skin with water [or shower]"@en ,
-    "Rincer la peau à l'eau [ou se doucher]"@fr ,
-    "Sciacquare la pelle [o fare una doccia]"@it .
+    schema:identifier "P353" ;
+    schema:name "Haut mit Wasser abwaschen [oder duschen]"@de,
+        "Rinse skin with water [or shower]"@en,
+        "Rincer la peau à l'eau [ou se doucher]"@fr,
+        "Sciacquare la pelle [o fare una doccia]"@it .
 
 ghs:P360 a ghs:PrecautionaryStatement ;
-  schema:identifier "P360" ;
-  schema:name
-    "Kontaminierte Kleidung und Haut sofort mit viel Wasser abwaschen und danach Kleidung ausziehen"@de ,
-    "Rinse immediately contaminated clothing and skin with plenty of water before removing clothes"@en ,
-    "Rincer immédiatement et abondamment avec de l’eau les vêtements contaminés et la peau avant de les enlever"@fr ,
-    "Sciacquare immediatamente e abbondantemente gli indumenti contaminati e la pelle prima di togliersi gli indumenti"@it .
+    schema:identifier "P360" ;
+    schema:name "Kontaminierte Kleidung und Haut sofort mit viel Wasser abwaschen und danach Kleidung ausziehen"@de,
+        "Rinse immediately contaminated clothing and skin with plenty of water before removing clothes"@en,
+        "Rincer immédiatement et abondamment avec de l’eau les vêtements contaminés et la peau avant de les enlever"@fr,
+        "Sciacquare immediatamente e abbondantemente gli indumenti contaminati e la pelle prima di togliersi gli indumenti"@it .
 
 ghs:P361 a ghs:PrecautionaryStatement ;
-  schema:identifier "P361" ;
-  schema:name
-    "Alle kontaminierten Kleidungsstücke sofort ausziehen"@de ,
-    "Take off immediately all contaminated clothing"@en ,
-    "Enlever immédiatement tous les vêtements contaminés"@fr ,
-    "Togliere immediatamente tutti gli indumenti contaminati"@it .
+    schema:identifier "P361" ;
+    schema:name "Alle kontaminierten Kleidungsstücke sofort ausziehen"@de,
+        "Take off immediately all contaminated clothing"@en,
+        "Enlever immédiatement tous les vêtements contaminés"@fr,
+        "Togliere immediatamente tutti gli indumenti contaminati"@it .
 
 ghs:P362 a ghs:PrecautionaryStatement ;
-  schema:identifier "P362" ;
-  schema:name
-    "Kontaminierte Kleidung ausziehen"@de ,
-    "Take off contaminated clothing"@en ,
-    "Enlever les vêtements contaminés"@fr ,
-    "Togliere gli indumenti contaminati"@it .
+    schema:identifier "P362" ;
+    schema:name "Kontaminierte Kleidung ausziehen"@de,
+        "Take off contaminated clothing"@en,
+        "Enlever les vêtements contaminés"@fr,
+        "Togliere gli indumenti contaminati"@it .
 
 ghs:P363 a ghs:PrecautionaryStatement ;
-  schema:identifier "P363" ;
-  schema:name
-    "Kontaminierte Kleidung vor erneutem Tragen waschen"@de ,
-    "Wash contaminated clothing before reuse"@en ,
-    "Laver les vêtements contaminés avant réutilisation"@fr ,
-    "Lavare gli indumenti contaminati prima di indossarli nuovamente"@it .
+    schema:identifier "P363" ;
+    schema:name "Kontaminierte Kleidung vor erneutem Tragen waschen"@de,
+        "Wash contaminated clothing before reuse"@en,
+        "Laver les vêtements contaminés avant réutilisation"@fr,
+        "Lavare gli indumenti contaminati prima di indossarli nuovamente"@it .
 
 ghs:P364 a ghs:PrecautionaryStatement ;
-  schema:identifier "P364" ;
-  schema:name
-    "Und vor erneutem Tragen waschen"@de ,
-    "And wash it before reuse"@en ,
-    "Et les laver avant réutilisation"@fr ,
-    "E lavarli prima di indossarli nuovamente"@it .
+    schema:identifier "P364" ;
+    schema:name "Und vor erneutem Tragen waschen"@de,
+        "And wash it before reuse"@en,
+        "Et les laver avant réutilisation"@fr,
+        "E lavarli prima di indossarli nuovamente"@it .
 
 ghs:P370 a ghs:PrecautionaryStatement ;
-  schema:identifier "P370" ;
-  schema:name
-    "Bei Brand:"@de ,
-    "In case of fire:"@en ,
-    "En cas d’incendie:"@fr ,
-    "In caso di incendio:"@it .
+    schema:identifier "P370" ;
+    schema:name "Bei Brand:"@de,
+        "In case of fire:"@en,
+        "En cas d’incendie:"@fr,
+        "In caso di incendio:"@it .
 
 ghs:P371 a ghs:PrecautionaryStatement ;
-  schema:identifier "P371" ;
-  schema:name
-    "Bei Großbrand und großen Mengen:"@de ,
-    "In case of major fire and large quantities:"@en ,
-    "En cas d’incendie important et s’il s’agit de grandes quantités:"@fr ,
-    "In caso di incendio grave e di quantità rilevanti:"@it .
+    schema:identifier "P371" ;
+    schema:name "Bei Großbrand und großen Mengen:"@de,
+        "In case of major fire and large quantities:"@en,
+        "En cas d’incendie important et s’il s’agit de grandes quantités:"@fr,
+        "In caso di incendio grave e di quantità rilevanti:"@it .
 
 ghs:P372 a ghs:PrecautionaryStatement ;
-  schema:identifier "P372" ;
-  schema:name
-    "Explosionsgefahr"@de ,
-    "Explosion risk"@en ,
-    "Risque d'explosion"@fr ,
-    "Rischio di esplosione"@it .
+    schema:identifier "P372" ;
+    schema:name "Explosionsgefahr"@de,
+        "Explosion risk"@en,
+        "Risque d'explosion"@fr,
+        "Rischio di esplosione"@it .
 
 ghs:P373 a ghs:PrecautionaryStatement ;
-  schema:identifier "P373" ;
-  schema:name
-    "KEINE Brandbekämpfung, wenn das Feuer explosive Stoffe/Gemische/Erzeugnisse erreicht"@de ,
-    "DO NOT fight fire when fire reaches explosives"@en ,
-    "NE PAS combattre l’incendie lorsque le feu atteint les explosifs"@fr ,
-    "NON utilizzare mezzi estinguenti se l’incendio raggiunge materiali esplosivi"@it .
+    schema:identifier "P373" ;
+    schema:name "KEINE Brandbekämpfung, wenn das Feuer explosive Stoffe/Gemische/Erzeugnisse erreicht"@de,
+        "DO NOT fight fire when fire reaches explosives"@en,
+        "NE PAS combattre l’incendie lorsque le feu atteint les explosifs"@fr,
+        "NON utilizzare mezzi estinguenti se l’incendio raggiunge materiali esplosivi"@it .
 
 ghs:P375 a ghs:PrecautionaryStatement ;
-  schema:identifier "P375" ;
-  schema:name
-    "Wegen Explosionsgefahr Brand aus der Entfernung bekämpfen"@de ,
-    "Fight fire remotely due to the risk of explosion"@en ,
-    "Combattre l’incendie à distance à cause du risque d’explosion"@fr ,
-    "Rischio di esplosione. Utilizzare i mezzi estinguenti a grande distanza"@it .
+    schema:identifier "P375" ;
+    schema:name "Wegen Explosionsgefahr Brand aus der Entfernung bekämpfen"@de,
+        "Fight fire remotely due to the risk of explosion"@en,
+        "Combattre l’incendie à distance à cause du risque d’explosion"@fr,
+        "Rischio di esplosione. Utilizzare i mezzi estinguenti a grande distanza"@it .
 
 ghs:P376 a ghs:PrecautionaryStatement ;
-  schema:identifier "P376" ;
-  schema:name
-    "Undichtigkeit beseitigen, wenn gefahrlos möglich"@de ,
-    "Stop leak if safe to do so"@en ,
-    "Obturer la fuite si cela peut se faire sans danger"@fr ,
-    "Bloccare la perdita se non c’è pericolo"@it .
+    schema:identifier "P376" ;
+    schema:name "Undichtigkeit beseitigen, wenn gefahrlos möglich"@de,
+        "Stop leak if safe to do so"@en,
+        "Obturer la fuite si cela peut se faire sans danger"@fr,
+        "Bloccare la perdita se non c’è pericolo"@it .
 
 ghs:P377 a ghs:PrecautionaryStatement ;
-  schema:identifier "P377" ;
-  schema:name
-    "Brand von ausströmendem Gas: Nicht löschen, bis Undichtigkeit gefahrlos beseitigt werden kann"@de ,
-    "Leaking gas fire: Do not extinguish, unless leak can be stopped safely"@en ,
-    "Fuite de gaz enflammé: Ne pas éteindre si la fuite ne peut pas être arrêtée sans danger"@fr ,
-    "In caso d’incendio dovuto a perdita di gas, non estinguere a meno che non sia possibile bloccare la perdita senza pericolo"@it .
+    schema:identifier "P377" ;
+    schema:name "Brand von ausströmendem Gas: Nicht löschen, bis Undichtigkeit gefahrlos beseitigt werden kann"@de,
+        "Leaking gas fire: Do not extinguish, unless leak can be stopped safely"@en,
+        "Fuite de gaz enflammé: Ne pas éteindre si la fuite ne peut pas être arrêtée sans danger"@fr,
+        "In caso d’incendio dovuto a perdita di gas, non estinguere a meno che non sia possibile bloccare la perdita senza pericolo"@it .
 
 ghs:P378 a ghs:PrecautionaryStatement ;
-  schema:identifier "P378" ;
-  schema:name
-    "… zum Löschen verwenden"@de ,
-    "Use… to extinguish"@en ,
-    "Utiliser… pour l’extinction"@fr ,
-    "Utilizzare… per estinguere"@it .
+    schema:identifier "P378" ;
+    schema:name "… zum Löschen verwenden"@de,
+        "Use… to extinguish"@en,
+        "Utiliser… pour l’extinction"@fr,
+        "Utilizzare… per estinguere"@it .
 
 ghs:P380 a ghs:PrecautionaryStatement ;
-  schema:identifier "P380" ;
-  schema:name
-    "Umgebung räumen"@de ,
-    "Evacuate area"@en ,
-    "Évacuer la zone"@fr ,
-    "Evacuare la zona"@it .
+    schema:identifier "P380" ;
+    schema:name "Umgebung räumen"@de,
+        "Evacuate area"@en,
+        "Évacuer la zone"@fr,
+        "Evacuare la zona"@it .
 
 ghs:P381 a ghs:PrecautionaryStatement ;
-  schema:identifier "P381" ;
-  schema:name
-    "Bei Undichtigkeit alle Zündquellen entfernen"@de ,
-    "In case of leakage, eliminate all ignition sources"@en ,
-    "En cas de fuite, éliminer toutes les sources d'ignition"@fr ,
-    "In caso di perdita, eliminare ogni fonte di accensione"@it .
+    schema:identifier "P381" ;
+    schema:name "Bei Undichtigkeit alle Zündquellen entfernen"@de,
+        "In case of leakage, eliminate all ignition sources"@en,
+        "En cas de fuite, éliminer toutes les sources d'ignition"@fr,
+        "In caso di perdita, eliminare ogni fonte di accensione"@it .
 
 ghs:P390 a ghs:PrecautionaryStatement ;
-  schema:identifier "P390" ;
-  schema:name
-    "Verschüttete Mengen aufnehmen, um Materialschäden zu vermeiden"@de ,
-    "Absorb spillage to prevent material damage"@en ,
-    "Absorber toute substance répandue pour éviter qu’elle attaque les matériaux environnants"@fr ,
-    "Assorbire la fuoriuscita per evitare danni materiali"@it .
+    schema:identifier "P390" ;
+    schema:name "Verschüttete Mengen aufnehmen, um Materialschäden zu vermeiden"@de,
+        "Absorb spillage to prevent material damage"@en,
+        "Absorber toute substance répandue pour éviter qu’elle attaque les matériaux environnants"@fr,
+        "Assorbire la fuoriuscita per evitare danni materiali"@it .
 
 ghs:P391 a ghs:PrecautionaryStatement ;
-  schema:identifier "P391" ;
-  schema:name
-    "Verschüttete Mengen aufnehmen"@de ,
-    "Collect spillage"@en ,
-    "Recueillir le produit répandu"@fr ,
-    "Raccogliere il materiale fuoriuscito"@it .
+    schema:identifier "P391" ;
+    schema:name "Verschüttete Mengen aufnehmen"@de,
+        "Collect spillage"@en,
+        "Recueillir le produit répandu"@fr,
+        "Raccogliere il materiale fuoriuscito"@it .
 
 ghs:P401 a ghs:PrecautionaryStatement ;
-  schema:identifier "P401" ;
-  schema:name
-    "Aufbewahren gemäß …"@de ,
-    "Store in accordance with…"@en ,
-    "Stocker conformément à…"@fr ,
-    "Conservare secondo…"@it .
+    schema:identifier "P401" ;
+    schema:name "Aufbewahren gemäß …"@de,
+        "Store in accordance with…"@en,
+        "Stocker conformément à…"@fr,
+        "Conservare secondo…"@it .
 
 ghs:P402 a ghs:PrecautionaryStatement ;
-  schema:identifier "P402" ;
-  schema:name
-    "An einem trockenen Ort aufbewahren"@de ,
-    "Store in a dry place"@en ,
-    "Stocker dans un endroit sec"@fr ,
-    "Conservare in luogo asciutto"@it .
+    schema:identifier "P402" ;
+    schema:name "An einem trockenen Ort aufbewahren"@de,
+        "Store in a dry place"@en,
+        "Stocker dans un endroit sec"@fr,
+        "Conservare in luogo asciutto"@it .
 
 ghs:P403 a ghs:PrecautionaryStatement ;
-  schema:identifier "P403" ;
-  schema:name
-    "An einem gut belüfteten Ort aufbewahren"@de ,
-    "Store in a well-ventilated place"@en ,
-    "Stocker dans un endroit bien ventilé"@fr ,
-    "Conservare in luogo ben ventilato"@it .
+    schema:identifier "P403" ;
+    schema:name "An einem gut belüfteten Ort aufbewahren"@de,
+        "Store in a well-ventilated place"@en,
+        "Stocker dans un endroit bien ventilé"@fr,
+        "Conservare in luogo ben ventilato"@it .
 
 ghs:P404 a ghs:PrecautionaryStatement ;
-  schema:identifier "P404" ;
-  schema:name
-    "In einem geschlossenen Behälter aufbewahren"@de ,
-    "Store in a closed container"@en ,
-    "Stocker dans un récipient fermé"@fr ,
-    "Conservare in un recipiente chiuso"@it .
+    schema:identifier "P404" ;
+    schema:name "In einem geschlossenen Behälter aufbewahren"@de,
+        "Store in a closed container"@en,
+        "Stocker dans un récipient fermé"@fr,
+        "Conservare in un recipiente chiuso"@it .
 
 ghs:P405 a ghs:PrecautionaryStatement ;
-  schema:identifier "P405" ;
-  schema:name
-    "Unter Verschluss aufbewahren"@de ,
-    "Store locked up"@en ,
-    "Garder sous clef"@fr ,
-    "Conservare sotto chiave"@it .
+    schema:identifier "P405" ;
+    schema:name "Unter Verschluss aufbewahren"@de,
+        "Store locked up"@en,
+        "Garder sous clef"@fr,
+        "Conservare sotto chiave"@it .
 
 ghs:P406 a ghs:PrecautionaryStatement ;
-  schema:identifier "P406" ;
-  schema:name
-    "In korrosionsbeständigem/… Behälter mit korrosionsbeständiger Innenauskleidung aufbewahren"@de ,
-    "Store in a corrosion-resistant/… container with a resistant inner liner"@en ,
-    "Stocker dans un récipient résistant à la corrosion/… avec doublure intérieure"@fr ,
-    "Conservare in recipiente resistente alla corrosione/… provvisto di rivestimento interno resistente"@it .
+    schema:identifier "P406" ;
+    schema:name "In korrosionsbeständigem/… Behälter mit korrosionsbeständiger Innenauskleidung aufbewahren"@de,
+        "Store in a corrosion-resistant/… container with a resistant inner liner"@en,
+        "Stocker dans un récipient résistant à la corrosion/… avec doublure intérieure"@fr,
+        "Conservare in recipiente resistente alla corrosione/… provvisto di rivestimento interno resistente"@it .
 
 ghs:P407 a ghs:PrecautionaryStatement ;
-  schema:identifier "P407" ;
-  schema:name
-    "Luftspalt zwischen Stapeln oder Paletten lassen"@de ,
-    "Maintain air gap between stacks or pallets"@en ,
-    "Maintenir un intervalle d'air entre les piles ou les palettes"@fr ,
-    "Mantenere uno spazio libero tra gli scaffali o i pallet"@it .
+    schema:identifier "P407" ;
+    schema:name "Luftspalt zwischen Stapeln oder Paletten lassen"@de,
+        "Maintain air gap between stacks or pallets"@en,
+        "Maintenir un intervalle d'air entre les piles ou les palettes"@fr,
+        "Mantenere uno spazio libero tra gli scaffali o i pallet"@it .
 
 ghs:P410 a ghs:PrecautionaryStatement ;
-  schema:identifier "P410" ;
-  schema:name
-    "Vor Sonnenbestrahlung schützen"@de ,
-    "Protect from sunlight"@en ,
-    "Protéger du rayonnement solaire"@fr ,
-    "Proteggere dai raggi solari"@it .
+    schema:identifier "P410" ;
+    schema:name "Vor Sonnenbestrahlung schützen"@de,
+        "Protect from sunlight"@en,
+        "Protéger du rayonnement solaire"@fr,
+        "Proteggere dai raggi solari"@it .
 
 ghs:P411 a ghs:PrecautionaryStatement ;
-  schema:identifier "P411" ;
-  schema:name
-    "Bei Temperaturen nicht über … °C/… °F aufbewahren"@de ,
-    "Store at temperatures not exceeding … °C/… °F"@en ,
-    "Stocker à une température ne dépassant pas … °C/… °F"@fr ,
-    "Conservare a temperature non superiori a … °C/… °F"@it .
+    schema:identifier "P411" ;
+    schema:name "Bei Temperaturen nicht über … °C/… °F aufbewahren"@de,
+        "Store at temperatures not exceeding … °C/… °F"@en,
+        "Stocker à une température ne dépassant pas … °C/… °F"@fr,
+        "Conservare a temperature non superiori a … °C/… °F"@it .
 
 ghs:P412 a ghs:PrecautionaryStatement ;
-  schema:identifier "P412" ;
-  schema:name
-    "Nicht Temperaturen über 50 °C/122 °F aussetzen"@de ,
-    "Do not expose to temperatures exceeding 50 °C/122 °F"@en ,
-    "Ne pas exposer à une température supérieure à 50 °C/122 °F"@fr ,
-    "Non esporre a temperature superiori a 50 °C/122 °F"@it .
+    schema:identifier "P412" ;
+    schema:name "Nicht Temperaturen über 50 °C/122 °F aussetzen"@de,
+        "Do not expose to temperatures exceeding 50 °C/122 °F"@en,
+        "Ne pas exposer à une température supérieure à 50 °C/122 °F"@fr,
+        "Non esporre a temperature superiori a 50 °C/122 °F"@it .
 
 ghs:P413 a ghs:PrecautionaryStatement ;
-  schema:identifier "P413" ;
-  schema:name
-    "Schüttgut in Mengen von mehr als … kg/… lbs bei Temperaturen nicht über … °C/… °F aufbewahren"@de ,
-    "Store bulk masses greater than … kg/… lbs at temperatures not exceeding … °C/… °F"@en ,
-    "Stocker les quantités en vrac de plus de … kg/… lb à une température ne dépassant pas … °C/… °F"@fr ,
-    "Conservare le rinfuse di peso superiore a …kg/…lb a temperature non superiori a … °C/ °F"@it .
+    schema:identifier "P413" ;
+    schema:name "Schüttgut in Mengen von mehr als … kg/… lbs bei Temperaturen nicht über … °C/… °F aufbewahren"@de,
+        "Store bulk masses greater than … kg/… lbs at temperatures not exceeding … °C/… °F"@en,
+        "Stocker les quantités en vrac de plus de … kg/… lb à une température ne dépassant pas … °C/… °F"@fr,
+        "Conservare le rinfuse di peso superiore a …kg/…lb a temperature non superiori a … °C/ °F"@it .
 
 ghs:P420 a ghs:PrecautionaryStatement ;
-  schema:identifier "P420" ;
-  schema:name
-    "Getrennt aufbewahren"@de ,
-    "Store separately"@en ,
-    "Stocker séparément"@fr ,
-    "Conservare separatamente"@it .
+    schema:identifier "P420" ;
+    schema:name "Getrennt aufbewahren"@de,
+        "Store separately"@en,
+        "Stocker séparément"@fr,
+        "Conservare separatamente"@it .
 
 ghs:P501 a ghs:PrecautionaryStatement ;
-  schema:identifier "P501" ;
-  schema:name
-    "Inhalt/Behälter … zuführen"@de ,
-    "Dispose of contents/container to …"@en ,
-    "Éliminer le contenu/récipient dans …"@fr ,
-    "Smaltire il prodotto/recipiente in …"@it .
+    schema:identifier "P501" ;
+    schema:name "Inhalt/Behälter … zuführen"@de,
+        "Dispose of contents/container to …"@en,
+        "Éliminer le contenu/récipient dans …"@fr,
+        "Smaltire il prodotto/recipiente in …"@it .
 
 ghs:P502 a ghs:PrecautionaryStatement ;
-  schema:identifier "P502" ;
-  schema:name
-    "Informationen zur Wiederverwendung oder Wiederverwertung beim Hersteller oder Lieferanten erfragen"@de ,
-    "Refer to manufacturer or supplier for information on recovery or recycling"@en ,
-    "Consulter le fabricant ou le fournisseur pour des informations relatives à la récupération ou au recyclage"@fr ,
-    "Chiedere informazioni al produttore o fornitore per il recupero o il riciclaggio"@it .
+    schema:identifier "P502" ;
+    schema:name "Informationen zur Wiederverwendung oder Wiederverwertung beim Hersteller oder Lieferanten erfragen"@de,
+        "Refer to manufacturer or supplier for information on recovery or recycling"@en,
+        "Consulter le fabricant ou le fournisseur pour des informations relatives à la récupération ou au recyclage"@fr,
+        "Chiedere informazioni al produttore o fornitore per il recupero o il riciclaggio"@it .
 
 ghs:P231P232 a ghs:PrecautionaryStatementCombination ;
-  schema:identifier "P231+P232" ;
-  schema:name
-    "Inhalt unter inertem Gas/… handhaben und aufbewahren. Vor Feuchtigkeit schützen"@de ,
-    "Handle under inert gas/... Protect from moisture."@en ,
-    "Manipuler et stocker le contenu sous gaz inerte/… Protéger de l'humidité"@fr ,
-    "Manipolare e conservare in atmosfera di gas inerte/…. Tenere al riparo dall'umidità"@it ;
-  ghs:hasPart ghs:P231, ghs:P232 .
+    schema:identifier "P231+P232" ;
+    schema:name "Inhalt unter inertem Gas/… handhaben und aufbewahren. Vor Feuchtigkeit schützen"@de,
+        "Handle under inert gas/... Protect from moisture."@en,
+        "Manipuler et stocker le contenu sous gaz inerte/… Protéger de l'humidité"@fr,
+        "Manipolare e conservare in atmosfera di gas inerte/…. Tenere al riparo dall'umidità"@it ;
+    ghs:hasPart ghs:P231,
+        ghs:P232 .
 
 ghs:P301P310 a ghs:PrecautionaryStatementCombination ;
-  schema:identifier "P301+P310" ;
-  schema:name
-    "BEI VERSCHLUCKEN: Sofort GIFTINFORMATIONSZENTRUM/Arzt/…/anrufen"@de ,
-    "IF SWALLOWED: Immediately call a POISON CENTER/doctor/…"@en ,
-    "EN CAS D’INGESTION: Appeler immédiatement un CENTRE ANTIPOISON/un médecin/…"@fr ,
-    "IN CASO DI INGESTIONE: contattare immediatamente un CENTRO ANTIVELENI/un medico/…"@it ;
-  ghs:hasPart ghs:P301, ghs:P310 .
+    schema:identifier "P301+P310" ;
+    schema:name "BEI VERSCHLUCKEN: Sofort GIFTINFORMATIONSZENTRUM/Arzt/…/anrufen"@de,
+        "IF SWALLOWED: Immediately call a POISON CENTER/doctor/…"@en,
+        "EN CAS D’INGESTION: Appeler immédiatement un CENTRE ANTIPOISON/un médecin/…"@fr,
+        "IN CASO DI INGESTIONE: contattare immediatamente un CENTRO ANTIVELENI/un medico/…"@it ;
+    ghs:hasPart ghs:P301,
+        ghs:P310 .
 
 ghs:P301P312 a ghs:PrecautionaryStatementCombination ;
-  schema:identifier "P301+P312" ;
-  schema:name
-    "BEI VERSCHLUCKEN: Bei Unwohlsein GIFTINFORMATIONSZENTRUM/Arzt/… anrufen"@de ,
-    "IF SWALLOWED: Call a POISON CENTRE/doctor/… if you feel unwell"@en ,
-    "EN CAS D'INGESTION: Appeler un CENTRE ANTIPOISON/un médecin/…/ en cas de malaise"@fr ,
-    "IN CASO DI INGESTIONE: in presenza di malessere, contattare un CENTRO ANTIVELENI/un medico/…"@it ;
-  ghs:hasPart ghs:P301, ghs:P312 .
-
-ghs:P301P330P331 a ghs:PrecautionaryStatementCombination ;
-  schema:identifier "P301+P330+P331" ;
-  schema:name
-    "BEI VERSCHLUCKEN: Mund ausspülen. KEIN Erbrechen herbeiführen"@de ,
-    "IF SWALLOWED: Rinse mouth. Do NOT induce vomiting"@en ,
-    "EN CAS D'INGESTION: Rincer la bouche. NE PAS faire vomir"@fr ,
-    "IN CASO DI INGESTIONE: sciacquare la bocca. NON provocare il vomito"@it ;
-  ghs:hasPart ghs:P301, ghs:P330, ghs:P331 .
+    schema:identifier "P301+P312" ;
+    schema:name "BEI VERSCHLUCKEN: Bei Unwohlsein GIFTINFORMATIONSZENTRUM/Arzt/… anrufen"@de,
+        "IF SWALLOWED: Call a POISON CENTRE/doctor/… if you feel unwell"@en,
+        "EN CAS D'INGESTION: Appeler un CENTRE ANTIPOISON/un médecin/…/ en cas de malaise"@fr,
+        "IN CASO DI INGESTIONE: in presenza di malessere, contattare un CENTRO ANTIVELENI/un medico/…"@it ;
+    ghs:hasPart ghs:P301,
+        ghs:P312 .
 
 ghs:P301P316 a ghs:PrecautionaryStatementCombination ;
-  schema:identifier "P301+P316" ;
-  schema:name
-    "IF SWALLOWED: Get emergency medical help immediately"@en ;
-  ghs:hasPart ghs:P301, ghs:P316 .
+    schema:identifier "P301+P316" ;
+    schema:name "IF SWALLOWED: Get emergency medical help immediately"@en ;
+    ghs:hasPart ghs:P301,
+        ghs:P316 .
 
 ghs:P301P317 a ghs:PrecautionaryStatementCombination ;
-  schema:identifier "P301+P317" ;
-  schema:name
-    "IF SWALLOWED: Get medical help"@en ;
-  ghs:hasPart ghs:P301, ghs:P317 .
+    schema:identifier "P301+P317" ;
+    schema:name "IF SWALLOWED: Get medical help"@en ;
+    ghs:hasPart ghs:P301,
+        ghs:P317 .
+
+ghs:P301P330P331 a ghs:PrecautionaryStatementCombination ;
+    schema:identifier "P301+P330+P331" ;
+    schema:name "BEI VERSCHLUCKEN: Mund ausspülen. KEIN Erbrechen herbeiführen"@de,
+        "IF SWALLOWED: Rinse mouth. Do NOT induce vomiting"@en,
+        "EN CAS D'INGESTION: Rincer la bouche. NE PAS faire vomir"@fr,
+        "IN CASO DI INGESTIONE: sciacquare la bocca. NON provocare il vomito"@it ;
+    ghs:hasPart ghs:P301,
+        ghs:P330,
+        ghs:P331 .
 
 ghs:P302P334 a ghs:PrecautionaryStatementCombination ;
-  schema:identifier "P302+P334" ;
-  schema:name
-    "BEI BERÜHRUNG MIT DER HAUT: In kaltes Wasser tauchen oder nassen Verband anlegen"@de ,
-    "IF ON SKIN: Immerse in cool water or wrap in wet bandages"@en ,
-    "EN CAS DE CONTACT AVEC LA PEAU: Rincer à l'eau fraîche ou poser une compresse humide"@fr ,
-    "IN CASO DI CONTATTO CON LA PELLE: immergere in acqua fredda o avvolgere con un bendaggio umido"@it ;
-  ghs:hasPart ghs:P302, ghs:P334 .
+    schema:identifier "P302+P334" ;
+    schema:name "BEI BERÜHRUNG MIT DER HAUT: In kaltes Wasser tauchen oder nassen Verband anlegen"@de,
+        "IF ON SKIN: Immerse in cool water or wrap in wet bandages"@en,
+        "EN CAS DE CONTACT AVEC LA PEAU: Rincer à l'eau fraîche ou poser une compresse humide"@fr,
+        "IN CASO DI CONTATTO CON LA PELLE: immergere in acqua fredda o avvolgere con un bendaggio umido"@it ;
+    ghs:hasPart ghs:P302,
+        ghs:P334 .
 
 ghs:P302P335P334 a ghs:PrecautionaryStatementCombination ;
-  schema:identifier "P302+P335+P334" ;
-  schema:name
-    "BEI BERÜHRUNG MIT DER HAUT: Lose Partikel von der Haut abbürsten. In kaltes Wasser tauchen [oder nassen Verband anlegen]"@de ,
-    "IF ON SKIN: Brush off loose particles from skin. Immerse in cool water [or wrap in wet bandages]"@en ,
-    "EN CAS DE CONTACT AVEC LA PEAU: Enlever avec précaution les particules déposées sur la peau. Rincer à l'eau fraîche [ou poser une compresse humide]"@fr ,
-    "IN CASO DI CONTATTO CON LA PELLE: rimuovere le particelle depositate sulla pelle. Immergere in acqua fredda [o avvolgere con un bendaggio umido]"@it ;
-  ghs:hasPart ghs:P302, ghs:P335, ghs:P334 .
+    schema:identifier "P302+P335+P334" ;
+    schema:name "BEI BERÜHRUNG MIT DER HAUT: Lose Partikel von der Haut abbürsten. In kaltes Wasser tauchen [oder nassen Verband anlegen]"@de,
+        "IF ON SKIN: Brush off loose particles from skin. Immerse in cool water [or wrap in wet bandages]"@en,
+        "EN CAS DE CONTACT AVEC LA PEAU: Enlever avec précaution les particules déposées sur la peau. Rincer à l'eau fraîche [ou poser une compresse humide]"@fr,
+        "IN CASO DI CONTATTO CON LA PELLE: rimuovere le particelle depositate sulla pelle. Immergere in acqua fredda [o avvolgere con un bendaggio umido]"@it ;
+    ghs:hasPart ghs:P302,
+        ghs:P334,
+        ghs:P335 .
 
 ghs:P302P352 a ghs:PrecautionaryStatementCombination ;
-  schema:identifier "P302+P352" ;
-  schema:name
-    "BEI BERÜHRUNG MIT DER HAUT: Mit viel Wasser/…/waschen"@de ,
-    "IF ON SKIN: Wash with plenty of water/…"@en ,
-    "EN CAS DE CONTACT AVEC LA PEAU: Laver abondamment à l’eau/…"@fr ,
-    "IN CASO DI CONTATTO CON LA PELLE: lavare abbondantemente con acqua/…"@it ;
-  ghs:hasPart ghs:P302, ghs:P352 .
+    schema:identifier "P302+P352" ;
+    schema:name "BEI BERÜHRUNG MIT DER HAUT: Mit viel Wasser/…/waschen"@de,
+        "IF ON SKIN: Wash with plenty of water/…"@en,
+        "EN CAS DE CONTACT AVEC LA PEAU: Laver abondamment à l’eau/…"@fr,
+        "IN CASO DI CONTATTO CON LA PELLE: lavare abbondantemente con acqua/…"@it ;
+    ghs:hasPart ghs:P302,
+        ghs:P352 .
 
 ghs:P302P361P354 a ghs:PrecautionaryStatementCombination ;
-  schema:identifier "P302+P361+P354" ;
-  schema:name
-    "Obtain, read and follow all safety instructions before use"@en ;
-  ghs:hasPart ghs:P302, ghs:P361, ghs:P354 .
+    schema:identifier "P302+P361+P354" ;
+    schema:name "Obtain, read and follow all safety instructions before use"@en ;
+    ghs:hasPart ghs:P302,
+        ghs:P354,
+        ghs:P361 .
 
 ghs:P303P361P353 a ghs:PrecautionaryStatementCombination ;
-  schema:identifier "P303+P361+P353" ;
-  schema:name
-    "BEI BERÜHRUNG MIT DER HAUT (oder dem Haar): Alle kontaminierten Kleidungsstücke sofort ausziehen. Haut mit Wasser abwaschen [oder duschen]"@de ,
-    "IF ON SKIN (or hair): Take off immediately all contaminated clothing. Rinse skin with water [or shower]"@en ,
-    "EN CAS DE CONTACT AVEC LA PEAU (ou les cheveux): Enlever immédiatement tous les vêtements contaminés. Rincer la peau à l'eau [ou se doucher]"@fr ,
-    "IN CASO DI CONTATTO CON LA PEAU (o con i capelli): togliersi di dosso immediatamente tutti gli indumenti contaminati. Sciacquare la pelle [o fare una doccia]"@it ;
-  ghs:hasPart ghs:P303, ghs:P361, ghs:P353 .
+    schema:identifier "P303+P361+P353" ;
+    schema:name "BEI BERÜHRUNG MIT DER HAUT (oder dem Haar): Alle kontaminierten Kleidungsstücke sofort ausziehen. Haut mit Wasser abwaschen [oder duschen]"@de,
+        "IF ON SKIN (or hair): Take off immediately all contaminated clothing. Rinse skin with water [or shower]"@en,
+        "EN CAS DE CONTACT AVEC LA PEAU (ou les cheveux): Enlever immédiatement tous les vêtements contaminés. Rincer la peau à l'eau [ou se doucher]"@fr,
+        "IN CASO DI CONTATTO CON LA PEAU (o con i capelli): togliersi di dosso immediatamente tutti gli indumenti contaminati. Sciacquare la pelle [o fare una doccia]"@it ;
+    ghs:hasPart ghs:P303,
+        ghs:P353,
+        ghs:P361 .
 
 ghs:P304P340 a ghs:PrecautionaryStatementCombination ;
-  schema:identifier "P304+P340" ;
-  schema:name
-    "BEI EINATMEN: Die Person an die frische Luft bringen und für ungehinderte Atmung sorgen"@de ,
-    "IF INHALED: Remove person to fresh air and keep comfortable for breathing"@en ,
-    "EN CAS D’INHALATION: transporter la personne à l’extérieur et la maintenir dans une position où elle peut confortably respirer"@fr ,
-    "IN CASO DI INALAZIONE: trasportare l’infortunato all’aria aperta e mantenerlo a riposo in posizione che favorisca la respirazione"@it ;
-  ghs:hasPart ghs:P304, ghs:P340 .
+    schema:identifier "P304+P340" ;
+    schema:name "BEI EINATMEN: Die Person an die frische Luft bringen und für ungehinderte Atmung sorgen"@de,
+        "IF INHALED: Remove person to fresh air and keep comfortable for breathing"@en,
+        "EN CAS D’INHALATION: transporter la personne à l’extérieur et la maintenir dans une position où elle peut confortably respirer"@fr,
+        "IN CASO DI INALAZIONE: trasportare l’infortunato all’aria aperta e mantenerlo a riposo in posizione che favorisca la respirazione"@it ;
+    ghs:hasPart ghs:P304,
+        ghs:P340 .
 
 ghs:P305P351P338 a ghs:PrecautionaryStatementCombination ;
-  schema:identifier "P305+P351+P338" ;
-  schema:name
-    "BEI KONTAKT MIT DEN AUGEN: Einige Minuten lang behutsam mit Wasser spülen. Eventuell vorhandene Kontaktlinsen nach Möglichkeit entfernen. Weiter spülen"@de ,
-    "IF IN EYES: Rinse cautiously with water for several minutes. Remove contact lenses, if present and easy to do. Continue rinsing"@en ,
-    "EN CAS DE CONTACT AVEC LES YEUX: Rincer avec précaution à l'eau pendant plusieurs minutes. Enlever les lentilles de contact si la victime en porte et si elles peuvent être facilement enlevées. Continuer à rincer"@fr ,
-    "IN CASO DI CONTATTO CON GLI OCCHI: sciacquare accuratamente per parecchi minuti. Togliere le eventuali lenti a contatto se è agevole farlo. Continuare a sciacquare"@it ;
-  ghs:hasPart ghs:P305, ghs:P351, ghs:P338 .
+    schema:identifier "P305+P351+P338" ;
+    schema:name "BEI KONTAKT MIT DEN AUGEN: Einige Minuten lang behutsam mit Wasser spülen. Eventuell vorhandene Kontaktlinsen nach Möglichkeit entfernen. Weiter spülen"@de,
+        "IF IN EYES: Rinse cautiously with water for several minutes. Remove contact lenses, if present and easy to do. Continue rinsing"@en,
+        "EN CAS DE CONTACT AVEC LES YEUX: Rincer avec précaution à l'eau pendant plusieurs minutes. Enlever les lentilles de contact si la victime en porte et si elles peuvent être facilement enlevées. Continuer à rincer"@fr,
+        "IN CASO DI CONTATTO CON GLI OCCHI: sciacquare accuratamente per parecchi minuti. Togliere le eventuali lenti a contatto se è agevole farlo. Continuare a sciacquare"@it ;
+    ghs:hasPart ghs:P305,
+        ghs:P338,
+        ghs:P351 .
 
 ghs:P305P354P338 a ghs:PrecautionaryStatementCombination ;
-  schema:identifier "P305+P354+P338" ;
-  schema:name
-    "IF IN EYES: Immediately rinse with water for several minutes. Remove contact lenses, if present and easy to do. Continue rinsing."@en ,
-    "Si dans les yeux: Rincer immédiatement à l’eau pendant plusieurs minutes. Retirez les lentilles de contact, si elles sont présentes et faciles à faire. Continuez le rinçage."@fr ;
-  ghs:hasPart ghs:P305, ghs:P354, ghs:P338 .
+    schema:identifier "P305+P354+P338" ;
+    schema:name "IF IN EYES: Immediately rinse with water for several minutes. Remove contact lenses, if present and easy to do. Continue rinsing."@en,
+        "Si dans les yeux: Rincer immédiatement à l’eau pendant plusieurs minutes. Retirez les lentilles de contact, si elles sont présentes et faciles à faire. Continuez le rinçage."@fr ;
+    ghs:hasPart ghs:P305,
+        ghs:P338,
+        ghs:P354 .
 
 ghs:P306P360 a ghs:PrecautionaryStatementCombination ;
-  schema:identifier "P306+P360" ;
-  schema:name
-    "BEI KONTAKT MIT DER KLEIDUNG: Kontaminierte Kleidung und Haut sofort mit viel Wasser abwaschen und danach Kleidung ausziehen"@de ,
-    "IF ON CLOTHING: rinse immediately contaminated clothing and skin with plenty of water before removing clothes"@en ,
-    "EN CAS DE CONTACT AVEC LES VÊTEMENTS: rincer immédiatement et abondamment avec de l’eau les vêtements contaminés et la peau avant de les enlever"@fr ,
-    "IN CASO DI CONTATTO CON GLI INDUMENTI: sciacquare immediatamente e abbondantemente gli indumenti contaminati e la pelle prima di togliersi gli indumenti"@it ;
-  ghs:hasPart ghs:P306, ghs:P360 .
+    schema:identifier "P306+P360" ;
+    schema:name "BEI KONTAKT MIT DER KLEIDUNG: Kontaminierte Kleidung und Haut sofort mit viel Wasser abwaschen und danach Kleidung ausziehen"@de,
+        "IF ON CLOTHING: rinse immediately contaminated clothing and skin with plenty of water before removing clothes"@en,
+        "EN CAS DE CONTACT AVEC LES VÊTEMENTS: rincer immédiatement et abondamment avec de l’eau les vêtements contaminés et la peau avant de les enlever"@fr,
+        "IN CASO DI CONTATTO CON GLI INDUMENTI: sciacquare immediatamente e abbondantemente gli indumenti contaminati e la pelle prima di togliersi gli indumenti"@it ;
+    ghs:hasPart ghs:P306,
+        ghs:P360 .
 
 ghs:P308P311 a ghs:PrecautionaryStatementCombination ;
-  schema:identifier "P308+P311" ;
-  schema:name
-    "BEI Exposition oder falls betroffen: GIFTINFORMATIONSZENTRUM/Arzt/…/anrufen"@de ,
-    "IF exposed or concerned: Call a POISON CENTER/doctor/…"@en ,
-    "EN CAS d’exposition prouvée ou suspectée: Appeler un CENTRE ANTIPOISON/un médecin/…"@fr ,
-    "In caso di esposizione o di possibile esposizione: contattare un CENTRO ANTIVELENI/un medico/…"@it ;
-  ghs:hasPart ghs:P308, ghs:P311 .
+    schema:identifier "P308+P311" ;
+    schema:name "BEI Exposition oder falls betroffen: GIFTINFORMATIONSZENTRUM/Arzt/…/anrufen"@de,
+        "IF exposed or concerned: Call a POISON CENTER/doctor/…"@en,
+        "EN CAS d’exposition prouvée ou suspectée: Appeler un CENTRE ANTIPOISON/un médecin/…"@fr,
+        "In caso di esposizione o di possibile esposizione: contattare un CENTRO ANTIVELENI/un medico/…"@it ;
+    ghs:hasPart ghs:P308,
+        ghs:P311 .
 
 ghs:P308P313 a ghs:PrecautionaryStatementCombination ;
-  schema:identifier "P308+P313" ;
-  schema:name
-    "BEI Exposition oder falls betroffen: Ärztlichen Rat einholen/ärztliche Hilfe hinzuziehen"@de ,
-    "IF exposed or concerned: Get medical advice/attention"@en ,
-    "EN CAS d’exposition prouvée ou suspectée: consulter un médecin"@fr ,
-    "IN CASO di esposizione o di possibile esposizione, consultare un medico"@it ;
-  ghs:hasPart ghs:P308, ghs:P313 .
+    schema:identifier "P308+P313" ;
+    schema:name "BEI Exposition oder falls betroffen: Ärztlichen Rat einholen/ärztliche Hilfe hinzuziehen"@de,
+        "IF exposed or concerned: Get medical advice/attention"@en,
+        "EN CAS d’exposition prouvée ou suspectée: consulter un médecin"@fr,
+        "IN CASO di esposizione o di possibile esposizione, consultare un medico"@it ;
+    ghs:hasPart ghs:P308,
+        ghs:P313 .
 
 ghs:P308P316 a ghs:PrecautionaryStatementCombination ;
-  schema:identifier "P308+P316" ;
-  schema:name
-    "Obtain, read and follow all safety instructions before use"@en ;
-  ghs:hasPart ghs:P308, ghs:P316 .
+    schema:identifier "P308+P316" ;
+    schema:name "Obtain, read and follow all safety instructions before use"@en ;
+    ghs:hasPart ghs:P308,
+        ghs:P316 .
 
 ghs:P332P313 a ghs:PrecautionaryStatementCombination ;
-  schema:identifier "P332+P313" ;
-  schema:name
-    "Bei Hautreizung: Ärztlichen Rat einholen/ärztliche Hilfe hinzuziehen"@de ,
-    "If skin irritation occurs: Get medical advice/attention"@en ,
-    "En cas d’irritation cutanée: consulter un médecin"@fr ,
-    "In caso di irritazione della pelle: consultare un medico"@it ;
-  ghs:hasPart ghs:P332, ghs:P313 .
+    schema:identifier "P332+P313" ;
+    schema:name "Bei Hautreizung: Ärztlichen Rat einholen/ärztliche Hilfe hinzuziehen"@de,
+        "If skin irritation occurs: Get medical advice/attention"@en,
+        "En cas d’irritation cutanée: consulter un médecin"@fr,
+        "In caso di irritazione della pelle: consultare un medico"@it ;
+    ghs:hasPart ghs:P313,
+        ghs:P332 .
 
 ghs:P332P317 a ghs:PrecautionaryStatementCombination ;
-  schema:identifier "P332+P317" ;
-  schema:name
-    "Obtain, read and follow all safety instructions before use"@en ;
-  ghs:hasPart ghs:P332, ghs:P317 .
+    schema:identifier "P332+P317" ;
+    schema:name "Obtain, read and follow all safety instructions before use"@en ;
+    ghs:hasPart ghs:P317,
+        ghs:P332 .
 
 ghs:P333P313 a ghs:PrecautionaryStatementCombination ;
-  schema:identifier "P333+P313" ;
-  schema:name
-    "Bei Hautreizung oder -ausschlag: Ärztlichen Rat einholen/ärztliche Hilfe hinzuziehen"@de ,
-    "If skin irritation or rash occurs: Get medical advice/attention"@en ,
-    "En cas d’irritation ou d'éruption cutanée: consulter un médecin"@fr ,
-    "In caso di irritazione o eruzione della pelle: consultare un medico"@it ;
-  ghs:hasPart ghs:P333, ghs:P313 .
+    schema:identifier "P333+P313" ;
+    schema:name "Bei Hautreizung oder -ausschlag: Ärztlichen Rat einholen/ärztliche Hilfe hinzuziehen"@de,
+        "If skin irritation or rash occurs: Get medical advice/attention"@en,
+        "En cas d’irritation ou d'éruption cutanée: consulter un médecin"@fr,
+        "In caso di irritazione o eruzione della pelle: consultare un medico"@it ;
+    ghs:hasPart ghs:P313,
+        ghs:P333 .
 
 ghs:P333P317 a ghs:PrecautionaryStatementCombination ;
-  schema:identifier "P333+P317" ;
-  schema:name
-    "Obtain, read and follow all safety instructions before use"@en ;
-  ghs:hasPart ghs:P333, ghs:P317 .
+    schema:identifier "P333+P317" ;
+    schema:name "Obtain, read and follow all safety instructions before use"@en ;
+    ghs:hasPart ghs:P317,
+        ghs:P333 .
 
 ghs:P336P315 a ghs:PrecautionaryStatementCombination ;
-  schema:identifier "P336+P315" ;
-  schema:name
-    "Vereiste Bereiche mit lauwarmem Wasser auftauen. Betroffenen Bereich nicht reiben. Sofort ärztlichen Rat einholen/ärztliche Hilfe hinzuziehen"@de ,
-    "Thaw frosted parts with lukewarm water. Do not rub affected area. Get immediate medical advice/attention"@en ,
-    "Dégeler les parties gelées avec de l'eau tiède. Ne pas frotter les zones touchées. Consulter immédiatement un médecin"@fr ,
-    "Sgelare le parti congelate usando acqua tiepida. Non sfregare la parte interessata. Consultare immediatamente un medico"@it ;
-  ghs:hasPart ghs:P336, ghs:P315 .
+    schema:identifier "P336+P315" ;
+    schema:name "Vereiste Bereiche mit lauwarmem Wasser auftauen. Betroffenen Bereich nicht reiben. Sofort ärztlichen Rat einholen/ärztliche Hilfe hinzuziehen"@de,
+        "Thaw frosted parts with lukewarm water. Do not rub affected area. Get immediate medical advice/attention"@en,
+        "Dégeler les parties gelées avec de l'eau tiède. Ne pas frotter les zones touchées. Consulter immédiatement un médecin"@fr,
+        "Sgelare le parti congelate usando acqua tiepida. Non sfregare la parte interessata. Consultare immediatamente un medico"@it ;
+    ghs:hasPart ghs:P315,
+        ghs:P336 .
 
 ghs:P337P313 a ghs:PrecautionaryStatementCombination ;
-  schema:identifier "P337+P313" ;
-  schema:name
-    "Bei anhaltender Augenreizung: Ärztlichen Rat einholen/ärztliche Hilfe hinzuziehen"@de ,
-    "If eye irritation persists: Get medical advice/attention"@en ,
-    "Si l’irritation oculaire persiste: consulter un médecin"@fr ,
-    "Se l’irritazione degli occhi persiste, consultare un medico"@it ;
-  ghs:hasPart ghs:P337, ghs:P313 .
+    schema:identifier "P337+P313" ;
+    schema:name "Bei anhaltender Augenreizung: Ärztlichen Rat einholen/ärztliche Hilfe hinzuziehen"@de,
+        "If eye irritation persists: Get medical advice/attention"@en,
+        "Si l’irritation oculaire persiste: consulter un médecin"@fr,
+        "Se l’irritazione degli occhi persiste, consultare un medico"@it ;
+    ghs:hasPart ghs:P313,
+        ghs:P337 .
 
 ghs:P337P317 a ghs:PrecautionaryStatementCombination ;
-  schema:identifier "P337+P317" ;
-  schema:name
-    "Obtain, read and follow all safety instructions before use"@en ;
-  ghs:hasPart ghs:P337, ghs:P317 .
+    schema:identifier "P337+P317" ;
+    schema:name "Obtain, read and follow all safety instructions before use"@en ;
+    ghs:hasPart ghs:P317,
+        ghs:P337 .
 
 ghs:P342P311 a ghs:PrecautionaryStatementCombination ;
-  schema:identifier "P342+P311" ;
-  schema:name
-    "Bei Symptomen der Atemwege: GIFTINFORMATIONSZENTRUM/Arzt/…/anrufen"@de ,
-    "If experiencing respiratory symptoms: Call a POISON CENTER/doctor/…"@en ,
-    "En cas de symptômes respiratoires: Appeler un CENTRE ANTIPOISON/un médecin/…"@fr ,
-    "In caso di sintomi respiratori: contattare un CENTRO ANTIVELENI/un medico/…"@it ;
-  ghs:hasPart ghs:P342, ghs:P311 .
+    schema:identifier "P342+P311" ;
+    schema:name "Bei Symptomen der Atemwege: GIFTINFORMATIONSZENTRUM/Arzt/…/anrufen"@de,
+        "If experiencing respiratory symptoms: Call a POISON CENTER/doctor/…"@en,
+        "En cas de symptômes respiratoires: Appeler un CENTRE ANTIPOISON/un médecin/…"@fr,
+        "In caso di sintomi respiratori: contattare un CENTRO ANTIVELENI/un medico/…"@it ;
+    ghs:hasPart ghs:P311,
+        ghs:P342 .
 
 ghs:P342P316 a ghs:PrecautionaryStatementCombination ;
-  schema:identifier "P342+P316" ;
-  schema:name
-    "Obtain, read and follow all safety instructions before use"@en ;
-  ghs:hasPart ghs:P342, ghs:P316 .
+    schema:identifier "P342+P316" ;
+    schema:name "Obtain, read and follow all safety instructions before use"@en ;
+    ghs:hasPart ghs:P316,
+        ghs:P342 .
 
 ghs:P361P364 a ghs:PrecautionaryStatementCombination ;
-  schema:identifier "P361+P364" ;
-  schema:name
-    "Alle kontaminierten Kleidungsstücke sofort ausziehen und vor erneutem Tragen waschen"@de ,
-    "Take off immediately all contaminated clothing and wash it before reuse"@en ,
-    "Enlever immédiatement tous les vêtements contaminés et les laver avant réutilisation"@fr ,
-    "Togliere immediatamente tutti gli indumenti contaminati e lavarli prima di indossarli nuovamente"@it ;
-  ghs:hasPart ghs:P361, ghs:P364 .
+    schema:identifier "P361+P364" ;
+    schema:name "Alle kontaminierten Kleidungsstücke sofort ausziehen und vor erneutem Tragen waschen"@de,
+        "Take off immediately all contaminated clothing and wash it before reuse"@en,
+        "Enlever immédiatement tous les vêtements contaminés et les laver avant réutilisation"@fr,
+        "Togliere immediatamente tutti gli indumenti contaminati e lavarli prima di indossarli nuovamente"@it ;
+    ghs:hasPart ghs:P361,
+        ghs:P364 .
 
 ghs:P362P364 a ghs:PrecautionaryStatementCombination ;
-  schema:identifier "P362+P364" ;
-  schema:name
-    "Kontaminierte Kleidung ausziehen und vor erneutem Tragen waschen"@de ,
-    "Take off contaminated clothing and wash it before reuse"@en ,
-    "Enlever les vêtements contaminés et les laver avant réutilisation"@fr ,
-    "Togliere tutti gli indumenti contaminati e lavarli prima di indossarli nuovamente"@it ;
-  ghs:hasPart ghs:P362, ghs:P364 .
+    schema:identifier "P362+P364" ;
+    schema:name "Kontaminierte Kleidung ausziehen und vor erneutem Tragen waschen"@de,
+        "Take off contaminated clothing and wash it before reuse"@en,
+        "Enlever les vêtements contaminés et les laver avant réutilisation"@fr,
+        "Togliere tutti gli indumenti contaminati e lavarli prima di indossarli nuovamente"@it ;
+    ghs:hasPart ghs:P362,
+        ghs:P364 .
 
 ghs:P370P372P380P373 a ghs:PrecautionaryStatementCombination ;
-  schema:identifier "P370+P372+P380+P373" ;
-  schema:name
-    "Bei Brand: Explosionsgefahr. Umgebung räumen. KEINE Brandbekämpfung, wenn das Feuer explosive Stoffe/Gemische/Erzeugnisse erreicht"@de ,
-    "In case of fire: Explosion risk. Evacuate area. DO NOT fight fire when fire reaches explosives"@en ,
-    "En cas d'incendie: Risque d'explosion. Évacuer la zone. NE PAS combattre l'incendie lorsque le feu atteint les explosifs"@fr ,
-    "Rischio di esplosione in caso di incendio. Evacuare la zona. NON utilizzare mezzi estinguenti se l'incendio raggiunge materiali esplosivi"@it ;
-  ghs:hasPart ghs:P370, ghs:P372, ghs:P380, ghs:P373 .
+    schema:identifier "P370+P372+P380+P373" ;
+    schema:name "Bei Brand: Explosionsgefahr. Umgebung räumen. KEINE Brandbekämpfung, wenn das Feuer explosive Stoffe/Gemische/Erzeugnisse erreicht"@de,
+        "In case of fire: Explosion risk. Evacuate area. DO NOT fight fire when fire reaches explosives"@en,
+        "En cas d'incendie: Risque d'explosion. Évacuer la zone. NE PAS combattre l'incendie lorsque le feu atteint les explosifs"@fr,
+        "Rischio di esplosione in caso di incendio. Evacuare la zona. NON utilizzare mezzi estinguenti se l'incendio raggiunge materiali esplosivi"@it ;
+    ghs:hasPart ghs:P370,
+        ghs:P372,
+        ghs:P373,
+        ghs:P380 .
 
 ghs:P370P376 a ghs:PrecautionaryStatementCombination ;
-  schema:identifier "P370+P376" ;
-  schema:name
-    "Bei Brand: Undichtigkeit beseitigen, wenn gefahrlos möglich"@de ,
-    "In case of fire: Stop leak if safe to do so"@en ,
-    "En cas d’incendie: obturer la fuite si cela peut se faire sans danger"@fr ,
-    "In caso di incendio: bloccare la perdita se non c’è pericolo"@it ;
-  ghs:hasPart ghs:P370, ghs:P376 .
+    schema:identifier "P370+P376" ;
+    schema:name "Bei Brand: Undichtigkeit beseitigen, wenn gefahrlos möglich"@de,
+        "In case of fire: Stop leak if safe to do so"@en,
+        "En cas d’incendie: obturer la fuite si cela peut se faire sans danger"@fr,
+        "In caso di incendio: bloccare la perdita se non c’è pericolo"@it ;
+    ghs:hasPart ghs:P370,
+        ghs:P376 .
 
 ghs:P370P378 a ghs:PrecautionaryStatementCombination ;
-  schema:identifier "P370+P378" ;
-  schema:name
-    "Bei Brand: … zum Löschen verwenden"@de ,
-    "In case of fire: Use… to extinguish"@en ,
-    "En cas d’incendie: Utiliser… pour l’extinction"@fr ,
-    "In caso d’incendio: utilizzare…per estinguere"@it ;
-  ghs:hasPart ghs:P370, ghs:P378 .
+    schema:identifier "P370+P378" ;
+    schema:name "Bei Brand: … zum Löschen verwenden"@de,
+        "In case of fire: Use… to extinguish"@en,
+        "En cas d’incendie: Utiliser… pour l’extinction"@fr,
+        "In caso d’incendio: utilizzare…per estinguere"@it ;
+    ghs:hasPart ghs:P370,
+        ghs:P378 .
 
 ghs:P370P380P375 a ghs:PrecautionaryStatementCombination ;
-  schema:identifier "P370+P380+P375" ;
-  schema:name
-    "Bei Brand: Umgebung räumen. Wegen Explosionsgefahr Brand aus der Entfernung bekämpfen"@de ,
-    "In case of fire: Evacuate area. Fight fire remotely due to the risk of explosion"@en ,
-    "En cas d’incendie: évacuer la zone. Combattre l’incendie à distance à cause du risque d'explosion"@fr ,
-    "In caso di incendio: evacuare la zona. Rischio di esplosione. Utilizzare i mezzi estinguenti a grande distanza"@it ;
-  ghs:hasPart ghs:P370, ghs:P380, ghs:P375 .
+    schema:identifier "P370+P380+P375" ;
+    schema:name "Bei Brand: Umgebung räumen. Wegen Explosionsgefahr Brand aus der Entfernung bekämpfen"@de,
+        "In case of fire: Evacuate area. Fight fire remotely due to the risk of explosion"@en,
+        "En cas d’incendie: évacuer la zone. Combattre l’incendie à distance à cause du risque d'explosion"@fr,
+        "In caso di incendio: evacuare la zona. Rischio di esplosione. Utilizzare i mezzi estinguenti a grande distanza"@it ;
+    ghs:hasPart ghs:P370,
+        ghs:P375,
+        ghs:P380 .
 
 ghs:P370P380P375P378 a ghs:PrecautionaryStatementCombination ;
-  schema:identifier "P370+P380+P375+P378" ;
-  schema:name
-    "Bei Brand: Umgebung räumen. Wegen Explosionsgefahr Brand aus der Entfernung bekämpfen. [… zum Löschen verwenden]"@de ,
-    "In case of fire: Evacuate area. Fight fire remotely due to the risk of explosion. [Use … to extinguish]"@en ,
-    "En cas d'incendie: Évacuer la zone. Combattre l'incendie à distance à cause du risque d'explosion. [Utiliser … pour l'extinction]"@fr ,
-    "In caso di incendio: evacuare la zona. Rischio di esplosione. Utilizzare i mezzi estinguenti a grande distanza. [Estinguere con…]"@it ;
-  ghs:hasPart ghs:P370, ghs:P380, ghs:P375, ghs:P378 .
+    schema:identifier "P370+P380+P375+P378" ;
+    schema:name "Bei Brand: Umgebung räumen. Wegen Explosionsgefahr Brand aus der Entfernung bekämpfen. [… zum Löschen verwenden]"@de,
+        "In case of fire: Evacuate area. Fight fire remotely due to the risk of explosion. [Use … to extinguish]"@en,
+        "En cas d'incendie: Évacuer la zone. Combattre l'incendie à distance à cause du risque d'explosion. [Utiliser … pour l'extinction]"@fr,
+        "In caso di incendio: evacuare la zona. Rischio di esplosione. Utilizzare i mezzi estinguenti a grande distanza. [Estinguere con…]"@it ;
+    ghs:hasPart ghs:P370,
+        ghs:P375,
+        ghs:P378,
+        ghs:P380 .
 
 ghs:P370P380P375P378opt a ghs:PrecautionaryStatementCombination ;
-  schema:identifier "P370+P380+P375[+P378]" ;
-  schema:name
-    "Obtain, read and follow all safety instructions before use"@en ;
-  ghs:hasPart ghs:P370, ghs:P380, ghs:P375, ghs:P378 .
+    schema:identifier "P370+P380+P375[+P378]" ;
+    schema:name "Obtain, read and follow all safety instructions before use"@en ;
+    ghs:hasPart ghs:P370,
+        ghs:P375,
+        ghs:P378,
+        ghs:P380 .
 
 ghs:P371P380P375 a ghs:PrecautionaryStatementCombination ;
-  schema:identifier "P371+P380+P375" ;
-  schema:name
-    "Bei Großbrand und großen Mengen: Umgebung räumen. Wegen Explosionsgefahr Brand aus der Entfernung bekämpfen"@de ,
-    "In case of major fire and large quantities: Evacuate area. Fight fire remotely due to the risk of explosion"@en ,
-    "En cas d’incendie important et s’il s’agit de grandes quantités: évacuer la zone. Combattre l’incendie à distance à cause du risque d'explosion"@fr ,
-    "In caso di incendio grave e di grandi quantità: evacuare la zona. Rischio di esplosione. Utilizzare i mezzi estinguenti a grande distanza"@it ;
-  ghs:hasPart ghs:P371, ghs:P380, ghs:P375 .
+    schema:identifier "P371+P380+P375" ;
+    schema:name "Bei Großbrand und großen Mengen: Umgebung räumen. Wegen Explosionsgefahr Brand aus der Entfernung bekämpfen"@de,
+        "In case of major fire and large quantities: Evacuate area. Fight fire remotely due to the risk of explosion"@en,
+        "En cas d’incendie important et s’il s’agit de grandes quantités: évacuer la zone. Combattre l’incendie à distance à cause du risque d'explosion"@fr,
+        "In caso di incendio grave e di grandi quantità: evacuare la zona. Rischio di esplosione. Utilizzare i mezzi estinguenti a grande distanza"@it ;
+    ghs:hasPart ghs:P371,
+        ghs:P375,
+        ghs:P380 .
 
 ghs:P402P404 a ghs:PrecautionaryStatementCombination ;
-  schema:identifier "P402+P404" ;
-  schema:name
-    "An einem trockenen Ort aufbewahren. In einem geschlossenen Behälter aufbewahren"@de ,
-    "Store in a dry place. Store in a closed container"@en ,
-    "Stocker dans un endroit sec. Stocker dans un récipient fermé"@fr ,
-    "Conservare in luogo asciutto e in recipiente chiuso"@it ;
-  ghs:hasPart ghs:P402, ghs:P404 .
+    schema:identifier "P402+P404" ;
+    schema:name "An einem trockenen Ort aufbewahren. In einem geschlossenen Behälter aufbewahren"@de,
+        "Store in a dry place. Store in a closed container"@en,
+        "Stocker dans un endroit sec. Stocker dans un récipient fermé"@fr,
+        "Conservare in luogo asciutto e in recipiente chiuso"@it ;
+    ghs:hasPart ghs:P402,
+        ghs:P404 .
 
 ghs:P403P233 a ghs:PrecautionaryStatementCombination ;
-  schema:identifier "P403+P233" ;
-  schema:name
-    "An einem gut belüfteten Ort aufbewahren. Behälter dicht verschlossen halten"@de ,
-    "Store in a well-ventilated place. Keep container tightly closed"@en ,
-    "Stocker dans un endroit bien ventilé. Maintenir le récipient fermé de manière étanche"@fr ,
-    "Tenere il recipiente ben chiuso e in luogo ben ventilato"@it ;
-  ghs:hasPart ghs:P403, ghs:P233 .
+    schema:identifier "P403+P233" ;
+    schema:name "An einem gut belüfteten Ort aufbewahren. Behälter dicht verschlossen halten"@de,
+        "Store in a well-ventilated place. Keep container tightly closed"@en,
+        "Stocker dans un endroit bien ventilé. Maintenir le récipient fermé de manière étanche"@fr,
+        "Tenere il recipiente ben chiuso e in luogo ben ventilato"@it ;
+    ghs:hasPart ghs:P233,
+        ghs:P403 .
 
 ghs:P403P235 a ghs:PrecautionaryStatementCombination ;
-  schema:identifier "P403+P235" ;
-  schema:name
-    "An einem gut belüfteten Ort aufbewahren. Kühl halten"@de ,
-    "Store in a well-ventilated place. Keep cool"@en ,
-    "Stocker dans un endroit bien ventilé. Tenir au frais"@fr ,
-    "Conservare in luogo fresco e ben ventilato"@it ;
-  ghs:hasPart ghs:P403, ghs:P235 .
+    schema:identifier "P403+P235" ;
+    schema:name "An einem gut belüfteten Ort aufbewahren. Kühl halten"@de,
+        "Store in a well-ventilated place. Keep cool"@en,
+        "Stocker dans un endroit bien ventilé. Tenir au frais"@fr,
+        "Conservare in luogo fresco e ben ventilato"@it ;
+    ghs:hasPart ghs:P235,
+        ghs:P403 .
 
 ghs:P410P403 a ghs:PrecautionaryStatementCombination ;
-  schema:identifier "P410+P403" ;
-  schema:name
-    "Vor Sonnenbestrahlung schützen. An einem gut belüfteten Ort aufbewahren"@de ,
-    "Protect from sunlight. Store in a well-ventilated place"@en ,
-    "Protéger du rayonnement solaire. Stocker dans un endroit bien ventilé"@fr ,
-    "Proteggere dai raggi solari. Conservare in luogo ben ventilato"@it ;
-  ghs:hasPart ghs:P410, ghs:P403 .
+    schema:identifier "P410+P403" ;
+    schema:name "Vor Sonnenbestrahlung schützen. An einem gut belüfteten Ort aufbewahren"@de,
+        "Protect from sunlight. Store in a well-ventilated place"@en,
+        "Protéger du rayonnement solaire. Stocker dans un endroit bien ventilé"@fr,
+        "Proteggere dai raggi solari. Conservare in luogo ben ventilato"@it ;
+    ghs:hasPart ghs:P403,
+        ghs:P410 .
 
 ghs:P410P412 a ghs:PrecautionaryStatementCombination ;
-  schema:identifier "P410+P412" ;
-  schema:name
-    "Vor Sonnenbestrahlung schützen und nicht Temperaturen über 50 °C/122 °F aussetzen"@de ,
-    "Protect from sunlight. Do no expose to temperatures exceeding 50 °C/122 °F"@en ,
-    "Protéger du rayonnement solaire. Ne pas exposer à une température supérieure à 50 °C/122 °F"@fr ,
-    "Proteggere dai raggi solari. Non esporre a temperature superiori a 50 °C/122 °F"@it ;
-  ghs:hasPart ghs:P410, ghs:P412 .
+    schema:identifier "P410+P412" ;
+    schema:name "Vor Sonnenbestrahlung schützen und nicht Temperaturen über 50 °C/122 °F aussetzen"@de,
+        "Protect from sunlight. Do no expose to temperatures exceeding 50 °C/122 °F"@en,
+        "Protéger du rayonnement solaire. Ne pas exposer à une température supérieure à 50 °C/122 °F"@fr,
+        "Proteggere dai raggi solari. Non esporre a temperature superiori a 50 °C/122 °F"@it ;
+    ghs:hasPart ghs:P410,
+        ghs:P412 .

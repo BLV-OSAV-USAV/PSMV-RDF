@@ -1,11 +1,21 @@
+# ==============================================================================
+# PREFIXES
+# ==============================================================================
+
+# Project-specific QNames ------------------------------------------------------
 @prefix : <https://agriculture.ld.admin.ch/plant-protection/> .
+@prefix ghs: <https://agriculture.ld.admin.ch/plant-protection/ghs/> .
+
+# General prefixes -------------------------------------------------------------
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
 
 # ==============================================================================
 # ONTOLOGY METADATA
@@ -20,53 +30,319 @@
         "Sara Schärrer",
         "Guy Schnidrig" ;
     dcterms:title "Crop protection product ontology"@en ;
-    owl:versionInfo "1.0.0" .
+    owl:versionInfo "3.0.0" .
 
 # ==============================================================================
-# CORE PHYTOSANITARY CONCEPTS AS CLASSES
+# CORE PHYTOSANITARY CLASSES & PROPERTIES
 # ==============================================================================
 
-:Stressor a owl:Class .
+:Cultivation a owl:Class ;
+    schema:name "Cultivation"@en .
 
-:Damage a owl:Class .
+:Pest a owl:Class ;
+    schema:name "Pest"@en .
 
-:Host a owl:Class .
+:ApplicationComment a owl:Class ;
+    schema:name "Application comments"@en , "Anwendungskommentar"@de ;
+    schema:description "Comments on how the product must be applied (dosage, etc.)"@en .
 
-:Crop a owl:Class ;
-    rdfs:subClassOf :Host .
+:Obligation a owl:Class ;
+    schema:name "Obligation"@en .
 
-:Application a owl:Class ; 
-    rdfs:subClassOf :Intervention .
+:ApplicationArea a owl:Class ;
+    schema:name "Application Area"@en .
 
-:ApplicationComment a owl:Class .
-
-# ==============================================================================
-# LINKING PROPERTIES
-# ==============================================================================
-
-:allowedFor a owl:ObjectProperty ;
-    rdfs:domain :PlantProtectionProduct ;
-    rdfs:range :Application .
-
-:concerns a owl:ObjectProperty ;
-    rdfs:domain :ApplicationComment ;
-    rdfs:range :Application .
-
-:mitigates a owl:ObjectProperty ;
-    rdfs:domain :Intervention ;
-    rdfs:range :Damage .
-
-:impairs a owl:ObjectProperty ;
-    rdfs:domain :Damage ;
-    rdfs:range :Host .
-
-:induces a owl:ObjectProperty ;
-    rdfs:domain :Stressor ;
-    rdfs:range :Damage .
+:applicationArea a owl:ObjectProperty ;
+    schema:name "Application area"@en ;
+    rdfs:domain :Indication ;
+    rdfs:range :ApplicationArea .
 
 # ==============================================================================
-# PRODUCT TAXONOMY
+# PERMISSION HOLDERS
 # ==============================================================================
 
-:PlantProtectionProduct a owl:Class ;
-    rdfs:subClassOf schema:Product .
+schema:Organization a owl:Class ;
+    schema:name "Organization"@en ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty schema:legalName ;
+        owl:allValuesFrom xsd:string
+    ] .
+
+# ==============================================================================
+# PRODUCT TAXONOMY AND PROPERTIES (Herbicides, Insecticides etc.)
+# ==============================================================================
+
+# Product class and product-specific properties --------------------------------
+
+:Product a owl:Class ;
+    schema:name "Product"@en ;
+    schema:description "Represents any product that is officially registered and listed on <https://psm.admin.ch/>."@en .
+
+:ParallelImport a owl:Class ;
+    schema:name "Parallel import"@en ;
+    rdfs:subClassOf :Product .
+
+:ghs a owl:ObjectProperty ;
+    schema:name "GHS statement"@en ;
+    rdfs:domain :Product ;
+    rdfs:range ghs:GHSStatement .
+
+:indication a owl:ObjectProperty ;
+    schema:name "has indications"@en ;
+    rdfs:domain :Product ;
+    rdfs:range :Indication .
+
+:ingredient a owl:ObjectProperty ;
+    schema:name "Ingredient"@en ;
+    rdfs:domain :Product ;
+    rdfs:range :Ingredient .
+
+:federalAdmissionNumber a owl:DatatypeProperty, owl:FunctionalDataProperty ;
+    schema:name "Eidgenössische Zulassungsnummer"@de,
+        "Federal admission number"@en ;
+    schema:description "The federal admission number uniquely identifies a product registration. It is either constructed as a W-Number in the case of federal admissions (e.g., W-18) or as a parallel import number with the country of origin's initial letter in the code in the case of parallel imports (e.g., I-2789 for a parallel import from Italy). Numbers with a dash (e.g., W-18-1, W-18-2) represent equivalent products held by different legal entities, while numbers without a dash (e.g., W-18) represent the original registration."@en ;
+    rdfs:subPropertyOf schema:identifier ;
+    rdfs:domain :Product ;
+    rdfs:range xsd:NCName .
+
+:foreignAdmissionNumber a owl:DatatypeProperty ;
+    schema:name "Ausländische Zulassungsnummer"@de,
+        "Foreign admission number"@en ;
+    rdfs:subPropertyOf schema:identifier ;
+    rdfs:domain :ParallelImport ;
+    rdfs:range xsd:NCName .
+
+:permissionHolder a owl:ObjectProperty ;
+    schema:name "Permission holder"@en ;
+    rdfs:domain :Product ;
+    rdfs:range schema:Organization .
+
+# Product taxonomy -------------------------------------------------------------
+
+:BiologicalControlAgent a owl:Class ;
+    rdfs:subClassOf :Product ;
+    schema:name "Biological control agent"@en ;
+    schema:description "A living organism or a product derived from it used to combat plant pests or pathogens. These include beneficial insects, mites, nematodes, fungi, bacteria, or viruses."@en .
+
+:ChemicalProtectionProduct a owl:Class ;
+    rdfs:subClassOf :Product ;
+    schema:name "Chemical Protection Product"@en ;
+    schema:description "Any crop protection product that can be reasonably well described by its chemical ingredients/synthesis rather than biological origin."@en .
+
+# Biological Control Agents-----------------------------------------------------
+
+:AntifungalBiologicalAgent a owl:Class ;
+    rdfs:subClassOf :BiologicalControlAgent ;
+    schema:name "Antifungal biological agent"@en ;
+    schema:description "Biological control agents used to protect plants from harmful fungi, based on natural organisms or their byproducts."@en .
+
+:BacterialBiologicalAgent a owl:Class ;
+    rdfs:subClassOf :BiologicalControlAgent ;
+    schema:name "Bacterial biological agent"@en ;
+    schema:description "Biological control agents composed of or derived from bacteria, combating pests or diseases through mechanisms such as competition or antimicrobial production."@en .
+
+:FungalBiologicalAgent a owl:Class ;
+    rdfs:subClassOf :BiologicalControlAgent ;
+    schema:name "Fungal Biological Agent"@en ;
+    schema:description "Biological control agents composed of or derived from fungi, combating pests, diseases, or weeds through mechanisms such as antagonism or parasitism."@en .
+
+:InsectVirusAgent a owl:Class ;
+    rdfs:subClassOf :BiologicalControlAgent ;
+    schema:name "Insect Virus Agent"@en ;
+    schema:description "Biological control agents containing viruses that specifically target and harm insect pests."@en .
+
+:BeneficialInsectAgent a owl:Class ;
+    rdfs:subClassOf :BiologicalControlAgent ;
+    schema:name "Beneficial Insect Agent"@en ;
+    schema:description "Biological control agents consisting of live or derived insect species used to combat other pests."@en .
+
+:BeneficialMiteAgent a owl:Class ;
+    rdfs:subClassOf :BiologicalControlAgent ;
+    schema:name "Beneficial Mite Agent"@en ;
+    schema:description "Biological control agents containing beneficial mite species used to control harmful insects or other mites."@en .
+
+:BeneficialNematodeAgent a owl:Class ;
+    rdfs:subClassOf :BiologicalControlAgent ;
+    schema:name "Beneficial Nematode Agent"@en ;
+    schema:description "Biological control agents containing live nematodes that specifically target harmful insects in soil or plants."@en .
+
+# Chemical Products ------------------------------------------------------------
+
+:Acaricide a owl:Class ;
+    rdfs:subClassOf :ChemicalProtectionProduct ;
+    schema:name "Acaricide"@en ;
+    schema:description "A chemical crop protection product used to control mites and ticks."@en .
+
+:WettingAndAdhesionAgent a owl:Class ;
+    rdfs:subClassOf :ChemicalProtectionProduct ;
+    schema:name "Wetting and Adhesion Agent"@en ;
+    schema:description "Chemical products used to distribute crop protection products evenly on plant surfaces and enhance their adhesion/efficacy."@en .
+
+:Bactericide a owl:Class ;
+    rdfs:subClassOf :ChemicalProtectionProduct ;
+    schema:name "Bactericide"@en ;
+    schema:description "A chemical product used to combat bacterial pathogens that harm agricultural crops, such as fire blight."@en .
+
+:Disinfectant a owl:Class ;
+    rdfs:subClassOf :ChemicalProtectionProduct ;
+    schema:name "Disinfectant"@en ;
+    schema:description "Chemical agents used to destroy or inhibit the growth of harmful organisms on equipment or storage surfaces."@en .
+
+:Fungicide a owl:Class ;
+    rdfs:subClassOf :ChemicalProtectionProduct ;
+    schema:name "Fungicide"@en ;
+    schema:description "A chemical product used to combat fungal diseases by killing fungi or inhibiting their spores/growth."@en .
+
+:Herbicide a owl:Class ;
+    rdfs:subClassOf :ChemicalProtectionProduct ;
+    schema:name "Herbicide"@en ;
+    schema:description "A chemical product used to control or eliminate unwanted plants (weeds)."@en .
+
+:Insecticide a owl:Class ;
+    rdfs:subClassOf :ChemicalProtectionProduct ;
+    schema:name "Insecticide"@en ;
+    schema:description "A chemical product specifically designed to control insect populations."@en .
+
+:Molluscicide a owl:Class ;
+    rdfs:subClassOf :ChemicalProtectionProduct ;
+    schema:name "Molluscicide"@en ;
+    schema:description "A chemical product used to control mollusks, particularly slugs and snails."@en .
+
+:PlantDefenseInducer a owl:Class ;
+    rdfs:subClassOf :ChemicalProtectionProduct ;
+    schema:name "Plant Defense Inducer"@en ;
+    schema:description "A chemical product that activates the natural defense mechanisms (immune system) of plants without directly targeting the pathogen."@en .
+
+:Nematicide a owl:Class ;
+    rdfs:subClassOf :ChemicalProtectionProduct ;
+    schema:name "Nematicide"@en ;
+    schema:description "A chemical product used to control nematodes (roundworms) that damage root systems."@en .
+
+:PlantGrowthRegulator a owl:Class ;
+    rdfs:subClassOf :ChemicalProtectionProduct ;
+    schema:name "Plant Growth Regulator"@en ;
+    schema:description "Chemical substances that influence the growth and development of plants (e.g. hormone mimics)."@en .
+
+:Rodenticide a owl:Class ;
+    rdfs:subClassOf :ChemicalProtectionProduct ;
+    schema:name "Rodenticide"@en ;
+    schema:description "Chemical agents used to control rodent infestations in agricultural settings."@en .
+
+:SeedTreatmentProduct a owl:Class ;
+    rdfs:subClassOf :ChemicalProtectionProduct ;
+    schema:name "Seed Treatment Product"@en ;
+    schema:description "Chemicals applied to seeds prior to planting to protect them from pathogens and pests."@en .
+
+:StorageProtectionProduct a owl:Class ;
+    rdfs:subClassOf :ChemicalProtectionProduct ;
+    schema:name "Storage Protection Product"@en ;
+    schema:description "Products applied to protect harvested crops during storage."@en .
+
+:Virucide a owl:Class ;
+    rdfs:subClassOf :ChemicalProtectionProduct ;
+    schema:name "Virucide"@en ;
+    schema:description "Agents capable of neutralizing or destroying viruses affecting crops."@en .
+
+# Insecticide subclsses --------------------------------------------------------
+
+:Pheromone a owl:Class ;
+    rdfs:subClassOf :Insecticide ;
+    schema:name "Pheromone"@en ;
+    schema:description "Chemical substances secreted by insects (or synthetic analogues) used as attractants to monitor or control pest populations."@en .
+
+:SoapBasedInsecticide a owl:Class ;
+    rdfs:subClassOf :Insecticide ;
+    schema:name "Soap-based Insecticide"@en ;
+    schema:description "Insecticides derived from fatty acid salts (soaps) used for soft-body insect control."@en .
+
+# ==============================================================================
+# INDICATION CLASS DEFINITION AND PROPERTIES
+# ==============================================================================
+
+:Indication a owl:Class ;
+    schema:name "Indication"@en ;
+    schema:alternateName "Application"@en .
+
+:pest a owl:ObjectProperty ;
+    schema:name "allowed against pests"@en ;
+    rdfs:domain :Indication ;
+    rdfs:range :Pest .
+
+:cultivation a owl:ObjectProperty ;
+    schema:name "allowed on cultivations"@en ;
+    rdfs:domain :Indication ;
+    rdfs:range :Cultivation .
+
+:obligation a owl:ObjectProperty ;
+    schema:name "Obligation"@en ;
+    rdfs:domain :Indication ;
+    rdfs:range :Obligation .
+
+:applicationComment a owl:ObjectProperty ;
+    schema:name "Application Comment"@en ;
+    rdfs:domain :Indication ;
+    rdfs:range :ApplicationComment .
+
+:dosage a owl:DatatypeProperty ;
+    schema:name "Dosierung"@de,
+        "Dosage"@en ;
+    rdfs:domain :Indication ;
+    rdfs:range schema:QuantitativeValue .
+
+:expenditure a owl:DatatypeProperty ;
+    schema:name "Ausbringungsmenge"@de,
+        "Expenditure"@en ;
+    rdfs:domain :Indication ;
+    rdfs:range schema:QuantitativeValue .
+
+:waitingPeriod a owl:DatatypeProperty ;
+    schema:name "Wartezeit"@de,
+        "Waiting period"@en ;
+    schema:description "The required time interval after a treatment during which the same product should not be applied again to the same crop."@en ;
+    rdfs:domain :Indication ;
+    rdfs:range schema:QuantitativeValue .
+
+# ==============================================================================
+# INGREDIENTS AND SUBSTANCES
+# ==============================================================================
+
+:Ingredient a owl:Class ;
+    schema:name "Ingredient"@en ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty schema:value ;
+        owl:allValuesFrom schema:QuantitativeValue
+    ] .
+
+:Substance a owl:Class ;
+    schema:name "Substance"@en .
+
+:substance a owl:ObjectProperty ;
+    schema:name "Substance"@en ;
+    rdfs:domain :Ingredient ;
+    rdfs:range :Substance .
+
+schema:QuantitativeValue a owl:Class ;
+    schema:name "Quantitative value"@en ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty schema:value ;
+        owl:allValuesFrom xsd:decimal
+    ], [
+        a owl:Restriction ;
+        owl:onProperty schema:maxValue ;
+        owl:allValuesFrom xsd:decimal
+    ], [
+        a owl:Restriction ;
+        owl:onProperty schema:minValue ;
+        owl:allValuesFrom xsd:decimal
+    ], [
+        a owl:Restriction ;
+        owl:onProperty schema:unitCode ;
+        owl:allValuesFrom qudt:Unit
+    ], [
+        a owl:Restriction ;
+        owl:onProperty schema:name ;
+        owl:allValuesFrom xsd:string
+    ] .

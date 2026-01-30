@@ -1,33 +1,104 @@
-@prefix shapes: <https://agriculture.ld.admin.ch/plant-protection/shapes/> .
+@prefix : <https://agriculture.ld.admin.ch/plant-protection/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix shapes: <https://agriculture.ld.admin.ch/plant-protection/shapes/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix schema: <http://schema.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-# ==============================================================================
-#   1. ONTOLOGY DOCUMENTATION RULE
-# ------------------------------------------------------------------------------
-#      Any owl:Class, owl:ObjectProperty and owl:DatatypeProperty must have
-#      exactly one schema:name as well as a schema:description in English.
-#      Note: We can add more required languages later on.
-# ==============================================================================
-
-shapes:OntologyDocumentationShape a sh:NodeShape ;
-    schema:identifier 1 ;
-    schema:description "All classes and properties in the ontology must have one name in English and might have one description in English."@en ;
+shapes:1 a sh:NodeShape ;
+    schema:name "Ontology documentation rules"@en ;
     sh:targetClass owl:Class,
         owl:ObjectProperty,
         owl:DatatypeProperty ;
     sh:property [
+        schema:name "No more than one name per language"@en ;
         sh:path schema:name ;
-        sh:languageIn ( "en" ) ;
-        sh:minCount 1 ;
-        sh:maxCount 1 ;
-        sh:message "Each class and property must have at least one schema:name in English."@en ;
+        sh:uniqueLang true ;
+        sh:message "There can be at most one name per language tag."@en ;
     ] ;
     sh:property [
+        schema:name "Mandatory English name"@en ;
+        sh:path schema:name ;
+        sh:qualifiedValueShape [
+            sh:languageIn ( "en" ) ;
+        ] ;
+        sh:qualifiedMinCount 1 ;
+        sh:message "A class or property must have at least one name in English."@en ;
+    ] ;
+    sh:property [
+        schema:name "Maximally one description per language"@en ;
         sh:path schema:description ;
-        sh:languageIn ( "en" ) ;
-        sh:minCount 0 ;
+        sh:uniqueLang true ;
+        sh:message "A class or property can have at most one description per language."@en ;
+    ] .
+
+shapes:2 a sh:NodeShape ;
+    schema:name "Prohibition of RDFS annotations"@en ;
+    sh:targetClass owl:Class,
+        owl:ObjectProperty,
+        owl:DatatypeProperty ;
+    sh:property [
+        schema:name "Forbid rdfs:label"@en ;
+        sh:path rdfs:label ;
+        sh:maxCount 0 ;
+        sh:message "Any use of rdfs:label is forbidden; the preferred property is schema:name."@en ;
+    ] ;
+    sh:property [
+        schema:name "Forbid rdfs:comment"@en ;
+        sh:path rdfs:comment ;
+        sh:maxCount 0 ;
+        sh:message "Any use of rdfs:comment is forbidden; the preferred property is schema:comment."@en ;
+    ] .
+
+shapes:3 a sh:NodeShape ;
+    sh:targetClass :Product ;
+    sh:property [
+        sh:name "Federal admission number syntax"@en ;
+        sh:path :federalAdmissionNumber ;
+        sh:datatype xsd:string ;
+        sh:pattern "^[A-Z]-[0-9]{4}(-[0-9]{1,2})?$" ;
+        sh:message "The federal admission number must match the pattern 'L-DDDD' or 'L-DDDD-D', where L is an uppercase letter and D a digit."@en ;
+        sh:minCount 1 ;
         sh:maxCount 1 ;
-        sh:message "Each class and property must have at least one schema:description in English."@en ;
+    ] ;
+    sh:property [
+        sh:name "Ingredient validation"@en ;
+        sh:path :ingredient ;
+        sh:node shapes:IngredientShape ;
+        sh:minCount 1 ;
+    ] .
+
+shapes:4 a sh:NodeShape ;
+    sh:property [
+        sh:name "Substance reference"@en ;
+        sh:path :substance ;
+        sh:class :Substance ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:name "Share (Quantitative Value)"@en ;
+        sh:path :share ;
+        sh:node shapes:ShareShape ;
+        sh:minCount 1 ;
+    ] .
+
+shapes:5 a sh:NodeShape ;
+    sh:targetClass schema:QuantitativeValue ;
+    sh:property [
+        schema:name "Positive value constraint"@en ;
+        sh:path schema:value ;
+        sh:minExclusive 0 ;
+        sh:message "The ingredient share value must be strictly greater than 0."@en ;
+    ] ;
+    sh:property [
+        schema:name "Unit validation"@en ;
+        sh:path schema:unitCode ;
+        sh:in ( unit:PERCENT unit:GM-PER-L ) ; 
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "The unit must be either % or g/l represented as a `qudt:Unit`."@en ;
     ] .
