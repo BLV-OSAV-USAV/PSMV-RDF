@@ -61,16 +61,27 @@
 # PERMISSION HOLDERS
 # ==============================================================================
 
-:permissionHolder a owl:ObjectProperty ;
-    schema:name "Permission holder"@en ;
-    rdfs:domain :Product ;
-    rdfs:range schema:Organization .
+schema:Organization a owl:Class ;
+    schema:name "Organization"@en ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty schema:legalName ;
+        owl:allValuesFrom xsd:string
+    ] .
 
 # ==============================================================================
 # PRODUCT TAXONOMY AND PROPERTIES (Herbicides, Insecticides etc.)
 # ==============================================================================
 
-# Product-specific properties --------------------------------------------------
+# Product class and product-specific properties --------------------------------
+
+:Product a owl:Class ;
+    schema:name "Product"@en ;
+    schema:description "Represents any product that is officially registered and listed on <https://psm.admin.ch/>."@en .
+
+:ParallelImport a owl:Class ;
+    schema:name "Parallel import"@en ;
+    rdfs:subClassOf :Product .
 
 :ghs a owl:ObjectProperty ;
     schema:name "GHS statement"@en ;
@@ -87,15 +98,27 @@
     rdfs:domain :Product ;
     rdfs:range :Ingredient .
 
+:federalAdmissionNumber a owl:DatatypeProperty, owl:FunctionalDataProperty ;
+    schema:name "Eidgenössische Zulassungsnummer"@de,
+        "Federal admission number"@en ;
+    schema:description "The federal admission number uniquely identifies a product registration. It is either constructed as a W-Number in the case of federal admissions (e.g., W-18) or as a parallel import number with the country of origin's initial letter in the code in the case of parallel imports (e.g., I-2789 for a parallel import from Italy). Numbers with a dash (e.g., W-18-1, W-18-2) represent equivalent products held by different legal entities, while numbers without a dash (e.g., W-18) represent the original registration."@en ;
+    rdfs:subPropertyOf schema:identifier ;
+    rdfs:domain :Product ;
+    rdfs:range xsd:NCName .
+
+:foreignAdmissionNumber a owl:DatatypeProperty ;
+    schema:name "Ausländische Zulassungsnummer"@de,
+        "Foreign admission number"@en ;
+    rdfs:subPropertyOf schema:identifier ;
+    rdfs:domain :ParallelImport ;
+    rdfs:range xsd:NCName .
+
+:permissionHolder a owl:ObjectProperty ;
+    schema:name "Permission holder"@en ;
+    rdfs:domain :Product ;
+    rdfs:range schema:Organization .
+
 # Product taxonomy -------------------------------------------------------------
-
-:Product a owl:Class ;
-    schema:name "Product"@en ;
-    schema:description "Represents any item within the crop protection framework that is registered with a federal admission number and has specified permissions regarding non-professional use."@en .
-
-:ParallelImport a owl:Class ;
-    schema:name "Parallel import"@en ;
-    rdfs:subClassOf :Product .
 
 :BiologicalControlAgent a owl:Class ;
     rdfs:subClassOf :Product ;
@@ -318,4 +341,8 @@ schema:QuantitativeValue a owl:Class ;
         a owl:Restriction ;
         owl:onProperty schema:unitCode ;
         owl:allValuesFrom qudt:Unit
+    ], [
+        a owl:Restriction ;
+        owl:onProperty schema:name ;
+        owl:allValuesFrom xsd:string
     ] .
