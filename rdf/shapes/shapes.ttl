@@ -1,0 +1,33 @@
+@prefix shapes: <https://agriculture.ld.admin.ch/plant-protection/shapes/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix schema: <http://schema.org/> .
+
+# ==============================================================================
+#   1. ONTOLOGY DOCUMENTATION RULE
+# ------------------------------------------------------------------------------
+#      Any owl:Class, owl:ObjectProperty and owl:DatatypeProperty must have
+#      exactly one schema:name as well as a schema:description in English.
+#      Note: We can add more required languages later on.
+# ==============================================================================
+
+shapes:OntologyDocumentationShape a sh:NodeShape ;
+    schema:identifier 1 ;
+    schema:description "All classes and properties in the ontology must have one name in English and might have one description in English."@en ;
+    sh:targetClass owl:Class,
+        owl:ObjectProperty,
+        owl:DatatypeProperty ;
+    sh:property [
+        sh:path schema:name ;
+        sh:languageIn ( "en" ) ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "Each class and property must have at least one schema:name in English."@en ;
+    ] ;
+    sh:property [
+        sh:path schema:description ;
+        sh:languageIn ( "en" ) ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:message "Each class and property must have at least one schema:description in English."@en ;
+    ] .
