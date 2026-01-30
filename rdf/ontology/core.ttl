@@ -1,4 +1,12 @@
+# ==============================================================================
+# PREFIXES
+# ==============================================================================
+
+# Project-specific QNames ------------------------------------------------------
 @prefix : <https://agriculture.ld.admin.ch/plant-protection/> .
+@prefix ghs: <https://agriculture.ld.admin.ch/plant-protection/ghs/> .
+
+# General prefixes -------------------------------------------------------------
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -26,27 +34,15 @@
 # CORE PHYTOSANITARY CLASSES & PROPERTIES
 # ==============================================================================
 
-:ParallelImport a owl:Class ;
-    schema:name "Parallel import"@en ;
-    rdfs:subClassOf :Product .
-
 :Cultivation a owl:Class ;
     schema:name "Cultivation"@en .
 
 :Pest a owl:Class ;
     schema:name "Pest"@en .
 
-:Indication a owl:Class ;
-    schema:name "Indication"@en ;
-    schema:alternateName "Application"@en ;
-    rdfs:subClassOf [
-        a owl:Restriction ;
-        owl:allValuesFrom :ApplicationComment ;
-        owl:onProperty :comment
-    ] .
-
 :ApplicationComment a owl:Class ;
-    schema:name "Application comments (dosage, etc.)"@en .
+    schema:name "Application comments"@en , "Anwendungskommentar"@de ;
+    schema:description "Comments on how the product must be applied (dosage, etc.)"@en .
 
 :Obligation a owl:Class ;
     schema:name "Obligation"@en .
@@ -58,27 +54,6 @@
     schema:name "Application area"@en ;
     rdfs:domain :Indication ;
     rdfs:range :ApplicationArea .
-
-:Ingredients a owl:Class ;
-    schema:name "Ingredients"@en .
-
-:indication a owl:ObjectProperty ;
-    schema:name "has indications"@en ;
-    rdfs:domain :Product ;
-    rdfs:range :Indication .
-
-:pest a owl:ObjectProperty ;
-    schema:name "allowed against pests"@en ;
-    rdfs:domain :Indication ;
-    rdfs:range :Pest .
-
-:cultivation a owl:ObjectProperty ;
-    schema:name "allowed on cultivations"@en ;
-    rdfs:domain :Indication ;
-    rdfs:range :Cultivation .
-
-:comment a owl:ObjectProperty ;
-    schema:name "Comment"@en .
 
 # ==============================================================================
 # PERMISSION HOLDERS
@@ -94,9 +69,66 @@
 # ==============================================================================
 
 :Product a owl:Class ;
-    schema:name "Product"@en ;
-    rdfs:subClassOf [
-        a owl:Restriction ;
-        owl:allValuesFrom :GHSStatements ;
-        owl:onProperty :comment
-    ] .
+    schema:name "Product"@en .
+
+:ParallelImport a owl:Class ;
+    schema:name "Parallel import"@en ;
+    rdfs:subClassOf :Product .
+
+:ghs a owl:ObjectProperty ;
+    schema:name "GHS statement"@en ;
+    rdfs:domain :Product ;
+    rdfs:range ghs:GHSStatement .
+
+:indication a owl:ObjectProperty ;
+    schema:name "has indications"@en ;
+    rdfs:domain :Product ;
+    rdfs:range :Indication .
+
+:ingredient a owl:ObjectProperty ;
+    schema:name "Ingredient"@en ;
+    rdfs:domain :Product ;
+    rdfs:range :Ingredient .
+
+# ==============================================================================
+# INDICATION CLASS DEFINITION AND PROPERTIES
+# ==============================================================================
+
+:Indication a owl:Class ;
+    schema:name "Indication"@en ;
+    schema:alternateName "Application"@en .
+
+:pest a owl:ObjectProperty ;
+    schema:name "allowed against pests"@en ;
+    rdfs:domain :Indication ;
+    rdfs:range :Pest .
+
+:cultivation a owl:ObjectProperty ;
+    schema:name "allowed on cultivations"@en ;
+    rdfs:domain :Indication ;
+    rdfs:range :Cultivation .
+
+:obligation a owl:ObjectProperty ;
+    schema:name "Obligation"@en ;
+    rdfs:domain :Indication ;
+    rdfs:range :Obligation .
+
+:applicationComment a owl:ObjectProperty ;
+    schema:name "Application Comment"@en ;
+    rdfs:domain :Indication ;
+    rdfs:range :ApplicationComment .
+
+# ==============================================================================
+# INGREDIENTS AND SUBSTANCES
+# ==============================================================================
+
+:Ingredient a owl:Class ;
+    schema:name "Ingredient"@en .
+
+:Substance a owl:Class ;
+    schema:name "Substance"@en .
+
+:substance a owl:ObjectProperty ;
+    schema:name "Substance"@en ;
+    rdfs:domain :Ingredient ;
+    rdfs:range :Substance .
