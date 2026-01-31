@@ -1,0 +1,6 @@
+datasets:
+  all_products:
+    input: "data/raw/AllProducts280126.csv"
+    delimiter: ";"
+    encoding: "utf-8"
+    description: "PSMV Export All Products Jan 2026"

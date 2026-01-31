@@ -8,7 +8,7 @@
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-shapes:1 a sh:NodeShape ;
+shapes:OntologyDocumentationShape a sh:NodeShape ;
     schema:name "Ontology documentation rules"@en ;
     sh:targetClass owl:Class,
         owl:ObjectProperty,
@@ -35,7 +35,7 @@ shapes:1 a sh:NodeShape ;
         sh:message "A class or property can have at most one description per language."@en ;
     ] .
 
-shapes:2 a sh:NodeShape ;
+shapes:NoRdfsAnnotationsShape a sh:NodeShape ;
     schema:name "Prohibition of RDFS annotations"@en ;
     sh:targetClass owl:Class,
         owl:ObjectProperty,
@@ -50,13 +50,13 @@ shapes:2 a sh:NodeShape ;
         schema:name "Forbid rdfs:comment"@en ;
         sh:path rdfs:comment ;
         sh:maxCount 0 ;
-        sh:message "Any use of rdfs:comment is forbidden; the preferred property is schema:comment."@en ;
+        sh:message "Any use of rdfs:comment is forbidden; the preferred property is schema:description."@en ;
     ] .
 
-shapes:3 a sh:NodeShape ;
+shapes:ProductAdmissionAndIngredientShape a sh:NodeShape ;
     sh:targetClass :Product ;
     sh:property [
-        sh:name "Federal admission number syntax"@en ;
+        schema:name "Federal admission number syntax"@en ;
         sh:path :federalAdmissionNumber ;
         sh:datatype xsd:string ;
         sh:pattern "^[A-Z]-[0-9]{4}(-[0-9]{1,2})?$" ;
@@ -65,28 +65,35 @@ shapes:3 a sh:NodeShape ;
         sh:maxCount 1 ;
     ] ;
     sh:property [
-        sh:name "Ingredient validation"@en ;
+        schema:name "Ingredient validation"@en ;
         sh:path :ingredient ;
         sh:node shapes:IngredientShape ;
         sh:minCount 1 ;
+    ] ;
+    sh:property [
+        schema:name "Permission holder must be an Organization"@en ;
+        sh:path :permissionHolder ;
+        sh:node shapes:OrganizationShape ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
     ] .
 
-shapes:4 a sh:NodeShape ;
+shapes:IngredientSubstanceAndShareShape a sh:NodeShape ;
     sh:property [
-        sh:name "Substance reference"@en ;
+        schema:name "Substance reference"@en ;
         sh:path :substance ;
         sh:class :Substance ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
     ] ;
     sh:property [
-        sh:name "Share (Quantitative Value)"@en ;
+        schema:name "Share (Quantitative Value)"@en ;
         sh:path :share ;
         sh:node shapes:ShareShape ;
         sh:minCount 1 ;
     ] .
 
-shapes:5 a sh:NodeShape ;
+shapes:QuantitativeValueUnitAndPositiveValueShape a sh:NodeShape ;
     sh:targetClass schema:QuantitativeValue ;
     sh:property [
         schema:name "Positive value constraint"@en ;
@@ -102,3 +109,12 @@ shapes:5 a sh:NodeShape ;
         sh:maxCount 1 ;
         sh:message "The unit must be either % or g/l represented as a `qudt:Unit`."@en ;
     ] .
+
+shapes:OrganizationShape a sh:NodeShape ;
+  sh:targetClass schema:Organization ;
+  sh:property [
+    schema:name "Legal name required"@en ;
+    sh:path schema:legalName ;
+    sh:datatype xsd:string ;
+    sh:minCount 1 ;
+  ] .
