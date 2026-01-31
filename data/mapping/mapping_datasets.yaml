@@ -1,6 +1,16 @@
 datasets:
-  all_products:
+  Product:
     input: "data/raw/AllProducts280126.csv"
     delimiter: ";"
     encoding: "utf-8"
     description: "PSMV Export All Products Jan 2026"
+  Organisation:
+    input: "data/raw/PsmvPermissionholder270126.csv"
+    delimiter: ";"
+    encoding: "utf-8"
+    description: "PSMV Export Organisations Jan 2026"
+  ProductOrganisation:
+    input: "data/raw/ProductPermissionHolder270126.csv"
+    delimiter: ","
+    encoding: "utf-8"
+    description: "PSMV Export Product-Organisation Relations Jan 2026"

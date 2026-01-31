@@ -2,6 +2,7 @@ import os
 import sys
 import pandas as pd
 import yaml
+import csv
 
 def process_data():
     """
@@ -38,7 +39,7 @@ def process_data():
             sep = cfg.get("delimiter", ";")
             encoding = cfg.get("encoding", "utf-8")
 
-            print(f"\n=== Processing {dataset_key} ===")
+            print(f"\n*** Processing {dataset_key}")
             print(f"Input: {data_name}")
 
             # Read data
@@ -62,8 +63,16 @@ def process_data():
 
             # Write output
             out_path = os.path.join(out_dir, f"{dataset_key}.csv")
-            df.to_csv(out_path, index=False)
-            print(f"Written: {out_path} ({len(df):,} rows)")
+
+            df.to_csv(
+                out_path,
+                index=False,
+                encoding="utf-8",
+                quoting=csv.QUOTE_ALL,
+                escapechar="\\",
+                doublequote=True
+            )
+            print(f"Output: {out_path} ({len(df):,} rows)")
 
         except Exception as e:
             msg = f"ERROR in {dataset_key}: {e}"

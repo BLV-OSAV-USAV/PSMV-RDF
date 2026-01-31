@@ -1,4 +1,4 @@
-all_products:
+Product:
   product_type:
     A: audio
     V: video

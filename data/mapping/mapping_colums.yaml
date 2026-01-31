@@ -1,4 +1,4 @@
-all_products:
+Product:
   NK_PRODUCT: product_id
   wNbr: w_number
   NK_PI_Product: product_internal_id
@@ -15,3 +15,16 @@ all_products:
   isSalePermission: sale_permission
   packageInsert: package_insert_flag
   terminationReason: termination_reason
+Organisation:
+  NK_PermissionHolder: organisation_id
+  FAX: fax_number
+  AdditionalInformation: additional_information
+  NAME: organisation_name
+  STREET: street_address
+  PostOfficeBox: post_office_box
+  NK_CodetableCity: city_id
+  Phone: phone_number
+  NK_CodetableCountry: country_id
+ProductOrganisation:
+  NK_PermissionHolder: organisation_id
+  NK_Product: product_id
