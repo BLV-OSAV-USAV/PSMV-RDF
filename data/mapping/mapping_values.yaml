@@ -1,7 +1,7 @@
-product_type:
-  A: audio
-  V: video
-
-sale_permission:
-  Y: true
-  N: false
+all_products:
+  product_type:
+    A: audio
+    V: video
+  sale_permission:
+    Y: true
+    N: false

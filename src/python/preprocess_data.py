@@ -3,7 +3,6 @@ import sys
 import pandas as pd
 import yaml
 
-
 def process_data():
     """
     Processes raw data files.
@@ -52,11 +51,12 @@ def process_data():
                 low_memory=False,
             )
 
-            # Map cols
-            df = df.rename(columns=mapping_col_dict)
+            # dataset-spezifisches Column-Mapping
+            df = df.rename(columns=mapping_col_dict.get(dataset_key, mapping_col_dict))
 
-            # Map values
-            for col, mapping in mapping_value_dict.items():
+            # dataset-spezifisches Value-Mapping
+            value_map = mapping_value_dict.get(dataset_key, mapping_value_dict)
+            for col, mapping in value_map.items():
                 if col in df.columns and isinstance(mapping, dict):
                     df[col] = df[col].map(mapping).fillna(df[col])
 
@@ -69,7 +69,6 @@ def process_data():
             msg = f"ERROR in {dataset_key}: {e}"
             print(msg)
             errors.append(msg)   
-
 
 if __name__ == "__main__":
     process_data()
