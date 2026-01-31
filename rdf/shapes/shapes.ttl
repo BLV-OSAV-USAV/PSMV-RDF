@@ -8,7 +8,7 @@
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-shapes:1 a sh:NodeShape ;
+shapes:OntologyDocumentationShape a sh:NodeShape ;
     schema:name "Ontology documentation rules"@en ;
     sh:targetClass owl:Class,
         owl:ObjectProperty,
@@ -35,7 +35,7 @@ shapes:1 a sh:NodeShape ;
         sh:message "A class or property can have at most one description per language."@en ;
     ] .
 
-shapes:2 a sh:NodeShape ;
+shapes:NoRdfsAnnotationsShape a sh:NodeShape ;
     schema:name "Prohibition of RDFS annotations"@en ;
     sh:targetClass owl:Class,
         owl:ObjectProperty,
@@ -53,7 +53,7 @@ shapes:2 a sh:NodeShape ;
         sh:message "Any use of rdfs:comment is forbidden; the preferred property is schema:comment."@en ;
     ] .
 
-shapes:3 a sh:NodeShape ;
+shapes:ProductAdmissionAndIngredientShape a sh:NodeShape ;
     sh:targetClass :Product ;
     sh:property [
         sh:name "Federal admission number syntax"@en ;
@@ -71,7 +71,7 @@ shapes:3 a sh:NodeShape ;
         sh:minCount 1 ;
     ] .
 
-shapes:4 a sh:NodeShape ;
+shapes:IngredientSubstanceAndShareShape a sh:NodeShape ;
     sh:property [
         sh:name "Substance reference"@en ;
         sh:path :substance ;
@@ -86,7 +86,7 @@ shapes:4 a sh:NodeShape ;
         sh:minCount 1 ;
     ] .
 
-shapes:5 a sh:NodeShape ;
+shapes:QuantitativeValueUnitAndPositiveValueShape a sh:NodeShape ;
     sh:targetClass schema:QuantitativeValue ;
     sh:property [
         schema:name "Positive value constraint"@en ;
