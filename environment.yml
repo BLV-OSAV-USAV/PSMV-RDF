@@ -1,4 +1,4 @@
-name: psmw-rdf
+name: psmv-rdf
 channels:
   - conda-forge
 dependencies:
@@ -11,3 +11,4 @@ dependencies:
   - pip
   - pip:
       - pyshacl>=0.31.0
+      - otsrdflib>=0.2.9
