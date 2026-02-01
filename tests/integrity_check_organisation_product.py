@@ -10,9 +10,6 @@ LINK_CSV = "data/processed/ProductOrganisation.csv"
 SEP = ","          # ggf. anpassen: "," oder "\t"
 ENCODING = "utf-8" # ggf. anpassen
 
-OUT_INVALID_ROWS = "invalid_productorganisation_rows.csv"
-OUT_DUPLICATE_LINKS = "duplicate_links.csv"
-
 # -----------------------------------------------------------------------------
 # Load (alle Keys als String, damit keine führenden Nullen verloren gehen)
 # -----------------------------------------------------------------------------
@@ -61,23 +58,33 @@ print(f"    * {PRODUCT_CSV}.{PK_PRODUCT_COL}")
 print(f"    * {ORG_CSV}.{PK_ORG_COL}")
 print("=" * 80)
 
-print("\n=== INPUT-UMFANG ===")
+print("\n=== INPUT ===")
 print(f"Produkte (Stammdaten):        {len(df_product):>10} Zeilen")
 print(f"Organisationen (Stammdaten):  {len(df_org):>10} Zeilen")
 print(f"Links (m:n):                  {len(df_link):>10} Zeilen")
 
 # -----------------------------------------------------------------------------
-# 1) FK integrity checks (Link -> Parents)
+# 1) FK integrity checks (Link -> Parents) + neu: gültige Werte
 # -----------------------------------------------------------------------------
 invalid_products = fk_product[~fk_product.isin(set_pk_product)]
 invalid_orgs = fk_org[~fk_org.isin(set_pk_org)]
 
+valid_products = fk_product[fk_product.isin(set_pk_product)]
+valid_orgs = fk_org[fk_org.isin(set_pk_org)]
+
 print("\n=== CHECK 1: FOREIGN-KEY MATCH (LINK -> STAMMDATEN) ===")
 print(f"Ungültige {FK_PRODUCT_COL} in {LINK_CSV} (kein Match in {PRODUCT_CSV}.{PK_PRODUCT_COL}): {len(invalid_products)}")
+print(f"Gültige {FK_PRODUCT_COL} in {LINK_CSV} (Match in {PRODUCT_CSV}.{PK_PRODUCT_COL}): {len(valid_products)}")
 print(f"Ungültige {FK_ORG_COL} in {LINK_CSV} (kein Match in {ORG_CSV}.{PK_ORG_COL}): {len(invalid_orgs)}")
+print(f"Gültige {FK_ORG_COL} in {LINK_CSV} (Match in {ORG_CSV}.{PK_ORG_COL}): {len(valid_orgs)}")
+
+# Optional: distinct Counts in Links-Tabelle(IDs statt Zeilen)
+print("\n--- DISTINCT (einzigartige IDs in Links-Tabelle) ---")
+print(f"Gültige {FK_PRODUCT_COL} (distinct): {valid_products.nunique()}")
+print(f"Gültige {FK_ORG_COL} (distinct): {valid_orgs.nunique()}")
 
 # -----------------------------------------------------------------------------
-# 1b) Bad link rows (mind. ein ungültiger FK)  <-- MINIMAL ergänzt
+# 1b) Bad link rows (mind. ein ungültiger FK)
 # -----------------------------------------------------------------------------
 link_prod = df_link[FK_PRODUCT_COL].astype(str).str.strip()
 link_org = df_link[FK_ORG_COL].astype(str).str.strip()
@@ -104,7 +111,6 @@ dup_links = df_link[dupes_mask].copy()
 print("\n=== CHECK 3: DUPLIKATE LINKS (GLEICHES PAAR MEHRFACH) ===")
 print(f"Doppelte (product_id, organisation_id)-Paare (Zeilen): {int(dupes_mask.sum())}")
 
-# Optional: Top-Duplikate als nachvollziehbare Tabelle
 if len(dup_links) > 0:
     dup_pairs = (
         dup_links.assign(n=1)
@@ -115,6 +121,8 @@ if len(dup_links) > 0:
                  .reset_index()
                  .rename(columns={"n": "occurrences"})
     )
+    print("\nTop 10 Duplikat-Paare:")
+    print(dup_pairs.to_string(index=False))
 
 # -----------------------------------------------------------------------------
 # 5) Summary
@@ -123,6 +131,8 @@ report = {
     "rows_Product": len(df_product),
     "rows_Organisation": len(df_org),
     "rows_ProductOrganisation": len(df_link),
+    "valid_product_fks": int(len(valid_products)),
+    "valid_org_fks": int(len(valid_orgs)),
     "invalid_product_fks": int(len(invalid_products)),
     "invalid_org_fks": int(len(invalid_orgs)),
     "invalid_link_rows": int(len(bad_rows)),
