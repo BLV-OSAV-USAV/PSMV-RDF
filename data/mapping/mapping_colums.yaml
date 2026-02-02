@@ -4,7 +4,7 @@ Product:
   NK_PI_Product: product_internal_id
   NK_SP_PRODUCT: service_provider_product_id
   NK_PRODUCT_IND: product_indicator
-  ID: record_idr
+  ID: record_id
   CODE: product_code
   TYPE: rdf:type
   NAME: schema:name
