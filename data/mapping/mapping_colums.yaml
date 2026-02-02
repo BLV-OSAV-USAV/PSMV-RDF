@@ -4,10 +4,10 @@ Product:
   NK_PI_Product: product_internal_id
   NK_SP_PRODUCT: service_provider_product_id
   NK_PRODUCT_IND: product_indicator
-  ID: record_id
+  ID: record_idr
   CODE: product_code
-  TYPE: product_type
-  NAME: product_name
+  TYPE: rdf:type
+  NAME: schema:name
   admissionnumber: admission_number
   producingCountryPrimaryKey: producing_country_id
   exhaustionDeadline: exhaustion_deadline
