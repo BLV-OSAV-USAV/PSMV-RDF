@@ -1,6 +1,5 @@
 import sys
 import csv
-import logging
 
 from pathlib import Path
 import pandas as pd
@@ -10,10 +9,6 @@ from rdflib.namespace import RDF, XSD
 
 # local imports
 from utils.helper_functions import load_namespaces
-
-# Set up logging
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
 
 # Sert namespaces
 namespaces = load_namespaces()
@@ -27,7 +22,10 @@ ZEFIX = namespaces["zefix"]
 COMPANY = namespaces["company"]
 
 # Create Products
-def products_ttl():
+def products_ttl(
+    products_data_path = "data/processed/Product.csv",
+    product_organisation_link_path = "data/processed/ProductOrganisation.csv"):
+
     """
     Creates products_ttl
     """
@@ -45,23 +43,31 @@ def products_ttl():
     graph.bind("xsd", XSD)
 
     # Read data
-    df = pd.read_csv("data/processed/all_products.csv")
+    products_df = pd.read_csv(products_data_path)
+    pro_org_link_df = pd.read_csv(product_organisation_link_path)
 
     # Iterate through dataframe
-    for i, row in df.iterrows():
+    for i, row in products_df.iterrows():
         try: 
             # Skip missing required fields
-            if pd.isna(row["product_id"]) or pd.isna(row["product_name"]):
+            if pd.isna(row["product_id"]) or pd.isna(row["schema:name"]):
                 continue
 
             product_uri = PRODUCT[str(row["product_id"]).strip()]
-
-            # Add product type
-            product_type = row.get("product_type", "PlantProtectionProduct")
-            graph.add((product_uri, RDF.type, BASE[product_type]))
             
             # Add product name
-            graph.add((product_uri, SCHEMA.name, Literal(str(row["product_name"]).strip(), lang="de")))
+            graph.add((product_uri, SCHEMA.name, Literal(str(row["schema:name"]).strip(), lang="de")))
+
+            # Add w_number
+            if pd.notna(row.get("w_number")):
+                graph.add((product_uri, BASE.wNumber, Literal(str(row["w_number"]).strip(), datatype=XSD.string)))
+
+            # Add product type
+            product_type = row.get("rdf:type")
+            if pd.isna(product_type):
+                product_type = "PlantProtectionProduct"
+            graph.add((product_uri, RDF.type, BASE[str(product_type).strip().replace(" ", "")]))
+
             
         except Exception as error:
             print(f"Row {i}: {error}")
@@ -80,7 +86,6 @@ def products_ttl():
     # Save to file
     graph.serialize(destination="rdf/data/products_test.ttl", format="turtle")
     print(f"\nSaved to products_test.ttl")
-
     return graph
 
 if __name__ == "__main__":
