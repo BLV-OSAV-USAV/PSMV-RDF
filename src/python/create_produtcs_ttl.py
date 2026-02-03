@@ -45,7 +45,7 @@ def products_ttl():
     graph.bind("xsd", XSD)
 
     # Read data
-    df = pd.read_csv("data/processed/AllProducts_Renamed.csv")
+    df = pd.read_csv("data/processed/all_products.csv")
 
     # Iterate through dataframe
     for i, row in df.iterrows():

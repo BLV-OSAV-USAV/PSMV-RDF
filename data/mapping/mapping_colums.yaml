@@ -1,16 +1,30 @@
-NK_PRODUCT: product_id
-wNbr: w_number
-NK_PI_Product: product_internal_id
-NK_SP_PRODUCT: service_provider_product_id
-NK_PRODUCT_IND: product_indicator
-ID: record_id
-CODE: product_code
-TYPE: product_type
-NAME: product_name
-admissionnumber: admission_number
-producingCountryPrimaryKey: producing_country_id
-exhaustionDeadline: exhaustion_deadline
-soldoutDeadline: sold_out_deadline
-isSalePermission: sale_permission
-packageInsert: package_insert_flag
-terminationReason: termination_reason
+Product:
+  NK_PRODUCT: product_id
+  wNbr: w_number
+  NK_PI_Product: product_internal_id
+  NK_SP_PRODUCT: service_provider_product_id
+  NK_PRODUCT_IND: product_indicator
+  ID: record_id
+  CODE: product_code
+  TYPE: rdf:type
+  NAME: schema:name
+  admissionnumber: admission_number
+  producingCountryPrimaryKey: producing_country_id
+  exhaustionDeadline: exhaustion_deadline
+  soldoutDeadline: sold_out_deadline
+  isSalePermission: sale_permission
+  packageInsert: package_insert_flag
+  terminationReason: termination_reason
+Organisation:
+  NK_PermissionHolder: organisation_id
+  FAX: fax_number
+  AdditionalInformation: additional_information
+  NAME: organisation_name
+  STREET: street_address
+  PostOfficeBox: post_office_box
+  NK_CodetableCity: city_id
+  Phone: phone_number
+  NK_CodetableCountry: country_id
+ProductOrganisation:
+  NK_PermissionHolder: organisation_id
+  NK_Product: product_id
