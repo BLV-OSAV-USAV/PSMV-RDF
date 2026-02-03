@@ -9,7 +9,7 @@ A Python module for converting Swiss plant protection product data from CSV form
 
 ``` bash
 conda env create -f environment.yml
-conda activate psmw-rdf
+conda activate psmv-rdf
 ```
 
 ## Features
@@ -126,22 +126,12 @@ The converter uses the following ontologies and vocabularies:
 - **Custom PPP Ontology**: Plant protection-specific terms
 - **DCMI**: Metadata terms (date, identifier)
 
-### Example Output
+### Example Output (to be defined)
 
 ```turtle
-@prefix ppp: <https://lindas.admin.ch/ppproducts/ontology/> .
 @prefix schema: <http://schema.org/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 
-<https://lindas.admin.ch/ppproducts/product/W-1234>
-    a ppp:PlantProtectionProduct ;
-    dcterms:identifier "W-1234" ;
-    schema:name "Example Product Name"@de ;
-    ppp:registrationNumber "W-1234" ;
-    ppp:activeIngredient "Glyphosate" ;
-    ppp:authorizationHolder "Example Company AG" ;
-    ppp:status "active" ;
-    dcterms:issued "2020-01-15"^^xsd:date .
 ```
 
 
@@ -152,25 +142,7 @@ The module includes SHACL (Shapes Constraint Language) validation to ensure data
 ### Running SHACL Validation
 
 ```python
-from psmv-converter import PPPConverter, SHACLValidator
-
-# Convert CSV to RDF
-converter = PPPConverter()
-converter.load_csv('products.csv')
-rdf_graph = converter.to_rdf()
-
-# Validate against SHACL shapes
-validator = SHACLValidator()
-validator.load_shapes('shapes/ppp_shapes.ttl')
-
-# Run validation
-conforms, results_graph, results_text = validator.validate(rdf_graph)
-
-if conforms:
-    print("✓ Data is valid!")
-else:
-    print("✗ Validation errors found:")
-    print(results_text)
+# Add example 
 ```
 
 ### SHACL Shapes (To be defined)
@@ -179,46 +151,7 @@ The module includes predefined SHACL shapes for plant protection products:
 
 ```turtle
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix ppp: <https://lindas.admin.ch/ppproducts/ontology/> .
-@prefix schema: <http://schema.org/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-# Shape for Plant Protection Product
-ppp:PlantProtectionProductShape
-    a sh:NodeShape ;
-    sh:targetClass ppp:PlantProtectionProduct ;
-    sh:property [
-        sh:path dcterms:identifier ;
-        sh:minCount 1 ;
-        sh:maxCount 1 ;
-        sh:datatype xsd:string ;
-        sh:pattern "^W-[0-9]{4,6}$" ;
-        sh:message "Registration number must match pattern W-XXXX"@en ;
-    ] ;
-    sh:property [
-        sh:path schema:name ;
-        sh:minCount 1 ;
-        sh:datatype xsd:string ;
-        sh:minLength 1 ;
-        sh:message "Product name is required"@en ;
-    ] ;
-    sh:property [
-        sh:path ppp:authorizationHolder ;
-        sh:minCount 1 ;
-        sh:datatype xsd:string ;
-        sh:message "Authorization holder is required"@en ;
-    ] ;
-    sh:property [
-        sh:path ppp:status ;
-        sh:maxCount 1 ;
-        sh:in ("active" "expired" "suspended" "withdrawn") ;
-        sh:message "Status must be one of: active, expired, suspended, withdrawn"@en ;
-    ] ;
-    sh:property [
-        sh:path dcterms:issued ;
-        sh:maxCount 1 ;
-        sh:datatype xsd:date ;
-    ] .
 ```
 
 
@@ -232,6 +165,15 @@ SHACL shape files are located in the `shapes/` directory:
 ## Documentation (To be defined)
 
 Full documentation is available at io site (To be done)
+
+**SALE_PERMISSION**: Permission to market a plant protection product under a different name on the basis of an existing (regular or simplified) authorisation. <br>
+The marketing authorisation is granted upon request and requires the written consent of the holder of the basic authorisation. <br>
+It may apply to all or individual authorised indications and is linked to the validity of the basic authorisation. (PSMV Art 66) <br>
+
+**PARALLEL_IMPORT**: Placing on the market of a PPP with a foreign authorisation holder (EU) based on an equivalent product that is authorised in Switzerland. <br>
+It applies to all authorised indications of the reference product and is linked to the validity of the reference product (PSMV Art 47 Abs1) <br>
+ 
+**REGULAR**: PPP with Swiss authorisation <br>
 
 ### Examples (To be defined)
 
