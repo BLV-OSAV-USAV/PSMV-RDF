@@ -4,32 +4,39 @@ import pandas as pd
 import yaml
 import csv
 
-def process_data():
+def process_data(
+    datasets_path="data/mapping/mapping_datasets.yaml",
+    col_mapping_path="data/mapping/mapping_columns.yaml",
+    value_mapping_path="data/mapping/mapping_values.yaml",
+    out_dir="data/processed"
+):
     """
-    Processes raw data files.
+    Processes raw data files based on YAML mapping configurations.
+
+    Reads each dataset defined in the datasets mapping, applies column
+    and value mappings, and writes the result as CSV to the output directory.
+
+    Args:
+        datasets_path: Path to the YAML file defining available datasets.
+        col_mapping_path: Path to the YAML file with column name mappings.
+        value_mapping_path: Path to the YAML file with value mappings.
+        out_dir: Directory where processed CSV files are saved.
     """
-
-    mapping_datasets = "data/mapping/mapping_datasets.yaml"
-    mapping_col_table = "data/mapping/mapping_colums.yaml"
-    mapping_value_table = "data/mapping/mapping_values.yaml"
-
-    out_dir = "data/processed"
+    # Ensure output folder exsits
+    os.makedirs(out_dir, exist_ok=True)
 
     # Load mappings
-
-    with open(mapping_datasets, "r") as f:
+    with open(datasets_path, "r") as f:
         datasets = yaml.safe_load(f).get("datasets", {})
         selected = list(datasets.keys())
 
-    with open(mapping_col_table, "r") as f:
+    with open(col_mapping_path, "r") as f:
         mapping_col_dict = yaml.safe_load(f) or {}
 
-    with open(mapping_value_table, "r") as f:
+    with open(value_mapping_path, "r") as f:
         mapping_value_dict = yaml.safe_load(f) or {}
 
-
     # Process each dataset
-
     errors = []
     for dataset_key in selected:
         cfg = datasets[dataset_key]
@@ -52,11 +59,23 @@ def process_data():
                 low_memory=False,
             )
 
-            # dataset-spezifisches Column-Mapping
-            df = df.rename(columns=mapping_col_dict.get(dataset_key, mapping_col_dict))
+            # Validate columns
+            expected_cols = set(mapping_col_dict.get(dataset_key, {}).keys())
+            actual_cols = set(df.columns)
+            missing = expected_cols - actual_cols
+            extra = actual_cols - expected_cols
 
-            # dataset-spezifisches Value-Mapping
-            value_map = mapping_value_dict.get(dataset_key, mapping_value_dict)
+            if len(missing) >= 1:
+                raise ValueError(f"There are missing columns: {missing}")
+            
+            elif len(extra) >= 1:
+                print(f"Warning: Some columns are not mapped: {extra}")
+
+            # Dataset specific column-mapping
+            df = df.rename(columns=mapping_col_dict.get(dataset_key, {}))
+
+            # Dataset specific value-mapping
+            value_map = mapping_value_dict.get(dataset_key, {})
             for col, mapping in value_map.items():
                 if col in df.columns and isinstance(mapping, dict):
                     df[col] = df[col].map(mapping).fillna(df[col])
@@ -77,7 +96,14 @@ def process_data():
         except Exception as e:
             msg = f"ERROR in {dataset_key}: {e}"
             print(msg)
-            errors.append(msg)   
+            errors.append(msg)  
+
+    # Exit if errors
+    if errors:
+        print(f"\n*** Finished with {len(errors)} error(s):")
+        for msg in errors:
+            print(f"  - {msg}")
+        sys.exit(1)
 
 if __name__ == "__main__":
     process_data()

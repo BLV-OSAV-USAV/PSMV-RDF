@@ -1,9 +1,10 @@
 Product:
   NK_PRODUCT: product_id
+  NK_PROD_REF: product_ref_id
   wNbr: w_number
   NK_PI_Product: product_internal_id
   NK_SP_PRODUCT: service_provider_product_id
-  NK_PRODUCT_IND: product_indicator
+  NK_PRODUCT_INDICATION: product_indicator
   ID: record_id
   CODE: product_code
   TYPE: rdf:type
