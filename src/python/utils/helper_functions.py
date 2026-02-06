@@ -19,3 +19,4 @@ def load_namespaces(path="data/namespaces/namespaces.yaml"):
         namespaces[prefix] = Namespace(uri)
 
     return namespaces
+

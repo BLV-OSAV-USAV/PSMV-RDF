@@ -10,7 +10,7 @@ from rdflib.namespace import RDF, XSD
 # local imports
 from utils.helper_functions import load_namespaces
 
-# Sert namespaces
+# Set namespaces
 namespaces = load_namespaces()
 
 BASE = namespaces["base"]
@@ -32,7 +32,7 @@ def products_ttl(
     # Create empty graph
     graph = Graph()
     
-    # Bind namespaces (do this once, outside the loop)
+    # Bind namespaces
     graph.bind("", BASE)
     graph.bind("product", PRODUCT)
     graph.bind("substance", SUBSTANCE)
@@ -40,7 +40,6 @@ def products_ttl(
     graph.bind("zefix", ZEFIX)
     graph.bind("schema", SCHEMA)
     graph.bind("unit", UNIT)
-    graph.bind("xsd", XSD)
 
     # Read data
     products_df = pd.read_csv(products_data_path)
