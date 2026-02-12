@@ -52,7 +52,9 @@ def products_ttl(
             if pd.isna(row["product_id"]) or pd.isna(row["schema:name"]):
                 continue
 
-            product_uri = PRODUCT[str(row["product_id"]).strip()]
+            # Normalize product_id
+            product_id_str = str(row["product_id"]).strip()
+            product_uri = PRODUCT[product_id_str]
             
             # Add product name
             graph.add((product_uri, SCHEMA.name, Literal(str(row["schema:name"]).strip(), lang="de")))
@@ -67,7 +69,15 @@ def products_ttl(
                 product_type = "PlantProtectionProduct"
             graph.add((product_uri, RDF.type, BASE[str(product_type).strip().replace(" ", "")]))
 
-            
+            # Add link to reference product
+            ref_id_raw = row.get("product_ref_id")
+            if pd.notna(ref_id_raw):
+                ref_id_str = str(ref_id_raw).strip()
+                # Constraint: Only add triple if ID differs from Reference ID
+                if product_id_str != ref_id_str:
+                    ref_product_uri = PRODUCT[ref_id_str]
+                    graph.add((product_uri, BASE.referenceProduct, ref_product_uri))
+
         except Exception as error:
             print(f"Row {i}: {error}")
 
