@@ -133,6 +133,7 @@ schema:Organization a owl:Class ;
 :packageInsertNumber a owl:DatatypeProperty ;
     schema:name "Packungsbeilagenummer"@de,
         "Package insert number"@en ;
+    rdfs:subPropertyOf schema:identifier ;
     rdfs:domain :Product ;
     rdfs:range xsd:string .
 

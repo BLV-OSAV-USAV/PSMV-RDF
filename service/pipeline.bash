@@ -21,7 +21,7 @@ echo "Merge all data into one graph for subsequent LINDAS upload"
 python3 src/python/reason.py \
   -i rdf/ontology/*.ttl rdf/data/*.ttl rdf/shapes/*.ttl \
   -o rdf/processed/graph.ttl \
-  -r src/sparql/rules/inverse.rq src/sparql/rules/subclass.rq
+  -r src/sparql/rules/inverse.rq src/sparql/rules/subclass.rq src/sparql/rules/subproperty.rq
 
 
 echo "Combine all SHACL rules into one shape"
