@@ -130,6 +130,12 @@ schema:Organization a owl:Class ;
     rdfs:domain :ParallelImport ;
     rdfs:range xsd:NCName .
 
+:packageInsertNumber a owl:DatatypeProperty ;
+    schema:name "Packungsbeilagenummer"@de,
+        "Package insert number"@en ;
+    rdfs:domain :Product ;
+    rdfs:range xsd:string .
+
 :permissionHolder a owl:ObjectProperty ;
     schema:name "Permission holder"@en ;
     rdfs:domain :Product ;
@@ -137,6 +143,20 @@ schema:Organization a owl:Class ;
 
 :producingCountry a owl:ObjectProperty ;
     schema:name "Producing country"@en .
+
+:exhaustionDeadline a owl:DatatypeProperty ;
+    schema:name "Ablaufdatum der Nutzung"@de,
+        "Exhaustion deadline"@en ;
+    schema:description "The date by which the product must no longer be used, typically after the product registration has been revoked."@en ;
+    rdfs:domain :Product ;
+    rdfs:range xsd:date .
+
+:soldOutDeadline a owl:DatatypeProperty ;
+    schema:name "Ausverkauft-Frist"@de,
+        "Sold out deadline"@en ;
+    schema:description "The date by which the product can no longer be sold, typically after the product registration has been revoked."@en ;
+    rdfs:domain :Product ;
+    rdfs:range xsd:date .
 
 # Product taxonomy -------------------------------------------------------------
 
