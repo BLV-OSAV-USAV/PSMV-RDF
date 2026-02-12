@@ -106,6 +106,12 @@ schema:Organization a owl:Class ;
     rdfs:domain :Product ;
     rdfs:range xsd:NCName .
 
+:referenceProduct a owl:ObjectProperty ;
+    schema:name "Referenzprodukt"@de,
+        "Reference product"@en ;
+    rdfs:range :Product ;
+    rdfs:domain :Product .
+
 :foreignAdmissionNumber a owl:DatatypeProperty ;
     schema:name "Ausländische Zulassungsnummer"@de,
         "Foreign admission number"@en ;
@@ -117,6 +123,9 @@ schema:Organization a owl:Class ;
     schema:name "Permission holder"@en ;
     rdfs:domain :Product ;
     rdfs:range schema:Organization .
+
+:producingCountry a owl:ObjectProperty ;
+    schema:name "Producing country"@en .
 
 # Product taxonomy -------------------------------------------------------------
 
