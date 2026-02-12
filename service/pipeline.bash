@@ -7,6 +7,9 @@ echo "Validate syntax of turtle files"
 python3 src/python/validate.py rdf
 
 
+echo "Run data integration pipeline"
+python3 src/python/create_produtcs_ttl.py
+
 echo "Create a dedicated ontology file for subsequent WebVOWL visualization"
 python3 src/python/reason.py \
   -i rdf/ontology/*.ttl \

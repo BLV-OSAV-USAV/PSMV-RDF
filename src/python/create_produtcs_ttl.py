@@ -59,7 +59,7 @@ def products_ttl(
 
             # Add w_number
             if pd.notna(row.get("w_number")):
-                graph.add((product_uri, BASE.wNumber, Literal(str(row["w_number"]).strip(), datatype=XSD.string)))
+                graph.add((product_uri, BASE.federalAdmissionNumber, Literal(str(row["w_number"]).strip(), datatype=XSD.string)))
 
             # Add product type
             product_type = row.get("rdf:type")
@@ -83,8 +83,9 @@ def products_ttl(
         print(f"{s} {p} {o}")
 
     # Save to file
-    graph.serialize(destination="rdf/data/products_test.ttl", format="turtle")
-    print(f"\nSaved to products_test.ttl")
+    out_path = Path("rdf/data/products.ttl")
+    graph.serialize(destination=out_path, format="turtle")
+    print(f"\nSaved to `{out_path}`")
     return graph
 
 if __name__ == "__main__":
