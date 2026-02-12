@@ -140,6 +140,27 @@ def products_ttl(
                     country_uri = COUNTRY_MAPPING[country_uuid_str]
                     graph.add((product_uri, BASE.producingCountry, country_uri))
 
+            # Add dates (Exhaustion and Sold Out Deadlines)
+            # Input format may be: "2027-01-01 00:00:00.0000000"
+            # Output format needs to be: "2027-01-01"^^xsd:date
+            exhaustion_raw = row.get("exhaustion_deadline")
+            if pd.notna(exhaustion_raw) and str(exhaustion_raw).strip():
+                try:
+                    dt = pd.to_datetime(exhaustion_raw)
+                    date_str = dt.strftime("%Y-%m-%d")
+                    graph.add((product_uri, BASE.exhaustionDeadline, Literal(date_str, datatype=XSD.date)))
+                except ValueError:
+                    pass # Skip invalid dates
+
+            sold_out_raw = row.get("sold_out_deadline")
+            if pd.notna(sold_out_raw) and str(sold_out_raw).strip():
+                try:
+                    dt = pd.to_datetime(sold_out_raw)
+                    date_str = dt.strftime("%Y-%m-%d")
+                    graph.add((product_uri, BASE.soldOutDeadline, Literal(date_str, datatype=XSD.date)))
+                except ValueError:
+                    pass # Skip invalid dates
+
             rdf_type_uri = TYPE_MAPPING.get(raw_type, BASE.Product)
             graph.add((product_uri, RDF.type, rdf_type_uri))
 

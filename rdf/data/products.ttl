@@ -14,9 +14,11 @@ product:00260F63-207E-4675-B8C8-851AA2603AEB a :ParallelImport ;
 
 product:007E8933-BEE8-44EF-93FC-B670703F7D5E a :SalePermission ;
     schema1:name "MIOPLANT Rasen-Unkrautvertilger"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-6719-1"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:2A7FA096-6AD4-48B0-9FE6-66F0FA6BCFFA .
+    :referenceProduct product:2A7FA096-6AD4-48B0-9FE6-66F0FA6BCFFA ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:00B73885-D3B8-4B1B-8CCA-B46398EC7415 a :ParallelImport ;
     schema1:name "Granstar Trio"@de ;
@@ -28,9 +30,11 @@ product:00B73885-D3B8-4B1B-8CCA-B46398EC7415 a :ParallelImport ;
 
 product:00F045AE-E93C-4B08-82EE-9F5965145DAF a :SalePermission ;
     schema1:name "Spruzit AF OrchideenSchädlingsSpray"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-6670-2"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:B14E1893-A573-4050-91E7-82C08D785520 .
+    :referenceProduct product:B14E1893-A573-4050-91E7-82C08D785520 ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:01735BED-34C5-4F65-BBB2-ED934FFEF4C8 a :SalePermission ;
     schema1:name "CLEAVE"@de ;
@@ -53,17 +57,21 @@ product:019679C1-245D-4757-A62B-967CED8E6F53 a :ParallelImport ;
 
 product:01967F79-C3AA-4417-BBEB-89B678003DD8 a :ParallelImport ;
     schema1:name "Buzzin"@de ;
+    :exhaustionDeadline "2026-07-01"^^xsd:date ;
     :federalAdmissionNumber "A-5832"^^xsd:string ;
     :foreignAdmissionNumber "3585-0"^^xsd:string ;
     :packageInsertNumber "8543"^^xsd:string ;
     :producingCountry country:AUT ;
-    :referenceProduct product:5114BA88-F2B2-4E00-BBA0-E61DA10FA650 .
+    :referenceProduct product:5114BA88-F2B2-4E00-BBA0-E61DA10FA650 ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:01D4C00F-66D2-481F-92BC-8A7A96654E82 a :SalePermission ;
     schema1:name "Gesal Insect-Stop"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7408-2"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:C8F8513D-FCCC-4F03-A574-63E140ECCAFD .
+    :referenceProduct product:C8F8513D-FCCC-4F03-A574-63E140ECCAFD ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:01DBC967-CE01-449A-A09A-0E676F022A95 a :ParallelImport ;
     schema1:name "Magnello"@de ;
@@ -75,9 +83,11 @@ product:01DBC967-CE01-449A-A09A-0E676F022A95 a :ParallelImport ;
 
 product:0203D805-AB94-4231-B307-056ED86115E3 a :SalePermission ;
     schema1:name "Proclean Turf N"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7416-4"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:01D5F1BA-6E12-4177-A06E-8371C94B95D3 .
+    :referenceProduct product:01D5F1BA-6E12-4177-A06E-8371C94B95D3 ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:020CDA96-57C2-426F-85D7-07450E30943B a :SalePermission ;
     schema1:name "Metapro liquid"@de ;
@@ -136,11 +146,13 @@ product:032FDF43-A99E-471C-9A09-497E3B34EC89 a :SalePermission ;
 
 product:033212EE-00C2-40CE-96C5-61051841AF40 a :ParallelImport ;
     schema1:name "Carmina Max"@de ;
+    :exhaustionDeadline "2026-10-18"^^xsd:date ;
     :federalAdmissionNumber "F-5671"^^xsd:string ;
     :foreignAdmissionNumber "2130242"^^xsd:string ;
     :packageInsertNumber "7796"^^xsd:string ;
     :producingCountry country:FRA ;
-    :referenceProduct product:4EC263C8-8D7C-4BAB-9225-E7D7FE6D28BC .
+    :referenceProduct product:4EC263C8-8D7C-4BAB-9225-E7D7FE6D28BC ;
+    :soldOutDeadline "2025-10-18"^^xsd:date .
 
 product:0345D56D-C133-4A3E-B916-AECC898F8095 a :ParallelImport ;
     schema1:name "Quimera"@de ;
@@ -330,9 +342,11 @@ product:067D6E65-6ECD-47E2-BFCD-E6A856AAEF7B a :ParallelImport ;
 
 product:067FBB50-B19E-4D9B-8694-00828B24C0BC a :SalePermission ;
     schema1:name "MIOPLANT Windenvertilger"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-4309-1"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:54FAB045-7C19-4734-BCF8-70CE7180E3D4 .
+    :referenceProduct product:54FAB045-7C19-4734-BCF8-70CE7180E3D4 ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:068B21BA-D50F-43BB-9445-88E43FBF0DDF a :SalePermission ;
     schema1:name "Migros Bio Garden Spray gegen Blattläuse"@de ;
@@ -435,9 +449,11 @@ product:0778CB9C-C87F-4B78-8F7E-21105FD5F684 a :ParallelImport ;
 
 product:0796A830-E420-4502-B136-106F2D8604B2 a :SalePermission ;
     schema1:name "Capito Rasen Unkrautfrei Spray S"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7317-4"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:B2BBD0DF-0899-4A8B-AF1C-9536365A9B34 .
+    :referenceProduct product:B2BBD0DF-0899-4A8B-AF1C-9536365A9B34 ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:07A3473A-D659-4538-8507-BF8FFDDE4582 a :ParallelImport ;
     schema1:name "Devrinol F"@de ;
@@ -481,9 +497,11 @@ product:087B11C3-5BC4-4ACB-876C-3AAEC6B321C1 a :RegularProduct ;
 
 product:08A83B0D-7F69-4E4B-A75E-A4EC09B64D92 a :SalePermission ;
     schema1:name "MIOPLANT Laus-Stopp"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-6917-1"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:938899F3-91C4-400C-A26C-5612D60DFA3F .
+    :referenceProduct product:938899F3-91C4-400C-A26C-5612D60DFA3F ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:08CDBCE7-9F81-444E-B9BA-DEC2CE96EA19 a :ParallelImport ;
     schema1:name "universe"@de ;
@@ -576,9 +594,11 @@ product:0A86FA20-1812-470F-A356-3C4CA39ACA41 a :ParallelImport ;
 
 product:0A8844B0-260B-4818-819E-DFA70F0E6A6A a :SalePermission ;
     schema1:name "Capito Total-Herbizid"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-6354-5"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:56920A32-E2D3-4A01-A438-FF73851670AE .
+    :referenceProduct product:56920A32-E2D3-4A01-A438-FF73851670AE ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:0A8C03E7-2345-4B8D-B11E-221CB1CD4AB3 a :SalePermission ;
     schema1:name "Mapro"@de ;
@@ -630,9 +650,11 @@ product:0B19143D-D783-49B5-B041-51C564373155 a :ParallelImport ;
 
 product:0B7AC832-C839-4BE6-8051-C1ABA943CFD4 a :SalePermission ;
     schema1:name "2,4-D Plus"@de ;
+    :exhaustionDeadline "2026-10-15"^^xsd:date ;
     :federalAdmissionNumber "W-6885-1"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:991CCDBE-368E-406A-B2D2-88CB5E6FBDF6 .
+    :referenceProduct product:991CCDBE-368E-406A-B2D2-88CB5E6FBDF6 ;
+    :soldOutDeadline "2025-10-15"^^xsd:date .
 
 product:0B8BCD73-2FB3-4FD6-B7D0-1790FBD16E0E a :ParallelImport ;
     schema1:name "Switch"@de ;
@@ -656,9 +678,11 @@ product:0BF3F977-EB30-475A-B46A-33D0FFBF29AD a :SalePermission ;
 
 product:0BFBD666-FABB-4800-9C5C-1E5E81E5164F a :SalePermission ;
     schema1:name "Capito Pilzfrei Spray"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-5236-3"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:A51533DE-4C21-4E5A-9231-D72635E0648A .
+    :referenceProduct product:A51533DE-4C21-4E5A-9231-D72635E0648A ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:0C028C1C-FC28-42AA-B06D-E636ED2AABFC a :RegularProduct ;
     schema1:name "ProFume"@de ;
@@ -712,9 +736,11 @@ product:0C97247A-5365-4B6B-BCD9-E0183F2924D7 a :RegularProduct ;
 
 product:0CA0AF67-F827-4732-B46E-87191D9A0B65 a :SalePermission ;
     schema1:name "Heading perfectLawn"@de ;
+    :exhaustionDeadline "2026-06-18"^^xsd:date ;
     :federalAdmissionNumber "W-6157-1"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:40B0C357-7A34-468A-B279-18F51D30DD11 .
+    :referenceProduct product:40B0C357-7A34-468A-B279-18F51D30DD11 ;
+    :soldOutDeadline "2025-06-18"^^xsd:date .
 
 product:0CA602D1-687F-433E-82AA-1F07E3C8F25A a :SalePermission ;
     schema1:name "Talis"@de ;
@@ -779,9 +805,11 @@ product:0D2B194C-72EB-4181-B7EA-E1D2B7523F11 a :RegularProduct ;
 
 product:0D2D9B7B-2146-4E55-828B-B4B476FA3942 a :SalePermission ;
     schema1:name "MAAG Käfer-Stopp"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7333-4"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:3C9CCEE3-3F59-4AE0-BFCC-6B3C15BF5202 .
+    :referenceProduct product:3C9CCEE3-3F59-4AE0-BFCC-6B3C15BF5202 ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:0D4856E6-4BF5-4714-AB6B-AFDC1EC4680E a :RegularProduct ;
     schema1:name "Revive"@de ;
@@ -836,30 +864,38 @@ product:0E20BB22-4067-45A6-A1B7-51ADEB99A664 a :ParallelImport ;
 
 product:0E401266-8EB6-4601-B70D-93690B970661 a :SalePermission ;
     schema1:name "Belrose Cupro"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7440-1"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:DC2FB913-373F-485B-BF7D-C77DB32A229B .
+    :referenceProduct product:DC2FB913-373F-485B-BF7D-C77DB32A229B ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:0E49C80D-1EA3-4EF9-BEFB-553F15F522C5 a :RegularProduct ;
     schema1:name "Captan 80 WDG"@de ;
+    :exhaustionDeadline "2027-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7029"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2026-10-31"^^xsd:date .
 
 product:0E5204F7-7F2A-4618-9E4C-AF2105636694 a :ParallelImport ;
     schema1:name "Fenpyrazamine 500"@de ;
+    :exhaustionDeadline "2027-01-01"^^xsd:date ;
     :federalAdmissionNumber "D-6828"^^xsd:string ;
     :foreignAdmissionNumber "007679-00/005"^^xsd:string ;
     :packageInsertNumber "8170"^^xsd:string ;
     :producingCountry country:DEU ;
-    :referenceProduct product:23741490-0F6F-4335-A986-ACA003E5F1F6 .
+    :referenceProduct product:23741490-0F6F-4335-A986-ACA003E5F1F6 ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:0E546B51-BF8B-4D06-A7AA-7B32192F0669 a :ParallelImport ;
     schema1:name "Metric"@de ;
+    :exhaustionDeadline "2026-07-01"^^xsd:date ;
     :federalAdmissionNumber "D-6034"^^xsd:string ;
     :foreignAdmissionNumber "006588-00"^^xsd:string ;
     :packageInsertNumber "8168"^^xsd:string ;
     :producingCountry country:DEU ;
-    :referenceProduct product:39ADD145-1AD7-45D1-AA8E-A2FAFA08E722 .
+    :referenceProduct product:39ADD145-1AD7-45D1-AA8E-A2FAFA08E722 ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:0E99F5CE-376F-413D-9460-C4B773ADC90F a :ParallelImport ;
     schema1:name "Shirudo"@de ;
@@ -890,8 +926,10 @@ product:0F226EE9-80CD-42A4-9D5C-314104FD1E9A a :SalePermission ;
 
 product:0F4D062C-71AA-4127-93E2-5960BE8D5CBC a :RegularProduct ;
     schema1:name "Cupro-Folpet Ultra SC"@de ;
+    :exhaustionDeadline "2026-07-25"^^xsd:date ;
     :federalAdmissionNumber "W-5757"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-07-25"^^xsd:date .
 
 product:0F6A9989-0A4B-4B06-968D-43EC726485DD a :SalePermission ;
     schema1:name "Teppeki"@de ;
@@ -1008,9 +1046,11 @@ product:1102653C-AF46-409C-9AD9-8C23D48EBCAA a :RegularProduct ;
 
 product:1117BAFC-862D-4F30-B5D9-AA09739CF00D a :SalePermission ;
     schema1:name "Zepter"@de ;
+    :exhaustionDeadline "2026-07-01"^^xsd:date ;
     :federalAdmissionNumber "W-6255-2"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:9A972F4F-EE1F-4F5C-9FED-B3E350540E12 .
+    :referenceProduct product:9A972F4F-EE1F-4F5C-9FED-B3E350540E12 ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:111D1FE6-4B79-4F5B-B355-982B1F78BAE0 a :RegularProduct ;
     schema1:name "Force 20 CS"@de ;
@@ -1019,9 +1059,11 @@ product:111D1FE6-4B79-4F5B-B355-982B1F78BAE0 a :RegularProduct ;
 
 product:112EDA08-0A20-499D-A65D-06AF1ADD30FC a :SalePermission ;
     schema1:name "Gesal Insektizid Spritzmittel"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-6900-2"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:05E0149E-9537-40C4-B885-2FB572409323 .
+    :referenceProduct product:05E0149E-9537-40C4-B885-2FB572409323 ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:115DA980-F7A8-4FD4-A58A-F639032B986D a :SalePermission ;
     schema1:name "Gesal Kupfer-Ersatz"@de ;
@@ -1053,8 +1095,10 @@ product:11D8B239-23C8-4A8E-8572-2E46A762BA89 a :SalePermission ;
 
 product:11DA1377-7586-4649-BE15-70E33B14CA85 a :RegularProduct ;
     schema1:name "Arco"@de ;
+    :exhaustionDeadline "2027-09-30"^^xsd:date ;
     :federalAdmissionNumber "W-7257"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2026-09-30"^^xsd:date .
 
 product:11E05E33-B926-4BFB-99B3-3F007D86BCB0 a :RegularProduct ;
     schema1:name "Trichomix Gewächshaus"@de ;
@@ -1069,11 +1113,13 @@ product:11F09874-B90B-467F-9994-14D90121BAA0 a :SalePermission ;
 
 product:1218064B-C4E5-43DF-800F-2655A21872E7 a :ParallelImport ;
     schema1:name "Canopia"@de ;
+    :exhaustionDeadline "2026-07-01"^^xsd:date ;
     :federalAdmissionNumber "F-6672"^^xsd:string ;
     :foreignAdmissionNumber "2140261"^^xsd:string ;
     :packageInsertNumber "8675"^^xsd:string ;
     :producingCountry country:FRA ;
-    :referenceProduct product:709D34C9-C338-40DB-82A3-B59691514FAD .
+    :referenceProduct product:709D34C9-C338-40DB-82A3-B59691514FAD ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:1219B29E-AD9F-48D5-8957-AFBCB0B39FBD a :RegularProduct ;
     schema1:name "Dacnusa sibirica"@de ;
@@ -1117,9 +1163,11 @@ product:129B4622-9C18-4408-8E7D-198253D7E627 a :ParallelImport ;
 
 product:12BF8C47-F039-4204-9FA0-6EFFA08E7578 a :SalePermission ;
     schema1:name "Miranda"@de ;
+    :exhaustionDeadline "2027-01-01"^^xsd:date ;
     :federalAdmissionNumber "W-6226-1"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:06EC806F-DFBD-4A17-BB56-22B8F3D67849 .
+    :referenceProduct product:06EC806F-DFBD-4A17-BB56-22B8F3D67849 ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:12C6D634-876E-4BFA-BC03-C57EF0498F91 a :ParallelImport ;
     schema1:name "Bengala"@de ;
@@ -1151,11 +1199,13 @@ product:13164696-636F-40A0-BB9E-00CDA795B2CC a :SalePermission ;
 
 product:132CEC2E-4A6B-4876-9323-CFEE38B68CB7 a :ParallelImport ;
     schema1:name "Ethrel"@de ;
+    :exhaustionDeadline "2026-06-30"^^xsd:date ;
     :federalAdmissionNumber "I-3209"^^xsd:string ;
     :foreignAdmissionNumber "6437"^^xsd:string ;
     :packageInsertNumber "5166"^^xsd:string ;
     :producingCountry country:ITA ;
-    :referenceProduct product:086AE789-E56A-48F4-9D36-390A768AF93F .
+    :referenceProduct product:086AE789-E56A-48F4-9D36-390A768AF93F ;
+    :soldOutDeadline "2025-06-30"^^xsd:date .
 
 product:13313B15-D5D9-42AB-B9A8-1888BB7E0CA8 a :RegularProduct ;
     schema1:name "Folpet Stähler WG"@de ;
@@ -1201,9 +1251,11 @@ product:13E8A801-0098-4F8B-A509-0280C11EC0C3 a :ParallelImport ;
 
 product:13F8A157-AAC1-4BE9-8F06-659C6421905F a :SalePermission ;
     schema1:name "Tisca"@de ;
+    :exhaustionDeadline "2027-11-25"^^xsd:date ;
     :federalAdmissionNumber "W-6747-1"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:AA3831B4-2835-4A98-8319-0586B1182324 .
+    :referenceProduct product:AA3831B4-2835-4A98-8319-0586B1182324 ;
+    :soldOutDeadline "2026-11-25"^^xsd:date .
 
 product:13FD5B0B-BDFE-499A-B097-B05657E176B5 a :ParallelImport ;
     schema1:name "Alliage"@de ;
@@ -1223,8 +1275,10 @@ product:141FFD38-3526-4651-B824-A6BC59C3B597 a :ParallelImport ;
 
 product:14370F2A-7AE0-421D-B56D-004D67FAF03B a :RegularProduct ;
     schema1:name "Primo Maxx"@de ;
+    :exhaustionDeadline "2027-01-31"^^xsd:date ;
     :federalAdmissionNumber "W-6247"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2026-01-31"^^xsd:date .
 
 product:1446EE46-EFAE-412F-8312-AB14756DBFA4 a :ParallelImport ;
     schema1:name "Serenva"@de ;
@@ -1313,11 +1367,13 @@ product:15D9B13B-C0AB-4784-BE9C-3F5BCD53D412 a :ParallelImport ;
 
 product:15DA47E1-D353-4A59-A248-34F3B7E8ECD6 a :ParallelImport ;
     schema1:name "Diflufen"@de ;
+    :exhaustionDeadline "2027-01-01"^^xsd:date ;
     :federalAdmissionNumber "D-7431"^^xsd:string ;
     :foreignAdmissionNumber "008548-00/023"^^xsd:string ;
     :packageInsertNumber "8607"^^xsd:string ;
     :producingCountry country:DEU ;
-    :referenceProduct product:95C2F859-9684-4E38-8ACB-808F7A76F7F9 .
+    :referenceProduct product:95C2F859-9684-4E38-8ACB-808F7A76F7F9 ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:161012CA-B959-400B-BA9B-85917941A32E a :SalePermission ;
     schema1:name "Rodeo"@de ;
@@ -1465,16 +1521,20 @@ product:18E60D63-6A56-47A5-8EB6-B952E1A56A92 a :ParallelImport ;
 
 product:18EA3188-796D-4CD2-A109-EB30E702C461 a :RegularProduct ;
     schema1:name "Magma Triple"@de ;
+    :exhaustionDeadline "2027-09-30"^^xsd:date ;
     :federalAdmissionNumber "W-7248"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2026-09-30"^^xsd:date .
 
 product:191C8B4A-089F-4933-9CEB-50755B926D50 a :ParallelImport ;
     schema1:name "Trimaxx"@de ;
+    :exhaustionDeadline "2027-02-28"^^xsd:date ;
     :federalAdmissionNumber "F-7043"^^xsd:string ;
     :foreignAdmissionNumber "2140082"^^xsd:string ;
     :packageInsertNumber "8009"^^xsd:string ;
     :producingCountry country:FRA ;
-    :referenceProduct product:C8D8DAAA-4A58-457D-9BDD-6FC694767C72 .
+    :referenceProduct product:C8D8DAAA-4A58-457D-9BDD-6FC694767C72 ;
+    :soldOutDeadline "2026-02-28"^^xsd:date .
 
 product:1930419C-A00B-4A58-A4D4-6715F36E1F32 a :ParallelImport ;
     schema1:name "Baltazar"@de ;
@@ -1486,8 +1546,10 @@ product:1930419C-A00B-4A58-A4D4-6715F36E1F32 a :ParallelImport ;
 
 product:194D7B96-375C-46FE-B29D-CBDB1C103132 a :RegularProduct ;
     schema1:name "Zwei, 4 - D - Dicopur"@de ;
+    :exhaustionDeadline "2026-10-15"^^xsd:date ;
     :federalAdmissionNumber "W-7072"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-10-15"^^xsd:date .
 
 product:196EA0CB-64DF-4041-B0C0-BA6886761921 a :RegularProduct ;
     schema1:name "Maxim 480 FS"@de ;
@@ -1619,9 +1681,11 @@ product:1B7E8B3C-7693-4BE7-A826-83E3E92C3F3D a :SalePermission ;
 
 product:1BE21059-6C7F-4DA3-8C14-435F247C0C0D a :SalePermission ;
     schema1:name "Herba>ProXX C"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-6719-2"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:2A7FA096-6AD4-48B0-9FE6-66F0FA6BCFFA .
+    :referenceProduct product:2A7FA096-6AD4-48B0-9FE6-66F0FA6BCFFA ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:1C214223-1B02-4CA6-81AA-755F61246467 a :ParallelImport ;
     schema1:name "Elegant 05 EC"@de ;
@@ -1680,11 +1744,13 @@ product:1D4D54C1-DEE8-4423-B994-7B8839842187 a :ParallelImport ;
 
 product:1DA677C7-D5E2-47FD-A50F-D60ED41A574B a :ParallelImport ;
     schema1:name "Trinex 175"@de ;
+    :exhaustionDeadline "2027-02-28"^^xsd:date ;
     :federalAdmissionNumber "D-6798"^^xsd:string ;
     :foreignAdmissionNumber "007005-00/018"^^xsd:string ;
     :packageInsertNumber "8009"^^xsd:string ;
     :producingCountry country:DEU ;
-    :referenceProduct product:C8D8DAAA-4A58-457D-9BDD-6FC694767C72 .
+    :referenceProduct product:C8D8DAAA-4A58-457D-9BDD-6FC694767C72 ;
+    :soldOutDeadline "2026-02-28"^^xsd:date .
 
 product:1DA70A18-DAF1-41A0-8646-F0FEE7F94100 a :RegularProduct ;
     schema1:name "Exochomus quadripustulatus"@de ;
@@ -1699,16 +1765,20 @@ product:1DB9C21E-9FBA-4B93-ADA9-0D4B3BE9FBBF a :SalePermission ;
 
 product:1E75BA98-EC15-4FF2-BB9C-8577DA22A2B5 a :ParallelImport ;
     schema1:name "Diflufen"@de ;
+    :exhaustionDeadline "2027-01-01"^^xsd:date ;
     :federalAdmissionNumber "D-6968"^^xsd:string ;
     :foreignAdmissionNumber "008548-00/004"^^xsd:string ;
     :packageInsertNumber "8607"^^xsd:string ;
     :producingCountry country:DEU ;
-    :referenceProduct product:95C2F859-9684-4E38-8ACB-808F7A76F7F9 .
+    :referenceProduct product:95C2F859-9684-4E38-8ACB-808F7A76F7F9 ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:1EC060D5-9022-4553-B6C0-987525CFC0D9 a :RegularProduct ;
     schema1:name "Cupro-folpet TB"@de ;
+    :exhaustionDeadline "2026-07-25"^^xsd:date ;
     :federalAdmissionNumber "W-7098"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-07-25"^^xsd:date .
 
 product:1F1AD70C-F1F3-479A-BE38-5D01B282F072 a :RegularProduct ;
     schema1:name "Folpet 80 WDG"@de ;
@@ -1746,11 +1816,13 @@ product:1F790D3C-2294-4426-AFBA-2A94CAA651E0 a :ParallelImport ;
 
 product:1FCCAA83-FB0C-4236-A3CE-3B409EE5BDAD a :ParallelImport ;
     schema1:name "Olympique"@de ;
+    :exhaustionDeadline "2026-07-01"^^xsd:date ;
     :federalAdmissionNumber "F-6439"^^xsd:string ;
     :foreignAdmissionNumber "2170924"^^xsd:string ;
     :packageInsertNumber "8675"^^xsd:string ;
     :producingCountry country:FRA ;
-    :referenceProduct product:709D34C9-C338-40DB-82A3-B59691514FAD .
+    :referenceProduct product:709D34C9-C338-40DB-82A3-B59691514FAD ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:1b68b8a1-9b9a-45c9-be2a-ce3ab3431605 a :SalePermission ;
     schema1:name "Trezor"@de ;
@@ -1850,11 +1922,13 @@ product:217CA269-9F24-4762-8F98-4D130A6614EB a :RegularProduct ;
 
 product:219C7F87-52AF-457E-B1C6-3FD1CF76D3F9 a :ParallelImport ;
     schema1:name "Metriphar 70 WG"@de ;
+    :exhaustionDeadline "2026-07-01"^^xsd:date ;
     :federalAdmissionNumber "F-3933"^^xsd:string ;
     :foreignAdmissionNumber "2010525"^^xsd:string ;
     :packageInsertNumber "7127"^^xsd:string ;
     :producingCountry country:FRA ;
-    :referenceProduct product:088FA484-0A20-4FBC-B8EE-BFD3C33E1867 .
+    :referenceProduct product:088FA484-0A20-4FBC-B8EE-BFD3C33E1867 ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:21BBB173-B72A-4DBE-BCC1-F30709C26A63 a :RegularProduct ;
     schema1:name "Milo"@de ;
@@ -1920,11 +1994,13 @@ product:2315FE39-C5A6-488F-AF6C-9EAF36BD40F5 a :RegularProduct ;
 
 product:231BA718-9AD4-4967-A75F-3C0202331755 a :ParallelImport ;
     schema1:name "Artist"@de ;
+    :exhaustionDeadline "2026-07-01"^^xsd:date ;
     :federalAdmissionNumber "D-7183"^^xsd:string ;
     :foreignAdmissionNumber "024559-00"^^xsd:string ;
     :packageInsertNumber "7234"^^xsd:string ;
     :producingCountry country:DEU ;
-    :referenceProduct product:ED03C441-3562-47BD-87AB-2C55003A803B .
+    :referenceProduct product:ED03C441-3562-47BD-87AB-2C55003A803B ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:2340FB60-76F5-4C41-8E58-B3A77F90D4C7 a :RegularProduct ;
     schema1:name "Dicavel SL"@de ;
@@ -1991,9 +2067,11 @@ product:23F0C2E8-C065-44AB-92C3-3E1745794247 a :SalePermission ;
 
 product:2401F534-1B6E-46F5-B841-4F6900FDCDB1 a :SalePermission ;
     schema1:name "Rasenrein"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7416-2"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:01D5F1BA-6E12-4177-A06E-8371C94B95D3 .
+    :referenceProduct product:01D5F1BA-6E12-4177-A06E-8371C94B95D3 ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:243A14D2-682D-4061-AD45-837439F85107 a :ParallelImport ;
     schema1:name "Titus"@de ;
@@ -2005,9 +2083,11 @@ product:243A14D2-682D-4061-AD45-837439F85107 a :ParallelImport ;
 
 product:245688E8-0D71-4A9E-8D02-4CE76851E514 a :SalePermission ;
     schema1:name "Capito Garden Silver Spray"@de ;
+    :exhaustionDeadline "2026-11-19"^^xsd:date ;
     :federalAdmissionNumber "W-7254-1"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:859D9639-C8B5-4579-B583-602F591E864E .
+    :referenceProduct product:859D9639-C8B5-4579-B583-602F591E864E ;
+    :soldOutDeadline "2025-11-19"^^xsd:date .
 
 product:246ECF14-69D0-45A8-90F0-062EDE32F422 a :RegularProduct ;
     schema1:name "Instrata Elite"@de ;
@@ -2021,11 +2101,13 @@ product:24DF9479-2B7A-4BBB-9DC3-54B2E83E93E9 a :RegularProduct ;
 
 product:25027D9C-C4C7-4991-BFB6-9FF3FA0DCC94 a :ParallelImport ;
     schema1:name "Diflunacet"@de ;
+    :exhaustionDeadline "2027-01-01"^^xsd:date ;
     :federalAdmissionNumber "D-7434"^^xsd:string ;
     :foreignAdmissionNumber "008286-00/009"^^xsd:string ;
     :packageInsertNumber "8607"^^xsd:string ;
     :producingCountry country:DEU ;
-    :referenceProduct product:95C2F859-9684-4E38-8ACB-808F7A76F7F9 .
+    :referenceProduct product:95C2F859-9684-4E38-8ACB-808F7A76F7F9 ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:2540EA5E-0BEB-41FC-9791-88BDA40AA44E a :RegularProduct ;
     schema1:name "Silwet L-77"@de ;
@@ -2184,17 +2266,21 @@ product:284455DC-AB29-4561-9009-C7BDC2E6761E a :SalePermission ;
 
 product:28F8F051-4BD7-4D3D-BAD6-4D5AA6480779 a :SalePermission ;
     schema1:name "Capito Garden Silver"@de ;
+    :exhaustionDeadline "2026-11-19"^^xsd:date ;
     :federalAdmissionNumber "W-7255-1"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:17428367-0B5C-47F6-A695-B7581562FA4B .
+    :referenceProduct product:17428367-0B5C-47F6-A695-B7581562FA4B ;
+    :soldOutDeadline "2025-11-19"^^xsd:date .
 
 product:2911CDA4-8381-4125-97B1-CA925BA05D9C a :ParallelImport ;
     schema1:name "Aspect"@de ;
+    :exhaustionDeadline "2027-01-01"^^xsd:date ;
     :federalAdmissionNumber "I-6768"^^xsd:string ;
     :foreignAdmissionNumber "11944"^^xsd:string ;
     :packageInsertNumber "7758"^^xsd:string ;
     :producingCountry country:ITA ;
-    :referenceProduct product:1AC55C5A-5941-420B-A062-8D5E04D581E4 .
+    :referenceProduct product:1AC55C5A-5941-420B-A062-8D5E04D581E4 ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:2919A58F-3AE2-494E-BB46-E96E50068E69 a :RegularProduct ;
     schema1:name "Techno"@de ;
@@ -2296,9 +2382,11 @@ product:2A367687-FBC6-445D-A172-05CD3735D90C a :RegularProduct ;
 
 product:2A5717E9-0423-4B37-BE6C-F28DAE8F9DB3 a :SalePermission ;
     schema1:name "Cupromaag Liquid"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-6838-3"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:0CEF1E11-4F49-4860-B006-AFED5AD5D414 .
+    :referenceProduct product:0CEF1E11-4F49-4860-B006-AFED5AD5D414 ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:2A5BDD33-B856-4992-8ACC-50A91E668653 a :RegularProduct ;
     schema1:name "Taifun"@de ;
@@ -2475,9 +2563,11 @@ product:2D057992-A6BA-4667-A113-B1262E4DFF04 a :RegularProduct ;
 
 product:2D2DE35A-8CF7-45EF-A09D-5233BB51F8A4 a :SalePermission ;
     schema1:name "Gesal Kupfer-Pilzschutz"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-6838-4"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:0CEF1E11-4F49-4860-B006-AFED5AD5D414 .
+    :referenceProduct product:0CEF1E11-4F49-4860-B006-AFED5AD5D414 ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:2D2F22BE-7B26-4F27-9984-392848F3459A a :SalePermission ;
     schema1:name "CAPTAN 80 WDG"@de ;
@@ -2584,9 +2674,11 @@ product:2E2C8A1D-A298-4718-A85A-9A809D875F65 a :ParallelImport ;
 
 product:2E40FD54-D398-44A0-94D8-DBEBB207A56F a :SalePermission ;
     schema1:name "Perfetto HG"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7333-2"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:3C9CCEE3-3F59-4AE0-BFCC-6B3C15BF5202 .
+    :referenceProduct product:3C9CCEE3-3F59-4AE0-BFCC-6B3C15BF5202 ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:2E61817F-BDF5-484D-B704-EA56D9C5E1F9 a :ParallelImport ;
     schema1:name "Select"@de ;
@@ -2627,9 +2719,11 @@ product:2F12CDBF-B34F-44FB-AE61-2FD50E8EACCE a :RegularProduct ;
 
 product:2F1C00CB-5578-4ADD-B0A1-F388AB35AE84 a :SalePermission ;
     schema1:name "Cuprum Flow"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-6838-1"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:0CEF1E11-4F49-4860-B006-AFED5AD5D414 .
+    :referenceProduct product:0CEF1E11-4F49-4860-B006-AFED5AD5D414 ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:2F211118-208A-4601-8DF3-F36D365410B5 a :ParallelImport ;
     schema1:name "Karate avec technologie Zéon"@de ;
@@ -2654,11 +2748,13 @@ product:2F3B8348-DE79-4ED6-96B3-1055FC2E4BDA a :RegularProduct ;
 
 product:2F5749FD-B554-49C5-834D-10DD40195410 a :ParallelImport ;
     schema1:name "Trinexapac-ethyl 175"@de ;
+    :exhaustionDeadline "2027-02-28"^^xsd:date ;
     :federalAdmissionNumber "D-6797"^^xsd:string ;
     :foreignAdmissionNumber "007005-00/017"^^xsd:string ;
     :packageInsertNumber "8009"^^xsd:string ;
     :producingCountry country:DEU ;
-    :referenceProduct product:C8D8DAAA-4A58-457D-9BDD-6FC694767C72 .
+    :referenceProduct product:C8D8DAAA-4A58-457D-9BDD-6FC694767C72 ;
+    :soldOutDeadline "2026-02-28"^^xsd:date .
 
 product:2F7DCB4E-F2D6-41F0-BB24-1A0E1C72347B a :SalePermission ;
     schema1:name "Arlit"@de ;
@@ -2771,8 +2867,10 @@ product:3162F2B8-B7B7-4BC9-911E-D4A3F24DFE0C a :RegularProduct ;
 
 product:318182F1-33BA-4532-88B3-1A1E9F4654A4 a :RegularProduct ;
     schema1:name "Roundup Optima"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7209"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:3186C361-874B-4BE3-9303-03E41C1099A8 a :ParallelImport ;
     schema1:name "Contreverse"@de ;
@@ -2814,11 +2912,13 @@ product:323A7E94-5D33-4FF2-A43A-E61FD0CF15A1 a :SalePermission ;
 
 product:32607F78-DD77-4D44-90A0-DA26401EF276 a :ParallelImport ;
     schema1:name "Antilope"@de ;
+    :exhaustionDeadline "2027-01-01"^^xsd:date ;
     :federalAdmissionNumber "F-6067"^^xsd:string ;
     :foreignAdmissionNumber "2080145"^^xsd:string ;
     :packageInsertNumber "7341"^^xsd:string ;
     :producingCountry country:FRA ;
-    :referenceProduct product:06EC806F-DFBD-4A17-BB56-22B8F3D67849 .
+    :referenceProduct product:06EC806F-DFBD-4A17-BB56-22B8F3D67849 ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:32A56A3C-7BAC-482F-A216-C3551F1B55D4 a :ParallelImport ;
     schema1:name "Stroby WG"@de ;
@@ -2925,11 +3025,13 @@ product:343DBF49-A1E1-4CA4-97A2-B5C13566B974 a :SalePermission ;
 
 product:345B7EA6-B951-4467-9770-6BEF9648FD46 a :ParallelImport ;
     schema1:name "Carmina 640"@de ;
+    :exhaustionDeadline "2026-10-18"^^xsd:date ;
     :federalAdmissionNumber "D-4871"^^xsd:string ;
     :foreignAdmissionNumber "006284-00"^^xsd:string ;
     :packageInsertNumber "7796"^^xsd:string ;
     :producingCountry country:DEU ;
-    :referenceProduct product:4EC263C8-8D7C-4BAB-9225-E7D7FE6D28BC .
+    :referenceProduct product:4EC263C8-8D7C-4BAB-9225-E7D7FE6D28BC ;
+    :soldOutDeadline "2025-10-18"^^xsd:date .
 
 product:346072b1-54cc-4d32-b104-92063ca91ee4 a :RegularProduct ;
     schema1:name "Majestik Indoor"@de ;
@@ -3004,11 +3106,13 @@ product:358843AB-95AD-4724-ADB8-5575AF528BA6 a :RegularProduct ;
 
 product:35A0C42A-F9C1-4757-BA85-747DB57F398F a :ParallelImport ;
     schema1:name "Herold SC"@de ;
+    :exhaustionDeadline "2027-01-01"^^xsd:date ;
     :federalAdmissionNumber "D-5298"^^xsd:string ;
     :foreignAdmissionNumber "005878-00"^^xsd:string ;
     :packageInsertNumber "7341"^^xsd:string ;
     :producingCountry country:DEU ;
-    :referenceProduct product:06EC806F-DFBD-4A17-BB56-22B8F3D67849 .
+    :referenceProduct product:06EC806F-DFBD-4A17-BB56-22B8F3D67849 ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:35EE1D24-6217-4AD9-BABE-C3380BFCEFAD a :ParallelImport ;
     schema1:name "Suprim"@de ;
@@ -3020,8 +3124,10 @@ product:35EE1D24-6217-4AD9-BABE-C3380BFCEFAD a :ParallelImport ;
 
 product:35FC8D7C-D06B-4718-B7DC-B62D0EDF0B8D a :RegularProduct ;
     schema1:name "Scomrid-Spray"@de ;
+    :exhaustionDeadline "2026-06-11"^^xsd:date ;
     :federalAdmissionNumber "W-6687"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-06-11"^^xsd:date .
 
 product:361CD5B2-511B-4FEF-9E1E-6D4C624B3698 a :ParallelImport ;
     schema1:name "Azoxy 250"@de ;
@@ -3043,9 +3149,11 @@ product:366FE139-F8FA-49D3-8D53-F3194FBACFEA a :RegularProduct ;
 
 product:36C04DE9-5AFF-48D8-AA5A-66A193C92343 a :SalePermission ;
     schema1:name "Gesal Käfer- und Raupen-Stop"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7333-1"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:3C9CCEE3-3F59-4AE0-BFCC-6B3C15BF5202 .
+    :referenceProduct product:3C9CCEE3-3F59-4AE0-BFCC-6B3C15BF5202 ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:36DE346E-5403-4ABA-ACAE-8A282C03A863 a :SalePermission ;
     schema1:name "Atlantis Star"@de ;
@@ -3055,11 +3163,13 @@ product:36DE346E-5403-4ABA-ACAE-8A282C03A863 a :SalePermission ;
 
 product:36E001B2-B1EE-4493-AF2E-E40825A1318E a :ParallelImport ;
     schema1:name "Carmina Max"@de ;
+    :exhaustionDeadline "2026-10-18"^^xsd:date ;
     :federalAdmissionNumber "F-6049"^^xsd:string ;
     :foreignAdmissionNumber "2130242"^^xsd:string ;
     :packageInsertNumber "7796"^^xsd:string ;
     :producingCountry country:FRA ;
-    :referenceProduct product:4EC263C8-8D7C-4BAB-9225-E7D7FE6D28BC .
+    :referenceProduct product:4EC263C8-8D7C-4BAB-9225-E7D7FE6D28BC ;
+    :soldOutDeadline "2025-10-18"^^xsd:date .
 
 product:373795CD-6054-4462-B168-FD5C7A3F20AE a :SalePermission ;
     schema1:name "Blackout Extra"@de ;
@@ -3178,8 +3288,10 @@ product:39D3F0A2-CE6E-4783-B089-64EE83861079 a :ParallelImport ;
 
 product:39D54692-1D07-4056-A4C6-431EF7152DD8 a :RegularProduct ;
     schema1:name "LBG-51FCm"@de ;
+    :exhaustionDeadline "2027-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7247"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2026-10-31"^^xsd:date .
 
 product:39EB2622-2E1F-447D-96A0-73DAD58D9320 a :ParallelImport ;
     schema1:name "Kocide Opti"@de ;
@@ -3245,9 +3357,11 @@ product:3BE8E875-BD9A-49FB-8F38-7817C20744B2 a :SalePermission ;
 
 product:3BF340C8-1BCF-4782-B48A-EB20442E624F a :SalePermission ;
     schema1:name "Resolva Spray gegen Schädlinge"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-6741-1"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:3D413DE5-87DF-45A6-8DFB-53C8543782F0 .
+    :referenceProduct product:3D413DE5-87DF-45A6-8DFB-53C8543782F0 ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:3BF807D3-30CC-4347-A8D3-EA92E6EA73D1 a :SalePermission ;
     schema1:name "MAAG Dipel"@de ;
@@ -3257,18 +3371,24 @@ product:3BF807D3-30CC-4347-A8D3-EA92E6EA73D1 a :SalePermission ;
 
 product:3C15E1E8-DF3F-42AA-9356-64E1F49F7C0B a :RegularProduct ;
     schema1:name "Asulam"@de ;
+    :exhaustionDeadline "2026-07-01"^^xsd:date ;
     :federalAdmissionNumber "W-7104"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-07-01"^^xsd:date .
 
 product:3C173170-CE24-4AE7-A9C3-832EFCE2907C a :RegularProduct ;
     schema1:name "Legado"@de ;
+    :exhaustionDeadline "2026-06-11"^^xsd:date ;
     :federalAdmissionNumber "W-7238"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-06-11"^^xsd:date .
 
 product:3C2B878F-D907-468F-89AB-4D11AAC0E268 a :RegularProduct ;
     schema1:name "Airone Garten"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7443"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:3C2FA8E0-6BF0-41E0-8CC2-C55A62B2E514 a :ParallelImport ;
     schema1:name "Visul GD 80"@de ;
@@ -3396,9 +3516,11 @@ product:3E867B01-B5A6-4E7C-A8F4-BDB98A4A3A5C a :ParallelImport ;
 
 product:3EB1AD6B-FD46-438B-A881-9C4D7CD30AE0 a :SalePermission ;
     schema1:name "MIOPLANT Spray gegen Schädlinge"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-6741-2"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:3D413DE5-87DF-45A6-8DFB-53C8543782F0 .
+    :referenceProduct product:3D413DE5-87DF-45A6-8DFB-53C8543782F0 ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:3EB62675-F0D9-4A87-B498-71A312616AA0 a :RegularProduct ;
     schema1:name "Devrinol Plus"@de ;
@@ -3443,11 +3565,13 @@ product:3F551548-57FA-4E7D-808C-074743A211DF a :SalePermission ;
 
 product:3F59CC3D-2E48-4BDE-BE43-88028B91FA09 a :ParallelImport ;
     schema1:name "Clomazone + Metribuzin"@de ;
+    :exhaustionDeadline "2026-07-01"^^xsd:date ;
     :federalAdmissionNumber "D-6205"^^xsd:string ;
     :foreignAdmissionNumber "006588-00/001"^^xsd:string ;
     :packageInsertNumber "8168"^^xsd:string ;
     :producingCountry country:DEU ;
-    :referenceProduct product:39ADD145-1AD7-45D1-AA8E-A2FAFA08E722 .
+    :referenceProduct product:39ADD145-1AD7-45D1-AA8E-A2FAFA08E722 ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:3F892DBC-E8AA-45B1-A16E-A635CE1A6C38 a :RegularProduct ;
     schema1:name "Amarel Kupfer DF"@de ;
@@ -3628,9 +3752,11 @@ product:426DA184-E0D1-48A7-A35A-154577A043C4 a :ParallelImport ;
 
 product:42749B24-CC64-4167-A505-1F23FCFCC023 a :SalePermission ;
     schema1:name "Spomil K"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7267-1"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:C7460D99-AF1C-4302-B6CE-98CCA5F7219D .
+    :referenceProduct product:C7460D99-AF1C-4302-B6CE-98CCA5F7219D ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:42D5FA7F-0042-4FF3-9365-0AE351F6BFAF a :ParallelImport ;
     schema1:name "Dithi-Kali"@de ;
@@ -3721,11 +3847,13 @@ product:4422035E-DB28-4570-91F0-B8E285D72695 a :ParallelImport ;
 
 product:44493E46-33DB-4226-A971-A041E71C0F06 a :ParallelImport ;
     schema1:name "Prolectus"@de ;
+    :exhaustionDeadline "2027-01-01"^^xsd:date ;
     :federalAdmissionNumber "D-7081"^^xsd:string ;
     :foreignAdmissionNumber "007679-00"^^xsd:string ;
     :packageInsertNumber "8170"^^xsd:string ;
     :producingCountry country:DEU ;
-    :referenceProduct product:23741490-0F6F-4335-A986-ACA003E5F1F6 .
+    :referenceProduct product:23741490-0F6F-4335-A986-ACA003E5F1F6 ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:4449CF09-D4FA-4908-BB29-84309D18B7E2 a :RegularProduct ;
     schema1:name "Prestop"@de ;
@@ -3761,9 +3889,11 @@ product:449F61CF-41AC-4D48-A0EE-B1BA7B001D5A a :RegularProduct ;
 
 product:44A5E10A-C7D2-4205-B90D-483E43681BC3 a :SalePermission ;
     schema1:name "Progazon"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7416-1"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:01D5F1BA-6E12-4177-A06E-8371C94B95D3 .
+    :referenceProduct product:01D5F1BA-6E12-4177-A06E-8371C94B95D3 ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:44A83FB5-ACB2-49AE-BE00-D77F23867193 a :SalePermission ;
     schema1:name "Spruzit SchädlingsFrei"@de ;
@@ -3778,8 +3908,10 @@ product:44BBAE8D-7615-4CEE-BB3A-8B94765D40BC a :RegularProduct ;
 
 product:44EC34FC-C967-40E2-9414-076ABF87B355 a :RegularProduct ;
     schema1:name "Resanol"@de ;
+    :exhaustionDeadline "2027-06-03"^^xsd:date ;
     :federalAdmissionNumber "W-4490"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2026-06-03"^^xsd:date .
 
 product:4553E318-D38E-4021-973E-13259F517278 a :SalePermission ;
     schema1:name "Metamitrone Flow"@de ;
@@ -3925,8 +4057,10 @@ product:47DB16E4-ECDD-4A07-A076-137AF75CBAA9 a :SalePermission ;
 
 product:47E95FD7-994C-46E2-8558-CF54C1EEB0E4 a :RegularProduct ;
     schema1:name "Secur"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7435"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:47FCE6D7-D3CE-42ED-A969-53A39607892F a :ParallelImport ;
     schema1:name "Successor T"@de ;
@@ -3988,8 +4122,10 @@ product:48D8B9C2-EB80-4CD5-9FDC-1A2844343847 a :SalePermission ;
 
 product:48DA2DFE-420B-47CE-A784-A77F0115624A a :RegularProduct ;
     schema1:name "Alfil WG"@de ;
+    :exhaustionDeadline "2026-06-11"^^xsd:date ;
     :federalAdmissionNumber "W-7221"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-06-11"^^xsd:date .
 
 product:48DA3781-5CE6-4B7C-8C35-C523CB27FA3A a :RegularProduct ;
     schema1:name "Amblyseius swirskii"@de ;
@@ -4030,9 +4166,11 @@ product:49566ADC-2CAD-40FF-917D-641D1498DE5F a :RegularProduct ;
 
 product:497F5DA9-1569-4C76-80A5-FE7A58F4BBA9 a :SalePermission ;
     schema1:name "Dicotex P"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7416-6"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:01D5F1BA-6E12-4177-A06E-8371C94B95D3 .
+    :referenceProduct product:01D5F1BA-6E12-4177-A06E-8371C94B95D3 ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:498AE4BA-D032-45D3-87A8-0FE12996840A a :RegularProduct ;
     schema1:name "Cito RTU"@de ;
@@ -4084,11 +4222,13 @@ product:4B5B3071-1A95-4DFD-923A-BAF261B7E9A2 a :SalePermission ;
 
 product:4BB504E4-459D-44B2-A039-548771A5027D a :ParallelImport ;
     schema1:name "Dicotex"@de ;
+    :exhaustionDeadline "2026-10-18"^^xsd:date ;
     :federalAdmissionNumber "B-6484"^^xsd:string ;
     :foreignAdmissionNumber "5362P/B"^^xsd:string ;
     :packageInsertNumber "9331"^^xsd:string ;
     :producingCountry country:BEL ;
-    :referenceProduct product:01D5F1BA-6E12-4177-A06E-8371C94B95D3 .
+    :referenceProduct product:01D5F1BA-6E12-4177-A06E-8371C94B95D3 ;
+    :soldOutDeadline "2025-10-18"^^xsd:date .
 
 product:4BD57334-77B8-41CD-BBF6-370CF5F50A39 a :ParallelImport ;
     schema1:name "Noidio Gold 10 EC"@de ;
@@ -4122,9 +4262,11 @@ product:4C6E6D6E-72C2-4DD6-96D6-6ADF2B57992D a :SalePermission ;
 
 product:4C83863A-6388-45DB-AA07-D0B08781D730 a :SalePermission ;
     schema1:name "Aduka"@de ;
+    :exhaustionDeadline "2027-01-01"^^xsd:date ;
     :federalAdmissionNumber "W-7190-1"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:95C2F859-9684-4E38-8ACB-808F7A76F7F9 .
+    :referenceProduct product:95C2F859-9684-4E38-8ACB-808F7A76F7F9 ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:4C901319-8428-41E3-A571-D14E455C2CBC a :ParallelImport ;
     schema1:name "Versam"@de ;
@@ -4171,11 +4313,13 @@ product:4CE994F8-341C-4708-8F11-D3F8B59EB925 a :RegularProduct ;
 
 product:4CFA6585-52E4-4CC3-AD1C-D150B8F5A374 a :ParallelImport ;
     schema1:name "Algedi"@de ;
+    :exhaustionDeadline "2026-07-01"^^xsd:date ;
     :federalAdmissionNumber "I-6045"^^xsd:string ;
     :foreignAdmissionNumber "12361"^^xsd:string ;
     :packageInsertNumber "8328"^^xsd:string ;
     :producingCountry country:ITA ;
-    :referenceProduct product:A242B195-A630-4577-992F-79E0AE7058A4 .
+    :referenceProduct product:A242B195-A630-4577-992F-79E0AE7058A4 ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:4D0784C6-7744-4723-A871-D5F4CBAFCC5D a :SalePermission ;
     schema1:name "SIVA Natura"@de ;
@@ -4209,11 +4353,13 @@ product:4DA90C14-8D4B-4A93-A7F6-13D253D206CF a :ParallelImport ;
 
 product:4DDE6732-2A0F-4689-9733-956536D54D7C a :ParallelImport ;
     schema1:name "Milentus Metribuzin"@de ;
+    :exhaustionDeadline "2026-07-01"^^xsd:date ;
     :federalAdmissionNumber "F-3904"^^xsd:string ;
     :foreignAdmissionNumber "2050057"^^xsd:string ;
     :packageInsertNumber "7127"^^xsd:string ;
     :producingCountry country:FRA ;
-    :referenceProduct product:088FA484-0A20-4FBC-B8EE-BFD3C33E1867 .
+    :referenceProduct product:088FA484-0A20-4FBC-B8EE-BFD3C33E1867 ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:4DF5A61D-2DC0-4E01-86BB-1B3173924789 a :ParallelImport ;
     schema1:name "Sirena EC"@de ;
@@ -4294,8 +4440,10 @@ product:4FBAF4CC-C72D-4D31-BD18-E4B0EB8CA4E0 a :ParallelImport ;
 
 product:4FE5B498-BE6B-4878-8728-40C18C290B9B a :RegularProduct ;
     schema1:name "Adjuvant Médol"@de ;
+    :exhaustionDeadline "2027-06-03"^^xsd:date ;
     :federalAdmissionNumber "W-6108"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2026-06-03"^^xsd:date .
 
 product:4bf38984-da06-4527-8bb7-5fb53c20b8b3 a :RegularProduct ;
     schema1:name "Capito Garden Special Spray"@de ;
@@ -4337,8 +4485,10 @@ product:5096E868-263D-4EAD-80D0-54CAB1A31099 a :RegularProduct ;
 
 product:50B314C8-2A50-4E8D-AE87-20E860576361 a :RegularProduct ;
     schema1:name "Schädlingsfrei Forte"@de ;
+    :exhaustionDeadline "2026-11-19"^^xsd:date ;
     :federalAdmissionNumber "W-7165"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-11-19"^^xsd:date .
 
 product:50BF4D29-73B7-4367-A75A-7EEBE7FDB48E a :ParallelImport ;
     schema1:name "Netzschwefel Stulln"@de ;
@@ -4414,16 +4564,20 @@ product:51A249DC-4760-4525-A6D7-5E45D29A0D2A a :SalePermission ;
 
 product:51BCE7C6-71F3-40A9-89F5-127A18CA052F a :ParallelImport ;
     schema1:name "Prolectus 50 WG"@de ;
+    :exhaustionDeadline "2027-01-01"^^xsd:date ;
     :federalAdmissionNumber "D-6257"^^xsd:string ;
     :foreignAdmissionNumber "007679-00/004"^^xsd:string ;
     :packageInsertNumber "8170"^^xsd:string ;
     :producingCountry country:DEU ;
-    :referenceProduct product:23741490-0F6F-4335-A986-ACA003E5F1F6 .
+    :referenceProduct product:23741490-0F6F-4335-A986-ACA003E5F1F6 ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:51BCF100-296A-4D00-A818-832ACC541D79 a :RegularProduct ;
     schema1:name "Milo"@de ;
+    :exhaustionDeadline "2026-09-30"^^xsd:date ;
     :federalAdmissionNumber "W-7558"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-09-01"^^xsd:date .
 
 product:51C82B96-75B6-4E91-AF47-3B6A9428D8B9 a :SalePermission ;
     schema1:name "Corex"@de ;
@@ -4653,15 +4807,19 @@ product:56250989-3CB7-4028-A2DC-018163E3EA28 a :SalePermission ;
 
 product:563869AB-E703-4D57-A083-9BC3303EFF61 a :SalePermission ;
     schema1:name "Ruman"@de ;
+    :exhaustionDeadline "2026-07-01"^^xsd:date ;
     :federalAdmissionNumber "W-6997-1"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:E9360EF6-CF33-44E4-9C90-8E435F31771A .
+    :referenceProduct product:E9360EF6-CF33-44E4-9C90-8E435F31771A ;
+    :soldOutDeadline "2025-07-01"^^xsd:date .
 
 product:564AAB0D-0D02-41F6-8D70-F7EF01249344 a :SalePermission ;
     schema1:name "Gesal Rasenunkraut-Spray"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7317-3"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:B2BBD0DF-0899-4A8B-AF1C-9536365A9B34 .
+    :referenceProduct product:B2BBD0DF-0899-4A8B-AF1C-9536365A9B34 ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:565E2C9B-039A-44C9-809F-F132503D1321 a :SalePermission ;
     schema1:name "BIOHOP DelMON"@de ;
@@ -4689,11 +4847,13 @@ product:57128E48-6B31-410F-B1D1-F823F5980C0A a :ParallelImport ;
 
 product:571A6065-D2EA-4C41-B483-906CEA2CB25B a :ParallelImport ;
     schema1:name "Dicotex"@de ;
+    :exhaustionDeadline "2026-10-18"^^xsd:date ;
     :federalAdmissionNumber "I-6454"^^xsd:string ;
     :foreignAdmissionNumber "12756"^^xsd:string ;
     :packageInsertNumber "9331"^^xsd:string ;
     :producingCountry country:ITA ;
-    :referenceProduct product:01D5F1BA-6E12-4177-A06E-8371C94B95D3 .
+    :referenceProduct product:01D5F1BA-6E12-4177-A06E-8371C94B95D3 ;
+    :soldOutDeadline "2025-10-18"^^xsd:date .
 
 product:57314A6A-0035-4E09-A2C7-6E6126FED380 a :SalePermission ;
     schema1:name "BIOHOP AudiENZ"@de ;
@@ -4759,9 +4919,11 @@ product:584BB1CF-1BC5-4A35-B80D-0A29FF5784F4 a :RegularProduct ;
 
 product:5865B8FC-E4C5-4BD8-9C51-09915B0C2875 a :SalePermission ;
     schema1:name "MIOPLANT-Rasen-Unkrautvertilger Spray"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-6677-1"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:E4E3699C-AA17-41E4-84A8-C0EC151DAF62 .
+    :referenceProduct product:E4E3699C-AA17-41E4-84A8-C0EC151DAF62 ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:587D233D-1A3C-4BFF-8A92-9A4CC7198A86 a :RegularProduct ;
     schema1:name "Maag Bio Raubwanzen gegen Thrips"@de ;
@@ -4778,16 +4940,20 @@ product:58BDB063-5AE7-419D-93CF-D7D3CA331023 a :ParallelImport ;
 
 product:58D56A94-F9C4-4437-B1AB-D8BD7664A302 a :RegularProduct ;
     schema1:name "Isomate R"@de ;
+    :exhaustionDeadline "2026-08-31"^^xsd:date ;
     :federalAdmissionNumber "W-6954"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-08-31"^^xsd:date .
 
 product:58E71E90-9088-4C33-9768-791850BB24AC a :ParallelImport ;
     schema1:name "Battle Delta"@de ;
+    :exhaustionDeadline "2027-01-01"^^xsd:date ;
     :federalAdmissionNumber "D-6268"^^xsd:string ;
     :foreignAdmissionNumber "008226-00"^^xsd:string ;
     :packageInsertNumber "7341"^^xsd:string ;
     :producingCountry country:DEU ;
-    :referenceProduct product:06EC806F-DFBD-4A17-BB56-22B8F3D67849 .
+    :referenceProduct product:06EC806F-DFBD-4A17-BB56-22B8F3D67849 ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:58FB6888-6C0F-4AAE-80D2-2E7C2DB87A22 a :ParallelImport ;
     schema1:name "Adengo 465 SC"@de ;
@@ -4830,8 +4996,10 @@ product:594A1176-83F7-45CC-AC17-E9CECBCECB0F a :ParallelImport ;
 
 product:5957A7D8-622C-41D4-902B-3D54085D7453 a :RegularProduct ;
     schema1:name "Kendo Gold"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-6740"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:59720AE8-BAD2-47B6-AE87-BB936F222621 a :ParallelImport ;
     schema1:name "Defi"@de ;
@@ -4974,11 +5142,13 @@ product:5C4D0E93-729F-48FF-90FD-01867C6B1368 a :ParallelImport ;
 
 product:5C5B6E92-3642-40D2-878D-DFCD6CA6823D a :ParallelImport ;
     schema1:name "Calma"@de ;
+    :exhaustionDeadline "2027-02-28"^^xsd:date ;
     :federalAdmissionNumber "D-7337"^^xsd:string ;
     :foreignAdmissionNumber "007005-00"^^xsd:string ;
     :packageInsertNumber "8009"^^xsd:string ;
     :producingCountry country:DEU ;
-    :referenceProduct product:C8D8DAAA-4A58-457D-9BDD-6FC694767C72 .
+    :referenceProduct product:C8D8DAAA-4A58-457D-9BDD-6FC694767C72 ;
+    :soldOutDeadline "2026-02-28"^^xsd:date .
 
 product:5CA4411D-C5A3-4E85-BD86-34CDE008C954 a :SalePermission ;
     schema1:name "Imperium TF"@de ;
@@ -4988,9 +5158,11 @@ product:5CA4411D-C5A3-4E85-BD86-34CDE008C954 a :SalePermission ;
 
 product:5CD729DF-EC31-4996-BBEA-2D1FA3362C8C a :SalePermission ;
     schema1:name "Selectox Royal P"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7416-5"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:01D5F1BA-6E12-4177-A06E-8371C94B95D3 .
+    :referenceProduct product:01D5F1BA-6E12-4177-A06E-8371C94B95D3 ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:5CDBD638-F50D-4C75-9C58-B1FC7291EBE5 a :ParallelImport ;
     schema1:name "Ampexio"@de ;
@@ -5023,14 +5195,18 @@ product:5DAD3D51-2AB3-40D0-B5AA-08B25657C9B2 a :ParallelImport ;
 
 product:5DCB8640-ABE4-43A6-A9E9-0B204D1084FA a :SalePermission ;
     schema1:name "Condoral SC"@de ;
+    :exhaustionDeadline "2026-07-01"^^xsd:date ;
     :federalAdmissionNumber "W-6630-1"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:88364672-0969-49C4-8102-E38EB930CCB9 .
+    :referenceProduct product:88364672-0969-49C4-8102-E38EB930CCB9 ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:5E3C3432-584D-4AE6-8B79-065E84CF7106 a :RegularProduct ;
     schema1:name "EFA Universal"@de ;
+    :exhaustionDeadline "2026-03-19"^^xsd:date ;
     :federalAdmissionNumber "W-6826"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-03-19"^^xsd:date .
 
 product:5E40F1D3-5D1D-4FD8-9A04-D47137C637F8 a :RegularProduct ;
     schema1:name "Geramid Top"@de ;
@@ -5246,14 +5422,18 @@ product:630E910E-04D7-4649-8ECE-0A18AA940EF8 a :ParallelImport ;
 
 product:63164198-32FC-4D38-A6F0-3AE89F44D30E a :SalePermission ;
     schema1:name "Migros Bio Garden Spray gegen Rosenschädlinge"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-6670-4"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:B14E1893-A573-4050-91E7-82C08D785520 .
+    :referenceProduct product:B14E1893-A573-4050-91E7-82C08D785520 ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:63174C88-3042-4584-BDD0-0BBEFA0DDB49 a :RegularProduct ;
     schema1:name "Herold Flex"@de ;
+    :exhaustionDeadline "2026-07-01"^^xsd:date ;
     :federalAdmissionNumber "W-7212"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:63254A71-2D7D-46FE-84B6-A691B8ACF4C1 a :ParallelImport ;
     schema1:name "Milbeknock"@de ;
@@ -5294,11 +5474,13 @@ product:63AAB256-DB9D-4382-8475-B5DACE889B03 a :RegularProduct ;
 
 product:63C68026-7256-4335-BED1-758EFF2C8E19 a :ParallelImport ;
     schema1:name "Fenpyraz"@de ;
+    :exhaustionDeadline "2027-01-01"^^xsd:date ;
     :federalAdmissionNumber "D-7082"^^xsd:string ;
     :foreignAdmissionNumber "007679-00/006"^^xsd:string ;
     :packageInsertNumber "8170"^^xsd:string ;
     :producingCountry country:DEU ;
-    :referenceProduct product:23741490-0F6F-4335-A986-ACA003E5F1F6 .
+    :referenceProduct product:23741490-0F6F-4335-A986-ACA003E5F1F6 ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:63D3F53F-A4B8-477C-B244-AA3D6AF1E7C2 a :ParallelImport ;
     schema1:name "Devoid"@de ;
@@ -5310,8 +5492,10 @@ product:63D3F53F-A4B8-477C-B244-AA3D6AF1E7C2 a :ParallelImport ;
 
 product:63D502B0-EBFF-4EA1-BA84-2AC6A6AC77D9 a :RegularProduct ;
     schema1:name "Captan 80 WG"@de ;
+    :exhaustionDeadline "2027-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-6920"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2026-10-31"^^xsd:date .
 
 product:63D70F81-32CF-465E-8D0B-23214F766CE3 a :RegularProduct ;
     schema1:name "Etalfix Pro"@de ;
@@ -5388,8 +5572,10 @@ product:6632C559-3EE2-43AC-A216-954354328654 a :SalePermission ;
 
 product:6645F84B-9240-491D-8630-F00BB9EB3290 a :RegularProduct ;
     schema1:name "Bio Unkrautfrei"@de ;
+    :exhaustionDeadline "2026-11-19"^^xsd:date ;
     :federalAdmissionNumber "W-7494"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-11-19"^^xsd:date .
 
 product:66602037-3BC7-4FEB-B45B-EE26170CE44D a :RegularProduct ;
     schema1:name "Gastrotox 6%"@de ;
@@ -5478,9 +5664,11 @@ product:685A53F0-5B09-4CC8-8A04-380CD4F2628F a :RegularProduct ;
 
 product:68679CAE-A692-4D9E-A48D-66649D6FF409 a :SalePermission ;
     schema1:name "Tarak"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-6686-1"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:4EC263C8-8D7C-4BAB-9225-E7D7FE6D28BC .
+    :referenceProduct product:4EC263C8-8D7C-4BAB-9225-E7D7FE6D28BC ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:688DFDC8-FFE8-4B53-81C5-73E81A93F45B a :ParallelImport ;
     schema1:name "Pointer Plus"@de ;
@@ -5524,9 +5712,11 @@ product:697CDF2B-3407-40D3-B802-6F2BCA7F7ACF a :SalePermission ;
 
 product:6999CD16-1FE0-4508-8686-DFE47BF77BDC a :SalePermission ;
     schema1:name "Pyran"@de ;
+    :exhaustionDeadline "2027-01-01"^^xsd:date ;
     :federalAdmissionNumber "W-6505-1"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:1AC55C5A-5941-420B-A062-8D5E04D581E4 .
+    :referenceProduct product:1AC55C5A-5941-420B-A062-8D5E04D581E4 ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:69B5B097-57FE-4D0A-B937-6015460D38F6 a :ParallelImport ;
     schema1:name "Monolith"@de ;
@@ -5581,17 +5771,21 @@ product:6A51F16F-FA9A-4A22-91BE-F4845E3C2EA9 a :ParallelImport ;
 
 product:6A7AE8F6-19F8-4C3F-899F-4BBAB4CFEC2F a :ParallelImport ;
     schema1:name "Diflufen"@de ;
+    :exhaustionDeadline "2027-01-01"^^xsd:date ;
     :federalAdmissionNumber "D-7433"^^xsd:string ;
     :foreignAdmissionNumber "008548-00/026"^^xsd:string ;
     :packageInsertNumber "8607"^^xsd:string ;
     :producingCountry country:DEU ;
-    :referenceProduct product:95C2F859-9684-4E38-8ACB-808F7A76F7F9 .
+    :referenceProduct product:95C2F859-9684-4E38-8ACB-808F7A76F7F9 ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:6AB1FC58-7A0E-4D8E-8442-EA36AF5CCA3E a :SalePermission ;
     schema1:name "Roundup Gel"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7352-1"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:A4936042-F857-4E83-9DBD-F0783B28BD28 .
+    :referenceProduct product:A4936042-F857-4E83-9DBD-F0783B28BD28 ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:6AB7D7AB-671F-4A71-B265-B93751AA1E7D a :ParallelImport ;
     schema1:name "Dazide enhance"@de ;
@@ -5690,8 +5884,10 @@ product:6CBA77A3-FC71-41A7-A8CB-6A7B0378BB91 a :ParallelImport ;
 
 product:6CE4BA2C-FA86-40E4-8F7A-8394CADF4B14 a :RegularProduct ;
     schema1:name "Asulam"@de ;
+    :exhaustionDeadline "2026-07-01"^^xsd:date ;
     :federalAdmissionNumber "W-4034"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-07-01"^^xsd:date .
 
 product:6CE5DADB-65B4-4064-A9F1-3A61D0203AC0 a :ParallelImport ;
     schema1:name "Merpan 80 WDG"@de ;
@@ -5724,9 +5920,11 @@ product:6DC3F5D0-CD3B-442C-9995-666118680231 a :ParallelImport ;
 
 product:6DC46537-A965-4C43-82B5-5C7E18B65C15 a :SalePermission ;
     schema1:name "Capito Garden Gold"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7407-1"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:41038260-EF36-409B-9A2D-3854AC280BFB .
+    :referenceProduct product:41038260-EF36-409B-9A2D-3854AC280BFB ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:6DD04205-D4AB-429B-9359-B441AC5F1254 a :RegularProduct ;
     schema1:name "FZB 24 flüssig"@de ;
@@ -5745,11 +5943,13 @@ product:6DE77D6E-90E0-4B64-AEA1-4C67ABECE1CA a :RegularProduct ;
 
 product:6E1B0457-87DE-4923-9CC1-A56ADC3D50FB a :ParallelImport ;
     schema1:name "Fosburi"@de ;
+    :exhaustionDeadline "2027-01-01"^^xsd:date ;
     :federalAdmissionNumber "F-6724"^^xsd:string ;
     :foreignAdmissionNumber "2080145"^^xsd:string ;
     :packageInsertNumber "7341"^^xsd:string ;
     :producingCountry country:FRA ;
-    :referenceProduct product:06EC806F-DFBD-4A17-BB56-22B8F3D67849 .
+    :referenceProduct product:06EC806F-DFBD-4A17-BB56-22B8F3D67849 ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:6E1B8BF4-5B40-478F-9374-FD401414080A a :RegularProduct ;
     schema1:name "Heliofix"@de ;
@@ -5876,19 +6076,23 @@ product:70066E6D-A94D-497A-858E-B84A83550AA5 a :SalePermission ;
 
 product:704D0D45-5D3D-42DA-BB09-1213F741F6C4 a :ParallelImport ;
     schema1:name "Florapyrox"@de ;
+    :exhaustionDeadline "2026-10-18"^^xsd:date ;
     :federalAdmissionNumber "D-6973"^^xsd:string ;
     :foreignAdmissionNumber "026233-00/030"^^xsd:string ;
     :packageInsertNumber "7738"^^xsd:string ;
     :producingCountry country:DEU ;
-    :referenceProduct product:9D66D6E2-742A-4D93-AE8D-C23ADD7893B4 .
+    :referenceProduct product:9D66D6E2-742A-4D93-AE8D-C23ADD7893B4 ;
+    :soldOutDeadline "2025-10-18"^^xsd:date .
 
 product:707A20AE-B4C1-45B8-BA7C-F90B8805170B a :ParallelImport ;
     schema1:name "Malibu"@de ;
+    :exhaustionDeadline "2027-01-01"^^xsd:date ;
     :federalAdmissionNumber "D-7280"^^xsd:string ;
     :foreignAdmissionNumber "024834-00"^^xsd:string ;
     :packageInsertNumber "7061"^^xsd:string ;
     :producingCountry country:DEU ;
-    :referenceProduct product:0E4C7139-8C38-42A8-B9BF-6E39CC71E2F7 .
+    :referenceProduct product:0E4C7139-8C38-42A8-B9BF-6E39CC71E2F7 ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:708C5BFB-F0ED-4DA5-BE8D-9F799039F788 a :ParallelImport ;
     schema1:name "Divli 4 SC"@de ;
@@ -6119,11 +6323,13 @@ product:7436BF63-D2B8-4898-BB4B-8CAC93BCB8AA a :RegularProduct ;
 
 product:745B205C-17B0-42CB-9C95-287D9A976498 a :ParallelImport ;
     schema1:name "Movento"@de ;
+    :exhaustionDeadline "2027-01-01"^^xsd:date ;
     :federalAdmissionNumber "D-7255"^^xsd:string ;
     :foreignAdmissionNumber "008007-00/006"^^xsd:string ;
     :packageInsertNumber "7839"^^xsd:string ;
     :producingCountry country:DEU ;
-    :referenceProduct product:E93365B7-A206-4F07-9C83-1C7A8A254778 .
+    :referenceProduct product:E93365B7-A206-4F07-9C83-1C7A8A254778 ;
+    :soldOutDeadline "2026-07-01"^^xsd:date .
 
 product:746ECF96-6F6E-42D9-AE22-1E8FD8DD184E a :SalePermission ;
     schema1:name "BIOHOP DelNEEM"@de ;
@@ -6227,11 +6433,13 @@ product:76624B0E-C462-4CEB-AC08-55C93C926692 a :ParallelImport ;
 
 product:76750341-E40E-4271-BF29-2A391CB4406B a :ParallelImport ;
     schema1:name "Arcade"@de ;
+    :exhaustionDeadline "2026-07-01"^^xsd:date ;
     :federalAdmissionNumber "D-6532"^^xsd:string ;
     :foreignAdmissionNumber "006928-00"^^xsd:string ;
     :packageInsertNumber "7965"^^xsd:string ;
     :producingCountry country:DEU ;
-    :referenceProduct product:7A03630A-A7C7-4828-A3DD-CEF1FC34005B .
+    :referenceProduct product:7A03630A-A7C7-4828-A3DD-CEF1FC34005B ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:7680E8DB-874A-4259-8ECA-D08BE388E765 a :SalePermission ;
     schema1:name "Medax"@de ;
@@ -6382,9 +6590,11 @@ product:79BAC7ED-E35E-4D8A-95B1-41C304B58742 a :ParallelImport ;
 
 product:79CE1757-A56D-49C8-9FB4-641F6948B28B a :SalePermission ;
     schema1:name "Actiol"@de ;
+    :exhaustionDeadline "2027-06-03"^^xsd:date ;
     :federalAdmissionNumber "W-5162-1"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:26B71255-2117-4705-8A58-3D178ADABAB1 .
+    :referenceProduct product:26B71255-2117-4705-8A58-3D178ADABAB1 ;
+    :soldOutDeadline "2026-06-03"^^xsd:date .
 
 product:7A2901D7-884E-4593-8AA1-D8C6086E0BED a :RegularProduct ;
     schema1:name "Lentagran WP"@de ;
@@ -6415,8 +6625,10 @@ product:7A62A52B-6238-4574-BAC6-639184EDE958 a :ParallelImport ;
 
 product:7A98B25A-BDB7-4288-9011-D4ED9A00F8EA a :RegularProduct ;
     schema1:name "Phoscap"@de ;
+    :exhaustionDeadline "2027-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7270"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2026-10-31"^^xsd:date .
 
 product:7AD9F613-FBE6-4128-8604-8DCC4878E6E6 a :RegularProduct ;
     schema1:name "Adaliapak"@de ;
@@ -6540,11 +6752,13 @@ product:7CE34E44-611D-4393-B15F-5419D8DF0FE3 a :RegularProduct ;
 
 product:7D0195C1-B757-46E4-A209-351AC8D77750 a :ParallelImport ;
     schema1:name "Diflufen"@de ;
+    :exhaustionDeadline "2027-01-01"^^xsd:date ;
     :federalAdmissionNumber "D-6969"^^xsd:string ;
     :foreignAdmissionNumber "008548-00/010"^^xsd:string ;
     :packageInsertNumber "8607"^^xsd:string ;
     :producingCountry country:DEU ;
-    :referenceProduct product:95C2F859-9684-4E38-8ACB-808F7A76F7F9 .
+    :referenceProduct product:95C2F859-9684-4E38-8ACB-808F7A76F7F9 ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:7D5DC0CD-6246-4C1B-BC0C-EC725B8E5D9F a :ParallelImport ;
     schema1:name "Promalin"@de ;
@@ -6567,8 +6781,10 @@ product:7D9677B9-6D28-4529-BDFB-55FA60D3E350 a :RegularProduct ;
 
 product:7DAC9C13-1F9C-4EB6-A39D-5BE4ACEB6716 a :RegularProduct ;
     schema1:name "Gesal Insect-Stop"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7415"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:7DD091F5-B3BE-4432-9D32-8F4D3D8A1540 a :SalePermission ;
     schema1:name "Dickmaulrüssler-Nematoden"@de ;
@@ -6583,8 +6799,10 @@ product:7DFBA282-70C3-432F-8D5E-5A530D3C10A4 a :RegularProduct ;
 
 product:7E1D56DD-7BAF-4642-980F-FD6ACE39C9F5 a :RegularProduct ;
     schema1:name "Funguran Flow HG Divers"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7361"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:7E2F19FB-F82F-41A9-B53C-583A9FA09624 a :ParallelImport ;
     schema1:name "Concert SX"@de ;
@@ -6798,9 +7016,11 @@ product:82BC4CBA-88E3-4147-BFF4-F8BA30F948D9 a :SalePermission ;
 
 product:82D1A131-5779-4E8E-9B0F-8720552C167B a :SalePermission ;
     schema1:name "DELAN PRO"@de ;
+    :exhaustionDeadline "2026-09-03"^^xsd:date ;
     :federalAdmissionNumber "W-7223-1"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:0A7AFBDA-D936-4769-BC2D-3E5E5BE86008 .
+    :referenceProduct product:0A7AFBDA-D936-4769-BC2D-3E5E5BE86008 ;
+    :soldOutDeadline "2025-09-03"^^xsd:date .
 
 product:82F5DAD8-9796-4B7D-A040-7E36691F2CC7 a :RegularProduct ;
     schema1:name "Gesal Anti - Pilz Forte"@de ;
@@ -6837,9 +7057,11 @@ product:838BD76C-694B-4783-B6B1-6DA49D92C483 a :ParallelImport ;
 
 product:839B8426-569E-448F-978D-D1B7EFFEA39C a :SalePermission ;
     schema1:name "Capito Unkrautvernichter für Rasen"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-5596-1"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:DE96C3F9-B32F-4C7D-991E-E634A7A48511 .
+    :referenceProduct product:DE96C3F9-B32F-4C7D-991E-E634A7A48511 ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:83A7D74B-5AB1-448D-ADF2-ED7797A497B2 a :ParallelImport ;
     schema1:name "Colzor Trio"@de ;
@@ -6851,9 +7073,11 @@ product:83A7D74B-5AB1-448D-ADF2-ED7797A497B2 a :ParallelImport ;
 
 product:840614FF-B8C7-4912-BCBE-D0D19A36798E a :SalePermission ;
     schema1:name "Sugaro Gamma"@de ;
+    :exhaustionDeadline "2026-05-21"^^xsd:date ;
     :federalAdmissionNumber "W-6201-1"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:C5B156E5-C1C1-46E0-96AF-75C81BE7FC1A .
+    :referenceProduct product:C5B156E5-C1C1-46E0-96AF-75C81BE7FC1A ;
+    :soldOutDeadline "2025-05-21"^^xsd:date .
 
 product:845B78E7-2746-44F0-ACD4-09DDB9CFDE75 a :RegularProduct ;
     schema1:name "Trax"@de ;
@@ -6883,11 +7107,13 @@ product:84900ABE-4DCB-4BD9-84BF-7F9D866753E1 a :RegularProduct ;
 
 product:84993C16-6139-4626-8D2E-4912EEDA6907 a :ParallelImport ;
     schema1:name "Safari"@de ;
+    :exhaustionDeadline "2026-07-01"^^xsd:date ;
     :federalAdmissionNumber "I-4145"^^xsd:string ;
     :foreignAdmissionNumber "8886"^^xsd:string ;
     :packageInsertNumber "9033"^^xsd:string ;
     :producingCountry country:ITA ;
-    :referenceProduct product:C9901EBA-D28F-48CC-9FAE-43DF136947C5 .
+    :referenceProduct product:C9901EBA-D28F-48CC-9FAE-43DF136947C5 ;
+    :soldOutDeadline "2025-07-01"^^xsd:date .
 
 product:84B01161-1BCB-4A51-BECB-5ECAB7BE9E32 a :RegularProduct ;
     schema1:name "Break-Thru"@de ;
@@ -6908,17 +7134,21 @@ product:8542219B-175F-4702-AFD8-607A5C4B580A a :SalePermission ;
 
 product:85544CE1-A39F-41B9-A004-2BF059F78DCA a :SalePermission ;
     schema1:name "Deserpan Rasant"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-6354-3"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:56920A32-E2D3-4A01-A438-FF73851670AE .
+    :referenceProduct product:56920A32-E2D3-4A01-A438-FF73851670AE ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:855832DE-E972-4F84-B4A9-BC2DA121F45E a :ParallelImport ;
     schema1:name "Trimaxx"@de ;
+    :exhaustionDeadline "2027-02-28"^^xsd:date ;
     :federalAdmissionNumber "I-7042"^^xsd:string ;
     :foreignAdmissionNumber "16191"^^xsd:string ;
     :packageInsertNumber "8009"^^xsd:string ;
     :producingCountry country:ITA ;
-    :referenceProduct product:C8D8DAAA-4A58-457D-9BDD-6FC694767C72 .
+    :referenceProduct product:C8D8DAAA-4A58-457D-9BDD-6FC694767C72 ;
+    :soldOutDeadline "2026-02-28"^^xsd:date .
 
 product:8563EAC0-07F7-46F1-9A7D-A603FA286CCF a :ParallelImport ;
     schema1:name "Azimut"@de ;
@@ -6930,9 +7160,11 @@ product:8563EAC0-07F7-46F1-9A7D-A603FA286CCF a :ParallelImport ;
 
 product:8597589F-3058-4485-969F-88D390954402 a :SalePermission ;
     schema1:name "Alaxon Spray"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-6741-3"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:3D413DE5-87DF-45A6-8DFB-53C8543782F0 .
+    :referenceProduct product:3D413DE5-87DF-45A6-8DFB-53C8543782F0 ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:85A36A3E-BE75-4992-98A6-8CF62F878CCD a :RegularProduct ;
     schema1:name "Atilla"@de ;
@@ -6953,8 +7185,10 @@ product:8605AA90-1D26-466D-AE0F-7590DB4E0003 a :SalePermission ;
 
 product:860D9A40-F9BD-4CD0-90B5-54785635F692 a :RegularProduct ;
     schema1:name "Pheroprax Ampulle"@de ;
+    :exhaustionDeadline "2026-06-30"^^xsd:date ;
     :federalAdmissionNumber "W-6798"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-06-30"^^xsd:date .
 
 product:862EA333-CD1E-47C7-A7EE-48410151CBAA a :ParallelImport ;
     schema1:name "Semalim SR"@de ;
@@ -7098,9 +7332,11 @@ product:88888E8C-4998-4F82-9402-1A5782007820 a :SalePermission ;
 
 product:88C835C6-5995-4429-A46E-B7FD6F29A161 a :SalePermission ;
     schema1:name "Saturn"@de ;
+    :exhaustionDeadline "2026-07-01"^^xsd:date ;
     :federalAdmissionNumber "W-6151-1"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:088FA484-0A20-4FBC-B8EE-BFD3C33E1867 .
+    :referenceProduct product:088FA484-0A20-4FBC-B8EE-BFD3C33E1867 ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:88E3AB0F-E222-4ABB-943B-FE07FE44FA98 a :RegularProduct ;
     schema1:name "Harvista 1.3 SC"@de ;
@@ -7165,16 +7401,20 @@ product:8ADCE13C-8158-45C2-936D-162F47615109 a :ParallelImport ;
 
 product:8B030758-DE19-49B8-BE58-37DD8BB6D705 a :ParallelImport ;
     schema1:name "Aspect"@de ;
+    :exhaustionDeadline "2027-01-01"^^xsd:date ;
     :federalAdmissionNumber "D-6016"^^xsd:string ;
     :foreignAdmissionNumber "007149-00"^^xsd:string ;
     :packageInsertNumber "7758"^^xsd:string ;
     :producingCountry country:DEU ;
-    :referenceProduct product:1AC55C5A-5941-420B-A062-8D5E04D581E4 .
+    :referenceProduct product:1AC55C5A-5941-420B-A062-8D5E04D581E4 ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:8B34D908-D656-43A7-9602-DA40F8C718A4 a :RegularProduct ;
     schema1:name "Rhodofix"@de ;
+    :exhaustionDeadline "2026-10-15"^^xsd:date ;
     :federalAdmissionNumber "W-6903"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-10-15"^^xsd:date .
 
 product:8B4DB1F6-E11A-4496-AFC9-0B02BAA69F62 a :RegularProduct ;
     schema1:name "Fazor"@de ;
@@ -7273,9 +7513,11 @@ product:8CB49297-F4CB-44E5-B11E-63051994066E a :RegularProduct ;
 
 product:8CED0CBA-1C1A-46E2-874C-2671AA4624CA a :SalePermission ;
     schema1:name "Proclean Turf Duo"@de ;
+    :exhaustionDeadline "2026-06-18"^^xsd:date ;
     :federalAdmissionNumber "W-6157-2"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:40B0C357-7A34-468A-B279-18F51D30DD11 .
+    :referenceProduct product:40B0C357-7A34-468A-B279-18F51D30DD11 ;
+    :soldOutDeadline "2025-06-18"^^xsd:date .
 
 product:8CF9B023-E1DA-4612-9939-7869BE384E54 a :ParallelImport ;
     schema1:name "Aviator Xpro"@de ;
@@ -7295,11 +7537,13 @@ product:8D00388D-6640-454E-80F1-27943B1919C3 a :ParallelImport ;
 
 product:8D00C3F0-D6F2-4929-8ABE-9D48EE0AEA4A a :ParallelImport ;
     schema1:name "Diflufen"@de ;
+    :exhaustionDeadline "2027-01-01"^^xsd:date ;
     :federalAdmissionNumber "D-6965"^^xsd:string ;
     :foreignAdmissionNumber "008548-00/003"^^xsd:string ;
     :packageInsertNumber "8607"^^xsd:string ;
     :producingCountry country:DEU ;
-    :referenceProduct product:95C2F859-9684-4E38-8ACB-808F7A76F7F9 .
+    :referenceProduct product:95C2F859-9684-4E38-8ACB-808F7A76F7F9 ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:8D4D8BA5-6735-444E-A723-F002511F9D23 a :SalePermission ;
     schema1:name "Zeppelin"@de ;
@@ -7314,11 +7558,13 @@ product:8D61C2B6-A144-458B-9DB4-E582027210C4 a :RegularProduct ;
 
 product:8D754532-99A9-4E10-9C90-AF655D7A86A3 a :ParallelImport ;
     schema1:name "Pyroflor"@de ;
+    :exhaustionDeadline "2026-10-18"^^xsd:date ;
     :federalAdmissionNumber "D-6974"^^xsd:string ;
     :foreignAdmissionNumber "026233-00/032"^^xsd:string ;
     :packageInsertNumber "7738"^^xsd:string ;
     :producingCountry country:DEU ;
-    :referenceProduct product:9D66D6E2-742A-4D93-AE8D-C23ADD7893B4 .
+    :referenceProduct product:9D66D6E2-742A-4D93-AE8D-C23ADD7893B4 ;
+    :soldOutDeadline "2025-10-18"^^xsd:date .
 
 product:8D9FE5BE-5DAD-4088-AE73-434D43CBA1CE a :ParallelImport ;
     schema1:name "Kocide Opti"@de ;
@@ -7480,8 +7726,10 @@ product:8FCF91BD-BB3B-4D1E-B658-669B68516E77 a :SalePermission ;
 
 product:8FEBCFCB-5533-4572-ABC9-EAE81C58A8FE a :RegularProduct ;
     schema1:name "Metriphar 70 WG"@de ;
+    :exhaustionDeadline "2026-07-01"^^xsd:date ;
     :federalAdmissionNumber "W-7399"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:8b5a4436-a10a-4808-a78f-ed3c6a798189 a :RegularProduct ;
     schema1:name "Haftöl S"@de ;
@@ -7527,9 +7775,11 @@ product:907A020D-4499-49BD-AEAB-B5495BE8ECA5 a :ParallelImport ;
 
 product:907D653C-6598-4980-A9C3-1631C3768F2D a :SalePermission ;
     schema1:name "Migros Bio Garden Spray gegen Schädlinge"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-6670-3"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:B14E1893-A573-4050-91E7-82C08D785520 .
+    :referenceProduct product:B14E1893-A573-4050-91E7-82C08D785520 ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:908E181D-C566-451D-8D12-039B1A9DD4DD a :SalePermission ;
     schema1:name "Kocide Opti"@de ;
@@ -7560,11 +7810,13 @@ product:90D81019-98F1-4CEA-B688-C4DE2100D676 a :ParallelImport ;
 
 product:90E8A148-5993-4423-8624-14B7ABA8BC5D a :ParallelImport ;
     schema1:name "Phon-Choc"@de ;
+    :exhaustionDeadline "2026-06-30"^^xsd:date ;
     :federalAdmissionNumber "F-3861"^^xsd:string ;
     :foreignAdmissionNumber "9500012"^^xsd:string ;
     :packageInsertNumber "5166"^^xsd:string ;
     :producingCountry country:FRA ;
-    :referenceProduct product:086AE789-E56A-48F4-9D36-390A768AF93F .
+    :referenceProduct product:086AE789-E56A-48F4-9D36-390A768AF93F ;
+    :soldOutDeadline "2025-06-30"^^xsd:date .
 
 product:911D0533-1F8A-4643-9088-192F159C1C49 a :SalePermission ;
     schema1:name "Limax M"@de ;
@@ -7707,8 +7959,10 @@ product:93BF12E8-7BF4-4563-ABA0-D754047DB5D9 a :ParallelImport ;
 
 product:93EB2158-0B0E-44D3-BFE8-76D8DA90EB5C a :RegularProduct ;
     schema1:name "Switch HG"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7250"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:9451553A-E00F-4F79-B288-88F6DC607D7E a :ParallelImport ;
     schema1:name "Winner"@de ;
@@ -7720,8 +7974,10 @@ product:9451553A-E00F-4F79-B288-88F6DC607D7E a :ParallelImport ;
 
 product:94633C0E-4802-4D01-A779-85EC2048C30E a :RegularProduct ;
     schema1:name "Folpet 80 WDG"@de ;
+    :exhaustionDeadline "2026-09-30"^^xsd:date ;
     :federalAdmissionNumber "W-6897"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2026-09-30"^^xsd:date .
 
 product:947A9172-59D5-4D5F-8727-6BEA07ACF1EC a :SalePermission ;
     schema1:name "Hortosan"@de ;
@@ -7881,9 +8137,11 @@ product:983DCEC3-A545-4CD6-BB51-C474BC62EE96 a :ParallelImport ;
 
 product:988E9B9E-FB78-419E-A8D5-C5C856A5BCB5 a :SalePermission ;
     schema1:name "Mondera"@de ;
+    :exhaustionDeadline "2026-10-15"^^xsd:date ;
     :federalAdmissionNumber "W-6717-1"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:B425359C-AB71-4EF5-8467-5074DDC567FC .
+    :referenceProduct product:B425359C-AB71-4EF5-8467-5074DDC567FC ;
+    :soldOutDeadline "2025-10-15"^^xsd:date .
 
 product:98A282E1-CC55-439D-9FFA-A26BF74E9FDC a :RegularProduct ;
     schema1:name "Netzmittel Sprinter"@de ;
@@ -7892,11 +8150,13 @@ product:98A282E1-CC55-439D-9FFA-A26BF74E9FDC a :RegularProduct ;
 
 product:990D336F-CFFD-4151-A59A-ED149F595C6F a :ParallelImport ;
     schema1:name "Arcade"@de ;
+    :exhaustionDeadline "2026-07-01"^^xsd:date ;
     :federalAdmissionNumber "F-6041"^^xsd:string ;
     :foreignAdmissionNumber "2110202"^^xsd:string ;
     :packageInsertNumber "7965"^^xsd:string ;
     :producingCountry country:FRA ;
-    :referenceProduct product:7A03630A-A7C7-4828-A3DD-CEF1FC34005B .
+    :referenceProduct product:7A03630A-A7C7-4828-A3DD-CEF1FC34005B ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:991F5F36-6FDF-4DDD-82A9-D6DC5FD0F5F2 a :SalePermission ;
     schema1:name "Gesal Aliette Re-Vital Pflanzen Pilz-Schutz"@de ;
@@ -8079,9 +8339,11 @@ product:9BF94212-A585-4AFA-ADCC-FE0C48BB4A71 a :SalePermission ;
 
 product:9BFCEF1A-0F9C-4017-9F3B-ADF4CCB8C8C7 a :SalePermission ;
     schema1:name "Mioplant Rosenpflege Fungizid"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-6426-1"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:5B26BE8B-144F-4765-A436-9A2BAE3C395C .
+    :referenceProduct product:5B26BE8B-144F-4765-A436-9A2BAE3C395C ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:9C29EACB-4A26-4F66-A9A2-6620C4697343 a :RegularProduct ;
     schema1:name "Madex Top"@de ;
@@ -8128,22 +8390,28 @@ product:9C77632B-313E-4E0F-8AA0-4CC6246DCB9D a :ParallelImport ;
 
 product:9C806413-2444-4728-A041-071BD1271C4E a :ParallelImport ;
     schema1:name "Prolectus 50 WG"@de ;
+    :exhaustionDeadline "2027-01-01"^^xsd:date ;
     :federalAdmissionNumber "I-6106"^^xsd:string ;
     :foreignAdmissionNumber "15549"^^xsd:string ;
     :packageInsertNumber "8170"^^xsd:string ;
     :producingCountry country:ITA ;
-    :referenceProduct product:23741490-0F6F-4335-A986-ACA003E5F1F6 .
+    :referenceProduct product:23741490-0F6F-4335-A986-ACA003E5F1F6 ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:9CA18D8E-5831-46BD-A269-7CA4FDC60E48 a :RegularProduct ;
     schema1:name "Arnold"@de ;
+    :exhaustionDeadline "2027-01-01"^^xsd:date ;
     :federalAdmissionNumber "W-7546"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:9CB12F7F-6FD0-45A0-A275-5DDD05628924 a :SalePermission ;
     schema1:name "MIOPLANT Rosenpflege gegen Blattläuse"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-4676-1"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:6B674813-EA70-4F84-BDD2-4B30DC83160F .
+    :referenceProduct product:6B674813-EA70-4F84-BDD2-4B30DC83160F ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:9CB73FA4-14C6-43A3-8886-2F533071F717 a :SalePermission ;
     schema1:name "AVERO"@de ;
@@ -8175,9 +8443,11 @@ product:9D5C5711-E0FD-453E-82C1-D72D92011EA7 a :ParallelImport ;
 
 product:9D67FFEF-FC42-45C6-9E15-ADBD1DFD1A24 a :SalePermission ;
     schema1:name "Dinagam 700"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-6673-1"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:FE288626-CBBE-4F1D-BB35-FF0DE0961DCB .
+    :referenceProduct product:FE288626-CBBE-4F1D-BB35-FF0DE0961DCB ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:9DC59D91-6647-41B3-8C80-5066012EE409 a :ParallelImport ;
     schema1:name "Spyrale"@de ;
@@ -8237,9 +8507,11 @@ product:9E861B55-73B4-4606-88B0-D62B22AD599D a :RegularProduct ;
 
 product:9E9DFC46-63B3-47A3-BC69-EE5D3FB5689A a :SalePermission ;
     schema1:name "Mioplant Natura Unkrautvernichter gebrauchsfertig"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-6354-1"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:56920A32-E2D3-4A01-A438-FF73851670AE .
+    :referenceProduct product:56920A32-E2D3-4A01-A438-FF73851670AE ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:9EA248FC-9B69-4E22-9392-BDB286A784F8 a :ParallelImport ;
     schema1:name "Milbemectin"@de ;
@@ -8267,8 +8539,10 @@ product:9EF06A9B-A73C-46F2-8B25-AC2CF01628C8 a :ParallelImport ;
 
 product:9F021596-14CF-4B87-9A1D-9425E375D930 a :RegularProduct ;
     schema1:name "Gesal Rosen-Pilzschutz Forte"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-6034"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:9F228E65-6BB3-41FC-899C-2D5521B2BD29 a :SalePermission ;
     schema1:name "Sunrise"@de ;
@@ -8278,9 +8552,11 @@ product:9F228E65-6BB3-41FC-899C-2D5521B2BD29 a :SalePermission ;
 
 product:9F499025-9F4A-48D9-BC9B-33975FE39778 a :SalePermission ;
     schema1:name "Gesal Rasen-Unkrautvernichter"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-6719-3"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:2A7FA096-6AD4-48B0-9FE6-66F0FA6BCFFA .
+    :referenceProduct product:2A7FA096-6AD4-48B0-9FE6-66F0FA6BCFFA ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:9F4E5B6F-E62A-40D9-8310-103C61C0F299 a :ParallelImport ;
     schema1:name "STAR Penconazol"@de ;
@@ -8402,9 +8678,11 @@ product:A1398DDE-0D5D-4AAB-8EBD-04D40AC98AC4 a :SalePermission ;
 
 product:A1A94C12-C007-4AF6-A23A-5D19B6EB0F0A a :SalePermission ;
     schema1:name "MIOPLANT Spray gegen Pilzkrankheiten"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-5236-2"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:A51533DE-4C21-4E5A-9231-D72635E0648A .
+    :referenceProduct product:A51533DE-4C21-4E5A-9231-D72635E0648A ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:A1DDAD8A-C772-43A3-87A9-5CCC7586A7E3 a :ParallelImport ;
     schema1:name "Sonara"@de ;
@@ -8424,11 +8702,13 @@ product:A1E98CBE-0D3B-4B55-B98D-47CAF95EF812 a :ParallelImport ;
 
 product:A2125B5D-3805-46E9-8294-387FE606FFB1 a :ParallelImport ;
     schema1:name "STAR Metribuzin"@de ;
+    :exhaustionDeadline "2026-07-01"^^xsd:date ;
     :federalAdmissionNumber "D-6595"^^xsd:string ;
     :foreignAdmissionNumber "024504-00/037"^^xsd:string ;
     :packageInsertNumber "7985"^^xsd:string ;
     :producingCountry country:DEU ;
-    :referenceProduct product:5A45CE18-3F51-4922-B893-279D2B296D58 .
+    :referenceProduct product:5A45CE18-3F51-4922-B893-279D2B296D58 ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:A24749EE-A0B6-4D6B-885F-8A5F8F665BF8 a :RegularProduct ;
     schema1:name "Nicosh OD"@de ;
@@ -8442,8 +8722,10 @@ product:A2868DCC-B60C-4268-802D-9A9C18E78C6C a :RegularProduct ;
 
 product:A2921C09-C008-4B30-8177-A2BA1C6F7733 a :RegularProduct ;
     schema1:name "Rasenrein KV"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7356"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:A2BB9DFC-8A94-4AC6-B6B2-E597AB4369D1 a :SalePermission ;
     schema1:name "Gesal Insektizid für Rosen und Zierpflanzen Majestik"@de ;
@@ -8487,9 +8769,11 @@ product:A35D1599-42F4-4C43-98FA-22CB92EEAC69 a :RegularProduct ;
 
 product:A38C8327-DB2A-40F3-A69A-5FA7EDD0C2BD a :SalePermission ;
     schema1:name "Spruzit AF OrchideenSchädlingsfrei"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-6670-6"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:B14E1893-A573-4050-91E7-82C08D785520 .
+    :referenceProduct product:B14E1893-A573-4050-91E7-82C08D785520 ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:A3CC9F70-8900-41E8-84A2-735AE508EA32 a :SalePermission ;
     schema1:name "Effican SG"@de ;
@@ -8631,8 +8915,10 @@ product:A7B9515D-1668-464D-B739-A3AA6677E02C a :RegularProduct ;
 
 product:A7C93272-EB62-4B77-A90A-7EF0ECC5457B a :RegularProduct ;
     schema1:name "Aerofleur Spray gegen Pilzkrankheiten"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7368"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:A81F6250-D6B7-4317-BB93-FDFAC50B5C39 a :ParallelImport ;
     schema1:name "Switch"@de ;
@@ -8697,9 +8983,11 @@ product:A906231E-2CE4-49FD-8BC5-38DDE3013F36 a :ParallelImport ;
 
 product:A9450006-D84C-4E06-868A-CE6FCFB67A25 a :SalePermission ;
     schema1:name "Gesal Unkrautvertilger Natur-Rapid"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-6354-4"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:56920A32-E2D3-4A01-A438-FF73851670AE .
+    :referenceProduct product:56920A32-E2D3-4A01-A438-FF73851670AE ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:A94C814A-5E5A-4DA0-881C-AE1655E7A3DF a :RegularProduct ;
     schema1:name "Talisma UL"@de ;
@@ -8716,8 +9004,10 @@ product:A94C9463-4313-4619-8AEE-18C1C24E570D a :ParallelImport ;
 
 product:A94E4C79-82F6-4DB9-A523-06327C981695 a :RegularProduct ;
     schema1:name "Cupro-Folpet flüssig"@de ;
+    :exhaustionDeadline "2027-09-30"^^xsd:date ;
     :federalAdmissionNumber "W-5296"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2026-09-30"^^xsd:date .
 
 product:A97A41C8-E1C1-4D78-9275-C28A1B33C4ED a :ParallelImport ;
     schema1:name "Mirador SC"@de ;
@@ -8743,9 +9033,11 @@ product:A9A3A545-1A86-4FCE-B8BD-3376D126C4D3 a :ParallelImport ;
 
 product:A9C8D002-118D-4ECC-8F81-62AF6D18FEC1 a :SalePermission ;
     schema1:name "Roundup Alphee"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7351-1"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:D67BCDC8-F321-45B9-A5C9-BC5968E5A579 .
+    :referenceProduct product:D67BCDC8-F321-45B9-A5C9-BC5968E5A579 ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:AA038B34-D2C9-4481-B9CF-DAB54F5A8F36 a :ParallelImport ;
     schema1:name "Divo"@de ;
@@ -8757,8 +9049,10 @@ product:AA038B34-D2C9-4481-B9CF-DAB54F5A8F36 a :ParallelImport ;
 
 product:AA16570D-AA70-49DE-8D1A-3D986EAE9B8D a :RegularProduct ;
     schema1:name "Phenmédiphame"@de ;
+    :exhaustionDeadline "2027-06-03"^^xsd:date ;
     :federalAdmissionNumber "W-4480"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2026-06-03"^^xsd:date .
 
 product:AA19609C-6B32-4C19-ADA4-DBE38B49E9E0 a :RegularProduct ;
     schema1:name "Difend FS"@de ;
@@ -8778,11 +9072,13 @@ product:AA406F90-B3F3-4A4E-AC6E-D26771F18264 a :RegularProduct ;
 
 product:AA4E98EF-7804-4E2E-9F63-70FB2C576351 a :ParallelImport ;
     schema1:name "Capri Twin"@de ;
+    :exhaustionDeadline "2026-10-18"^^xsd:date ;
     :federalAdmissionNumber "D-7252"^^xsd:string ;
     :foreignAdmissionNumber "026233-00/035"^^xsd:string ;
     :packageInsertNumber "7738"^^xsd:string ;
     :producingCountry country:DEU ;
-    :referenceProduct product:9D66D6E2-742A-4D93-AE8D-C23ADD7893B4 .
+    :referenceProduct product:9D66D6E2-742A-4D93-AE8D-C23ADD7893B4 ;
+    :soldOutDeadline "2025-10-18"^^xsd:date .
 
 product:AA55C16C-89A8-4E8A-AE60-C4B411DA848C a :RegularProduct ;
     schema1:name "Apheline"@de ;
@@ -8808,9 +9104,11 @@ product:AA9E6CDC-22DB-436B-9E51-F93F4B3C2BA8 a :SalePermission ;
 
 product:AAE2FEC2-F70C-4538-99D1-080FC23152FD a :SalePermission ;
     schema1:name "Beaupro"@de ;
+    :exhaustionDeadline "2026-03-31"^^xsd:date ;
     :federalAdmissionNumber "W-4574-1"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:C0A80966-225E-4EBC-8947-F6CEB5E8BE53 .
+    :referenceProduct product:C0A80966-225E-4EBC-8947-F6CEB5E8BE53 ;
+    :soldOutDeadline "2025-04-14"^^xsd:date .
 
 product:AAF2CFB6-1D95-438E-B513-C4205A4E8BEC a :RegularProduct ;
     schema1:name "Axial One"@de ;
@@ -8843,14 +9141,18 @@ product:AB4C085A-AA24-44D8-9013-308BF09A151B a :ParallelImport ;
 
 product:AB673B31-CBC3-4F3E-990C-255D5F1638C9 a :SalePermission ;
     schema1:name "Spruzit Rosen-Schädlingsfrei"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-6669-1"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:FB40D351-CFCA-44E5-9BD6-E9EB8DC5F776 .
+    :referenceProduct product:FB40D351-CFCA-44E5-9BD6-E9EB8DC5F776 ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:AB711EF7-8605-4DE8-9964-23CEF288CD2D a :RegularProduct ;
     schema1:name "Herba Power"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7524"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:AB9B4D13-B5E9-4CF1-A06C-EF3EC08D5437 a :ParallelImport ;
     schema1:name "Medax Max"@de ;
@@ -8868,8 +9170,10 @@ product:ABDEEDDE-5656-4686-BBE8-70438ECDC680 a :SalePermission ;
 
 product:ABF8E183-AB08-498A-8BCA-ABADA0A472CA a :RegularProduct ;
     schema1:name "Malvin WG"@de ;
+    :exhaustionDeadline "2027-09-30"^^xsd:date ;
     :federalAdmissionNumber "W-6227"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2026-09-30"^^xsd:date .
 
 product:ABFEA1BA-E988-4816-A05B-17D5EFF22D6F a :RegularProduct ;
     schema1:name "Taegro"@de ;
@@ -8897,9 +9201,11 @@ product:AC804E17-69C3-43EA-B434-9E5434489D8C a :SalePermission ;
 
 product:AC820DE3-169D-4C28-BECC-EAE60398B312 a :SalePermission ;
     schema1:name "Dartilon"@de ;
+    :exhaustionDeadline "2026-12-31"^^xsd:date ;
     :federalAdmissionNumber "W-3064-1"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:897C9F3D-4771-4CE8-B100-9B00D4CA6AE0 .
+    :referenceProduct product:897C9F3D-4771-4CE8-B100-9B00D4CA6AE0 ;
+    :soldOutDeadline "2025-12-31"^^xsd:date .
 
 product:AC96BA4B-D9FE-4012-8B02-425D276EB17B a :ParallelImport ;
     schema1:name "Armicarb jardin"@de ;
@@ -8971,11 +9277,13 @@ product:ADFD2592-7368-4500-9A0C-44EFB569A098 a :RegularProduct ;
 
 product:AE038B82-AE0C-41AC-A5C2-A4847F4C102A a :ParallelImport ;
     schema1:name "Prolectus"@de ;
+    :exhaustionDeadline "2027-01-01"^^xsd:date ;
     :federalAdmissionNumber "D-7181"^^xsd:string ;
     :foreignAdmissionNumber "007679-00/007"^^xsd:string ;
     :packageInsertNumber "8170"^^xsd:string ;
     :producingCountry country:DEU ;
-    :referenceProduct product:23741490-0F6F-4335-A986-ACA003E5F1F6 .
+    :referenceProduct product:23741490-0F6F-4335-A986-ACA003E5F1F6 ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:AE120798-34AA-47AE-9203-134885001A4A a :RegularProduct ;
     schema1:name "BasilProtect"@de ;
@@ -8992,9 +9300,11 @@ product:AE5F460A-8967-4101-A9D7-25376CC63D3F a :ParallelImport ;
 
 product:AEAB9F56-C3F3-486E-9175-5DC2C04AEBE4 a :SalePermission ;
     schema1:name "PIXIE"@de ;
+    :exhaustionDeadline "2026-10-15"^^xsd:date ;
     :federalAdmissionNumber "W-6717-2"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:B425359C-AB71-4EF5-8467-5074DDC567FC .
+    :referenceProduct product:B425359C-AB71-4EF5-8467-5074DDC567FC ;
+    :soldOutDeadline "2025-10-15"^^xsd:date .
 
 product:AEC182EE-ADB8-4AA3-8A5F-63E68FA43262 a :SalePermission ;
     schema1:name "Finy"@de ;
@@ -9267,8 +9577,10 @@ product:B4AA363E-9EB8-4FCE-8663-21605529E5D2 a :ParallelImport ;
 
 product:B4BA0E5C-0A0D-44CC-9C4E-810948D91D43 a :RegularProduct ;
     schema1:name "Ethephon"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-3085"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:B5325C33-AF8C-4983-AAD2-D975C31C60E4 a :RegularProduct ;
     schema1:name "Chrysoperla"@de ;
@@ -9347,9 +9659,11 @@ product:B7362760-4898-4BD6-AEB4-BDB38C082976 a :SalePermission ;
 
 product:B77E7725-31C6-41A8-8A54-4F5DAB97ED73 a :SalePermission ;
     schema1:name "Capito Garden Gold Spray"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7408-1"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:C8F8513D-FCCC-4F03-A574-63E140ECCAFD .
+    :referenceProduct product:C8F8513D-FCCC-4F03-A574-63E140ECCAFD ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:B79A5D99-6F95-4AF4-840A-F245D282C255 a :RegularProduct ;
     schema1:name "Brevis"@de ;
@@ -9381,9 +9695,11 @@ product:B7F2FF74-1081-4FD3-98CD-983BE3059F0B a :RegularProduct ;
 
 product:B80E445F-952B-4ADE-868A-6A4A5A4949C4 a :SalePermission ;
     schema1:name "Capito Cupro L"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7444-1"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:B7C1892F-109A-4534-A7B1-DCCB30693CB1 .
+    :referenceProduct product:B7C1892F-109A-4534-A7B1-DCCB30693CB1 ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:B86B2765-B471-4D1B-8409-504C523A5E8F a :ParallelImport ;
     schema1:name "Pinosulam"@de ;
@@ -9436,8 +9752,10 @@ product:B8FD1E8B-F72F-45BD-A57B-690DA9DCDD50 a :SalePermission ;
 
 product:B91C2508-E0DE-45FE-9604-6353DB5C0563 a :RegularProduct ;
     schema1:name "Alial Triplo"@de ;
+    :exhaustionDeadline "2027-08-31"^^xsd:date ;
     :federalAdmissionNumber "W-6781"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2026-08-31"^^xsd:date .
 
 product:B9224112-7CBE-4DB2-BC85-64F01BE3A66E a :ParallelImport ;
     schema1:name "Fazor"@de ;
@@ -9449,11 +9767,13 @@ product:B9224112-7CBE-4DB2-BC85-64F01BE3A66E a :ParallelImport ;
 
 product:B92A8D42-4F73-4412-9E05-0F7917ADE7BD a :ParallelImport ;
     schema1:name "Diflufen"@de ;
+    :exhaustionDeadline "2027-01-01"^^xsd:date ;
     :federalAdmissionNumber "D-7432"^^xsd:string ;
     :foreignAdmissionNumber "008548-00/024"^^xsd:string ;
     :packageInsertNumber "8607"^^xsd:string ;
     :producingCountry country:DEU ;
-    :referenceProduct product:95C2F859-9684-4E38-8ACB-808F7A76F7F9 .
+    :referenceProduct product:95C2F859-9684-4E38-8ACB-808F7A76F7F9 ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:B9352333-3ABE-4814-98E9-736FD28E61EF a :RegularProduct ;
     schema1:name "SmartFresh ProTabs"@de ;
@@ -9467,11 +9787,13 @@ product:B93CDC50-C62C-4C9E-96A1-4C0194819949 a :RegularProduct ;
 
 product:B95245A6-79A0-4893-9275-76FBD0F029F6 a :ParallelImport ;
     schema1:name "Sencor 600 SC"@de ;
+    :exhaustionDeadline "2026-07-01"^^xsd:date ;
     :federalAdmissionNumber "I-6758"^^xsd:string ;
     :foreignAdmissionNumber "16570"^^xsd:string ;
     :packageInsertNumber "7898"^^xsd:string ;
     :producingCountry country:ITA ;
-    :referenceProduct product:88364672-0969-49C4-8102-E38EB930CCB9 .
+    :referenceProduct product:88364672-0969-49C4-8102-E38EB930CCB9 ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:B9C3303A-36F9-4AF1-8F58-EC8D10FC79D4 a :ParallelImport ;
     schema1:name "Pacifica Xpert"@de ;
@@ -9501,11 +9823,13 @@ product:B9F1BF5F-D09F-42A1-BD74-9E90BD9ACD4B a :ParallelImport ;
 
 product:B9FE0149-6600-4A1D-B2D6-4F63EB817F16 a :ParallelImport ;
     schema1:name "Biathlon 4D"@de ;
+    :exhaustionDeadline "2026-07-01"^^xsd:date ;
     :federalAdmissionNumber "D-7372"^^xsd:string ;
     :foreignAdmissionNumber "027555-00"^^xsd:string ;
     :packageInsertNumber "8675"^^xsd:string ;
     :producingCountry country:DEU ;
-    :referenceProduct product:709D34C9-C338-40DB-82A3-B59691514FAD .
+    :referenceProduct product:709D34C9-C338-40DB-82A3-B59691514FAD ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:BA2D7441-4151-4564-A5C9-E4FB228A9CD9 a :ParallelImport ;
     schema1:name "Flutola"@de ;
@@ -9597,8 +9921,10 @@ product:BBEDB22D-C477-496E-B76D-CBFF3FC8D0F0 a :ParallelImport ;
 
 product:BBF127EB-8046-4CC1-8EF5-FD8E5EE8D36A a :RegularProduct ;
     schema1:name "Zorro"@de ;
+    :exhaustionDeadline "2027-01-01"^^xsd:date ;
     :federalAdmissionNumber "W-7153"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2026-07-01"^^xsd:date .
 
 product:BC029153-723C-4AA0-B5AA-5BD9A0FB984D a :RegularProduct ;
     schema1:name "Cedomon"@de ;
@@ -9612,11 +9938,13 @@ product:BC12E7F8-EB10-4024-9C0A-ECF5B4B06A4A a :RegularProduct ;
 
 product:BC67C0FE-3AB0-41AB-8C15-7D4C6DAD3BF2 a :ParallelImport ;
     schema1:name "Atena Etephon"@de ;
+    :exhaustionDeadline "2026-06-30"^^xsd:date ;
     :federalAdmissionNumber "F-3855"^^xsd:string ;
     :foreignAdmissionNumber "9500536"^^xsd:string ;
     :packageInsertNumber "5166"^^xsd:string ;
     :producingCountry country:FRA ;
-    :referenceProduct product:086AE789-E56A-48F4-9D36-390A768AF93F .
+    :referenceProduct product:086AE789-E56A-48F4-9D36-390A768AF93F ;
+    :soldOutDeadline "2025-06-30"^^xsd:date .
 
 product:BC95CB07-F25D-4FBE-A76B-FD45B4E6658D a :RegularProduct ;
     schema1:name "Floramite 240 SC"@de ;
@@ -9717,11 +10045,13 @@ product:BEDDCF7A-A632-404F-9DD8-5DCDBBE99679 a :SalePermission ;
 
 product:BEDF40E7-60B1-48A9-8B19-859D5485CDA7 a :ParallelImport ;
     schema1:name "METRIBUZIN SC"@de ;
+    :exhaustionDeadline "2026-07-01"^^xsd:date ;
     :federalAdmissionNumber "D-7325"^^xsd:string ;
     :foreignAdmissionNumber "007191-00/019"^^xsd:string ;
     :packageInsertNumber "7898"^^xsd:string ;
     :producingCountry country:DEU ;
-    :referenceProduct product:88364672-0969-49C4-8102-E38EB930CCB9 .
+    :referenceProduct product:88364672-0969-49C4-8102-E38EB930CCB9 ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:BF20C04E-06C2-4B94-9539-732FE0A7816C a :SalePermission ;
     schema1:name "Capito Cupro"@de ;
@@ -9764,9 +10094,11 @@ product:BFF7DFAE-632D-4588-AC41-198B8475430E a :RegularProduct ;
 
 product:C014655F-A7CC-4082-862A-B7C9A29D353A a :SalePermission ;
     schema1:name "Ethephon LG"@de ;
+    :exhaustionDeadline "2026-12-31"^^xsd:date ;
     :federalAdmissionNumber "W-3064-2"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:897C9F3D-4771-4CE8-B100-9B00D4CA6AE0 .
+    :referenceProduct product:897C9F3D-4771-4CE8-B100-9B00D4CA6AE0 ;
+    :soldOutDeadline "2025-12-31"^^xsd:date .
 
 product:C04A4125-82CB-48C3-9744-4A43D2D6D126 a :ParallelImport ;
     schema1:name "Propaq"@de ;
@@ -9821,11 +10153,13 @@ product:C0BF357B-4100-4191-9EA3-7F4A351C5FB2 a :RegularProduct ;
 
 product:C0E4212F-8FFF-4EC9-9CCE-D09BCD66C9E8 a :ParallelImport ;
     schema1:name "Steel"@de ;
+    :exhaustionDeadline "2026-10-18"^^xsd:date ;
     :federalAdmissionNumber "F-6734"^^xsd:string ;
     :foreignAdmissionNumber "2130242"^^xsd:string ;
     :packageInsertNumber "7796"^^xsd:string ;
     :producingCountry country:FRA ;
-    :referenceProduct product:4EC263C8-8D7C-4BAB-9225-E7D7FE6D28BC .
+    :referenceProduct product:4EC263C8-8D7C-4BAB-9225-E7D7FE6D28BC ;
+    :soldOutDeadline "2025-10-18"^^xsd:date .
 
 product:C0EEBFFC-1052-4F7E-9506-CCEAED7F0A32 a :SalePermission ;
     schema1:name "Score Profi"@de ;
@@ -9851,8 +10185,10 @@ product:C10BDEA3-50CE-476C-9165-42BD8842FBC3 a :RegularProduct ;
 
 product:C10D8ECB-563A-4951-85E5-4D51E25D7E16 a :RegularProduct ;
     schema1:name "Capex 2"@de ;
+    :exhaustionDeadline "2026-07-01"^^xsd:date ;
     :federalAdmissionNumber "W-4234"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-07-01"^^xsd:date .
 
 product:C12CBB6A-D46F-45FC-8F15-F925B09224E7 a :SalePermission ;
     schema1:name "Kalisan"@de ;
@@ -9867,8 +10203,10 @@ product:C1521255-4420-49A8-8918-81C9977AB091 a :RegularProduct ;
 
 product:C16FD86E-4728-4D47-A9FF-C57843E1230E a :RegularProduct ;
     schema1:name "Paket"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7400"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:C17D4E01-874C-462D-A0F0-41631E2CB0C9 a :ParallelImport ;
     schema1:name "Lontrel 720 SG"@de ;
@@ -9890,9 +10228,11 @@ product:C1BECF8A-9664-4739-A21D-9AD60476DECB a :RegularProduct ;
 
 product:C1BF9696-7573-4FA7-8542-CFFA314371E3 a :SalePermission ;
     schema1:name "Migros Bio Garden Spray gegen Orchideenschädlinge"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-6670-5"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:B14E1893-A573-4050-91E7-82C08D785520 .
+    :referenceProduct product:B14E1893-A573-4050-91E7-82C08D785520 ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:C1CC7321-D3AD-4B0B-A725-26AAC14794DA a :SalePermission ;
     schema1:name "Proplant"@de ;
@@ -9926,9 +10266,11 @@ product:C26467AE-D55B-4D52-97E0-BE289E048617 a :SalePermission ;
 
 product:C28411F1-FF90-4B90-A4B4-396899A7EBE3 a :SalePermission ;
     schema1:name "Trinexx Top"@de ;
+    :exhaustionDeadline "2027-02-28"^^xsd:date ;
     :federalAdmissionNumber "W-6832-1"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:C8D8DAAA-4A58-457D-9BDD-6FC694767C72 .
+    :referenceProduct product:C8D8DAAA-4A58-457D-9BDD-6FC694767C72 ;
+    :soldOutDeadline "2026-02-28"^^xsd:date .
 
 product:C2AB7C7B-EB03-42AF-9EC7-E04C1D28BCA1 a :ParallelImport ;
     schema1:name "Spirox"@de ;
@@ -10032,11 +10374,13 @@ product:C5717D72-3E76-4310-8E69-F4B4A9C9E593 a :RegularProduct ;
 
 product:C5BC118C-BCF7-4185-9DC1-D64C852D1ABD a :ParallelImport ;
     schema1:name "STAR Pendimethalin + Flufenacet"@de ;
+    :exhaustionDeadline "2027-01-01"^^xsd:date ;
     :federalAdmissionNumber "D-6593"^^xsd:string ;
     :foreignAdmissionNumber "024834-00/027"^^xsd:string ;
     :packageInsertNumber "7061"^^xsd:string ;
     :producingCountry country:DEU ;
-    :referenceProduct product:0E4C7139-8C38-42A8-B9BF-6E39CC71E2F7 .
+    :referenceProduct product:0E4C7139-8C38-42A8-B9BF-6E39CC71E2F7 ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:C5C8552E-61EF-4FC8-8231-A8DE8244D05A a :SalePermission ;
     schema1:name "Gondor"@de ;
@@ -10065,9 +10409,11 @@ product:C64663AC-03A1-473E-A5EF-C77910AECD9A a :RegularProduct ;
 
 product:C6731CA8-5B02-45C3-9599-EFD1C505C1E5 a :SalePermission ;
     schema1:name "Gesal Loredo Rasen-Unkrautvernichter gegen Problem-Unkraut"@de ;
+    :exhaustionDeadline "2026-10-15"^^xsd:date ;
     :federalAdmissionNumber "W-6717-3"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:B425359C-AB71-4EF5-8467-5074DDC567FC .
+    :referenceProduct product:B425359C-AB71-4EF5-8467-5074DDC567FC ;
+    :soldOutDeadline "2025-10-15"^^xsd:date .
 
 product:C68CECF6-2136-4C50-913D-E7249F95FA67 a :SalePermission ;
     schema1:name "Beta Omya"@de ;
@@ -10217,11 +10563,13 @@ product:CA430425-6382-468F-BC2E-E0D58FAAC2A4 a :ParallelImport ;
 
 product:CA45009F-4419-427B-8BCF-2714F745EACB a :ParallelImport ;
     schema1:name "Cutril Top"@de ;
+    :exhaustionDeadline "2026-10-18"^^xsd:date ;
     :federalAdmissionNumber "I-6507"^^xsd:string ;
     :foreignAdmissionNumber "12395"^^xsd:string ;
     :packageInsertNumber "8769"^^xsd:string ;
     :producingCountry country:ITA ;
-    :referenceProduct product:C124AD39-C540-4581-A654-CC5F959A6931 .
+    :referenceProduct product:C124AD39-C540-4581-A654-CC5F959A6931 ;
+    :soldOutDeadline "2025-10-18"^^xsd:date .
 
 product:CA808024-5174-4E7C-9252-2F1C04657A66 a :SalePermission ;
     schema1:name "Puma extra"@de ;
@@ -10255,9 +10603,11 @@ product:CB40031C-DAC8-46AD-9567-7F15AB41B0E0 a :SalePermission ;
 
 product:CB68FD3E-A94B-4CDC-920C-8A9E5B7B093D a :SalePermission ;
     schema1:name "MCPA Plus"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7023-1"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:B66EA2BF-AA6C-4F02-9185-61111495BB4A .
+    :referenceProduct product:B66EA2BF-AA6C-4F02-9185-61111495BB4A ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:CB84292F-2B0A-4AC3-864E-A3A6469B0D15 a :RegularProduct ;
     schema1:name "Cidely Top"@de ;
@@ -10272,8 +10622,10 @@ product:CBA88D3A-E4AD-432E-84E7-D4B2D0FC16F3 a :SalePermission ;
 
 product:CBAE04A9-88AF-4BDF-9440-BF79ADAB227D a :RegularProduct ;
     schema1:name "LBG-51FCm"@de ;
+    :exhaustionDeadline "2027-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7293"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2026-10-31"^^xsd:date .
 
 product:CC0A4869-1402-4160-85CC-51FBBB6A150D a :ParallelImport ;
     schema1:name "Solado Gold"@de ;
@@ -10285,9 +10637,11 @@ product:CC0A4869-1402-4160-85CC-51FBBB6A150D a :ParallelImport ;
 
 product:CC491F11-DF9D-4207-B3E8-C3FEBAB79A99 a :SalePermission ;
     schema1:name "Roundup 120"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7353-1"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:4BABC787-2871-49DF-9A85-7F7D143A7437 .
+    :referenceProduct product:4BABC787-2871-49DF-9A85-7F7D143A7437 ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:CC769DDA-99B6-4FD5-BE0B-8EF28CB2F30D a :SalePermission ;
     schema1:name "Ortiva"@de ;
@@ -10400,11 +10754,13 @@ product:CE8CBC6E-4F78-400A-A50D-CBB313D4658F a :ParallelImport ;
 
 product:CEA7674E-6469-4F1A-8781-6BDA89591E1F a :ParallelImport ;
     schema1:name "Pyroxsulam + Florasulam"@de ;
+    :exhaustionDeadline "2026-10-18"^^xsd:date ;
     :federalAdmissionNumber "D-6164"^^xsd:string ;
     :foreignAdmissionNumber "026233-00/028"^^xsd:string ;
     :packageInsertNumber "7738"^^xsd:string ;
     :producingCountry country:DEU ;
-    :referenceProduct product:9D66D6E2-742A-4D93-AE8D-C23ADD7893B4 .
+    :referenceProduct product:9D66D6E2-742A-4D93-AE8D-C23ADD7893B4 ;
+    :soldOutDeadline "2025-10-18"^^xsd:date .
 
 product:CEBE4C47-C905-4418-8AB3-CB2ADF39F4DA a :ParallelImport ;
     schema1:name "Clinic TF"@de ;
@@ -10426,8 +10782,10 @@ product:CED96029-439B-4FF6-ADDD-FBF936FD0D02 a :RegularProduct ;
 
 product:CF74A49F-E1D5-4DDA-8733-BF09E69712A4 a :RegularProduct ;
     schema1:name "Melody Super"@de ;
+    :exhaustionDeadline "2027-08-31"^^xsd:date ;
     :federalAdmissionNumber "W-6371"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2026-08-31"^^xsd:date .
 
 product:CF9A0E6B-3C03-426B-8727-B41669A1DC59 a :SalePermission ;
     schema1:name "Folpet 80 WDG"@de ;
@@ -10449,11 +10807,13 @@ product:CFA3612B-4C43-4E4D-8756-15E8E6F6B6AA a :SalePermission ;
 
 product:CFC46969-43A3-4729-9A0D-054CDED60F5B a :ParallelImport ;
     schema1:name "Aspect"@de ;
+    :exhaustionDeadline "2027-01-01"^^xsd:date ;
     :federalAdmissionNumber "D-6891"^^xsd:string ;
     :foreignAdmissionNumber "007149-00/009"^^xsd:string ;
     :packageInsertNumber "7758"^^xsd:string ;
     :producingCountry country:DEU ;
-    :referenceProduct product:1AC55C5A-5941-420B-A062-8D5E04D581E4 .
+    :referenceProduct product:1AC55C5A-5941-420B-A062-8D5E04D581E4 ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:CFD015D7-804B-4186-81AF-563E2CEEE877 a :SalePermission ;
     schema1:name "Vivando"@de ;
@@ -10505,14 +10865,18 @@ product:D0743782-A6FB-4F61-897D-74758D94E779 a :RegularProduct ;
 
 product:D0790529-6020-4894-8FBD-7885C61AC572 a :SalePermission ;
     schema1:name "Asulam LG"@de ;
+    :exhaustionDeadline "2026-07-01"^^xsd:date ;
     :federalAdmissionNumber "W-6997-4"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:E9360EF6-CF33-44E4-9C90-8E435F31771A .
+    :referenceProduct product:E9360EF6-CF33-44E4-9C90-8E435F31771A ;
+    :soldOutDeadline "2025-07-01"^^xsd:date .
 
 product:D080065B-A536-4A10-BFC2-B4AFA5A420EC a :RegularProduct ;
     schema1:name "Legan HG"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7413"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:D096540F-9DC2-44EC-BD37-6E7DB1210F58 a :ParallelImport ;
     schema1:name "Isoxazone"@de ;
@@ -10550,14 +10914,18 @@ product:D142E5F3-9E6E-4E6B-9F0B-C1ADA599D3E4 a :ParallelImport ;
 
 product:D149906A-4467-43B3-B47D-AC54744C4C22 a :RegularProduct ;
     schema1:name "Pheroprax Ampulle"@de ;
+    :exhaustionDeadline "2026-06-30"^^xsd:date ;
     :federalAdmissionNumber "W-6063"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-06-30"^^xsd:date .
 
 product:D16F10AB-9B91-4B74-AA98-8142E0A2FF13 a :SalePermission ;
     schema1:name "Banaril Blanco"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-6686-2"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:4EC263C8-8D7C-4BAB-9225-E7D7FE6D28BC .
+    :referenceProduct product:4EC263C8-8D7C-4BAB-9225-E7D7FE6D28BC ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:D197BC34-898E-4702-87B3-9B309431AB91 a :SalePermission ;
     schema1:name "Bolero"@de ;
@@ -10808,8 +11176,10 @@ product:D64DD63E-94F7-4C63-A5C4-581F28C03960 a :ParallelImport ;
 
 product:D67D40BD-8AB6-4342-AFD4-F2A6E9424B11 a :RegularProduct ;
     schema1:name "Asulox"@de ;
+    :exhaustionDeadline "2026-07-01"^^xsd:date ;
     :federalAdmissionNumber "W-1698"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-07-01"^^xsd:date .
 
 product:D6A94A70-03CE-478B-9306-BBE7B7EDA6CF a :RegularProduct ;
     schema1:name "AG-CDF1-480 EC"@de ;
@@ -10902,8 +11272,10 @@ product:D7E1252F-E297-4E0C-B257-6EC40B39A8C9 a :SalePermission ;
 
 product:D7F7A8B7-1E78-4A08-99F3-E7B7438F82E7 a :RegularProduct ;
     schema1:name "Trimaxx"@de ;
+    :exhaustionDeadline "2027-04-30"^^xsd:date ;
     :federalAdmissionNumber "W-6962"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2026-04-30"^^xsd:date .
 
 product:D83C5BA7-600C-4D6D-AADD-09BEDD38FDF6 a :RegularProduct ;
     schema1:name "Oriline L"@de ;
@@ -11008,9 +11380,11 @@ product:D9C88A84-B6D0-41BB-A5E9-7F99811677C2 a :ParallelImport ;
 
 product:D9E45F07-360E-414F-B62D-FEF1EFDE91D7 a :SalePermission ;
     schema1:name "Palisad"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-6838-2"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:0CEF1E11-4F49-4860-B006-AFED5AD5D414 .
+    :referenceProduct product:0CEF1E11-4F49-4860-B006-AFED5AD5D414 ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:D9FEB44E-3644-4BFD-8319-D1B6C1A00825 a :SalePermission ;
     schema1:name "Casac"@de ;
@@ -11065,11 +11439,13 @@ product:DA75AB01-E8A2-445C-971F-6B396E736767 a :ParallelImport ;
 
 product:DA7BCEB6-339A-4802-B714-C4334E79F941 a :ParallelImport ;
     schema1:name "Pyroxsulam + Florasulam"@de ;
+    :exhaustionDeadline "2026-10-18"^^xsd:date ;
     :federalAdmissionNumber "D-6163"^^xsd:string ;
     :foreignAdmissionNumber "026233-00/027"^^xsd:string ;
     :packageInsertNumber "7738"^^xsd:string ;
     :producingCountry country:DEU ;
-    :referenceProduct product:9D66D6E2-742A-4D93-AE8D-C23ADD7893B4 .
+    :referenceProduct product:9D66D6E2-742A-4D93-AE8D-C23ADD7893B4 ;
+    :soldOutDeadline "2025-10-18"^^xsd:date .
 
 product:DA918AEF-A578-4782-A362-B1C69EE70D11 a :SalePermission ;
     schema1:name "Kusak SG"@de ;
@@ -11121,14 +11497,18 @@ product:DBF45DB7-4433-4532-891F-E803B7F96BC1 a :RegularProduct ;
 
 product:DC3180EA-6EA3-493C-B32D-71F19F9662A0 a :SalePermission ;
     schema1:name "Erpax Quattro"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7416-3"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:01D5F1BA-6E12-4177-A06E-8371C94B95D3 .
+    :referenceProduct product:01D5F1BA-6E12-4177-A06E-8371C94B95D3 ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:DC85F7D2-51F7-4699-9E92-198DA23A5751 a :RegularProduct ;
     schema1:name "Cobra Forte"@de ;
+    :exhaustionDeadline "2026-06-11"^^xsd:date ;
     :federalAdmissionNumber "W-6861"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-06-11"^^xsd:date .
 
 product:DCDB89F1-F0D3-48B3-BC30-654998E64516 a :SalePermission ;
     schema1:name "Amistar"@de ;
@@ -11193,8 +11573,10 @@ product:DEC5CE6D-4DB1-4555-A647-EDAEE5ADB3B4 a :RegularProduct ;
 
 product:DECC98D1-F23E-4A04-ACB2-8648FECBD826 a :RegularProduct ;
     schema1:name "Cypermethrin"@de ;
+    :exhaustionDeadline "2026-06-11"^^xsd:date ;
     :federalAdmissionNumber "W-4343"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-06-11"^^xsd:date .
 
 product:DED0E102-D140-479B-B905-841FBE79D20B a :RegularProduct ;
     schema1:name "Captan WDG Omya"@de ;
@@ -11219,9 +11601,11 @@ product:DF0E0D74-5FE7-4235-B3A1-A8D8AAF22F67 a :ParallelImport ;
 
 product:DF4A88DD-A0CE-43F8-94C0-8C929E9D4C91 a :SalePermission ;
     schema1:name "Elotin"@de ;
+    :exhaustionDeadline "2026-10-15"^^xsd:date ;
     :federalAdmissionNumber "W-6874-1"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:568021B9-79F4-4219-A5AF-75E35F49BC00 .
+    :referenceProduct product:568021B9-79F4-4219-A5AF-75E35F49BC00 ;
+    :soldOutDeadline "2025-10-15"^^xsd:date .
 
 product:DF681E63-3778-4A60-B906-68920D564D49 a :ParallelImport ;
     schema1:name "Spyrale"@de ;
@@ -11274,9 +11658,11 @@ product:E01DEA0D-E18D-4F0A-A557-69BFC01257E8 a :RegularProduct ;
 
 product:E02274AA-AABA-44A1-A822-18BF99496F6C a :SalePermission ;
     schema1:name "Gesal Langzeit-Pilzschutz Folicur"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7251-1"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:B9E2BFAC-4FC9-45BC-B01E-9AA19C78BCA8 .
+    :referenceProduct product:B9E2BFAC-4FC9-45BC-B01E-9AA19C78BCA8 ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:E04576E3-B495-495E-BD46-3854805F0C50 a :SalePermission ;
     schema1:name "Delan WG"@de ;
@@ -11286,9 +11672,11 @@ product:E04576E3-B495-495E-BD46-3854805F0C50 a :SalePermission ;
 
 product:E0865328-E8F1-4F66-B685-E1D4347050E5 a :SalePermission ;
     schema1:name "Asulam S"@de ;
+    :exhaustionDeadline "2026-07-01"^^xsd:date ;
     :federalAdmissionNumber "W-6997-3"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:E9360EF6-CF33-44E4-9C90-8E435F31771A .
+    :referenceProduct product:E9360EF6-CF33-44E4-9C90-8E435F31771A ;
+    :soldOutDeadline "2025-07-01"^^xsd:date .
 
 product:E08FD5D3-3EF1-451D-84C5-B6C7992F4E6E a :ParallelImport ;
     schema1:name "Life scientific Clopyralid"@de ;
@@ -11321,11 +11709,13 @@ product:E162D9A8-963A-48DC-A40B-F5CA6D5813D9 a :RegularProduct ;
 
 product:E1967185-EE4C-41BC-BF2A-838EBAAF4549 a :ParallelImport ;
     schema1:name "Mistral"@de ;
+    :exhaustionDeadline "2026-07-01"^^xsd:date ;
     :federalAdmissionNumber "A-3129"^^xsd:string ;
     :foreignAdmissionNumber "2796-0"^^xsd:string ;
     :packageInsertNumber "7127"^^xsd:string ;
     :producingCountry country:AUT ;
-    :referenceProduct product:088FA484-0A20-4FBC-B8EE-BFD3C33E1867 .
+    :referenceProduct product:088FA484-0A20-4FBC-B8EE-BFD3C33E1867 ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:E1A1229E-BC07-4561-BDF0-52CB5B883E13 a :ParallelImport ;
     schema1:name "Metobrom"@de ;
@@ -11466,11 +11856,13 @@ product:E3ED74B3-337E-43F7-9A47-AC3C5C5FE4AB a :SalePermission ;
 
 product:E428010F-2C9B-4B06-976D-7B8D1C0AEBD9 a :ParallelImport ;
     schema1:name "Aspect"@de ;
+    :exhaustionDeadline "2027-01-01"^^xsd:date ;
     :federalAdmissionNumber "A-5583"^^xsd:string ;
     :foreignAdmissionNumber "2947-1"^^xsd:string ;
     :packageInsertNumber "7758"^^xsd:string ;
     :producingCountry country:AUT ;
-    :referenceProduct product:1AC55C5A-5941-420B-A062-8D5E04D581E4 .
+    :referenceProduct product:1AC55C5A-5941-420B-A062-8D5E04D581E4 ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:E46C4F74-1223-4DEA-80A0-45EC86BC5121 a :SalePermission ;
     schema1:name "Digi>proXX"@de ;
@@ -11526,11 +11918,13 @@ product:E54AAA33-B03A-4945-86C0-4D41021D0555 a :SalePermission ;
 
 product:E555D0AA-2637-40A2-974C-A0528AA004C7 a :ParallelImport ;
     schema1:name "Mien"@de ;
+    :exhaustionDeadline "2027-01-01"^^xsd:date ;
     :federalAdmissionNumber "A-7256"^^xsd:string ;
     :foreignAdmissionNumber "3990-0"^^xsd:string ;
     :packageInsertNumber "7758"^^xsd:string ;
     :producingCountry country:AUT ;
-    :referenceProduct product:1AC55C5A-5941-420B-A062-8D5E04D581E4 .
+    :referenceProduct product:1AC55C5A-5941-420B-A062-8D5E04D581E4 ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:E5745147-A56D-49C0-AE5C-995C077DB991 a :RegularProduct ;
     schema1:name "Eremipak"@de ;
@@ -11569,15 +11963,19 @@ product:E66BD5BB-6C70-4861-870C-B45E52AE2B06 a :ParallelImport ;
 
 product:E6A46C78-E9B3-49B9-8957-251331181D56 a :SalePermission ;
     schema1:name "Araldo"@de ;
+    :exhaustionDeadline "2027-01-01"^^xsd:date ;
     :federalAdmissionNumber "W-6226-2"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:06EC806F-DFBD-4A17-BB56-22B8F3D67849 .
+    :referenceProduct product:06EC806F-DFBD-4A17-BB56-22B8F3D67849 ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:E6B16456-0F43-483E-88CC-89433B6D45BB a :SalePermission ;
     schema1:name "Resolva Spray gegen Pilzkrankheiten"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-5236-1"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:A51533DE-4C21-4E5A-9231-D72635E0648A .
+    :referenceProduct product:A51533DE-4C21-4E5A-9231-D72635E0648A ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:E6B21239-517F-49E9-911C-D6BE1636CB0D a :SalePermission ;
     schema1:name "Bio Garden Älchen gegen Dickmaulrüssler-Larven"@de ;
@@ -11593,8 +11991,10 @@ product:E6B35FC6-A3A4-4760-9662-710976AF4088 a :SalePermission ;
 
 product:E6DAA04C-D478-411B-A907-43D43375DFDC a :RegularProduct ;
     schema1:name "Vertimec Gold"@de ;
+    :exhaustionDeadline "2026-02-28"^^xsd:date ;
     :federalAdmissionNumber "W-7028"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-02-28"^^xsd:date .
 
 product:E6F51BA2-ADC4-45E4-9097-3FB6726F8D0A a :SalePermission ;
     schema1:name "MIOPLANT Schneckenkörner"@de ;
@@ -11759,9 +12159,11 @@ product:EA49B5D2-30C9-48BA-9A7F-803FFF72BDF9 a :ParallelImport ;
 
 product:EA57BA95-6803-43B9-99BE-290895A9B536 a :SalePermission ;
     schema1:name "BioHOP Orion"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7333-3"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:3C9CCEE3-3F59-4AE0-BFCC-6B3C15BF5202 .
+    :referenceProduct product:3C9CCEE3-3F59-4AE0-BFCC-6B3C15BF5202 ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:EACE8688-E994-4D46-8AB9-5DCEDA70CDAB a :ParallelImport ;
     schema1:name "Nikos"@de ;
@@ -11794,8 +12196,10 @@ product:EB41E565-363B-43E5-8735-8A6810CF9DC6 a :ParallelImport ;
 
 product:EB7DDE99-5526-469F-9350-C7A799C77D0F a :RegularProduct ;
     schema1:name "Windenvertilger Gesal"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-6031"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:EBE8B0E5-CDFE-4533-A4E3-216BF82689BE a :ParallelImport ;
     schema1:name "Kaplan"@de ;
@@ -11936,11 +12340,13 @@ product:EDE42BB8-5009-48D6-BEF7-FDAEBBA1E5DD a :ParallelImport ;
 
 product:EDE89E79-25BD-4308-9DA4-052C744F8793 a :ParallelImport ;
     schema1:name "Patanet"@de ;
+    :exhaustionDeadline "2026-07-01"^^xsd:date ;
     :federalAdmissionNumber "F-3905"^^xsd:string ;
     :foreignAdmissionNumber "2020145"^^xsd:string ;
     :packageInsertNumber "7127"^^xsd:string ;
     :producingCountry country:FRA ;
-    :referenceProduct product:088FA484-0A20-4FBC-B8EE-BFD3C33E1867 .
+    :referenceProduct product:088FA484-0A20-4FBC-B8EE-BFD3C33E1867 ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:EDF55A3F-9C33-45A4-8486-81A559DBDD31 a :RegularProduct ;
     schema1:name "Flurox 200"@de ;
@@ -11960,9 +12366,11 @@ product:EE28A59F-A4A8-45BA-8C5E-BC38E934C7C1 a :SalePermission ;
 
 product:EE658E8C-EF4A-42B8-909F-113266AEC301 a :SalePermission ;
     schema1:name "Trifulox"@de ;
+    :exhaustionDeadline "2026-07-01"^^xsd:date ;
     :federalAdmissionNumber "W-6997-2"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:E9360EF6-CF33-44E4-9C90-8E435F31771A .
+    :referenceProduct product:E9360EF6-CF33-44E4-9C90-8E435F31771A ;
+    :soldOutDeadline "2025-07-01"^^xsd:date .
 
 product:EEAB3390-3C7F-4DA5-BA37-57A75789C913 a :SalePermission ;
     schema1:name "Kusabi"@de ;
@@ -11996,9 +12404,11 @@ product:EEDCEA3D-6F44-4DAA-8F80-40E3A214BF88 a :ParallelImport ;
 
 product:EEE7A85D-16D5-4972-833E-5A55CEB7A07A a :SalePermission ;
     schema1:name "Naturinsektizid Gesal Naturale"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-6900-1"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:05E0149E-9537-40C4-B885-2FB572409323 .
+    :referenceProduct product:05E0149E-9537-40C4-B885-2FB572409323 ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:EEF65AB9-5D4B-45FA-98BC-BFE476909FEF a :ParallelImport ;
     schema1:name "Fragma"@de ;
@@ -12156,9 +12566,11 @@ product:F1963294-ACC7-47AB-B0FB-BA939FCDF35A a :RegularProduct ;
 
 product:F1AFA1F4-20FC-4679-B1BF-CB2B6B4B44E6 a :SalePermission ;
     schema1:name "Metapro"@de ;
+    :exhaustionDeadline "2026-03-31"^^xsd:date ;
     :federalAdmissionNumber "W-6423-1"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:3AA1778A-F21C-4539-9C57-4DB91D3D2171 .
+    :referenceProduct product:3AA1778A-F21C-4539-9C57-4DB91D3D2171 ;
+    :soldOutDeadline "2025-03-31"^^xsd:date .
 
 product:F1B42E8F-5880-4A24-9EF6-A79960FB74EA a :ParallelImport ;
     schema1:name "Kerb Flo"@de ;
@@ -12231,16 +12643,20 @@ product:F3592E2D-CA44-47EB-82F1-A8EFA5FFCCA6 a :RegularProduct ;
 
 product:F3923D17-161D-46F2-AAD7-085DB3E80C68 a :RegularProduct ;
     schema1:name "Gesal Langzeit Unkraut-Stop"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7329"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:F3B629D5-6E28-4B29-8C67-FDCE90FA6EE7 a :ParallelImport ;
     schema1:name "ARNOLD"@de ;
+    :exhaustionDeadline "2027-01-01"^^xsd:date ;
     :federalAdmissionNumber "D-7422"^^xsd:string ;
     :foreignAdmissionNumber "008286-00"^^xsd:string ;
     :packageInsertNumber "7341"^^xsd:string ;
     :producingCountry country:DEU ;
-    :referenceProduct product:06EC806F-DFBD-4A17-BB56-22B8F3D67849 .
+    :referenceProduct product:06EC806F-DFBD-4A17-BB56-22B8F3D67849 ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:F3C3F036-0A49-4227-991C-059437DED872 a :ParallelImport ;
     schema1:name "Centium 36 CS"@de ;
@@ -12257,11 +12673,13 @@ product:F40387E5-97C8-4C60-9507-C3E58D8303DD a :RegularProduct ;
 
 product:F44E2F3B-E34D-4895-8482-1AA413210357 a :ParallelImport ;
     schema1:name "Movento"@de ;
+    :exhaustionDeadline "2027-01-01"^^xsd:date ;
     :federalAdmissionNumber "F-5564"^^xsd:string ;
     :foreignAdmissionNumber "2110086"^^xsd:string ;
     :packageInsertNumber "7839"^^xsd:string ;
     :producingCountry country:FRA ;
-    :referenceProduct product:E93365B7-A206-4F07-9C83-1C7A8A254778 .
+    :referenceProduct product:E93365B7-A206-4F07-9C83-1C7A8A254778 ;
+    :soldOutDeadline "2026-07-01"^^xsd:date .
 
 product:F45CFC87-664C-4051-9BD2-A6945043FF42 a :ParallelImport ;
     schema1:name "Isomate CTT"@de ;
@@ -12346,9 +12764,11 @@ product:F60D296C-556E-47A0-B864-6EDEFDC093C0 a :SalePermission ;
 
 product:F60F8228-8D97-4146-9C01-9794CA34328B a :SalePermission ;
     schema1:name "Spruzit AF Rosen-Schädlingsfrei"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-6670-1"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:B14E1893-A573-4050-91E7-82C08D785520 .
+    :referenceProduct product:B14E1893-A573-4050-91E7-82C08D785520 ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:F61E94B7-C94A-46C1-BB7A-7C747AA12443 a :ParallelImport ;
     schema1:name "Shark"@de ;
@@ -12374,11 +12794,13 @@ product:F6524137-28D8-4D7A-9D56-362A1B7DC272 a :ParallelImport ;
 
 product:F656815D-F44B-4B7E-BC8B-4A2CA1C6AD31 a :ParallelImport ;
     schema1:name "Bretteur"@de ;
+    :exhaustionDeadline "2026-07-01"^^xsd:date ;
     :federalAdmissionNumber "F-4806"^^xsd:string ;
     :foreignAdmissionNumber "9800106"^^xsd:string ;
     :packageInsertNumber "7127"^^xsd:string ;
     :producingCountry country:FRA ;
-    :referenceProduct product:088FA484-0A20-4FBC-B8EE-BFD3C33E1867 .
+    :referenceProduct product:088FA484-0A20-4FBC-B8EE-BFD3C33E1867 ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:F66C311C-C5CE-4DEB-83AB-104E747FA91C a :ParallelImport ;
     schema1:name "Extralugec SR"@de ;
@@ -12425,11 +12847,13 @@ product:F6D1BD0D-552A-4A49-A33D-3036BC967883 a :ParallelImport ;
 
 product:F6E21F96-8E3A-49E4-AC5A-2BC415EBD197 a :ParallelImport ;
     schema1:name "Subitex"@de ;
+    :exhaustionDeadline "2027-01-01"^^xsd:date ;
     :federalAdmissionNumber "I-6047"^^xsd:string ;
     :foreignAdmissionNumber "15862"^^xsd:string ;
     :packageInsertNumber "7758"^^xsd:string ;
     :producingCountry country:ITA ;
-    :referenceProduct product:1AC55C5A-5941-420B-A062-8D5E04D581E4 .
+    :referenceProduct product:1AC55C5A-5941-420B-A062-8D5E04D581E4 ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:F6E67045-DAED-443D-9A3C-9262273CBA3D a :ParallelImport ;
     schema1:name "Coragen"@de ;
@@ -12545,11 +12969,13 @@ product:F8D9048D-A189-477D-B4C9-90B01AEA1B55 a :SalePermission ;
 
 product:F8F1DCDD-96C9-4185-A648-CF45D9334433 a :ParallelImport ;
     schema1:name "Sencor Liquid 600 SC"@de ;
+    :exhaustionDeadline "2026-07-01"^^xsd:date ;
     :federalAdmissionNumber "D-6626"^^xsd:string ;
     :foreignAdmissionNumber "007191-00/011"^^xsd:string ;
     :packageInsertNumber "7898"^^xsd:string ;
     :producingCountry country:DEU ;
-    :referenceProduct product:88364672-0969-49C4-8102-E38EB930CCB9 .
+    :referenceProduct product:88364672-0969-49C4-8102-E38EB930CCB9 ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:F8F2C2C4-176C-4618-8A0E-941761E8491D a :SalePermission ;
     schema1:name "Kendo"@de ;
@@ -12578,9 +13004,11 @@ product:F9D15D36-96BE-4E84-98A4-9344D1F3C068 a :RegularProduct ;
 
 product:F9DAC709-DDF9-4761-8F4D-4B82E36C0591 a :SalePermission ;
     schema1:name "Arlit"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-6673-2"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:FE288626-CBBE-4F1D-BB35-FF0DE0961DCB .
+    :referenceProduct product:FE288626-CBBE-4F1D-BB35-FF0DE0961DCB ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:F9E3799B-E376-4D8B-84D9-98D237F6177D a :ParallelImport ;
     schema1:name "Sinstar"@de ;
@@ -12616,11 +13044,13 @@ product:FA1A6B72-3777-466D-9FB6-7C183FF56542 a :ParallelImport ;
 
 product:FA1F435E-F1F6-4EC6-8B6D-BDA79737353B a :ParallelImport ;
     schema1:name "Sencor liquid"@de ;
+    :exhaustionDeadline "2026-07-01"^^xsd:date ;
     :federalAdmissionNumber "D-5301"^^xsd:string ;
     :foreignAdmissionNumber "007191-00"^^xsd:string ;
     :packageInsertNumber "7898"^^xsd:string ;
     :producingCountry country:DEU ;
-    :referenceProduct product:88364672-0969-49C4-8102-E38EB930CCB9 .
+    :referenceProduct product:88364672-0969-49C4-8102-E38EB930CCB9 ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:FA23661E-24D6-4406-8F9B-D2958FF225B5 a :ParallelImport ;
     schema1:name "Thiovit Jet"@de ;
@@ -12640,9 +13070,11 @@ product:FA65FE62-3F46-489B-B838-A63A90AF99E2 a :ParallelImport ;
 
 product:FAA9EA0F-895D-4622-949A-6E7D65965372 a :SalePermission ;
     schema1:name "Erpax Quattro Spray"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-6677-2"^^xsd:string ;
     :producingCountry country:CHE ;
-    :referenceProduct product:E4E3699C-AA17-41E4-84A8-C0EC151DAF62 .
+    :referenceProduct product:E4E3699C-AA17-41E4-84A8-C0EC151DAF62 ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:FB0AC290-4C39-47EA-8A34-0228CDE65590 a :ParallelImport ;
     schema1:name "Tebu Super 250 EW"@de ;
@@ -12689,8 +13121,10 @@ product:FBC2DFDC-0D91-4978-99D7-A2D1B56E0914 a :ParallelImport ;
 
 product:FBDA6077-CFFA-491F-A4F9-9E46F8C36C6D a :RegularProduct ;
     schema1:name "Rasenrein Quattro"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7499"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:FBE208CE-D8A7-4632-952C-FBE5D4B8465C a :SalePermission ;
     schema1:name "Pilz-Stopp"@de ;
@@ -12719,16 +13153,20 @@ product:FC259932-C034-45B2-BC5B-9A4E6C8A3BB7 a :ParallelImport ;
 
 product:FCA5023E-75D9-427D-83DF-0C96CA03118E a :RegularProduct ;
     schema1:name "Difol"@de ;
+    :exhaustionDeadline "2027-09-30"^^xsd:date ;
     :federalAdmissionNumber "W-7237"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2026-09-30"^^xsd:date .
 
 product:FCAD788D-216F-41B7-BC65-A45348F8A6D9 a :ParallelImport ;
     schema1:name "Movento Gold"@de ;
+    :exhaustionDeadline "2027-01-01"^^xsd:date ;
     :federalAdmissionNumber "I-6470"^^xsd:string ;
     :foreignAdmissionNumber "16822"^^xsd:string ;
     :packageInsertNumber "7839"^^xsd:string ;
     :producingCountry country:ITA ;
-    :referenceProduct product:E93365B7-A206-4F07-9C83-1C7A8A254778 .
+    :referenceProduct product:E93365B7-A206-4F07-9C83-1C7A8A254778 ;
+    :soldOutDeadline "2026-07-01"^^xsd:date .
 
 product:FCED31F3-BD59-44FC-8A73-3F08D399D280 a :ParallelImport ;
     schema1:name "Shirlan"@de ;
@@ -13116,8 +13554,10 @@ product:095B6DD7-E5EB-47DC-AB78-AB5CB36AB82E a :RegularProduct ;
 
 product:0A8E4A58-2761-442E-BC6B-C84AF4DBC6D6 a :RegularProduct ;
     schema1:name "Métamitrone Médol"@de ;
+    :exhaustionDeadline "2027-06-03"^^xsd:date ;
     :federalAdmissionNumber "W-6018"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2026-06-03"^^xsd:date .
 
 product:0AEF6CFA-AE0A-4939-9E58-AE1A985BA27B a :RegularProduct ;
     schema1:name "Melody Combi"@de ;
@@ -13186,8 +13626,10 @@ product:16C35AB5-1239-4B9D-A86C-2E4079F9DD6D a :RegularProduct ;
 
 product:17428367-0B5C-47F6-A695-B7581562FA4B a :RegularProduct ;
     schema1:name "Schädlingsfrei Obst & Gemüse Konzentrat"@de ;
+    :exhaustionDeadline "2026-11-19"^^xsd:date ;
     :federalAdmissionNumber "W-7255"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-11-19"^^xsd:date .
 
 product:186263AC-E5DD-43C7-8637-54D8E68716BE a :RegularProduct ;
     schema1:name "Quassan"@de ;
@@ -13246,8 +13688,10 @@ product:26A71937-B7AA-4595-A783-4E96CE61BDD6 a :RegularProduct ;
 
 product:26B71255-2117-4705-8A58-3D178ADABAB1 a :RegularProduct ;
     schema1:name "Soufre FL"@de ;
+    :exhaustionDeadline "2027-06-03"^^xsd:date ;
     :federalAdmissionNumber "W-5162"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2026-06-03"^^xsd:date .
 
 product:2D9FDAB8-C44A-4975-9647-5DB7221AD19E a :RegularProduct ;
     schema1:name "Chekker"@de ;
@@ -13306,13 +13750,17 @@ product:395824C9-2C4B-40FB-81D9-4EB5F4126CE8 a :RegularProduct ;
 
 product:3AA1778A-F21C-4539-9C57-4DB91D3D2171 a :RegularProduct ;
     schema1:name "Metarhizium Schweizer"@de ;
+    :exhaustionDeadline "2026-03-31"^^xsd:date ;
     :federalAdmissionNumber "W-6423"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-03-30"^^xsd:date .
 
 product:41038260-EF36-409B-9A2D-3854AC280BFB a :RegularProduct ;
     schema1:name "Cythrin Garden"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7407"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:42D069B6-F672-4CF5-B26C-F3A23EF497E7 a :RegularProduct ;
     schema1:name "Globus"@de ;
@@ -13356,8 +13804,10 @@ product:4AE0FCB8-AD44-4051-A709-355E4FE9921F a :RegularProduct ;
 
 product:4BABC787-2871-49DF-9A85-7F7D143A7437 a :RegularProduct ;
     schema1:name "Roundup 120"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7353"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:4C7EF26C-BE0E-4C2D-A98D-F7055CFC49F0 a :RegularProduct ;
     schema1:name "Avoxa"@de ;
@@ -13391,8 +13841,10 @@ product:50C1CE9A-D6E2-42D3-B742-6BCBFD837C65 a :RegularProduct ;
 
 product:5114BA88-F2B2-4E00-BBA0-E61DA10FA650 a :RegularProduct ;
     schema1:name "Buzzin 70 WG"@de ;
+    :exhaustionDeadline "2026-07-01"^^xsd:date ;
     :federalAdmissionNumber "W-7137"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:513B56C2-7FDE-46D1-9ED6-2FD116F44DE8 a :RegularProduct ;
     schema1:name "Durano TF"@de ;
@@ -13406,8 +13858,10 @@ product:51B6B01C-DBD2-41AB-B3B2-9932A9CF1E2E a :RegularProduct ;
 
 product:54FAB045-7C19-4734-BCF8-70CE7180E3D4 a :RegularProduct ;
     schema1:name "Volpan"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-4309"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:55B40336-195A-45AC-9527-3F05C0F09A4B a :RegularProduct ;
     schema1:name "Microthiol Spécial Disperss"@de ;
@@ -13416,18 +13870,24 @@ product:55B40336-195A-45AC-9527-3F05C0F09A4B a :RegularProduct ;
 
 product:568021B9-79F4-4219-A5AF-75E35F49BC00 a :RegularProduct ;
     schema1:name "Camposan Extra"@de ;
+    :exhaustionDeadline "2026-10-15"^^xsd:date ;
     :federalAdmissionNumber "W-6874"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-10-15"^^xsd:date .
 
 product:5A45CE18-3F51-4922-B893-279D2B296D58 a :RegularProduct ;
     schema1:name "Mistral 70 WG"@de ;
+    :exhaustionDeadline "2026-07-01"^^xsd:date ;
     :federalAdmissionNumber "W-6620"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:5B26BE8B-144F-4765-A436-9A2BAE3C395C a :RegularProduct ;
     schema1:name "Belrose gegen Pilzkrankheiten"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-6426"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:5CA28314-C844-4D58-8219-28F3BD18C251 a :RegularProduct ;
     schema1:name "Axcela"@de ;
@@ -13496,8 +13956,10 @@ product:697D9F96-0D6C-4E6A-80E0-F7A165B0456B a :RegularProduct ;
 
 product:6B674813-EA70-4F84-BDD2-4B30DC83160F a :RegularProduct ;
     schema1:name "Belrose gegen Blattläuse"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-4676"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:6B86DFA3-0E5A-49E0-B099-58C71AD36DC5 a :RegularProduct ;
     schema1:name "LBG-42FFm"@de ;
@@ -13611,8 +14073,10 @@ product:820738A5-3222-484F-BB8E-7BF07291B1CB a :RegularProduct ;
 
 product:859D9639-C8B5-4579-B583-602F591E864E a :RegularProduct ;
     schema1:name "Schädlingsfrei Obst & Gemüse"@de ;
+    :exhaustionDeadline "2026-11-19"^^xsd:date ;
     :federalAdmissionNumber "W-7254"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-11-19"^^xsd:date .
 
 product:8753D2C4-61AE-4109-9355-B0698FFAB415 a :RegularProduct ;
     schema1:name "Sticker"@de ;
@@ -13671,8 +14135,10 @@ product:937CC049-24C6-4A8C-9C52-0034944E8D82 a :RegularProduct ;
 
 product:938899F3-91C4-400C-A26C-5612D60DFA3F a :RegularProduct ;
     schema1:name "Belrose Spray gegen Blattläuse"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-6917"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:93E2AA3C-78BE-4CDD-9B4E-7C168F535728 a :RegularProduct ;
     schema1:name "Steiner Ultra"@de ;
@@ -13686,8 +14152,10 @@ product:945B9616-475E-468B-AD91-6327C6568755 a :RegularProduct ;
 
 product:96EFB719-4132-4F2B-9585-534D0054AB87 a :RegularProduct ;
     schema1:name "Cypermetrine"@de ;
+    :exhaustionDeadline "2027-06-03"^^xsd:date ;
     :federalAdmissionNumber "W-4491"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2026-06-03"^^xsd:date .
 
 product:98074729-8125-4F9A-BD3C-D8155C77E5B8 a :RegularProduct ;
     schema1:name "Goltix 700 SC"@de ;
@@ -13701,8 +14169,10 @@ product:98193041-CD63-40A4-AEF2-43E95FB64F89 a :RegularProduct ;
 
 product:991CCDBE-368E-406A-B2D2-88CB5E6FBDF6 a :RegularProduct ;
     schema1:name "U 46 D Fluid"@de ;
+    :exhaustionDeadline "2026-10-15"^^xsd:date ;
     :federalAdmissionNumber "W-6885"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-10-15"^^xsd:date .
 
 product:994F6379-2703-4883-9E18-C0DDF3B98EB6 a :RegularProduct ;
     schema1:name "Myco-Sin"@de ;
@@ -13711,13 +14181,17 @@ product:994F6379-2703-4883-9E18-C0DDF3B98EB6 a :RegularProduct ;
 
 product:99DA7105-778E-443A-8D35-3126E4754478 a :RegularProduct ;
     schema1:name "Médox"@de ;
+    :exhaustionDeadline "2027-06-03"^^xsd:date ;
     :federalAdmissionNumber "W-4516"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2026-06-03"^^xsd:date .
 
 product:9A972F4F-EE1F-4F5C-9FED-B3E350540E12 a :RegularProduct ;
     schema1:name "Midas"@de ;
+    :exhaustionDeadline "2026-07-01"^^xsd:date ;
     :federalAdmissionNumber "W-6255"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:9CF76024-9F37-4D08-A550-46EB4F0CF78A a :RegularProduct ;
     schema1:name "Elumis"@de ;
@@ -13746,13 +14220,17 @@ product:A075EED9-2412-49AA-9A05-F0457E689844 a :RegularProduct ;
 
 product:A242B195-A630-4577-992F-79E0AE7058A4 a :RegularProduct ;
     schema1:name "Arrat"@de ;
+    :exhaustionDeadline "2026-07-01"^^xsd:date ;
     :federalAdmissionNumber "W-7033"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:A4936042-F857-4E83-9DBD-F0783B28BD28 a :RegularProduct ;
     schema1:name "Roundup Gel"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7352"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:A58BBC94-EE19-4E25-80CD-0FC47E7E1A4E a :RegularProduct ;
     schema1:name "Dithianon 70 WG"@de ;
@@ -13781,8 +14259,10 @@ product:B4011071-BA95-4C15-9156-86EA35003B6E a :RegularProduct ;
 
 product:B42C2DDE-BC2F-4D88-BA22-9EEB5EFCD4AC a :RegularProduct ;
     schema1:name "Sesto"@de ;
+    :exhaustionDeadline "2027-09-30"^^xsd:date ;
     :federalAdmissionNumber "W-7525"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2026-09-30"^^xsd:date .
 
 product:B4987E3B-BB6F-463D-A1DF-645DD9C3C10D a :RegularProduct ;
     schema1:name "Talis"@de ;
@@ -13801,8 +14281,10 @@ product:B65E5F39-1056-4B31-A595-069858E59433 a :RegularProduct ;
 
 product:B66EA2BF-AA6C-4F02-9185-61111495BB4A a :RegularProduct ;
     schema1:name "U 46 M Fluid"@de ;
+    :exhaustionDeadline "2026-10-15"^^xsd:date ;
     :federalAdmissionNumber "W-7023"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-10-15"^^xsd:date .
 
 product:B7964C77-8BBB-40CF-AF63-EDB885E93D82 a :RegularProduct ;
     schema1:name "Exelor"@de ;
@@ -13811,8 +14293,10 @@ product:B7964C77-8BBB-40CF-AF63-EDB885E93D82 a :RegularProduct ;
 
 product:B7C1892F-109A-4534-A7B1-DCCB30693CB1 a :RegularProduct ;
     schema1:name "Vitigran 35 HG Gemüse"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7444"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:B8D402F4-F938-4EDC-B30E-E52B42516C91 a :RegularProduct ;
     schema1:name "Njett Pro"@de ;
@@ -13821,8 +14305,10 @@ product:B8D402F4-F938-4EDC-B30E-E52B42516C91 a :RegularProduct ;
 
 product:B9E2BFAC-4FC9-45BC-B01E-9AA19C78BCA8 a :RegularProduct ;
     schema1:name "Baymat Plus"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7251"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:BA5EF4C8-023D-4ECE-9507-487FF1D8D4DE a :RegularProduct ;
     schema1:name "Glyphosat 360 TF"@de ;
@@ -13846,13 +14332,17 @@ product:BD0A0BFD-FCBA-4B5A-856E-9A31831DCD2C a :RegularProduct ;
 
 product:C0A80966-225E-4EBC-8947-F6CEB5E8BE53 a :RegularProduct ;
     schema1:name "Beauveria-Schweizer"@de ;
+    :exhaustionDeadline "2026-03-31"^^xsd:date ;
     :federalAdmissionNumber "W-4574"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-03-31"^^xsd:date .
 
 product:C124AD39-C540-4581-A654-CC5F959A6931 a :RegularProduct ;
     schema1:name "Cuproxat flüssig"@de ;
+    :exhaustionDeadline "2026-10-15"^^xsd:date ;
     :federalAdmissionNumber "W-7074"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-10-15"^^xsd:date .
 
 product:C2CFD7C5-0F42-4849-BA23-7BBA46518862 a :RegularProduct ;
     schema1:name "K-Obiol EC25"@de ;
@@ -13876,8 +14366,10 @@ product:C5B156E5-C1C1-46E0-96AF-75C81BE7FC1A a :RegularProduct ;
 
 product:C7460D99-AF1C-4302-B6CE-98CCA5F7219D a :RegularProduct ;
     schema1:name "Kiron HG"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7267"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:C8321A04-3442-4741-8407-848703C0A705 a :RegularProduct ;
     schema1:name "Spruzit"@de ;
@@ -13921,8 +14413,10 @@ product:D5D70625-E43F-44FC-930E-84CF3218768D a :RegularProduct ;
 
 product:D67BCDC8-F321-45B9-A5C9-BC5968E5A579 a :RegularProduct ;
     schema1:name "Roundup Alphee"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7351"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:D7B1B069-2CD5-43C7-9BF0-DD55B7105A86 a :RegularProduct ;
     schema1:name "Madex 2"@de ;
@@ -13936,8 +14430,10 @@ product:D81604C0-0AB6-4F29-B668-5EB993B141B1 a :RegularProduct ;
 
 product:DC2FB913-373F-485B-BF7D-C77DB32A229B a :RegularProduct ;
     schema1:name "Copac"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7440"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:E241364F-0A74-45EE-95A6-B0E3867C12C2 a :RegularProduct ;
     schema1:name "Carbofort"@de ;
@@ -13971,8 +14467,10 @@ product:EBBCDDFC-C4A8-43DB-84C5-3B5A31957C9D a :RegularProduct ;
 
 product:ED03C441-3562-47BD-87AB-2C55003A803B a :RegularProduct ;
     schema1:name "Artist"@de ;
+    :exhaustionDeadline "2026-07-01"^^xsd:date ;
     :federalAdmissionNumber "W-6225"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:EF17B886-B7A7-4A16-95EA-B6228EFB7FBA a :RegularProduct ;
     schema1:name "Othello"@de ;
@@ -14051,8 +14549,10 @@ product:FA8D94CA-645E-4449-9779-5CD261F63D20 a :RegularProduct ;
 
 product:FB40D351-CFCA-44E5-9BD6-E9EB8DC5F776 a :RegularProduct ;
     schema1:name "Spruzit Schädlingsfrei"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-6669"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:FBA51FF3-4770-4652-8845-2B2C5AE9B8E0 a :RegularProduct ;
     schema1:name "Captan 80 WDG"@de ;
@@ -14091,8 +14591,10 @@ product:ea0ff9cd-073e-4800-b6ad-db439c2d264c a :RegularProduct ;
 
 product:023DE78F-8641-4725-921D-F132BB9608A4 a :RegularProduct ;
     schema1:name "Banol M"@de ;
+    :exhaustionDeadline "2027-06-03"^^xsd:date ;
     :federalAdmissionNumber "W-4479"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2026-06-03"^^xsd:date .
 
 product:03DDED7F-9FDB-44AD-B21B-F88A3053F3BD a :RegularProduct ;
     schema1:name "Madex 4"@de ;
@@ -14101,8 +14603,10 @@ product:03DDED7F-9FDB-44AD-B21B-F88A3053F3BD a :RegularProduct ;
 
 product:05E0149E-9537-40C4-B885-2FB572409323 a :RegularProduct ;
     schema1:name "Naturinsektizid Gesal Naturale"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-6900"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:0B073948-3AD7-4EBC-90D7-09D23178AD6E a :RegularProduct ;
     schema1:name "Garlon 2000"@de ;
@@ -14121,8 +14625,10 @@ product:0B94A940-D6EC-4D41-83AB-30A92C61A9D3 a :RegularProduct ;
 
 product:0E4C7139-8C38-42A8-B9BF-6E39CC71E2F7 a :RegularProduct ;
     schema1:name "Malibu"@de ;
+    :exhaustionDeadline "2027-01-01"^^xsd:date ;
     :federalAdmissionNumber "W-6021"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:11E3B0FE-801D-4A8C-822A-C8ED68CCF555 a :RegularProduct ;
     schema1:name "Devrinol FL"@de ;
@@ -14206,13 +14712,17 @@ product:38BECDE1-3C8A-409C-8B8C-53EDD4EF957B a :RegularProduct ;
 
 product:39ADD145-1AD7-45D1-AA8E-A2FAFA08E722 a :RegularProduct ;
     schema1:name "Metric"@de ;
+    :exhaustionDeadline "2026-07-01"^^xsd:date ;
     :federalAdmissionNumber "W-6803"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:40B0C357-7A34-468A-B279-18F51D30DD11 a :RegularProduct ;
     schema1:name "Mamba Due"@de ;
+    :exhaustionDeadline "2026-06-11"^^xsd:date ;
     :federalAdmissionNumber "W-6157"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-06-11"^^xsd:date .
 
 product:418B0D31-5F46-4A2A-9CE5-FE9921430394 a :RegularProduct ;
     schema1:name "Nicogan"@de ;
@@ -14321,8 +14831,10 @@ product:76EE5674-57E3-49AE-A629-F800D12D4C44 a :RegularProduct ;
 
 product:7A03630A-A7C7-4828-A3DD-CEF1FC34005B a :RegularProduct ;
     schema1:name "Arcade 880 EC"@de ;
+    :exhaustionDeadline "2026-07-01"^^xsd:date ;
     :federalAdmissionNumber "W-6902"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:84831CEE-4353-4270-B3BB-9F645F32CF38 a :RegularProduct ;
     schema1:name "Dynali"@de ;
@@ -14336,8 +14848,10 @@ product:856F5EE1-BCE6-4DEC-AEF8-29680CB7AA48 a :RegularProduct ;
 
 product:897C9F3D-4771-4CE8-B100-9B00D4CA6AE0 a :RegularProduct ;
     schema1:name "Ethefon S"@de ;
+    :exhaustionDeadline "2026-12-31"^^xsd:date ;
     :federalAdmissionNumber "W-3064"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-12-31"^^xsd:date .
 
 product:95208CB6-E6A0-4E5B-BAA2-C59D18D3D594 a :RegularProduct ;
     schema1:name "Legan WG"@de ;
@@ -14436,8 +14950,10 @@ product:C1B13D39-1745-4DC2-8349-22575EED5F84 a :RegularProduct ;
 
 product:C8F8513D-FCCC-4F03-A574-63E140ECCAFD a :RegularProduct ;
     schema1:name "Cythrin Garden Spray"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7408"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:C959016C-B3C4-4D1E-92F3-1B43B1CA3ED6 a :RegularProduct ;
     schema1:name "Itcan SL 270"@de ;
@@ -14476,8 +14992,10 @@ product:E2D177C6-F649-42F5-B0BE-C31EBDE3A2F4 a :RegularProduct ;
 
 product:E4E3699C-AA17-41E4-84A8-C0EC151DAF62 a :RegularProduct ;
     schema1:name "Option"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-6677"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:E60A95C1-6735-4E58-8401-75F0240EE4DE a :RegularProduct ;
     schema1:name "FytoSave"@de ;
@@ -14521,8 +15039,10 @@ product:FAE2CFA4-C3B1-4B29-A1D8-2643FBE1A7CE a :RegularProduct ;
 
 product:FE288626-CBBE-4F1D-BB35-FF0DE0961DCB a :RegularProduct ;
     schema1:name "Dinagam 700"@de ;
+    :exhaustionDeadline "2026-10-15"^^xsd:date ;
     :federalAdmissionNumber "W-6673"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-10-15"^^xsd:date .
 
 product:083A5232-F56A-4734-AE8C-43F9BD769139 a :RegularProduct ;
     schema1:name "Glyphosate"@de ;
@@ -14531,8 +15051,10 @@ product:083A5232-F56A-4734-AE8C-43F9BD769139 a :RegularProduct ;
 
 product:086AE789-E56A-48F4-9D36-390A768AF93F a :RegularProduct ;
     schema1:name "Etephon Médol"@de ;
+    :exhaustionDeadline "2026-06-30"^^xsd:date ;
     :federalAdmissionNumber "W-3060"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-06-30"^^xsd:date .
 
 product:0913DF1B-5E55-4897-B565-3265A920CA1C a :RegularProduct ;
     schema1:name "Proper Flo"@de ;
@@ -14556,8 +15078,10 @@ product:157AA0E2-523D-4E6B-8BD9-407C7326D6EB a :RegularProduct ;
 
 product:2A7FA096-6AD4-48B0-9FE6-66F0FA6BCFFA a :RegularProduct ;
     schema1:name "Njett"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-6719"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:35AA16CC-306F-49DD-BDFD-52D7F8A3DFBF a :RegularProduct ;
     schema1:name "Zofal D"@de ;
@@ -14571,8 +15095,10 @@ product:3BD0E5A9-A01D-4F80-9FD2-661D540A8B83 a :RegularProduct ;
 
 product:3D413DE5-87DF-45A6-8DFB-53C8543782F0 a :RegularProduct ;
     schema1:name "Kendo Spray"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-6741"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:4AB1771E-7F17-4CBD-A419-BF4A2B45CAD0 a :RegularProduct ;
     schema1:name "Prodax"@de ;
@@ -14641,8 +15167,10 @@ product:6DB24FFF-7182-48DF-91EA-88B500FF0D7D a :RegularProduct ;
 
 product:709D34C9-C338-40DB-82A3-B59691514FAD a :RegularProduct ;
     schema1:name "Biathlon 4D"@de ;
+    :exhaustionDeadline "2026-07-01"^^xsd:date ;
     :federalAdmissionNumber "W-7148"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:7331506C-0446-4222-AFD1-469485C91868 a :RegularProduct ;
     schema1:name "Oblix MT"@de ;
@@ -14691,13 +15219,17 @@ product:954F595D-F40D-4435-9D9A-174E44E10F32 a :RegularProduct ;
 
 product:A51533DE-4C21-4E5A-9231-D72635E0648A a :RegularProduct ;
     schema1:name "Aerofleur Spray gegen Krankheiten"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-5236"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:B425359C-AB71-4EF5-8467-5074DDC567FC a :RegularProduct ;
     schema1:name "Pixie"@de ;
+    :exhaustionDeadline "2026-10-15"^^xsd:date ;
     :federalAdmissionNumber "W-6717"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-10-15"^^xsd:date .
 
 product:B4271664-18E8-483E-9056-6F2320DC1D9E a :RegularProduct ;
     schema1:name "Ferramol Schneckenkorn"@de ;
@@ -14781,8 +15313,10 @@ product:E61DF369-78F7-40C8-8383-FA5D5253C3A0 a :RegularProduct ;
 
 product:E93365B7-A206-4F07-9C83-1C7A8A254778 a :RegularProduct ;
     schema1:name "Movento SC"@de ;
+    :exhaustionDeadline "2027-06-30"^^xsd:date ;
     :federalAdmissionNumber "W-6742"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2026-11-30"^^xsd:date .
 
 product:EA2CD256-D947-48AF-9C48-771C4FA09017 a :RegularProduct ;
     schema1:name "Natural"@de ;
@@ -14801,8 +15335,10 @@ product:F130C98C-A053-44F2-B236-910DEA531B37 a :RegularProduct ;
 
 product:F9950EA1-F7C1-476C-A00C-67D4E64987F8 a :RegularProduct ;
     schema1:name "Solofol"@de ;
+    :exhaustionDeadline "2027-09-30"^^xsd:date ;
     :federalAdmissionNumber "W-7008"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2026-09-30"^^xsd:date .
 
 product:05EDBA73-7501-4445-994D-ADF3A9941887 a :RegularProduct ;
     schema1:name "Kerb Flo"@de ;
@@ -14811,8 +15347,10 @@ product:05EDBA73-7501-4445-994D-ADF3A9941887 a :RegularProduct ;
 
 product:0CEF1E11-4F49-4860-B006-AFED5AD5D414 a :RegularProduct ;
     schema1:name "Champ Flow"@de ;
+    :exhaustionDeadline "2026-10-15"^^xsd:date ;
     :federalAdmissionNumber "W-6838"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-10-15"^^xsd:date .
 
 product:170334B7-CEBE-4DBD-BCFA-EC88FBD2B64E a :RegularProduct ;
     schema1:name "Pendimethalin SA-400 SC"@de ;
@@ -14836,8 +15374,10 @@ product:387CC896-7E5F-41A5-B3AC-BE5227DCDBF0 a :RegularProduct ;
 
 product:3C9CCEE3-3F59-4AE0-BFCC-6B3C15BF5202 a :RegularProduct ;
     schema1:name "Bandsen HG"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7333"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:4E6B37DC-8B91-425E-8643-61F6C49FDEF6 a :RegularProduct ;
     schema1:name "Neudosan Neu"@de ;
@@ -14876,8 +15416,10 @@ product:7BF7CC77-0D86-4DF3-9675-C355E8456498 a :RegularProduct ;
 
 product:7D216222-0E20-46EE-9CBA-F60487B46A51 a :RegularProduct ;
     schema1:name "Captan 80 WG"@de ;
+    :exhaustionDeadline "2027-09-30"^^xsd:date ;
     :federalAdmissionNumber "W-5706"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2026-09-30"^^xsd:date .
 
 product:7FBBA5EE-CCEF-4EA3-A74B-510540862FBA a :RegularProduct ;
     schema1:name "Proplant"@de ;
@@ -14986,8 +15528,10 @@ product:E9143646-39BA-45C4-B9C2-4DC43F297443 a :RegularProduct ;
 
 product:E9360EF6-CF33-44E4-9C90-8E435F31771A a :RegularProduct ;
     schema1:name "Asulam"@de ;
+    :exhaustionDeadline "2026-07-01"^^xsd:date ;
     :federalAdmissionNumber "W-6997"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-07-01"^^xsd:date .
 
 product:F0A1F222-D63B-4D15-B828-9F98138E1B49 a :RegularProduct ;
     schema1:name "Cuproxat flüssig"@de ;
@@ -15086,8 +15630,10 @@ product:6B69AD14-F947-4931-8A71-ECD34D32FD1A a :RegularProduct ;
 
 product:88364672-0969-49C4-8102-E38EB930CCB9 a :RegularProduct ;
     schema1:name "Sencor SC"@de ;
+    :exhaustionDeadline "2026-07-01"^^xsd:date ;
     :federalAdmissionNumber "W-6630"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:8D5FE45B-3BEC-44AB-8E02-02D8C7927A19 a :RegularProduct ;
     schema1:name "Tanaris"@de ;
@@ -15141,8 +15687,10 @@ product:F5C2F7F7-93A6-4C5F-A47C-378CC8092070 a :RegularProduct ;
 
 product:088FA484-0A20-4FBC-B8EE-BFD3C33E1867 a :RegularProduct ;
     schema1:name "Dancor 70 WG"@de ;
+    :exhaustionDeadline "2026-07-01"^^xsd:date ;
     :federalAdmissionNumber "W-6151"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:1FF25EBB-05D0-4EC9-AA15-F30B61BCDD03 a :RegularProduct ;
     schema1:name "Diflanil 500 SC"@de ;
@@ -15151,8 +15699,10 @@ product:1FF25EBB-05D0-4EC9-AA15-F30B61BCDD03 a :RegularProduct ;
 
 product:23741490-0F6F-4335-A986-ACA003E5F1F6 a :RegularProduct ;
     schema1:name "Prolectus"@de ;
+    :exhaustionDeadline "2027-01-01"^^xsd:date ;
     :federalAdmissionNumber "W-6865"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:44A2FF17-15CF-486F-BFE3-26C38B188E94 a :RegularProduct ;
     schema1:name "Adengo"@de ;
@@ -15161,8 +15711,10 @@ product:44A2FF17-15CF-486F-BFE3-26C38B188E94 a :RegularProduct ;
 
 product:4EC263C8-8D7C-4BAB-9225-E7D7FE6D28BC a :RegularProduct ;
     schema1:name "Carmina"@de ;
+    :exhaustionDeadline "2026-10-15"^^xsd:date ;
     :federalAdmissionNumber "W-6686"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-10-15"^^xsd:date .
 
 product:514F6D1C-9BA2-4FC3-BE25-B3DD322ED5E1 a :RegularProduct ;
     schema1:name "Oleate RTU Spray"@de ;
@@ -15216,13 +15768,17 @@ product:B01D8B87-6436-4631-90F5-BE459A0F4DFA a :RegularProduct ;
 
 product:B14E1893-A573-4050-91E7-82C08D785520 a :RegularProduct ;
     schema1:name "Spruzit AF Schädlingsfrei"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-6670"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:C8D8DAAA-4A58-457D-9BDD-6FC694767C72 a :RegularProduct ;
     schema1:name "Trimaxx"@de ;
+    :exhaustionDeadline "2027-02-12"^^xsd:date ;
     :federalAdmissionNumber "W-6832"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2026-02-12"^^xsd:date .
 
 product:EAB498A8-B627-4F72-BA58-8AAF57C7B3EA a :RegularProduct ;
     schema1:name "Teppeki"@de ;
@@ -15236,8 +15792,10 @@ product:055905F3-5071-48DA-B676-A03A6E9DE188 a :RegularProduct ;
 
 product:06EC806F-DFBD-4A17-BB56-22B8F3D67849 a :RegularProduct ;
     schema1:name "Herold SC"@de ;
+    :exhaustionDeadline "2027-01-01"^^xsd:date ;
     :federalAdmissionNumber "W-6226"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:1285AEB1-8ACB-4EEB-AFC0-39678641CF12 a :RegularProduct ;
     schema1:name "Dasul"@de ;
@@ -15246,8 +15804,10 @@ product:1285AEB1-8ACB-4EEB-AFC0-39678641CF12 a :RegularProduct ;
 
 product:1AC55C5A-5941-420B-A062-8D5E04D581E4 a :RegularProduct ;
     schema1:name "Aspect"@de ;
+    :exhaustionDeadline "2027-01-01"^^xsd:date ;
     :federalAdmissionNumber "W-6505"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:21FEDC62-A6AD-4C54-BC09-E6541DDA56E2 a :RegularProduct ;
     schema1:name "Clio 100"@de ;
@@ -15311,8 +15871,10 @@ product:FCEF1D68-2ADA-4C24-B554-05C307DBEFF8 a :RegularProduct ;
 
 product:01D5F1BA-6E12-4177-A06E-8371C94B95D3 a :RegularProduct ;
     schema1:name "Progazon"@de ;
+    :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7416"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:151FA6B1-77D7-44CC-B51F-03738FA0F672 a :RegularProduct ;
     schema1:name "Fusilade Max"@de ;
@@ -15346,8 +15908,10 @@ product:8DA92335-9420-4728-9CD2-ABCD0D796B3D a :RegularProduct ;
 
 product:95C2F859-9684-4E38-8ACB-808F7A76F7F9 a :RegularProduct ;
     schema1:name "Naceto"@de ;
+    :exhaustionDeadline "2027-01-01"^^xsd:date ;
     :federalAdmissionNumber "W-7190"^^xsd:string ;
-    :producingCountry country:CHE .
+    :producingCountry country:CHE ;
+    :soldOutDeadline "2026-01-01"^^xsd:date .
 
 product:B6495F99-3B65-415B-8D0F-79629C10F1EB a :RegularProduct ;
     schema1:name "Picobello"@de ;
