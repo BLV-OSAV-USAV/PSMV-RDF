@@ -21,6 +21,13 @@ UNIT = namespaces["unit"]
 ZEFIX = namespaces["zefix"]
 COMPANY = namespaces["company"]
 
+# Mappings
+type_mapping = {
+    "REGULAR": BASE.RegularProduct,
+    "SALE_PERMISSION": BASE.SalePermission,
+    "PARALLEL_IMPORT": BASE.ParallelImport
+}
+
 # Create Products
 def products_ttl(
     products_data_path = "data/processed/Product.csv",
@@ -64,10 +71,9 @@ def products_ttl(
                 graph.add((product_uri, BASE.federalAdmissionNumber, Literal(str(row["w_number"]).strip(), datatype=XSD.string)))
 
             # Add product type
-            product_type = row.get("rdf:type")
-            if pd.isna(product_type):
-                product_type = "PlantProtectionProduct"
-            graph.add((product_uri, RDF.type, BASE[str(product_type).strip().replace(" ", "")]))
+            raw_type = row.get("rdf:type")
+            rdf_type_uri = type_mapping.get(raw_type, BASE.Product) # Default to generic Product if unknown
+            graph.add((product_uri, RDF.type, rdf_type_uri))
 
             # Add link to reference product
             ref_id_raw = row.get("product_ref_id")
