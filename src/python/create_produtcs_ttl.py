@@ -66,12 +66,41 @@ def products_ttl(
             # Add product name
             graph.add((product_uri, SCHEMA.name, Literal(str(row["schema:name"]).strip(), lang="de")))
 
-            # Add w_number
-            if pd.notna(row.get("w_number")):
-                graph.add((product_uri, BASE.federalAdmissionNumber, Literal(str(row["w_number"]).strip(), datatype=XSD.string)))
+            # Get raw type
+            raw_type = row.get("rdf:type")
+            
+            # Case 1: Regular Product or Sale Permission
+            if raw_type in ["REGULAR", "SALE_PERMISSION"]:
+                if pd.notna(row.get("w_number")):
+                    w_number_str = str(row["w_number"]).strip()
+                    # Apply W- prefix
+                    fed_adm_num = f"W-{w_number_str}"
+                    graph.add((product_uri, BASE.federalAdmissionNumber, Literal(fed_adm_num, datatype=XSD.string)))
+
+            # Case 2: Parallel Import
+            elif raw_type == "PARALLEL_IMPORT":
+                if pd.notna(row.get("record_id")):
+                    id_val = str(row.get("record_id")).strip()
+                    graph.add((product_uri, BASE.federalAdmissionNumber, Literal(id_val, datatype=XSD.string)))
+
+                # foreignAdmissionNumber from "admission_number"
+                if pd.notna(row.get("admission_number")):
+                    adm_num = str(row.get("admission_number")).strip()
+                    graph.add((product_uri, BASE.foreignAdmissionNumber, Literal(adm_num, datatype=XSD.string)))
+
+                # packageInsertNumber from "package_insert_flag"
+                pkg_val = row.get("package_insert_flag")
+                if pd.notna(pkg_val):
+                    try:
+                        # Fix: Cast to int first to drop decimal (4521.0 -> 4521)
+                        pkg_ins_num = str(int(float(pkg_val)))
+                    except (ValueError, TypeError):
+                        # Fallback if the value is not numeric
+                        pkg_ins_num = str(pkg_val).strip()
+                        
+                    graph.add((product_uri, BASE.packageInsertNumber, Literal(pkg_ins_num, datatype=XSD.string)))
 
             # Add product type
-            raw_type = row.get("rdf:type")
             rdf_type_uri = type_mapping.get(raw_type, BASE.Product) # Default to generic Product if unknown
             graph.add((product_uri, RDF.type, rdf_type_uri))
 
@@ -88,15 +117,7 @@ def products_ttl(
             print(f"Row {i}: {error}")
 
     # Print graph info
-    print(f"\nGraph created successfully!")
-    print(f"Total triples: {len(graph)}")
-
-    # Print first triple
-    print(f"\nFirst three triples:")
-    for i, (s, p, o) in enumerate(graph):
-        if i >= 3:
-            break
-        print(f"{s} {p} {o}")
+    print(f"[i] Total triples: {len(graph)}")
 
     # Save to file
     out_path = Path("rdf/data/products.ttl")
@@ -106,5 +127,3 @@ def products_ttl(
 
 if __name__ == "__main__":
     products_ttl()
-
-
