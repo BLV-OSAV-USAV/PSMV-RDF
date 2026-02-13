@@ -94,16 +94,11 @@ def products_ttl(
                     adm_num = str(row.get("admission_number")).strip()
                     graph.add((product_uri, BASE.foreignAdmissionNumber, Literal(adm_num, datatype=XSD.string)))
 
-                # packageInsertNumber from "package_insert_flag"
-                if pd.notna(row.get("package_insert_flag")):
-                    pkg_val = row.get("package_insert_flag")
-                    try:
-                        # Cast to int first to drop decimal (4521.0 -> 4521)
-                           pkg_ins_num = str(pkg_val).split('.')[0] 
-                    except (ValueError, TypeError):
-                        # Fallback if the value is not numeric
-                        pkg_ins_num = str(pkg_val).strip()
-                        
+                # packageInsertNumber from "w_number_of_reference_product"
+                if pd.notna(row.get("w_number_of_reference_product")):
+                    pkg_val = row.get("w_number_of_reference_product")
+                    pkg_ins_num = str(pkg_val).split('.')[0]
+                                        
                     graph.add((product_uri, BASE.packageInsertNumber, Literal(pkg_ins_num, datatype=XSD.string)))
 
             # Add producing country
@@ -141,8 +136,8 @@ def products_ttl(
             graph.add((product_uri, RDF.type, rdf_type_uri))
 
             # Add link to reference product
-            if pd.notna(row.get("product_ref_id")):
-                ref_id_str = str(row.get("product_ref_id")).strip()
+            if pd.notna(row.get("product_ref_or_id")):
+                ref_id_str = str(row.get("product_ref_or_id")).strip()
                 # Constraint: Only add triple if ID differs from Reference ID
                 if product_id_str != ref_id_str:
                     ref_product_uri = PRODUCT[ref_id_str]
