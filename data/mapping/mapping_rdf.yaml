@@ -1,0 +1,36 @@
+# RDF Namespace Mappings
+# Format: {source_value: target_namespace_value}
+
+country_mapping:
+  "6698dcfd-d86e-4098-a5a4-da5b71062093": "CHE"
+  "a0d7e6ea-cb57-4e37-8fad-2fcf26f69804": "GBR"
+  "dac731ac-bb70-4164-b500-83559938b481": "GBR"
+  "1f940d8d-2632-44a9-a4d5-8172ae6661e2": "GBR"
+  "2d1a1c1b-2f41-4a9b-90ca-ed5afef79821": "IRL"
+  "2e460bbe-6a62-40a2-8c1f-f7a7145a42c2": "IRL"
+  "c3ffe09f-f38f-42b3-8601-ce60db2a37f5": "FRA"
+  "9e495cc6-2d2c-4e76-b183-8d98611aeba4": "BEL"
+  "29738aa2-5393-438d-be07-9d6b56d2accf": "AUT"
+  "68921504-8a62-4b7b-b7f7-59399b483095": "JPN"
+  "2233514d-c9d3-451e-961f-3a6b62af786d": "SRB"
+  "c95be4f8-5218-4c95-9e7c-9b2ec712a45c": "GRC"
+  "c9de192c-796f-4b51-bede-4b2cbab63a5f": "LUX"
+  "02a7b748-c3de-440d-823e-5303232db2da": "DNK"
+  "56cce907-f002-4b0c-b948-98299b1fea6e": "DEU"
+  "5040d15a-cea6-41d8-a64e-def0dd366b18": "SVK"
+  "fb4131dc-dca0-4e96-9664-e1d2484e4306": "CYP"
+  "e815a08e-a569-4408-9c31-20a1702b0fda": "PRT"
+  "70d1c2d0-f04e-47f3-9969-6f8d8b82ff2c": "SVN"
+  "13ca0e2a-04ab-4bcd-a462-d4ea82b6fa74": "POL"
+  "e4d16808-543e-47ec-9bcc-50a0caec7c9b": "ISR"
+  "be1d323d-29e4-4570-8618-5463896be5d2": "ITA"
+  "beb87459-db4c-4c85-84eb-bef7c6e012ef": "ESP"
+  "a806bbc8-e72f-4dde-944f-5bc460a94c28": "LIE"
+  "95635aeb-5ebb-4948-9595-6894b4ac0773": "HUN"
+  "cda1f206-edb0-40d2-8ff6-15b29ead6c7f": "IND"
+  "51f6122d-47ec-4051-97cc-01d7cf8e4758": "NLD"
+
+type_mapping:
+  "REGULAR": "RegularProduct"
+  "SALE_PERMISSION": "SalePermission"
+  "PARALLEL_IMPORT": "ParallelImport"
