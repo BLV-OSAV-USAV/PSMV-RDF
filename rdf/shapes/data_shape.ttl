@@ -1,0 +1,110 @@
+@prefix : <https://agriculture.ld.admin.ch/plant-protection/> .
+@prefix country: <https://ld.admin.ch/country/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix shape: <https://agriculture.ld.admin.ch/plant-protection/shape/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix schema: <http://schema.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+shape:Product a sh:NodeShape ;
+    sh:name "Product"@en ;
+    sh:targetClass :Product ;
+    sh:property [
+        sh:order 1 ;
+        sh:name "Name"@en ;
+        sh:description "Name of the product"@en ;
+        sh:path schema:name ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:order 2 ;
+        sh:name "Federal admission number"@en ;
+        sh:description "An identifier assigned by the FSVO that uniquely identifies an admissions of a plant protection product."@en ;
+        sh:path :federalAdmissionNumber ;
+        sh:datatype xsd:string ;
+        sh:pattern "^[A-Z]-[0-9]{4}(-[0-9]{1,2})?$" ;
+        sh:message "The federal admission number must match the pattern 'L-DDDD' or 'L-DDDD-D', where L is an uppercase letter and D a digit."@en ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:order 3 ;
+        sh:name "Foreign admission number"@en ;
+        sh:description "An identifier assigned by any foreign authority."@en ;
+        sh:path :foreignAdmissionNumber ;
+        sh:datatype xsd:string ;
+    ] ;
+    sh:property [
+        sh:name "Ingredient"@en ;
+        sh:path :ingredient ;
+        sh:node shape:Ingredient ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:name "Permission holder"@en ;
+        sh:path :permissionHolder ;
+        sh:node shape:Organization ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:name "GHS code"@en ;
+        sh:path :ghs ;
+        sh:node shape:GHSStatement ;
+    ] ;
+    sh:property [
+        sh:name "Producing country"@en ;
+        sh:description "The country where a plant protection product was produced."@en ;
+        sh:path :producingCountry ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:in ( country:CHE country:DEU country:ITA country:FRA country:AUT country:BEL ) ;
+    ] .
+
+shape:Ingredient a sh:NodeShape ;
+    sh:property [
+        schema:name "Substance"@en ;
+        sh:path :substance ;
+        sh:class :Substance ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        schema:name "Share (Quantitative Value)"@en ;
+        sh:path :share ;
+        sh:node shape:Share ;
+        sh:minCount 1 ;
+    ] .
+
+shape:QuantitativeValue a sh:NodeShape ;
+    sh:targetClass schema:QuantitativeValue ;
+    sh:property [
+        sh:name "Value"@en ;
+        sh:path schema:value ;
+        sh:minExclusive 0 ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "The ingredient share value must be strictly greater than 0."@en ;
+    ] ;
+    sh:property [
+        schema:name "Unit validation"@en ;
+        sh:path schema:unitCode ;
+        sh:in ( unit:PERCENT unit:GM-PER-L ) ; 
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "The unit must be either % or g/l represented as a `qudt:Unit`."@en ;
+    ] .
+
+shape:Organization a sh:NodeShape ;
+  sh:targetClass schema:Organization ;
+  sh:property [
+    schema:name "Legal name required"@en ;
+    sh:path schema:legalName ;
+    sh:datatype xsd:string ;
+    sh:minCount 1 ;
+  ] .
