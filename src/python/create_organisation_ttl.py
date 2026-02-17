@@ -1,5 +1,6 @@
 import sys
 import csv
+import yaml
 
 from pathlib import Path
 import pandas as pd
@@ -10,29 +11,40 @@ from rdflib.namespace import RDF, XSD
 # local imports
 from utils.helper_functions import load_namespaces
 
-# Sert namespaces
-namespaces = load_namespaces()
-
-BASE = namespaces["base"]
-PRODUCT = namespaces["product"]
-SUBSTANCE = namespaces["substance"]
-SCHEMA = namespaces["schema"]
-UNIT = namespaces["unit"]
-ZEFIX = namespaces["zefix"]
-COMPANY = namespaces["company"]
-
 # Create Products
 def organisation_ttl(
-    organsiation_data_path = "data/processed/Organisation.csv"
+    organsiation_data_path: str = "data/processed/Organisation.csv",
+    out_path: str = "rdf/data/organisation_test.ttl",
+    mapping_rdf_path: str = "data/mapping/mapping_rdf.yaml",
     ):
 
     """
-    Creates organisations_ttl
+    Creates a Turtle file with organisation triples from Organisation.csv
     """
+
+    # Load namespaces
+    namespaces = load_namespaces()
+
+    BASE = namespaces["base"]
+    PRODUCT = namespaces["product"]
+    SUBSTANCE = namespaces["substance"]
+    SCHEMA = namespaces["schema"]
+    UNIT = namespaces["unit"]
+    ZEFIX = namespaces["zefix"]
+    COMPANY = namespaces["company"]
+
+    # Create a country namespace under BASE (e.g. .../country/CHE)
+    COUNTRY = Namespace(str(BASE).rstrip("/") + "/country/")
+
+    # Load mapping yaml
+    with open(mapping_rdf_path, "r", encoding="utf-8") as f:
+        mapping = yaml.safe_load(f) or {}
+    country_mapping = mapping.get("country_mapping", {}) or {}
+
     # Create empty graph
     graph = Graph()
     
-    # Bind namespaces (do this once, outside the loop)
+    # Bind namespaces
     graph.bind("", BASE)
     graph.bind("product", PRODUCT)
     graph.bind("substance", SUBSTANCE)
@@ -77,8 +89,18 @@ def organisation_ttl(
             if pd.notna(row.get("city_id")):
                 graph.add((org_uri, SCHEMA.addressLocality, Literal(str(row["city_id"]).strip(), datatype=XSD.string)))
 
-            if pd.notna(row.get("country_id")):
-                graph.add((org_uri, SCHEMA.addressCountry, Literal(str(row["country_id"]).strip(), datatype=XSD.string)))
+            #if pd.notna(row.get("country_id")):
+            #    graph.add((org_uri, SCHEMA.addressCountry, Literal(str(row["country_id"]).strip(), datatype=XSD.string)))
+
+            # country as iso3
+            country_id = (row.get("country_id") or "").strip().lower()
+            if country_id:
+                iso3 = (country_mapping.get(country_id) or "").strip()
+                if iso3:
+                    graph.add((org_uri, SCHEMA.addressCountry, Literal(iso3)))
+                else:
+                    # If you strictly never want literals, best is to skip and log
+                    print(f"Organisation row {i}: country_id '{country_id}' not found in mapping_rdf.yaml -> skipped")
 
             if pd.notna(row.get("additional_information")):
                 graph.add((org_uri, SCHEMA.description, Literal(str(row["additional_information"]).strip(), lang="de")))
@@ -98,8 +120,10 @@ def organisation_ttl(
         print(f"{s} {p} {o}")
 
     # Save to file
-    graph.serialize(destination="rdf/data/organisation_test.ttl", format="turtle")
-    print(f"\nSaved to organisation_test.ttl")
+    out_file = Path(out_path)
+    out_file.parent.mkdir(parents=True, exist_ok=True)
+    graph.serialize(destination=str(out_file), format="turtle")
+    print(f"\nSaved to {out_file}")
     return graph
 
 if __name__ == "__main__":
