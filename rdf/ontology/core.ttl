@@ -77,11 +77,22 @@ schema:Organization a owl:Class ;
 
 :Product a owl:Class ;
     schema:name "Product"@en ;
-    schema:description "Represents any product that is officially registered and listed on <https://psm.admin.ch/>."@en .
+    schema:description "Represents any plant protection product that is officially registered and listed on <https://psm.admin.ch/>."@en .
+
+:RegularProduct a owl:Class ;
+    rdfs:subClassOf :Product ;
+    schema:name "Regular product"@en ;
+    schema:description "A plant protection product with a standard Swiss authorisation."@en .
+
+:SalePermission a owl:Class ;
+    rdfs:subClassOf :Product ;
+    schema:name "Sale Permission"@en ;
+    schema:description "Permission to market a plant protection product under a different name on the basis of an existing (regular or simplified) authorisation. It is linked to the validity of the basic authorisation (PSMV Art. 66)."@en .
 
 :ParallelImport a owl:Class ;
-    schema:name "Parallel import"@en ;
-    rdfs:subClassOf :Product .
+    rdfs:subClassOf :Product ;
+    schema:name "Parallel Import"@en ;
+    schema:description "Placing on the market of a plant protection product with a foreign authorisation holder (EU) based on an equivalent product that is authorised in Switzerland. It is linked to the validity of the reference product (PSMV Art. 47 Abs. 1)."@en .
 
 :ghs a owl:ObjectProperty ;
     schema:name "GHS statement"@en ;
@@ -106,6 +117,12 @@ schema:Organization a owl:Class ;
     rdfs:domain :Product ;
     rdfs:range xsd:NCName .
 
+:referenceProduct a owl:ObjectProperty ;
+    schema:name "Referenzprodukt"@de,
+        "Reference product"@en ;
+    rdfs:range :Product ;
+    rdfs:domain :Product .
+
 :foreignAdmissionNumber a owl:DatatypeProperty ;
     schema:name "Ausländische Zulassungsnummer"@de,
         "Foreign admission number"@en ;
@@ -113,10 +130,34 @@ schema:Organization a owl:Class ;
     rdfs:domain :ParallelImport ;
     rdfs:range xsd:NCName .
 
+:packageInsertNumber a owl:DatatypeProperty ;
+    schema:name "Packungsbeilagenummer"@de,
+        "Package insert number"@en ;
+    rdfs:subPropertyOf schema:identifier ;
+    rdfs:domain :Product ;
+    rdfs:range xsd:string .
+
 :permissionHolder a owl:ObjectProperty ;
     schema:name "Permission holder"@en ;
     rdfs:domain :Product ;
     rdfs:range schema:Organization .
+
+:producingCountry a owl:ObjectProperty ;
+    schema:name "Producing country"@en .
+
+:exhaustionDeadline a owl:DatatypeProperty ;
+    schema:name "Ablaufdatum der Nutzung"@de,
+        "Exhaustion deadline"@en ;
+    schema:description "The date by which the product must no longer be used, typically after the product registration has been revoked."@en ;
+    rdfs:domain :Product ;
+    rdfs:range xsd:date .
+
+:soldOutDeadline a owl:DatatypeProperty ;
+    schema:name "Ausverkauft-Frist"@de,
+        "Sold out deadline"@en ;
+    schema:description "The date by which the product can no longer be sold, typically after the product registration has been revoked."@en ;
+    rdfs:domain :Product ;
+    rdfs:range xsd:date .
 
 # Product taxonomy -------------------------------------------------------------
 

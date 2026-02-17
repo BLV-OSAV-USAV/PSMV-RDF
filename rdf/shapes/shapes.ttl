@@ -59,7 +59,7 @@ shapes:ProductAdmissionAndIngredientShape a sh:NodeShape ;
         schema:name "Federal admission number syntax"@en ;
         sh:path :federalAdmissionNumber ;
         sh:datatype xsd:string ;
-        sh:pattern "^[A-Z]-[0-9]{4}(-[0-9]{1,2})?$" ;
+        sh:pattern "^[A-Z]-[0-9]{1,4}(-[0-9]{1,2})?$" ;
         sh:message "The federal admission number must match the pattern 'L-DDDD' or 'L-DDDD-D', where L is an uppercase letter and D a digit."@en ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
