@@ -62,12 +62,41 @@
 # ==============================================================================
 
 schema:Organization a owl:Class ;
-    schema:name "Organization"@en ;
+    schema:name "Organization"@en,
+        "Organisation"@de ;
     rdfs:subClassOf [
         a owl:Restriction ;
         owl:onProperty schema:legalName ;
-        owl:allValuesFrom xsd:string
+        owl:allValuesFrom xsd:string ;
+    ] ,
+    [
+        a owl:Restriction ;
+        owl:onProperty schema:address ;
+        owl:allValuesFrom schema:PostalAddress ;
     ] .
+
+schema:PostalAddress a owl:Class ;
+    schema:name "Address"@en ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty schema:addressCountry ;
+        owl:allValuesFrom schema:Country ;
+    ] ,
+    [
+        a owl:Restriction ;
+        owl:onProperty schema:streetAddress ;
+        owl:allValuesFrom xsd:string ;
+    ] ,
+    [
+        a owl:Restriction ;
+        owl:onProperty schema:postalCode ;
+        owl:allValuesFrom xsd:string ;
+    ] ,
+    [
+        a owl:Restriction ;
+        owl:onProperty schema:addressLocality ;
+        owl:allValuesFrom xsd:string ;
+    ].
 
 # ==============================================================================
 # PRODUCT TAXONOMY AND PROPERTIES (Herbicides, Insecticides etc.)
@@ -117,6 +146,25 @@ schema:Organization a owl:Class ;
     schema:name "Permission holder"@en ;
     rdfs:domain :Product ;
     rdfs:range schema:Organization .
+
+:producingCountry a owl:ObjectProperty ;
+    schema:name "Producing country"@en ;
+    rdfs:domain :Product ;
+    rdfs:range schema:Country .
+
+:exhaustionDeadline a owl:DatatypeProperty ;
+    schema:name "Ablaufdatum der Nutzung"@de,
+        "Exhaustion deadline"@en ;
+    schema:description "The date by which the product must no longer be used, typically after the product registration has been revoked."@en ;
+    rdfs:domain :Product ;
+    rdfs:range xsd:date .
+
+:soldOutDeadline a owl:DatatypeProperty ;
+    schema:name "Ausverkauft-Frist"@de,
+        "Sold out deadline"@en ;
+    schema:description "The date by which the product can no longer be sold, typically after the product registration has been revoked."@en ;
+    rdfs:domain :Product ;
+    rdfs:range xsd:date .
 
 # Product taxonomy -------------------------------------------------------------
 
