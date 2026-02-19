@@ -40,12 +40,30 @@ shape:Product a sh:NodeShape ;
         sh:datatype xsd:string ;
     ] ;
     sh:property [
+        sh:order 4 ;
+        sh:name "Exhaustion deadline"@en ;
+        sh:description "The date by which the product must no longer be used, typically after the product registration has been revoked."@en ;
+        sh:path :exhaustionDeadline ;
+        sh:datatype xsd:date ;
+        sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:order 5 ;
+        sh:name "Soldout deadline"@en ;
+        sh:description "The date by which the product can no longer be sold, typically after the product registration has been revoked"@en ;
+        sh:path :soldOutDeadline ;
+        sh:datatype xsd:date ;
+        sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:order 6 ;
         sh:name "Ingredient"@en ;
         sh:path :ingredient ;
         sh:node shape:Ingredient ;
         sh:minCount 1 ;
     ] ;
     sh:property [
+        sh:order 7 ;
         sh:name "Permission holder"@en ;
         sh:path :permissionHolder ;
         sh:node shape:Organization ;
@@ -53,11 +71,13 @@ shape:Product a sh:NodeShape ;
         sh:maxCount 1 ;
     ] ;
     sh:property [
+        sh:order 8 ;
         sh:name "GHS code"@en ;
         sh:path :ghs ;
         sh:node shape:GHSStatement ;
     ] ;
     sh:property [
+        sh:order 9 ;
         sh:name "Producing country"@en ;
         sh:description "The country where a plant protection product was produced."@en ;
         sh:path :producingCountry ;
