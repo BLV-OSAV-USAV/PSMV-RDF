@@ -4,6 +4,7 @@
 @prefix shape: <https://agriculture.ld.admin.ch/plant-protection/shape/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix schema: <http://schema.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix unit: <http://qudt.org/vocab/unit/> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
@@ -65,6 +66,7 @@ shape:Product a sh:NodeShape ;
     sh:property [
         sh:order 7 ;
         sh:name "Permission holder"@en ;
+        sh:description "The legal entity authorized to place the product on the market [...]."@en ;
         sh:path :permissionHolder ;
         sh:node shape:Organization ;
         sh:minCount 1 ;
@@ -73,6 +75,7 @@ shape:Product a sh:NodeShape ;
     sh:property [
         sh:order 8 ;
         sh:name "GHS code"@en ;
+        sh:description "The Globally Harmonized System of Classification and Labelling of Chemicals (GHS) hazard and precautionary statements."@en ;
         sh:path :ghs ;
         sh:node shape:GHSStatement ;
     ] ;
@@ -104,20 +107,26 @@ shape:Ingredient a sh:NodeShape ;
 shape:QuantitativeValue a sh:NodeShape ;
     sh:targetClass schema:QuantitativeValue ;
     sh:property [
+        sh:name "Display text"@en ;
+        sh:description "The quantitative value in textual form as it was originally written in the admission documents."@en ;
+        sh:path schema:name ;
+        sh:maxCount 1 ;
+        sh:datatype rdf:langString ;
+    ] ;
+    sh:property [
         sh:name "Value"@en ;
         sh:path schema:value ;
         sh:minExclusive 0 ;
-        sh:minCount 1 ;
+        sh:minCount 0 ;
         sh:maxCount 1 ;
-        sh:message "The ingredient share value must be strictly greater than 0."@en ;
+        sh:datatype xsd:decimal ;
     ] ;
     sh:property [
-        schema:name "Unit validation"@en ;
+        sh:name "Unit"@en ;
         sh:path schema:unitCode ;
         sh:in ( unit:PERCENT unit:GM-PER-L ) ; 
         sh:minCount 1 ;
         sh:maxCount 1 ;
-        sh:message "The unit must be either % or g/l represented as a `qudt:Unit`."@en ;
     ] .
 
 shape:Organization a sh:NodeShape ;
