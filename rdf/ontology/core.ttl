@@ -73,6 +73,21 @@ schema:Organization a owl:Class ;
         a owl:Restriction ;
         owl:onProperty schema:address ;
         owl:allValuesFrom schema:PostalAddress ;
+    ] ,
+    [
+        a owl:Restriction ;
+        owl:onProperty schema:telephone ;
+        owl:allValuesFrom xsd:string ;
+    ] ,
+    [
+        a owl:Restriction ;
+        owl:onProperty schema:faxNumber ;
+        owl:allValuesFrom xsd:string ;
+    ] ,
+    [
+        a owl:Restriction ;
+        owl:onProperty schema:email ;
+        owl:allValuesFrom xsd:string ;
     ] .
 
 schema:PostalAddress a owl:Class ;
@@ -124,6 +139,14 @@ schema:PostalAddress a owl:Class ;
     rdfs:subClassOf :Product ;
     schema:name "Parallel Import"@en ;
     schema:description "Placing on the market of a plant protection product with a foreign authorisation holder (EU) based on an equivalent product that is authorised in Switzerland. It is linked to the validity of the reference product (PSMV Art. 47 Abs. 1)."@en .
+
+# Logical statement: All subclasses based on permissions are disjoint from each other
+[] a owl:AllDisjointClasses ;
+    owl:members (
+        :RegularProduct
+        :SalePermission
+        :ParallelImport
+    ) .
 
 :ghs a owl:ObjectProperty ;
     schema:name "GHS statement"@en ;
