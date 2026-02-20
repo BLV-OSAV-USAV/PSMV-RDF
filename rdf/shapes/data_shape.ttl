@@ -36,19 +36,37 @@ The actual data is available on [the linked data service LINDAS](https://lindas.
 """@en ;
     dcterms:description
 """
-... TODO!
+This descriptive preamble formally outlines the ontological architecture and rigorous validation constraints for the Swiss registry of plant protection products, encoded via the Shapes Constraint Language (SHACL). The proposed data model supplies a standardized, machine-readable vocabulary designed to faithfully represent complex agricultural, chemical, and regulatory data administered by the Swiss federal authorities. 
 
-All the data that is described in this document can be queried directly from [the linked data service LINDAS](https://lindas.admin.ch/).
+Fundamentally, the schema establishes a robust hierarchy of plant protection products, ensuring that disparate regulatory classifications are modeled with topological precision. The abstract foundational class representing a product systematically diverges into distinct sub-classes. These comprise regular products representing primary federal admissions, secondary sale permissions predicated on existing authorizations, and parallel imports legally contingent upon both foreign authorizations and domestic reference products. Every instantiated product entity encapsulates essential lifecycle metadata. This includes strictly typed chronological data, such as exhaustion and sold-out deadlines, alongside nominal data defining the producing country and the legally registered permission holder. 
+
+Beyond the macro-level product categorizations, the schema analytically decomposes the physical formulation of these protective agents. It achieves this by defining ingredients through a bipartite relation linking a foundational chemical or biological substance to a strictly quantified share. These quantitative values are bound to precise metric units, guaranteeing unambiguous measurement standards across the dataset. The ontology further integrates a comprehensive representation of organizational actors involved in the commercialization lifecycle. These entities are subjected to rigorous structural validation, distinguishing domestic Swiss enterprises via specialized registry patterns from international permission holders, while simultaneously verifying the syntactical integrity of associated contact vectors like standardized telephony and electronic mail strings.
+
+A highly critical vector within this semantic model concerns the formal definition of indications, which codify the legally sanctioned operational parameters for any given agricultural treatment. The framework maps distinct target entities—specifically, identified pathogenic pests or competitive weeds—to approved cultivation domains and macro-environmental application areas. To guarantee regulatory compliance, these indication graphs incorporate mandatory physical constraints, including explicitly quantified dosages, resource expenditures, and obligatory chronological waiting periods post-application. Furthermore, the model inextricably binds plant protection products to the Globally Harmonized System of Classification and Labelling of Chemicals (GHS). The GHS taxonomy within this schema is granularly structured to encapsulate specific signal words and formal hazard pictograms. It additionally parses explicit hazard and precautionary statements based on standardized alphanumeric identifiers, crucially accommodating complex logical aggregations to reflect real-world combinatorial hazard declarations.
+
+All empirical data formulated in accordance with this SHACL definition is hosted on LINDAS (Linked Data Administration Switzerland), the centralized semantic web infrastructure of the Swiss government. The complete, dynamically updated dataset resides at [https://lindas.admin.ch/](https://lindas.admin.ch/). To interact with and extract analytical value from this knowledge graph, practitioners must employ the SPARQL Protocol and RDF Query Language. Querying the LINDAS endpoint allows users to execute highly specific, multi-dimensional graph traversals. 
+
+A rudimentary introductory query is provided below to demonstrate the fundamental semantic extraction of arbitrary triples:
 
 ``` rq
+PREFIX : <https://agriculture.ld.admin.ch/plant-protection/>
+PREFIX country: <https://ld.admin.ch/country/>
+PREFIX schema: <http://schema.org/>
+
 SELECT *
+FROM <https://lindas.admin.ch/foag/plant-protection>
 WHERE {
-  ?s ?p ?o .
+  ?product a :ParallelImport ;
+    schema:name ?name ;
+    :producingCountry country:DEU ;
+    :federalAdmissionNumber ?wNumber .
 }
 LIMIT 10
 ```
 
-For a full overview of example queries, please visit <https://github.com/BLV-OSAV-USAV/PSMV-RDF/tree/main/src/sparql/examples>.
+(To run this query, you may visit the [LINDAS SPARQL GUI](https://s.zazuko.com/3779LjG))
+
+However, to fully leverage the analytical capabilities of this schema, users are directed to the centralized query repository. A comprehensive suite of advanced SPARQL query templates, demonstrating complex relational extraction and data aggregation, is maintained within the project's source control at [https://github.com/BLV-OSAV-USAV/PSMV-RDF/tree/main/src/sparql/examples](https://github.com/BLV-OSAV-USAV/PSMV-RDF/tree/main/src/sparql/examples).
 """@en .
 
 shape:Product a sh:NodeShape ;
