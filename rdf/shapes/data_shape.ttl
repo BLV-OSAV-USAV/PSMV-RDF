@@ -390,34 +390,46 @@ shape:Indication a sh:NodeShape ;
         ] .
 
 shape:ApplicationArea a sh:NodeShape ;
-    rdfs:label "Application Area"@en, "Anwendungsbereich"@de ;
+    rdfs:label "Application Area"@en,
+        "Anwendungsbereich"@de ;
     rdfs:comment "Establishes the macro-environmental or physical operational theater in which a product's usage is legally authorized. Common delineations include enclosed greenhouse environments, open agricultural fields, or specialized storage facilities."@en ;
-    sh:targetClass :ApplicationArea .
+    sh:targetClass :ApplicationArea ;
+    sh:property shape:multiLanguageName .
 
 shape:ApplicationComment a sh:NodeShape ;
-    rdfs:label "Application Comment"@en, "Anwendungskommentar"@de ;
+    rdfs:label "Application Comment"@en,
+        "Anwendungskommentar"@de ;
     rdfs:comment "Captures precise textual directives and technical stipulations regarding the physical deployment of a product. These annotations often clarify exceptional conditions, temporal constraints, or best-practice methodologies necessary for efficacy."@en ;
-    sh:targetClass :ApplicationComment .
+    sh:targetClass :ApplicationComment ;
+    sh:property shape:multiLanguageDescription .
 
 shape:Cultivation a sh:NodeShape ;
-    rdfs:label "Cultivation"@en, "Kultur"@de ;
+    rdfs:label "Cultivation"@en,
+        "Kultur"@de ;
     rdfs:comment "Denotes the specific agronomic crop, botanical grouping, or agricultural setting targeted for treatment. It forms the biological jurisdiction defining where the product may be legally utilized."@en ;
-    sh:targetClass :Cultivation .
+    sh:targetClass :Cultivation ;
+    sh:property shape:multiLanguageName .
 
 shape:Obligation a sh:NodeShape ;
-    rdfs:label "Obligation"@en, "Auflage"@de ;
+    rdfs:label "Obligation"@en,
+        "Auflage"@de ;
     rdfs:comment "Specifies statutory mandates, restrictions, or operational conditions that an applicator must strictly observe. These parameters are designed to mitigate environmental impact, safeguard human health, and ensure regulatory compliance."@en ;
-    sh:targetClass :Obligation .
+    sh:targetClass :Obligation ;
+    sh:property shape:multiLanguageDescription .
 
 shape:Pest a sh:NodeShape ;
-    rdfs:label "Pest"@en, "Schadorganismus"@de ;
+    rdfs:label "Pest"@en,
+        "Schadorganismus"@de ;
     rdfs:comment "Identifies the pathogenic, competitive, or destructive organism—such as an insect species, fungal strain, or weed profile—that the corresponding plant protection product is engineered to neutralize or suppress."@en ;
-    sh:targetClass :Pest .
+    sh:targetClass :Pest ;
+    sh:property shape:multiLanguageName .
 
 shape:Substance a sh:NodeShape ;
-    rdfs:label "Substance"@en, "Wirkstoff"@de ;
+    rdfs:label "Substance"@en,
+        "Wirkstoff"@de ;
     rdfs:comment "Denotes the foundational chemical entity or active biological agent embedded within a formulation. It abstracts the physical formulation to reference the fundamental molecule or organism responsible for the product's protective action."@en ;
-    sh:targetClass :Substance .
+    sh:targetClass :Substance ;
+    sh:property shape:multiLanguageName .
 
 # ==============================================================================
 # BASE GHS SHAPE
@@ -545,3 +557,19 @@ shape:PrecautionaryStatementCombination a sh:NodeShape ;
             sh:node shape:PrecautionaryStatement ;
             sh:minCount 2 ;
         ] .
+
+# ==============================================================================
+# GENERIC PROPERTIES THAT ARE RE-USED
+# ==============================================================================
+
+shape:multiLanguageName sh:name "Name"@en ;
+    sh:path schema:name ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:datatype rdf:langString .
+
+shape:multiLanguageDescription sh:name "Description"@en ;
+    sh:path schema:description ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:datatype rdf:langString .
