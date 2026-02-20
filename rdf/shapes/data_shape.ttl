@@ -1,18 +1,50 @@
 @prefix : <https://agriculture.ld.admin.ch/plant-protection/> .
-@prefix country: <https://ld.admin.ch/country/> .
-@prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix shape: <https://agriculture.ld.admin.ch/plant-protection/shape/> .
+@prefix product: <https://agriculture.ld.admin.ch/plant-protection/product/> .
+
+@prefix country: <https://ld.admin.ch/country/> .
+
+@prefix adms: <https://www.w3.org/ns/adms#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix schema: <http://schema.org/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix unit: <http://qudt.org/vocab/unit/> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+shape: a owl:Ontology ;
+    dcterms:creator "Martin Hertach",
+        "Ingrid Nyfeler",
+        "Damian Oswald",
+        "Sara Schärrer",
+        "Guy Schnidrig" ;
+    dcterms:title "Swiss registry of plant protection products"@en ;
+    dcterms:created "2026-02-20"^^xsd:date ;
+    doap:repository <https://github.com/BLV-OSAV-USAV/PSMV-RDF/issues> ;
+    owl:versionInfo "3.0.0" ;
+    dcterms:abstract
+"""
+This data model describes the data of the Swiss registry for plant production products.
+It is supposed to help the reader understand the data.
+The actual data is available on [the linked data service LINDAS](https://lindas.admin.ch/).
+"""@en ;
+    dcterms:description
+"""
+... TODO!
+"""@en .
+
 shape:Product a sh:NodeShape ;
-    sh:name "Product"@en ;
+    rdfs:label "Product"@en ;
+    rdfs:comment "Represents any plant protection product that is officially registered and listed on <https://psm.admin.ch/>."@en ;
     sh:targetClass :Product ;
+    sh:nodeKind sh:IRI ;
+    sh:pattern "^https://agriculture\\.admin\\.ch/plant-protection/product/.$" ;
+    skos:example <https://agriculture.ld.admin.ch/plant-protection/product/01967F79-C3AA-4417-BBEB-89B678003DD8> ;
     sh:property [
         sh:order 1 ;
         sh:name "Name"@en ;
@@ -32,6 +64,7 @@ shape:Product a sh:NodeShape ;
         sh:message "The federal admission number must match the pattern 'L-DDDD' or 'L-DDDD-D', where L is an uppercase letter and D a digit."@en ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
+        skos:example "W-7408-2" ;
     ] ;
     sh:property [
         sh:order 3 ;
@@ -90,21 +123,23 @@ shape:Product a sh:NodeShape ;
     ] .
 
 shape:Ingredient a sh:NodeShape ;
+    rdfs:label "Ingredient"@en ;
     sh:property [
-        schema:name "Substance"@en ;
+        sh:name "Substance"@en ;
         sh:path :substance ;
         sh:class :Substance ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
     ] ;
     sh:property [
-        schema:name "Share (Quantitative Value)"@en ;
+        sh:name "Share (Quantitative Value)"@en ;
         sh:path :share ;
         sh:node shape:Share ;
         sh:minCount 1 ;
     ] .
 
 shape:QuantitativeValue a sh:NodeShape ;
+    rdfs:label "Quantitative value"@en ;
     sh:targetClass schema:QuantitativeValue ;
     sh:property [
         sh:name "Display text"@en ;
@@ -130,10 +165,94 @@ shape:QuantitativeValue a sh:NodeShape ;
     ] .
 
 shape:Organization a sh:NodeShape ;
-  sh:targetClass schema:Organization ;
-  sh:property [
-    schema:name "Legal name required"@en ;
-    sh:path schema:legalName ;
-    sh:datatype xsd:string ;
-    sh:minCount 1 ;
-  ] .
+    rdfs:label "Organization"@en ;
+    sh:targetClass schema:Organization ;
+    sh:nodeKind sh:IRI ;    
+    sh:or (
+        [
+            sh:pattern "^https://register\\.ld\\.admin\\.ch/zefix/company/" ;
+            sh:property [
+                sh:path ( schema:address schema:addressCountry ) ;
+                sh:hasValue country:CHE ;
+            ]
+        ]
+        [
+            sh:pattern "^https://agriculture\\.ld\\.admin\\.ch/plant-protection/company/" ;
+            sh:property [
+                sh:path ( schema:address schema:addressCountry ) ;
+                sh:not [ sh:hasValue country:CHE ] ;
+                sh:minCount 1 ;
+            ]
+        ]
+    ) ;
+    sh:property
+        [
+            sh:name "Legal name"@en ;
+            sh:description "The official, legally registered name of the organization."@en ;
+            sh:path schema:legalName ;
+            sh:nodeKind sh:Literal ;
+            sh:minCount 1 ;
+            sh:uniqueLang true ;
+        ] ,
+        [
+            sh:name "Address"@en ;
+            sh:description "The primary postal address of the organization."@en ;
+            sh:path schema:address ;
+            sh:node shape:PostalAddress ;
+            sh:minCount 1 ;
+            sh:maxCount 1 ;
+        ] ,
+        [
+            sh:name "Telephone"@en ;
+            sh:description "A telephone number associated with the organization. The validation pattern accommodates a flexible subset of the ITU-T E.164 recommendation, permitting common typographic separators such as spaces and hyphens."@en ;
+            sh:path schema:telephone ;
+            sh:datatype xsd:string ;
+            sh:pattern "^\\+?[0-9\\s\\-()]{7,20}$" ;
+            sh:message "Telephone number must be a valid format, optionally starting with '+' and containing only numbers, spaces, hyphens, or parentheses."@en ;
+        ] ,
+        [
+            sh:name "Fax number"@en ;
+            sh:description "A facsimile number associated with the organization. The validation pattern accommodates a flexible subset of the ITU-T E.164 recommendation, permitting common typographic separators."@en ;
+            sh:path schema:faxNumber ;
+            sh:datatype xsd:string ;
+            sh:pattern "^\\+?[0-9\\s\\-()]{7,20}$" ;
+            sh:message "Fax number must be a valid format, optionally starting with '+' and containing only numbers, spaces, hyphens, or parentheses."@en ;
+        ] ,
+        [
+            sh:name "Email"@en ;
+            sh:description "An electronic mail address associated with the organization. The validation pattern enforces an approximation of the RFC 5322 specification syntax for internet message formats."@en ;
+            sh:path schema:email ;
+            sh:datatype xsd:string ;
+            sh:pattern "^[a-zA-Z0-9._%+\\-]+@[a-zA-Z0-9.\\-]+\\.[a-zA-Z]{2,}$" ;
+            sh:message "Email must be a valid address format (e.g., user@example.com)."@en ;
+        ] .
+
+shape:PostalAddress a sh:NodeShape ;
+    rdfs:label "Address"@en ;
+    sh:targetClass schema:PostalAddress ;
+    sh:property
+        [
+            sh:name "Address country"@en ;
+            sh:path schema:addressCountry ;
+            sh:nodeKind sh:IRI ;
+            sh:pattern "^https://ld\\.admin\\.ch/country/[A-Z0-9]{3}$" ;
+            sh:maxCount 1 ;
+        ] ,
+        [
+            sh:name "Street address"@en ;
+            sh:path schema:streetAddress ;
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+        ] ,
+        [
+            sh:name "Postal code"@en ;
+            sh:path schema:postalCode ;
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+        ] ,
+        [
+            sh:name "Address locality"@en ;
+            sh:path schema:addressLocality ;
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+        ] .
