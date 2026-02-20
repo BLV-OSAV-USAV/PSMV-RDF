@@ -399,28 +399,129 @@ shape:Substance a sh:NodeShape ;
     rdfs:comment "Denotes the foundational chemical entity or active biological agent embedded within a formulation. It abstracts the physical formulation to reference the fundamental molecule or organism responsible for the product's protective action."@en ;
     sh:targetClass :Substance .
 
+# ==============================================================================
+# BASE GHS SHAPE
+# ==============================================================================
+
 shape:GHSStatement a sh:NodeShape ;
     rdfs:label "GHS statement"@en, "GHS-Hinweis"@de ;
-    rdfs:comment "Encodes a standardized hazard or precautionary directive derived from the Globally Harmonized System of Classification and Labelling of Chemicals. It mandates strict visual pictograms and risk taxonomy to rapidly convey occupational hazards."@en ;
+    rdfs:comment "Encodes a standardized hazard or precautionary directive derived from the Globally Harmonized System of Classification and Labelling of Chemicals."@en ;
     sh:targetClass ghs:GHSStatement ;
     sh:property
         [
-            sh:name "Label"@en ;
-            sh:path rdfs:label ;
+            sh:name "Name"@en ;
+            sh:description "The localized text of the GHS statement."@en ;
+            sh:path schema:name ;
             sh:datatype rdf:langString ;
+            sh:minCount 1 ;
         ] ,
         [
             sh:name "Identifier"@en ;
+            sh:description "The official alphanumeric GHS identifier code."@en ;
             sh:path schema:identifier ;
             sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+        ] .
+
+# ==============================================================================
+# SUB-SHAPES FOR GHS TAXONOMY
+# ==============================================================================
+
+shape:SignalWord a sh:NodeShape ;
+    rdfs:label "Signal word"@en, "Signalwort"@de ;
+    rdfs:comment "A word used to indicate the relative level of severity of hazard and alert the reader to a potential hazard on the label."@en ;
+    sh:targetClass ghs:SignalWord ;
+    sh:node shape:GHSStatement ;
+    sh:property [
+        sh:path schema:identifier ;
+        sh:maxCount 0 ; # Signal words typically lack formal identifiers in this taxonomy
+        sh:message "Signal words do not utilize alphanumeric identifiers in this scheme."@en ;
+    ] .
+
+shape:HazardPictogram a sh:NodeShape ;
+    rdfs:label "Hazard pictogram"@en, "Gefahrenpiktogramm"@de ;
+    rdfs:comment "A graphical composition intended to convey specific hazard information."@en ;
+    sh:targetClass ghs:HazardPictogram ;
+    sh:node shape:GHSStatement ;
+    sh:property
+        [
+            sh:path schema:identifier ;
+            sh:pattern "^GHS0[1-9]$" ;
+            sh:minCount 1 ;
+            sh:message "Hazard pictograms must follow the identifier pattern 'GHS0X' where X is a digit from 1 to 9."@en ;
         ] ,
         [
             sh:name "Image"@en ;
+            sh:description "The URI pointing to the visual representation of the pictogram."@en ;
             sh:path schema:image ;
             sh:nodeKind sh:IRI ;
+            sh:minCount 1 ;
+            sh:maxCount 1 ;
+        ] .
+
+shape:HazardStatement a sh:NodeShape ;
+    rdfs:label "Hazard statement"@en, "Gefahrenhinweis"@de ;
+    rdfs:comment "A standard phrase assigned to a hazard class and category that describes the nature of the hazards."@en ;
+    sh:targetClass ghs:HazardStatement ;
+    sh:node shape:GHSStatement ;
+    sh:property [
+        sh:path schema:identifier ;
+        sh:pattern "^H[2-4][0-9]{2}[a-zA-Z]*$" ;
+        sh:minCount 1 ;
+        sh:message "Hazard statement identifiers must begin with 'H' followed by a 3-digit number and optional alphabetical suffixes (e.g., H200, H360Df)."@en ;
+    ] .
+
+shape:PrecautionaryStatement a sh:NodeShape ;
+    rdfs:label "Precautionary statement"@en, "Sicherheitshinweis"@de ;
+    rdfs:comment "A phrase that describes recommended measures to minimize or prevent adverse effects."@en ;
+    sh:targetClass ghs:PrecautionaryStatement ;
+    sh:node shape:GHSStatement ;
+    sh:property [
+        sh:path schema:identifier ;
+        sh:pattern "^P[1-5][0-9]{2}$" ;
+        sh:minCount 1 ;
+        sh:message "Precautionary statement identifiers must begin with 'P' followed by a 3-digit number (e.g., P101, P501)."@en ;
+    ] .
+
+# ==============================================================================
+# COMBINATION SHAPES
+# ==============================================================================
+
+shape:HazardStatementCombination a sh:NodeShape ;
+    rdfs:label "Combinations of hazard statements"@en, "Kombinationen von Gefahrenhinweisen"@de ;
+    rdfs:comment "An aggregation of multiple hazard statements merged into a single logical declaration."@en ;
+    sh:targetClass ghs:HazardStatementCombination ;
+    sh:node shape:HazardStatement ;
+    sh:property 
+        [
+            sh:path schema:identifier ;
+            sh:pattern "^H[2-4][0-9]{2}(\\+H[2-4][0-9]{2})+$" ;
+            sh:message "Hazard combination identifiers must represent an addition of standard H-codes (e.g., H300+H310)."@en ;
         ] ,
         [
             sh:name "Has Part"@en ;
+            sh:description "Links the combination to its constituent base statements."@en ;
             sh:path schema:hasPart ;
-            sh:class ghs:GHSStatement ;
+            sh:node shape:HazardStatement ;
+            sh:minCount 2 ;
+        ] .
+
+shape:PrecautionaryStatementCombination a sh:NodeShape ;
+    rdfs:label "Combinations of precautionary statements"@en, "Kombinationen von Sicherheitshinweisen"@de ;
+    rdfs:comment "An aggregation of multiple precautionary statements merged into a single logical operational directive."@en ;
+    sh:targetClass ghs:PrecautionaryStatementCombination ;
+    sh:node shape:PrecautionaryStatement ;
+    sh:property 
+        [
+            sh:path schema:identifier ;
+            # Allows for standard additions and bracketed optional additions like P370+P380+P375[+P378]
+            sh:pattern "^P[1-5][0-9]{2}(\\+P[1-5][0-9]{2})+(\\[\\+P[1-5][0-9]{2}\\])?$" ;
+            sh:message "Precautionary combination identifiers must represent an addition of standard P-codes (e.g., P231+P232 or P370+P380+P375[+P378])."@en ;
+        ] ,
+        [
+            sh:name "Has Part"@en ;
+            sh:description "Links the combination to its constituent base statements."@en ;
+            sh:path schema:hasPart ;
+            sh:node shape:PrecautionaryStatement ;
+            sh:minCount 2 ;
         ] .
