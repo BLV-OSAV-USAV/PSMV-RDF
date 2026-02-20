@@ -36,6 +36,8 @@ The actual data is available on [the linked data service LINDAS](https://lindas.
 """@en ;
     dcterms:description
 """
+**NOTE:** This is filler text. Proper introduction needs to be written, still.
+
 This descriptive preamble formally outlines the ontological architecture and rigorous validation constraints for the Swiss registry of plant protection products, encoded via the Shapes Constraint Language (SHACL). The proposed data model supplies a standardized, machine-readable vocabulary designed to faithfully represent complex agricultural, chemical, and regulatory data administered by the Swiss federal authorities. 
 
 Fundamentally, the schema establishes a robust hierarchy of plant protection products, ensuring that disparate regulatory classifications are modeled with topological precision. The abstract foundational class representing a product systematically diverges into distinct sub-classes. These comprise regular products representing primary federal admissions, secondary sale permissions predicated on existing authorizations, and parallel imports legally contingent upon both foreign authorizations and domestic reference products. Every instantiated product entity encapsulates essential lifecycle metadata. This includes strictly typed chronological data, such as exhaustion and sold-out deadlines, alongside nominal data defining the producing country and the legally registered permission holder. 
