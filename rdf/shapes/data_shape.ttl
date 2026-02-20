@@ -16,6 +16,7 @@
 @prefix unit: <http://qudt.org/vocab/unit/> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ghs: <https://agriculture.ld.admin.ch/plant-protection/ghs/> .
 
 shape: a owl:Ontology ;
     dcterms:creator "Martin Hertach",
@@ -120,6 +121,13 @@ shape:Product a sh:NodeShape ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:in ( country:CHE country:DEU country:ITA country:FRA country:AUT country:BEL ) ;
+    ] ;
+    sh:property [
+        sh:order 10 ;
+        sh:name "Indications"@en ;
+        sh:description "The indications outlining allowed applications."@en ;
+        sh:path :indication ;
+        sh:node shape:Indication ;
     ] .
 
 shape:Ingredient a sh:NodeShape ;
@@ -255,4 +263,98 @@ shape:PostalAddress a sh:NodeShape ;
             sh:path schema:addressLocality ;
             sh:datatype xsd:string ;
             sh:maxCount 1 ;
+        ] .
+
+shape:Indication a sh:NodeShape ;
+    rdfs:label "Indication"@en ;
+    sh:targetClass :Indication ;
+    sh:property
+        [
+            sh:name "Application Area"@en ;
+            sh:path :applicationArea ;
+            sh:class :ApplicationArea ;
+        ] ,
+        [
+            sh:name "Application Comment"@en ;
+            sh:path :applicationComment ;
+            sh:class :ApplicationComment ;
+        ] ,
+        [
+            sh:name "Cultivation"@en ;
+            sh:path :cultivation ;
+            sh:class :Cultivation ;
+        ] ,
+        [
+            sh:name "Dosage"@en ;
+            sh:path :dosage ;
+            sh:node shape:QuantitativeValue ;
+        ] ,
+        [
+            sh:name "Expenditure"@en ;
+            sh:path :expenditure ;
+            sh:node shape:QuantitativeValue ;
+        ] ,
+        [
+            sh:name "Obligation"@en ;
+            sh:path :obligation ;
+            sh:class :Obligation ;
+        ] ,
+        [
+            sh:name "Pest"@en ;
+            sh:path :pest ;
+            sh:class :Pest ;
+        ] ,
+        [
+            sh:name "Waiting Period"@en ;
+            sh:path :waitingPeriod ;
+            sh:node shape:QuantitativeValue ;
+        ] .
+
+shape:ApplicationArea a sh:NodeShape ;
+    rdfs:label "Application Area"@en ;
+    sh:targetClass :ApplicationArea .
+
+shape:ApplicationComment a sh:NodeShape ;
+    rdfs:label "Application Comment"@en ;
+    sh:targetClass :ApplicationComment .
+
+shape:Cultivation a sh:NodeShape ;
+    rdfs:label "Cultivation"@en ;
+    sh:targetClass :Cultivation .
+
+shape:Obligation a sh:NodeShape ;
+    rdfs:label "Obligation"@en ;
+    sh:targetClass :Obligation .
+
+shape:Pest a sh:NodeShape ;
+    rdfs:label "Pest"@en ;
+    sh:targetClass :Pest .
+
+shape:Substance a sh:NodeShape ;
+    rdfs:label "Substance"@en ;
+    sh:targetClass :Substance .
+
+shape:GHSStatement a sh:NodeShape ;
+    rdfs:label "GHS statement"@en ;
+    sh:targetClass ghs:GHSStatement ;
+    sh:property
+        [
+            sh:name "Label"@en ;
+            sh:path rdfs:label ;
+            sh:datatype rdf:langString ;
+        ] ,
+        [
+            sh:name "Identifier"@en ;
+            sh:path schema:identifier ;
+            sh:datatype xsd:string ;
+        ] ,
+        [
+            sh:name "Image"@en ;
+            sh:path schema:image ;
+            sh:nodeKind sh:IRI ;
+        ] ,
+        [
+            sh:name "Has Part"@en ;
+            sh:path schema:hasPart ;
+            sh:class ghs:GHSStatement ;
         ] .
