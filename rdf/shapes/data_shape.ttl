@@ -570,10 +570,16 @@ shape:multiLanguageName sh:name "Name"@en ;
     sh:path schema:name ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
-    sh:datatype rdf:langString .
+    sh:datatype rdf:langString ;
+    sh:uniqueLang true ;
+    sh:qualifiedValueShape [ sh:languageIn ( "de" "fr" "it" ) ; ] ;
+    sh:qualifiedMinCount 3 .
 
 shape:multiLanguageDescription sh:name "Description"@en ;
     sh:path schema:description ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
-    sh:datatype rdf:langString .
+    sh:datatype rdf:langString ;
+    sh:uniqueLang true ;
+    sh:qualifiedValueShape [ sh:languageIn ( "de" "fr" "it" ) ; ] ;
+    sh:qualifiedMinCount 3 .
