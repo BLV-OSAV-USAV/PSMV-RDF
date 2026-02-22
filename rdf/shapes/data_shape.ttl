@@ -350,13 +350,19 @@ shape:Ingredient a sh:NodeShape ;
 
 shape:Indication a sh:NodeShape ;
     rdfs:label "Indication"@en, "Indikation"@de ;
-    rdfs:comment "Formally outlines an approved, highly specific usage profile for a plant protection product. It systematically links a target pest with the applicable cultivation domain and delineates parameters like dosage, legal obligations, and mandatory waiting periods."@en ;
+    rdfs:comment
+"""
+The indication formally outlines an approved, highly specific usage profile for a plant protection product.
+It systematically links a target pest with the applicable cultivation domain and delineates parameters like dosage, legal obligations, and mandatory waiting periods.
+"""@en ;
     sh:targetClass :Indication ;
     sh:property
         [
             sh:name "Application Area"@en ;
             sh:path :applicationArea ;
             sh:class :ApplicationArea ;
+            sh:minCount 1 ;
+            sh:maxCount 1 ;
         ] ,
         [
             sh:name "Application Comment"@en ;
@@ -367,16 +373,19 @@ shape:Indication a sh:NodeShape ;
             sh:name "Cultivation"@en ;
             sh:path :cultivation ;
             sh:class :Cultivation ;
+            sh:minCount 1 ;
         ] ,
         [
             sh:name "Dosage"@en ;
             sh:path :dosage ;
             sh:node shape:QuantitativeValue ;
+            sh:maxCount 1 ;
         ] ,
         [
             sh:name "Expenditure"@en ;
             sh:path :expenditure ;
             sh:node shape:QuantitativeValue ;
+            sh:maxCount 1 ;
         ] ,
         [
             sh:name "Obligation"@en ;
@@ -387,11 +396,13 @@ shape:Indication a sh:NodeShape ;
             sh:name "Pest"@en ;
             sh:path :pest ;
             sh:class :Pest ;
+            sh:minCount 1 ;
         ] ,
         [
             sh:name "Waiting Period"@en ;
             sh:path :waitingPeriod ;
             sh:node shape:QuantitativeValue ;
+            sh:maxCount 1 ;
         ] .
 
 shape:ApplicationArea a sh:NodeShape ;
