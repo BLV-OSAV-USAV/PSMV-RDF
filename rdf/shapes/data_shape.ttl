@@ -532,49 +532,6 @@ shape:PrecautionaryStatement a sh:NodeShape ;
     ] .
 
 # ==============================================================================
-# COMBINATION SHAPES
-# ==============================================================================
-
-shape:HazardStatementCombination a sh:NodeShape ;
-    rdfs:label "Combinations of hazard statements"@en, "Kombinationen von Gefahrenhinweisen"@de ;
-    rdfs:comment "An aggregation of multiple hazard statements merged into a single logical declaration."@en ;
-    sh:targetClass ghs:HazardStatementCombination ;
-    sh:node shape:HazardStatement ;
-    sh:property 
-        [
-            sh:path schema:identifier ;
-            sh:pattern "^H[2-4][0-9]{2}(\\+H[2-4][0-9]{2})+$" ;
-            sh:message "Hazard combination identifiers must represent an addition of standard H-codes (e.g., H300+H310)."@en ;
-        ] ,
-        [
-            sh:name "Has Part"@en ;
-            sh:description "Links the combination to its constituent base statements."@en ;
-            sh:path schema:hasPart ;
-            sh:node shape:HazardStatement ;
-            sh:minCount 2 ;
-        ] .
-
-shape:PrecautionaryStatementCombination a sh:NodeShape ;
-    rdfs:label "Combinations of precautionary statements"@en, "Kombinationen von Sicherheitshinweisen"@de ;
-    rdfs:comment "An aggregation of multiple precautionary statements merged into a single logical operational directive."@en ;
-    sh:targetClass ghs:PrecautionaryStatementCombination ;
-    sh:node shape:PrecautionaryStatement ;
-    sh:property 
-        [
-            sh:path schema:identifier ;
-            # Allows for standard additions and bracketed optional additions like P370+P380+P375[+P378]
-            sh:pattern "^P[1-5][0-9]{2}(\\+P[1-5][0-9]{2})+(\\[\\+P[1-5][0-9]{2}\\])?$" ;
-            sh:message "Precautionary combination identifiers must represent an addition of standard P-codes (e.g., P231+P232 or P370+P380+P375[+P378])."@en ;
-        ] ,
-        [
-            sh:name "Has Part"@en ;
-            sh:description "Links the combination to its constituent base statements."@en ;
-            sh:path schema:hasPart ;
-            sh:node shape:PrecautionaryStatement ;
-            sh:minCount 2 ;
-        ] .
-
-# ==============================================================================
 # QUANTITATIVE VALUE
 # ==============================================================================
 
