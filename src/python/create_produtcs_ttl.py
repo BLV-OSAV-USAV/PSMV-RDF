@@ -107,7 +107,7 @@ def products_ttl(
                 # If the UUID is found in our mapping, link to the official ld.admin country URI
                 if country_uuid_str in COUNTRY_MAPPING:
                     country_uri = COUNTRY_MAPPING[country_uuid_str]
-                    graph.add((product_uri, BASE.producingCountry, country_uri))
+                    graph.add((product_uri, SCHEMA.countryOfOrigin, country_uri))
 
             # Add dates (Exhaustion and Sold Out Deadlines)
             # Input format may be: "2027-01-01 00:00:00.0000000"
