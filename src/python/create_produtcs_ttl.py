@@ -70,7 +70,7 @@ def products_ttl(
             product_uri = PRODUCT[product_id_str]
             
             # Add product name
-            graph.add((product_uri, SCHEMA.name, Literal(str(row.get("schema:name")).strip(), lang="de")))
+            graph.add((product_uri, SCHEMA.name, Literal(str(row.get("schema:name")).strip())))
 
             # Get raw type
             raw_type = row.get("rdf:type")
