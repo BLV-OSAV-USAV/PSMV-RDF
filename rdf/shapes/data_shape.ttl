@@ -73,7 +73,7 @@ FROM <https://lindas.admin.ch/foag/plant-protection>
 WHERE {
   ?product a :ParallelImport ;
     schema:name ?name ;
-    :producingCountry country:DEU ;
+    schema:countryOfOrigin country:DEU ;
     :federalAdmissionNumber ?wNumber .
 }
 LIMIT 10
@@ -149,7 +149,7 @@ shape:Product a sh:NodeShape ;
         sh:order 9 ;
         sh:name "Producing country"@en ;
         sh:description "The country where a plant protection product was produced."@en ;
-        sh:path :producingCountry ;
+        sh:path schema:countryOfOrigin ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:in ( country:CHE country:DEU country:ITA country:FRA country:AUT country:BEL ) ;

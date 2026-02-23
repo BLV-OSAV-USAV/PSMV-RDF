@@ -123,7 +123,12 @@ schema:PostalAddress a owl:Class ;
 
 :Product a owl:Class ;
     schema:name "Product"@en ;
-    schema:description "Represents any plant protection product that is officially registered and listed on <https://psm.admin.ch/>."@en .
+    schema:description "Represents any plant protection product that is officially registered and listed on <https://psm.admin.ch/>."@en ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty schema:countryOfOrigin ;
+        owl:allValuesFrom schema:Country ;
+    ] .
 
 :RegularProduct a owl:Class ;
     rdfs:subClassOf :Product ;
@@ -195,11 +200,6 @@ schema:PostalAddress a owl:Class ;
     schema:name "Permission holder"@en ;
     rdfs:domain :Product ;
     rdfs:range schema:Organization .
-
-:producingCountry a owl:ObjectProperty ;
-    schema:name "Producing country"@en ;
-    rdfs:domain :Product ;
-    rdfs:range schema:Country .
 
 :exhaustionDeadline a owl:DatatypeProperty ;
     schema:name "Ablaufdatum der Nutzung"@de,
