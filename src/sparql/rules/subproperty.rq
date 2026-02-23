@@ -1,0 +1,9 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+CONSTRUCT {
+  ?subject ?parentProperty ?object .
+}
+WHERE {
+  ?subject ?childProperty ?object .
+  ?childProperty rdfs:subPropertyOf+ ?parentProperty .
+}
