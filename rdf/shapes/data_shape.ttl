@@ -95,7 +95,7 @@ shape:Product a sh:NodeShape ;
     rdfs:comment "Represents any plant protection product that is officially registered and listed on <https://psm.admin.ch/>. It serves as the abstract base class encompassing all regular products, sale permissions, and parallel imports."@en ;
     sh:targetClass :Product ;
     sh:nodeKind sh:IRI ;
-    sh:pattern "^https://agriculture\\.admin\\.ch/plant-protection/product/.$" ;
+    sh:pattern "^https://agriculture\\.ld\\.admin\\.ch/plant-protection/product/.+$" ;
     skos:example <https://agriculture.ld.admin.ch/plant-protection/product/01967F79-C3AA-4417-BBEB-89B678003DD8> ;
     sh:property [
         sh:order 1 ;
@@ -173,7 +173,7 @@ shape:RegularProduct a sh:NodeShape ;
         sh:description "An identifier assigned by the FSVO that uniquely identifies an admissions of a plant protection product."@en ;
         sh:path :federalAdmissionNumber ;
         sh:datatype xsd:string ;
-        sh:pattern "^[A-Z]-[0-9]{4}(-[0-9]{1,2})?$" ; # Todo: Match only for regular products
+        sh:pattern "^[A-Z]-[0-9]{1,4}(-[0-9]{1,2})?$" ; # Todo: Match only for regular products
         sh:message "The federal admission number must match the pattern 'L-DDDD' or 'L-DDDD-D', where L is an uppercase letter and D a digit."@en ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
@@ -508,27 +508,29 @@ shape:HazardPictogram a sh:NodeShape ;
         ] .
 
 shape:HazardStatement a sh:NodeShape ;
-    rdfs:label "Hazard statement"@en, "Gefahrenhinweis"@de ;
+    rdfs:label "Hazard statement"@en,
+        "Gefahrenhinweis"@de ;
     rdfs:comment "A standard phrase assigned to a hazard class and category that describes the nature of the hazards."@en ;
     sh:targetClass ghs:HazardStatement ;
     sh:node shape:GHSStatement ;
     sh:property [
         sh:path schema:identifier ;
-        sh:pattern "^H[2-4][0-9]{2}[a-zA-Z]*$" ;
+        sh:pattern "^H\\S*$" ;
         sh:minCount 1 ;
-        sh:message "Hazard statement identifiers must begin with 'H' followed by a 3-digit number and optional alphabetical suffixes (e.g., H200, H360Df)."@en ;
+        sh:maxCount 1 ;
     ] .
 
 shape:PrecautionaryStatement a sh:NodeShape ;
-    rdfs:label "Precautionary statement"@en, "Sicherheitshinweis"@de ;
+    rdfs:label "Precautionary statement"@en,
+        "Sicherheitshinweis"@de ;
     rdfs:comment "A phrase that describes recommended measures to minimize or prevent adverse effects."@en ;
     sh:targetClass ghs:PrecautionaryStatement ;
     sh:node shape:GHSStatement ;
     sh:property [
         sh:path schema:identifier ;
-        sh:pattern "^P[1-5][0-9]{2}$" ;
+        sh:pattern "^P\\S*$" ;
         sh:minCount 1 ;
-        sh:message "Precautionary statement identifiers must begin with 'P' followed by a 3-digit number (e.g., P101, P501)."@en ;
+        sh:maxCount 1 ;
     ] .
 
 # ==============================================================================
