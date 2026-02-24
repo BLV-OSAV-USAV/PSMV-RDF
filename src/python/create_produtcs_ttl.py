@@ -1,3 +1,4 @@
+import os
 import sys
 import csv
 from pathlib import Path
@@ -6,7 +7,7 @@ from rdflib import Graph, Namespace, URIRef, Literal
 from rdflib.namespace import RDF, XSD
 
 # local imports
-from utils.helper_functions import load_namespaces, load_rdf_mappings
+from src.python.utils.helper_functions import load_namespaces, load_rdf_mappings
 
 # Set namespaces
 namespaces = load_namespaces()

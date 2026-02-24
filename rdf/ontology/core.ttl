@@ -131,17 +131,23 @@ schema:PostalAddress a owl:Class ;
 :RegularProduct a owl:Class ;
     rdfs:subClassOf :Product ;
     schema:name "Regular product"@en ;
-    schema:description "A plant protection product with a standard Swiss authorisation."@en .
+    schema:name "Reguläre Produkte"@de ;
+    schema:description "Products with Swiss marketing authorization holders that have been approved in Switzerland."@en ;
+    schema:description "Produkte mit Schweizer Zulassungsinhaber, die in der Schweiz zugelassen wurden."@de .
 
 :SalePermission a owl:Class ;
     rdfs:subClassOf :Product ;
     schema:name "Sale Permission"@en ;
-    schema:description "Permission to market a plant protection product under a different name on the basis of an existing (regular or simplified) authorisation. It is linked to the validity of the basic authorisation (PSMV Art. 66)."@en .
+    schema:name "Verkaufserlaubnisse"@de ;
+    schema:description "Marketing authorization holders may grant other companies permission to sell a product. This is assessed and approved by the marketing authorization authority. The originally approved product is referred to as the reference product. All information in the plant protection product directory for sales permits, except for the product name, authorization numbers, and authorization holders, is taken from the reference product. In the case of sales permits, individual applications of the reference product may be withdrawn (i.e., not all applications of the reference product are necessarily valid for the sales permit)."@en ;
+    schema:description "Zulassungsinhaber können anderen Firmen eine Verkaufserlaubnis eines Produkts erteilen. Diese wird von der Zulassungsstelle beurteilt und bewilligt. Das ursprünglich bewilligte Produkt wird als Referenzprodukt bezeichnet. Alle Angaben im Pflanzenschutzmittelverzeichnis für Verkaufserlaubnisse ausser Produktname, Zulassungsnummern und Zulassungsinhaber werden vom Referenzprodukt bezogen. Im Falle der Verkaufserlaubnisse können einzelne Anwendungen des Referenzprodukts zurückgezogen werden (d.h. es sind nicht zwingend alle Anwendungen des Referenzprodukts für die Verkaufserlaubnis gültig)."@de .
 
 :ParallelImport a owl:Class ;
     rdfs:subClassOf :Product ;
     schema:name "Parallel Import"@en ;
-    schema:description "Placing on the market of a plant protection product with a foreign authorisation holder (EU) based on an equivalent product that is authorised in Switzerland. It is linked to the validity of the reference product (PSMV Art. 47 Abs. 1)."@en .
+    schema:name "Parallelimporte"@de ;
+    schema:description "Products with a foreign holder of the marketing authorization for which an equivalent regular product (in terms of chemical composition and formulation) exists. This product is referred to as the reference product. All information in the plant protection product directory for parallel imports, except for the product name, authorization numbers, and authorization holder, is taken from the reference product. The same applications apply to parallel imports as to the reference product."@en ;
+    schema:description "Produkte mit einer ausländischen Zulassungsinhaberin, für die ein äquivalentes Reguläres Produkt (bezüglich chemischer Zusammensetzung und Formulierung) existiert. Dieses Produkt wird als Referenzprodukt bezeichnet. Alle Angaben im Pflanzenschutzmittelverzeichnis für Parallelimporte ausser Produktname, Zulassungsnummern und Zulassungsinhaber werden vom Referenzprodukt bezogen. Für den Parallelimport gelten die gleichen Anwendungen wir für das Referenzprodukt."@de .
 
 # Logical statement: All subclasses based on permissions are disjoint from each other
 [] a owl:AllDisjointClasses ;

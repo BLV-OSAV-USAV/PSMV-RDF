@@ -36,6 +36,11 @@ product:00F045AE-E93C-4B08-82EE-9F5965145DAF a :SalePermission ;
     :referenceProduct product:B14E1893-A573-4050-91E7-82C08D785520 ;
     :soldOutDeadline "2025-10-31"^^xsd:date .
 
+product:0131949D-2AA1-48B4-8003-E8A3846A7460 a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Brevis" ;
+    :federalAdmissionNumber "W-6996"^^xsd:string .
+
 product:01735BED-34C5-4F65-BBB2-ED934FFEF4C8 a :SalePermission ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "CLEAVE" ;
@@ -108,13 +113,10 @@ product:023FC57A-408F-4E0C-805D-EB9C19BD374D a :RegularProduct ;
     schema1:name "Gesal Schildlaus- und Milben-Stop" ;
     :federalAdmissionNumber "W-7507"^^xsd:string .
 
-product:025895BC-09EA-4BF9-9CD0-41881B48EA35 a :ParallelImport ;
-    schema1:countryOfOrigin country:DEU ;
-    schema1:name "Aceta 200" ;
-    :federalAdmissionNumber "D-7462"^^xsd:string ;
-    :foreignAdmissionNumber "005655-00/033"^^xsd:string ;
-    :packageInsertNumber "7800"^^xsd:string ;
-    :referenceProduct product:C04B8145-16BA-4A1F-B454-2F70A34146C0 .
+product:02C97E5F-3420-46EA-8833-2E3864FD0EC0 a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Flexity" ;
+    :federalAdmissionNumber "W-969712385"^^xsd:string .
 
 product:030AF028-3C58-4E84-90C0-8B3334E2D7E4 a :ParallelImport ;
     schema1:countryOfOrigin country:ITA ;
@@ -180,7 +182,7 @@ product:03C221C5-B45D-48EC-A2D6-EDB003119565 a :ParallelImport ;
     schema1:countryOfOrigin country:ITA ;
     schema1:name "Difcor 250" ;
     :federalAdmissionNumber "I-6056"^^xsd:string ;
-    :foreignAdmissionNumber "12489"^^xsd:string ;
+    :foreignAdmissionNumber "012489"^^xsd:string ;
     :packageInsertNumber "7700"^^xsd:string ;
     :referenceProduct product:A2175B87-2039-4861-BC53-C03361E3D0F9 .
 
@@ -400,12 +402,6 @@ product:0722D71C-E5C4-4E99-84EB-A0F3BBEAC3E5 a :ParallelImport ;
     :packageInsertNumber "7909"^^xsd:string ;
     :referenceProduct product:05EDBA73-7501-4445-994D-ADF3A9941887 .
 
-product:0738cdbc-2c51-405a-8982-522192049a91 a :SalePermission ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Biorga Contra gegen Pilzkrankheiten" ;
-    :federalAdmissionNumber "W-6432-7"^^xsd:string ;
-    :referenceProduct product:3333BF6C-7E3B-43D5-BF47-E7893B6085B4 .
-
 product:07421AB3-F610-42C6-8DBC-768D016A7AB8 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Tricho-C" ;
@@ -427,12 +423,6 @@ product:075A08D9-0911-49DF-BDE0-451638D1A860 a :SalePermission ;
     schema1:name "Coop Oecoplan Biocontrol Insectizid" ;
     :federalAdmissionNumber "W-5762-7"^^xsd:string ;
     :referenceProduct product:514F6D1C-9BA2-4FC3-BE25-B3DD322ED5E1 .
-
-product:07756fd3-7ad4-4f10-9906-b62c3a5703eb a :SalePermission ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Sumo" ;
-    :federalAdmissionNumber "W-7369-1"^^xsd:string ;
-    :referenceProduct product:6DDEB587-5FF6-440D-A7E4-789FEDBD681A .
 
 product:077739CF-19B7-4750-975D-042A5EE64ED8 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -580,7 +570,7 @@ product:0A86BFE4-768A-4B47-8D51-EDF54CEDD5F9 a :ParallelImport ;
     schema1:countryOfOrigin country:ITA ;
     schema1:name "Isomate Ofm Rosso Flex" ;
     :federalAdmissionNumber "I-4843"^^xsd:string ;
-    :foreignAdmissionNumber "11549"^^xsd:string ;
+    :foreignAdmissionNumber "011549"^^xsd:string ;
     :packageInsertNumber "7008"^^xsd:string ;
     :referenceProduct product:2557ED7B-D8D9-43AD-BCB6-DE87A71BD105 .
 
@@ -613,11 +603,6 @@ product:0ABEFFA4-A5F2-494C-888E-855A56DC0F56 a :ParallelImport ;
     :foreignAdmissionNumber "00A404-00"^^xsd:string ;
     :packageInsertNumber "6508"^^xsd:string ;
     :referenceProduct product:9FF3BFC3-4CA2-4A39-BC41-ECADDB5F4A7A .
-
-product:0AE16714-223B-4341-94E9-3E4C60964B8A a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Timeline FX" ;
-    :federalAdmissionNumber "W-7586"^^xsd:string .
 
 product:0AFBC8F7-8436-47D0-95FE-5B60261F89D1 a :ParallelImport ;
     schema1:countryOfOrigin country:FRA ;
@@ -854,14 +839,6 @@ product:0E064EC7-B8BE-48B1-ABA0-7E1471296051 a :ParallelImport ;
     :packageInsertNumber "7900"^^xsd:string ;
     :referenceProduct product:AEDEF0CA-20CA-4075-B0C1-AEA96FF079C8 .
 
-product:0E20BB22-4067-45A6-A1B7-51ADEB99A664 a :ParallelImport ;
-    schema1:countryOfOrigin country:DEU ;
-    schema1:name "Metatron SC" ;
-    :federalAdmissionNumber "D-7476"^^xsd:string ;
-    :foreignAdmissionNumber "00A126-00/006"^^xsd:string ;
-    :packageInsertNumber "8423"^^xsd:string ;
-    :referenceProduct product:BEF60360-BC47-493C-AEB6-5FDA5282538D .
-
 product:0E401266-8EB6-4601-B70D-93690B970661 a :SalePermission ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Belrose Cupro" ;
@@ -873,9 +850,7 @@ product:0E401266-8EB6-4601-B70D-93690B970661 a :SalePermission ;
 product:0E49C80D-1EA3-4EF9-BEFB-553F15F522C5 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Captan 80 WDG" ;
-    :exhaustionDeadline "2027-10-31"^^xsd:date ;
-    :federalAdmissionNumber "W-7029"^^xsd:string ;
-    :soldOutDeadline "2026-10-31"^^xsd:date .
+    :federalAdmissionNumber "W-7029"^^xsd:string .
 
 product:0E5204F7-7F2A-4618-9E4C-AF2105636694 a :ParallelImport ;
     schema1:countryOfOrigin country:DEU ;
@@ -901,7 +876,7 @@ product:0E99F5CE-376F-413D-9460-C4B773ADC90F a :ParallelImport ;
     schema1:countryOfOrigin country:ITA ;
     schema1:name "Shirudo" ;
     :federalAdmissionNumber "I-6133"^^xsd:string ;
-    :foreignAdmissionNumber "8937"^^xsd:string ;
+    :foreignAdmissionNumber "008937"^^xsd:string ;
     :packageInsertNumber "5047"^^xsd:string ;
     :referenceProduct product:FC2B0E8A-B81A-4EF8-8A03-49362EDC894F .
 
@@ -1157,7 +1132,7 @@ product:129B4622-9C18-4408-8E7D-198253D7E627 a :ParallelImport ;
     schema1:countryOfOrigin country:ITA ;
     schema1:name "Sharpen 40% SC" ;
     :federalAdmissionNumber "I-6141"^^xsd:string ;
-    :foreignAdmissionNumber "15745"^^xsd:string ;
+    :foreignAdmissionNumber "015745"^^xsd:string ;
     :packageInsertNumber "8521"^^xsd:string ;
     :referenceProduct product:170334B7-CEBE-4DBD-BCFA-EC88FBD2B64E .
 
@@ -1252,10 +1227,8 @@ product:13E8A801-0098-4F8B-A509-0280C11EC0C3 a :ParallelImport ;
 product:13F8A157-AAC1-4BE9-8F06-659C6421905F a :SalePermission ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Tisca" ;
-    :exhaustionDeadline "2027-11-25"^^xsd:date ;
     :federalAdmissionNumber "W-6747-1"^^xsd:string ;
-    :referenceProduct product:AA3831B4-2835-4A98-8319-0586B1182324 ;
-    :soldOutDeadline "2026-11-25"^^xsd:date .
+    :referenceProduct product:AA3831B4-2835-4A98-8319-0586B1182324 .
 
 product:13FD5B0B-BDFE-499A-B097-B05657E176B5 a :ParallelImport ;
     schema1:countryOfOrigin country:FRA ;
@@ -1314,11 +1287,10 @@ product:14D246CC-CD7C-49BE-879C-ED3EC2681F68 a :SalePermission ;
     :federalAdmissionNumber "W-7204-1"^^xsd:string ;
     :referenceProduct product:EA223105-BBDD-4C83-A520-4942414661B0 .
 
-product:14ce0848-75ed-42c4-b421-18d85346fcb4 a :SalePermission ;
+product:14D3EAD0-6381-4206-89B7-0D85B1A02691 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
-    schema1:name "Biorga Contra Raupen-Stopp" ;
-    :federalAdmissionNumber "W-7580-3"^^xsd:string ;
-    :referenceProduct product:99D1F54E-9E78-4685-8FFA-E3351B00C750 .
+    schema1:name "Fungifend" ;
+    :federalAdmissionNumber "W-6691"^^xsd:string .
 
 product:151AF6C4-CBBF-4E47-9FE6-3D0D57FC81E3 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -1480,12 +1452,6 @@ product:17EE8B29-646B-478F-8113-464222BF91A9 a :SalePermission ;
     schema1:name "Sanoplant Winteröl" ;
     :federalAdmissionNumber "W-5168-1"^^xsd:string ;
     :referenceProduct product:4B859E88-0340-42F0-8DC2-D71FD5B03A66 .
-
-product:17fefb91-ed2e-4596-b062-0e43c9920afc a :SalePermission ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Gesal Schrotschuss Spezial" ;
-    :federalAdmissionNumber "W-18. Mai"^^xsd:string ;
-    :referenceProduct product:089203D2-6BB3-487F-A3DC-D8FBDF58B9B8 .
 
 product:1837281B-77E6-4928-9815-29B7B4710183 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -1706,6 +1672,11 @@ product:1C68A0F6-EE25-4C2C-BA12-837CD2BF2E65 a :SalePermission ;
     :federalAdmissionNumber "W-5351-6"^^xsd:string ;
     :referenceProduct product:F007BB55-58CC-4A56-88B0-2CD9D3FA25C7 .
 
+product:1C75021B-E29C-4B59-A1AE-F2698DBF21B5 a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Stabilan 460 SL" ;
+    :federalAdmissionNumber "W-7439"^^xsd:string .
+
 product:1CADC3B6-C1AC-4D72-8FC1-9438E9E5EA00 a :ParallelImport ;
     schema1:countryOfOrigin country:AUT ;
     schema1:name "Boxer" ;
@@ -1824,18 +1795,6 @@ product:1FCCAA83-FB0C-4236-A3CE-3B409EE5BDAD a :ParallelImport ;
     :referenceProduct product:709D34C9-C338-40DB-82A3-B59691514FAD ;
     :soldOutDeadline "2026-01-01"^^xsd:date .
 
-product:1b68b8a1-9b9a-45c9-be2a-ce3ab3431605 a :SalePermission ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Trezor" ;
-    :federalAdmissionNumber "W-5751-1"^^xsd:string ;
-    :referenceProduct product:688F24F0-EE32-4B64-A539-EE8F3B81D552 .
-
-product:20132497-d082-4d2a-b6a1-8e6ec805dcc1 a :SalePermission ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Gladiator" ;
-    :federalAdmissionNumber "W-7648-1"^^xsd:string ;
-    :referenceProduct product:723A53DA-EE75-4DC2-8E7C-9DF564BC98BC .
-
 product:201B5F84-8793-486D-B3B8-2EACBDCA52D6 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Booster SF" ;
@@ -1846,12 +1805,6 @@ product:20467E58-0DB0-4532-BEAF-8DEA51037230 a :SalePermission ;
     schema1:name "Goltix 700 SC" ;
     :federalAdmissionNumber "W-6638-1"^^xsd:string ;
     :referenceProduct product:954F595D-F40D-4435-9D9A-174E44E10F32 .
-
-product:207fc308-fe25-4cbf-929a-07b8eeabeddf a :SalePermission ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Tricho-Sfera" ;
-    :federalAdmissionNumber "W-6871-1"^^xsd:string ;
-    :referenceProduct product:78C19416-1F1B-4533-8B79-B1B9F688628B .
 
 product:20AA2292-AAB8-4463-87B8-643499CC2D06 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -1908,12 +1861,6 @@ product:2164D02D-723A-47CF-9765-1F1CED4C5B0D a :SalePermission ;
     schema1:name "BIO Spray gegen Orchideenschädlinge" ;
     :federalAdmissionNumber "W-6727-4"^^xsd:string ;
     :referenceProduct product:61471B21-F252-4F29-9BBD-3616AF062E86 .
-
-product:21785073-215f-41d2-a27e-065d90eba4cc a :SalePermission ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Orchideen-Spray" ;
-    :federalAdmissionNumber "W-7631-1"^^xsd:string ;
-    :referenceProduct product:6ed4b558-8b45-499d-b522-1a04c528ae61 .
 
 product:217CA269-9F24-4762-8F98-4D130A6614EB a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -2037,7 +1984,7 @@ product:23873E39-3554-4C04-AA73-E1D14A178836 a :ParallelImport ;
 
 product:23925D14-BDAD-4E27-8FF1-0CA3172B1489 a :SalePermission ;
     schema1:countryOfOrigin country:CHE ;
-    schema1:name "Downwind-perfectLawn" ;
+    schema1:name "Downwind-perfectLawn4" ;
     :federalAdmissionNumber "W-4220-1"^^xsd:string ;
     :referenceProduct product:B7964C77-8BBB-40CF-AF63-EDB885E93D82 .
 
@@ -2132,11 +2079,6 @@ product:2605e3c4-6cac-4f50-91b2-24afe71db3c3 a :RegularProduct ;
     schema1:name "Armicarb SG Jardin" ;
     :federalAdmissionNumber "W-7596"^^xsd:string .
 
-product:261533ED-6608-4036-96EF-597218EDC11C a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Telmion" ;
-    :federalAdmissionNumber "W-4678"^^xsd:string .
-
 product:2616A34C-98F4-4159-9290-A62C49ECE6DB a :SalePermission ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "BIOHOP FungiCARB" ;
@@ -2198,14 +2140,6 @@ product:270183E7-1A64-467D-A7C7-5AA9784DA0CF a :ParallelImport ;
     :foreignAdmissionNumber "2150994"^^xsd:string ;
     :packageInsertNumber "8197"^^xsd:string ;
     :referenceProduct product:C82D79C1-01BC-4F42-869D-DC7E3D775BFD .
-
-product:27657DC8-5EC6-4B5C-A6E1-7B233C613A4F a :ParallelImport ;
-    schema1:countryOfOrigin country:FRA ;
-    schema1:name "C5flex" ;
-    :federalAdmissionNumber "F-7473"^^xsd:string ;
-    :foreignAdmissionNumber "2030342"^^xsd:string ;
-    :packageInsertNumber "9364"^^xsd:string ;
-    :referenceProduct product:1C75021B-E29C-4B59-A1AE-F2698DBF21B5 .
 
 product:276FB9C2-ED30-41C1-96CB-16FBFA83D7FD a :SalePermission ;
     schema1:countryOfOrigin country:CHE ;
@@ -2504,12 +2438,13 @@ product:2C46966F-CBEA-4FA3-9122-E21D874C7492 a :RegularProduct ;
 product:2C4C578B-BCA3-4D63-879C-EEB8826A052D a :SalePermission ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Sanoplant Schwefel" ;
-    :federalAdmissionNumber "W-18. Mär"^^xsd:string ;
+    :federalAdmissionNumber "W-18-3"^^xsd:string ;
     :referenceProduct product:089203D2-6BB3-487F-A3DC-D8FBDF58B9B8 .
 
 product:2C639EA3-5607-4B00-B71C-BB123C1C609B a :SalePermission ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "RUGA" ;
+    :exhaustionDeadline "2026-02-28"^^xsd:date ;
     :federalAdmissionNumber "W-4700-1"^^xsd:string ;
     :referenceProduct product:9300C235-68D7-4482-AAFA-6C50CB97B876 .
 
@@ -2653,7 +2588,7 @@ product:2E0C01AE-563A-4159-9329-612F0D7CBE01 a :RegularProduct ;
 product:2E0E61E6-F2A5-4DB3-A633-A55E88E7EF64 a :ParallelImport ;
     schema1:countryOfOrigin country:ITA ;
     schema1:name "Seccherba 360" ;
-    :federalAdmissionNumber "I-5094"^^xsd:string ;
+    :federalAdmissionNumber "I-1202"^^xsd:string ;
     :foreignAdmissionNumber "14440"^^xsd:string ;
     :packageInsertNumber "6700"^^xsd:string ;
     :referenceProduct product:083A5232-F56A-4734-AE8C-43F9BD769139 .
@@ -2684,7 +2619,7 @@ product:2E61817F-BDF5-484D-B704-EA56D9C5E1F9 a :ParallelImport ;
     schema1:countryOfOrigin country:ITA ;
     schema1:name "Select" ;
     :federalAdmissionNumber "I-6448"^^xsd:string ;
-    :foreignAdmissionNumber "8796"^^xsd:string ;
+    :foreignAdmissionNumber "008796"^^xsd:string ;
     :packageInsertNumber "7165"^^xsd:string ;
     :referenceProduct product:B1A6D8C4-3FD1-4D3F-BCC3-4B47AB53B746 .
 
@@ -2733,14 +2668,6 @@ product:2F211118-208A-4601-8DF3-F36D365410B5 a :ParallelImport ;
     :packageInsertNumber "7051"^^xsd:string ;
     :referenceProduct product:3A9EA976-60E4-4A88-8353-BA8E5FCCED13 .
 
-product:2F2711E2-4B14-479E-94DE-901052E9379B a :ParallelImport ;
-    schema1:countryOfOrigin country:DEU ;
-    schema1:name "Bolt" ;
-    :federalAdmissionNumber "D-7469"^^xsd:string ;
-    :foreignAdmissionNumber "00A657-60"^^xsd:string ;
-    :packageInsertNumber "7303"^^xsd:string ;
-    :referenceProduct product:14316695-B18B-4B3F-BAB7-0C988C85672D .
-
 product:2F3B8348-DE79-4ED6-96B3-1055FC2E4BDA a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Pokerpak" ;
@@ -2771,6 +2698,12 @@ product:2FE88048-63B9-478E-BAA6-2FDDEF10BD1C a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Ally Tabs" ;
     :federalAdmissionNumber "W-5248"^^xsd:string .
+
+product:2ad82393-54ea-4f24-b341-fe73d6ad7d18 a :SalePermission ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Test10.12.10.25" ;
+    :federalAdmissionNumber "W-7436-1"^^xsd:string ;
+    :referenceProduct product:7314DBC2-C510-49BA-B740-F5A87D24E684 .
 
 product:300C0477-83E1-48F6-96C1-17C8EA6D3F1E a :ParallelImport ;
     schema1:countryOfOrigin country:DEU ;
@@ -2803,14 +2736,6 @@ product:306D7B08-9A7F-474D-8AFB-AFB95C36C1C1 a :SalePermission ;
     schema1:name "Mioplant Unkrautvertilger" ;
     :federalAdmissionNumber "W-6663-2"^^xsd:string ;
     :referenceProduct product:08353B23-23DB-4433-A9EB-B17A193BDC1F .
-
-product:30963492-D685-4938-A1B7-15D8C780659C a :ParallelImport ;
-    schema1:countryOfOrigin country:DEU ;
-    schema1:name "Cyazofam" ;
-    :federalAdmissionNumber "D-7477"^^xsd:string ;
-    :foreignAdmissionNumber "006860-00/038"^^xsd:string ;
-    :packageInsertNumber "8131"^^xsd:string ;
-    :referenceProduct product:B1274A6A-3AF5-4AC6-BD6A-FA1E75EBBE06 .
 
 product:30A90188-B31B-44C9-BAA9-2932A5F57EBD a :ParallelImport ;
     schema1:countryOfOrigin country:AUT ;
@@ -3056,14 +2981,6 @@ product:34BAF11B-7639-4987-B610-A2E77C83BBA7 a :RegularProduct ;
     schema1:name "Husar Plus" ;
     :federalAdmissionNumber "W-7219"^^xsd:string .
 
-product:34FE98AC-E284-4AB4-A877-1F4C7D7DEAF5 a :ParallelImport ;
-    schema1:countryOfOrigin country:DEU ;
-    schema1:name "Pyrimet" ;
-    :federalAdmissionNumber "D-7497"^^xsd:string ;
-    :foreignAdmissionNumber "006922-00/015"^^xsd:string ;
-    :packageInsertNumber "9297"^^xsd:string ;
-    :referenceProduct product:AE9D9D27-974C-40B4-816C-8309423156B9 .
-
 product:3508493B-4412-4E42-919B-6C0CBD75DB07 a :ParallelImport ;
     schema1:countryOfOrigin country:DEU ;
     schema1:name "specrtum" ;
@@ -3224,6 +3141,11 @@ product:3876AFA9-EDC0-447B-B0D6-272C6533A23A a :ParallelImport ;
     :packageInsertNumber "7656"^^xsd:string ;
     :referenceProduct product:EAB498A8-B627-4F72-BA58-8AAF57C7B3EA .
 
+product:38BECDE1-3C8A-409C-8B8C-53EDD4EF957B a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Natrel Garden Spray" ;
+    :federalAdmissionNumber "W-7471"^^xsd:string .
+
 product:38F2633D-3B19-4F9F-BF68-6D57692BD206 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Aphelinus abdominalis" ;
@@ -3289,15 +3211,13 @@ product:39D3F0A2-CE6E-4783-B089-64EE83861079 a :ParallelImport ;
 product:39D54692-1D07-4056-A4C6-431EF7152DD8 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "LBG-51FCm" ;
-    :exhaustionDeadline "2027-10-31"^^xsd:date ;
-    :federalAdmissionNumber "W-7247"^^xsd:string ;
-    :soldOutDeadline "2026-10-31"^^xsd:date .
+    :federalAdmissionNumber "W-7247"^^xsd:string .
 
 product:39EB2622-2E1F-447D-96A0-73DAD58D9320 a :ParallelImport ;
     schema1:countryOfOrigin country:ITA ;
     schema1:name "Kocide Opti" ;
     :federalAdmissionNumber "I-6069"^^xsd:string ;
-    :foreignAdmissionNumber "14686"^^xsd:string ;
+    :foreignAdmissionNumber "014686"^^xsd:string ;
     :packageInsertNumber "8792"^^xsd:string ;
     :referenceProduct product:BA4D72DA-6CF1-4015-B8A1-E9BE202666FF .
 
@@ -3481,7 +3401,7 @@ product:3D819D3D-FD0B-46B9-A8B8-A871DEFFCF1B a :ParallelImport ;
     schema1:countryOfOrigin country:ITA ;
     schema1:name "Cossack Pro" ;
     :federalAdmissionNumber "I-6482"^^xsd:string ;
-    :foreignAdmissionNumber "15587"^^xsd:string ;
+    :foreignAdmissionNumber "015587"^^xsd:string ;
     :packageInsertNumber "7772"^^xsd:string ;
     :referenceProduct product:4BCCFF42-8333-43D8-91B9-B5C1FF8DB70D .
 
@@ -3597,12 +3517,6 @@ product:3FAC4392-FC40-4DE9-AAB9-DB9208D0ABA7 a :ParallelImport ;
     :packageInsertNumber "7221"^^xsd:string ;
     :referenceProduct product:B49D98BB-8C0F-4056-9464-3E70F8AA342D .
 
-product:3aa9cc91-6ad6-45b6-857e-fae2ae514f45 a :SalePermission ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Ombral Era" ;
-    :federalAdmissionNumber "W-7245-1"^^xsd:string ;
-    :referenceProduct product:0B8A9253-4ACB-4996-B1ED-56A79D893B04 .
-
 product:3cf2a4c4-fbe9-41ae-ac01-0152dd716474 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Meginem Cold" ;
@@ -3671,7 +3585,7 @@ product:413EEEFE-E02F-4B37-8809-936A1C302C9C a :ParallelImport ;
     schema1:countryOfOrigin country:ITA ;
     schema1:name "Spotlight Plus" ;
     :federalAdmissionNumber "I-6117"^^xsd:string ;
-    :foreignAdmissionNumber "13466"^^xsd:string ;
+    :foreignAdmissionNumber "013466"^^xsd:string ;
     :packageInsertNumber "7104"^^xsd:string ;
     :referenceProduct product:BB64B1E7-F00A-4904-8F60-913446A3D76D .
 
@@ -3688,14 +3602,6 @@ product:4167F804-A4F8-45C1-8838-DDE844CDF012 a :ParallelImport ;
     :foreignAdmissionNumber "027208-00"^^xsd:string ;
     :packageInsertNumber "8157"^^xsd:string ;
     :referenceProduct product:46948565-6025-4671-AC28-53F51C0A4731 .
-
-product:41698DE0-3FB8-437D-A45E-77D9289DECC9 a :ParallelImport ;
-    schema1:countryOfOrigin country:DEU ;
-    schema1:name "Aclon 600" ;
-    :federalAdmissionNumber "D-7464"^^xsd:string ;
-    :foreignAdmissionNumber "034145-00/061"^^xsd:string ;
-    :packageInsertNumber "7351"^^xsd:string ;
-    :referenceProduct product:F3003B19-7CA4-4D80-84BE-F24E3D54C0FA .
 
 product:4182269D-D509-468A-A850-F11948D32573 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -3741,14 +3647,6 @@ product:425E61A3-36A0-410A-9F90-2921A03A19F9 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Isomate-C/OFM" ;
     :federalAdmissionNumber "W-6228"^^xsd:string .
-
-product:426DA184-E0D1-48A7-A35A-154577A043C4 a :ParallelImport ;
-    schema1:countryOfOrigin country:FRA ;
-    schema1:name "KARATE XFLOW" ;
-    :federalAdmissionNumber "F-7505"^^xsd:string ;
-    :foreignAdmissionNumber "9800336"^^xsd:string ;
-    :packageInsertNumber "7051"^^xsd:string ;
-    :referenceProduct product:3A9EA976-60E4-4A88-8353-BA8E5FCCED13 .
 
 product:42749B24-CC64-4167-A505-1F23FCFCC023 a :SalePermission ;
     schema1:countryOfOrigin country:CHE ;
@@ -3808,7 +3706,7 @@ product:436F9B8A-A639-4D70-AF4A-242BAA46B230 a :RegularProduct ;
 product:438659CA-C27C-4870-9FD3-9B46C2D150C8 a :SalePermission ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Capito Bio-Schwefel" ;
-    :federalAdmissionNumber "W-18. Feb"^^xsd:string ;
+    :federalAdmissionNumber "W-18-2"^^xsd:string ;
     :referenceProduct product:089203D2-6BB3-487F-A3DC-D8FBDF58B9B8 .
 
 product:4389799E-EC0D-4FE7-96A6-42548FCE449C a :ParallelImport ;
@@ -4260,6 +4158,11 @@ product:4C6E6D6E-72C2-4DD6-96D6-6ADF2B57992D a :SalePermission ;
     :federalAdmissionNumber "W-7063-1"^^xsd:string ;
     :referenceProduct product:FFBC75F5-3CDB-48B5-8A98-DEE61AA1B0BF .
 
+product:4C7EF26C-BE0E-4C2D-A98D-F7055CFC49F0 a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Avoxa" ;
+    :federalAdmissionNumber "W-7052"^^xsd:string .
+
 product:4C83863A-6388-45DB-AA07-D0B08781D730 a :SalePermission ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Aduka" ;
@@ -4316,7 +4219,7 @@ product:4CFA6585-52E4-4CC3-AD1C-D150B8F5A374 a :ParallelImport ;
     schema1:name "Algedi" ;
     :exhaustionDeadline "2026-07-01"^^xsd:date ;
     :federalAdmissionNumber "I-6045"^^xsd:string ;
-    :foreignAdmissionNumber "12361"^^xsd:string ;
+    :foreignAdmissionNumber "012361"^^xsd:string ;
     :packageInsertNumber "8328"^^xsd:string ;
     :referenceProduct product:A242B195-A630-4577-992F-79E0AE7058A4 ;
     :soldOutDeadline "2026-01-01"^^xsd:date .
@@ -4390,11 +4293,6 @@ product:4E95C7CA-ACFC-47B5-A55A-53FB3B57E24F a :ParallelImport ;
     :packageInsertNumber "8006"^^xsd:string ;
     :referenceProduct product:46002737-F9C7-45B3-8EE4-C632DF96BFE8 .
 
-product:4EA9FCDF-DC99-4CB1-BB48-7749E4748214 a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Squall" ;
-    :federalAdmissionNumber "W-7643"^^xsd:string .
-
 product:4F4CF407-17F7-4AC1-865E-5C9B45253372 a :ParallelImport ;
     schema1:countryOfOrigin country:ITA ;
     schema1:name "Banvel 480 S" ;
@@ -4430,14 +4328,6 @@ product:4FBA6AA2-E702-4594-887D-D95C99B491AC a :ParallelImport ;
     :packageInsertNumber "7328"^^xsd:string ;
     :referenceProduct product:B6495F99-3B65-415B-8D0F-79629C10F1EB .
 
-product:4FBAF4CC-C72D-4D31-BD18-E4B0EB8CA4E0 a :ParallelImport ;
-    schema1:countryOfOrigin country:DEU ;
-    schema1:name "Cyxa 225" ;
-    :federalAdmissionNumber "D-7481"^^xsd:string ;
-    :foreignAdmissionNumber "008260-00/004"^^xsd:string ;
-    :packageInsertNumber "9568"^^xsd:string ;
-    :referenceProduct product:B361B6E5-34C5-492C-B0E2-34C8B4E5AA46 .
-
 product:4FE5B498-BE6B-4878-8728-40C18C290B9B a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Adjuvant Médol" ;
@@ -4460,6 +4350,11 @@ product:4e71fb25-138f-447f-901d-0daa4376be1d a :SalePermission ;
     schema1:name "Capito Garden Silver" ;
     :federalAdmissionNumber "W-7627-1"^^xsd:string ;
     :referenceProduct product:0d2ae32a-a877-4690-9766-9fdaf9a9caf0 .
+
+product:4eda540f-8215-451a-b744-61d1bbb1f63c a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "MProdukt Teilbewilligung Einstufung minor" ;
+    :federalAdmissionNumber "W-969712394"^^xsd:string .
 
 product:502E50B7-3EA3-4D2D-98AA-A7F084670EEF a :SalePermission ;
     schema1:countryOfOrigin country:CHE ;
@@ -4537,6 +4432,11 @@ product:514C62E3-9487-42D4-98F3-133467E0CE56 a :RegularProduct ;
     schema1:name "Amblyline" ;
     :federalAdmissionNumber "W-4719"^^xsd:string .
 
+product:51520ca5-b918-4468-a88d-0fa3e2e87c4f a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "A1.2 neues Prod" ;
+    :federalAdmissionNumber "W-7648"^^xsd:string .
+
 product:5155D18C-5584-40FA-82A1-4BB5D48A9AB2 a :ParallelImport ;
     schema1:countryOfOrigin country:DEU ;
     schema1:name "Activus SC" ;
@@ -4600,12 +4500,6 @@ product:52805308-FD12-4F0E-86F4-93E101F88372 a :ParallelImport ;
     :foreignAdmissionNumber "2100053"^^xsd:string ;
     :packageInsertNumber "8036"^^xsd:string ;
     :referenceProduct product:B01D8B87-6436-4631-90F5-BE459A0F4DFA .
-
-product:5284d364-114e-4bcb-a6b3-b821a13ba17e a :SalePermission ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Beetup C" ;
-    :federalAdmissionNumber "W-6944-2"^^xsd:string ;
-    :referenceProduct product:59978EC7-B63F-471E-8AFD-DAB9E46EE346 .
 
 product:528F0244-34BF-4E4B-A509-2BFE6DA21CA7 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -4706,7 +4600,7 @@ product:5463620F-CB0F-4C6B-8671-BDAEC15DEBF9 a :ParallelImport ;
     schema1:countryOfOrigin country:ITA ;
     schema1:name "Flint Max" ;
     :federalAdmissionNumber "I-6092"^^xsd:string ;
-    :foreignAdmissionNumber "13689"^^xsd:string ;
+    :foreignAdmissionNumber "013689"^^xsd:string ;
     :packageInsertNumber "7760"^^xsd:string ;
     :referenceProduct product:B93C39F6-80C2-4A58-8466-FC45228550A6 .
 
@@ -4861,14 +4755,6 @@ product:57314A6A-0035-4E09-A2C7-6E6126FED380 a :SalePermission ;
     :federalAdmissionNumber "W-6020-1"^^xsd:string ;
     :referenceProduct product:9ACA17C3-7D0C-44EA-981A-8E8541D8A146 .
 
-product:575E1173-8EA1-4728-B1A8-35F80CB0EBA0 a :ParallelImport ;
-    schema1:countryOfOrigin country:DEU ;
-    schema1:name "Amisu" ;
-    :federalAdmissionNumber "D-7466"^^xsd:string ;
-    :foreignAdmissionNumber "026282-00/008"^^xsd:string ;
-    :packageInsertNumber "7730"^^xsd:string ;
-    :referenceProduct product:DD20D6D8-34B1-4AC7-83EB-4A9FD2879090 .
-
 product:57952549-7B89-4DDF-BBB5-1DC86D0FA8AA a :SalePermission ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Cyrano" ;
@@ -4901,6 +4787,14 @@ product:581CF293-DD64-43C2-BCD2-EDB077970C89 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "DETIA-GAS-EX B" ;
     :federalAdmissionNumber "W-6804"^^xsd:string .
+
+product:5828374D-5F63-4A04-A236-80E7DBF7F362 a :ParallelImport ;
+    schema1:countryOfOrigin country:AUT ;
+    schema1:name "Schädlingsfrei Obst & Gemüse Konzentrat" ;
+    :federalAdmissionNumber "A-3617"^^xsd:string ;
+    :foreignAdmissionNumber "2568-0"^^xsd:string ;
+    :packageInsertNumber "4477"^^xsd:string ;
+    :referenceProduct product:261533ED-6608-4036-96EF-597218EDC11C .
 
 product:582F9011-B922-4039-A35D-761D03795788 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -4962,12 +4856,6 @@ product:58FB6888-6C0F-4AAE-80D2-2E7C2DB87A22 a :ParallelImport ;
     :foreignAdmissionNumber "026525-00/011"^^xsd:string ;
     :packageInsertNumber "7840"^^xsd:string ;
     :referenceProduct product:44A2FF17-15CF-486F-BFE3-26C38B188E94 .
-
-product:5903f1f1-7c70-4e5a-b644-b7edbb634b5f a :SalePermission ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Pergado S" ;
-    :federalAdmissionNumber "W-6519-1"^^xsd:string ;
-    :referenceProduct product:57BDB469-F84A-43FD-98B3-77AD239A83B9 .
 
 product:59078787-F7B6-4A81-8B9C-C0E04E92AEA3 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -5092,7 +4980,7 @@ product:5B876CE3-6AF0-4F20-946A-24A740A649A5 a :ParallelImport ;
     schema1:countryOfOrigin country:ITA ;
     schema1:name "Talendo" ;
     :federalAdmissionNumber "I-6452"^^xsd:string ;
-    :foreignAdmissionNumber "12106"^^xsd:string ;
+    :foreignAdmissionNumber "012106"^^xsd:string ;
     :packageInsertNumber "7451"^^xsd:string ;
     :referenceProduct product:7063F03B-BE5B-4EE8-91C3-F62A9FC36206 .
 
@@ -5117,6 +5005,11 @@ product:5BDBA424-97EF-43A2-839F-E35AC954E249 a :SalePermission ;
     schema1:name "Belrose Blattlaus Spray" ;
     :federalAdmissionNumber "W-7375-2"^^xsd:string ;
     :referenceProduct product:BFC454F3-A1FD-479E-8212-F290BFB12183 .
+
+product:5BED1D14-11DE-4D45-84A5-1E767560DE97 a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Actara 10 SL" ;
+    :federalAdmissionNumber "W-887878791"^^xsd:string .
 
 product:5C2132C9-150C-49DE-80A3-7C17C732FEF7 a :SalePermission ;
     schema1:countryOfOrigin country:CHE ;
@@ -5177,14 +5070,6 @@ product:5D1F0343-09C1-4336-8A0F-7EE03F3F9C07 a :RegularProduct ;
     schema1:name "RipeLock Tabs 2.0" ;
     :federalAdmissionNumber "W-7084"^^xsd:string .
 
-product:5D87AE19-B768-4275-A960-B06F8350382B a :ParallelImport ;
-    schema1:countryOfOrigin country:DEU ;
-    schema1:name "Brevis" ;
-    :federalAdmissionNumber "D-7472"^^xsd:string ;
-    :foreignAdmissionNumber "007972-00"^^xsd:string ;
-    :packageInsertNumber "8577"^^xsd:string ;
-    :referenceProduct product:0131949D-2AA1-48B4-8003-E8A3846A7460 .
-
 product:5DAD3D51-2AB3-40D0-B5AA-08B25657C9B2 a :ParallelImport ;
     schema1:countryOfOrigin country:FRA ;
     schema1:name "Manivel 480" ;
@@ -5241,14 +5126,6 @@ product:5EA2F4D7-6885-445A-A20E-826E7392A983 a :ParallelImport ;
     :packageInsertNumber "7840"^^xsd:string ;
     :referenceProduct product:44A2FF17-15CF-486F-BFE3-26C38B188E94 .
 
-product:5ED2BEF6-DDDB-4CAD-96E1-00A8966256C3 a :ParallelImport ;
-    schema1:countryOfOrigin country:DEU ;
-    schema1:name "Pinoxaden" ;
-    :federalAdmissionNumber "D-7487"^^xsd:string ;
-    :foreignAdmissionNumber "026326-00/024"^^xsd:string ;
-    :packageInsertNumber "8629"^^xsd:string ;
-    :referenceProduct product:9548961F-439B-44FF-9169-197B7DFBE4DF .
-
 product:5EDD96D2-33F2-421D-AEB1-E53FBE06F953 a :SalePermission ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Huntar" ;
@@ -5295,12 +5172,6 @@ product:604EE9B4-2375-4182-A486-1E1774E1D57F a :SalePermission ;
     schema1:name "MCCP Combi" ;
     :federalAdmissionNumber "W-4516-1"^^xsd:string ;
     :referenceProduct product:99DA7105-778E-443A-8D35-3126E4754478 .
-
-product:608ebfb0-6abf-4f44-ba94-ca25551b401c a :SalePermission ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Enduro" ;
-    :federalAdmissionNumber "W-7591-1"^^xsd:string ;
-    :referenceProduct product:32E9006A-4B12-4D8E-A818-5D98E2FE8B1E .
 
 product:60CEF9CC-AB6C-40BD-83AB-78BB91628C9D a :ParallelImport ;
     schema1:countryOfOrigin country:FRA ;
@@ -5363,6 +5234,11 @@ product:61BABB3C-9BFE-475A-8BD7-2777EB1422B1 a :RegularProduct ;
     schema1:name "Cythrin Max" ;
     :federalAdmissionNumber "W-7409"^^xsd:string .
 
+product:61eda545-46a2-4a6c-bdf4-16400177abf4 a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Testbiorganic3" ;
+    :federalAdmissionNumber "W-969712384"^^xsd:string .
+
 product:620A8198-E013-4064-9A0A-73692755E6E9 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Titan" ;
@@ -5382,6 +5258,12 @@ product:62570F48-B013-4E58-8019-C320CCDD164A a :SalePermission ;
     :federalAdmissionNumber "W-5638-4"^^xsd:string ;
     :referenceProduct product:78C0D55A-7993-49C1-BDDA-89538F3497AC .
 
+product:625d39de-be66-4860-807f-f3eb09dd9815 a :SalePermission ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "MProdukt Biorganic I" ;
+    :federalAdmissionNumber "W-969712389-2"^^xsd:string ;
+    :referenceProduct product:eee224fd-5a7e-4b31-9b67-483b9db19ebc .
+
 product:62618209-8483-44EB-943A-6B10898E4AA6 a :ParallelImport ;
     schema1:countryOfOrigin country:FRA ;
     schema1:name "Corail" ;
@@ -5398,7 +5280,7 @@ product:6270272C-E9DA-415F-BADA-13E3D1997C12 a :SalePermission ;
 
 product:628A2883-4E2A-4870-BD42-BCCE1F176CB9 a :SalePermission ;
     schema1:countryOfOrigin country:CHE ;
-    schema1:name "Adengo S" ;
+    schema1:name "Adengo S2" ;
     :federalAdmissionNumber "W-6736-1"^^xsd:string ;
     :referenceProduct product:44A2FF17-15CF-486F-BFE3-26C38B188E94 .
 
@@ -5493,9 +5375,7 @@ product:63D3F53F-A4B8-477C-B244-AA3D6AF1E7C2 a :ParallelImport ;
 product:63D502B0-EBFF-4EA1-BA84-2AC6A6AC77D9 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Captan 80 WG" ;
-    :exhaustionDeadline "2027-10-31"^^xsd:date ;
-    :federalAdmissionNumber "W-6920"^^xsd:string ;
-    :soldOutDeadline "2026-10-31"^^xsd:date .
+    :federalAdmissionNumber "W-6920"^^xsd:string .
 
 product:63D70F81-32CF-465E-8D0B-23214F766CE3 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -5602,12 +5482,6 @@ product:66C3AFCA-E9FD-4FA4-BE2A-FDCC01B87C04 a :RegularProduct ;
     schema1:name "Spidex" ;
     :federalAdmissionNumber "W-4420"^^xsd:string .
 
-product:66ac03b2-ff92-4fc6-be52-3662a8936124 a :SalePermission ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Biorga Contra Spray gegen Unkräuter" ;
-    :federalAdmissionNumber "W-7471-2"^^xsd:string ;
-    :referenceProduct product:38BECDE1-3C8A-409C-8B8C-53EDD4EF957B .
-
 product:66e23ea7-64dd-4519-a92b-b3461797bdd2 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Metapro" ;
@@ -5625,11 +5499,6 @@ product:672A2089-0A2B-4F3C-816A-85CAF982E605 a :ParallelImport ;
     :foreignAdmissionNumber "2100215"^^xsd:string ;
     :packageInsertNumber "9005"^^xsd:string ;
     :referenceProduct product:B4011071-BA95-4C15-9156-86EA35003B6E .
-
-product:6773545B-E803-4212-A465-D220846DC7E1 a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Activus SC" ;
-    :federalAdmissionNumber "W-7243"^^xsd:string .
 
 product:6782368A-BD12-4943-94F0-F318476E96CF a :SalePermission ;
     schema1:countryOfOrigin country:CHE ;
@@ -5791,7 +5660,7 @@ product:6AB7D7AB-671F-4A71-B265-B93751AA1E7D a :ParallelImport ;
     schema1:countryOfOrigin country:ITA ;
     schema1:name "Dazide enhance" ;
     :federalAdmissionNumber "I-5565"^^xsd:string ;
-    :foreignAdmissionNumber "12455"^^xsd:string ;
+    :foreignAdmissionNumber "012455"^^xsd:string ;
     :packageInsertNumber "5139"^^xsd:string ;
     :referenceProduct product:11AD0C7C-EE8A-4DFF-844D-3B7E43BF4D01 .
 
@@ -5825,7 +5694,7 @@ product:6B4D6238-5391-41A7-A8C4-CE9655A13BBD a :ParallelImport ;
     schema1:countryOfOrigin country:ITA ;
     schema1:name "Alial WG" ;
     :federalAdmissionNumber "I-4888"^^xsd:string ;
-    :foreignAdmissionNumber "13817"^^xsd:string ;
+    :foreignAdmissionNumber "013817"^^xsd:string ;
     :packageInsertNumber "7433"^^xsd:string ;
     :referenceProduct product:96B49024-45C3-4868-A5EB-CFCDBB5EFD0E .
 
@@ -5930,6 +5799,11 @@ product:6DD04205-D4AB-429B-9359-B441AC5F1254 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "FZB 24 flüssig" ;
     :federalAdmissionNumber "W-6472"^^xsd:string .
+
+product:6DDEB587-5FF6-440D-A7E4-789FEDBD681A a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Oxidia" ;
+    :federalAdmissionNumber "W-7369"^^xsd:string .
 
 product:6DE5ECC1-9D83-4ABF-9F9C-C5BAAC7B97C3 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -6062,6 +5936,11 @@ product:6e8b6ac5-9c78-4038-8f55-35bb3db2c0ca a :SalePermission ;
     :federalAdmissionNumber "W-7620-1"^^xsd:string ;
     :referenceProduct product:643497F2-DF22-49B6-9C78-8254067CA454 .
 
+product:6ed4b558-8b45-499d-b522-1a04c528ae61 a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Zimmerpflanzen-Spray" ;
+    :federalAdmissionNumber "W-7631"^^xsd:string .
+
 product:6fc4d5fd-0dea-4612-b54a-1f39260dec3a a :SalePermission ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Proclean Turf Duo" ;
@@ -6134,6 +6013,11 @@ product:711BC04E-843F-4DF0-ACD7-D5C5F68C11D0 a :ParallelImport ;
     :packageInsertNumber "7423"^^xsd:string ;
     :referenceProduct product:8B6C6781-A174-4701-828B-BC9A6E4500EF .
 
+product:71224C0C-65BE-4B2C-8B08-AFB6B5A539EA a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Valis F" ;
+    :federalAdmissionNumber "W-7169"^^xsd:string .
+
 product:7127D4AC-61D1-4EEA-811E-91778340C9DD a :SalePermission ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Belrose Pilz-Stopp Spray" ;
@@ -6144,7 +6028,7 @@ product:71597458-E446-42A3-A787-4C431D9EB09F a :ParallelImport ;
     schema1:countryOfOrigin country:ITA ;
     schema1:name "Arigo" ;
     :federalAdmissionNumber "I-6043"^^xsd:string ;
-    :foreignAdmissionNumber "16063"^^xsd:string ;
+    :foreignAdmissionNumber "016063"^^xsd:string ;
     :packageInsertNumber "8197"^^xsd:string ;
     :referenceProduct product:C82D79C1-01BC-4F42-869D-DC7E3D775BFD .
 
@@ -6169,14 +6053,6 @@ product:71919438-83C7-4153-A1F1-99F3DC1D466D a :ParallelImport ;
     :foreignAdmissionNumber "024560-00/046"^^xsd:string ;
     :packageInsertNumber "6508"^^xsd:string ;
     :referenceProduct product:9FF3BFC3-4CA2-4A39-BC41-ECADDB5F4A7A .
-
-product:719D0FA0-ADAF-44AE-8AE1-2B225909F9B7 a :ParallelImport ;
-    schema1:countryOfOrigin country:AUT ;
-    schema1:name "Schädlingsfrei Obst & Gemüse Konzentrat" ;
-    :federalAdmissionNumber "A-3617"^^xsd:string ;
-    :foreignAdmissionNumber "2568-0"^^xsd:string ;
-    :packageInsertNumber "9719"^^xsd:string ;
-    :referenceProduct product:73AE565E-6801-4374-8AE7-E883AE180A32 .
 
 product:719D17C2-853E-48AB-91AC-401FF1584ED6 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -6215,20 +6091,6 @@ product:71E412B1-562F-4382-8A7B-FFE552303DE5 a :RegularProduct ;
     schema1:name "Fitopak" ;
     :federalAdmissionNumber "W-7469"^^xsd:string .
 
-product:71f416bb-75fa-4d9b-a8da-ab096ce11fb7 a :SalePermission ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Ethephon 6" ;
-    :federalAdmissionNumber "W-7438-3"^^xsd:string ;
-    :referenceProduct product:413B51DA-7A50-40F6-AFB6-E9CA519A83E3 .
-
-product:7204CAA6-646F-4F7B-9B2C-071A2A878AEA a :ParallelImport ;
-    schema1:countryOfOrigin country:DEU ;
-    schema1:name "Aclon 600" ;
-    :federalAdmissionNumber "D-7463"^^xsd:string ;
-    :foreignAdmissionNumber "034145-00/062"^^xsd:string ;
-    :packageInsertNumber "7351"^^xsd:string ;
-    :referenceProduct product:F3003B19-7CA4-4D80-84BE-F24E3D54C0FA .
-
 product:7215C465-F91F-44CE-B233-307EAFFEC239 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Spical Plus" ;
@@ -6259,11 +6121,6 @@ product:730F0EB8-BD94-48F9-B592-B44565765249 a :SalePermission ;
     schema1:name "Mildicut" ;
     :federalAdmissionNumber "W-6378-2"^^xsd:string ;
     :referenceProduct product:0943E71F-A131-4DBA-AD5B-9B98C621A321 .
-
-product:7314DBC2-C510-49BA-B740-F5A87D24E684 a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "2,4-D Plus" ;
-    :federalAdmissionNumber "W-7436"^^xsd:string .
 
 product:73457658-C7D4-4927-A296-D5D0325E6EB5 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -6401,6 +6258,12 @@ product:75F62CE0-B31C-40DC-BDF7-BD5BF03B1BA8 a :ParallelImport ;
     :packageInsertNumber "8069"^^xsd:string ;
     :referenceProduct product:4E6B37DC-8B91-425E-8643-61F6C49FDEF6 .
 
+product:75ba6b25-8dcc-495f-b127-4f78e2ede504 a :SalePermission ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "TestD1IN Biotama" ;
+    :federalAdmissionNumber "W-6942-1"^^xsd:string ;
+    :referenceProduct product:F7C44382-6A24-41E1-AAD4-F7FFD71D8754 .
+
 product:760BEA2D-D736-41AF-9B26-67B91C179455 a :SalePermission ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Monsoon" ;
@@ -6492,13 +6355,10 @@ product:77C8115D-8888-48AB-B000-20DFA9318F6A a :ParallelImport ;
     :packageInsertNumber "8339"^^xsd:string ;
     :referenceProduct product:F9950EA1-F7C1-476C-A00C-67D4E64987F8 .
 
-product:781DB4E8-8387-406A-B2E3-BBBE0BD23797 a :ParallelImport ;
-    schema1:countryOfOrigin country:DEU ;
-    schema1:name "Cyazofam" ;
-    :federalAdmissionNumber "D-7478"^^xsd:string ;
-    :foreignAdmissionNumber "006860-00/029"^^xsd:string ;
-    :packageInsertNumber "8131"^^xsd:string ;
-    :referenceProduct product:B1274A6A-3AF5-4AC6-BD6A-FA1E75EBBE06 .
+product:77a93dde-f6de-4082-abd8-28571f347ea4 a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Test Fehlermeldung A2.5 offen und R" ;
+    :federalAdmissionNumber "W-969712393"^^xsd:string .
 
 product:782AB7CF-E6FA-481A-BAC5-49CAFBB6B356 a :SalePermission ;
     schema1:countryOfOrigin country:CHE ;
@@ -6511,6 +6371,11 @@ product:78BD1043-A4F9-40C4-A21E-4F9E80D18189 a :SalePermission ;
     schema1:name "Steiner Gold" ;
     :federalAdmissionNumber "W-7062-1"^^xsd:string ;
     :referenceProduct product:93E2AA3C-78BE-4CDD-9B4E-7C168F535728 .
+
+product:78C19416-1F1B-4533-8B79-B1B9F688628B a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Optikugel" ;
+    :federalAdmissionNumber "W-6871"^^xsd:string .
 
 product:78E435B1-B27A-434B-A1C8-69A4822D8067 a :SalePermission ;
     schema1:countryOfOrigin country:CHE ;
@@ -6528,11 +6393,6 @@ product:78F79DD9-C53F-475C-A589-61684626383D a :SalePermission ;
     schema1:name "Atac" ;
     :federalAdmissionNumber "W-6748-3"^^xsd:string ;
     :referenceProduct product:BA004CAE-54B0-4F1D-9058-31915133C305 .
-
-product:79142524-3018-48EA-A90C-115D699C8917 a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Bouillie bordelaise" ;
-    :federalAdmissionNumber "W-7197"^^xsd:string .
 
 product:79425142-F7E9-4F6C-9073-15C0050F3D1A a :ParallelImport ;
     schema1:countryOfOrigin country:ITA ;
@@ -6552,7 +6412,7 @@ product:795F74DD-4F33-4860-8DD6-C2CFE6D2265C a :ParallelImport ;
     schema1:countryOfOrigin country:ITA ;
     schema1:name "Kyleo" ;
     :federalAdmissionNumber "I-6073"^^xsd:string ;
-    :foreignAdmissionNumber "15051"^^xsd:string ;
+    :foreignAdmissionNumber "015051"^^xsd:string ;
     :packageInsertNumber "9379"^^xsd:string ;
     :referenceProduct product:5CA2960D-5D7D-456F-BCD7-DA5FD8F85BF2 .
 
@@ -6626,9 +6486,7 @@ product:7A62A52B-6238-4574-BAC6-639184EDE958 a :ParallelImport ;
 product:7A98B25A-BDB7-4288-9011-D4ED9A00F8EA a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Phoscap" ;
-    :exhaustionDeadline "2027-10-31"^^xsd:date ;
-    :federalAdmissionNumber "W-7270"^^xsd:string ;
-    :soldOutDeadline "2026-10-31"^^xsd:date .
+    :federalAdmissionNumber "W-7270"^^xsd:string .
 
 product:7AD9F613-FBE6-4128-8604-8DCC4878E6E6 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -6760,14 +6618,6 @@ product:7D0195C1-B757-46E4-A209-351AC8D77750 a :ParallelImport ;
     :referenceProduct product:95C2F859-9684-4E38-8ACB-808F7A76F7F9 ;
     :soldOutDeadline "2026-01-01"^^xsd:date .
 
-product:7D5DC0CD-6246-4C1B-BC0C-EC725B8E5D9F a :ParallelImport ;
-    schema1:countryOfOrigin country:DEU ;
-    schema1:name "Promalin" ;
-    :federalAdmissionNumber "D-7491"^^xsd:string ;
-    :foreignAdmissionNumber "008403-00"^^xsd:string ;
-    :packageInsertNumber "9055"^^xsd:string ;
-    :referenceProduct product:D5D70625-E43F-44FC-930E-84CF3218768D .
-
 product:7D8A220E-0A5E-4E50-AB0B-E5F282E0A9C3 a :SalePermission ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Zwei-4D flüssig" ;
@@ -6851,6 +6701,11 @@ product:7F9E8987-B3C7-42E2-A6FC-18B26999A307 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Goltix compact" ;
     :federalAdmissionNumber "W-6187"^^xsd:string .
+
+product:7ee93215-d984-4d43-b498-a9d19156ca6f a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Testlizatama" ;
+    :federalAdmissionNumber "W-969712388"^^xsd:string .
 
 product:8026256E-894C-4AC7-827B-506842094872 a :ParallelImport ;
     schema1:countryOfOrigin country:DEU ;
@@ -6937,13 +6792,11 @@ product:80F7EDCD-9F39-4EC8-99E0-E97736797797 a :ParallelImport ;
     :packageInsertNumber "9291"^^xsd:string ;
     :referenceProduct product:7FBBA5EE-CCEF-4EA3-A74B-510540862FBA .
 
-product:81031A28-E46D-44AC-B3F0-68F21535E65D a :ParallelImport ;
-    schema1:countryOfOrigin country:DEU ;
-    schema1:name "Vastimo" ;
-    :federalAdmissionNumber "D-7504"^^xsd:string ;
-    :foreignAdmissionNumber "007969-60"^^xsd:string ;
-    :packageInsertNumber "8723"^^xsd:string ;
-    :referenceProduct product:1E079B09-9E5E-4301-AD88-BE14D9A778A1 .
+product:80d9e65b-5f14-46f5-80b0-30a37794de08 a :SalePermission ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Test14.13.10.25" ;
+    :federalAdmissionNumber "W-7554-1"^^xsd:string ;
+    :referenceProduct product:E1A21386-2D7B-4BF9-A340-633D8F047D87 .
 
 product:81679B08-EE81-4971-B636-86B805E694D3 a :ParallelImport ;
     schema1:countryOfOrigin country:BEL ;
@@ -7330,6 +7183,11 @@ product:88888E8C-4998-4F82-9402-1A5782007820 a :SalePermission ;
     :federalAdmissionNumber "W-6901-1"^^xsd:string ;
     :referenceProduct product:7D604B58-4DC0-42B7-BD7A-2F03367FAAE1 .
 
+product:8889f31b-faf0-4b5a-8a7f-ca160a58fe02 a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Testbiorganic4" ;
+    :federalAdmissionNumber "W-969712386"^^xsd:string .
+
 product:88C835C6-5995-4429-A46E-B7FD6F29A161 a :SalePermission ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Saturn" ;
@@ -7356,12 +7214,6 @@ product:89D561DE-BDAC-4536-BB58-77516BC695BC a :ParallelImport ;
     :packageInsertNumber "9015"^^xsd:string ;
     :referenceProduct product:EAC26B7E-D594-4E5A-AA8E-55A6BA985BAD .
 
-product:89E548D4-BB35-4A95-B407-95916A165DB3 a :SalePermission ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Bordeaux S" ;
-    :federalAdmissionNumber "W-2116-1"^^xsd:string ;
-    :referenceProduct product:BD0A0BFD-FCBA-4B5A-856E-9A31831DCD2C .
-
 product:8A14E137-2370-4315-9FC8-6D1D2EEF0C19 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Cerall" ;
@@ -7385,11 +7237,10 @@ product:8A981C9E-10B4-4729-BF46-EB9034C5922D a :SalePermission ;
     :federalAdmissionNumber "W-6748-2"^^xsd:string ;
     :referenceProduct product:BA004CAE-54B0-4F1D-9058-31915133C305 .
 
-product:8AB435CB-4BB4-4352-9BCB-A293F4933D0E a :SalePermission ;
+product:8A9DDAB5-ECBA-4F30-BFBF-D89EB871689F a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
-    schema1:name "Bronco Top" ;
-    :federalAdmissionNumber "W-7339-1"^^xsd:string ;
-    :referenceProduct product:1E079B09-9E5E-4301-AD88-BE14D9A778A1 .
+    schema1:name "Nema~Caps Sc" ;
+    :federalAdmissionNumber "W-7561"^^xsd:string .
 
 product:8ADCE13C-8158-45C2-936D-162F47615109 a :ParallelImport ;
     schema1:countryOfOrigin country:FRA ;
@@ -7736,17 +7587,21 @@ product:8b5a4436-a10a-4808-a78f-ed3c6a798189 a :RegularProduct ;
     schema1:name "Haftöl S" ;
     :federalAdmissionNumber "W-7645"^^xsd:string .
 
+product:8bca6720-54f7-4874-9263-1c99def87cad a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "MProdukt TOX dropdown" ;
+    :federalAdmissionNumber "W-969712395"^^xsd:string .
+
 product:8be4ac53-0448-4438-be82-abb09ae326aa a :SalePermission ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Lirus" ;
     :federalAdmissionNumber "W-6060-5"^^xsd:string ;
     :referenceProduct product:B49D98BB-8C0F-4056-9464-3E70F8AA342D .
 
-product:8c7e85e0-4816-4fd9-a791-2e99696a18e6 a :SalePermission ;
+product:8d0dafd3-bbc6-4649-954e-8009f280377a a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
-    schema1:name "BIOHOP ProTECT S" ;
-    :federalAdmissionNumber "W-4495-2"^^xsd:string ;
-    :referenceProduct product:41D270CE-5051-4262-B3DE-5386EF999ADA .
+    schema1:name "A1.1 extern 2210" ;
+    :federalAdmissionNumber "W-887878789"^^xsd:string .
 
 product:9033978C-883B-42A4-A083-B3D56C88610E a :SalePermission ;
     schema1:countryOfOrigin country:CHE ;
@@ -7794,11 +7649,6 @@ product:90C1E721-7085-4789-B740-377687BCB3EE a :ParallelImport ;
     :foreignAdmissionNumber "2130083"^^xsd:string ;
     :packageInsertNumber "7051"^^xsd:string ;
     :referenceProduct product:3A9EA976-60E4-4A88-8353-BA8E5FCCED13 .
-
-product:90CD4900-EA95-431B-A5CF-24737D16D8F6 a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Pixxaro EC" ;
-    :federalAdmissionNumber "W-7389"^^xsd:string .
 
 product:90D81019-98F1-4CEA-B688-C4DE2100D676 a :ParallelImport ;
     schema1:countryOfOrigin country:DEU ;
@@ -7911,14 +7761,6 @@ product:93214c2e-ef36-4a38-9c07-1f2c113cab96 a :SalePermission ;
     :federalAdmissionNumber "W-5510-1"^^xsd:string ;
     :referenceProduct product:F499D3C8-C673-4219-8453-C398F0A59D6E .
 
-product:9344F193-22E3-48D4-B014-FAD7B56D10C1 a :ParallelImport ;
-    schema1:countryOfOrigin country:DEU ;
-    schema1:name "Promanal HP" ;
-    :federalAdmissionNumber "D-7492"^^xsd:string ;
-    :foreignAdmissionNumber "008719-60"^^xsd:string ;
-    :packageInsertNumber "1994"^^xsd:string ;
-    :referenceProduct product:35AA16CC-306F-49DD-BDFD-52D7F8A3DFBF .
-
 product:934868F6-F45B-49AE-A81F-5436711C56DD a :SalePermission ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Atollan" ;
@@ -7953,7 +7795,7 @@ product:93BF12E8-7BF4-4563-ABA0-D754047DB5D9 a :ParallelImport ;
     schema1:countryOfOrigin country:ITA ;
     schema1:name "Danitron" ;
     :federalAdmissionNumber "I-6447"^^xsd:string ;
-    :foreignAdmissionNumber "8546"^^xsd:string ;
+    :foreignAdmissionNumber "008546"^^xsd:string ;
     :packageInsertNumber "4476"^^xsd:string ;
     :referenceProduct product:FA752EDC-A9AE-47DA-A013-641168C7B8C0 .
 
@@ -7971,6 +7813,11 @@ product:9451553A-E00F-4F79-B288-88F6DC607D7E a :ParallelImport ;
     :foreignAdmissionNumber "2528-0"^^xsd:string ;
     :packageInsertNumber "7952"^^xsd:string ;
     :referenceProduct product:AA3831B4-2835-4A98-8319-0586B1182324 .
+
+product:945B9616-475E-468B-AD91-6327C6568755 a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Cantus" ;
+    :federalAdmissionNumber "W-6150"^^xsd:string .
 
 product:94633C0E-4802-4D01-A779-85EC2048C30E a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -8091,15 +7938,14 @@ product:96AF35B7-E9E4-4E07-8148-E6E3C8D8B490 a :ParallelImport ;
     :packageInsertNumber "7808"^^xsd:string ;
     :referenceProduct product:BA004CAE-54B0-4F1D-9058-31915133C305 .
 
-product:9717c3c9-017f-43fc-a625-dc9f147cdc31 a :SalePermission ;
+product:96fedefb-4fb9-4d85-9ef5-586a2f72eea2 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
-    schema1:name "Ethephon 6S" ;
-    :federalAdmissionNumber "W-7438-2"^^xsd:string ;
-    :referenceProduct product:413B51DA-7A50-40F6-AFB6-E9CA519A83E3 .
+    schema1:name "A1.1 ver 1010" ;
+    :federalAdmissionNumber "W-7647"^^xsd:string .
 
 product:97546402-8ccd-4d41-b783-aa6017d28121 a :SalePermission ;
     schema1:countryOfOrigin country:CHE ;
-    schema1:name "Express Spray" ;
+    schema1:name "Roundup Express Spray" ;
     :federalAdmissionNumber "W-7628-2"^^xsd:string ;
     :referenceProduct product:ea0ff9cd-073e-4800-b6ad-db439c2d264c .
 
@@ -8289,7 +8135,7 @@ product:9B6CAA32-72BB-498E-B3B2-7609E5BFA6FD a :ParallelImport ;
     schema1:countryOfOrigin country:ITA ;
     schema1:name "Nimrod" ;
     :federalAdmissionNumber "I-6093"^^xsd:string ;
-    :foreignAdmissionNumber "2983"^^xsd:string ;
+    :foreignAdmissionNumber "002983"^^xsd:string ;
     :packageInsertNumber "7294"^^xsd:string ;
     :referenceProduct product:BB1AABC4-8640-4EA8-BC00-2AB4DA3E0509 .
 
@@ -8322,14 +8168,6 @@ product:9BCE2A4B-DD58-4C02-ADB8-019310B867D0 a :ParallelImport ;
     :foreignAdmissionNumber "2100227"^^xsd:string ;
     :packageInsertNumber "8044"^^xsd:string ;
     :referenceProduct product:CF28C82A-ADBA-436F-BF01-3E7FB57084BB .
-
-product:9BDCD1F7-F3EC-4C1F-A799-62FF9101434A a :ParallelImport ;
-    schema1:countryOfOrigin country:FRA ;
-    schema1:name "Venzar" ;
-    :federalAdmissionNumber "F-6497"^^xsd:string ;
-    :foreignAdmissionNumber "6400401"^^xsd:string ;
-    :packageInsertNumber "9047"^^xsd:string ;
-    :referenceProduct product:7B14B5BE-21EF-4586-B9A9-A0931F62E1B1 .
 
 product:9BF94212-A585-4AFA-ADCC-FE0C48BB4A71 a :SalePermission ;
     schema1:countryOfOrigin country:CHE ;
@@ -8393,7 +8231,7 @@ product:9C806413-2444-4728-A041-071BD1271C4E a :ParallelImport ;
     schema1:name "Prolectus 50 WG" ;
     :exhaustionDeadline "2027-01-01"^^xsd:date ;
     :federalAdmissionNumber "I-6106"^^xsd:string ;
-    :foreignAdmissionNumber "15549"^^xsd:string ;
+    :foreignAdmissionNumber "015549"^^xsd:string ;
     :packageInsertNumber "8170"^^xsd:string ;
     :referenceProduct product:23741490-0F6F-4335-A986-ACA003E5F1F6 ;
     :soldOutDeadline "2026-01-01"^^xsd:date .
@@ -8529,14 +8367,6 @@ product:9EEB7ED2-5B7D-482C-9301-EBC02C992259 a :ParallelImport ;
     :packageInsertNumber "6508"^^xsd:string ;
     :referenceProduct product:9FF3BFC3-4CA2-4A39-BC41-ECADDB5F4A7A .
 
-product:9EF06A9B-A73C-46F2-8B25-AC2CF01628C8 a :ParallelImport ;
-    schema1:countryOfOrigin country:FRA ;
-    schema1:name "Regalis Plus" ;
-    :federalAdmissionNumber "F-7498"^^xsd:string ;
-    :foreignAdmissionNumber "2150008"^^xsd:string ;
-    :packageInsertNumber "8451"^^xsd:string ;
-    :referenceProduct product:7E500698-E75F-4D68-A06E-22D70F7FBF1F .
-
 product:9F021596-14CF-4B87-9A1D-9425E375D930 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Gesal Rosen-Pilzschutz Forte" ;
@@ -8615,6 +8445,12 @@ product:9b5c976f-ad5c-4b99-93d6-b3889ba22206 a :SalePermission ;
     schema1:name "Armisan AF PilzFrei" ;
     :federalAdmissionNumber "W-7159-11"^^xsd:string ;
     :referenceProduct product:63B87B0E-0339-4B32-8890-B8C5B244B467 .
+
+product:9ffe7a5b-5012-454b-b1ba-5bf0c68ff52e a :SalePermission ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "MProdukt Tama D II" ;
+    :federalAdmissionNumber "W-969712389-1"^^xsd:string ;
+    :referenceProduct product:eee224fd-5a7e-4b31-9b67-483b9db19ebc .
 
 product:A0456289-26C9-4BDE-A4D2-ECB99A75B68B a :ParallelImport ;
     schema1:countryOfOrigin country:FRA ;
@@ -8781,14 +8617,6 @@ product:A3CC9F70-8900-41E8-84A2-735AE508EA32 a :SalePermission ;
     :federalAdmissionNumber "W-5320-2"^^xsd:string ;
     :referenceProduct product:356EB539-DB95-4513-AEE3-9C395F15910A .
 
-product:A42DB961-81CF-4682-BF62-FB2D96B1CB51 a :ParallelImport ;
-    schema1:countryOfOrigin country:DEU ;
-    schema1:name "Pendi 455" ;
-    :federalAdmissionNumber "D-7348"^^xsd:string ;
-    :foreignAdmissionNumber "005958-00/096"^^xsd:string ;
-    :packageInsertNumber "7896"^^xsd:string ;
-    :referenceProduct product:3E8889C5-EAD6-4B95-99F5-720A71BA56EE .
-
 product:A4BA85E0-882B-4F5A-BB83-400C98636D37 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Trichocap Plus" ;
@@ -8904,7 +8732,7 @@ product:A7454CD5-0EBE-4142-AA5E-2893DCF5EA5C a :ParallelImport ;
     schema1:countryOfOrigin country:ITA ;
     schema1:name "Leimay" ;
     :federalAdmissionNumber "I-6083"^^xsd:string ;
-    :foreignAdmissionNumber "14406"^^xsd:string ;
+    :foreignAdmissionNumber "014406"^^xsd:string ;
     :packageInsertNumber "7730"^^xsd:string ;
     :referenceProduct product:DD20D6D8-34B1-4AC7-83EB-4A9FD2879090 .
 
@@ -9341,7 +9169,7 @@ product:AF0925DF-F37C-410B-9AF4-50D7CC6E21DC a :ParallelImport ;
     schema1:countryOfOrigin country:ITA ;
     schema1:name "Bonzi" ;
     :federalAdmissionNumber "I-6469"^^xsd:string ;
-    :foreignAdmissionNumber "16305"^^xsd:string ;
+    :foreignAdmissionNumber "016305"^^xsd:string ;
     :packageInsertNumber "5142"^^xsd:string ;
     :referenceProduct product:8D1E0AEF-0843-4CFA-960D-F06FBAB5ED4C .
 
@@ -9567,6 +9395,11 @@ product:B4582FAB-5DB0-4742-BC04-512F65286C69 a :ParallelImport ;
     :packageInsertNumber "7511"^^xsd:string ;
     :referenceProduct product:3333BF6C-7E3B-43D5-BF47-E7893B6085B4 .
 
+product:B48B593E-3C45-4A04-9DA7-A882AC6E1F4B a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Azoshy" ;
+    :federalAdmissionNumber "W-969712387"^^xsd:string .
+
 product:B4AA363E-9EB8-4FCE-8663-21605529E5D2 a :ParallelImport ;
     schema1:countryOfOrigin country:ITA ;
     schema1:name "Contender 80 WG" ;
@@ -9701,14 +9534,6 @@ product:B80E445F-952B-4ADE-868A-6A4A5A4949C4 a :SalePermission ;
     :referenceProduct product:B7C1892F-109A-4534-A7B1-DCCB30693CB1 ;
     :soldOutDeadline "2025-10-31"^^xsd:date .
 
-product:B86B2765-B471-4D1B-8409-504C523A5E8F a :ParallelImport ;
-    schema1:countryOfOrigin country:DEU ;
-    schema1:name "Pinosulam" ;
-    :federalAdmissionNumber "D-7485"^^xsd:string ;
-    :foreignAdmissionNumber "008178-00/004"^^xsd:string ;
-    :packageInsertNumber "8486"^^xsd:string ;
-    :referenceProduct product:4C7EF26C-BE0E-4C2D-A98D-F7055CFC49F0 .
-
 product:B8878D92-AB5F-4D20-B5DF-200D232519E8 a :ParallelImport ;
     schema1:countryOfOrigin country:FRA ;
     schema1:name "HM Imaza" ;
@@ -9719,7 +9544,7 @@ product:B8878D92-AB5F-4D20-B5DF-200D232519E8 a :ParallelImport ;
 
 product:B8C3D512-355A-4686-8D6F-D100A509A6B1 a :SalePermission ;
     schema1:countryOfOrigin country:CHE ;
-    schema1:name "Oecoplan Insektizid" ;
+    schema1:name "Coop Oecoplan Insektizid" ;
     :federalAdmissionNumber "W-6668-2"^^xsd:string ;
     :referenceProduct product:A5729F18-CADE-43A4-9BF2-C5F1EAF7776B .
 
@@ -9727,14 +9552,6 @@ product:B8D93B08-976D-4704-8068-514556A012F4 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Avella" ;
     :federalAdmissionNumber "W-7535"^^xsd:string .
-
-product:B8DBD711-4F05-43D9-895C-EBFDFA1CAA4E a :ParallelImport ;
-    schema1:countryOfOrigin country:DEU ;
-    schema1:name "Fluozol" ;
-    :federalAdmissionNumber "D-7501"^^xsd:string ;
-    :foreignAdmissionNumber "027208-00/029"^^xsd:string ;
-    :packageInsertNumber "8157"^^xsd:string ;
-    :referenceProduct product:46948565-6025-4671-AC28-53F51C0A4731 .
 
 product:B8E2AAEE-6CC8-41FA-A948-D6D2654DE421 a :ParallelImport ;
     schema1:countryOfOrigin country:DEU ;
@@ -9831,14 +9648,6 @@ product:B9FE0149-6600-4A1D-B2D6-4F63EB817F16 a :ParallelImport ;
     :referenceProduct product:709D34C9-C338-40DB-82A3-B59691514FAD ;
     :soldOutDeadline "2026-01-01"^^xsd:date .
 
-product:BA2D7441-4151-4564-A5C9-E4FB228A9CD9 a :ParallelImport ;
-    schema1:countryOfOrigin country:DEU ;
-    schema1:name "Flutola" ;
-    :federalAdmissionNumber "D-7468"^^xsd:string ;
-    :foreignAdmissionNumber "00A560-00/004"^^xsd:string ;
-    :packageInsertNumber "7334"^^xsd:string ;
-    :referenceProduct product:14D3EAD0-6381-4206-89B7-0D85B1A02691 .
-
 product:BA80AE79-09DF-4C18-98C3-0A948FB0EBD5 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Tribe 75 WG" ;
@@ -9907,7 +9716,7 @@ product:BBEA425E-F6DE-43F1-809D-D9D16E70D068 a :ParallelImport ;
     schema1:countryOfOrigin country:ITA ;
     schema1:name "Metadene" ;
     :federalAdmissionNumber "I-6446"^^xsd:string ;
-    :foreignAdmissionNumber "5467"^^xsd:string ;
+    :foreignAdmissionNumber "005467"^^xsd:string ;
     :packageInsertNumber "7285"^^xsd:string ;
     :referenceProduct product:E8D06C03-622A-4BBD-8944-588A88A4779F .
 
@@ -10033,7 +9842,7 @@ product:BE40A695-30C1-46CF-92A5-D8F390F60C30 a :ParallelImport ;
     schema1:countryOfOrigin country:ITA ;
     schema1:name "Maxcel" ;
     :federalAdmissionNumber "I-4570"^^xsd:string ;
-    :foreignAdmissionNumber "6324"^^xsd:string ;
+    :foreignAdmissionNumber "006324"^^xsd:string ;
     :packageInsertNumber "7698"^^xsd:string ;
     :referenceProduct product:18DFFC1C-8413-4CCB-A586-1F7C28193CA4 .
 
@@ -10075,12 +9884,6 @@ product:BFCE93EB-50F4-44A9-8ACC-EE21A8A8F897 a :ParallelImport ;
     :packageInsertNumber "7500"^^xsd:string ;
     :referenceProduct product:BA869BB5-D06A-458E-B7F4-921E121814A5 .
 
-product:BFE17ABF-2925-4056-BAC6-1FAEC3CB4DEB a :SalePermission ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Biorga Contra Winteröl" ;
-    :federalAdmissionNumber "W-1526-2"^^xsd:string ;
-    :referenceProduct product:35AA16CC-306F-49DD-BDFD-52D7F8A3DFBF .
-
 product:BFF6BFE0-4CDA-4E9A-A487-26EADB3EB968 a :SalePermission ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Bandur" ;
@@ -10099,14 +9902,6 @@ product:C014655F-A7CC-4082-862A-B7C9A29D353A a :SalePermission ;
     :federalAdmissionNumber "W-3064-2"^^xsd:string ;
     :referenceProduct product:897C9F3D-4771-4CE8-B100-9B00D4CA6AE0 ;
     :soldOutDeadline "2025-12-31"^^xsd:date .
-
-product:C04A4125-82CB-48C3-9744-4A43D2D6D126 a :ParallelImport ;
-    schema1:countryOfOrigin country:DEU ;
-    schema1:name "Propaq" ;
-    :federalAdmissionNumber "D-7494"^^xsd:string ;
-    :foreignAdmissionNumber "034107-00/081"^^xsd:string ;
-    :packageInsertNumber "8044"^^xsd:string ;
-    :referenceProduct product:CF28C82A-ADBA-436F-BF01-3E7FB57084BB .
 
 product:C058EDA5-D227-488E-9EB3-838634E9B0C6 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -10276,7 +10071,7 @@ product:C2AB7C7B-EB03-42AF-9EC7-E04C1D28BCA1 a :ParallelImport ;
     schema1:countryOfOrigin country:ITA ;
     schema1:name "Spirox" ;
     :federalAdmissionNumber "I-6107"^^xsd:string ;
-    :foreignAdmissionNumber "15911"^^xsd:string ;
+    :foreignAdmissionNumber "015911"^^xsd:string ;
     :packageInsertNumber "6833"^^xsd:string ;
     :referenceProduct product:A0814C71-F727-4622-8471-713852C3E178 .
 
@@ -10292,14 +10087,6 @@ product:C378B12A-F74F-4B52-9A93-903BC3AA1C2B a :ParallelImport ;
     :foreignAdmissionNumber "007402-00"^^xsd:string ;
     :packageInsertNumber "8256"^^xsd:string ;
     :referenceProduct product:5CA28314-C844-4D58-8219-28F3BD18C251 .
-
-product:C38445DB-D21B-4866-A81A-E3205225F3C3 a :ParallelImport ;
-    schema1:countryOfOrigin country:DEU ;
-    schema1:name "Pendi 455" ;
-    :federalAdmissionNumber "D-7483"^^xsd:string ;
-    :foreignAdmissionNumber "005958-00/098"^^xsd:string ;
-    :packageInsertNumber "7896"^^xsd:string ;
-    :referenceProduct product:3E8889C5-EAD6-4B95-99F5-720A71BA56EE .
 
 product:C38A84EB-8FA4-4CB7-BB69-A70133B42B7F a :ParallelImport ;
     schema1:countryOfOrigin country:ITA ;
@@ -10388,14 +10175,6 @@ product:C5C8552E-61EF-4FC8-8231-A8DE8244D05A a :SalePermission ;
     :federalAdmissionNumber "W-6891-1"^^xsd:string ;
     :referenceProduct product:7D0AF88C-D01D-4E3E-9323-B79C3564CB05 .
 
-product:C61218EA-6AA7-4CFB-BA5A-3496A9A353AF a :ParallelImport ;
-    schema1:countryOfOrigin country:DEU ;
-    schema1:name "Cyproxinil" ;
-    :federalAdmissionNumber "D-7480"^^xsd:string ;
-    :foreignAdmissionNumber "034419-00/071"^^xsd:string ;
-    :packageInsertNumber "6113"^^xsd:string ;
-    :referenceProduct product:842BA77F-66EE-458E-977B-5358ED1941C4 .
-
 product:C629F190-01D6-4DA7-924E-70946270AA27 a :SalePermission ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Prox" ;
@@ -10453,7 +10232,7 @@ product:C7977401-B1A4-4386-BC31-CFE79675E227 a :ParallelImport ;
     schema1:countryOfOrigin country:ITA ;
     schema1:name "Proxanil SC" ;
     :federalAdmissionNumber "I-6109"^^xsd:string ;
-    :foreignAdmissionNumber "14808"^^xsd:string ;
+    :foreignAdmissionNumber "014808"^^xsd:string ;
     :packageInsertNumber "9336"^^xsd:string ;
     :referenceProduct product:3E3CAD4D-EF8D-4A61-A3FE-DB87347A98BD .
 
@@ -10461,14 +10240,6 @@ product:C7BA37DB-20AE-4B23-AF56-B6CCF976068A a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Redigo" ;
     :federalAdmissionNumber "W-7585"^^xsd:string .
-
-product:C7C64B7D-18C0-45B9-8853-2D674B910B54 a :ParallelImport ;
-    schema1:countryOfOrigin country:DEU ;
-    schema1:name "Pendi 455" ;
-    :federalAdmissionNumber "D-7482"^^xsd:string ;
-    :foreignAdmissionNumber "005958-00/097"^^xsd:string ;
-    :packageInsertNumber "7896"^^xsd:string ;
-    :referenceProduct product:3E8889C5-EAD6-4B95-99F5-720A71BA56EE .
 
 product:C7C6B831-A7C2-4639-99DF-B291412CCC3E a :SalePermission ;
     schema1:countryOfOrigin country:CHE ;
@@ -10501,7 +10272,7 @@ product:C8D97B71-35E0-4875-9910-C5BBA13E5E10 a :ParallelImport ;
     schema1:countryOfOrigin country:ITA ;
     schema1:name "Pendiwin" ;
     :federalAdmissionNumber "I-6134"^^xsd:string ;
-    :foreignAdmissionNumber "16323"^^xsd:string ;
+    :foreignAdmissionNumber "016323"^^xsd:string ;
     :packageInsertNumber "8584"^^xsd:string ;
     :referenceProduct product:2020B3E4-9D04-4F9A-A1DD-A07D10AA0D1C .
 
@@ -10523,14 +10294,6 @@ product:C9721D9C-C58B-44F1-B69B-3ADA3296BAB0 a :ParallelImport ;
     :foreignAdmissionNumber "034145-00"^^xsd:string ;
     :packageInsertNumber "7351"^^xsd:string ;
     :referenceProduct product:F3003B19-7CA4-4D80-84BE-F24E3D54C0FA .
-
-product:C9B1CA9E-2B88-4A38-849C-8D4462EA5B49 a :ParallelImport ;
-    schema1:countryOfOrigin country:DEU ;
-    schema1:name "Fandango" ;
-    :federalAdmissionNumber "D-7134"^^xsd:string ;
-    :foreignAdmissionNumber "025315-00"^^xsd:string ;
-    :packageInsertNumber "7338"^^xsd:string ;
-    :referenceProduct product:76514BCF-7554-4845-BA4F-2BAA38C20CB3 .
 
 product:C9BA1218-C8C8-48B8-8AC4-883F3B39AB06 a :ParallelImport ;
     schema1:countryOfOrigin country:FRA ;
@@ -10623,9 +10386,7 @@ product:CBA88D3A-E4AD-432E-84E7-D4B2D0FC16F3 a :SalePermission ;
 product:CBAE04A9-88AF-4BDF-9440-BF79ADAB227D a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "LBG-51FCm" ;
-    :exhaustionDeadline "2027-10-31"^^xsd:date ;
-    :federalAdmissionNumber "W-7293"^^xsd:string ;
-    :soldOutDeadline "2026-10-31"^^xsd:date .
+    :federalAdmissionNumber "W-7293"^^xsd:string .
 
 product:CC0A4869-1402-4160-85CC-51FBBB6A150D a :ParallelImport ;
     schema1:countryOfOrigin country:ITA ;
@@ -10727,7 +10488,7 @@ product:CE2FD108-5BD4-490E-9CB4-4ED9EE3F7D91 a :ParallelImport ;
 
 product:CE56497D-F4E6-4F8C-BF0A-510C68D62625 a :SalePermission ;
     schema1:countryOfOrigin country:CHE ;
-    schema1:name "Oecoplan Läuse-Stop" ;
+    schema1:name "Coop Oecoplan Läuse-Stop" ;
     :federalAdmissionNumber "W-6727-2"^^xsd:string ;
     :referenceProduct product:61471B21-F252-4F29-9BBD-3616AF062E86 .
 
@@ -10825,7 +10586,7 @@ product:CFD17BAE-835B-4E8B-8255-0C66EACFDD9D a :ParallelImport ;
     schema1:countryOfOrigin country:ITA ;
     schema1:name "Poleci" ;
     :federalAdmissionNumber "I-5993"^^xsd:string ;
-    :foreignAdmissionNumber "14898"^^xsd:string ;
+    :foreignAdmissionNumber "014898"^^xsd:string ;
     :packageInsertNumber "9326"^^xsd:string ;
     :referenceProduct product:387CC896-7E5F-41A5-B3AC-BE5227DCDBF0 .
 
@@ -10850,14 +10611,6 @@ product:D05FE796-09D0-4126-B4DE-2B6C1ECF8078 a :RegularProduct ;
     schema1:name "Diabolo Plus" ;
     :federalAdmissionNumber "W-7337"^^xsd:string .
 
-product:D06EA107-4996-4B7E-806F-5872D832C9DC a :ParallelImport ;
-    schema1:countryOfOrigin country:DEU ;
-    schema1:name "Spirozol" ;
-    :federalAdmissionNumber "D-7307"^^xsd:string ;
-    :foreignAdmissionNumber "025625-00/055"^^xsd:string ;
-    :packageInsertNumber "7339"^^xsd:string ;
-    :referenceProduct product:8D9AF2CF-9EB6-4056-A086-07627BB084D0 .
-
 product:D0743782-A6FB-4F61-897D-74758D94E779 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Biopower" ;
@@ -10877,14 +10630,6 @@ product:D080065B-A536-4A10-BFC2-B4AFA5A420EC a :RegularProduct ;
     :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7413"^^xsd:string ;
     :soldOutDeadline "2025-10-31"^^xsd:date .
-
-product:D096540F-9DC2-44EC-BD37-6E7DB1210F58 a :ParallelImport ;
-    schema1:countryOfOrigin country:DEU ;
-    schema1:name "Isoxazone" ;
-    :federalAdmissionNumber "D-7474"^^xsd:string ;
-    :foreignAdmissionNumber "026525-00/026"^^xsd:string ;
-    :packageInsertNumber "7840"^^xsd:string ;
-    :referenceProduct product:44A2FF17-15CF-486F-BFE3-26C38B188E94 .
 
 product:D0B7B1D4-9EAD-42BE-90D3-0BD034572718 a :ParallelImport ;
     schema1:countryOfOrigin country:DEU ;
@@ -10993,7 +10738,7 @@ product:D389C725-961E-44E4-8D0D-BA8A311C3DF8 a :ParallelImport ;
     schema1:countryOfOrigin country:ITA ;
     schema1:name "Applaud Plus" ;
     :federalAdmissionNumber "I-5861"^^xsd:string ;
-    :foreignAdmissionNumber "15333"^^xsd:string ;
+    :foreignAdmissionNumber "015333"^^xsd:string ;
     :packageInsertNumber "3863"^^xsd:string ;
     :referenceProduct product:EF70BF31-947F-4213-AF70-40539CAF94E6 .
 
@@ -11058,11 +10803,6 @@ product:D471F7D1-E132-4BD6-94FC-C2A8C6A95579 a :ParallelImport ;
     :packageInsertNumber "7771"^^xsd:string ;
     :referenceProduct product:78813EE8-05E9-4F7A-97D6-72C9CE44B7E4 .
 
-product:D4B97428-0E05-4E79-9E6D-E89A58FB257E a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Acramite 480 SC" ;
-    :federalAdmissionNumber "W-6957"^^xsd:string .
-
 product:D4BF96C9-96EE-40B8-B87B-AE9BF6A5D534 a :ParallelImport ;
     schema1:countryOfOrigin country:DEU ;
     schema1:name "Azoxy 250" ;
@@ -11123,6 +10863,11 @@ product:D5CDED0E-8268-4AAC-8CBA-A884F4C6FA74 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Apron XL" ;
     :federalAdmissionNumber "W-5979"^^xsd:string .
+
+product:D5D70625-E43F-44FC-930E-84CF3218768D a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Gibbalin SL" ;
+    :federalAdmissionNumber "W-7562"^^xsd:string .
 
 product:D5E132BE-50EB-4BE6-A7E0-5D9F6DFE46E2 a :SalePermission ;
     schema1:countryOfOrigin country:CHE ;
@@ -11302,13 +11047,10 @@ product:D8937476-6218-40F0-BFBE-5B1019FB68D8 a :SalePermission ;
     :federalAdmissionNumber "W-6940-4"^^xsd:string ;
     :referenceProduct product:8CE37E1E-F762-4FD9-A026-DF47667077CC .
 
-product:D8D1AFC4-EF3E-4658-A03C-902B074E5719 a :ParallelImport ;
-    schema1:countryOfOrigin country:DEU ;
-    schema1:name "Aceta 200" ;
-    :federalAdmissionNumber "D-7461"^^xsd:string ;
-    :foreignAdmissionNumber "005655-00/032"^^xsd:string ;
-    :packageInsertNumber "7800"^^xsd:string ;
-    :referenceProduct product:C04B8145-16BA-4A1F-B454-2F70A34146C0 .
+product:D8C8D733-819E-4950-BF2D-24FBD87E8ACF a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Nema~Caps Sf" ;
+    :federalAdmissionNumber "W-7560"^^xsd:string .
 
 product:D909DDAE-BD6E-4A37-922B-F1EF3C365916 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -11354,19 +11096,11 @@ product:D9A6FBA1-5FF1-4AFF-89BD-709B871C0A6B a :ParallelImport ;
     :packageInsertNumber "6508"^^xsd:string ;
     :referenceProduct product:9FF3BFC3-4CA2-4A39-BC41-ECADDB5F4A7A .
 
-product:D9ACC2FC-933D-45EB-B650-7ECE9983F5DB a :ParallelImport ;
-    schema1:countryOfOrigin country:DEU ;
-    schema1:name "Carzone" ;
-    :federalAdmissionNumber "D-7475"^^xsd:string ;
-    :foreignAdmissionNumber "005268-00/041"^^xsd:string ;
-    :packageInsertNumber "7104"^^xsd:string ;
-    :referenceProduct product:BB64B1E7-F00A-4904-8F60-913446A3D76D .
-
 product:D9BCBA88-6B2D-43F5-84F3-DAE0550206F3 a :ParallelImport ;
     schema1:countryOfOrigin country:ITA ;
     schema1:name "Ralon Super" ;
     :federalAdmissionNumber "I-6111"^^xsd:string ;
-    :foreignAdmissionNumber "14395"^^xsd:string ;
+    :foreignAdmissionNumber "014395"^^xsd:string ;
     :packageInsertNumber "7488"^^xsd:string ;
     :referenceProduct product:B4EEF3D7-F979-4D5B-9A5D-A1E91130CE28 .
 
@@ -11391,14 +11125,6 @@ product:D9FEB44E-3644-4BFD-8319-D1B6C1A00825 a :SalePermission ;
     schema1:name "Casac" ;
     :federalAdmissionNumber "W-6370-1"^^xsd:string ;
     :referenceProduct product:8B6C6781-A174-4701-828B-BC9A6E4500EF .
-
-product:DA01EF41-FE09-43A2-BFB8-CB0C92750E73 a :ParallelImport ;
-    schema1:countryOfOrigin country:DEU ;
-    schema1:name "Pyrabos" ;
-    :federalAdmissionNumber "D-7496"^^xsd:string ;
-    :foreignAdmissionNumber "025483-00/060"^^xsd:string ;
-    :packageInsertNumber "7771"^^xsd:string ;
-    :referenceProduct product:78813EE8-05E9-4F7A-97D6-72C9CE44B7E4 .
 
 product:DA0838A7-AE28-46DC-89D7-4B759E83F872 a :ParallelImport ;
     schema1:countryOfOrigin country:FRA ;
@@ -11725,11 +11451,6 @@ product:E1A1229E-BC07-4561-BDF0-52CB5B883E13 a :ParallelImport ;
     :packageInsertNumber "8301"^^xsd:string ;
     :referenceProduct product:4476BAFF-90CE-4BDB-80C0-8265ADE22EE3 .
 
-product:E1A21386-2D7B-4BF9-A340-633D8F047D87 a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Adaline" ;
-    :federalAdmissionNumber "W-7554"^^xsd:string .
-
 product:E1F65749-F8E9-4ABC-B250-8639AAD65E7C a :SalePermission ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Capito Bio Insektizid Konzentrat" ;
@@ -11805,7 +11526,7 @@ product:E390A43E-BA77-4D62-973E-C902B6EC1942 a :ParallelImport ;
     schema1:countryOfOrigin country:ITA ;
     schema1:name "Vittoria 24 SC" ;
     :federalAdmissionNumber "I-6097"^^xsd:string ;
-    :foreignAdmissionNumber "12177"^^xsd:string ;
+    :foreignAdmissionNumber "012177"^^xsd:string ;
     :packageInsertNumber "8207"^^xsd:string ;
     :referenceProduct product:BE600CC3-0238-4DF3-A093-E29FDCA584BF .
 
@@ -12010,6 +11731,11 @@ product:E7016F86-3EA2-4417-B274-12AC0127AADA a :ParallelImport ;
     :packageInsertNumber "7433"^^xsd:string ;
     :referenceProduct product:96B49024-45C3-4868-A5EB-CFCDBB5EFD0E .
 
+product:E729707B-1BC8-4FD8-AD74-7317325E5ED1 a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Nema~Caps Hb" ;
+    :federalAdmissionNumber "W-7559"^^xsd:string .
+
 product:E72A084B-28CE-44AD-8401-CA800E9AE541 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Tricho-Sol" ;
@@ -12032,14 +11758,14 @@ product:E7CA5FB5-18D1-489C-81B3-B26737590C01 a :ParallelImport ;
     schema1:countryOfOrigin country:ITA ;
     schema1:name "Prosper 500 EC" ;
     :federalAdmissionNumber "I-6458"^^xsd:string ;
-    :foreignAdmissionNumber "15115"^^xsd:string ;
+    :foreignAdmissionNumber "015115"^^xsd:string ;
     :packageInsertNumber "6833"^^xsd:string ;
     :referenceProduct product:A0814C71-F727-4622-8471-713852C3E178 .
 
 product:E7CFE778-E0E6-4FCF-B353-47A54A458558 a :SalePermission ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Biorga Contra Schwefel" ;
-    :federalAdmissionNumber "W-18. Apr"^^xsd:string ;
+    :federalAdmissionNumber "W-18-4"^^xsd:string ;
     :referenceProduct product:089203D2-6BB3-487F-A3DC-D8FBDF58B9B8 .
 
 product:E7E0733E-299F-4728-9D65-F6BAF378535D a :ParallelImport ;
@@ -12070,12 +11796,6 @@ product:E830F5AF-4293-4FEB-95BA-B0860F692994 a :ParallelImport ;
     :foreignAdmissionNumber "008018-00/007"^^xsd:string ;
     :packageInsertNumber "8571"^^xsd:string ;
     :referenceProduct product:0A7AFBDA-D936-4769-BC2D-3E5E5BE86008 .
-
-product:E87C0B17-0434-401A-B3C3-329D16DB3E38 a :SalePermission ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Capito Winterspritzmittel" ;
-    :federalAdmissionNumber "W-1526-1"^^xsd:string ;
-    :referenceProduct product:35AA16CC-306F-49DD-BDFD-52D7F8A3DFBF .
 
 product:E8A874C1-9E3A-4FB4-8D60-38546E3B9F3C a :SalePermission ;
     schema1:countryOfOrigin country:CHE ;
@@ -12135,14 +11855,6 @@ product:EA1061D5-3584-41B6-BE8D-5115894C6F80 a :ParallelImport ;
     :foreignAdmissionNumber "034419-00/058"^^xsd:string ;
     :packageInsertNumber "6113"^^xsd:string ;
     :referenceProduct product:842BA77F-66EE-458E-977B-5358ED1941C4 .
-
-product:EA19F2D1-147C-4B7D-8C6A-9365E6226F80 a :ParallelImport ;
-    schema1:countryOfOrigin country:DEU ;
-    schema1:name "Spirozol" ;
-    :federalAdmissionNumber "D-7499"^^xsd:string ;
-    :foreignAdmissionNumber "025625-00/053"^^xsd:string ;
-    :packageInsertNumber "7339"^^xsd:string ;
-    :referenceProduct product:8D9AF2CF-9EB6-4056-A086-07627BB084D0 .
 
 product:EA1BA868-54B8-4B1B-9CCF-26213B65DAD5 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -12229,7 +11941,7 @@ product:EC538976-1DD6-44FF-B6CF-E129BAC1C897 a :ParallelImport ;
     schema1:countryOfOrigin country:ITA ;
     schema1:name "Previcur Energy" ;
     :federalAdmissionNumber "I-5990"^^xsd:string ;
-    :foreignAdmissionNumber "12043"^^xsd:string ;
+    :foreignAdmissionNumber "012043"^^xsd:string ;
     :packageInsertNumber "7432"^^xsd:string ;
     :referenceProduct product:5CECF71F-3F5E-4A03-ADF8-6C0506B3C961 .
 
@@ -12245,14 +11957,6 @@ product:ECC0709F-41EC-43A0-8AF8-EE416B1C6F72 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "HabroControl" ;
     :federalAdmissionNumber "W-6757"^^xsd:string .
-
-product:ECE3BBFD-E540-4A52-A1A7-0C1EFD2CB124 a :ParallelImport ;
-    schema1:countryOfOrigin country:DEU ;
-    schema1:name "Boscalid" ;
-    :federalAdmissionNumber "D-7471"^^xsd:string ;
-    :foreignAdmissionNumber "025180-00/043"^^xsd:string ;
-    :packageInsertNumber "7350"^^xsd:string ;
-    :referenceProduct product:945B9616-475E-468B-AD91-6327C6568755 .
 
 product:ECE536FB-6493-44BC-B047-D72B557281B8 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -12432,11 +12136,6 @@ product:EF1DB1A8-2D77-45B6-8206-64F8369907A1 a :SalePermission ;
     :federalAdmissionNumber "W-6259-1"^^xsd:string ;
     :referenceProduct product:6479CB11-E444-42E9-8C98-1A98936CCAE1 .
 
-product:EF210AE7-0734-47D5-8618-8F87F39D4DEF a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Score 250 EC" ;
-    :federalAdmissionNumber "W-4933"^^xsd:string .
-
 product:EF3803B6-DB18-4F68-9AA9-20DD70E1CFB1 a :SalePermission ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Kocide 2000" ;
@@ -12484,11 +12183,6 @@ product:F011CE7F-C7F0-40A0-8C26-98EB4E50E5ED a :SalePermission ;
     :federalAdmissionNumber "W-7003-1"^^xsd:string ;
     :referenceProduct product:11170E95-AFE8-47D4-9A07-359172391011 .
 
-product:F0198E97-4978-4D59-8EBF-DFFEE9DA6B51 a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Isonet T" ;
-    :federalAdmissionNumber "W-7343"^^xsd:string .
-
 product:F02376BE-F951-4972-B1BE-1C1F74E679D8 a :ParallelImport ;
     schema1:countryOfOrigin country:AUT ;
     schema1:name "Mimic" ;
@@ -12505,7 +12199,7 @@ product:F0254A08-5FD8-4780-B716-762C6DC0DE61 a :SalePermission ;
 
 product:F052B412-148D-4ECB-BD43-4CF5A7D19DFA a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
-    schema1:name "Break Thru Bio SP 133" ;
+    schema1:name "Break-Thru SP 133" ;
     :federalAdmissionNumber "W-7569"^^xsd:string .
 
 product:F05CACC8-581B-448E-AF2E-252BA6E497CB a :RegularProduct ;
@@ -12685,7 +12379,7 @@ product:F45CFC87-664C-4051-9BD2-A6945043FF42 a :ParallelImport ;
     schema1:countryOfOrigin country:ITA ;
     schema1:name "Isomate CTT" ;
     :federalAdmissionNumber "I-4841"^^xsd:string ;
-    :foreignAdmissionNumber "11552"^^xsd:string ;
+    :foreignAdmissionNumber "011552"^^xsd:string ;
     :packageInsertNumber "7076"^^xsd:string ;
     :referenceProduct product:360D52B2-748E-4895-ADF6-27C2D0855B42 .
 
@@ -12850,7 +12544,7 @@ product:F6E21F96-8E3A-49E4-AC5A-2BC415EBD197 a :ParallelImport ;
     schema1:name "Subitex" ;
     :exhaustionDeadline "2027-01-01"^^xsd:date ;
     :federalAdmissionNumber "I-6047"^^xsd:string ;
-    :foreignAdmissionNumber "15862"^^xsd:string ;
+    :foreignAdmissionNumber "015862"^^xsd:string ;
     :packageInsertNumber "7758"^^xsd:string ;
     :referenceProduct product:1AC55C5A-5941-420B-A062-8D5E04D581E4 ;
     :soldOutDeadline "2026-01-01"^^xsd:date .
@@ -12927,7 +12621,7 @@ product:F804D0ED-87B8-41EB-83D4-28EDF170CE8A a :ParallelImport ;
     schema1:countryOfOrigin country:ITA ;
     schema1:name "Isomate CLR" ;
     :federalAdmissionNumber "I-4840"^^xsd:string ;
-    :foreignAdmissionNumber "11550"^^xsd:string ;
+    :foreignAdmissionNumber "011550"^^xsd:string ;
     :packageInsertNumber "7074"^^xsd:string ;
     :referenceProduct product:16C35AB5-1239-4B9D-A86C-2E4079F9DD6D .
 
@@ -12999,7 +12693,7 @@ product:F99634D4-F27B-42C5-934C-879533E35B5C a :SalePermission ;
 
 product:F9D15D36-96BE-4E84-98A4-9344D1F3C068 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
-    schema1:name "Elosal Supra" ;
+    schema1:name "Elosal Supra2" ;
     :federalAdmissionNumber "W-986"^^xsd:string .
 
 product:F9DAC709-DDF9-4761-8F4D-4B82E36C0591 a :SalePermission ;
@@ -13011,9 +12705,9 @@ product:F9DAC709-DDF9-4761-8F4D-4B82E36C0591 a :SalePermission ;
     :soldOutDeadline "2025-10-31"^^xsd:date .
 
 product:F9E3799B-E376-4D8B-84D9-98D237F6177D a :ParallelImport ;
-    schema1:countryOfOrigin country:DEU ;
+    schema1:countryOfOrigin country:DNK ;
     schema1:name "Sinstar" ;
-    :federalAdmissionNumber "D-6902"^^xsd:string ;
+    :federalAdmissionNumber "DK-6902"^^xsd:string ;
     :foreignAdmissionNumber "008570-00/003"^^xsd:string ;
     :packageInsertNumber "6508"^^xsd:string ;
     :referenceProduct product:9FF3BFC3-4CA2-4A39-BC41-ECADDB5F4A7A .
@@ -13163,7 +12857,7 @@ product:FCAD788D-216F-41B7-BC65-A45348F8A6D9 a :ParallelImport ;
     schema1:name "Movento Gold" ;
     :exhaustionDeadline "2027-01-01"^^xsd:date ;
     :federalAdmissionNumber "I-6470"^^xsd:string ;
-    :foreignAdmissionNumber "16822"^^xsd:string ;
+    :foreignAdmissionNumber "016822"^^xsd:string ;
     :packageInsertNumber "7839"^^xsd:string ;
     :referenceProduct product:E93365B7-A206-4F07-9C83-1C7A8A254778 ;
     :soldOutDeadline "2026-07-01"^^xsd:date .
@@ -13209,7 +12903,7 @@ product:FDCD86BF-BEB8-4AB1-B5BD-1E26CDBAFA72 a :ParallelImport ;
     schema1:countryOfOrigin country:ITA ;
     schema1:name "Isomate C Plus" ;
     :federalAdmissionNumber "I-4839"^^xsd:string ;
-    :foreignAdmissionNumber "11551"^^xsd:string ;
+    :foreignAdmissionNumber "011551"^^xsd:string ;
     :packageInsertNumber "6408"^^xsd:string ;
     :referenceProduct product:F18122A8-B85E-42D7-AF90-819D5BAD0907 .
 
@@ -13230,7 +12924,7 @@ product:FDFE4F75-97E2-4FEB-AB1D-6FD5FD3F0F2D a :ParallelImport ;
     schema1:countryOfOrigin country:ITA ;
     schema1:name "Spyrale" ;
     :federalAdmissionNumber "I-6119"^^xsd:string ;
-    :foreignAdmissionNumber "9757"^^xsd:string ;
+    :foreignAdmissionNumber "009757"^^xsd:string ;
     :packageInsertNumber "8484"^^xsd:string ;
     :referenceProduct product:EFDDEA76-9F1A-480D-BB3F-5E660C498C45 .
 
@@ -13241,14 +12935,6 @@ product:FE05BA72-BDB1-40C4-A284-EE4FA4787C7E a :ParallelImport ;
     :foreignAdmissionNumber "9600001"^^xsd:string ;
     :packageInsertNumber "7410"^^xsd:string ;
     :referenceProduct product:69EDC442-DF85-47F4-9F69-8EFB90C37E4E .
-
-product:FE1B84A5-6CE5-431A-9E87-6CB627D5DB40 a :ParallelImport ;
-    schema1:countryOfOrigin country:FRA ;
-    schema1:name "Praktis Pro" ;
-    :federalAdmissionNumber "F-7489"^^xsd:string ;
-    :foreignAdmissionNumber "2200518"^^xsd:string ;
-    :packageInsertNumber "7303"^^xsd:string ;
-    :referenceProduct product:14316695-B18B-4B3F-BAB7-0C988C85672D .
 
 product:FE2182E6-CBD0-4568-ACB7-E1E020611785 a :SalePermission ;
     schema1:countryOfOrigin country:CHE ;
@@ -13291,7 +12977,7 @@ product:FEBBE514-B4A9-49F7-87EB-5A18014A5FB5 a :ParallelImport ;
     schema1:countryOfOrigin country:ITA ;
     schema1:name "Regalis Plus" ;
     :federalAdmissionNumber "I-6113"^^xsd:string ;
-    :foreignAdmissionNumber "15553"^^xsd:string ;
+    :foreignAdmissionNumber "015553"^^xsd:string ;
     :packageInsertNumber "8451"^^xsd:string ;
     :referenceProduct product:7E500698-E75F-4D68-A06E-22D70F7FBF1F .
 
@@ -13332,7 +13018,7 @@ product:FF7C1148-EF28-48F7-8BF8-CB004698E2F8 a :ParallelImport ;
 product:FF8B5DAB-4918-4297-9594-C4C26E397386 a :SalePermission ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Sufralo" ;
-    :federalAdmissionNumber "W-18. Jan"^^xsd:string ;
+    :federalAdmissionNumber "W-18-1"^^xsd:string ;
     :referenceProduct product:089203D2-6BB3-487F-A3DC-D8FBDF58B9B8 .
 
 product:FF917DCE-F5F4-4D16-9C09-7DF07B67B016 a :SalePermission ;
@@ -13368,14 +13054,6 @@ product:FFD2B6F9-9547-40F5-86E6-775CB3EA260A a :SalePermission ;
     :federalAdmissionNumber "W-5638-3"^^xsd:string ;
     :referenceProduct product:78C0D55A-7993-49C1-BDDA-89538F3497AC .
 
-product:FFD4BB83-3E6E-4EC2-9F4E-146AB5BF031D a :ParallelImport ;
-    schema1:countryOfOrigin country:DEU ;
-    schema1:name "Spirozol" ;
-    :federalAdmissionNumber "D-7306"^^xsd:string ;
-    :foreignAdmissionNumber "025625-00/054"^^xsd:string ;
-    :packageInsertNumber "7339"^^xsd:string ;
-    :referenceProduct product:8D9AF2CF-9EB6-4056-A086-07627BB084D0 .
-
 product:FFEDA128-D085-4A7C-B049-E39C6555BA0E a :ParallelImport ;
     schema1:countryOfOrigin country:ITA ;
     schema1:name "Aragon" ;
@@ -13384,28 +13062,27 @@ product:FFEDA128-D085-4A7C-B049-E39C6555BA0E a :ParallelImport ;
     :packageInsertNumber "7771"^^xsd:string ;
     :referenceProduct product:78813EE8-05E9-4F7A-97D6-72C9CE44B7E4 .
 
+product:a7a4c7d0-631a-440e-a60c-8a0bf88ef448 a :SalePermission ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "TestVE_mam" ;
+    :federalAdmissionNumber "W-5751-1"^^xsd:string ;
+    :referenceProduct product:688F24F0-EE32-4B64-A539-EE8F3B81D552 .
+
 product:a89ba7e9-4a59-4c45-9f31-34a3c7df57b0 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Tural" ;
     :federalAdmissionNumber "W-7581"^^xsd:string .
 
-product:abaa5283-d3ba-4660-90ea-2c0470500b89 a :SalePermission ;
+product:a90533a5-19e7-4cbb-b741-71e2b53f9c21 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
-    schema1:name "Trinity" ;
-    :federalAdmissionNumber "W-6854-2"^^xsd:string ;
-    :referenceProduct product:C566E2CA-03D0-439C-9A9B-3E3927209507 .
+    schema1:name "Test8.12.10.25" ;
+    :federalAdmissionNumber "W-112223"^^xsd:string .
 
-product:ac4b7c21-c38e-40f7-99ad-9682422d3c41 a :SalePermission ;
+product:adc71b16-36ef-4ce4-9295-420218e63790 a :SalePermission ;
     schema1:countryOfOrigin country:CHE ;
-    schema1:name "Paudor" ;
-    :federalAdmissionNumber "W-7385-2"^^xsd:string ;
-    :referenceProduct product:4AB1771E-7F17-4CBD-A419-BF4A2B45CAD0 .
-
-product:b011a7d6-3f4d-4087-99e5-e605864ccc99 a :SalePermission ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Mentor Uno SE" ;
-    :federalAdmissionNumber "W-6944-3"^^xsd:string ;
-    :referenceProduct product:59978EC7-B63F-471E-8AFD-DAB9E46EE346 .
+    schema1:name "Thiovitjet tama Dd1" ;
+    :federalAdmissionNumber "W-18-7"^^xsd:string ;
+    :referenceProduct product:089203D2-6BB3-487F-A3DC-D8FBDF58B9B8 .
 
 product:b0791f2e-4ef7-4864-a312-033f512c2f1c a :SalePermission ;
     schema1:countryOfOrigin country:CHE ;
@@ -13413,23 +13090,22 @@ product:b0791f2e-4ef7-4864-a312-033f512c2f1c a :SalePermission ;
     :federalAdmissionNumber "W-7626-1"^^xsd:string ;
     :referenceProduct product:d9aa7097-f5b9-4008-8a99-83fd8538a6a8 .
 
+product:b1895aa0-a41a-4edd-b054-af572eb37f51 a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "A1.1 ver Frame" ;
+    :federalAdmissionNumber "W-887878790"^^xsd:string .
+
+product:b5885c27-83b4-4309-b4be-ec21858a78d0 a :SalePermission ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Dfinale" ;
+    :federalAdmissionNumber "W-4933-1"^^xsd:string ;
+    :referenceProduct product:EF210AE7-0734-47D5-8618-8F87F39D4DEF .
+
 product:b944cb0d-5f03-46a4-b4bf-6c9e8fa7d0a4 a :SalePermission ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Capito Raupenfrei" ;
     :federalAdmissionNumber "W-7580-1"^^xsd:string ;
     :referenceProduct product:99D1F54E-9E78-4685-8FFA-E3351B00C750 .
-
-product:c2b63e84-b5a3-4e2e-ad6c-4d53b806d3ae a :SalePermission ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Revycare" ;
-    :federalAdmissionNumber "W-7591-2"^^xsd:string ;
-    :referenceProduct product:32E9006A-4B12-4D8E-A818-5D98E2FE8B1E .
-
-product:c4205d6f-03b3-4bf6-b4a6-db998bbb345f a :SalePermission ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Rasenrein Profi" ;
-    :federalAdmissionNumber "W-5596-3"^^xsd:string ;
-    :referenceProduct product:DE96C3F9-B32F-4C7D-991E-E634A7A48511 .
 
 product:c4fa8c1c-4088-4eb2-bff0-97b4f0a1d028 a :SalePermission ;
     schema1:countryOfOrigin country:CHE ;
@@ -13442,29 +13118,11 @@ product:c670aa0e-d0a0-4c95-a177-016f68ca8126 a :RegularProduct ;
     schema1:name "Schädlingsfrei Forte" ;
     :federalAdmissionNumber "W-7625"^^xsd:string .
 
-product:c989eb5a-7674-4499-8d2d-2d82ccb535fd a :SalePermission ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Averel" ;
-    :federalAdmissionNumber "W-7169-1"^^xsd:string ;
-    :referenceProduct product:71224C0C-65BE-4B2C-8B08-AFB6B5A539EA .
-
-product:ca61ff34-cc1a-4b33-a335-c9c6b4aa83a1 a :SalePermission ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Jardin Royal UnkrautFrei Spray" ;
-    :federalAdmissionNumber "W-6664-4"^^xsd:string ;
-    :referenceProduct product:9D3C49C5-7F39-409E-8BE2-5996AAC1D242 .
-
 product:ce59dd80-0819-4a15-bf96-a551b6f407d1 a :SalePermission ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Gesal Schneckenkorn" ;
     :federalAdmissionNumber "W-7553-3"^^xsd:string ;
     :referenceProduct product:7F7EE4A4-E61E-4F32-B6A4-7E4E7E693157 .
-
-product:cee75aab-29db-4d20-9936-d3ff25ed116e a :SalePermission ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Jardin Royal UnkrautFrei Konzentrat" ;
-    :federalAdmissionNumber "W-6663-5"^^xsd:string ;
-    :referenceProduct product:08353B23-23DB-4433-A9EB-B17A193BDC1F .
 
 product:d07956e6-0028-42c0-9f81-afbc96465bba a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -13476,17 +13134,26 @@ product:d176faf9-81b4-4757-8b9b-50f224332a76 a :RegularProduct ;
     schema1:name "Scomrid-Spray" ;
     :federalAdmissionNumber "W-7608"^^xsd:string .
 
-product:da85d810-883c-4feb-9399-b056195e4fee a :SalePermission ;
+product:d7b37c20-61f6-4e6f-8df5-c3a68d2dd1b1 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
-    schema1:name "Express Spray" ;
-    :federalAdmissionNumber "W-7471-3"^^xsd:string ;
-    :referenceProduct product:38BECDE1-3C8A-409C-8B8C-53EDD4EF957B .
+    schema1:name "Test12.13.10.25" ;
+    :federalAdmissionNumber "W-887878787"^^xsd:string .
 
-product:e623b243-3d95-407d-a210-23551f6803df a :SalePermission ;
+product:e2fcd401-a9c9-4d18-a2a8-e49b479d7012 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
-    schema1:name "Biorga Contra gegen Unkräuter" ;
-    :federalAdmissionNumber "W-7321-4"^^xsd:string ;
-    :referenceProduct product:5D08DED9-D6C7-4C22-95E4-18312592E72D .
+    schema1:name "Test Cache Bio Tama Organic" ;
+    :federalAdmissionNumber "W-969712392"^^xsd:string .
+
+product:e40bebce-5d8b-42e6-b98a-0e32425d4a5d a :SalePermission ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "tESTVERWENDUNGSKATEGORIE TAMA1" ;
+    :federalAdmissionNumber "W-18-6"^^xsd:string ;
+    :referenceProduct product:089203D2-6BB3-487F-A3DC-D8FBDF58B9B8 .
+
+product:e71aef97-e56f-43c9-831b-431091da937f a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "TestA1.2" ;
+    :federalAdmissionNumber "W-33344445"^^xsd:string .
 
 product:e8cd6d9e-2db4-4820-9905-b8ba66144a7e a :SalePermission ;
     schema1:countryOfOrigin country:CHE ;
@@ -13517,15 +13184,16 @@ product:f40ca355-555a-44ac-93d4-b00babd93b27 a :SalePermission ;
     :federalAdmissionNumber "W-6222-3"^^xsd:string ;
     :referenceProduct product:81B6D016-2036-413A-83B4-ED15C4434377 .
 
+product:f41e639a-15d8-4993-814d-fb7228929056 a :SalePermission ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Thiovitbiojet2round" ;
+    :federalAdmissionNumber "W-18-8"^^xsd:string ;
+    :referenceProduct product:089203D2-6BB3-487F-A3DC-D8FBDF58B9B8 .
+
 product:00CAE2E6-762B-492B-B54C-5384776F29EB a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Gesal Unkrautvertilger Super Rapid Konzentrat" ;
     :federalAdmissionNumber "W-6823"^^xsd:string .
-
-product:0131949D-2AA1-48B4-8003-E8A3846A7460 a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Brevis" ;
-    :federalAdmissionNumber "W-6996"^^xsd:string .
 
 product:021E3C74-C569-4185-A21D-6E0CE21848B5 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -13569,6 +13237,11 @@ product:0B85828D-F36D-43DB-AC74-9EA7E5DFA95C a :RegularProduct ;
     schema1:name "Butisan S" ;
     :federalAdmissionNumber "W-2592"^^xsd:string .
 
+product:0B8A9253-4ACB-4996-B1ED-56A79D893B04 a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Elatus Era" ;
+    :federalAdmissionNumber "W-7245"^^xsd:string .
+
 product:0D78171D-FA90-424E-9EBA-1C24011CE2F5 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Botector" ;
@@ -13609,11 +13282,6 @@ product:147A53F7-EEC1-4AC6-8D2A-3735D52D5BEB a :RegularProduct ;
     schema1:name "Verdram Hi Bio" ;
     :federalAdmissionNumber "W-7315"^^xsd:string .
 
-product:14D3EAD0-6381-4206-89B7-0D85B1A02691 a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Fungifend" ;
-    :federalAdmissionNumber "W-6691"^^xsd:string .
-
 product:169AFE3A-6E86-465A-9767-5B01DEDC61CE a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Roxy EC" ;
@@ -13640,11 +13308,6 @@ product:1949511A-0097-4814-9C42-A71ABE69C80A a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Kumulus WG" ;
     :federalAdmissionNumber "W-4458"^^xsd:string .
-
-product:1C75021B-E29C-4B59-A1AE-F2698DBF21B5 a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Stabilan 460 SL" ;
-    :federalAdmissionNumber "W-7439"^^xsd:string .
 
 product:1D16A666-F3ED-44BE-A098-7A15F95B830F a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -13680,6 +13343,11 @@ product:255B5DF1-C528-4BF0-96BF-AB7489A5934C a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Fortissimo Schneckenkorn 3%" ;
     :federalAdmissionNumber "W-7060"^^xsd:string .
+
+product:261533ED-6608-4036-96EF-597218EDC11C a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Telmion" ;
+    :federalAdmissionNumber "W-4678"^^xsd:string .
 
 product:26A71937-B7AA-4595-A783-4E96CE61BDD6 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -13751,9 +13419,7 @@ product:395824C9-2C4B-40FB-81D9-4EB5F4126CE8 a :RegularProduct ;
 product:3AA1778A-F21C-4539-9C57-4DB91D3D2171 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Metarhizium Schweizer" ;
-    :exhaustionDeadline "2026-03-31"^^xsd:date ;
-    :federalAdmissionNumber "W-6423"^^xsd:string ;
-    :soldOutDeadline "2025-03-30"^^xsd:date .
+    :federalAdmissionNumber "W-6423"^^xsd:string .
 
 product:41038260-EF36-409B-9A2D-3854AC280BFB a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -13808,11 +13474,6 @@ product:4BABC787-2871-49DF-9A85-7F7D143A7437 a :RegularProduct ;
     :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7353"^^xsd:string ;
     :soldOutDeadline "2025-10-31"^^xsd:date .
-
-product:4C7EF26C-BE0E-4C2D-A98D-F7055CFC49F0 a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Avoxa" ;
-    :federalAdmissionNumber "W-7052"^^xsd:string .
 
 product:4CED5323-5D69-422A-B72F-CEF692001703 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -13874,6 +13535,11 @@ product:568021B9-79F4-4219-A5AF-75E35F49BC00 a :RegularProduct ;
     :exhaustionDeadline "2026-10-15"^^xsd:date ;
     :federalAdmissionNumber "W-6874"^^xsd:string ;
     :soldOutDeadline "2025-10-15"^^xsd:date .
+
+product:59978EC7-B63F-471E-8AFD-DAB9E46EE346 a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Corzal" ;
+    :federalAdmissionNumber "W-6944"^^xsd:string .
 
 product:5A45CE18-3F51-4922-B893-279D2B296D58 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -13966,16 +13632,6 @@ product:6B86DFA3-0E5A-49E0-B099-58C71AD36DC5 a :RegularProduct ;
     schema1:name "LBG-42FFm" ;
     :federalAdmissionNumber "W-7155"^^xsd:string .
 
-product:6DDEB587-5FF6-440D-A7E4-789FEDBD681A a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Oxidia" ;
-    :federalAdmissionNumber "W-7369"^^xsd:string .
-
-product:6ed4b558-8b45-499d-b522-1a04c528ae61 a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Zimmerpflanzen-Spray" ;
-    :federalAdmissionNumber "W-7631"^^xsd:string .
-
 product:7063F03B-BE5B-4EE8-91C3-F62A9FC36206 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Talendo" ;
@@ -13986,25 +13642,20 @@ product:71017F16-2E4F-454B-A91F-C6A67366855E a :RegularProduct ;
     schema1:name "Kocide 2000" ;
     :federalAdmissionNumber "W-7010"^^xsd:string .
 
-product:71224C0C-65BE-4B2C-8B08-AFB6B5A539EA a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Valis F" ;
-    :federalAdmissionNumber "W-7169"^^xsd:string .
-
 product:71426C43-130D-4CFB-A5A6-D8350F96EDFE a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Zwei, 4 - D - Dicopur" ;
     :federalAdmissionNumber "W-2594"^^xsd:string .
 
-product:723A53DA-EE75-4DC2-8E7C-9DF564BC98BC a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Enervin SC" ;
-    :federalAdmissionNumber "W-7648"^^xsd:string .
-
 product:727A68BF-8B39-4680-B78F-134FF6C9A00F a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Microthiol Special Liquid" ;
     :federalAdmissionNumber "W-7479"^^xsd:string .
+
+product:7314DBC2-C510-49BA-B740-F5A87D24E684 a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "2,4-D Plus" ;
+    :federalAdmissionNumber "W-7436"^^xsd:string .
 
 product:7445E825-E1F8-43AB-95D7-2E67DB405D05 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -14030,11 +13681,6 @@ product:78B2516E-8F26-43B1-8FE9-A6EF24DBBA2F a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Oleate 20" ;
     :federalAdmissionNumber "W-5761"^^xsd:string .
-
-product:78C19416-1F1B-4533-8B79-B1B9F688628B a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Optikugel" ;
-    :federalAdmissionNumber "W-6871"^^xsd:string .
 
 product:7ACEBEF5-30CD-491A-B653-32042FBB18E9 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -14065,11 +13711,6 @@ product:7FFB0EFA-2DB9-48B3-AA25-2E02AC3FD2D8 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Menno Florades" ;
     :federalAdmissionNumber "W-6699"^^xsd:string .
-
-product:820738A5-3222-484F-BB8E-7BF07291B1CB a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Alginure" ;
-    :federalAdmissionNumber "W-7184"^^xsd:string .
 
 product:859D9639-C8B5-4579-B583-602F591E864E a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -14145,11 +13786,6 @@ product:93E2AA3C-78BE-4CDD-9B4E-7C168F535728 a :RegularProduct ;
     schema1:name "Steiner Ultra" ;
     :federalAdmissionNumber "W-7062"^^xsd:string .
 
-product:945B9616-475E-468B-AD91-6327C6568755 a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Cantus" ;
-    :federalAdmissionNumber "W-6150"^^xsd:string .
-
 product:96EFB719-4132-4F2B-9585-534D0054AB87 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Cypermetrine" ;
@@ -14178,6 +13814,11 @@ product:994F6379-2703-4883-9E18-C0DDF3B98EB6 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Myco-Sin" ;
     :federalAdmissionNumber "W-5497"^^xsd:string .
+
+product:99D1F54E-9E78-4685-8FFA-E3351B00C750 a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Wormox" ;
+    :federalAdmissionNumber "W-7580"^^xsd:string .
 
 product:99DA7105-778E-443A-8D35-3126E4754478 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -14246,6 +13887,11 @@ product:AD6AFA21-E14A-448C-A972-738CA4304272 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Mapro" ;
     :federalAdmissionNumber "W-6782"^^xsd:string .
+
+product:B361B6E5-34C5-492C-B0E2-34C8B4E5AA46 a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Cymbal Flow" ;
+    :federalAdmissionNumber "W-7540"^^xsd:string .
 
 product:B3E3A747-17A2-4984-8F26-5E6119682A52 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -14325,17 +13971,10 @@ product:BC9BAF49-51CF-4B65-A084-BD962ADC042D a :RegularProduct ;
     schema1:name "Nimrod" ;
     :federalAdmissionNumber "W-6641"^^xsd:string .
 
-product:BD0A0BFD-FCBA-4B5A-856E-9A31831DCD2C a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Kupfer-Bordo LG / Bouillie bordelaise LG" ;
-    :federalAdmissionNumber "W-2116"^^xsd:string .
-
 product:C0A80966-225E-4EBC-8947-F6CEB5E8BE53 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Beauveria-Schweizer" ;
-    :exhaustionDeadline "2026-03-31"^^xsd:date ;
-    :federalAdmissionNumber "W-4574"^^xsd:string ;
-    :soldOutDeadline "2025-03-31"^^xsd:date .
+    :federalAdmissionNumber "W-4574"^^xsd:string .
 
 product:C124AD39-C540-4581-A654-CC5F959A6931 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -14406,11 +14045,6 @@ product:D45BD2E8-B827-4767-AA99-96E5379D4105 a :RegularProduct ;
     schema1:name "Surround" ;
     :federalAdmissionNumber "W-6416"^^xsd:string .
 
-product:D5D70625-E43F-44FC-930E-84CF3218768D a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Gibbalin SL" ;
-    :federalAdmissionNumber "W-7562"^^xsd:string .
-
 product:D67BCDC8-F321-45B9-A5C9-BC5968E5A579 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Roundup Alphee" ;
@@ -14434,6 +14068,11 @@ product:DC2FB913-373F-485B-BF7D-C77DB32A229B a :RegularProduct ;
     :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7440"^^xsd:string ;
     :soldOutDeadline "2025-10-31"^^xsd:date .
+
+product:E1A21386-2D7B-4BF9-A340-633D8F047D87 a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Adaline" ;
+    :federalAdmissionNumber "W-7554"^^xsd:string .
 
 product:E241364F-0A74-45EE-95A6-B0E3867C12C2 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -14476,6 +14115,11 @@ product:EF17B886-B7A7-4A16-95EA-B6228EFB7FBA a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Othello" ;
     :federalAdmissionNumber "W-6471"^^xsd:string .
+
+product:EF210AE7-0734-47D5-8618-8F87F39D4DEF a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Score 250 EC" ;
+    :federalAdmissionNumber "W-4933"^^xsd:string .
 
 product:EF70BF31-947F-4213-AF70-40539CAF94E6 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -14526,11 +14170,6 @@ product:F5BC59D9-2E3F-409B-8627-F0ADBAB356C2 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Moddus Start" ;
     :federalAdmissionNumber "W-7038"^^xsd:string .
-
-product:F7C44382-6A24-41E1-AAD4-F7FFD71D8754 a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Alopex" ;
-    :federalAdmissionNumber "W-6942"^^xsd:string .
 
 product:F907A042-D0F8-48A0-87D9-CA4DE79470D2 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -14613,11 +14252,6 @@ product:0B073948-3AD7-4EBC-90D7-09D23178AD6E a :RegularProduct ;
     schema1:name "Garlon 2000" ;
     :federalAdmissionNumber "W-7432"^^xsd:string .
 
-product:0B8A9253-4ACB-4996-B1ED-56A79D893B04 a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Elatus Era" ;
-    :federalAdmissionNumber "W-7245"^^xsd:string .
-
 product:0B94A940-D6EC-4D41-83AB-30A92C61A9D3 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Concert SX" ;
@@ -14650,11 +14284,6 @@ product:1D247C04-C91D-4DD9-A470-FE1E325C72B4 a :RegularProduct ;
     schema1:name "Traunem" ;
     :federalAdmissionNumber "W-5277"^^xsd:string .
 
-product:1E079B09-9E5E-4301-AD88-BE14D9A778A1 a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Adexar®Top" ;
-    :federalAdmissionNumber "W-7339"^^xsd:string .
-
 product:2020B3E4-9D04-4F9A-A1DD-A07D10AA0D1C a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Activus SC" ;
@@ -14674,11 +14303,6 @@ product:2EC2CCCB-0D6C-452D-851C-C74AC17A5C65 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Equip Power" ;
     :federalAdmissionNumber "W-6811"^^xsd:string .
-
-product:32E9006A-4B12-4D8E-A818-5D98E2FE8B1E a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Balaya" ;
-    :federalAdmissionNumber "W-7591"^^xsd:string .
 
 product:33779B93-9827-4C3F-AD1F-9A088B6A4AB4 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -14704,11 +14328,6 @@ product:37498683-1BE3-4463-A29E-0CC90F8721F5 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Caramba" ;
     :federalAdmissionNumber "W-6090"^^xsd:string .
-
-product:38BECDE1-3C8A-409C-8B8C-53EDD4EF957B a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Natrel Garden Spray" ;
-    :federalAdmissionNumber "W-7471"^^xsd:string .
 
 product:39ADD145-1AD7-45D1-AA8E-A2FAFA08E722 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -14743,6 +14362,11 @@ product:4A211ED7-F030-4471-B7CE-046214BE4B72 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Ready Germiplus" ;
     :federalAdmissionNumber "W-5286"^^xsd:string .
+
+product:4AB1771E-7F17-4CBD-A419-BF4A2B45CAD0 a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Prodax" ;
+    :federalAdmissionNumber "W-7385"^^xsd:string .
 
 product:4BCCFF42-8333-43D8-91B9-B5C1FF8DB70D a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -14779,6 +14403,11 @@ product:545BB6D3-D6F9-4170-8CEC-D67399BAA708 a :RegularProduct ;
     schema1:name "Successor 600" ;
     :federalAdmissionNumber "W-6418"^^xsd:string .
 
+product:57BDB469-F84A-43FD-98B3-77AD239A83B9 a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Pergado" ;
+    :federalAdmissionNumber "W-6519"^^xsd:string .
+
 product:58176B79-85D2-4D22-BF9F-EA1E288CAEF3 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Magnello" ;
@@ -14798,6 +14427,11 @@ product:5CA38A6F-3C3D-4C54-887D-E370CF7ED55F a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Principal" ;
     :federalAdmissionNumber "W-6645"^^xsd:string .
+
+product:5D08DED9-D6C7-4C22-95E4-18312592E72D a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Natrel Garden" ;
+    :federalAdmissionNumber "W-7321"^^xsd:string .
 
 product:5E3AF527-04CA-4AEF-B932-4320BF7CE795 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -14824,10 +14458,10 @@ product:6E6888B2-29D5-420D-8878-327764F080F9 a :RegularProduct ;
     schema1:name "Dagonis" ;
     :federalAdmissionNumber "W-7341"^^xsd:string .
 
-product:76EE5674-57E3-49AE-A629-F800D12D4C44 a :RegularProduct ;
+product:76514BCF-7554-4845-BA4F-2BAA38C20CB3 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
-    schema1:name "Quadris Max" ;
-    :federalAdmissionNumber "W-6142"^^xsd:string .
+    schema1:name "Fandango" ;
+    :federalAdmissionNumber "W-6508"^^xsd:string .
 
 product:7A03630A-A7C7-4828-A3DD-CEF1FC34005B a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -14835,6 +14469,11 @@ product:7A03630A-A7C7-4828-A3DD-CEF1FC34005B a :RegularProduct ;
     :exhaustionDeadline "2026-07-01"^^xsd:date ;
     :federalAdmissionNumber "W-6902"^^xsd:string ;
     :soldOutDeadline "2026-01-01"^^xsd:date .
+
+product:7B14B5BE-21EF-4586-B9A9-A0931F62E1B1 a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Venzar" ;
+    :federalAdmissionNumber "W-7306"^^xsd:string .
 
 product:84831CEE-4353-4270-B3BB-9F645F32CF38 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -14868,11 +14507,6 @@ product:9789DB95-896A-49ED-BF36-6FD84D6A22C6 a :RegularProduct ;
     schema1:name "Oikos" ;
     :federalAdmissionNumber "W-7490"^^xsd:string .
 
-product:99D1F54E-9E78-4685-8FFA-E3351B00C750 a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Wormox" ;
-    :federalAdmissionNumber "W-7580"^^xsd:string .
-
 product:9C205498-F909-400B-9F4E-8C13BCFE068E a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Gesal Schildlaus-Stop" ;
@@ -14892,11 +14526,6 @@ product:B1A6D8C4-3FD1-4D3F-BCC3-4B47AB53B746 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Select" ;
     :federalAdmissionNumber "W-6010"^^xsd:string .
-
-product:B361B6E5-34C5-492C-B0E2-34C8B4E5AA46 a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Cymbal Flow" ;
-    :federalAdmissionNumber "W-7540"^^xsd:string .
 
 product:B5E46CCF-1B4E-46AB-A5C6-0ABFD0E78A9A a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -14933,6 +14562,11 @@ product:BB1AABC4-8640-4EA8-BC00-2AB4DA3E0509 a :RegularProduct ;
     schema1:name "Nimrod" ;
     :federalAdmissionNumber "W-6112"^^xsd:string .
 
+product:BB64B1E7-F00A-4904-8F60-913446A3D76D a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Spotlight Plus" ;
+    :federalAdmissionNumber "W-6067"^^xsd:string .
+
 product:BD6C1EDD-8BBC-455A-A349-0180A6493973 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Carakol 5" ;
@@ -14965,6 +14599,11 @@ product:CE655ECC-99D9-447C-89A2-CF08BE55366E a :RegularProduct ;
     schema1:name "Decis Protech" ;
     :federalAdmissionNumber "W-6381"^^xsd:string .
 
+product:CF28C82A-ADBA-436F-BF01-3E7FB57084BB a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Agil" ;
+    :federalAdmissionNumber "W-6647"^^xsd:string .
+
 product:D39C7071-FF0A-4FA4-9783-CAEC2C1826C7 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Bandsen" ;
@@ -14979,6 +14618,16 @@ product:DD11003C-F6F9-472B-9828-1BDB82760DD5 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Napronol" ;
     :federalAdmissionNumber "W-4552"^^xsd:string .
+
+product:DD20D6D8-34B1-4AC7-83EB-4A9FD2879090 a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Leimay" ;
+    :federalAdmissionNumber "W-6935"^^xsd:string .
+
+product:DE96C3F9-B32F-4C7D-991E-E634A7A48511 a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Exelor Jardin Profi" ;
+    :federalAdmissionNumber "W-5596"^^xsd:string .
 
 product:E11941C0-C85E-49F1-8D96-404E712C6A6F a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -15032,6 +14681,11 @@ product:F20F46DE-9D27-455F-8A70-9B3A56547528 a :RegularProduct ;
     schema1:name "Natrel" ;
     :federalAdmissionNumber "W-7319"^^xsd:string .
 
+product:F7C44382-6A24-41E1-AAD4-F7FFD71D8754 a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Alopex" ;
+    :federalAdmissionNumber "W-6942"^^xsd:string .
+
 product:FAE2CFA4-C3B1-4B29-A1D8-2643FBE1A7CE a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Solbac" ;
@@ -15043,6 +14697,11 @@ product:FE288626-CBBE-4F1D-BB35-FF0DE0961DCB a :RegularProduct ;
     :exhaustionDeadline "2026-10-15"^^xsd:date ;
     :federalAdmissionNumber "W-6673"^^xsd:string ;
     :soldOutDeadline "2025-10-15"^^xsd:date .
+
+product:eee224fd-5a7e-4b31-9b67-483b9db19ebc a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "MProdukt IN Regression" ;
+    :federalAdmissionNumber "W-969712389"^^xsd:string .
 
 product:083A5232-F56A-4734-AE8C-43F9BD769139 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -15071,6 +14730,11 @@ product:10E03CA6-2EA9-4860-8E91-98C5AA7440E0 a :RegularProduct ;
     schema1:name "Moxa" ;
     :federalAdmissionNumber "W-6922"^^xsd:string .
 
+product:14316695-B18B-4B3F-BAB7-0C988C85672D a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Proline" ;
+    :federalAdmissionNumber "W-6339"^^xsd:string .
+
 product:157AA0E2-523D-4E6B-8BD9-407C7326D6EB a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Ampexio" ;
@@ -15082,11 +14746,6 @@ product:2A7FA096-6AD4-48B0-9FE6-66F0FA6BCFFA a :RegularProduct ;
     :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-6719"^^xsd:string ;
     :soldOutDeadline "2025-10-31"^^xsd:date .
-
-product:35AA16CC-306F-49DD-BDFD-52D7F8A3DFBF a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Zofal D" ;
-    :federalAdmissionNumber "W-1526"^^xsd:string .
 
 product:3BD0E5A9-A01D-4F80-9FD2-661D540A8B83 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -15100,10 +14759,10 @@ product:3D413DE5-87DF-45A6-8DFB-53C8543782F0 a :RegularProduct ;
     :federalAdmissionNumber "W-6741"^^xsd:string ;
     :soldOutDeadline "2025-10-31"^^xsd:date .
 
-product:4AB1771E-7F17-4CBD-A419-BF4A2B45CAD0 a :RegularProduct ;
+product:413B51DA-7A50-40F6-AFB6-E9CA519A83E3 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
-    schema1:name "Prodax" ;
-    :federalAdmissionNumber "W-7385"^^xsd:string .
+    schema1:name "Elotin" ;
+    :federalAdmissionNumber "W-7438"^^xsd:string .
 
 product:4B63B7C6-C2C9-4B8D-AF84-07C8619D3B1F a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -15120,16 +14779,6 @@ product:56F5B048-BC7D-4749-B8E5-253C1ACA0291 a :RegularProduct ;
     schema1:name "Parexan N" ;
     :federalAdmissionNumber "W-5959"^^xsd:string .
 
-product:57BDB469-F84A-43FD-98B3-77AD239A83B9 a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Pergado" ;
-    :federalAdmissionNumber "W-6519"^^xsd:string .
-
-product:59978EC7-B63F-471E-8AFD-DAB9E46EE346 a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Corzal" ;
-    :federalAdmissionNumber "W-6944"^^xsd:string .
-
 product:5CA2960D-5D7D-456F-BCD7-DA5FD8F85BF2 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Kyleo" ;
@@ -15139,11 +14788,6 @@ product:5CECF71F-3F5E-4A03-ADF8-6C0506B3C961 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Previcur Energy" ;
     :federalAdmissionNumber "W-6357"^^xsd:string .
-
-product:5D08DED9-D6C7-4C22-95E4-18312592E72D a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Natrel Garden" ;
-    :federalAdmissionNumber "W-7321"^^xsd:string .
 
 product:644978EF-4B81-4CE0-A2F0-9E5C06A3BDA1 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -15177,20 +14821,10 @@ product:7331506C-0446-4222-AFD1-469485C91868 a :RegularProduct ;
     schema1:name "Oblix MT" ;
     :federalAdmissionNumber "W-7180"^^xsd:string .
 
-product:76514BCF-7554-4845-BA4F-2BAA38C20CB3 a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Fandango" ;
-    :federalAdmissionNumber "W-6508"^^xsd:string .
-
 product:78C0D55A-7993-49C1-BDDA-89538F3497AC a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Mamba Due Colore" ;
     :federalAdmissionNumber "W-5638"^^xsd:string .
-
-product:7B14B5BE-21EF-4586-B9A9-A0931F62E1B1 a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Venzar" ;
-    :federalAdmissionNumber "W-7306"^^xsd:string .
 
 product:7C295E2C-36CF-429C-930A-2B7D96B01180 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -15207,6 +14841,11 @@ product:81FEBEF3-9F02-4662-A107-48540E353AB6 a :RegularProduct ;
     schema1:name "Folpet 80 WDG" ;
     :federalAdmissionNumber "W-6660"^^xsd:string .
 
+product:8D9AF2CF-9EB6-4056-A086-07627BB084D0 a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Input" ;
+    :federalAdmissionNumber "W-6392"^^xsd:string .
+
 product:8E50F079-5F6F-4EE5-8C4D-8664591CF240 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Sprinter" ;
@@ -15217,12 +14856,22 @@ product:954F595D-F40D-4435-9D9A-174E44E10F32 a :RegularProduct ;
     schema1:name "Goltix 700 SC" ;
     :federalAdmissionNumber "W-6638"^^xsd:string .
 
+product:9D3C49C5-7F39-409E-8BE2-5996AAC1D242 a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Finalsan Unkrautfrei AF" ;
+    :federalAdmissionNumber "W-6664"^^xsd:string .
+
 product:A51533DE-4C21-4E5A-9231-D72635E0648A a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Aerofleur Spray gegen Krankheiten" ;
     :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-5236"^^xsd:string ;
     :soldOutDeadline "2025-10-31"^^xsd:date .
+
+product:B1274A6A-3AF5-4AC6-BD6A-FA1E75EBBE06 a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Ranman Top" ;
+    :federalAdmissionNumber "W-6800"^^xsd:string .
 
 product:B425359C-AB71-4EF5-8467-5074DDC567FC a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -15246,11 +14895,6 @@ product:BB2B388C-CC31-495A-A52F-3786A30AAAA6 a :RegularProduct ;
     schema1:name "Basamid-Granulat" ;
     :federalAdmissionNumber "W-2054"^^xsd:string .
 
-product:BB64B1E7-F00A-4904-8F60-913446A3D76D a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Spotlight Plus" ;
-    :federalAdmissionNumber "W-6067"^^xsd:string .
-
 product:BE600CC3-0238-4DF3-A093-E29FDCA584BF a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Nissostar" ;
@@ -15261,6 +14905,11 @@ product:BE93D72E-CE75-4180-806A-C074D581F682 a :RegularProduct ;
     schema1:name "Moon Privilege" ;
     :federalAdmissionNumber "W-6828"^^xsd:string .
 
+product:BEF60360-BC47-493C-AEB6-5FDA5282538D a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Metafol SC" ;
+    :federalAdmissionNumber "W-6918"^^xsd:string .
+
 product:C809377F-97C2-4111-A1BC-EE4B9CC825EB a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Bio Raupen Stopp" ;
@@ -15270,11 +14919,6 @@ product:C82D79C1-01BC-4F42-869D-DC7E3D775BFD a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Arigo" ;
     :federalAdmissionNumber "W-6905"^^xsd:string .
-
-product:CF28C82A-ADBA-436F-BF01-3E7FB57084BB a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Agil" ;
-    :federalAdmissionNumber "W-6647"^^xsd:string .
 
 product:D370014E-1EA6-4C2A-ADD8-A68F174AB2B8 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -15291,16 +14935,6 @@ product:D7EC94A3-E7A0-4A97-87F1-E2F274100DB0 a :RegularProduct ;
     schema1:name "Firebird Plus" ;
     :federalAdmissionNumber "W-7340"^^xsd:string .
 
-product:DD20D6D8-34B1-4AC7-83EB-4A9FD2879090 a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Leimay" ;
-    :federalAdmissionNumber "W-6935"^^xsd:string .
-
-product:DE96C3F9-B32F-4C7D-991E-E634A7A48511 a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Exelor Jardin Profi" ;
-    :federalAdmissionNumber "W-5596"^^xsd:string .
-
 product:E0D6B883-16A6-430B-B0FC-2DCC90CB113C a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Agil" ;
@@ -15314,9 +14948,7 @@ product:E61DF369-78F7-40C8-8383-FA5D5253C3A0 a :RegularProduct ;
 product:E93365B7-A206-4F07-9C83-1C7A8A254778 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Movento SC" ;
-    :exhaustionDeadline "2027-06-30"^^xsd:date ;
-    :federalAdmissionNumber "W-6742"^^xsd:string ;
-    :soldOutDeadline "2026-11-30"^^xsd:date .
+    :federalAdmissionNumber "W-6742"^^xsd:string .
 
 product:EA2CD256-D947-48AF-9C48-771C4FA09017 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -15344,6 +14976,11 @@ product:05EDBA73-7501-4445-994D-ADF3A9941887 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Kerb Flo" ;
     :federalAdmissionNumber "W-6613"^^xsd:string .
+
+product:08353B23-23DB-4433-A9EB-B17A193BDC1F a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Finalsan Unkrautfrei" ;
+    :federalAdmissionNumber "W-6663"^^xsd:string .
 
 product:0CEF1E11-4F49-4860-B006-AFED5AD5D414 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -15378,6 +15015,11 @@ product:3C9CCEE3-3F59-4AE0-BFCC-6B3C15BF5202 a :RegularProduct ;
     :exhaustionDeadline "2026-10-31"^^xsd:date ;
     :federalAdmissionNumber "W-7333"^^xsd:string ;
     :soldOutDeadline "2025-10-31"^^xsd:date .
+
+product:46948565-6025-4671-AC28-53F51C0A4731 a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Propulse" ;
+    :federalAdmissionNumber "W-6825"^^xsd:string .
 
 product:4E6B37DC-8B91-425E-8643-61F6C49FDEF6 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -15446,10 +15088,10 @@ product:947F1689-98C0-469B-980C-3BB0DD0EC9C8 a :RegularProduct ;
     schema1:name "Betasana EC" ;
     :federalAdmissionNumber "W-6938"^^xsd:string .
 
-product:9D3C49C5-7F39-409E-8BE2-5996AAC1D242 a :RegularProduct ;
+product:9548961F-439B-44FF-9169-197B7DFBE4DF a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
-    schema1:name "Finalsan Unkrautfrei AF" ;
-    :federalAdmissionNumber "W-6664"^^xsd:string .
+    schema1:name "Axial 50 EC" ;
+    :federalAdmissionNumber "W-7268"^^xsd:string .
 
 product:A0814C71-F727-4622-8471-713852C3E178 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -15495,11 +15137,6 @@ product:BA004CAE-54B0-4F1D-9058-31915133C305 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Affirm" ;
     :federalAdmissionNumber "W-6748"^^xsd:string .
-
-product:BEF60360-BC47-493C-AEB6-5FDA5282538D a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Metafol SC" ;
-    :federalAdmissionNumber "W-6918"^^xsd:string .
 
 product:C862AB80-3B6A-43E7-9147-07C6A8AC1959 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -15553,16 +15190,6 @@ product:081173F2-04CF-4C40-9623-DEFB52137F2C a :RegularProduct ;
     schema1:name "Pacifica Plus" ;
     :federalAdmissionNumber "W-6862"^^xsd:string .
 
-product:08353B23-23DB-4433-A9EB-B17A193BDC1F a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Finalsan Unkrautfrei" ;
-    :federalAdmissionNumber "W-6663"^^xsd:string .
-
-product:089203D2-6BB3-487F-A3DC-D8FBDF58B9B8 a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Thiovit Jet" ;
-    :federalAdmissionNumber "W-18"^^xsd:string .
-
 product:0A7AFBDA-D936-4769-BC2D-3E5E5BE86008 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Delan Pro" ;
@@ -15577,11 +15204,6 @@ product:12D35973-311E-48EA-BBAB-B1A5EC0C1FA4 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Clinic free" ;
     :federalAdmissionNumber "W-7455"^^xsd:string .
-
-product:14316695-B18B-4B3F-BAB7-0C988C85672D a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Proline" ;
-    :federalAdmissionNumber "W-6339"^^xsd:string .
 
 product:18CA0130-308C-441C-9E72-9C5C71CA5629 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -15598,15 +15220,15 @@ product:3E3CAD4D-EF8D-4A61-A3FE-DB87347A98BD a :RegularProduct ;
     schema1:name "Proxanil" ;
     :federalAdmissionNumber "W-7421"^^xsd:string .
 
-product:413B51DA-7A50-40F6-AFB6-E9CA519A83E3 a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Elotin" ;
-    :federalAdmissionNumber "W-7438"^^xsd:string .
-
 product:4476BAFF-90CE-4BDB-80C0-8265ADE22EE3 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Proman" ;
     :federalAdmissionNumber "W-7256"^^xsd:string .
+
+product:44A2FF17-15CF-486F-BFE3-26C38B188E94 a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Adengo" ;
+    :federalAdmissionNumber "W-6736"^^xsd:string .
 
 product:46002737-F9C7-45B3-8EE4-C632DF96BFE8 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -15618,15 +15240,15 @@ product:462C2BF9-57C5-46CF-B921-5786FA603D25 a :RegularProduct ;
     schema1:name "Horizont" ;
     :federalAdmissionNumber "W-5468"^^xsd:string .
 
-product:46948565-6025-4671-AC28-53F51C0A4731 a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Propulse" ;
-    :federalAdmissionNumber "W-6825"^^xsd:string .
-
 product:6B69AD14-F947-4931-8A71-ECD34D32FD1A a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Vitigran 35" ;
     :federalAdmissionNumber "W-7018"^^xsd:string .
+
+product:78813EE8-05E9-4F7A-97D6-72C9CE44B7E4 a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Signum" ;
+    :federalAdmissionNumber "W-6994"^^xsd:string .
 
 product:88364672-0969-49C4-8102-E38EB930CCB9 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -15645,11 +15267,6 @@ product:9300C235-68D7-4482-AAFA-6C50CB97B876 a :RegularProduct ;
     schema1:name "Focus Ultra" ;
     :federalAdmissionNumber "W-4700"^^xsd:string .
 
-product:9548961F-439B-44FF-9169-197B7DFBE4DF a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Axial 50 EC" ;
-    :federalAdmissionNumber "W-7268"^^xsd:string .
-
 product:9B13934B-1738-4B01-B3A5-74F803A0AFB8 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Goltix 700 SC" ;
@@ -15660,25 +15277,20 @@ product:A6507080-EE1D-461B-BA27-121D10858661 a :RegularProduct ;
     schema1:name "Express SX" ;
     :federalAdmissionNumber "W-7297"^^xsd:string .
 
-product:B1274A6A-3AF5-4AC6-BD6A-FA1E75EBBE06 a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Ranman Top" ;
-    :federalAdmissionNumber "W-6800"^^xsd:string .
-
 product:CAFBD9BC-16EB-43DC-A2BC-CA160A78A672 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Spectrum" ;
     :federalAdmissionNumber "W-6075"^^xsd:string .
 
-product:EEE1A88E-86D2-45CD-B1A5-E5786F6E6974 a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Callisto" ;
-    :federalAdmissionNumber "W-6003"^^xsd:string .
-
 product:EFDDEA76-9F1A-480D-BB3F-5E660C498C45 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Spyrale" ;
     :federalAdmissionNumber "W-7031"^^xsd:string .
+
+product:F3003B19-7CA4-4D80-84BE-F24E3D54C0FA a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Bandur" ;
+    :federalAdmissionNumber "W-6149"^^xsd:string .
 
 product:F5C2F7F7-93A6-4C5F-A47C-378CC8092070 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -15704,10 +15316,10 @@ product:23741490-0F6F-4335-A986-ACA003E5F1F6 a :RegularProduct ;
     :federalAdmissionNumber "W-6865"^^xsd:string ;
     :soldOutDeadline "2026-01-01"^^xsd:date .
 
-product:44A2FF17-15CF-486F-BFE3-26C38B188E94 a :RegularProduct ;
+product:3A9EA976-60E4-4A88-8353-BA8E5FCCED13 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
-    schema1:name "Adengo" ;
-    :federalAdmissionNumber "W-6736"^^xsd:string .
+    schema1:name "Karate Zeon" ;
+    :federalAdmissionNumber "W-6098"^^xsd:string .
 
 product:4EC263C8-8D7C-4BAB-9225-E7D7FE6D28BC a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -15726,11 +15338,6 @@ product:6C10B098-86D9-4F71-860D-FA15B4C8C72F a :RegularProduct ;
     schema1:name "Siva 50" ;
     :federalAdmissionNumber "W-4682"^^xsd:string .
 
-product:78813EE8-05E9-4F7A-97D6-72C9CE44B7E4 a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Signum" ;
-    :federalAdmissionNumber "W-6994"^^xsd:string .
-
 product:81B6D016-2036-413A-83B4-ED15C4434377 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Equip" ;
@@ -15740,11 +15347,6 @@ product:8CE37E1E-F762-4FD9-A026-DF47667077CC a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Vitisan" ;
     :federalAdmissionNumber "W-6940"^^xsd:string .
-
-product:8D9AF2CF-9EB6-4056-A086-07627BB084D0 a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Input" ;
-    :federalAdmissionNumber "W-6392"^^xsd:string .
 
 product:96B49024-45C3-4868-A5EB-CFCDBB5EFD0E a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -15761,6 +15363,11 @@ product:9E516054-4F96-4D50-AE80-B124A71ADC7F a :RegularProduct ;
     schema1:name "Stroby WG" ;
     :federalAdmissionNumber "W-5460"^^xsd:string .
 
+product:AE9D9D27-974C-40B4-816C-8309423156B9 a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Pyrus 400 SC" ;
+    :federalAdmissionNumber "W-7406"^^xsd:string .
+
 product:B01D8B87-6436-4631-90F5-BE459A0F4DFA a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Fluroxypyr 200" ;
@@ -15773,17 +15380,17 @@ product:B14E1893-A573-4050-91E7-82C08D785520 a :RegularProduct ;
     :federalAdmissionNumber "W-6670"^^xsd:string ;
     :soldOutDeadline "2025-10-31"^^xsd:date .
 
+product:C566E2CA-03D0-439C-9A9B-3E3927209507 a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Trinity" ;
+    :federalAdmissionNumber "W-6854"^^xsd:string .
+
 product:C8D8DAAA-4A58-457D-9BDD-6FC694767C72 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Trimaxx" ;
     :exhaustionDeadline "2027-02-12"^^xsd:date ;
     :federalAdmissionNumber "W-6832"^^xsd:string ;
     :soldOutDeadline "2026-02-12"^^xsd:date .
-
-product:EAB498A8-B627-4F72-BA58-8AAF57C7B3EA a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Teppeki" ;
-    :federalAdmissionNumber "W-6555"^^xsd:string .
 
 product:055905F3-5071-48DA-B676-A03A6E9DE188 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -15796,6 +15403,11 @@ product:06EC806F-DFBD-4A17-BB56-22B8F3D67849 a :RegularProduct ;
     :exhaustionDeadline "2027-01-01"^^xsd:date ;
     :federalAdmissionNumber "W-6226"^^xsd:string ;
     :soldOutDeadline "2026-01-01"^^xsd:date .
+
+product:089203D2-6BB3-487F-A3DC-D8FBDF58B9B8 a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Thiovit Jet" ;
+    :federalAdmissionNumber "W-18"^^xsd:string .
 
 product:1285AEB1-8ACB-4EEB-AFC0-39678641CF12 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -15814,15 +15426,15 @@ product:21FEDC62-A6AD-4C54-BC09-E6541DDA56E2 a :RegularProduct ;
     schema1:name "Clio 100" ;
     :federalAdmissionNumber "W-7420"^^xsd:string .
 
+product:3333BF6C-7E3B-43D5-BF47-E7893B6085B4 a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Armicarb" ;
+    :federalAdmissionNumber "W-6432"^^xsd:string .
+
 product:37ADF047-8D53-4B0C-B7DE-BAAF9678D73A a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Centium 36 CS" ;
     :federalAdmissionNumber "W-6419"^^xsd:string .
-
-product:3A9EA976-60E4-4A88-8353-BA8E5FCCED13 a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Karate Zeon" ;
-    :federalAdmissionNumber "W-6098"^^xsd:string .
 
 product:64750B8A-558F-4392-AA1E-48325F366B4A a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -15834,35 +15446,25 @@ product:6E1AD00A-879D-41B0-886B-8F059EE1A04B a :RegularProduct ;
     schema1:name "Delfin" ;
     :federalAdmissionNumber "W-6552"^^xsd:string .
 
+product:7E500698-E75F-4D68-A06E-22D70F7FBF1F a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Regalis Plus" ;
+    :federalAdmissionNumber "W-7110"^^xsd:string .
+
 product:A5729F18-CADE-43A4-9BF2-C5F1EAF7776B a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Neudosan AF Neu" ;
     :federalAdmissionNumber "W-6668"^^xsd:string .
-
-product:AE9D9D27-974C-40B4-816C-8309423156B9 a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Pyrus 400 SC" ;
-    :federalAdmissionNumber "W-7406"^^xsd:string .
 
 product:B9CC8DF7-0458-446B-8833-F99AA8EC65C9 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Galanem" ;
     :federalAdmissionNumber "W-6336"^^xsd:string .
 
-product:C566E2CA-03D0-439C-9A9B-3E3927209507 a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Trinity" ;
-    :federalAdmissionNumber "W-6854"^^xsd:string .
-
 product:F007BB55-58CC-4A56-88B0-2CD9D3FA25C7 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "NeemAzal-T/S" ;
     :federalAdmissionNumber "W-5351"^^xsd:string .
-
-product:F3003B19-7CA4-4D80-84BE-F24E3D54C0FA a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Bandur" ;
-    :federalAdmissionNumber "W-6149"^^xsd:string .
 
 product:FCEF1D68-2ADA-4C24-B554-05C307DBEFF8 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -15881,30 +15483,20 @@ product:151FA6B1-77D7-44CC-B51F-03738FA0F672 a :RegularProduct ;
     schema1:name "Fusilade Max" ;
     :federalAdmissionNumber "W-6085"^^xsd:string .
 
-product:3333BF6C-7E3B-43D5-BF47-E7893B6085B4 a :RegularProduct ;
+product:3E8889C5-EAD6-4B95-99F5-720A71BA56EE a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
-    schema1:name "Armicarb" ;
-    :federalAdmissionNumber "W-6432"^^xsd:string .
+    schema1:name "Stomp Aqua" ;
+    :federalAdmissionNumber "W-6880"^^xsd:string .
 
 product:63729D04-1A4A-43EB-9715-48A2945162FA a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Bellis" ;
     :federalAdmissionNumber "W-6948"^^xsd:string .
 
-product:7E500698-E75F-4D68-A06E-22D70F7FBF1F a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Regalis Plus" ;
-    :federalAdmissionNumber "W-7110"^^xsd:string .
-
 product:8A76AFD4-3CB0-4D70-9552-54AE7467EB27 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Revus" ;
     :federalAdmissionNumber "W-6509"^^xsd:string .
-
-product:8DA92335-9420-4728-9CD2-ABCD0D796B3D a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Stamina S" ;
-    :federalAdmissionNumber "W-6841"^^xsd:string .
 
 product:95C2F859-9684-4E38-8ACB-808F7A76F7F9 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -15917,6 +15509,11 @@ product:B6495F99-3B65-415B-8D0F-79629C10F1EB a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Picobello" ;
     :federalAdmissionNumber "W-6403"^^xsd:string .
+
+product:C04B8145-16BA-4A1F-B454-2F70A34146C0 a :RegularProduct ;
+    schema1:countryOfOrigin country:CHE ;
+    schema1:name "Gazelle SG" ;
+    :federalAdmissionNumber "W-6581"^^xsd:string .
 
 product:E8D06C03-622A-4BBD-8944-588A88A4779F a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
@@ -15977,16 +15574,6 @@ product:B49D98BB-8C0F-4056-9464-3E70F8AA342D a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;
     schema1:name "Delan WG" ;
     :federalAdmissionNumber "W-6060"^^xsd:string .
-
-product:C04B8145-16BA-4A1F-B454-2F70A34146C0 a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Gazelle SG" ;
-    :federalAdmissionNumber "W-6581"^^xsd:string .
-
-product:3E8889C5-EAD6-4B95-99F5-720A71BA56EE a :RegularProduct ;
-    schema1:countryOfOrigin country:CHE ;
-    schema1:name "Stomp Aqua" ;
-    :federalAdmissionNumber "W-6880"^^xsd:string .
 
 product:63B87B0E-0339-4B32-8890-B8C5B244B467 a :RegularProduct ;
     schema1:countryOfOrigin country:CHE ;

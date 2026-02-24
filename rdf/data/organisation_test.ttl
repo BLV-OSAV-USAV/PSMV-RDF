@@ -198,7 +198,7 @@ company:1F589397-11D5-4AC1-B113-84C713BD54E0 a :Organisation ;
     schema1:addressCountry "CHE" ;
     schema1:addressLocality "745D8CCB-0341-4BA5-BEF5-EAF62B51BDB7"^^xsd:string ;
     schema1:name "Leu + Gygax AG"@de ;
-    schema1:streetAddress "Baslerstrasse  42"^^xsd:string ;
+    schema1:streetAddress "Fellstrasse 1"^^xsd:string ;
     schema1:telephone "056 201 45 45"^^xsd:string .
 
 company:20CD2969-0578-4E34-86E7-A6ED756874F3 a :Organisation ;
@@ -239,6 +239,13 @@ company:2B7D4FA6-1E82-40F5-86D9-3B1497D93FB9 a :Organisation ;
     schema1:addressLocality "ADEB79FE-66DF-407A-AB00-7A73BA94BDF6"^^xsd:string ;
     schema1:name "Belchim Crop Protection N.V."@de ;
     schema1:streetAddress "Neringstraat 15"^^xsd:string .
+
+company:2C865C9C-2072-4249-8F1E-7C6114EEBBEE a :Organisation ;
+    schema1:addressCountry "CHE" ;
+    schema1:addressLocality "3E600982-E417-4B23-BC70-FB8ED0DDFB1A"^^xsd:string ;
+    schema1:name "Agribort Phyto SA"@de ;
+    schema1:streetAddress "Route de l'Usine 14"^^xsd:string ;
+    schema1:telephone "027 306 94 14"^^xsd:string .
 
 company:2D42C2A3-CDE2-403A-A89B-1E7CA9F806A0 a :Organisation ;
     schema1:addressCountry "CHE" ;
@@ -288,8 +295,8 @@ company:31EE96E5-1E95-41ED-9F21-4098CB6C5784 a :Organisation ;
 company:32911DDF-66CC-4879-BD38-8D4AD9CC7316 a :Organisation ;
     schema1:addressCountry "CHE" ;
     schema1:addressLocality "A522CF26-8250-4C94-BDA0-DBBE1BD9F756"^^xsd:string ;
-    schema1:name "ONE Agriculture AG"@de ;
-    schema1:streetAddress "Baarerstrasse 38"^^xsd:string .
+    schema1:name "Helm Swiss GmbH"@de ;
+    schema1:streetAddress "Bodmerstrasse 7"^^xsd:string .
 
 company:33A0EE2C-04EB-4D4E-917E-8F246342EDC4 a :Organisation ;
     schema1:addressCountry "DEU" ;
@@ -304,7 +311,6 @@ company:33A41DBA-EA4D-40EB-BAB9-32858C853782 a :Organisation ;
     schema1:streetAddress "12 Che de l'Hobit"^^xsd:string .
 
 company:34AF8C15-EC18-43F2-A056-21C2F9B85193 a :Organisation ;
-    schema1:addressCountry "GBR" ;
     schema1:addressLocality "B74B70AD-2EB0-4008-A0B7-D1C3A6FC52EB"^^xsd:string ;
     schema1:name "United Phosphorus Limited"@de ;
     schema1:streetAddress "Birchwood Park"^^xsd:string .
@@ -346,12 +352,6 @@ company:3AEA0E67-7F50-4825-B8BB-CFBAD94D019B a :Organisation ;
     schema1:name "Desinfecta AG"@de ;
     schema1:streetAddress "Bernapark 23"^^xsd:string .
 
-company:3C2DDC32-A8AD-40EB-B0DA-DDFB0D1484CB a :Organisation ;
-    schema1:addressCountry "FRA" ;
-    schema1:addressLocality "9B3466CB-274B-49AC-90E4-1C57057957CA"^^xsd:string ;
-    schema1:name "Cheminova Agro France S.A.S"@de ;
-    schema1:streetAddress "19 Bd Eugène Duruelle"^^xsd:string .
-
 company:3CA063B7-B2FE-4867-8EF0-8B25AED5E042 a :Organisation ;
     schema1:addressCountry "CHE" ;
     schema1:addressLocality "7172254F-8E90-410D-9047-CA86CC25BEFF"^^xsd:string ;
@@ -369,6 +369,7 @@ company:3D0D954C-4EC1-4C71-9266-B70DEE134B29 a :Organisation ;
     schema1:addressCountry "CHE" ;
     schema1:addressLocality "7D7B95EC-23DF-4E51-9D72-010BF2AB198F"^^xsd:string ;
     schema1:name "808 Biozide Schweiz GmbH"@de ;
+    schema1:postOfficeBoxNumber "45555"^^xsd:string ;
     schema1:streetAddress "Hauptstrasse 84"^^xsd:string ;
     schema1:telephone "044 3210 20 05"^^xsd:string .
 
@@ -392,7 +393,6 @@ company:414B12AF-A2BC-4D35-880B-00025056247F a :Organisation ;
     schema1:streetAddress "Spitalstrasse 5"^^xsd:string .
 
 company:420CD1F2-3149-494E-88A0-831910454903 a :Organisation ;
-    schema1:addressCountry "GBR" ;
     schema1:addressLocality "48D83D55-C21F-4D98-BD80-196DEA53F965"^^xsd:string ;
     schema1:name "UPL Europe Ltd."@de ;
     schema1:streetAddress "Hall Lane, Rookery Bridge"^^xsd:string .
@@ -401,6 +401,7 @@ company:43CA8CA4-185E-4F2B-B894-EE50F8FB78D5 a :Organisation ;
     schema1:addressCountry "CHE" ;
     schema1:addressLocality "22DEEECD-906C-42AF-A62A-695C34A1550B"^^xsd:string ;
     schema1:name "A. Ziegler AG"@de ;
+    schema1:postOfficeBoxNumber "45555"^^xsd:string ;
     schema1:streetAddress "Rengglochstrasse  38"^^xsd:string .
 
 company:4481BC9B-60A3-4E18-B06C-4CF6CDF65B5D a :Organisation ;
@@ -410,7 +411,6 @@ company:4481BC9B-60A3-4E18-B06C-4CF6CDF65B5D a :Organisation ;
     schema1:streetAddress "Chaussée de la Hulpe 178"^^xsd:string .
 
 company:46353DBD-B1C4-4D1E-894B-1CC11FC20B41 a :Organisation ;
-    schema1:addressCountry "GBR" ;
     schema1:addressLocality "0164F017-7BA9-4AD4-9108-5D6C645C54E7"^^xsd:string ;
     schema1:name "UPL Europe Ltd"@de ;
     schema1:streetAddress "Birchwood Park"^^xsd:string .
@@ -421,11 +421,12 @@ company:48FD31FF-F72A-4B5D-8B05-CB392BE261B0 a :Organisation ;
     schema1:name "Certis Belchim B.V."@de ;
     schema1:streetAddress "Stadsplateau 16"^^xsd:string .
 
-company:49973A78-82E0-4253-895F-F49EE8C9DEF7 a :Organisation ;
-    schema1:addressCountry "IND" ;
-    schema1:addressLocality "0464375B-05BB-49D1-BCE2-236A3BDBA0E9"^^xsd:string ;
-    schema1:name "Sharda Cropchem Limited"@de ;
-    schema1:streetAddress "Dashrathlal Joshi Road"^^xsd:string .
+company:498785B7-989C-4676-BE6D-5B5C616FDE50 a :Organisation ;
+    schema1:addressCountry "CHE" ;
+    schema1:addressLocality "6CF8678B-9BF9-45BF-B81B-9E7E23804898"^^xsd:string ;
+    schema1:name "808 Biozide Schweiz GmbH"@de ;
+    schema1:postOfficeBoxNumber "45555"^^xsd:string ;
+    schema1:streetAddress "Haupstrasse 84"^^xsd:string .
 
 company:4B828ECC-FB0A-4F3B-B622-A1B9B08DD763 a :Organisation ;
     schema1:addressCountry "CHE" ;
@@ -457,7 +458,7 @@ company:5061AF3F-E1C6-4E91-BC0A-10A26CFD01E0 a :Organisation ;
 company:5086E8CB-6AF0-48ED-99DF-C3524B2F3A4B a :Organisation ;
     schema1:addressCountry "CHE" ;
     schema1:addressLocality "E156F657-22A6-4EAA-AAA6-21CFB0FF56E9"^^xsd:string ;
-    schema1:name "FMC IP Technology Sàrl, Zweigniederlassung Vernier"@de ;
+    schema1:name "FMC International Switzerland Sàrl"@de ;
     schema1:streetAddress "Chemin de Blandonnet 8"^^xsd:string ;
     schema1:telephone "+49 4141 9204 248  Mobile +49 171 640 7850"^^xsd:string .
 
@@ -487,7 +488,7 @@ company:5164D739-E076-4BF8-BE9A-9D2BB7C73BA4 a :Organisation ;
     schema1:name "HMWC SARL"@de ;
     schema1:postOfficeBoxNumber "10150"^^xsd:string ;
     schema1:streetAddress "8 voie vallon"^^xsd:string ;
-    schema1:telephone "33608893727"^^xsd:string .
+    schema1:telephone "0033608893727"^^xsd:string .
 
 company:53DD0D57-40EA-4F46-AB09-395FF93425F1 a :Organisation ;
     schema1:addressCountry "FRA" ;
@@ -629,7 +630,6 @@ company:6ECBC146-CA66-49CC-B558-B3152C08AD80 a :Organisation ;
     schema1:streetAddress "Lichtenberglaan 2019"^^xsd:string .
 
 company:6FB69C1A-3329-45C1-A17A-090575B52579 a :Organisation ;
-    schema1:addressCountry "GBR" ;
     schema1:addressLocality "A0B44493-3AA5-4094-9376-A561BBB161CC"^^xsd:string ;
     schema1:name "Rotam Agrochemical Europe Ltd"@de ;
     schema1:streetAddress "Hamilton House, Mobledon Place"^^xsd:string .
@@ -639,6 +639,12 @@ company:6FE3CAAD-C709-4DAD-9F44-BB5686D5B0B6 a :Organisation ;
     schema1:addressLocality "EECEFD40-6013-498F-8346-9DB044355FD8"^^xsd:string ;
     schema1:name "Hauri AG"@de ;
     schema1:streetAddress "Eichlistrasse 9"^^xsd:string .
+
+company:70A97C51-FA89-4F90-AF84-391C758FD23F a :Organisation ;
+    schema1:addressCountry "CHE" ;
+    schema1:addressLocality "250F9F36-B2E7-4DCA-B1C1-BCC315608B52"^^xsd:string ;
+    schema1:name "Firma Grande IN"@de ;
+    schema1:streetAddress "Leopoldstr. 1"^^xsd:string .
 
 company:71888824-73FB-4400-9190-D14196162CC8 a :Organisation ;
     schema1:addressCountry "FRA" ;
@@ -670,6 +676,12 @@ company:78383A9B-B46D-42D9-9572-D1C6A5BF36BF a :Organisation ;
     schema1:addressLocality "9712379C-4D05-42FA-A11B-BBB06BEBB514"^^xsd:string ;
     schema1:name "Albaugh UK Limited"@de ;
     schema1:streetAddress "1 Northumberland Ave, Westminster"^^xsd:string .
+
+company:791764F3-536D-4FEB-BA85-99BD14E4F043 a :Organisation ;
+    schema1:addressCountry "CHE" ;
+    schema1:addressLocality "84936FFB-150B-4425-8F2A-0F9AA863CB8C"^^xsd:string ;
+    schema1:name "Agrocaps SPRL"@de ;
+    schema1:streetAddress "Place Numa-Droz 2"^^xsd:string .
 
 company:7A282BB5-1EF2-411D-9954-C784F09B4E97 a :Organisation ;
     schema1:addressCountry "AUT" ;
@@ -737,7 +749,6 @@ company:866CC9D1-A64D-472F-875A-62D5A92AA74F a :Organisation ;
     schema1:telephone "032 387 70 70"^^xsd:string .
 
 company:878DE3BA-24BD-424D-9C82-16547C007F5B a :Organisation ;
-    schema1:addressCountry "GBR" ;
     schema1:addressLocality "B3D2599C-9E63-48C3-8A4F-254D1D416671"^^xsd:string ;
     schema1:name "Bernbeck LLP"@de ;
     schema1:streetAddress "26-28 Bedford Row"^^xsd:string .
@@ -941,12 +952,6 @@ company:AD442666-06A8-4132-83F5-AEDF33E0651D a :Organisation ;
     schema1:postOfficeBoxNumber "30131"^^xsd:string ;
     schema1:streetAddress "Via Venezia, 9/A"^^xsd:string .
 
-company:AE54F4BD-2E4E-4E84-8792-5CE016E3DFF2 a :Organisation ;
-    schema1:addressCountry "IND" ;
-    schema1:addressLocality "FDAA4A2C-9547-4194-9019-BA8DDE26C985"^^xsd:string ;
-    schema1:name "Sharda Cropchem Ltd."@de ;
-    schema1:streetAddress "Dashrathlal Joshi Road, Vile Parle (West)"^^xsd:string .
-
 company:AF74BCEA-AA42-4DAD-A01F-C925C3B4E66F a :Organisation ;
     schema1:addressCountry "DEU" ;
     schema1:addressLocality "5FF9525E-3934-4DA9-8C52-575C887B826A"^^xsd:string ;
@@ -976,12 +981,6 @@ company:B4605D54-048B-47BD-A35D-AA4E4CC0A85A a :Organisation ;
     schema1:addressLocality "7F5FD4EC-08C1-4F30-80F1-CB4839CCC153"^^xsd:string ;
     schema1:name "Agro-Stulln GmbH"@de ;
     schema1:streetAddress "Werksweg 2"^^xsd:string .
-
-company:BC23BDE7-8072-4E28-829E-1F4638679AC8 a :Organisation ;
-    schema1:addressCountry "ITA" ;
-    schema1:addressLocality "76E23C1A-E78C-4629-8546-505348F921DC"^^xsd:string ;
-    schema1:name "CBC (Europe) Ltd"@de ;
-    schema1:streetAddress "Via E.Majorana  2"^^xsd:string .
 
 company:BC7EE08B-7582-439B-B051-04560BE10614 a :Organisation ;
     schema1:addressCountry "CHE" ;
@@ -1015,12 +1014,6 @@ company:C1E541C9-A0C5-472E-A189-B73B35C1840C a :Organisation ;
     schema1:name "Albaugh TKI d.o.o."@de ;
     schema1:streetAddress "Grajski trg  21"^^xsd:string .
 
-company:C254059E-C98D-4551-AFD9-AA7A90FA6BC1 a :Organisation ;
-    schema1:addressCountry "ITA" ;
-    schema1:addressLocality "915F354B-A91D-44C8-8375-150A821A01BF"^^xsd:string ;
-    schema1:name "Bayer S.p.A."@de ;
-    schema1:streetAddress "Viale Certosa 126-130"^^xsd:string .
-
 company:C5D84390-95B5-4C1C-83DF-5A768935B07B a :Organisation ;
     schema1:addressCountry "DEU" ;
     schema1:addressLocality "302D69B3-5AD7-404A-B510-B08459F48368"^^xsd:string ;
@@ -1031,7 +1024,7 @@ company:C6E0547B-AA8D-469C-A459-F5770F34C3BE a :Organisation ;
     schema1:addressCountry "CHE" ;
     schema1:addressLocality "81BED59C-CAD0-4B15-B302-D1005AAAFB75"^^xsd:string ;
     schema1:name "Cemag Handels AG"@de ;
-    schema1:streetAddress "Baslerstrasse   42"^^xsd:string .
+    schema1:streetAddress "Fellstrasse 1"^^xsd:string .
 
 company:C6FB5DD9-B9BE-45AD-9564-CA168F286AE2 a :Organisation ;
     schema1:addressCountry "DEU" ;
@@ -1151,7 +1144,7 @@ company:D7EDD8E3-AA53-4E77-AA50-F3BB3DD6C128 a :Organisation ;
     schema1:addressCountry "CHE" ;
     schema1:addressLocality "BD9907D7-574E-4103-BB7C-055A6EA8D1F2"^^xsd:string ;
     schema1:name "fenaco Genossenschaft - AGROLINE"@de ;
-    schema1:streetAddress "Erlachstrasse 5"^^xsd:string .
+    schema1:streetAddress "Nordring 4"^^xsd:string .
 
 company:D8E43CCB-56FB-4FDC-A8D4-8249931D0271 a :Organisation ;
     schema1:addressCountry "CHE" ;
@@ -1178,13 +1171,6 @@ company:DB6D28FB-F4B4-4E3B-9FB0-025A410D38D1 a :Organisation ;
     schema1:addressLocality "8F6E5DF5-86FA-49B4-A9EE-166276906D09"^^xsd:string ;
     schema1:name "Ascenza Agro S.A."@de ;
     schema1:streetAddress "Avnida do Rio Tejo, Herdade das Praias"^^xsd:string .
-
-company:DC3E1E8D-9E6B-4080-A79F-19B5F3E4F42D a :Organisation ;
-    schema1:addressCountry "CHE" ;
-    schema1:addressLocality "C0E75FE4-D009-49E2-BCE9-8EDD4EF7CF7D"^^xsd:string ;
-    schema1:name "Eric Schweizer AG"@de ;
-    schema1:streetAddress "Maienstrasse 8"^^xsd:string ;
-    schema1:telephone "033 227 5722"^^xsd:string .
 
 company:DCE9B84C-BFF6-40E0-8DED-B0FDAF578D82 a :Organisation ;
     schema1:addressCountry "CHE" ;
@@ -1281,7 +1267,6 @@ company:F266967B-5237-47FD-951C-9BC47F899F44 a :Organisation ;
     schema1:telephone "0045 96 90 96 90"^^xsd:string .
 
 company:F3148B35-3C53-4CC8-9A3B-972242D3ADA0 a :Organisation ;
-    schema1:addressCountry "GBR" ;
     schema1:addressLocality "32297A43-CBA3-4946-90E8-FF2C6EB249FC"^^xsd:string ;
     schema1:name "Fine Agrochemicals Limited"@de ;
     schema1:postOfficeBoxNumber "WR 2 5AA"^^xsd:string ;

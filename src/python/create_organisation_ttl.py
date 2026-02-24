@@ -9,7 +9,7 @@ from rdflib import Graph, Namespace, URIRef, Literal
 from rdflib.namespace import RDF, XSD
 
 # local imports
-from utils.helper_functions import load_namespaces
+from src.python.utils.helper_functions import load_namespaces
 
 # Create Products
 def organisation_ttl(

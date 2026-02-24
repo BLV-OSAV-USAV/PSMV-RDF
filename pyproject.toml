@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=42", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "psmv-rdf"
+version = "0.1.0"
+description = "Pipeline for converting the Swiss plant protection product registry (PSMV) into RDF linked data."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [
+    { name = "BLV-OSAV-USAV" }
+]
+keywords = ["rdf", "linked-data", "plant-protection", "switzerland", "psmv", "open-data"]
+requires-python = ">=3.14"
+
+dependencies = [
+    "rdflib>=7.4.0",
+    "pandas>=2.3.3",
+    "requests>=2.32.5",
+    "pyyaml>=6.0.3",
+    "pysftp>=0.2.9",
+    "pyshacl>=0.31.0",
+    "otsrdflib>=0.2.9",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov",
+    "ruff",
+    "mypy",
+]
+
+[project.scripts]
+# Allows running the pipeline from the command line after install:
+# $ psmv-rdf
+psmv-rdf = "src.python.pipeline:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+

@@ -1,6 +1,6 @@
 Product:
   NK_PRODUCT: product_id # use this for unique product id or link to organisations
-  NK_PROD_REF: product_ref_or_id # use this for reference to other tables
+  NK_PRODUCT_REF: product_ref_or_id # use this for reference to other tables
   wNbr: w_number # 7420-1 is w number + lauf nummer from sales permission
   NK_PI_Product: product_internal_id # parallel import ID, nur für Controlling if not nul == NK_Produkt
   NK_SP_PRODUCT: service_provider_product_id # same as above just for Salespermission

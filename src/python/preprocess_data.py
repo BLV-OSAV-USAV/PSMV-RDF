@@ -43,8 +43,9 @@ def process_data(
 
         try:
             data_name = cfg["input"]
-            sep = cfg.get("delimiter", ";")
-            encoding = cfg.get("encoding", "utf-8")
+            sep = cfg.get("delimiter", ",") 
+            encoding = cfg.get("encoding", "utf-8-sig")
+            quotechar = '"'
 
             print(f"\n*** Processing {dataset_key}")
             print(f"Input: {data_name}")
@@ -55,9 +56,12 @@ def process_data(
                 header=0,
                 na_values=["NULL"],
                 sep=sep,
+                quotechar = quotechar,
                 encoding=encoding,
-                low_memory=False,
+                engine="python"
             )
+            # Strip headers
+            df.columns = df.columns.str.strip('"')
 
             # Validate columns
             expected_cols = set(mapping_col_dict.get(dataset_key, {}).keys())
@@ -88,6 +92,7 @@ def process_data(
                 index=False,
                 encoding="utf-8",
                 quoting=csv.QUOTE_ALL,
+                quotechar= quotechar,
                 escapechar="\\",
                 doublequote=True
             )

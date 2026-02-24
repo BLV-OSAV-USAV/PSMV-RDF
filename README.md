@@ -8,8 +8,12 @@ A Python module for converting Swiss plant protection product data from CSV form
 ## Setup
 
 ``` bash
+# 1. Create and activate the conda environment
 conda env create -f environment.yml
 conda activate psmv-rdf
+
+# 2. Install the package in editable mode
+pip install -e .
 ```
 
 ## Features
@@ -166,14 +170,6 @@ SHACL shape files are located in the `shapes/` directory:
 
 Full documentation is available at io site (To be done)
 
-**SALE_PERMISSION**: Permission to market a plant protection product under a different name on the basis of an existing (regular or simplified) authorisation. <br>
-The marketing authorisation is granted upon request and requires the written consent of the holder of the basic authorisation. <br>
-It may apply to all or individual authorised indications and is linked to the validity of the basic authorisation. (PSMV Art 66) <br>
-
-**PARALLEL_IMPORT**: Placing on the market of a PPP with a foreign authorisation holder (EU) based on an equivalent product that is authorised in Switzerland. <br>
-It applies to all authorised indications of the reference product and is linked to the validity of the reference product (PSMV Art 47 Abs1) <br>
- 
-**REGULAR**: PPP with Swiss authorisation <br>
 
 ## Ontology documentation
 
@@ -201,6 +197,8 @@ Check the `examples/` directory for usage examples:
 - `requests` - HTTP requests for LINDAS API
 - `pyyaml` - Configuration file parsing
 - `pyshacl` - SHACL validation
+- `otsrdflib`
+- `pysftp` 
 
 ## Acknowledgments 
 

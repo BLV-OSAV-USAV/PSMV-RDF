@@ -1,7 +1,8 @@
+# This file is only used if we want to overwrite specific values
 Product:
-  product_type:
+  example2:
     A: audio
     V: video
-  sale_permission:
+  example_1:
     Y: true
     N: false
