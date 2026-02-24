@@ -175,6 +175,15 @@ It applies to all authorised indications of the reference product and is linked 
  
 **REGULAR**: PPP with Swiss authorisation <br>
 
+## Ontology documentation
+
+- All ontology documentation files are written to `rdf/ontology`.
+- You may inspect a visual representation of the ontology used here: <https://service.tib.eu/webvowl/#iri=https://raw.githubusercontent.com/BLV-OSAV-USAV/PSMV-RDF/refs/heads/main/rdf/ontology/core.ttl>
+
+## Data model
+
+Are more restricted data model is written in SHACL and [can be inspected here](https://shacl-play.sparna.fr/play/doc?format=html&url=https%3A%2F%2Fraw.githubusercontent.com%2FBLV-OSAV-USAV%2FPSMV-RDF%2Frefs%2Fheads%2Fmain%2Frdf%2Fshapes%2Fdata_shape.ttl&includeDiagram=false&sectionDiagram=false)
+
 ### Examples (To be defined)
 
 Check the `examples/` directory for usage examples:

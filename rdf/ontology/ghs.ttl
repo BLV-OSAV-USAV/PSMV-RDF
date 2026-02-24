@@ -19,12 +19,28 @@ ghs: a owl:Ontology ;
 # ==============================================================================
 
 ghs:GHSStatement a owl:Class ;
-    schema:name "GHS statement"@en .
+    schema:name "GHS statement"@en ;
+    rdfs:subClassOf
+        [
+            a owl:Restriction ;
+            owl:onProperty schema:name ;
+            owl:allValuesFrom rdf:langString ;
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:onProperty schema:identifier ;
+            owl:allValuesFrom xsd:string ;
+        ] .
 
 ghs:HazardPictogram a owl:Class ;
     schema:name "Hazard pictogram"@en ;
     rdfs:seeAlso <https://en.wikipedia.org/wiki/GHS_hazard_pictograms> ;
-    rdfs:subClassOf ghs:GHSStatement .
+    rdfs:subClassOf ghs:GHSStatement ,
+        [
+            a owl:Restriction ;
+            owl:onProperty schema:image ;
+            owl:allValuesFrom rdfs:Resource ;
+        ] .
 
 ghs:HazardStatement a owl:Class ;
     schema:name "Hazard statements"@en ;
@@ -44,11 +60,21 @@ ghs:SignalWord a owl:Class ;
 
 ghs:PrecautionaryStatementCombination a owl:Class ;
     schema:name "Combinations of precautionary statements"@en ;
-    rdfs:subClassOf ghs:PrecautionaryStatement .
+    rdfs:subClassOf ghs:PrecautionaryStatement ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty schema:hasPart ;
+        owl:allValuesFrom ghs:PrecautionaryStatement ;
+    ] .
 
 ghs:HazardStatementCombination a owl:Class ;
     schema:name "Combinations of hazard statements"@en ;
-    rdfs:subClassOf ghs:HazardStatement .
+    rdfs:subClassOf ghs:HazardStatement ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty schema:hasPart ;
+        owl:allValuesFrom ghs:HazardStatement ;
+    ] .
 
 # ==============================================================================
 # GHS SIGNAL WORDS
@@ -677,7 +703,7 @@ ghs:H300H310 a ghs:HazardStatementCombination ;
         "Fatal if swallowed or in contact with skin"@en,
         "Mortel par ingestion ou par contact cutané"@fr,
         "Mortale in caso di ingestione o a contatto con la pelle"@it ;
-    ghs:hasPart ghs:H300,
+    schema:hasPart ghs:H300,
         ghs:H310 .
 
 ghs:H300H310H330 a ghs:HazardStatementCombination ;
@@ -686,7 +712,7 @@ ghs:H300H310H330 a ghs:HazardStatementCombination ;
         "Fatal if swallowed, in contact with skin or if inhaled"@en,
         "Mortel par ingestion, par contact cutané ou par inhalation"@fr,
         "Mortale se ingerito, a contatto con la pelle o se inalato"@it ;
-    ghs:hasPart ghs:H300,
+    schema:hasPart ghs:H300,
         ghs:H310,
         ghs:H330 .
 
@@ -696,7 +722,7 @@ ghs:H300H330 a ghs:HazardStatementCombination ;
         "Fatal if swallowed or if inhaled"@en,
         "Mortel par ingestion ou par inhalation"@fr,
         "Mortale se ingerito o inalato"@it ;
-    ghs:hasPart ghs:H300,
+    schema:hasPart ghs:H300,
         ghs:H330 .
 
 ghs:H301H311 a ghs:HazardStatementCombination ;
@@ -705,7 +731,7 @@ ghs:H301H311 a ghs:HazardStatementCombination ;
         "Toxic if swallowed or in contact with skin"@en,
         "Toxique par ingestion ou par contact cutané"@fr,
         "Tossico se ingerito o a contatto con la pelle"@it ;
-    ghs:hasPart ghs:H301,
+    schema:hasPart ghs:H301,
         ghs:H311 .
 
 ghs:H301H311H331 a ghs:HazardStatementCombination ;
@@ -714,7 +740,7 @@ ghs:H301H311H331 a ghs:HazardStatementCombination ;
         "Toxic if swallowed, in contact with skin or if inhaled"@en,
         "Toxique par ingestion, par contact cutané ou par inhalation"@fr,
         "Tossico se ingerito, a contatto con la pelle o se inalato"@it ;
-    ghs:hasPart ghs:H301,
+    schema:hasPart ghs:H301,
         ghs:H311,
         ghs:H331 .
 
@@ -724,7 +750,7 @@ ghs:H301H331 a ghs:HazardStatementCombination ;
         "Toxic if swallowed or if inhaled"@en,
         "Toxique par ingestion ou par inhalation"@fr,
         "Tossico se ingerito o inalato"@it ;
-    ghs:hasPart ghs:H301,
+    schema:hasPart ghs:H301,
         ghs:H331 .
 
 ghs:H302H312 a ghs:HazardStatementCombination ;
@@ -733,7 +759,7 @@ ghs:H302H312 a ghs:HazardStatementCombination ;
         "Harmful if swallowed or in contact with skin"@en,
         "Nocif en cas d'ingestion ou de contact cutané"@fr,
         "Nocivo se ingerito o a contatto con la pelle"@it ;
-    ghs:hasPart ghs:H302,
+    schema:hasPart ghs:H302,
         ghs:H312 .
 
 ghs:H302H312H332 a ghs:HazardStatementCombination ;
@@ -742,7 +768,7 @@ ghs:H302H312H332 a ghs:HazardStatementCombination ;
         "Harmful if swallowed, in contact with skin or if inhaled"@en,
         "Nocif en cas d'ingestion, de contact cutané ou d'inhalation"@fr,
         "Nocivo se ingerito, a contatto con la pelle o se inalato"@it ;
-    ghs:hasPart ghs:H302,
+    schema:hasPart ghs:H302,
         ghs:H312,
         ghs:H332 .
 
@@ -752,7 +778,7 @@ ghs:H302H332 a ghs:HazardStatementCombination ;
         "Harmful if swallowed or if inhaled"@en,
         "Nocif en cas d'ingestion ou d'inhalation"@fr,
         "Nocivo se ingerito o inalato"@it ;
-    ghs:hasPart ghs:H302,
+    schema:hasPart ghs:H302,
         ghs:H332 .
 
 ghs:H310H330 a ghs:HazardStatementCombination ;
@@ -761,7 +787,7 @@ ghs:H310H330 a ghs:HazardStatementCombination ;
         "Fatal in contact with skin or if inhaled"@en,
         "Mortel par contact cutané ou par inhalation"@fr,
         "Mortale a contatto con la pelle o in caso di inalazione"@it ;
-    ghs:hasPart ghs:H310,
+    schema:hasPart ghs:H310,
         ghs:H330 .
 
 ghs:H311H331 a ghs:HazardStatementCombination ;
@@ -770,7 +796,7 @@ ghs:H311H331 a ghs:HazardStatementCombination ;
         "Toxic in contact with skin or if inhaled"@en,
         "Toxique par contact cutané ou par inhalation"@fr,
         "Tossico a contatto con la pelle o se inalato"@it ;
-    ghs:hasPart ghs:H311,
+    schema:hasPart ghs:H311,
         ghs:H331 .
 
 ghs:H312H332 a ghs:HazardStatementCombination ;
@@ -779,7 +805,7 @@ ghs:H312H332 a ghs:HazardStatementCombination ;
         "Harmful in contact with skin or if inhaled"@en,
         "Nocif en cas de contact cutané ou d'inhalation"@fr,
         "Nocivo a contatto con la pelle o se inalato"@it ;
-    ghs:hasPart ghs:H312,
+    schema:hasPart ghs:H312,
         ghs:H332 .
 
 # ==============================================================================
@@ -1485,7 +1511,7 @@ ghs:P231P232 a ghs:PrecautionaryStatementCombination ;
         "Handle under inert gas/... Protect from moisture."@en,
         "Manipuler et stocker le contenu sous gaz inerte/… Protéger de l'humidité"@fr,
         "Manipolare e conservare in atmosfera di gas inerte/…. Tenere al riparo dall'umidità"@it ;
-    ghs:hasPart ghs:P231,
+    schema:hasPart ghs:P231,
         ghs:P232 .
 
 ghs:P301P310 a ghs:PrecautionaryStatementCombination ;
@@ -1494,7 +1520,7 @@ ghs:P301P310 a ghs:PrecautionaryStatementCombination ;
         "IF SWALLOWED: Immediately call a POISON CENTER/doctor/…"@en,
         "EN CAS D’INGESTION: Appeler immédiatement un CENTRE ANTIPOISON/un médecin/…"@fr,
         "IN CASO DI INGESTIONE: contattare immediatamente un CENTRO ANTIVELENI/un medico/…"@it ;
-    ghs:hasPart ghs:P301,
+    schema:hasPart ghs:P301,
         ghs:P310 .
 
 ghs:P301P312 a ghs:PrecautionaryStatementCombination ;
@@ -1503,19 +1529,19 @@ ghs:P301P312 a ghs:PrecautionaryStatementCombination ;
         "IF SWALLOWED: Call a POISON CENTRE/doctor/… if you feel unwell"@en,
         "EN CAS D'INGESTION: Appeler un CENTRE ANTIPOISON/un médecin/…/ en cas de malaise"@fr,
         "IN CASO DI INGESTIONE: in presenza di malessere, contattare un CENTRO ANTIVELENI/un medico/…"@it ;
-    ghs:hasPart ghs:P301,
+    schema:hasPart ghs:P301,
         ghs:P312 .
 
 ghs:P301P316 a ghs:PrecautionaryStatementCombination ;
     schema:identifier "P301+P316" ;
     schema:name "IF SWALLOWED: Get emergency medical help immediately"@en ;
-    ghs:hasPart ghs:P301,
+    schema:hasPart ghs:P301,
         ghs:P316 .
 
 ghs:P301P317 a ghs:PrecautionaryStatementCombination ;
     schema:identifier "P301+P317" ;
     schema:name "IF SWALLOWED: Get medical help"@en ;
-    ghs:hasPart ghs:P301,
+    schema:hasPart ghs:P301,
         ghs:P317 .
 
 ghs:P301P330P331 a ghs:PrecautionaryStatementCombination ;
@@ -1524,7 +1550,7 @@ ghs:P301P330P331 a ghs:PrecautionaryStatementCombination ;
         "IF SWALLOWED: Rinse mouth. Do NOT induce vomiting"@en,
         "EN CAS D'INGESTION: Rincer la bouche. NE PAS faire vomir"@fr,
         "IN CASO DI INGESTIONE: sciacquare la bocca. NON provocare il vomito"@it ;
-    ghs:hasPart ghs:P301,
+    schema:hasPart ghs:P301,
         ghs:P330,
         ghs:P331 .
 
@@ -1534,7 +1560,7 @@ ghs:P302P334 a ghs:PrecautionaryStatementCombination ;
         "IF ON SKIN: Immerse in cool water or wrap in wet bandages"@en,
         "EN CAS DE CONTACT AVEC LA PEAU: Rincer à l'eau fraîche ou poser une compresse humide"@fr,
         "IN CASO DI CONTATTO CON LA PELLE: immergere in acqua fredda o avvolgere con un bendaggio umido"@it ;
-    ghs:hasPart ghs:P302,
+    schema:hasPart ghs:P302,
         ghs:P334 .
 
 ghs:P302P335P334 a ghs:PrecautionaryStatementCombination ;
@@ -1543,7 +1569,7 @@ ghs:P302P335P334 a ghs:PrecautionaryStatementCombination ;
         "IF ON SKIN: Brush off loose particles from skin. Immerse in cool water [or wrap in wet bandages]"@en,
         "EN CAS DE CONTACT AVEC LA PEAU: Enlever avec précaution les particules déposées sur la peau. Rincer à l'eau fraîche [ou poser une compresse humide]"@fr,
         "IN CASO DI CONTATTO CON LA PELLE: rimuovere le particelle depositate sulla pelle. Immergere in acqua fredda [o avvolgere con un bendaggio umido]"@it ;
-    ghs:hasPart ghs:P302,
+    schema:hasPart ghs:P302,
         ghs:P334,
         ghs:P335 .
 
@@ -1553,13 +1579,13 @@ ghs:P302P352 a ghs:PrecautionaryStatementCombination ;
         "IF ON SKIN: Wash with plenty of water/…"@en,
         "EN CAS DE CONTACT AVEC LA PEAU: Laver abondamment à l’eau/…"@fr,
         "IN CASO DI CONTATTO CON LA PELLE: lavare abbondantemente con acqua/…"@it ;
-    ghs:hasPart ghs:P302,
+    schema:hasPart ghs:P302,
         ghs:P352 .
 
 ghs:P302P361P354 a ghs:PrecautionaryStatementCombination ;
     schema:identifier "P302+P361+P354" ;
     schema:name "Obtain, read and follow all safety instructions before use"@en ;
-    ghs:hasPart ghs:P302,
+    schema:hasPart ghs:P302,
         ghs:P354,
         ghs:P361 .
 
@@ -1569,7 +1595,7 @@ ghs:P303P361P353 a ghs:PrecautionaryStatementCombination ;
         "IF ON SKIN (or hair): Take off immediately all contaminated clothing. Rinse skin with water [or shower]"@en,
         "EN CAS DE CONTACT AVEC LA PEAU (ou les cheveux): Enlever immédiatement tous les vêtements contaminés. Rincer la peau à l'eau [ou se doucher]"@fr,
         "IN CASO DI CONTATTO CON LA PEAU (o con i capelli): togliersi di dosso immediatamente tutti gli indumenti contaminati. Sciacquare la pelle [o fare una doccia]"@it ;
-    ghs:hasPart ghs:P303,
+    schema:hasPart ghs:P303,
         ghs:P353,
         ghs:P361 .
 
@@ -1579,7 +1605,7 @@ ghs:P304P340 a ghs:PrecautionaryStatementCombination ;
         "IF INHALED: Remove person to fresh air and keep comfortable for breathing"@en,
         "EN CAS D’INHALATION: transporter la personne à l’extérieur et la maintenir dans une position où elle peut confortably respirer"@fr,
         "IN CASO DI INALAZIONE: trasportare l’infortunato all’aria aperta e mantenerlo a riposo in posizione che favorisca la respirazione"@it ;
-    ghs:hasPart ghs:P304,
+    schema:hasPart ghs:P304,
         ghs:P340 .
 
 ghs:P305P351P338 a ghs:PrecautionaryStatementCombination ;
@@ -1588,7 +1614,7 @@ ghs:P305P351P338 a ghs:PrecautionaryStatementCombination ;
         "IF IN EYES: Rinse cautiously with water for several minutes. Remove contact lenses, if present and easy to do. Continue rinsing"@en,
         "EN CAS DE CONTACT AVEC LES YEUX: Rincer avec précaution à l'eau pendant plusieurs minutes. Enlever les lentilles de contact si la victime en porte et si elles peuvent être facilement enlevées. Continuer à rincer"@fr,
         "IN CASO DI CONTATTO CON GLI OCCHI: sciacquare accuratamente per parecchi minuti. Togliere le eventuali lenti a contatto se è agevole farlo. Continuare a sciacquare"@it ;
-    ghs:hasPart ghs:P305,
+    schema:hasPart ghs:P305,
         ghs:P338,
         ghs:P351 .
 
@@ -1596,7 +1622,7 @@ ghs:P305P354P338 a ghs:PrecautionaryStatementCombination ;
     schema:identifier "P305+P354+P338" ;
     schema:name "IF IN EYES: Immediately rinse with water for several minutes. Remove contact lenses, if present and easy to do. Continue rinsing."@en,
         "Si dans les yeux: Rincer immédiatement à l’eau pendant plusieurs minutes. Retirez les lentilles de contact, si elles sont présentes et faciles à faire. Continuez le rinçage."@fr ;
-    ghs:hasPart ghs:P305,
+    schema:hasPart ghs:P305,
         ghs:P338,
         ghs:P354 .
 
@@ -1606,7 +1632,7 @@ ghs:P306P360 a ghs:PrecautionaryStatementCombination ;
         "IF ON CLOTHING: rinse immediately contaminated clothing and skin with plenty of water before removing clothes"@en,
         "EN CAS DE CONTACT AVEC LES VÊTEMENTS: rincer immédiatement et abondamment avec de l’eau les vêtements contaminés et la peau avant de les enlever"@fr,
         "IN CASO DI CONTATTO CON GLI INDUMENTI: sciacquare immediatamente e abbondantemente gli indumenti contaminati e la pelle prima di togliersi gli indumenti"@it ;
-    ghs:hasPart ghs:P306,
+    schema:hasPart ghs:P306,
         ghs:P360 .
 
 ghs:P308P311 a ghs:PrecautionaryStatementCombination ;
@@ -1615,7 +1641,7 @@ ghs:P308P311 a ghs:PrecautionaryStatementCombination ;
         "IF exposed or concerned: Call a POISON CENTER/doctor/…"@en,
         "EN CAS d’exposition prouvée ou suspectée: Appeler un CENTRE ANTIPOISON/un médecin/…"@fr,
         "In caso di esposizione o di possibile esposizione: contattare un CENTRO ANTIVELENI/un medico/…"@it ;
-    ghs:hasPart ghs:P308,
+    schema:hasPart ghs:P308,
         ghs:P311 .
 
 ghs:P308P313 a ghs:PrecautionaryStatementCombination ;
@@ -1624,13 +1650,13 @@ ghs:P308P313 a ghs:PrecautionaryStatementCombination ;
         "IF exposed or concerned: Get medical advice/attention"@en,
         "EN CAS d’exposition prouvée ou suspectée: consulter un médecin"@fr,
         "IN CASO di esposizione o di possibile esposizione, consultare un medico"@it ;
-    ghs:hasPart ghs:P308,
+    schema:hasPart ghs:P308,
         ghs:P313 .
 
 ghs:P308P316 a ghs:PrecautionaryStatementCombination ;
     schema:identifier "P308+P316" ;
     schema:name "Obtain, read and follow all safety instructions before use"@en ;
-    ghs:hasPart ghs:P308,
+    schema:hasPart ghs:P308,
         ghs:P316 .
 
 ghs:P332P313 a ghs:PrecautionaryStatementCombination ;
@@ -1639,13 +1665,13 @@ ghs:P332P313 a ghs:PrecautionaryStatementCombination ;
         "If skin irritation occurs: Get medical advice/attention"@en,
         "En cas d’irritation cutanée: consulter un médecin"@fr,
         "In caso di irritazione della pelle: consultare un medico"@it ;
-    ghs:hasPart ghs:P313,
+    schema:hasPart ghs:P313,
         ghs:P332 .
 
 ghs:P332P317 a ghs:PrecautionaryStatementCombination ;
     schema:identifier "P332+P317" ;
     schema:name "Obtain, read and follow all safety instructions before use"@en ;
-    ghs:hasPart ghs:P317,
+    schema:hasPart ghs:P317,
         ghs:P332 .
 
 ghs:P333P313 a ghs:PrecautionaryStatementCombination ;
@@ -1654,13 +1680,13 @@ ghs:P333P313 a ghs:PrecautionaryStatementCombination ;
         "If skin irritation or rash occurs: Get medical advice/attention"@en,
         "En cas d’irritation ou d'éruption cutanée: consulter un médecin"@fr,
         "In caso di irritazione o eruzione della pelle: consultare un medico"@it ;
-    ghs:hasPart ghs:P313,
+    schema:hasPart ghs:P313,
         ghs:P333 .
 
 ghs:P333P317 a ghs:PrecautionaryStatementCombination ;
     schema:identifier "P333+P317" ;
     schema:name "Obtain, read and follow all safety instructions before use"@en ;
-    ghs:hasPart ghs:P317,
+    schema:hasPart ghs:P317,
         ghs:P333 .
 
 ghs:P336P315 a ghs:PrecautionaryStatementCombination ;
@@ -1669,7 +1695,7 @@ ghs:P336P315 a ghs:PrecautionaryStatementCombination ;
         "Thaw frosted parts with lukewarm water. Do not rub affected area. Get immediate medical advice/attention"@en,
         "Dégeler les parties gelées avec de l'eau tiède. Ne pas frotter les zones touchées. Consulter immédiatement un médecin"@fr,
         "Sgelare le parti congelate usando acqua tiepida. Non sfregare la parte interessata. Consultare immediatamente un medico"@it ;
-    ghs:hasPart ghs:P315,
+    schema:hasPart ghs:P315,
         ghs:P336 .
 
 ghs:P337P313 a ghs:PrecautionaryStatementCombination ;
@@ -1678,13 +1704,13 @@ ghs:P337P313 a ghs:PrecautionaryStatementCombination ;
         "If eye irritation persists: Get medical advice/attention"@en,
         "Si l’irritation oculaire persiste: consulter un médecin"@fr,
         "Se l’irritazione degli occhi persiste, consultare un medico"@it ;
-    ghs:hasPart ghs:P313,
+    schema:hasPart ghs:P313,
         ghs:P337 .
 
 ghs:P337P317 a ghs:PrecautionaryStatementCombination ;
     schema:identifier "P337+P317" ;
     schema:name "Obtain, read and follow all safety instructions before use"@en ;
-    ghs:hasPart ghs:P317,
+    schema:hasPart ghs:P317,
         ghs:P337 .
 
 ghs:P342P311 a ghs:PrecautionaryStatementCombination ;
@@ -1693,13 +1719,13 @@ ghs:P342P311 a ghs:PrecautionaryStatementCombination ;
         "If experiencing respiratory symptoms: Call a POISON CENTER/doctor/…"@en,
         "En cas de symptômes respiratoires: Appeler un CENTRE ANTIPOISON/un médecin/…"@fr,
         "In caso di sintomi respiratori: contattare un CENTRO ANTIVELENI/un medico/…"@it ;
-    ghs:hasPart ghs:P311,
+    schema:hasPart ghs:P311,
         ghs:P342 .
 
 ghs:P342P316 a ghs:PrecautionaryStatementCombination ;
     schema:identifier "P342+P316" ;
     schema:name "Obtain, read and follow all safety instructions before use"@en ;
-    ghs:hasPart ghs:P316,
+    schema:hasPart ghs:P316,
         ghs:P342 .
 
 ghs:P361P364 a ghs:PrecautionaryStatementCombination ;
@@ -1708,7 +1734,7 @@ ghs:P361P364 a ghs:PrecautionaryStatementCombination ;
         "Take off immediately all contaminated clothing and wash it before reuse"@en,
         "Enlever immédiatement tous les vêtements contaminés et les laver avant réutilisation"@fr,
         "Togliere immediatamente tutti gli indumenti contaminati e lavarli prima di indossarli nuovamente"@it ;
-    ghs:hasPart ghs:P361,
+    schema:hasPart ghs:P361,
         ghs:P364 .
 
 ghs:P362P364 a ghs:PrecautionaryStatementCombination ;
@@ -1717,7 +1743,7 @@ ghs:P362P364 a ghs:PrecautionaryStatementCombination ;
         "Take off contaminated clothing and wash it before reuse"@en,
         "Enlever les vêtements contaminés et les laver avant réutilisation"@fr,
         "Togliere tutti gli indumenti contaminati e lavarli prima di indossarli nuovamente"@it ;
-    ghs:hasPart ghs:P362,
+    schema:hasPart ghs:P362,
         ghs:P364 .
 
 ghs:P370P372P380P373 a ghs:PrecautionaryStatementCombination ;
@@ -1726,7 +1752,7 @@ ghs:P370P372P380P373 a ghs:PrecautionaryStatementCombination ;
         "In case of fire: Explosion risk. Evacuate area. DO NOT fight fire when fire reaches explosives"@en,
         "En cas d'incendie: Risque d'explosion. Évacuer la zone. NE PAS combattre l'incendie lorsque le feu atteint les explosifs"@fr,
         "Rischio di esplosione in caso di incendio. Evacuare la zona. NON utilizzare mezzi estinguenti se l'incendio raggiunge materiali esplosivi"@it ;
-    ghs:hasPart ghs:P370,
+    schema:hasPart ghs:P370,
         ghs:P372,
         ghs:P373,
         ghs:P380 .
@@ -1737,7 +1763,7 @@ ghs:P370P376 a ghs:PrecautionaryStatementCombination ;
         "In case of fire: Stop leak if safe to do so"@en,
         "En cas d’incendie: obturer la fuite si cela peut se faire sans danger"@fr,
         "In caso di incendio: bloccare la perdita se non c’è pericolo"@it ;
-    ghs:hasPart ghs:P370,
+    schema:hasPart ghs:P370,
         ghs:P376 .
 
 ghs:P370P378 a ghs:PrecautionaryStatementCombination ;
@@ -1746,7 +1772,7 @@ ghs:P370P378 a ghs:PrecautionaryStatementCombination ;
         "In case of fire: Use… to extinguish"@en,
         "En cas d’incendie: Utiliser… pour l’extinction"@fr,
         "In caso d’incendio: utilizzare…per estinguere"@it ;
-    ghs:hasPart ghs:P370,
+    schema:hasPart ghs:P370,
         ghs:P378 .
 
 ghs:P370P380P375 a ghs:PrecautionaryStatementCombination ;
@@ -1755,7 +1781,7 @@ ghs:P370P380P375 a ghs:PrecautionaryStatementCombination ;
         "In case of fire: Evacuate area. Fight fire remotely due to the risk of explosion"@en,
         "En cas d’incendie: évacuer la zone. Combattre l’incendie à distance à cause du risque d'explosion"@fr,
         "In caso di incendio: evacuare la zona. Rischio di esplosione. Utilizzare i mezzi estinguenti a grande distanza"@it ;
-    ghs:hasPart ghs:P370,
+    schema:hasPart ghs:P370,
         ghs:P375,
         ghs:P380 .
 
@@ -1765,7 +1791,7 @@ ghs:P370P380P375P378 a ghs:PrecautionaryStatementCombination ;
         "In case of fire: Evacuate area. Fight fire remotely due to the risk of explosion. [Use … to extinguish]"@en,
         "En cas d'incendie: Évacuer la zone. Combattre l'incendie à distance à cause du risque d'explosion. [Utiliser … pour l'extinction]"@fr,
         "In caso di incendio: evacuare la zona. Rischio di esplosione. Utilizzare i mezzi estinguenti a grande distanza. [Estinguere con…]"@it ;
-    ghs:hasPart ghs:P370,
+    schema:hasPart ghs:P370,
         ghs:P375,
         ghs:P378,
         ghs:P380 .
@@ -1773,7 +1799,7 @@ ghs:P370P380P375P378 a ghs:PrecautionaryStatementCombination ;
 ghs:P370P380P375P378opt a ghs:PrecautionaryStatementCombination ;
     schema:identifier "P370+P380+P375[+P378]" ;
     schema:name "Obtain, read and follow all safety instructions before use"@en ;
-    ghs:hasPart ghs:P370,
+    schema:hasPart ghs:P370,
         ghs:P375,
         ghs:P378,
         ghs:P380 .
@@ -1784,7 +1810,7 @@ ghs:P371P380P375 a ghs:PrecautionaryStatementCombination ;
         "In case of major fire and large quantities: Evacuate area. Fight fire remotely due to the risk of explosion"@en,
         "En cas d’incendie important et s’il s’agit de grandes quantités: évacuer la zone. Combattre l’incendie à distance à cause du risque d'explosion"@fr,
         "In caso di incendio grave e di grandi quantità: evacuare la zona. Rischio di esplosione. Utilizzare i mezzi estinguenti a grande distanza"@it ;
-    ghs:hasPart ghs:P371,
+    schema:hasPart ghs:P371,
         ghs:P375,
         ghs:P380 .
 
@@ -1794,7 +1820,7 @@ ghs:P402P404 a ghs:PrecautionaryStatementCombination ;
         "Store in a dry place. Store in a closed container"@en,
         "Stocker dans un endroit sec. Stocker dans un récipient fermé"@fr,
         "Conservare in luogo asciutto e in recipiente chiuso"@it ;
-    ghs:hasPart ghs:P402,
+    schema:hasPart ghs:P402,
         ghs:P404 .
 
 ghs:P403P233 a ghs:PrecautionaryStatementCombination ;
@@ -1803,7 +1829,7 @@ ghs:P403P233 a ghs:PrecautionaryStatementCombination ;
         "Store in a well-ventilated place. Keep container tightly closed"@en,
         "Stocker dans un endroit bien ventilé. Maintenir le récipient fermé de manière étanche"@fr,
         "Tenere il recipiente ben chiuso e in luogo ben ventilato"@it ;
-    ghs:hasPart ghs:P233,
+    schema:hasPart ghs:P233,
         ghs:P403 .
 
 ghs:P403P235 a ghs:PrecautionaryStatementCombination ;
@@ -1812,7 +1838,7 @@ ghs:P403P235 a ghs:PrecautionaryStatementCombination ;
         "Store in a well-ventilated place. Keep cool"@en,
         "Stocker dans un endroit bien ventilé. Tenir au frais"@fr,
         "Conservare in luogo fresco e ben ventilato"@it ;
-    ghs:hasPart ghs:P235,
+    schema:hasPart ghs:P235,
         ghs:P403 .
 
 ghs:P410P403 a ghs:PrecautionaryStatementCombination ;
@@ -1821,7 +1847,7 @@ ghs:P410P403 a ghs:PrecautionaryStatementCombination ;
         "Protect from sunlight. Store in a well-ventilated place"@en,
         "Protéger du rayonnement solaire. Stocker dans un endroit bien ventilé"@fr,
         "Proteggere dai raggi solari. Conservare in luogo ben ventilato"@it ;
-    ghs:hasPart ghs:P403,
+    schema:hasPart ghs:P403,
         ghs:P410 .
 
 ghs:P410P412 a ghs:PrecautionaryStatementCombination ;
@@ -1830,5 +1856,5 @@ ghs:P410P412 a ghs:PrecautionaryStatementCombination ;
         "Protect from sunlight. Do no expose to temperatures exceeding 50 °C/122 °F"@en,
         "Protéger du rayonnement solaire. Ne pas exposer à une température supérieure à 50 °C/122 °F"@fr,
         "Proteggere dai raggi solari. Non esporre a temperature superiori a 50 °C/122 °F"@it ;
-    ghs:hasPart ghs:P410,
+    schema:hasPart ghs:P410,
         ghs:P412 .

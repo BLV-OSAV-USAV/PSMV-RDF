@@ -1,0 +1,52 @@
+@prefix : <https://agriculture.ld.admin.ch/plant-protection/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix shape: <https://agriculture.ld.admin.ch/plant-protection/shape/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix schema: <http://schema.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+shape:ClassProperty a sh:NodeShape ;
+    sh:targetClass owl:Class,
+        owl:ObjectProperty,
+        owl:DatatypeProperty ;
+    sh:property [
+        sh:order 1 ;
+        sh:name "English name"@en ;
+        sh:description "Preferred name of the class or property in English"@en ;
+        sh:path schema:name ;
+        sh:qualifiedValueShape [
+            sh:languageIn ( "en" ) ;
+        ] ;
+        sh:qualifiedMinCount 1 ;
+        sh:message "Any class or property must have at least one name in English."@en ;
+    ] ;
+    sh:property [
+        sh:order 2 ;
+        sh:name "Name"@en ;
+        sh:description "Preferred name of the class or property"@de ;
+        sh:path schema:name ;
+        sh:uniqueLang true ;
+        sh:message "There can be at most one name per language tag."@en ;
+    ] ;
+    sh:property [
+        sh:order 3 ;
+        sh:name "Description"@en ;
+        sh:path schema:description ;
+        sh:uniqueLang true ;
+        sh:message "A class or property can have at most one description per language."@en ;
+    ] ;
+    sh:property [
+        schema:name "Forbid rdfs:label"@en ;
+        sh:path rdfs:label ;
+        sh:maxCount 0 ;
+        sh:message "Any use of rdfs:label is forbidden; the preferred property is schema:name."@en ;
+    ] ;
+    sh:property [
+        schema:name "Forbid rdfs:comment"@en ;
+        sh:path rdfs:comment ;
+        sh:maxCount 0 ;
+        sh:message "Any use of rdfs:comment is forbidden; the preferred property is schema:description."@en ;
+    ] .

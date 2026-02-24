@@ -62,12 +62,56 @@
 # ==============================================================================
 
 schema:Organization a owl:Class ;
-    schema:name "Organization"@en ;
+    schema:name "Organization"@en,
+        "Organisation"@de ;
     rdfs:subClassOf [
         a owl:Restriction ;
         owl:onProperty schema:legalName ;
-        owl:allValuesFrom xsd:string
+        owl:allValuesFrom xsd:string ;
+    ] ,
+    [
+        a owl:Restriction ;
+        owl:onProperty schema:address ;
+        owl:allValuesFrom schema:PostalAddress ;
+    ] ,
+    [
+        a owl:Restriction ;
+        owl:onProperty schema:telephone ;
+        owl:allValuesFrom xsd:string ;
+    ] ,
+    [
+        a owl:Restriction ;
+        owl:onProperty schema:faxNumber ;
+        owl:allValuesFrom xsd:string ;
+    ] ,
+    [
+        a owl:Restriction ;
+        owl:onProperty schema:email ;
+        owl:allValuesFrom xsd:string ;
     ] .
+
+schema:PostalAddress a owl:Class ;
+    schema:name "Address"@en ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty schema:addressCountry ;
+        owl:allValuesFrom schema:Country ;
+    ] ,
+    [
+        a owl:Restriction ;
+        owl:onProperty schema:streetAddress ;
+        owl:allValuesFrom xsd:string ;
+    ] ,
+    [
+        a owl:Restriction ;
+        owl:onProperty schema:postalCode ;
+        owl:allValuesFrom xsd:string ;
+    ] ,
+    [
+        a owl:Restriction ;
+        owl:onProperty schema:addressLocality ;
+        owl:allValuesFrom xsd:string ;
+    ].
 
 # ==============================================================================
 # PRODUCT TAXONOMY AND PROPERTIES (Herbicides, Insecticides etc.)
@@ -77,7 +121,12 @@ schema:Organization a owl:Class ;
 
 :Product a owl:Class ;
     schema:name "Product"@en ;
-    schema:description "Represents any plant protection product that is officially registered and listed on <https://psm.admin.ch/>."@en .
+    schema:description "Represents any plant protection product that is officially registered and listed on <https://psm.admin.ch/>."@en ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty schema:countryOfOrigin ;
+        owl:allValuesFrom schema:Country ;
+    ] .
 
 :RegularProduct a owl:Class ;
     rdfs:subClassOf :Product ;
@@ -93,6 +142,14 @@ schema:Organization a owl:Class ;
     rdfs:subClassOf :Product ;
     schema:name "Parallel Import"@en ;
     schema:description "Placing on the market of a plant protection product with a foreign authorisation holder (EU) based on an equivalent product that is authorised in Switzerland. It is linked to the validity of the reference product (PSMV Art. 47 Abs. 1)."@en .
+
+# Logical statement: All subclasses based on permissions are disjoint from each other
+[] a owl:AllDisjointClasses ;
+    owl:members (
+        :RegularProduct
+        :SalePermission
+        :ParallelImport
+    ) .
 
 :ghs a owl:ObjectProperty ;
     schema:name "GHS statement"@en ;
@@ -141,9 +198,6 @@ schema:Organization a owl:Class ;
     schema:name "Permission holder"@en ;
     rdfs:domain :Product ;
     rdfs:range schema:Organization .
-
-:producingCountry a owl:ObjectProperty ;
-    schema:name "Producing country"@en .
 
 :exhaustionDeadline a owl:DatatypeProperty ;
     schema:name "Ablaufdatum der Nutzung"@de,
