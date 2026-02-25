@@ -1,5 +1,28 @@
 import yaml
 from rdflib import Namespace
+import os
+import sys
+import shutil
+import subprocess
+import urllib.request
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+ROOT_DIR = os.path.abspath(os.path.join(BASE_DIR, "..", "..", "..")) 
+
+SHACL_PLAY_VERSION = "0.11.6"
+
+SHACL_PLAY_JAR_PATH = os.path.join(
+    ROOT_DIR,
+    "service",
+    "shacl_play",
+    f"shacl-play-app-{SHACL_PLAY_VERSION}-onejar.jar",
+)
+
+SHACL_PLAY_JAR_URL = (
+    f"https://github.com/sparna-git/shacl-play/releases/download/"
+    f"{SHACL_PLAY_VERSION}/"
+    f"shacl-play-app-{SHACL_PLAY_VERSION}-onejar.jar"
+)
 
 def load_namespaces(path="data/namespaces/namespaces.yaml"):
     """
@@ -67,3 +90,23 @@ def load_rdf_mappings(namespaces, path="data/mapping/mapping_rdf.yaml", namespac
         result[yaml_key] = converted
 
     return result
+
+def ensure_jar(jar_path: str = SHACL_PLAY_JAR_PATH) -> str:
+    """Download the SHACL-Play JAR if it is not already cached."""
+    if os.path.isfile(jar_path):
+        return jar_path
+
+    jar_dir = os.path.dirname(os.path.abspath(jar_path))
+    os.makedirs(jar_dir, exist_ok=True)
+
+    print(f"  JAR not found locally. Downloading v{SHACL_PLAY_VERSION} …")
+    try:
+        urllib.request.urlretrieve(SHACL_PLAY_JAR_URL, jar_path)
+        print(f"  ✓ JAR cached at: {jar_path}")
+    except Exception as exc:
+        raise RuntimeError(
+            f"Could not download SHACL-Play JAR from:\n  {SHACL_PLAY_JAR_URL}\n"
+            f"Download it manually and place it at:\n  {jar_path}\n"
+            f"Details: {exc}"
+        ) from exc
+    return jar_path

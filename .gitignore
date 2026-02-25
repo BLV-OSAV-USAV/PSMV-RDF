@@ -68,3 +68,5 @@ rdf/processed/
 # Any test files...
 test.*
 test/
+
+*.jar
