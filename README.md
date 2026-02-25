@@ -1,213 +1,84 @@
-# PSMV-RDF (need a better name) 🚧 Work in Progress
+# PSMV-RDF
+
+> [!NOTE]
 > This repository is under active development. Features, documentation, and structure will change frequently.
 
 ## Plant Protection Products (PSMV) as Linked Data
 
 A Python module for converting Swiss plant protection product data from CSV format to RDF and publishing it to the LINDAS Linked Data Service.
 
-## Setup
+## Reproduce the data integration pipeline
 
-``` bash
-# 1. Create and activate the conda environment
-conda env create -f environment.yml
-conda activate psmv-rdf
+1. Add variables to `.env`
 
-# 2. Install the package in editable mode
-pip install -e .
-```
+    ``` bash
+    USER=lindas-fsvo-psm
+    PASSWORD=********
+    GRAPH=https://lindas.admin.ch/foag/psm
+    ENDPOINT=https://stardog.cluster.ldbar.ch/lindas
+    ```
 
-## Features
+2. Create and activate the conda environment.
 
-- **CSV to RDF Conversion**: Transform Swiss plant protection product CSV data to RDF format
-- **LINDAS Integration**: Direct publishing to the Swiss Federal Linked Data Service (LINDAS)
-- **SHACL Validation**: Validate rdf plant protection product data 
+    ``` bash
+    conda env create -f environment.yml
+    conda activate psmv-rdf
+    ```
 
-## Roadmap
+3. Install the package in editable mode
 
-- [ ] Automated daily sync with SFTP server to get csv
-- [ ] Implement ontologies
-- [ ] SPARQL query templates for common queries
-- [ ] Data quality reports and validation
-- [ ] Pipeline for LINDAS publication
+    ``` bash
+    pip install -e .
+    ```
+
+4. Start the data integration pipeline
+
+    ``` bash
+    python -m service.pipeline
+    ```
 
 ## Project Structure
-```bash
+
+```
 psmv-rdf/
 ├── .github/
-│   └── workflows/
-│       ├── fetch_data.yml           # 1. Fetch raw CSV/source data
-│       ├── run_rdf_pipeline.yml     # 2. Convert CSV → RDF
-│       ├── shacl_validate.yml       # 3. Validate RDF using SHACL
-│       └── lindas_publication.yml   # 4. Publish validated RDF to LINDAS
-│
 ├── data/
 │   ├── raw/
 │   ├── mapping/
 │   └── processed/
-│ 
 ├── services/
 │   └── pipeline.py       
-│
 ├── src/
 │    ├── sparql
-│    ├── python/
-│        ├── __init__.py
-│        ├── fetch_data.py         
-│        ├── validate_rdf.py  
-│        └── publish_rdf.py        
-│
+│    └── python/  
 ├── rdf/
 │   ├── ontology/
-│   └── shapes                      
-│
+│   ├── shapes/
+│   ├── data/
+│   ├── example/
+│   └── processed/
 ├── tests/
-│
 ├── docs/
-│
 ├── .gitignore
 ├── README.md
 └── environment.yml
-
 ```
-
-
-## Pipeline
-```mermaid
-sequenceDiagram
-
-    autonumber
-
-    participant FSVO as DWH/SFTP
-    participant UploadScript as Upload Script (upload.sh)
-    participant ETL_Pipeline as ETL Pipeline (etl.py)
-    participant Repo as github Repository
-    participant ReasoningScript as Reasoning (reason.py)
-    participant LINDAS as LINDAS
-
-    UploadScript->>ETL_Pipeline: Trigger ETL pipeline
-
-    activate ETL_Pipeline
-        ETL_Pipeline->>FSVO: Loads csv data
-        ETL_Pipeline->>Repo: Reads mapping tables
-        loop For each class individually
-            ETL_Pipeline->>ETL_Pipeline: Parses XML object
-            ETL_Pipeline->>ETL_Pipeline: Integrates mappings
-            ETL_Pipeline->>Repo: Writes n-triple<br>or turtle RDF files
-        end
-    deactivate ETL_Pipeline
-
-    UploadScript->>ReasoningScript: Trigger reasoning pipeline
-    activate ReasoningScript
-        ReasoningScript->>Repo: Loads `.ttl` files<br>(`ontology.ttl`, foreign triples<br>from `rdf/foreign/*.ttl`, and manual<br>mappings from `rdf/mapping/*.ttl`)
-        ReasoningScript->>ReasoningScript: Merges all RDF data
-        ReasoningScript->>ReasoningScript: Performs RDFS/OWL reasoning<br>(subclass, subproperty, inverseOf)
-        ReasoningScript->>Repo: Reads, sorts and writes<br>all `.ttl` files
-    deactivate ReasoningScript
-
-    UploadScript->>Repo: SHACL validation `graph.ttl`
-    UploadScript->>LINDAS: Clears the existing graph
-    UploadScript->>LINDAS: Uploads the new `graph.ttl`
-```
-
-
-## CSV Data Format (To be defined)
-
-The module expects Swiss plant protection product CSV files with the following structure:
-
-### Required Columns 
-- `Zulassungsnummer` - Registration number
-- `Produktname` - Product name
-- etc
-- ...
-See `examples/sample_data.csv` for a complete example.
-
-## RDF Schema (To be defined)
-
-The converter uses the following ontologies and vocabularies:
-
-- **Base URI**: `https://lindas.admin.ch/ppproducts/`
-- **Schema.org**: General properties (name, manufacturer)
-- **Custom PPP Ontology**: Plant protection-specific terms
-- **DCMI**: Metadata terms (date, identifier)
-
-### Example Output (to be defined)
-
-```turtle
-@prefix schema: <http://schema.org/> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
-
-```
-
-
-## SHACL Validation (To be defined)
-
-The module includes SHACL (Shapes Constraint Language) validation to ensure data quality before publishing to LINDAS.
-
-### Running SHACL Validation
-
-```python
-# Add example 
-```
-
-### SHACL Shapes (To be defined)
-
-The module includes predefined SHACL shapes for plant protection products:
-
-```turtle
-@prefix sh: <http://www.w3.org/ns/shacl#> .
-
-```
-
-
-### Shape Files Location
-
-SHACL shape files are located in the `shapes/` directory:
-- `shapes/ppp_shapes.ttl` - Core plant protection product shapes
-- `shapes/ingredient_shapes.ttl` - Active ingredient validation
-- `shapes/authorization_shapes.ttl` - Authorization and regulatory shapes
-
-## Documentation (To be defined)
-
-Full documentation is available at io site (To be done)
-
 
 ## Ontology documentation
 
-- All ontology documentation files are written to `rdf/ontology`.
-- You may inspect a visual representation of the ontology used here: <https://service.tib.eu/webvowl/#iri=https://raw.githubusercontent.com/BLV-OSAV-USAV/PSMV-RDF/refs/heads/main/rdf/ontology/core.ttl>
+All ontology documentation files are written to `rdf/ontology`.
+You may inspect a visual representation of the ontology used here: <https://service.tib.eu/webvowl/#iri=https://raw.githubusercontent.com/BLV-OSAV-USAV/PSMV-RDF/refs/heads/main/rdf/ontology/core.ttl>
 
 ## Data model
 
-Are more restricted data model is written in SHACL and [can be inspected here](https://shacl-play.sparna.fr/play/doc?format=html&url=https%3A%2F%2Fraw.githubusercontent.com%2FBLV-OSAV-USAV%2FPSMV-RDF%2Frefs%2Fheads%2Fmain%2Frdf%2Fshapes%2Fdata_shape.ttl&includeDiagram=false&sectionDiagram=false)
+Are more restricted data model is written in SHACL and [can be inspected here](https://shacl-play.sparna.fr/play/doc?format=html&url=https%3A%2F%2Fraw.githubusercontent.com%2FBLV-OSAV-USAV%2FPSMV-RDF%2Frefs%2Fheads%2Fmain%2Frdf%2Fshapes%2Fdata_shape.ttl&includeDiagram=false&sectionDiagram=false).
 
-### Examples (To be defined)
+## Dependencies
 
-Check the `examples/` directory for usage examples:
-
-- `basic_conversion.py` - Simple CSV to RDF conversion
-- `lindas_publishing.py` - Publishing to LINDAS
-- `custom_mappings.py` - Using custom field mappings
-- `data_validation.py` - Validating CSV data
-
-
-## Dependencies (To be defined)
-
-- `rdflib` - RDF library for Python
-- `pandas` - CSV data processing
-- `requests` - HTTP requests for LINDAS API
-- `pyyaml` - Configuration file parsing
-- `pyshacl` - SHACL validation
-- `otsrdflib`
-- `pysftp` 
+Project dependencies are listed in [pyproject.toml](pyproject.toml).
 
 ## Acknowledgments 
 
 - Built with [rdflib](https://github.com/RDFLib/rdflib)
-- Integrates with [LINDAS](https://lindas.admin.ch/) - Swiss Federal Linked Data Service
+- Integrates with [LINDAS](https://lindas.admin.ch/), the Swiss federal linked data service.
 - Orignial ontology and pipeline by Damian Oswald with [plant protection pipeline](https://github.com/blw-ofag-ufag/plant-protection)
-
-
-
-
-
-
