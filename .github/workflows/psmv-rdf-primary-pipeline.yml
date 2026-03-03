@@ -1,0 +1,63 @@
+name: psmv-rdf-primary-pipeline
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'data/raw/**'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'data/raw/**'
+
+permissions:
+  contents: write
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash -el {0}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Cache Conda packages
+        uses: actions/cache@v4
+        with:
+          path: ~/conda_pkgs_dir
+          key: ${{ runner.os }}-conda-${{ hashFiles('environment.yml') }}
+          restore-keys: |
+            ${{ runner.os }}-conda-
+
+      - name: Set up Conda environment
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+          auto-update-conda: true
+          python-version: "3.12"
+          activate-environment: my-env
+          environment-file: environment.yml
+          pkgs-dirs: ~/conda_pkgs_dir
+
+      - name: Install psmv as editable package
+        run: pip install -e .
+
+      - name: Show installed packages
+        run: pip list
+
+      - name: Verify src import
+        run: python -c "import src; print(src.__file__)"
+
+      - name: Run pipeline script
+        run: python service/pipeline.py
+
+      - name: Commit and push changes
+        if: github.event_name != 'pull_request'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git diff --cached --quiet || git commit -m "Update pipeline outputs [skip ci]"
+          git push origin main

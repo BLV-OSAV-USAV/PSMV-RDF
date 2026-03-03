@@ -12,7 +12,7 @@ authors = [
     { name = "BLV-OSAV-USAV" }
 ]
 keywords = ["rdf", "linked-data", "plant-protection", "switzerland", "psmv", "open-data"]
-requires-python = ">=3.14"
+requires-python = ">=3.12"
 
 dependencies = [
     "rdflib>=7.4.0",
