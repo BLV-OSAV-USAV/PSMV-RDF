@@ -37,7 +37,6 @@ jobs:
         uses: conda-incubator/setup-miniconda@v3
         with:
           auto-update-conda: true
-          python-version: "3.12"
           activate-environment: my-env
           environment-file: environment.yml
           pkgs-dirs: ~/conda_pkgs_dir
