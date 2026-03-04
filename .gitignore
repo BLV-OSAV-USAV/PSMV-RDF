@@ -95,3 +95,6 @@ rdf/processed/
 test/
 tests/
 test.*
+test/
+
+*.jar

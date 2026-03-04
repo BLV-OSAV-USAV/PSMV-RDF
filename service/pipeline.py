@@ -11,14 +11,17 @@ from src.python.preprocess_data import process_data
 from src.python.validate import validate_ttl_files
 from src.python.create_produtcs_ttl import products_ttl
 from src.python.reason import load_inputs, apply_rules, save_graph
+from src.python.generate_shaql_documentation import generate_documentation
+from src.python.shacl_validator import run_shacl_validation
+
 from src.python.utils.helper_functions import *
 
 def run_pipeline():
 
-    print("Preprocess data")
+    print("\nPreprocess data")
     process_data()
 
-    print("Validate syntax of turtle files")
+    print("\nValidate syntax of turtle files")
     validate_ttl_files("rdf")
 
     print("\nRun data integration pipeline")
@@ -43,14 +46,13 @@ def run_pipeline():
     graph = apply_rules(inputs, [])
     save_graph(graph, "rdf/processed/shapes.ttl")
 
-    print("\nCheck graph shape using SHACL")
-    pyshacl_validate(
-        "rdf/processed/graph.ttl",
-        shacl_graph="rdf/processed/shapes.ttl",
-        serialize_report_graph=True
-    )
+    print("\nChecking graph shape using SHACL...")
+    run_shacl_validation()
 
-    print("\n✓ Pipeline completed successfully.")
+    print("\nWriting documentation using SHACL")
+    generate_documentation()
+
+    print(f"\n{"\033[92m"}✓ Pipeline completed successfully.{"\033[0m"}")
 
 
 if __name__ == "__main__":
