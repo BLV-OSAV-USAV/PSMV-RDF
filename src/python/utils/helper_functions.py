@@ -102,8 +102,8 @@ def ensure_jar(jar_path: str = SHACL_PLAY_JAR_PATH) -> str:
     try:
         urllib.request.urlretrieve(SHACL_PLAY_JAR_URL, jar_path)
         print(f"  ✓ JAR cached at: {jar_path}")
+        return jar_path  # <-- this was missing
     except Exception as exc:
-        # Check if a previously cached version exists anywhere as fallback
         if os.path.isfile(jar_path):
             print("  ⚠ Download failed, using existing cached JAR.")
             return jar_path
