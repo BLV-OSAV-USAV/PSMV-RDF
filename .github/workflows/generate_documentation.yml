@@ -1,5 +1,4 @@
 name: generate_documentation
-
 on:
   workflow_dispatch:
   push:
@@ -27,7 +26,6 @@ jobs:
     defaults:
       run:
         shell: bash -el {0}
-
     steps:
       - uses: actions/checkout@v4
         with:
@@ -49,15 +47,15 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-conda-
 
+      - name: Install psmv as editable package
+        run: pip install -e .
+
       - name: Restore SHACL-Play JAR cache
         id: cache-jar
         uses: actions/cache/restore@v4
         with:
           path: service/shacl_play
           key: shacl-play-jar-${{ env.SHACL_PLAY_VERSION }}
-
-      - name: Install psmv as editable package
-        run: pip install -e .
 
       - name: Run pipeline script
         run: python service/shacl_docgen.py
