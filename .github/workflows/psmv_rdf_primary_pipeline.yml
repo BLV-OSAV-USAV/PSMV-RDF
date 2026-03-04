@@ -23,8 +23,8 @@ jobs:
           enable-caching: true
       - name: Install dependencies from environment.yml
         run: |
-          pip install pyyaml
-          python -c "
+          uv pip install pyyaml
+          uv run python -c "
           import yaml, subprocess
           env = yaml.safe_load(open('environment.yml'))
           deps = [d for d in env.get('dependencies', []) if isinstance(d, str) and not d.startswith('python')]
