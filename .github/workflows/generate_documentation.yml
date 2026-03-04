@@ -49,6 +49,8 @@ jobs:
         with:
           path: service/shacl_play
           key: shacl-play-jar-${{ env.SHACL_PLAY_VERSION }}
+      - name: Install Graphviz
+        run: sudo apt-get install -y graphviz
       - name: Run pipeline script
         run: uv run python service/shacl_docgen.py
       - name: Save SHACL-Play JAR cache
