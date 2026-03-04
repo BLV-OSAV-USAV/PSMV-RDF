@@ -2,7 +2,7 @@ name: psmv-rdf
 channels:
   - conda-forge
 dependencies:
-  - python=3.14.2
+  - python=3.12
   - rdflib>=7.4.0
   - pandas>=2.3.3
   - requests>=2.32.5
