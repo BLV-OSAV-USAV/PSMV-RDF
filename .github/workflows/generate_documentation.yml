@@ -1,0 +1,80 @@
+name: generate_documentation
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'rdf/processed/shapes.ttl'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'rdf/processed/shapes.ttl'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+env:
+  SHACL_PLAY_VERSION: "0.11.6"
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash -el {0}
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Conda environment
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+          auto-update-conda: true
+          python-version: "3.12"
+          activate-environment: my-env
+          environment-file: environment.yml
+          pkgs-dirs: ~/conda_pkgs_dir
+
+      - name: Cache Conda packages
+        uses: actions/cache@v4
+        with:
+          path: ~/conda_pkgs_dir
+          key: ${{ runner.os }}-conda-${{ hashFiles('environment.yml') }}
+          restore-keys: |
+            ${{ runner.os }}-conda-
+
+      - name: Restore SHACL-Play JAR cache
+        id: cache-jar
+        uses: actions/cache/restore@v4
+        with:
+          path: service/shacl_play
+          key: shacl-play-jar-${{ env.SHACL_PLAY_VERSION }}
+
+      - name: Install psmv as editable package
+        run: pip install -e .
+
+      - name: Run pipeline script
+        run: python service/shacl_docgen.py
+
+      - name: Save SHACL-Play JAR cache
+        if: steps.cache-jar.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: service/shacl_play
+          key: shacl-play-jar-${{ env.SHACL_PLAY_VERSION }}
+
+      - name: Commit and push changes
+        if: github.event_name != 'pull_request'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git diff --cached --quiet || git commit -m "Update documentation [skip ci]"
+          git push origin HEAD:${{ github.ref_name }}
