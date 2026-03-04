@@ -1,5 +1,4 @@
 name: psmv_rdf_primary_pipeline
-
 on:
   workflow_dispatch:
   push:
@@ -10,49 +9,39 @@ on:
     branches: [main]
     paths:
       - 'data/raw/**'
-
 permissions:
   contents: write
-
 jobs:
   run-pipeline:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash -el {0}
-
     steps:
       - uses: actions/checkout@v4
-
-      - name: Cache Conda packages
-        uses: actions/cache@v4
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v5
         with:
-          path: ~/conda_pkgs_dir
-          key: ${{ runner.os }}-conda-${{ hashFiles('environment.yml') }}
-          restore-keys: |
-            ${{ runner.os }}-conda-
-
-      - name: Set up Conda environment
-        uses: conda-incubator/setup-miniconda@v3
-        with:
-          auto-update-conda: true
           python-version: "3.12"
-          activate-environment: my-env
-          environment-file: environment.yml
-          pkgs-dirs: ~/conda_pkgs_dir
-
+          enable-caching: true
+      - name: Install dependencies from environment.yml
+        run: |
+          pip install pyyaml
+          python -c "
+          import yaml, subprocess
+          env = yaml.safe_load(open('environment.yml'))
+          deps = [d for d in env.get('dependencies', []) if isinstance(d, str) and not d.startswith('python')]
+          pip_deps = next((d['pip'] for d in env.get('dependencies', []) if isinstance(d, dict) and 'pip' in d), [])
+          if deps:
+              subprocess.run(['uv', 'pip', 'install'] + deps, check=True)
+          if pip_deps:
+              subprocess.run(['uv', 'pip', 'install'] + pip_deps, check=True)
+          "
       - name: Install psmv as editable package
-        run: pip install -e .
-
+        run: uv pip install -e .
       - name: Show installed packages
-        run: pip list
-
+        run: uv pip list
       - name: Verify src import
-        run: python -c "import src; print(src.__file__)"
-
+        run: uv run python -c "import src; print(src.__file__)"
       - name: Run pipeline script
-        run: python service/pipeline.py
-
+        run: uv run python service/pipeline.py
       - name: Commit and push changes
         if: github.event_name != 'pull_request'
         run: |
