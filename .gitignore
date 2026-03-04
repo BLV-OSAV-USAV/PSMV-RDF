@@ -98,3 +98,5 @@ test.*
 test/
 
 *.jar
+
+shacl-documentaion-log.txt

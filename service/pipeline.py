@@ -11,7 +11,6 @@ from src.python.preprocess_data import process_data
 from src.python.validate import validate_ttl_files
 from src.python.create_produtcs_ttl import products_ttl
 from src.python.reason import load_inputs, apply_rules, save_graph
-from src.python.generate_shaql_documentation import generate_documentation
 from src.python.shacl_validator import run_shacl_validation
 
 from src.python.utils.helper_functions import *
@@ -48,9 +47,6 @@ def run_pipeline():
 
     print("\nChecking graph shape using SHACL...")
     run_shacl_validation()
-
-    print("\nWriting documentation using SHACL")
-    generate_documentation()
 
     print(f"\n{"\033[92m"}✓ Pipeline completed successfully.{"\033[0m"}")
 

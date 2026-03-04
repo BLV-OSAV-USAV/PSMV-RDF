@@ -92,7 +92,6 @@ def load_rdf_mappings(namespaces, path="data/mapping/mapping_rdf.yaml", namespac
     return result
 
 def ensure_jar(jar_path: str = SHACL_PLAY_JAR_PATH) -> str:
-    """Download the SHACL-Play JAR if it is not already cached."""
     if os.path.isfile(jar_path):
         return jar_path
 
@@ -104,9 +103,8 @@ def ensure_jar(jar_path: str = SHACL_PLAY_JAR_PATH) -> str:
         urllib.request.urlretrieve(SHACL_PLAY_JAR_URL, jar_path)
         print(f"  ✓ JAR cached at: {jar_path}")
     except Exception as exc:
-        raise RuntimeError(
-            f"Could not download SHACL-Play JAR from:\n  {SHACL_PLAY_JAR_URL}\n"
-            f"Download it manually and place it at:\n  {jar_path}\n"
-            f"Details: {exc}"
-        ) from exc
-    return jar_path
+        # Check if a previously cached version exists anywhere as fallback
+        if os.path.isfile(jar_path):
+            print("  ⚠ Download failed, using existing cached JAR.")
+            return jar_path
+        raise RuntimeError(...) from exc

@@ -22,11 +22,7 @@ def run_shacl_validation(
     elapsed = time.perf_counter() - start
     print(f"[+] SHACL validation complete in {elapsed:.3f}s")
     print(f"    Conforms   : {conforms}")
-
-    if serialize_report and results_graph:
-        results_graph.serialize(destination=report_path, format="turtle")
-        print(f"    Report saved to: {report_path}")
-
+    
     return conforms
 
 if __name__ == "__main__":
