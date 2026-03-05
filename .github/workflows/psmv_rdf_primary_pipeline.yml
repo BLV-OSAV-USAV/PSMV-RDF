@@ -1,4 +1,4 @@
-name: psmv_rdf_primary_pipeline
+name: Primary Pipeline
 on:
   workflow_dispatch:
   push:
