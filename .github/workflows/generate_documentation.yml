@@ -1,4 +1,4 @@
-name: generate_documentation
+name: Generate Documentation
 on:
   workflow_dispatch:
   push:
