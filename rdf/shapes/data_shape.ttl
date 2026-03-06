@@ -79,7 +79,7 @@ WHERE {
 LIMIT 10
 ```
 
-To run this query, you may visit the [LINDAS SPARQL GUI](https://s.zazuko.com/3779LjG).
+To run this query, you may visit the [LINDAS SPARQL GUI](https://s.zazuko.com/23Aw5hp).
 
 However, to fully leverage the analytical capabilities of this schema, users are directed to the centralized query repository.
 A comprehensive suite of advanced SPARQL query templates, demonstrating complex relational extraction and data aggregation, is maintained within the project's source control at [https://github.com/BLV-OSAV-USAV/PSMV-RDF/tree/main/src/sparql/examples](https://github.com/BLV-OSAV-USAV/PSMV-RDF/tree/main/src/sparql/examples).
