@@ -1,6 +1,7 @@
 import os
 import sys
 import csv
+import yaml
 from pathlib import Path
 import pandas as pd
 from rdflib import Graph, Namespace, URIRef, Literal
@@ -59,7 +60,7 @@ def products_ttl(
     products_df = pd.read_csv(products_data_path)
     pro_org_link_df = pd.read_csv(product_organisation_link_path)
 
-    # Iterate through dataframe
+    # Create product triples
     for i, row in products_df.iterrows():
         try: 
             # Skip missing required fields
