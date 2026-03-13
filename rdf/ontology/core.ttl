@@ -424,6 +424,16 @@ schema:PostalAddress a owl:Class ;
     rdfs:domain :Ingredient ;
     rdfs:range :Substance .
 
+:ActiveSubstance a owl:Class ;
+    rdfs:subClassOf :Substance ;
+    schema:name "Active Substance"@en ;
+    schema:description "A biologically active ingredient in a plant protection product that acts against pests or diseases."@en .
+
+:CoFormulant a owl:Class ;
+    rdfs:subClassOf :Substance ;
+    schema:name "Co-formulant"@en ;
+    schema:description "An inactive ingredient in a plant protection product that supports the formulation but has no direct pesticidal activity."@en .
+    
 schema:QuantitativeValue a owl:Class ;
     schema:name "Quantitative value"@en ;
     rdfs:subClassOf [

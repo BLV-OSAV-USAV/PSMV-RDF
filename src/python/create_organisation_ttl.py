@@ -2,6 +2,7 @@ import os
 import sys
 import csv
 import yaml
+import duckdb
 from pathlib import Path
 import pandas as pd
 from rdflib import Graph, Namespace, URIRef, Literal
@@ -38,7 +39,7 @@ TYPE_MAPPING = rdf_mappings["type_mapping"]
 
 # Create Products
 def organisation_ttl(
-    organsiation_data_path: str = "data/processed/Organisation.csv",
+    db_path = "data/processed/psmv-data.duckdb",
     out_path: str = "rdf/data/organisation_ttl"):
 
     """
@@ -59,7 +60,9 @@ def organisation_ttl(
     graph.namespace_manager.bind("schema", SCHEMA, override=True, replace=True)
 
     # Read data
-    organsiation_df = pd.read_csv(organsiation_data_path)
+    con = duckdb.connect(db_path, read_only=True)
+    organsiation_df = con.execute("SELECT * FROM Organisation").df()
+    con.close()
 
     # Create organisation triples
     for i, row in organsiation_df.iterrows():

@@ -8,9 +8,9 @@
 @prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-ghs:GHS01 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb3,
+ghs:GHS01 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b3,
         ghs:GHSStatement,
         ghs:HazardPictogram ;
     rdfs:label "explodierende Bombe"@de,
@@ -20,9 +20,9 @@ ghs:GHS01 a _:nb141ff17bca544b68cfd29aede5246eeb1,
     schema:identifier "GHS01" ;
     schema:image <http://commons.wikimedia.org/wiki/Special:FilePath/GHS-pictogram-explos.svg> .
 
-ghs:GHS02 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb3,
+ghs:GHS02 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b3,
         ghs:GHSStatement,
         ghs:HazardPictogram ;
     rdfs:label "Flamme"@de,
@@ -32,9 +32,9 @@ ghs:GHS02 a _:nb141ff17bca544b68cfd29aede5246eeb1,
     schema:identifier "GHS02" ;
     schema:image <http://commons.wikimedia.org/wiki/Special:FilePath/GHS-pictogram-flamme.svg> .
 
-ghs:GHS03 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb3,
+ghs:GHS03 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b3,
         ghs:GHSStatement,
         ghs:HazardPictogram ;
     rdfs:label "Flamme über einem Kreis"@de,
@@ -44,9 +44,9 @@ ghs:GHS03 a _:nb141ff17bca544b68cfd29aede5246eeb1,
     schema:identifier "GHS03" ;
     schema:image <http://commons.wikimedia.org/wiki/Special:FilePath/GHS-pictogram-rondflam.svg> .
 
-ghs:GHS04 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb3,
+ghs:GHS04 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b3,
         ghs:GHSStatement,
         ghs:HazardPictogram ;
     rdfs:label "Gasflasche"@de,
@@ -56,9 +56,9 @@ ghs:GHS04 a _:nb141ff17bca544b68cfd29aede5246eeb1,
     schema:identifier "GHS04" ;
     schema:image <http://commons.wikimedia.org/wiki/Special:FilePath/GHS-pictogram-bottle.svg> .
 
-ghs:GHS05 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb3,
+ghs:GHS05 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b3,
         ghs:GHSStatement,
         ghs:HazardPictogram ;
     rdfs:label "Ätzwirkung"@de,
@@ -68,9 +68,9 @@ ghs:GHS05 a _:nb141ff17bca544b68cfd29aede5246eeb1,
     schema:identifier "GHS05" ;
     schema:image <http://commons.wikimedia.org/wiki/Special:FilePath/GHS-pictogram-acid.svg> .
 
-ghs:GHS06 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb3,
+ghs:GHS06 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b3,
         ghs:GHSStatement,
         ghs:HazardPictogram ;
     rdfs:label "Totenkopf mit gekreuzten Knochen"@de,
@@ -80,9 +80,9 @@ ghs:GHS06 a _:nb141ff17bca544b68cfd29aede5246eeb1,
     schema:identifier "GHS06" ;
     schema:image <http://commons.wikimedia.org/wiki/Special:FilePath/GHS-pictogram-skull.svg> .
 
-ghs:GHS07 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb3,
+ghs:GHS07 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b3,
         ghs:GHSStatement,
         ghs:HazardPictogram ;
     rdfs:label "Ausrufezeichen"@de,
@@ -92,9 +92,9 @@ ghs:GHS07 a _:nb141ff17bca544b68cfd29aede5246eeb1,
     schema:identifier "GHS07" ;
     schema:image <http://commons.wikimedia.org/wiki/Special:FilePath/GHS-pictogram-exclam.svg> .
 
-ghs:GHS08 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb3,
+ghs:GHS08 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b3,
         ghs:GHSStatement,
         ghs:HazardPictogram ;
     rdfs:label "Gesundheitsgefahr"@de,
@@ -104,9 +104,9 @@ ghs:GHS08 a _:nb141ff17bca544b68cfd29aede5246eeb1,
     schema:identifier "GHS08" ;
     schema:image <http://commons.wikimedia.org/wiki/Special:FilePath/GHS-pictogram-silhouette.svg> .
 
-ghs:GHS09 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb3,
+ghs:GHS09 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b3,
         ghs:GHSStatement,
         ghs:HazardPictogram ;
     rdfs:label "umwelt"@de,
@@ -116,8 +116,8 @@ ghs:GHS09 a _:nb141ff17bca544b68cfd29aede5246eeb1,
     schema:identifier "GHS09" ;
     schema:image <http://commons.wikimedia.org/wiki/Special:FilePath/GHS-pictogram-pollu.svg> .
 
-ghs:H200 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H200 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Instabil, explosiv"@de,
@@ -126,8 +126,8 @@ ghs:H200 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Esplosivo instabile"@it ;
     schema:identifier "H200" .
 
-ghs:H201 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H201 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Explosiv, Gefahr der Massenexplosion"@de,
@@ -136,8 +136,8 @@ ghs:H201 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Esplosivo; pericolo di esplosione di massa"@it ;
     schema:identifier "H201" .
 
-ghs:H202 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H202 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Explosiv; große Gefahr durch Splitter, Spreng- und Wurfstücke"@de,
@@ -146,8 +146,8 @@ ghs:H202 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Esplosivo; grave pericolo di proiezione"@it ;
     schema:identifier "H202" .
 
-ghs:H203 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H203 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Explosiv; Gefahr durch Feuer, Luftdruck oder Splitter, Spreng- und Wurfstücke"@de,
@@ -156,8 +156,8 @@ ghs:H203 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Esplosivo; pericolo di incendio, di spostamento d'aria o di proiezione"@it ;
     schema:identifier "H203" .
 
-ghs:H204 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H204 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Gefahr durch Feuer oder Splitter, Spreng- und Wurfstücke"@de,
@@ -166,8 +166,8 @@ ghs:H204 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Pericolo di incendio o di proiezione"@it ;
     schema:identifier "H204" .
 
-ghs:H205 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H205 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Gefahr der Massenexplosion bei Feuer"@de,
@@ -176,8 +176,8 @@ ghs:H205 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Pericolo di esplosione di massa in caso d'incendio"@it ;
     schema:identifier "H205" .
 
-ghs:H220 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H220 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Extrem entzündbares Gas"@de,
@@ -186,8 +186,8 @@ ghs:H220 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Gas altamente infiammabile"@it ;
     schema:identifier "H220" .
 
-ghs:H221 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H221 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Entzündbares Gas"@de,
@@ -196,8 +196,8 @@ ghs:H221 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Gas infiammabile"@it ;
     schema:identifier "H221" .
 
-ghs:H222 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H222 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Extrem entzündbares Aerosol"@de,
@@ -206,8 +206,8 @@ ghs:H222 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Aerosol altamente infiammabile"@it ;
     schema:identifier "H222" .
 
-ghs:H223 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H223 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Entzündbares Aerosol"@de,
@@ -216,8 +216,8 @@ ghs:H223 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Aerosol infiammabile"@it ;
     schema:identifier "H223" .
 
-ghs:H224 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H224 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Flüssigkeit und Dampf extrem entzündbar"@de,
@@ -226,8 +226,8 @@ ghs:H224 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Liquido e vapori altamente infiammabili"@it ;
     schema:identifier "H224" .
 
-ghs:H225 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H225 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Flüssigkeit und Dampf leicht entzündbar"@de,
@@ -236,8 +236,8 @@ ghs:H225 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Liquido e vapori facilmente infiammabili"@it ;
     schema:identifier "H225" .
 
-ghs:H226 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H226 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Flüssigkeit und Dampf entzündbar"@de,
@@ -246,8 +246,8 @@ ghs:H226 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Liquido e vapori infiammabili"@it ;
     schema:identifier "H226" .
 
-ghs:H228 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H228 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Entzündbarer Feststoff"@de,
@@ -256,8 +256,8 @@ ghs:H228 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Solido infiammabile"@it ;
     schema:identifier "H228" .
 
-ghs:H229 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H229 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Behälter steht unter Druck: Kann bei Erwärmung bersten"@de,
@@ -266,8 +266,8 @@ ghs:H229 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Contenitore pressurizzato: può esplodere se riscaldato"@it ;
     schema:identifier "H229" .
 
-ghs:H230 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H230 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Kann auch in Abwesenheit von Luft explosionsartig reagieren"@de,
@@ -276,8 +276,8 @@ ghs:H230 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Può esplodere anche in assenza di aria"@it ;
     schema:identifier "H230" .
 
-ghs:H231 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H231 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Kann auch in Abwesenheit von Luft bei erhöhtem Druck und/oder erhöhter Temperatur explosionsartig reagieren"@de,
@@ -286,8 +286,8 @@ ghs:H231 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Può esplodere anche in assenza di aria a pressione e/o temperatura elevata"@it ;
     schema:identifier "H231" .
 
-ghs:H240 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H240 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Erwärmung kann Explosion verursachen"@de,
@@ -296,8 +296,8 @@ ghs:H240 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Rischio di esplosione per riscaldamento"@it ;
     schema:identifier "H240" .
 
-ghs:H241 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H241 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Erwärmung kann Brand oder Explosion verursachen"@de,
@@ -306,8 +306,8 @@ ghs:H241 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Rischio d'incendio o di esplosione per riscaldamento"@it ;
     schema:identifier "H241" .
 
-ghs:H242 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H242 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Erwärmung kann Brand verursachen"@de,
@@ -316,8 +316,8 @@ ghs:H242 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Rischio d'incendio per riscaldamento"@it ;
     schema:identifier "H242" .
 
-ghs:H250 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H250 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Entzündet sich in Berührung mit Luft von selbst"@de,
@@ -326,8 +326,8 @@ ghs:H250 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Spontaneamente infiammabile all'aria"@it ;
     schema:identifier "H250" .
 
-ghs:H251 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H251 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Selbsterhitzungsfähig; kann in Brand geraten"@de,
@@ -336,8 +336,8 @@ ghs:H251 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Autoriscaldante; può infiammarsi"@it ;
     schema:identifier "H251" .
 
-ghs:H252 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H252 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "In großen Mengen selbsterhitzungsfähig; kann in Brand geraten"@de,
@@ -346,8 +346,8 @@ ghs:H252 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Autoriscaldante in grandi quantità; può infiammarsi"@it ;
     schema:identifier "H252" .
 
-ghs:H260 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H260 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "In Berührung mit Wasser entstehen entzündbare Gase, die sich spontan entzünden können"@de,
@@ -356,8 +356,8 @@ ghs:H260 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "A contatto con l'acqua libera gas infiammabili che possono infiammarsi spontaneamente"@it ;
     schema:identifier "H260" .
 
-ghs:H261 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H261 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "In Berührung mit Wasser entstehen entzündbare Gase"@de,
@@ -366,8 +366,8 @@ ghs:H261 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "A contatto con l'acqua libera gas infiammabili"@it ;
     schema:identifier "H261" .
 
-ghs:H270 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H270 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Kann Brand verursachen oder verstärken; Oxidationsmittel"@de,
@@ -376,8 +376,8 @@ ghs:H270 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Può provocare o aggravare un incendio; comburente"@it ;
     schema:identifier "H270" .
 
-ghs:H271 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H271 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Kann Brand oder Explosion verursachen; starkes Oxidationsmittel"@de,
@@ -386,8 +386,8 @@ ghs:H271 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Può provocare un incendio o un'esplosione; molto comburente"@it ;
     schema:identifier "H271" .
 
-ghs:H272 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H272 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Kann Brand verstärken; Oxidationsmittel"@de,
@@ -396,8 +396,8 @@ ghs:H272 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Può aggravare un incendio; comburente"@it ;
     schema:identifier "H272" .
 
-ghs:H280 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H280 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Enthält Gas unter Druck; kann bei Erwärmung explodieren"@de,
@@ -406,8 +406,8 @@ ghs:H280 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Contiene gas sotto pressione; può esplodere se riscaldato"@it ;
     schema:identifier "H280" .
 
-ghs:H281 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H281 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Enthält tiefgekühltes Gas; kann Kälteverbrennungen oder -verletzungen verursachen"@de,
@@ -416,8 +416,8 @@ ghs:H281 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Contiene gas refrigerato; può provocare ustioni o lesioni criogeniche"@it ;
     schema:identifier "H281" .
 
-ghs:H290 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H290 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Kann gegenüber Metallen korrosiv sein"@de,
@@ -426,8 +426,8 @@ ghs:H290 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Può essere corrosivo per i metalli"@it ;
     schema:identifier "H290" .
 
-ghs:H300 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H300 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Lebensgefahr bei Verschlucken"@de,
@@ -436,9 +436,9 @@ ghs:H300 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Letale se ingerito"@it ;
     schema:identifier "H300" .
 
-ghs:H300H310 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb5,
+ghs:H300H310 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b5,
         ghs:GHSStatement,
         ghs:HazardStatement,
         ghs:HazardStatementCombination ;
@@ -450,9 +450,9 @@ ghs:H300H310 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:H310 ;
     schema:identifier "H300+H310" .
 
-ghs:H300H310H330 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb5,
+ghs:H300H310H330 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b5,
         ghs:GHSStatement,
         ghs:HazardStatement,
         ghs:HazardStatementCombination ;
@@ -465,9 +465,9 @@ ghs:H300H310H330 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:H330 ;
     schema:identifier "H300+H310+H330" .
 
-ghs:H300H330 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb5,
+ghs:H300H330 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b5,
         ghs:GHSStatement,
         ghs:HazardStatement,
         ghs:HazardStatementCombination ;
@@ -479,8 +479,8 @@ ghs:H300H330 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:H330 ;
     schema:identifier "H300+H330" .
 
-ghs:H301 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H301 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Giftig bei Verschlucken"@de,
@@ -489,9 +489,9 @@ ghs:H301 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Tossico se ingerito"@it ;
     schema:identifier "H301" .
 
-ghs:H301H311 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb5,
+ghs:H301H311 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b5,
         ghs:GHSStatement,
         ghs:HazardStatement,
         ghs:HazardStatementCombination ;
@@ -503,9 +503,9 @@ ghs:H301H311 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:H311 ;
     schema:identifier "H301+H311" .
 
-ghs:H301H311H331 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb5,
+ghs:H301H311H331 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b5,
         ghs:GHSStatement,
         ghs:HazardStatement,
         ghs:HazardStatementCombination ;
@@ -518,9 +518,9 @@ ghs:H301H311H331 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:H331 ;
     schema:identifier "H301+H311+H331" .
 
-ghs:H301H331 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb5,
+ghs:H301H331 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b5,
         ghs:GHSStatement,
         ghs:HazardStatement,
         ghs:HazardStatementCombination ;
@@ -532,8 +532,8 @@ ghs:H301H331 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:H331 ;
     schema:identifier "H301+H331" .
 
-ghs:H302 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H302 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Gesundheitsschädlich bei Verschlucken"@de,
@@ -542,9 +542,9 @@ ghs:H302 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Nocivo se ingerito"@it ;
     schema:identifier "H302" .
 
-ghs:H302H312 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb5,
+ghs:H302H312 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b5,
         ghs:GHSStatement,
         ghs:HazardStatement,
         ghs:HazardStatementCombination ;
@@ -556,9 +556,9 @@ ghs:H302H312 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:H312 ;
     schema:identifier "H302+H312" .
 
-ghs:H302H312H332 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb5,
+ghs:H302H312H332 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b5,
         ghs:GHSStatement,
         ghs:HazardStatement,
         ghs:HazardStatementCombination ;
@@ -571,9 +571,9 @@ ghs:H302H312H332 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:H332 ;
     schema:identifier "H302+H312+H332" .
 
-ghs:H302H332 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb5,
+ghs:H302H332 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b5,
         ghs:GHSStatement,
         ghs:HazardStatement,
         ghs:HazardStatementCombination ;
@@ -585,8 +585,8 @@ ghs:H302H332 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:H332 ;
     schema:identifier "H302+H332" .
 
-ghs:H304 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H304 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Kann bei Verschlucken und Eindringen in die Atemwege tödlich sein"@de,
@@ -595,8 +595,8 @@ ghs:H304 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Lenyelve és a légutakba kerülve halálos lehet"@it ;
     schema:identifier "H304" .
 
-ghs:H310 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H310 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Lebensgefahr bei Hautkontakt"@de,
@@ -605,9 +605,9 @@ ghs:H310 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Bőrrel érintkezve halálos"@it ;
     schema:identifier "H310" .
 
-ghs:H310H330 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb5,
+ghs:H310H330 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b5,
         ghs:GHSStatement,
         ghs:HazardStatement,
         ghs:HazardStatementCombination ;
@@ -619,8 +619,8 @@ ghs:H310H330 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:H330 ;
     schema:identifier "H310+H330" .
 
-ghs:H311 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H311 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Giftig bei Hautkontakt"@de,
@@ -629,9 +629,9 @@ ghs:H311 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Tossico per contatto con la pelle"@it ;
     schema:identifier "H311" .
 
-ghs:H311H331 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb5,
+ghs:H311H331 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b5,
         ghs:GHSStatement,
         ghs:HazardStatement,
         ghs:HazardStatementCombination ;
@@ -643,8 +643,8 @@ ghs:H311H331 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:H331 ;
     schema:identifier "H311+H331" .
 
-ghs:H312 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H312 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Gesundheitsschädlich bei Hautkontakt"@de,
@@ -653,9 +653,9 @@ ghs:H312 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Nocivo per contatto con la pelle"@it ;
     schema:identifier "H312" .
 
-ghs:H312H332 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb5,
+ghs:H312H332 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b5,
         ghs:GHSStatement,
         ghs:HazardStatement,
         ghs:HazardStatementCombination ;
@@ -667,8 +667,8 @@ ghs:H312H332 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:H332 ;
     schema:identifier "H312+H332" .
 
-ghs:H314 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H314 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Verursacht schwere Verätzungen der Haut und schwere Augenschäden"@de,
@@ -677,8 +677,8 @@ ghs:H314 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Provoca gravi ustioni cutanee e gravi lesioni oculari"@it ;
     schema:identifier "H314" .
 
-ghs:H315 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H315 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Verursacht Hautreizungen"@de,
@@ -687,8 +687,8 @@ ghs:H315 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Provoca irritazione cutanea"@it ;
     schema:identifier "H315" .
 
-ghs:H317 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H317 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Kann allergische Hautreaktionen verursachen"@de,
@@ -697,8 +697,8 @@ ghs:H317 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Può provocare una reazione allergica cutanea"@it ;
     schema:identifier "H317" .
 
-ghs:H318 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H318 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Verursacht schwere Augenschäden"@de,
@@ -707,8 +707,8 @@ ghs:H318 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Provoca gravi lesioni oculari"@it ;
     schema:identifier "H318" .
 
-ghs:H319 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H319 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Verursacht schwere Augenreizung"@de,
@@ -717,8 +717,8 @@ ghs:H319 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Provoca grave irritazione oculare"@it ;
     schema:identifier "H319" .
 
-ghs:H330 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H330 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Lebensgefahr bei Einatmen"@de,
@@ -727,8 +727,8 @@ ghs:H330 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Letale se inalato"@it ;
     schema:identifier "H330" .
 
-ghs:H331 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H331 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Giftig bei Einatmen"@de,
@@ -737,8 +737,8 @@ ghs:H331 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Tossico se inalato"@it ;
     schema:identifier "H331" .
 
-ghs:H332 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H332 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Gesundheitsschädlich bei Einatmen"@de,
@@ -747,8 +747,8 @@ ghs:H332 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Nocivo se inalato"@it ;
     schema:identifier "H332" .
 
-ghs:H334 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H334 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Kann bei Einatmen Allergie, asthmaartige Symptome oder Atembeschwerden verursachen"@de,
@@ -757,8 +757,8 @@ ghs:H334 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Può provocare sintomi allergici o asmatici o difficoltà respiratorie se inalato"@it ;
     schema:identifier "H334" .
 
-ghs:H335 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H335 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Kann die Atemwege reizen"@de,
@@ -767,8 +767,8 @@ ghs:H335 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Può irritare le vie respiratorie"@it ;
     schema:identifier "H335" .
 
-ghs:H336 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H336 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Kann Schläfrigkeit und Benommenheit verursachen"@de,
@@ -777,8 +777,8 @@ ghs:H336 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Può provocare sonnolenza o vertigini"@it ;
     schema:identifier "H336" .
 
-ghs:H340 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H340 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Kann genetische Defekte verursachen"@de,
@@ -787,8 +787,8 @@ ghs:H340 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Può provocare alterazioni genetiche"@it ;
     schema:identifier "H340" .
 
-ghs:H341 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H341 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Kann vermutlich genetische Defekte verursachen"@de,
@@ -797,8 +797,8 @@ ghs:H341 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Sospettato di provocare alterazioni genetiche"@it ;
     schema:identifier "H341" .
 
-ghs:H350 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H350 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Kann Krebs erzeugen"@de,
@@ -807,8 +807,8 @@ ghs:H350 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Può provocare il cancro"@it ;
     schema:identifier "H350" .
 
-ghs:H350i a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H350i a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Kann bei Einatmen Krebs erzeugen"@de,
@@ -817,8 +817,8 @@ ghs:H350i a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Può provocare il cancro se inalato"@it ;
     schema:identifier "H350i" .
 
-ghs:H351 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H351 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Kann vermutlich Krebs erzeugen"@de,
@@ -827,8 +827,8 @@ ghs:H351 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Sospettato di provocare il cancro"@it ;
     schema:identifier "H351" .
 
-ghs:H360 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H360 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Kann die Fruchtbarkeit beeinträchtigen oder das Kind im Mutterleib schädigen"@de,
@@ -837,8 +837,8 @@ ghs:H360 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Può nuocere alla fertilità o al feto"@it ;
     schema:identifier "H360" .
 
-ghs:H360D a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H360D a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Kann das Kind im Mutterleib schädigen"@de,
@@ -847,8 +847,8 @@ ghs:H360D a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Può nuocere al feto"@it ;
     schema:identifier "H360D" .
 
-ghs:H360Df a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H360Df a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Kann das Kind im Mutterleib schädigen. Kann vermutlich die Fruchtbarkeit beeinträchtigen"@de,
@@ -857,8 +857,8 @@ ghs:H360Df a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Può nuocere al feto. Sospettato di nuocere alla fertilità"@it ;
     schema:identifier "H360Df" .
 
-ghs:H360F a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H360F a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Kann die Fruchtbarkeit beeinträchtigen"@de,
@@ -867,8 +867,8 @@ ghs:H360F a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Può nuocere alla fertilità"@it ;
     schema:identifier "H360F" .
 
-ghs:H360FD a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H360FD a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Kann die Fruchtbarkeit beeinträchtigen. Kann das Kind im Mutterleib schädigen"@de,
@@ -877,8 +877,8 @@ ghs:H360FD a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Può nuocere alla fertilità. Può nuocere al feto"@it ;
     schema:identifier "H360FD" .
 
-ghs:H360Fd a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H360Fd a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Kann die Fruchtbarkeit beeinträchtigen. Kann vermutlich das Kind im Mutterleib schädigen"@de,
@@ -887,8 +887,8 @@ ghs:H360Fd a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Può nuocere alla fertilità. Sospettato di nuocere al feto"@it ;
     schema:identifier "H360Fd" .
 
-ghs:H361 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H361 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Kann vermutlich die Fruchtbarkeit beeinträchtigen oder das Kind im Mutterleib schädigen"@de,
@@ -897,8 +897,8 @@ ghs:H361 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Sospettato di nuocere alla fertilità o al feto"@it ;
     schema:identifier "H361" .
 
-ghs:H361d a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H361d a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Kann vermutlich das Kind im Mutterleib schädigen"@de,
@@ -907,8 +907,8 @@ ghs:H361d a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Sospettato di nuocere al feto"@it ;
     schema:identifier "H361d" .
 
-ghs:H361f a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H361f a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Kann vermutlich die Fruchtbarkeit beeinträchtigen"@de,
@@ -917,8 +917,8 @@ ghs:H361f a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Sospettato di nuocere alla fertilità"@it ;
     schema:identifier "H361f" .
 
-ghs:H361fd a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H361fd a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Kann vermutlich die Fruchtbarkeit beeinträchtigen. Kann vermutlich das Kind im Mutterleib schädigen"@de,
@@ -927,8 +927,8 @@ ghs:H361fd a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Sospettato di nuocere alla fertilità. Sospettato di nuocere al feto"@it ;
     schema:identifier "H361fd" .
 
-ghs:H362 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H362 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Kann Säuglinge über die Muttermilch schädigen"@de,
@@ -937,8 +937,8 @@ ghs:H362 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Può essere nocivo per i lattanti allattati al seno"@it ;
     schema:identifier "H362" .
 
-ghs:H370 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H370 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Schädigt die Organe"@de,
@@ -947,8 +947,8 @@ ghs:H370 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Provoca danni agli organi"@it ;
     schema:identifier "H370" .
 
-ghs:H371 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H371 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Kann die Organe schädigen"@de,
@@ -957,8 +957,8 @@ ghs:H371 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Può provocare danni agli organi"@it ;
     schema:identifier "H371" .
 
-ghs:H372 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H372 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Schädigt die Organe bei längerer oder wiederholter Exposition"@de,
@@ -967,8 +967,8 @@ ghs:H372 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Provoca danni agli organi in caso di esposizione prolungata o ripetuta"@it ;
     schema:identifier "H372" .
 
-ghs:H373 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H373 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Kann die Organe schädigen bei längerer oder wiederholter Exposition"@de,
@@ -977,8 +977,8 @@ ghs:H373 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Può provocare danni agli organi in caso di esposizione prolungata o ripetuta"@it ;
     schema:identifier "H373" .
 
-ghs:H400 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H400 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Sehr giftig für Wasserorganismen"@de,
@@ -987,8 +987,8 @@ ghs:H400 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Molto tossico per gli organismi acquatici"@it ;
     schema:identifier "H400" .
 
-ghs:H410 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H410 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Sehr giftig für Wasserorganismen mit langfristiger Wirkung"@de,
@@ -997,8 +997,8 @@ ghs:H410 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Molto tossico per gli organismi acquatici con effetti di lunga durata"@it ;
     schema:identifier "H410" .
 
-ghs:H411 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H411 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Giftig für Wasserorganismen, mit langfristiger Wirkung"@de,
@@ -1007,8 +1007,8 @@ ghs:H411 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Tossico per gli organismi acquatici con effetti di lunga durata"@it ;
     schema:identifier "H411" .
 
-ghs:H412 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H412 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Schädlich für Wasserorganismen, mit langfristiger Wirkung"@de,
@@ -1017,8 +1017,8 @@ ghs:H412 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Nocivo per gli organismi acquatici con effetti di lunga durata"@it ;
     schema:identifier "H412" .
 
-ghs:H413 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H413 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Kann für Wasserorganismen schädlich sein, mit langfristiger Wirkung"@de,
@@ -1027,8 +1027,8 @@ ghs:H413 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Può essere nocivo per gli organismi acquatici con effetti di lunga durata"@it ;
     schema:identifier "H413" .
 
-ghs:H420 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:H420 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:HazardStatement ;
     rdfs:label "Schädigt die öffentliche Gesundheit und die Umwelt durch Ozonabbau in der äußeren Atmosphäre"@de,
@@ -1037,8 +1037,8 @@ ghs:H420 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Nuoce alla salute pubblica e all'ambiente distruggendo l'ozono dello strato superiore dell'atmosfera"@it ;
     schema:identifier "H420" .
 
-ghs:P101 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P101 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Ist ärztlicher Rat erforderlich, Verpackung oder Kennzeichnungsetikett bereithalten"@de,
@@ -1047,8 +1047,8 @@ ghs:P101 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "In caso di consultazione di un medico, tenere a disposizione il contenitore o l'etichetta del prodotto"@it ;
     schema:identifier "P101" .
 
-ghs:P102 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P102 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Darf nicht in die Hände von Kindern gelangen"@de,
@@ -1057,8 +1057,8 @@ ghs:P102 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Tenere fuori dalla portata dei bambini"@it ;
     schema:identifier "P102" .
 
-ghs:P103 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P103 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Vor Gebrauch Kennzeichnungsetikett lesen"@de,
@@ -1067,8 +1067,8 @@ ghs:P103 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Leggere l’etichetta prima dell’uso"@it ;
     schema:identifier "P103" .
 
-ghs:P201 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P201 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Vor Gebrauch besondere Anweisungen einholen"@de,
@@ -1077,8 +1077,8 @@ ghs:P201 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Procurarsi istruzioni specifiche prima dell’uso"@it ;
     schema:identifier "P201" .
 
-ghs:P202 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P202 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Vor Gebrauch alle Sicherheitshinweise lesen und verstehen"@de,
@@ -1087,15 +1087,15 @@ ghs:P202 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Non manipolare prima di avere letto e compreso tutte le avvertenze"@it ;
     schema:identifier "P202" .
 
-ghs:P203 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P203 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Obtain, read and follow all safety instructions before use"@en ;
     schema:identifier "P203" .
 
-ghs:P210 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P210 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Von Hitze, heißen Oberflächen, Funken, offenen Flammen sowie anderen Zündquellenarten fernhalten. Nicht rauchen"@de,
@@ -1104,8 +1104,8 @@ ghs:P210 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Tenere lontano da fonti di calore, superfici calde, scintille, fiamme libere o altre fonti di accensione. Non fumare"@it ;
     schema:identifier "P210" .
 
-ghs:P211 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P211 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Nicht gegen offene Flamme oder andere Zündquelle sprühen"@de,
@@ -1114,8 +1114,8 @@ ghs:P211 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Non vaporizzare su una fiamma libera o altra fonte di accensione"@it ;
     schema:identifier "P211" .
 
-ghs:P220 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P220 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Von Kleidung und anderen brennbaren Materialien fernhalten"@de,
@@ -1124,8 +1124,8 @@ ghs:P220 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Tenere lontano da indumenti e altri materiali combustibili"@it ;
     schema:identifier "P220" .
 
-ghs:P222 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P222 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Keinen Kontakt mit Luft zulassen"@de,
@@ -1134,8 +1134,8 @@ ghs:P222 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Evitare il contatto con l’aria"@it ;
     schema:identifier "P222" .
 
-ghs:P223 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P223 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Keinen Kontakt mit Wasser zulassen"@de,
@@ -1144,8 +1144,8 @@ ghs:P223 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Evitare qualunque contatto con l’acqua"@it ;
     schema:identifier "P223" .
 
-ghs:P230 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P230 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Feucht halten mit …"@de,
@@ -1154,8 +1154,8 @@ ghs:P230 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Mantenere umido con…"@it ;
     schema:identifier "P230" .
 
-ghs:P231 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P231 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Inhalt unter inertem Gas/… handhaben und aufbewahren"@de,
@@ -1164,8 +1164,8 @@ ghs:P231 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Manipolare e conservare in atmosfera di gas inerte/…"@it ;
     schema:identifier "P231" .
 
-<https://agriculture.ld.admin.ch/plant-protection/ghs/P231+P232> a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+<https://agriculture.ld.admin.ch/plant-protection/ghs/P231+P232> a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Inhalt unter inertem Gas/… handhaben und aufbewahren. Vor Feuchtigkeit schützen"@de,
@@ -1174,9 +1174,9 @@ ghs:P231 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Manipolare e conservare in atmosfera di gas inerte/…. Tenere al riparo dall'umidità"@it ;
     schema:identifier "P231+P232" .
 
-ghs:P231P232 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb4,
+ghs:P231P232 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b4,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement,
         ghs:PrecautionaryStatementCombination ;
@@ -1188,8 +1188,8 @@ ghs:P231P232 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:P232 ;
     schema:identifier "P231+P232" .
 
-ghs:P232 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P232 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Vor Feuchtigkeit schützen"@de,
@@ -1198,8 +1198,8 @@ ghs:P232 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Proteggere dall’umidità"@it ;
     schema:identifier "P232" .
 
-ghs:P233 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P233 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Behälter dicht verschlossen halten"@de,
@@ -1208,8 +1208,8 @@ ghs:P233 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Tenere il recipiente ben chiuso"@it ;
     schema:identifier "P233" .
 
-ghs:P234 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P234 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Nur in Originalverpackung aufbewahren"@de,
@@ -1218,8 +1218,8 @@ ghs:P234 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Conservare soltanto nell'imballaggio originale"@it ;
     schema:identifier "P234" .
 
-ghs:P235 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P235 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Kühl halten"@de,
@@ -1228,8 +1228,8 @@ ghs:P235 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Conservare in luogo fresco"@it ;
     schema:identifier "P235" .
 
-ghs:P240 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P240 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Behälter und zu befüllende Anlage erden"@de,
@@ -1238,8 +1238,8 @@ ghs:P240 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Mettere a terra e a massa il contenitore e il dispositivo ricevente"@it ;
     schema:identifier "P240" .
 
-ghs:P241 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P241 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Explosionsgeschützte [elektrische/Lüftungs-/Beleuchtungs-/…] Geräte verwenden"@de,
@@ -1248,8 +1248,8 @@ ghs:P241 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Utilizzare impianti [elettrici/di ventilazione/d'illuminazione/…] a prova di esplosione"@it ;
     schema:identifier "P241" .
 
-ghs:P242 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P242 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Funkenarmes Werkzeug verwenden"@de,
@@ -1258,8 +1258,8 @@ ghs:P242 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Utilizzare utensili antiscintillamento"@it ;
     schema:identifier "P242" .
 
-ghs:P243 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P243 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Maßnahmen gegen elektrostatische Entladungen treffen"@de,
@@ -1268,8 +1268,8 @@ ghs:P243 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Fare in modo di prevenire le scariche elettrostatiche"@it ;
     schema:identifier "P243" .
 
-ghs:P244 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P244 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Ventile und Ausrüstungsteile öl- und fettfrei halten"@de,
@@ -1278,8 +1278,8 @@ ghs:P244 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Mantenere le valvole e i raccordi liberi da olio e grasso"@it ;
     schema:identifier "P244" .
 
-ghs:P250 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P250 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Nicht schleifen/stoßen/reiben/…"@de,
@@ -1288,8 +1288,8 @@ ghs:P250 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Evitare le abrasioni/gli urti/gli attriti/…"@it ;
     schema:identifier "P250" .
 
-ghs:P260 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P260 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Staub/Rauch/Gas/Nebel/Dampf/Aerosol nicht einatmen"@de,
@@ -1298,8 +1298,8 @@ ghs:P260 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Non respirare la polvere/i fumi/i gas/la nebbia/i vapori/gli aerosol"@it ;
     schema:identifier "P260" .
 
-ghs:P261 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P261 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Einatmen von Staub/Rauch/Gas/Nebel/Dampf/Aerosol vermeiden"@de,
@@ -1308,8 +1308,8 @@ ghs:P261 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Evitare di respirare la polvere/i fumi/i gas/la nebbia/i vapori/gli aerosol"@it ;
     schema:identifier "P261" .
 
-ghs:P262 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P262 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Nicht in die Augen, auf die Haut oder auf die Kleidung gelangen lassen"@de,
@@ -1318,8 +1318,8 @@ ghs:P262 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Evitare il contatto con gli occhi, la pelle o gli indumenti"@it ;
     schema:identifier "P262" .
 
-ghs:P263 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P263 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Berührung während Schwangerschaft und Stillzeit vermeiden"@de,
@@ -1328,8 +1328,8 @@ ghs:P263 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Evitare il contatto durante la gravidanza e l'allattamento"@it ;
     schema:identifier "P263" .
 
-ghs:P264 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P264 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Nach Gebrauch … gründlich waschen"@de,
@@ -1338,8 +1338,8 @@ ghs:P264 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Lavare accuratamente … dopo l’uso"@it ;
     schema:identifier "P264" .
 
-ghs:P270 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P270 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Bei Gebrauch nicht essen, trinken oder rauchen"@de,
@@ -1348,8 +1348,8 @@ ghs:P270 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Non mangiare, né bere, né fumare durante l’uso"@it ;
     schema:identifier "P270" .
 
-ghs:P271 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P271 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Nur im Freien oder in gut belüfteten Räumen verwenden"@de,
@@ -1358,8 +1358,8 @@ ghs:P271 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Utilizzare soltanto all’aperto o in luogo ben ventilato"@it ;
     schema:identifier "P271" .
 
-ghs:P272 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P272 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Kontaminierte Arbeitskleidung nicht außerhalb des Arbeitsplatzes tragen"@de,
@@ -1368,8 +1368,8 @@ ghs:P272 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Gli indumenti da lavoro contaminati non devono essere portati fuori dal luogo di lavoro"@it ;
     schema:identifier "P272" .
 
-ghs:P273 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P273 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Freisetzung in die Umwelt vermeiden"@de,
@@ -1378,8 +1378,8 @@ ghs:P273 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Non disperdere nell’ambiente"@it ;
     schema:identifier "P273" .
 
-ghs:P280 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P280 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Schutzhandschuhe/Schutzkleidung/Augenschutz/Gesichtsschutz tragen"@de,
@@ -1388,8 +1388,8 @@ ghs:P280 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Indossare guanti/indumenti protettivi/Proteggere gli occhi/il viso"@it ;
     schema:identifier "P280" .
 
-ghs:P282 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P282 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Schutzhandschuhe mit Kälteisolierung und zusätzlich Gesichtsschild oder Augenschutz tragen"@de,
@@ -1398,8 +1398,8 @@ ghs:P282 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Utilizzare guanti termici e schermo facciale o protezione per gli occhi"@it ;
     schema:identifier "P282" .
 
-ghs:P283 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P283 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Schwer entflammbare oder flammhemmende Kleidung tragen"@de,
@@ -1408,8 +1408,8 @@ ghs:P283 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Indossare indumenti completamente ignifughi o in tessuti ritardanti di fiamma"@it ;
     schema:identifier "P283" .
 
-ghs:P284 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P284 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "[Bei unzureichender Belüftung] Atemschutz tragen"@de,
@@ -1418,8 +1418,8 @@ ghs:P284 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "[Quando la ventilazione del locale è insufficiente] indossare un apparecchio di protezione respiratoria"@it ;
     schema:identifier "P284" .
 
-ghs:P301 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P301 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "BEI VERSCHLUCKEN:"@de,
@@ -1428,9 +1428,9 @@ ghs:P301 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "IN CASO DI INGESTIONE:"@it ;
     schema:identifier "P301" .
 
-ghs:P301P310 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb4,
+ghs:P301P310 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b4,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement,
         ghs:PrecautionaryStatementCombination ;
@@ -1442,9 +1442,9 @@ ghs:P301P310 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:P310 ;
     schema:identifier "P301+P310" .
 
-ghs:P301P312 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb4,
+ghs:P301P312 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b4,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement,
         ghs:PrecautionaryStatementCombination ;
@@ -1456,9 +1456,9 @@ ghs:P301P312 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:P312 ;
     schema:identifier "P301+P312" .
 
-ghs:P301P316 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb4,
+ghs:P301P316 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b4,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement,
         ghs:PrecautionaryStatementCombination ;
@@ -1467,9 +1467,9 @@ ghs:P301P316 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:P316 ;
     schema:identifier "P301+P316" .
 
-ghs:P301P317 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb4,
+ghs:P301P317 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b4,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement,
         ghs:PrecautionaryStatementCombination ;
@@ -1478,9 +1478,9 @@ ghs:P301P317 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:P317 ;
     schema:identifier "P301+P317" .
 
-ghs:P301P330P331 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb4,
+ghs:P301P330P331 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b4,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement,
         ghs:PrecautionaryStatementCombination ;
@@ -1493,8 +1493,8 @@ ghs:P301P330P331 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:P331 ;
     schema:identifier "P301+P330+P331" .
 
-ghs:P302 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P302 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "BEI BERÜHRUNG MIT DER HAUT:"@de,
@@ -1503,9 +1503,9 @@ ghs:P302 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "IN CASO DI CONTATTO CON LA PELLE:"@it ;
     schema:identifier "P302" .
 
-ghs:P302P334 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb4,
+ghs:P302P334 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b4,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement,
         ghs:PrecautionaryStatementCombination ;
@@ -1517,9 +1517,9 @@ ghs:P302P334 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:P334 ;
     schema:identifier "P302+P334" .
 
-ghs:P302P335P334 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb4,
+ghs:P302P335P334 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b4,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement,
         ghs:PrecautionaryStatementCombination ;
@@ -1532,9 +1532,9 @@ ghs:P302P335P334 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:P335 ;
     schema:identifier "P302+P335+P334" .
 
-ghs:P302P352 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb4,
+ghs:P302P352 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b4,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement,
         ghs:PrecautionaryStatementCombination ;
@@ -1546,9 +1546,9 @@ ghs:P302P352 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:P352 ;
     schema:identifier "P302+P352" .
 
-ghs:P302P361P354 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb4,
+ghs:P302P361P354 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b4,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement,
         ghs:PrecautionaryStatementCombination ;
@@ -1558,8 +1558,8 @@ ghs:P302P361P354 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:P361 ;
     schema:identifier "P302+P361+P354" .
 
-ghs:P303 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P303 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "BEI BERÜHRUNG MIT DER HAUT (oder dem Haar):"@de,
@@ -1568,9 +1568,9 @@ ghs:P303 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "IN CASO DI CONTATTO CON LA PELLE (o con i capelli):"@it ;
     schema:identifier "P303" .
 
-ghs:P303P361P353 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb4,
+ghs:P303P361P353 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b4,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement,
         ghs:PrecautionaryStatementCombination ;
@@ -1583,8 +1583,8 @@ ghs:P303P361P353 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:P361 ;
     schema:identifier "P303+P361+P353" .
 
-ghs:P304 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P304 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "BEI EINATMEN:"@de,
@@ -1593,9 +1593,9 @@ ghs:P304 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "IN CASO DI INALAZIONE:"@it ;
     schema:identifier "P304" .
 
-ghs:P304P340 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb4,
+ghs:P304P340 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b4,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement,
         ghs:PrecautionaryStatementCombination ;
@@ -1607,8 +1607,8 @@ ghs:P304P340 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:P340 ;
     schema:identifier "P304+P340" .
 
-ghs:P305 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P305 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "BEI KONTAKT MIT DEN AUGEN:"@de,
@@ -1617,9 +1617,9 @@ ghs:P305 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "IN CASO DI CONTATTO CON GLI OCCHI:"@it ;
     schema:identifier "P305" .
 
-ghs:P305P351P338 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb4,
+ghs:P305P351P338 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b4,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement,
         ghs:PrecautionaryStatementCombination ;
@@ -1632,9 +1632,9 @@ ghs:P305P351P338 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:P351 ;
     schema:identifier "P305+P351+P338" .
 
-ghs:P305P354P338 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb4,
+ghs:P305P354P338 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b4,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement,
         ghs:PrecautionaryStatementCombination ;
@@ -1645,8 +1645,8 @@ ghs:P305P354P338 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:P354 ;
     schema:identifier "P305+P354+P338" .
 
-ghs:P306 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P306 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "BEI KONTAKT MIT DER KLEIDUNG:"@de,
@@ -1655,9 +1655,9 @@ ghs:P306 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "IN CASO DI CONTATTO CON GLI INDUMENTI:"@it ;
     schema:identifier "P306" .
 
-ghs:P306P360 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb4,
+ghs:P306P360 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b4,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement,
         ghs:PrecautionaryStatementCombination ;
@@ -1669,8 +1669,8 @@ ghs:P306P360 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:P360 ;
     schema:identifier "P306+P360" .
 
-ghs:P308 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P308 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "BEI Exposition oder falls betroffen"@de,
@@ -1679,9 +1679,9 @@ ghs:P308 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "IN CASO di esposizione o di possibile esposizione:"@it ;
     schema:identifier "P308" .
 
-ghs:P308P311 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb4,
+ghs:P308P311 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b4,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement,
         ghs:PrecautionaryStatementCombination ;
@@ -1693,9 +1693,9 @@ ghs:P308P311 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:P311 ;
     schema:identifier "P308+P311" .
 
-ghs:P308P313 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb4,
+ghs:P308P313 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b4,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement,
         ghs:PrecautionaryStatementCombination ;
@@ -1707,9 +1707,9 @@ ghs:P308P313 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:P313 ;
     schema:identifier "P308+P313" .
 
-ghs:P308P316 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb4,
+ghs:P308P316 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b4,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement,
         ghs:PrecautionaryStatementCombination ;
@@ -1718,8 +1718,8 @@ ghs:P308P316 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:P316 ;
     schema:identifier "P308+P316" .
 
-ghs:P310 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P310 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Sofort GIFTINFORMATIONSZENTRUM/Arzt/…/anrufen."@de,
@@ -1728,8 +1728,8 @@ ghs:P310 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Contattare immediatamente un CENTRO ANTIVELENI/un medico…"@it ;
     schema:identifier "P310" .
 
-ghs:P311 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P311 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "GIFTINFORMATIONSZENTRUM/Arzt/…/anrufen."@de,
@@ -1738,8 +1738,8 @@ ghs:P311 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Contattare un CENTRO ANTIVELENI/un medico/…"@it ;
     schema:identifier "P311" .
 
-ghs:P312 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P312 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Bei Unwohlsein GIFTINFORMATIONSZENTRUM/Arzt/… anrufen"@de,
@@ -1748,8 +1748,8 @@ ghs:P312 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "In caso di malessere, contattare un CENTRO ANTIVELENI/un medico/…"@it ;
     schema:identifier "P312" .
 
-ghs:P313 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P313 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Ärztlichen Rat einholen/ärztliche Hilfe hinzuziehen"@de,
@@ -1758,8 +1758,8 @@ ghs:P313 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Consultare un medico"@it ;
     schema:identifier "P313" .
 
-ghs:P314 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P314 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Bei Unwohlsein ärztlichen Rat einholen/ärztliche Hilfe hinzuziehen"@de,
@@ -1768,8 +1768,8 @@ ghs:P314 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "In caso di malessere, consultare un medico"@it ;
     schema:identifier "P314" .
 
-ghs:P315 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P315 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Sofort ärztlichen Rat einholen/ärztliche Hilfe hinzuziehen"@de,
@@ -1778,37 +1778,37 @@ ghs:P315 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Consultare immediatamente un medico"@it ;
     schema:identifier "P315" .
 
-ghs:P316 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P316 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Get emergency medical help immediately"@en ;
     schema:identifier "P316" .
 
-ghs:P317 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P317 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Get medical help."@en,
         "Obtenez de l’aide médicale."@fr ;
     schema:identifier "P317" .
 
-ghs:P318 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P318 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Obtain, read and follow all safety instructions before use"@en ;
     schema:identifier "P318" .
 
-ghs:P319 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P319 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Obtain, read and follow all safety instructions before use"@en ;
     schema:identifier "P319" .
 
-ghs:P320 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P320 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Besondere Behandlung dringend erforderlich (siehe … auf diesem Kennzeichnungsetikett)"@de,
@@ -1817,8 +1817,8 @@ ghs:P320 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Trattamento specifico urgente (vedere… su questa etichetta)"@it ;
     schema:identifier "P320" .
 
-ghs:P321 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P321 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Besondere Behandlung (siehe … auf diesem Kennzeichnungsetikett)"@de,
@@ -1827,8 +1827,8 @@ ghs:P321 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Trattamento specifico (vedere …su questa etichetta)"@it ;
     schema:identifier "P321" .
 
-ghs:P330 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P330 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Mund ausspülen"@de,
@@ -1837,8 +1837,8 @@ ghs:P330 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Sciacquare la bocca"@it ;
     schema:identifier "P330" .
 
-ghs:P331 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P331 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "KEIN Erbrechen herbeiführen"@de,
@@ -1847,8 +1847,8 @@ ghs:P331 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "NON provocare il vomito"@it ;
     schema:identifier "P331" .
 
-ghs:P332 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P332 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Bei Hautreizung:"@de,
@@ -1857,9 +1857,9 @@ ghs:P332 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "In caso di irritazione della pelle:"@it ;
     schema:identifier "P332" .
 
-ghs:P332P313 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb4,
+ghs:P332P313 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b4,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement,
         ghs:PrecautionaryStatementCombination ;
@@ -1871,9 +1871,9 @@ ghs:P332P313 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:P332 ;
     schema:identifier "P332+P313" .
 
-ghs:P332P317 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb4,
+ghs:P332P317 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b4,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement,
         ghs:PrecautionaryStatementCombination ;
@@ -1882,8 +1882,8 @@ ghs:P332P317 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:P332 ;
     schema:identifier "P332+P317" .
 
-ghs:P333 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P333 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Bei Hautreizung oder -ausschlag:"@de,
@@ -1892,9 +1892,9 @@ ghs:P333 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "In caso di irritazione o eruzione della pelle:"@it ;
     schema:identifier "P333" .
 
-ghs:P333P313 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb4,
+ghs:P333P313 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b4,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement,
         ghs:PrecautionaryStatementCombination ;
@@ -1906,9 +1906,9 @@ ghs:P333P313 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:P333 ;
     schema:identifier "P333+P313" .
 
-ghs:P333P317 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb4,
+ghs:P333P317 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b4,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement,
         ghs:PrecautionaryStatementCombination ;
@@ -1917,8 +1917,8 @@ ghs:P333P317 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:P333 ;
     schema:identifier "P333+P317" .
 
-ghs:P334 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P334 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "In kaltes Wasser tauchen [oder nassen Verband anlegen]"@de,
@@ -1927,8 +1927,8 @@ ghs:P334 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Immergere in acqua fredda [o avvolgere con un bendaggio umido]"@it ;
     schema:identifier "P334" .
 
-ghs:P335 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P335 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Lose Partikel von der Haut abbürsten"@de,
@@ -1937,8 +1937,8 @@ ghs:P335 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Rimuovere le particelle depositate sulla pelle"@it ;
     schema:identifier "P335" .
 
-ghs:P336 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P336 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Vereiste Bereiche mit lauwarmem Wasser auftauen. Betroffenen Bereich nicht reiben"@de,
@@ -1947,9 +1947,9 @@ ghs:P336 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Sgelare le parti congelate usando acqua tiepida. Non sfregare la parte interessata"@it ;
     schema:identifier "P336" .
 
-ghs:P336P315 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb4,
+ghs:P336P315 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b4,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement,
         ghs:PrecautionaryStatementCombination ;
@@ -1961,8 +1961,8 @@ ghs:P336P315 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:P336 ;
     schema:identifier "P336+P315" .
 
-ghs:P337 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P337 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Bei anhaltender Augenreizung:"@de,
@@ -1971,9 +1971,9 @@ ghs:P337 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Se l’irritazione degli occhi persiste:"@it ;
     schema:identifier "P337" .
 
-ghs:P337P313 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb4,
+ghs:P337P313 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b4,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement,
         ghs:PrecautionaryStatementCombination ;
@@ -1985,9 +1985,9 @@ ghs:P337P313 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:P337 ;
     schema:identifier "P337+P313" .
 
-ghs:P337P317 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb4,
+ghs:P337P317 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b4,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement,
         ghs:PrecautionaryStatementCombination ;
@@ -1996,8 +1996,8 @@ ghs:P337P317 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:P337 ;
     schema:identifier "P337+P317" .
 
-ghs:P338 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P338 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Eventuell Vorhandene Kontaktlinsen nach Möglichkeit entfernen. Weiter ausspülen"@de,
@@ -2006,8 +2006,8 @@ ghs:P338 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Togliere le eventuali lenti a contatto se è agevole farlo. Continuare a sciacquare"@it ;
     schema:identifier "P338" .
 
-ghs:P340 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P340 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Die Person an die frische Luft bringen und für ungehinderte Atmung sorgen"@de,
@@ -2016,8 +2016,8 @@ ghs:P340 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Trasportare l’infortunato all’aria aperta e mantenerlo a riposo in posizione che favorisca la respirazione"@it ;
     schema:identifier "P340" .
 
-ghs:P342 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P342 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Bei Symptomen der Atemwege:"@de,
@@ -2026,9 +2026,9 @@ ghs:P342 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "In caso di sintomi respiratori:"@it ;
     schema:identifier "P342" .
 
-ghs:P342P311 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb4,
+ghs:P342P311 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b4,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement,
         ghs:PrecautionaryStatementCombination ;
@@ -2040,9 +2040,9 @@ ghs:P342P311 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:P342 ;
     schema:identifier "P342+P311" .
 
-ghs:P342P316 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb4,
+ghs:P342P316 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b4,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement,
         ghs:PrecautionaryStatementCombination ;
@@ -2051,8 +2051,8 @@ ghs:P342P316 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:P342 ;
     schema:identifier "P342+P316" .
 
-ghs:P351 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P351 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Einige Minuten lang behutsam mit Wasser ausspülen"@de,
@@ -2061,8 +2061,8 @@ ghs:P351 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Sciacquare accuratamente per parecchi minuti"@it ;
     schema:identifier "P351" .
 
-ghs:P352 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P352 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Mit viel Wasser/…/waschen"@de,
@@ -2071,8 +2071,8 @@ ghs:P352 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Lavare abbondantemente con acqua/…"@it ;
     schema:identifier "P352" .
 
-ghs:P353 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P353 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Haut mit Wasser abwaschen [oder duschen]"@de,
@@ -2081,8 +2081,8 @@ ghs:P353 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Sciacquare la pelle [o fare una doccia]"@it ;
     schema:identifier "P353" .
 
-ghs:P360 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P360 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Kontaminierte Kleidung und Haut sofort mit viel Wasser abwaschen und danach Kleidung ausziehen"@de,
@@ -2091,8 +2091,8 @@ ghs:P360 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Sciacquare immediatamente e abbondantemente gli indumenti contaminati e la pelle prima di togliersi gli indumenti"@it ;
     schema:identifier "P360" .
 
-ghs:P361 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P361 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Alle kontaminierten Kleidungsstücke sofort ausziehen"@de,
@@ -2101,9 +2101,9 @@ ghs:P361 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Togliere immediatamente tutti gli indumenti contaminati"@it ;
     schema:identifier "P361" .
 
-ghs:P361P364 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb4,
+ghs:P361P364 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b4,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement,
         ghs:PrecautionaryStatementCombination ;
@@ -2115,8 +2115,8 @@ ghs:P361P364 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:P364 ;
     schema:identifier "P361+P364" .
 
-ghs:P362 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P362 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Kontaminierte Kleidung ausziehen"@de,
@@ -2125,9 +2125,9 @@ ghs:P362 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Togliere gli indumenti contaminati"@it ;
     schema:identifier "P362" .
 
-ghs:P362P364 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb4,
+ghs:P362P364 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b4,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement,
         ghs:PrecautionaryStatementCombination ;
@@ -2139,8 +2139,8 @@ ghs:P362P364 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:P364 ;
     schema:identifier "P362+P364" .
 
-ghs:P363 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P363 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Kontaminierte Kleidung vor erneutem Tragen waschen"@de,
@@ -2149,8 +2149,8 @@ ghs:P363 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Lavare gli indumenti contaminati prima di indossarli nuovamente"@it ;
     schema:identifier "P363" .
 
-ghs:P364 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P364 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Und vor erneutem Tragen waschen"@de,
@@ -2159,8 +2159,8 @@ ghs:P364 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "E lavarli prima di indossarli nuovamente"@it ;
     schema:identifier "P364" .
 
-ghs:P370 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P370 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Bei Brand:"@de,
@@ -2169,9 +2169,9 @@ ghs:P370 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "In caso di incendio:"@it ;
     schema:identifier "P370" .
 
-ghs:P370P372P380P373 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb4,
+ghs:P370P372P380P373 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b4,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement,
         ghs:PrecautionaryStatementCombination ;
@@ -2185,9 +2185,9 @@ ghs:P370P372P380P373 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:P380 ;
     schema:identifier "P370+P372+P380+P373" .
 
-ghs:P370P376 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb4,
+ghs:P370P376 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b4,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement,
         ghs:PrecautionaryStatementCombination ;
@@ -2199,9 +2199,9 @@ ghs:P370P376 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:P376 ;
     schema:identifier "P370+P376" .
 
-ghs:P370P378 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb4,
+ghs:P370P378 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b4,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement,
         ghs:PrecautionaryStatementCombination ;
@@ -2213,9 +2213,9 @@ ghs:P370P378 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:P378 ;
     schema:identifier "P370+P378" .
 
-ghs:P370P380P375 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb4,
+ghs:P370P380P375 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b4,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement,
         ghs:PrecautionaryStatementCombination ;
@@ -2228,9 +2228,9 @@ ghs:P370P380P375 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:P380 ;
     schema:identifier "P370+P380+P375" .
 
-ghs:P370P380P375P378 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb4,
+ghs:P370P380P375P378 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b4,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement,
         ghs:PrecautionaryStatementCombination ;
@@ -2244,9 +2244,9 @@ ghs:P370P380P375P378 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:P380 ;
     schema:identifier "P370+P380+P375+P378" .
 
-ghs:P370P380P375P378opt a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb4,
+ghs:P370P380P375P378opt a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b4,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement,
         ghs:PrecautionaryStatementCombination ;
@@ -2257,8 +2257,8 @@ ghs:P370P380P375P378opt a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:P380 ;
     schema:identifier "P370+P380+P375[+P378]" .
 
-ghs:P371 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P371 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Bei Großbrand und großen Mengen:"@de,
@@ -2267,9 +2267,9 @@ ghs:P371 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "In caso di incendio grave e di quantità rilevanti:"@it ;
     schema:identifier "P371" .
 
-ghs:P371P380P375 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb4,
+ghs:P371P380P375 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b4,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement,
         ghs:PrecautionaryStatementCombination ;
@@ -2282,8 +2282,8 @@ ghs:P371P380P375 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:P380 ;
     schema:identifier "P371+P380+P375" .
 
-ghs:P372 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P372 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Explosionsgefahr"@de,
@@ -2292,8 +2292,8 @@ ghs:P372 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Rischio di esplosione"@it ;
     schema:identifier "P372" .
 
-ghs:P373 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P373 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "KEINE Brandbekämpfung, wenn das Feuer explosive Stoffe/Gemische/Erzeugnisse erreicht"@de,
@@ -2302,8 +2302,8 @@ ghs:P373 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "NON utilizzare mezzi estinguenti se l’incendio raggiunge materiali esplosivi"@it ;
     schema:identifier "P373" .
 
-ghs:P375 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P375 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Wegen Explosionsgefahr Brand aus der Entfernung bekämpfen"@de,
@@ -2312,8 +2312,8 @@ ghs:P375 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Rischio di esplosione. Utilizzare i mezzi estinguenti a grande distanza"@it ;
     schema:identifier "P375" .
 
-ghs:P376 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P376 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Undichtigkeit beseitigen, wenn gefahrlos möglich"@de,
@@ -2322,8 +2322,8 @@ ghs:P376 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Bloccare la perdita se non c’è pericolo"@it ;
     schema:identifier "P376" .
 
-ghs:P377 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P377 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Brand von ausströmendem Gas: Nicht löschen, bis Undichtigkeit gefahrlos beseitigt werden kann"@de,
@@ -2332,8 +2332,8 @@ ghs:P377 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "In caso d’incendio dovuto a perdita di gas, non estinguere a meno che non sia possibile bloccare la perdita senza pericolo"@it ;
     schema:identifier "P377" .
 
-ghs:P378 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P378 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "… zum Löschen verwenden"@de,
@@ -2342,8 +2342,8 @@ ghs:P378 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Utilizzare… per estinguere"@it ;
     schema:identifier "P378" .
 
-ghs:P380 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P380 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Umgebung räumen"@de,
@@ -2352,8 +2352,8 @@ ghs:P380 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Evacuare la zona"@it ;
     schema:identifier "P380" .
 
-ghs:P381 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P381 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Bei Undichtigkeit alle Zündquellen entfernen"@de,
@@ -2362,8 +2362,8 @@ ghs:P381 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "In caso di perdita, eliminare ogni fonte di accensione"@it ;
     schema:identifier "P381" .
 
-ghs:P390 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P390 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Verschüttete Mengen aufnehmen, um Materialschäden zu vermeiden"@de,
@@ -2372,8 +2372,8 @@ ghs:P390 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Assorbire la fuoriuscita per evitare danni materiali"@it ;
     schema:identifier "P390" .
 
-ghs:P391 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P391 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Verschüttete Mengen aufnehmen"@de,
@@ -2382,8 +2382,8 @@ ghs:P391 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Raccogliere il materiale fuoriuscito"@it ;
     schema:identifier "P391" .
 
-ghs:P401 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P401 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Aufbewahren gemäß …"@de,
@@ -2392,8 +2392,8 @@ ghs:P401 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Conservare secondo…"@it ;
     schema:identifier "P401" .
 
-ghs:P402 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P402 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "An einem trockenen Ort aufbewahren"@de,
@@ -2402,9 +2402,9 @@ ghs:P402 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Conservare in luogo asciutto"@it ;
     schema:identifier "P402" .
 
-ghs:P402P404 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb4,
+ghs:P402P404 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b4,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement,
         ghs:PrecautionaryStatementCombination ;
@@ -2416,8 +2416,8 @@ ghs:P402P404 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:P404 ;
     schema:identifier "P402+P404" .
 
-ghs:P403 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P403 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "An einem gut belüfteten Ort aufbewahren"@de,
@@ -2426,9 +2426,9 @@ ghs:P403 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Conservare in luogo ben ventilato"@it ;
     schema:identifier "P403" .
 
-ghs:P403P233 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb4,
+ghs:P403P233 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b4,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement,
         ghs:PrecautionaryStatementCombination ;
@@ -2440,9 +2440,9 @@ ghs:P403P233 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:P403 ;
     schema:identifier "P403+P233" .
 
-ghs:P403P235 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb4,
+ghs:P403P235 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b4,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement,
         ghs:PrecautionaryStatementCombination ;
@@ -2454,8 +2454,8 @@ ghs:P403P235 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:P403 ;
     schema:identifier "P403+P235" .
 
-ghs:P404 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P404 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "In einem geschlossenen Behälter aufbewahren"@de,
@@ -2464,8 +2464,8 @@ ghs:P404 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Conservare in un recipiente chiuso"@it ;
     schema:identifier "P404" .
 
-ghs:P405 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P405 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Unter Verschluss aufbewahren"@de,
@@ -2474,8 +2474,8 @@ ghs:P405 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Conservare sotto chiave"@it ;
     schema:identifier "P405" .
 
-ghs:P406 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P406 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "In korrosionsbeständigem/… Behälter mit korrosionsbeständiger Innenauskleidung aufbewahren"@de,
@@ -2484,8 +2484,8 @@ ghs:P406 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Conservare in recipiente resistente alla corrosione/… provvisto di rivestimento interno resistente"@it ;
     schema:identifier "P406" .
 
-ghs:P407 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P407 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Luftspalt zwischen Stapeln oder Paletten lassen"@de,
@@ -2494,8 +2494,8 @@ ghs:P407 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Mantenere uno spazio libero tra gli scaffali o i pallet"@it ;
     schema:identifier "P407" .
 
-ghs:P410 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P410 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Vor Sonnenbestrahlung schützen"@de,
@@ -2504,9 +2504,9 @@ ghs:P410 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Proteggere dai raggi solari"@it ;
     schema:identifier "P410" .
 
-ghs:P410P403 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb4,
+ghs:P410P403 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b4,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement,
         ghs:PrecautionaryStatementCombination ;
@@ -2518,9 +2518,9 @@ ghs:P410P403 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:P410 ;
     schema:identifier "P410+P403" .
 
-ghs:P410P412 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
-        _:nb141ff17bca544b68cfd29aede5246eeb4,
+ghs:P410P412 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
+        _:na32be413aedc44f08746eec266c430c7b4,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement,
         ghs:PrecautionaryStatementCombination ;
@@ -2532,8 +2532,8 @@ ghs:P410P412 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         ghs:P412 ;
     schema:identifier "P410+P412" .
 
-ghs:P411 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P411 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Bei Temperaturen nicht über … °C/… °F aufbewahren"@de,
@@ -2542,8 +2542,8 @@ ghs:P411 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Conservare a temperature non superiori a … °C/… °F"@it ;
     schema:identifier "P411" .
 
-ghs:P412 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P412 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Nicht Temperaturen über 50 °C/122 °F aussetzen"@de,
@@ -2552,8 +2552,8 @@ ghs:P412 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Non esporre a temperature superiori a 50 °C/122 °F"@it ;
     schema:identifier "P412" .
 
-ghs:P413 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P413 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Schüttgut in Mengen von mehr als … kg/… lbs bei Temperaturen nicht über … °C/… °F aufbewahren"@de,
@@ -2562,8 +2562,8 @@ ghs:P413 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Conservare le rinfuse di peso superiore a …kg/…lb a temperature non superiori a … °C/ °F"@it ;
     schema:identifier "P413" .
 
-ghs:P420 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P420 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Getrennt aufbewahren"@de,
@@ -2572,8 +2572,8 @@ ghs:P420 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Conservare separatamente"@it ;
     schema:identifier "P420" .
 
-ghs:P501 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P501 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Inhalt/Behälter … zuführen"@de,
@@ -2582,8 +2582,8 @@ ghs:P501 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Smaltire il prodotto/recipiente in …"@it ;
     schema:identifier "P501" .
 
-ghs:P502 a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:P502 a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:PrecautionaryStatement ;
     rdfs:label "Informationen zur Wiederverwendung oder Wiederverwertung beim Hersteller oder Lieferanten erfragen"@de,
@@ -2592,8 +2592,8 @@ ghs:P502 a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "Chiedere informazioni al produttore o fornitore per il recupero o il riciclaggio"@it ;
     schema:identifier "P502" .
 
-ghs:attention a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:attention a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:SignalWord ;
     rdfs:label "Achtung"@de,
@@ -2601,8 +2601,8 @@ ghs:attention a _:nb141ff17bca544b68cfd29aede5246eeb1,
         "attention"@fr,
         "Attenzione"@it .
 
-ghs:danger a _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2,
+ghs:danger a _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2,
         ghs:GHSStatement,
         ghs:SignalWord ;
     rdfs:label "Gefahr"@de,
@@ -2670,6 +2670,11 @@ schema:QuantitativeValue a owl:Class ;
     rdfs:comment "A chemical crop protection product used to control mites and ticks."@en ;
     rdfs:subClassOf :ChemicalProtectionProduct .
 
+:ActiveSubstance a owl:Class ;
+    rdfs:label "Active Substance"@en ;
+    rdfs:comment "A biologically active ingredient in a plant protection product that acts against pests or diseases."@en ;
+    rdfs:subClassOf :Substance .
+
 :AntifungalBiologicalAgent a owl:Class ;
     rdfs:label "Antifungal biological agent"@en ;
     rdfs:comment "Biological control agents used to protect plants from harmful fungi, based on natural organisms or their byproducts."@en ;
@@ -2717,6 +2722,11 @@ schema:QuantitativeValue a owl:Class ;
     rdfs:label "Chemical Protection Product"@en ;
     rdfs:comment "Any crop protection product that can be reasonably well described by its chemical ingredients/synthesis rather than biological origin."@en ;
     rdfs:subClassOf :Product .
+
+:CoFormulant a owl:Class ;
+    rdfs:label "Co-formulant"@en ;
+    rdfs:comment "An inactive ingredient in a plant protection product that supports the formulation but has no direct pesticidal activity."@en ;
+    rdfs:subClassOf :Substance .
 
 :Cultivation a owl:Class ;
     rdfs:label "Cultivation"@en .
@@ -2855,13 +2865,13 @@ schema:QuantitativeValue a owl:Class ;
 
 ghs:GHSStatement a owl:Class ;
     rdfs:label "GHS statement"@en ;
-    rdfs:subClassOf _:nb141ff17bca544b68cfd29aede5246eeb1,
-        _:nb141ff17bca544b68cfd29aede5246eeb2 .
+    rdfs:subClassOf _:na32be413aedc44f08746eec266c430c7b1,
+        _:na32be413aedc44f08746eec266c430c7b2 .
 
 ghs:HazardPictogram a owl:Class ;
     rdfs:label "Hazard pictogram"@en ;
     rdfs:seeAlso <https://en.wikipedia.org/wiki/GHS_hazard_pictograms> ;
-    rdfs:subClassOf _:nb141ff17bca544b68cfd29aede5246eeb3,
+    rdfs:subClassOf _:na32be413aedc44f08746eec266c430c7b3,
         ghs:GHSStatement .
 
 ghs:HazardStatement a owl:Class ;
@@ -2872,7 +2882,7 @@ ghs:HazardStatement a owl:Class ;
 
 ghs:HazardStatementCombination a owl:Class ;
     rdfs:label "Combinations of hazard statements"@en ;
-    rdfs:subClassOf _:nb141ff17bca544b68cfd29aede5246eeb5,
+    rdfs:subClassOf _:na32be413aedc44f08746eec266c430c7b5,
         ghs:HazardStatement .
 
 ghs:PrecautionaryStatement a owl:Class ;
@@ -2883,7 +2893,7 @@ ghs:PrecautionaryStatement a owl:Class ;
 
 ghs:PrecautionaryStatementCombination a owl:Class ;
     rdfs:label "Combinations of precautionary statements"@en ;
-    rdfs:subClassOf _:nb141ff17bca544b68cfd29aede5246eeb4,
+    rdfs:subClassOf _:na32be413aedc44f08746eec266c430c7b4,
         ghs:PrecautionaryStatement .
 
 ghs:SignalWord a owl:Class ;
@@ -3014,23 +3024,23 @@ ghs:SignalWord a owl:Class ;
 ghs: a owl:Ontology ;
     dcterms:title "GHS phrase classification scheme"@en .
 
-_:nb141ff17bca544b68cfd29aede5246eeb1 a owl:Restriction ;
+_:na32be413aedc44f08746eec266c430c7b1 a owl:Restriction ;
     owl:allValuesFrom rdf:langString ;
     owl:onProperty schema:name .
 
-_:nb141ff17bca544b68cfd29aede5246eeb2 a owl:Restriction ;
+_:na32be413aedc44f08746eec266c430c7b2 a owl:Restriction ;
     owl:allValuesFrom xsd:string ;
     owl:onProperty schema:identifier .
 
-_:nb141ff17bca544b68cfd29aede5246eeb3 a owl:Restriction ;
+_:na32be413aedc44f08746eec266c430c7b3 a owl:Restriction ;
     owl:allValuesFrom rdfs:Resource ;
     owl:onProperty schema:image .
 
-_:nb141ff17bca544b68cfd29aede5246eeb4 a owl:Restriction ;
+_:na32be413aedc44f08746eec266c430c7b4 a owl:Restriction ;
     owl:allValuesFrom ghs:PrecautionaryStatement ;
     owl:onProperty schema:hasPart .
 
-_:nb141ff17bca544b68cfd29aede5246eeb5 a owl:Restriction ;
+_:na32be413aedc44f08746eec266c430c7b5 a owl:Restriction ;
     owl:allValuesFrom ghs:HazardStatement ;
     owl:onProperty schema:hasPart .
 

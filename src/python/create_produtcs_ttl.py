@@ -4,6 +4,7 @@ import csv
 import yaml
 from pathlib import Path
 import pandas as pd
+import duckdb
 from rdflib import Graph, Namespace, URIRef, Literal
 from rdflib.namespace import RDF, RDFS
 from rdflib.namespace import NamespaceManager
@@ -38,7 +39,7 @@ TYPE_MAPPING = rdf_mappings["type_mapping"]
 
 # Create Products
 def products_ttl(
-    products_data_path = "data/processed/Product.csv",
+    db_path = "data/processed/psmv-data.duckdb",
     product_organisation_link_path = "data/processed/ProductOrganisation.csv"):
 
     """
@@ -60,8 +61,10 @@ def products_ttl(
     graph.namespace_manager.bind("schema", SCHEMA, override=True, replace=True)
 
     # Read data
-    products_df = pd.read_csv(products_data_path)
-    pro_org_link_df = pd.read_csv(product_organisation_link_path)
+    con = duckdb.connect(db_path, read_only=True)
+    products_df = con.execute("SELECT * FROM Product").df()
+    pro_org_link_df = con.execute("SELECT * FROM ProductOrganisation").df()
+    con.close()
 
     # Create product triples
     for i, row in products_df.iterrows():
