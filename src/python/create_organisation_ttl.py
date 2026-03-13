@@ -54,10 +54,10 @@ def organisation_ttl(
     graph.bind("substance", SUBSTANCE)
     graph.bind("company", COMPANY)
     graph.bind("zefix", ZEFIX)
-    graph.bind("schema", SCHEMA)
     graph.bind("unit", UNIT)
     graph.bind("country", COUNTRY)
-    
+    graph.namespace_manager.bind("schema", SCHEMA, override=True, replace=True)
+
     # Read data
     organsiation_df = pd.read_csv(organsiation_data_path)
 
@@ -70,7 +70,7 @@ def organisation_ttl(
             org_uri = COMPANY[str(row["organisation_id"]).strip()]
 
             # Add organisation type
-            graph.add((org_uri, RDF.type, BASE.Organisation))
+            graph.add((org_uri, RDF.type, SCHEMA.Organization))
 
             # Add organisation name
             if pd.notna(row.get("organisation_name")):
