@@ -6,6 +6,7 @@ from pathlib import Path
 import pandas as pd
 from rdflib import Graph, Namespace, URIRef, Literal
 from rdflib.namespace import RDF, XSD
+from rdflib import BNode
 
 # local imports
 from src.python.utils.helper_functions import load_namespaces, load_rdf_mappings
@@ -78,22 +79,26 @@ def organisation_ttl(
             if pd.notna(row.get("phone_number")):
                 graph.add((org_uri, SCHEMA.telephone, Literal(str(row["phone_number"]).strip(), datatype=XSD.string)))
 
-            # Add address
+            # Add address node
+            address_node = BNode()
+            graph.add((org_uri, SCHEMA.address, address_node))
+            graph.add((address_node, RDF.type, SCHEMA.PostalAddress))
+
             if pd.notna(row.get("street_address")):
-                graph.add((org_uri, SCHEMA.streetAddress, Literal(str(row["street_address"]).strip(), datatype=XSD.string)))
+                graph.add((address_node, SCHEMA.streetAddress, Literal(str(row["street_address"]).strip(), datatype=XSD.string)))
 
             if pd.notna(row.get("post_office_box")):
-                graph.add((org_uri, SCHEMA.postOfficeBoxNumber, Literal(str(row["post_office_box"]).strip(), datatype=XSD.string)))
+                graph.add((address_node, SCHEMA.postOfficeBoxNumber, Literal(str(row["post_office_box"]).strip(), datatype=XSD.string)))
 
             if pd.notna(row.get("city_id")):
-                graph.add((org_uri, SCHEMA.addressLocality, Literal(str(row["city_id"]).strip(), datatype=XSD.string)))
+                graph.add((address_node, SCHEMA.addressLocality, Literal(str(row["city_id"]).strip(), datatype=XSD.string)))
 
             # country as iso3
             country_id = (row.get("country_id") or "").strip().lower()
             if country_id:
                 iso3 = (COUNTRY_MAPPING.get(country_id) or "").strip()
                 if iso3:
-                    graph.add((org_uri, SCHEMA.addressCountry, Literal(iso3)))
+                    graph.add((address_node, SCHEMA.addressCountry, URIRef(iso3)))
                 else:
                     # If you strictly never want literals, best is to skip and log
                     print(f"Organisation row {i}: country_id '{country_id}' not found in mapping_rdf.yaml -> skipped")
@@ -102,15 +107,7 @@ def organisation_ttl(
             print(f"Organisation row {i}: {error}")
 
     # Print graph info
-    print(f"\nGraph created successfully!")
-    print(f"Total triples: {len(graph)}")
-
-    # Print first triple
-    print(f"\nFirst three triples:")
-    for i, (s, p, o) in enumerate(graph):
-        if i >= 3:
-            break
-        print(f"{s} {p} {o}")
+    print(f"[i] Total triples: {len(graph)}")
 
     # Save to file
     out_file = Path(out_path)
@@ -121,5 +118,3 @@ def organisation_ttl(
 
 if __name__ == "__main__":
     organisation_ttl()
-
-

@@ -106,9 +106,8 @@ def products_ttl(
             # Add producing country
             if pd.notna(row.get("producing_country_id")):
                 country_uuid_str = str(row.get("producing_country_id")).strip()
-                # If the UUID is found in our mapping, link to the official ld.admin country URI
                 if country_uuid_str in COUNTRY_MAPPING:
-                    country_uri = COUNTRY_MAPPING[country_uuid_str]
+                    country_uri = URIRef(COUNTRY_MAPPING[country_uuid_str])
                     graph.add((product_uri, SCHEMA.countryOfOrigin, country_uri))
 
             # Add dates (Exhaustion and Sold Out Deadlines)
