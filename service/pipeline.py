@@ -10,6 +10,7 @@ from pyshacl import validate as pyshacl_validate
 from src.python.preprocess_data import process_data
 from src.python.validate import validate_ttl_files
 from src.python.create_produtcs_ttl import products_ttl
+from src.python.create_organisation_ttl import organisation_ttl
 from src.python.reason import load_inputs, apply_rules, save_graph
 from src.python.shacl_validator import run_shacl_validation
 
@@ -25,6 +26,7 @@ def run_pipeline():
 
     print("\nRun data integration pipeline")
     products_ttl()
+    organisation_ttl()
 
     print("\nCreate a dedicated ontology file for subsequent WebVOWL visualization")
     inputs = load_inputs(["rdf/ontology/*.ttl"])

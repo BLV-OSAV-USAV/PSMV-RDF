@@ -5,7 +5,7 @@ import yaml
 from pathlib import Path
 import pandas as pd
 from rdflib import Graph, Namespace, URIRef, Literal
-from rdflib.namespace import RDF, XSD
+from rdflib.namespace import RDF
 
 # local imports
 from src.python.utils.helper_functions import load_namespaces, load_rdf_mappings
@@ -21,7 +21,7 @@ UNIT = namespaces["unit"]
 ZEFIX = namespaces["zefix"]
 COMPANY = namespaces["company"]
 COUNTRY = namespaces["country"]
-
+XSD = namespaces["xsd"]
 
 # Load all RDF mappings
 # Explicitly specify which namespace each mapping uses
