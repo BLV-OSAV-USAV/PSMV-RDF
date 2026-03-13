@@ -420,7 +420,7 @@ schema:PostalAddress a owl:Class ;
     schema:name "Substance"@en .
 
 :substance a owl:ObjectProperty ;
-    schema:name "Substance"@en ;
+    schema:name "Has Substance"@en ;
     rdfs:domain :Ingredient ;
     rdfs:range :Substance .
 
@@ -433,7 +433,12 @@ schema:PostalAddress a owl:Class ;
     rdfs:subClassOf :Substance ;
     schema:name "Co-formulant"@en ;
     schema:description "An inactive ingredient in a plant protection product that supports the formulation but has no direct pesticidal activity."@en .
-    
+
+:iupacName a owl:DatatypeProperty ;
+    schema:name "IUPAC Name"@en ;
+    rdfs:domain :Substance ;
+    rdfs:range xsd:string .
+
 schema:QuantitativeValue a owl:Class ;
     schema:name "Quantitative value"@en ;
     rdfs:subClassOf [

@@ -11,8 +11,11 @@ from src.python.preprocess_data import process_data
 from src.python.validate import validate_ttl_files
 from src.python.create_produtcs_ttl import products_ttl
 from src.python.create_organisation_ttl import organisation_ttl
+from src.python.create_substance_ttl import substance_ttl
+from src.python.create_ingredient_ttl import ingredient_ttl
 from src.python.reason import load_inputs, apply_rules, save_graph
 from src.python.shacl_validator import run_shacl_validation
+from src.python.enrich_substances_chebi import enrich_substances_chebi
 
 from src.python.utils.helper_functions import *
 
@@ -27,6 +30,10 @@ def run_pipeline():
     print("\nRun data integration pipeline")
     products_ttl()
     organisation_ttl()
+    substance_ttl()
+    print("\nEnrich substances with ChEBI linked data")
+    enrich_substances_chebi(graph_path = "rdf/data/substance.ttl")
+    ingredient_ttl()
 
     print("\nCreate a dedicated ontology file for subsequent WebVOWL visualization")
     inputs = load_inputs(["rdf/ontology/*.ttl"])
@@ -49,6 +56,7 @@ def run_pipeline():
 
     print("\nChecking graph shape using SHACL...")
     run_shacl_validation()
+    
 
     print(f"\n{"\033[92m"}✓ Pipeline completed successfully.{"\033[0m"}")
 

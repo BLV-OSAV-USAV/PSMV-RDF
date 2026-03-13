@@ -16,6 +16,7 @@ Product:
   isSalePermission: sale_permission
   packageInsert: w_number_of_reference_product # pk-id from refrecne product 
   terminationReason: termination_reason
+
 Organisation:
   NK_PermissionHolder: organisation_id
   FAX: fax_number
@@ -26,6 +27,24 @@ Organisation:
   NK_CodetableCity: city_id
   Phone: phone_number
   NK_CodetableCountry: country_id
+
 ProductOrganisation:
   NK_PermissionHolder: organisation_id
   NK_Product: product_id
+
+ProductIngredient:
+  ActiveSubstance_ID: active_substance_id
+  CoFormulant_ID: co_formulant_id
+  FK_ACTIVE_SUBSTANCE: fk_active_substance
+  FK_CO_FORMULANT: fk_co_formulant
+  inGrammPerLitre: in_gram_per_litre
+  inGrammPerLitreRound: in_gram_per_litre_round
+  inPercent: in_percent
+  InPercentRound: in_percent_round
+  IUPAC_NAME: IUPAC_name
+  NK_Codetable_AdditionalText: nk_additional_text_id
+  NK_CodeTable_Substance: nk_substance_id
+  NK_PROD_REF: product_ref_or_id
+  NK_Substance: nk_substance
+  PUBLIC_NAME_DE: public_name_de
+  RELEVANT_CO_FORMULANT: relevant_co_formulant

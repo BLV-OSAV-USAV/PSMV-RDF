@@ -35,3 +35,7 @@ type_mapping:
   "REGULAR": "RegularProduct"
   "SALE_PERMISSION": "SalePermission"
   "PARALLEL_IMPORT": "ParallelImport"
+
+unit_mapping:
+  gram_per_litre: http://qudt.org/vocab/unit/GM-PER-L
+  percent: http://qudt.org/vocab/unit/PERCENT

@@ -112,8 +112,6 @@ def process_data(
             print(f"  - {msg}")
         sys.exit(1)
 
-
-
 if __name__ == "__main__":
     process_data()
     

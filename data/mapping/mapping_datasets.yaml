@@ -14,3 +14,8 @@ datasets:
     delimiter: ","
     encoding: "utf-8"
     description: "PSMV Export Product-Organisation Relations Jan 2026"
+  ProductIngredient:
+    input: "data/raw/ProductIngredient.csv"
+    delimiter: ","
+    encoding: "utf-8"
+    description: "PSMV Export ProductIngredient Jan 2026"
