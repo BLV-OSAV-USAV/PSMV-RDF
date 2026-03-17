@@ -434,10 +434,6 @@ schema:PostalAddress a owl:Class ;
     schema:name "Co-formulant"@en ;
     schema:description "An inactive ingredient in a plant protection product that supports the formulation but has no direct pesticidal activity."@en .
 
-# ------------------------------------------------------------------------------
-# OBJECT PROPERTIES
-# ------------------------------------------------------------------------------
-
 :substance a owl:ObjectProperty ;
     schema:name "Has Substance"@en ;
     rdfs:domain :Ingredient ;
@@ -453,18 +449,11 @@ schema:PostalAddress a owl:Class ;
     rdfs:domain :Product ;
     rdfs:range :Ingredient .
 
-# ------------------------------------------------------------------------------
-# SUBSTANCE PROPERTIES
-# ------------------------------------------------------------------------------
 
 :iupacName a owl:DatatypeProperty ;
     schema:name "IUPAC Name"@en ;
     rdfs:domain :Substance ;
     rdfs:range xsd:string .
-
-# ------------------------------------------------------------------------------
-# QUANTITATIVE VALUE
-# ------------------------------------------------------------------------------
 
 schema:QuantitativeValue a owl:Class ;
     schema:name "Quantitative value"@en ;

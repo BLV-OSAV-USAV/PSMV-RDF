@@ -1,4 +1,5 @@
 @prefix ex: <https://agriculture.ld.admin.ch/plant-protection/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix schema1: <http://schema.org/> .
 @prefix substance: <https://agriculture.ld.admin.ch/plant-protection/substance/> .
 
@@ -58,6 +59,7 @@ substance:0F29D476-230A-401E-B300-FCB7D933CC62 a ex:ActiveSubstance ;
     ex:iupacName "butyl-(R)-2-[4-(5-trifluormethyl-2-pyridyloxy)phenoxy]propionat" .
 
 substance:0F6DBED8-C3E6-4713-8C19-BEF7272A758F a ex:ActiveSubstance ;
+    owl:sameAs <http://purl.obolibrary.org/obo/CHEBI_38495> ;
     ex:iupacName "Aluminium phosphide" .
 
 substance:0FD8F60C-4FAA-4D6E-93A2-A72B985C01AB a ex:ActiveSubstance ;
@@ -383,6 +385,7 @@ substance:1D9BCAC4-2D0D-402F-BB92-A339F4126A4D a ex:ActiveSubstance ;
 
 substance:1EE56990-0442-4A41-8551-DBFF60E5BFAE a ex:ActiveSubstance ;
     schema1:name "Essigsäure"@de ;
+    owl:sameAs <http://purl.obolibrary.org/obo/CHEBI_15366> ;
     ex:iupacName "Acetic acid" .
 
 substance:1F1AC43C-E2CC-4039-B39A-21346E6687F6 a ex:ActiveSubstance ;
@@ -467,6 +470,7 @@ substance:216523E4-D6C9-4BBD-971D-B1F5520C1A90 a ex:ActiveSubstance ;
     ex:iupacName "(E,E)-methoxyimino-{2-[1-(3-trifluoromethyl-phenyl)-ethylideneaminooxymethyl]-phenyl}-acetic acid methyl ester" .
 
 substance:21FA1CA6-B650-469B-A1F9-B4F6EA6AD30D a ex:ActiveSubstance ;
+    owl:sameAs <http://purl.obolibrary.org/obo/CHEBI_30746> ;
     ex:iupacName "Benzoic acid" .
 
 substance:2312C520-131D-4F8A-A6B0-A87CAB9D296F a ex:ActiveSubstance ;
@@ -476,6 +480,7 @@ substance:235C3063-2BA5-45F8-BDDA-04C8CB06DD6B a ex:ActiveSubstance ;
     ex:iupacName "N-(4-fluoro-phenyl)-N-isopropyl-2-(5-trifluoro-methyl-[1,3,4]thiadiazol-2-yloxy)-acetamide" .
 
 substance:23CE0251-0099-406A-AEEB-529C940E1280 a ex:ActiveSubstance ;
+    owl:sameAs <http://purl.obolibrary.org/obo/CHEBI_48609> ;
     ex:iupacName "1,4-dimethylnaphthalene" .
 
 substance:24E6793B-C9CE-4FD7-98F6-F2BD49090672 a ex:ActiveSubstance ;
@@ -540,6 +545,7 @@ substance:32AD9072-3F0B-4400-BAE6-7D8AF97E93D2 a ex:ActiveSubstance ;
 
 substance:32E98251-B133-45F1-8333-B6CA35CD3F4F a ex:ActiveSubstance ;
     schema1:name "Dodecan-1-ol"@de ;
+    owl:sameAs <http://purl.obolibrary.org/obo/CHEBI_28878> ;
     ex:iupacName "Dodecan-1-ol" .
 
 substance:33016EA8-84E5-44EE-9857-1A72FE0936CE a ex:ActiveSubstance ;
@@ -568,6 +574,7 @@ substance:373C1C2E-8FF7-45B5-8E7A-69543D682CEA a ex:ActiveSubstance ;
 
 substance:3788E18C-2818-4FE2-AD3E-CD795919D6C0 a ex:ActiveSubstance ;
     schema1:name "Kieselgur (Diatomeenerde)"@de ;
+    owl:sameAs <http://purl.obolibrary.org/obo/CHEBI_82661> ;
     ex:iupacName "Diatomaceous earth" .
 
 substance:37D99E20-BA7B-4E6E-9019-714B6B78015D a ex:ActiveSubstance ;
@@ -653,6 +660,7 @@ substance:4DB8B083-6D4D-42A6-A206-03B435D27F27 a ex:ActiveSubstance ;
     ex:iupacName "Parasitische Schlupfwespen / hyménoptères parasites / imenotteri parassiti" .
 
 substance:51035D33-4913-4CE8-967F-B5E5ECF92713 a ex:ActiveSubstance ;
+    owl:sameAs <http://purl.obolibrary.org/obo/CHEBI_3311> ;
     ex:iupacName "Calcium carbonate" .
 
 substance:51208C7E-B561-4EA6-9746-104D0217710C a ex:ActiveSubstance ;
@@ -738,6 +746,7 @@ substance:64FB7C16-D11D-43AB-81BB-BE473DC05A47 a ex:ActiveSubstance ;
 
 substance:666A6D3F-F4A7-4C26-8E13-7ADDC82B396A a ex:ActiveSubstance ;
     schema1:name "1-methylcyclopropene / 1-MCP"@de ;
+    owl:sameAs <http://purl.obolibrary.org/obo/CHEBI_132592> ;
     ex:iupacName "1-methylcyclopropene" .
 
 substance:66C01E01-A378-43F2-9928-F670AF311C57 a ex:ActiveSubstance ;
@@ -796,6 +805,7 @@ substance:738BFE0C-9D22-4FEB-B40B-56C57C372424 a ex:ActiveSubstance ;
     ex:iupacName "3,6-dichloro-o-anisic acid" .
 
 substance:740DC585-F4DC-404C-A9F7-62CEEF136FCB a ex:ActiveSubstance ;
+    owl:sameAs <http://purl.obolibrary.org/obo/CHEBI_25140> ;
     ex:iupacName "Maltodextrin" .
 
 substance:745AF988-CCE9-428A-B093-79C4AEE33AD3 a ex:CoFormulant ;
@@ -811,6 +821,7 @@ substance:75729E67-9FE2-4211-B86E-5681BBC46822 a ex:ActiveSubstance ;
     ex:iupacName "Bacillus thuringiensis var. kurstaki" .
 
 substance:7639690D-56F7-455F-9CFB-33D3C620FE91 a ex:ActiveSubstance ;
+    owl:sameAs <http://purl.obolibrary.org/obo/CHEBI_39098> ;
     ex:iupacName "Pyrethrins" .
 
 substance:76CB859A-2CD8-467B-BB83-017886B6889C a ex:ActiveSubstance ;
@@ -1246,6 +1257,7 @@ substance:E5044E08-C281-4072-BB0D-1993562BFEA0 a ex:ActiveSubstance ;
 
 substance:E6834FD5-D478-44FF-B681-8BC2BD0C7163 a ex:ActiveSubstance ;
     schema1:name "Tetradecan-1-ol"@de ;
+    owl:sameAs <http://purl.obolibrary.org/obo/CHEBI_77417> ;
     ex:iupacName "Tetradecan-1-ol" .
 
 substance:E74C6EF2-2CD0-47BB-98A9-C4B8F40F526C a ex:ActiveSubstance ;

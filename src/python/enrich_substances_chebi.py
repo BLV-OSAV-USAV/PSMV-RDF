@@ -13,7 +13,7 @@ def enrich_substances_chebi(
     graph_path="rdf/data/substance.ttl",
     query_path="src/sparql/queries/enrich_chebi.rq",
     batch_size=50,
-    cache_path="rdf/enrichment_cache.json"
+    cache_path="data/cache/enrichment_cache.json"
 ):
     graph = Graph()
     graph.parse(graph_path, format="turtle")
