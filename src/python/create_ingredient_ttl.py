@@ -72,7 +72,7 @@ def ingredient_ttl(
     # Create substance triples
     for i, row in ingredient_df.iterrows():
         try:
-            if pd.isna(row.get("nk_substance")) or pd.isna(row.get("product_ref_or_id")):
+            if pd.isna(row.get("nk_substance_id")) or pd.isna(row.get("product_ref_or_id")):
                 continue
             
             product_id = str(row.get("product_ref_or_id")).strip()
@@ -86,7 +86,7 @@ def ingredient_ttl(
             graph.add((ingredient_uri, RDF.type, BASE.Ingredient))
 
             # Link product to ingredient
-            graph.add((product_uri, BASE.ingredient, ingredient_uri))
+            graph.add((product_uri, BASE.hasIngredient, ingredient_uri))
 
             # Link ingredient to substance
             graph.add((ingredient_uri, BASE.substance, substance_uri))
@@ -94,7 +94,7 @@ def ingredient_ttl(
             # Gram per litre quantitative value
             if pd.notna(row.get("in_gram_per_litre")):
                 gpl_node = BNode()
-                graph.add((ingredient_uri, SCHEMA.value, gpl_node))
+                graph.add((ingredient_uri, BASE.concentration, gpl_node))
                 graph.add((gpl_node, RDF.type, SCHEMA.QuantitativeValue))
                 graph.add((gpl_node, SCHEMA.value, Literal(float(row.get("in_gram_per_litre")), datatype=XSD.decimal)))
                 graph.add((gpl_node, SCHEMA.unitCode, URIRef(UNIT_MAPPING["gram_per_litre"])))
@@ -102,7 +102,7 @@ def ingredient_ttl(
             # Percent quantitative value
             if pd.notna(row.get("in_percent")):
                 pct_node = BNode()
-                graph.add((ingredient_uri, SCHEMA.value, pct_node))
+                graph.add((ingredient_uri, BASE.concentration, pct_node))
                 graph.add((pct_node, RDF.type, SCHEMA.QuantitativeValue))
                 graph.add((pct_node, SCHEMA.value, Literal(float(row.get("in_percent")), datatype=XSD.decimal)))
                 graph.add((pct_node, SCHEMA.unitCode, URIRef(UNIT_MAPPING["percent"])))

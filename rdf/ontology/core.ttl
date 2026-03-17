@@ -410,19 +410,19 @@ schema:PostalAddress a owl:Class ;
 
 :Ingredient a owl:Class ;
     schema:name "Ingredient"@en ;
+    schema:description "A composition entry linking a product to a substance with a specified concentration."@en ;
     rdfs:subClassOf [
         a owl:Restriction ;
-        owl:onProperty schema:value ;
+        owl:onProperty :substance ;
+        owl:someValuesFrom :Substance
+    ], [
+        a owl:Restriction ;
+        owl:onProperty :concentration ;
         owl:allValuesFrom schema:QuantitativeValue
     ] .
 
 :Substance a owl:Class ;
     schema:name "Substance"@en .
-
-:substance a owl:ObjectProperty ;
-    schema:name "Has Substance"@en ;
-    rdfs:domain :Ingredient ;
-    rdfs:range :Substance .
 
 :ActiveSubstance a owl:Class ;
     rdfs:subClassOf :Substance ;
@@ -434,10 +434,37 @@ schema:PostalAddress a owl:Class ;
     schema:name "Co-formulant"@en ;
     schema:description "An inactive ingredient in a plant protection product that supports the formulation but has no direct pesticidal activity."@en .
 
+# ------------------------------------------------------------------------------
+# OBJECT PROPERTIES
+# ------------------------------------------------------------------------------
+
+:substance a owl:ObjectProperty ;
+    schema:name "Has Substance"@en ;
+    rdfs:domain :Ingredient ;
+    rdfs:range :Substance .
+
+:concentration a owl:ObjectProperty ;
+    schema:name "Concentration"@en ;
+    rdfs:domain :Ingredient ;
+    rdfs:range schema:QuantitativeValue .
+
+:hasIngredient a owl:ObjectProperty ;
+    schema:name "Has Ingredient"@en ;
+    rdfs:domain :Product ;
+    rdfs:range :Ingredient .
+
+# ------------------------------------------------------------------------------
+# SUBSTANCE PROPERTIES
+# ------------------------------------------------------------------------------
+
 :iupacName a owl:DatatypeProperty ;
     schema:name "IUPAC Name"@en ;
     rdfs:domain :Substance ;
     rdfs:range xsd:string .
+
+# ------------------------------------------------------------------------------
+# QUANTITATIVE VALUE
+# ------------------------------------------------------------------------------
 
 schema:QuantitativeValue a owl:Class ;
     schema:name "Quantitative value"@en ;
