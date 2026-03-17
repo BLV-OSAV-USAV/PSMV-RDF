@@ -42,9 +42,9 @@ UNIT_MAPPING = rdf_mappings["unit_mapping"]
 
 # Create Products
 def ingredient_ttl(
-    db_path = "data/processed/psmv-data.duckdb",
-    out_path: str = "rdf/data/ingredient_ttl"):
-
+    db_path="data/processed/psmv-data.duckdb",
+    out_path: str = "rdf/data/ingredient_ttl"
+):
     """
     Creates a ingredient_ttl
     """
@@ -69,7 +69,7 @@ def ingredient_ttl(
     ingredient_df = con.execute("SELECT * FROM ProductIngredient").df()
     con.close()
 
-    # Create substance triples
+    # Create ingredient triples
     for i, row in ingredient_df.iterrows():
         try:
             if pd.isna(row.get("nk_substance_id")) or pd.isna(row.get("product_ref_or_id")):
@@ -91,21 +91,21 @@ def ingredient_ttl(
             # Link ingredient to substance
             graph.add((ingredient_uri, BASE.substance, substance_uri))
 
-            # Gram per litre quantitative value
+            # Gram per litre
             if pd.notna(row.get("in_gram_per_litre")):
-                gpl_node = BNode()
-                graph.add((ingredient_uri, BASE.concentration, gpl_node))
-                graph.add((gpl_node, RDF.type, SCHEMA.QuantitativeValue))
-                graph.add((gpl_node, SCHEMA.value, Literal(float(row.get("in_gram_per_litre")), datatype=XSD.decimal)))
-                graph.add((gpl_node, SCHEMA.unitCode, URIRef(UNIT_MAPPING["gram_per_litre"])))
+                gpl_uri = INGREDIENT[f"{product_id}-{substance_id}-gpl"]  # named URI
+                graph.add((ingredient_uri, BASE.concentration, gpl_uri))
+                graph.add((gpl_uri, RDF.type, SCHEMA.QuantitativeValue))
+                graph.add((gpl_uri, SCHEMA.value, Literal(float(row.get("in_gram_per_litre")), datatype=XSD.decimal)))
+                graph.add((gpl_uri, SCHEMA.unitCode, URIRef(UNIT_MAPPING["gram_per_litre"])))
 
-            # Percent quantitative value
+            # Percent
             if pd.notna(row.get("in_percent")):
-                pct_node = BNode()
-                graph.add((ingredient_uri, BASE.concentration, pct_node))
-                graph.add((pct_node, RDF.type, SCHEMA.QuantitativeValue))
-                graph.add((pct_node, SCHEMA.value, Literal(float(row.get("in_percent")), datatype=XSD.decimal)))
-                graph.add((pct_node, SCHEMA.unitCode, URIRef(UNIT_MAPPING["percent"])))
+                pct_uri = INGREDIENT[f"{product_id}-{substance_id}-pct"]  # named URI
+                graph.add((ingredient_uri, BASE.concentration, pct_uri))
+                graph.add((pct_uri, RDF.type, SCHEMA.QuantitativeValue))
+                graph.add((pct_uri, SCHEMA.value, Literal(float(row.get("in_percent")), datatype=XSD.decimal)))
+                graph.add((pct_uri, SCHEMA.unitCode, URIRef(UNIT_MAPPING["percent"])))
 
         except Exception as error:
             print(f"Row {i} (Substance {ingredient_uri}): {error}")

@@ -23,11 +23,11 @@ def resolve_globs(patterns: List[str | Path]) -> List[Path]:
     return resolved
 
 
-def load_inputs(patterns: List[str | Path]) -> rdflib.ConjunctiveGraph:
+def load_inputs(patterns: List[str | Path]) -> rdflib.Graph:
     """
     Initializes a single Graph and parses multiple source files into it.
     """
-    g = rdflib.ConjunctiveGraph()
+    g = rdflib.Graph()
     for path in resolve_globs(patterns):
         try:
             g.parse(str(path), format="turtle")
@@ -91,28 +91,17 @@ def apply_rules(graph: Graph, patterns: List[str | Path]) -> Graph:
 
 
 def save_graph(graph: Graph, output_path: str | Path):
-    """
-    Serializes the graph to the specified output path using OrderedTurtleSerializer.
-    """
-    output_path = Path(output_path)
-    output_path = ROOT / output_path if not output_path.is_absolute() else output_path
-    output_path.parent.mkdir(parents=True, exist_ok=True)
+    # Rebind schema before serializing
+    graph.namespace_manager.bind("schema", "http://schema.org/", override=True, replace=True)
+    
+    # Debug: print all bindings to spot the conflict
+    for prefix, ns in graph.namespaces():
+        if "schema" in str(ns) or "schema" in prefix:
+            print(f"  {prefix}: {ns}")
 
-    print(f"[+] Writing {len(graph)} triples to {output_path.relative_to(ROOT)}...")
-
-    # 1. Force Schema.org binding (http) just before save
-    # This overrides whatever rdflib might have guessed during parsing
-    try:
-        graph.bind("schema", Namespace("http://schema.org/"), override=True, replace=True)
-    except TypeError:
-        # Fallback for older rdflib versions that don't support 'replace'
-        graph.bind("schema", Namespace("http://schema.org/"), override=True)
-
-    # 2. Serialize
     with open(output_path, "wb") as f:
         serializer = OrderedTurtleSerializer(graph)
         serializer.serialize(f)
-
 
 def main():
     parser = argparse.ArgumentParser(
