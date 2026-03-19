@@ -72,11 +72,11 @@ def ingredient_ttl(
     # Create ingredient triples
     for i, row in ingredient_df.iterrows():
         try:
-            if pd.isna(row.get("nk_substance_id")) or pd.isna(row.get("product_ref_or_id")):
+            if pd.isna(row.get("nk_codetable_substance_id")) or pd.isna(row.get("product_ref_or_id")):
                 continue
             
             product_id = str(row.get("product_ref_or_id")).strip()
-            substance_id = str(row.get("nk_substance_id")).strip()
+            substance_id = str(row.get("nk_codetable_substance_id")).strip()
 
             product_uri = PRODUCT[product_id]
             substance_uri = SUBSTANCE[substance_id]

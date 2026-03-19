@@ -61,23 +61,23 @@ def substance_ttl(
 
     # Read data
     con = duckdb.connect(db_path, read_only=True)
-    ingredient_df = con.execute("SELECT * FROM ProductIngredient").df()
+    ingredient_df = con.execute("SELECT * FROM ProductIngredientCode").df()
     con.close()
 
-    # Deduplicate nk_substance_id
-    substance_df = (ingredient_df[["nk_substance_id", "IUPAC_name", "public_name_de", "active_substance_id", "co_formulant_id", "relevant_co_formulant"]]
-                    .dropna(subset=["nk_substance_id"]) 
-                    .drop_duplicates(subset=["nk_substance_id"])
+    # Deduplicate nk_codetable_substance_id
+    substance_df = (ingredient_df[["nk_codetable_substance_id", "IUPAC_name", "public_name_de", "active_substance_id", "co_formulant_id", "relevant_co_formulant"]]
+                    .dropna(subset=["nk_codetable_substance_id"]) 
+                    .drop_duplicates(subset=["nk_codetable_substance_id"])
                     .reset_index(drop=True))
 
     # Create substance triples
     for i, row in substance_df.iterrows():
         try:
-            if pd.isna(row.get("nk_substance_id")):
+            if pd.isna(row.get("nk_codetable_substance_id")):
                 continue
         
-            nk_substance_id = str(row.get("nk_substance_id")).strip()
-            substance_uri = SUBSTANCE[nk_substance_id]
+            nk_codetable_substance_id = str(row.get("nk_codetable_substance_id")).strip()
+            substance_uri = SUBSTANCE[nk_codetable_substance_id]
 
             # Active substance or co-formulant
             if pd.notna(row.get("active_substance_id")):

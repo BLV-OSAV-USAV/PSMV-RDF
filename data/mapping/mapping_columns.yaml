@@ -43,8 +43,25 @@ ProductIngredient:
   InPercentRound: in_percent_round
   IUPAC_NAME: IUPAC_name
   NK_Codetable_AdditionalText: nk_additional_text_id
-  NK_CodeTable_Substance: nk_substance_id
+  NK_CodeTable_Substance: nk_codetable_substance_id
   NK_PROD_REF: product_ref_or_id
   NK_Substance: nk_substance
   PUBLIC_NAME_DE: public_name_de
   RELEVANT_CO_FORMULANT: relevant_co_formulant
+
+Code:
+  bk_Code: code_bk
+  ID: code_id
+  PARENT_ID: parent_id
+  VERSION: version
+  VALUE: value
+  LANGUAGE: language
+  CODE_VALUE: code_value
+  IUPAC_NAME: IUPAC_name
+  TEXT_KEY: text_key
+  BBCH_STAGE_FROM: bbch_stage_from
+  BBCH_STAGE_TO: bbch_stage_to
+  MIN_INTERNAL_BETWEEN_USES: min_interval_between_uses
+  MAX_APPLICATIONS: max_applications
+  UNIT_MAX_APPLICATIONS: unit_max_applications
+  InfofitoRef: infofito_ref
