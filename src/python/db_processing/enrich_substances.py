@@ -4,7 +4,7 @@ import pandas as pd
 
 
 def load_substances_mapping(
-    yaml_path: str = "data/mapping/mapping_substances.yaml",
+    yaml_path: str = "data/mapping/mapping_substances_enriched.yaml",
     db_path: str = "data/processed/psmv-data.duckdb",
 ) -> None:
     with open(yaml_path) as f:
