@@ -410,19 +410,50 @@ schema:PostalAddress a owl:Class ;
 
 :Ingredient a owl:Class ;
     schema:name "Ingredient"@en ;
+    schema:description "A composition entry linking a product to a substance with a specified concentration."@en ;
     rdfs:subClassOf [
         a owl:Restriction ;
-        owl:onProperty schema:value ;
+        owl:onProperty :substance ;
+        owl:someValuesFrom :Substance
+    ], [
+        a owl:Restriction ;
+        owl:onProperty :concentration ;
         owl:allValuesFrom schema:QuantitativeValue
     ] .
 
 :Substance a owl:Class ;
     schema:name "Substance"@en .
 
+:ActiveSubstance a owl:Class ;
+    rdfs:subClassOf :Substance ;
+    schema:name "Active Substance"@en ;
+    schema:description "A biologically active ingredient in a plant protection product that acts against pests or diseases."@en .
+
+:CoFormulant a owl:Class ;
+    rdfs:subClassOf :Substance ;
+    schema:name "Co-formulant"@en ;
+    schema:description "An inactive ingredient in a plant protection product that supports the formulation but has no direct pesticidal activity."@en .
+
 :substance a owl:ObjectProperty ;
-    schema:name "Substance"@en ;
+    schema:name "Has Substance"@en ;
     rdfs:domain :Ingredient ;
     rdfs:range :Substance .
+
+:concentration a owl:ObjectProperty ;
+    schema:name "Concentration"@en ;
+    rdfs:domain :Ingredient ;
+    rdfs:range schema:QuantitativeValue .
+
+:hasIngredient a owl:ObjectProperty ;
+    schema:name "Has Ingredient"@en ;
+    rdfs:domain :Product ;
+    rdfs:range :Ingredient .
+
+
+:iupacName a owl:DatatypeProperty ;
+    schema:name "IUPAC Name"@en ;
+    rdfs:domain :Substance ;
+    rdfs:range xsd:string .
 
 schema:QuantitativeValue a owl:Class ;
     schema:name "Quantitative value"@en ;

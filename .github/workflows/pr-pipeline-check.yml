@@ -1,26 +1,26 @@
-name: Primary Pipeline
+name: PR Pipeline Check
+
 on:
-  workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - 'data/raw/**'
   pull_request:
     branches: [main]
     paths:
       - 'data/raw/**'
+
 permissions:
-  contents: write
+  contents: read
+
 jobs:
   run-pipeline:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+
       - name: Set up uv
         uses: astral-sh/setup-uv@v5
         with:
           python-version: "3.12"
           enable-caching: true
+
       - name: Install dependencies from environment.yml
         run: |
           uv pip install pyyaml
@@ -34,19 +34,15 @@ jobs:
           if pip_deps:
               subprocess.run(['uv', 'pip', 'install'] + pip_deps, check=True)
           "
+
       - name: Install psmv as editable package
         run: uv pip install -e .
+
       - name: Show installed packages
         run: uv pip list
+
       - name: Verify src import
         run: uv run python -c "import src; print(src.__file__)"
+
       - name: Run pipeline script
         run: uv run python service/pipeline.py
-      - name: Commit and push changes
-        if: github.event_name != 'pull_request'
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add .
-          git diff --cached --quiet || git commit -m "Update pipeline outputs [skip ci]"
-          git push origin main

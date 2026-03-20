@@ -6,4 +6,6 @@ CONSTRUCT {
 WHERE {
   ?subject ?childProperty ?object .
   ?childProperty rdfs:subPropertyOf+ ?parentProperty .
+  FILTER (!isBlank(?object))       
+  FILTER (!isBlank(?subject))    
 }

@@ -7,4 +7,6 @@ CONSTRUCT {
 WHERE {
   ?instance rdf:type ?childClass .
   ?childClass rdfs:subClassOf+ ?parentClass .
+  FILTER (!isBlank(?parentClass))
+  FILTER (!isBlank(?childClass))
 }

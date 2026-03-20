@@ -1,10 +1,13 @@
 import os
 import sys
 import csv
+import yaml
 from pathlib import Path
 import pandas as pd
+import duckdb
 from rdflib import Graph, Namespace, URIRef, Literal
-from rdflib.namespace import RDF, XSD
+from rdflib.namespace import RDF, RDFS
+from rdflib.namespace import NamespaceManager
 
 # local imports
 from src.python.utils.helper_functions import load_namespaces, load_rdf_mappings
@@ -20,7 +23,7 @@ UNIT = namespaces["unit"]
 ZEFIX = namespaces["zefix"]
 COMPANY = namespaces["company"]
 COUNTRY = namespaces["country"]
-
+XSD = namespaces["xsd"]
 
 # Load all RDF mappings
 # Explicitly specify which namespace each mapping uses
@@ -36,7 +39,7 @@ TYPE_MAPPING = rdf_mappings["type_mapping"]
 
 # Create Products
 def products_ttl(
-    products_data_path = "data/processed/Product.csv",
+    db_path = "data/processed/psmv-data.duckdb",
     product_organisation_link_path = "data/processed/ProductOrganisation.csv"):
 
     """
@@ -51,63 +54,66 @@ def products_ttl(
     graph.bind("substance", SUBSTANCE)
     graph.bind("company", COMPANY)
     graph.bind("zefix", ZEFIX)
-    graph.bind("schema", SCHEMA)
     graph.bind("unit", UNIT)
     graph.bind("country", COUNTRY)
+    graph.bind("rdfs", RDFS)
+    graph.bind("xsd", XSD)
+    graph.namespace_manager.bind("schema", SCHEMA, override=True, replace=True)
 
     # Read data
-    products_df = pd.read_csv(products_data_path)
-    pro_org_link_df = pd.read_csv(product_organisation_link_path)
+    con = duckdb.connect(db_path, read_only=True)
+    products_df = con.execute("SELECT * FROM Product").df()
+    pro_org_link_df = con.execute("SELECT * FROM ProductOrganisation").df()
+    con.close()
 
-    # Iterate through dataframe
+    # Create product triples
     for i, row in products_df.iterrows():
         try: 
-            # Skip missing required fields
             if pd.isna(row.get("product_id")) or pd.isna(row.get("schema:name")):
                 continue
 
-            # Normalize product_id
             product_id_str = str(row.get("product_id")).strip()
             product_uri = PRODUCT[product_id_str]
             
-            # Add product name
             graph.add((product_uri, SCHEMA.name, Literal(str(row.get("schema:name")).strip())))
 
-            # Get raw type
             raw_type = row.get("rdf:type")
             
-            # Case 1: Regular Product or Sale Permission
-            if raw_type in ["REGULAR", "SALE_PERMISSION"]:
+            # Case 1: Regular Product
+            if raw_type == "REGULAR":
+                graph.add((product_uri, RDF.type, BASE.RegularProduct))  # ← added
                 if pd.notna(row.get("w_number")):
                     w_number_str = str(row.get("w_number")).strip()
-                    # Apply W- prefix (W-numbers only have the prefix for parallel products...)
                     fed_adm_num = f"W-{w_number_str}"
                     graph.add((product_uri, BASE.federalAdmissionNumber, Literal(fed_adm_num, datatype=XSD.string)))
 
-            # Case 2: Parallel Import
+            # Case 2: Sale Permission
+            elif raw_type == "SALE_PERMISSION":
+                graph.add((product_uri, RDF.type, BASE.SalePermission))  # ← added
+                if pd.notna(row.get("w_number")):
+                    w_number_str = str(row.get("w_number")).strip()
+                    fed_adm_num = f"W-{w_number_str}"
+                    graph.add((product_uri, BASE.federalAdmissionNumber, Literal(fed_adm_num, datatype=XSD.string)))
+
+            # Case 3: Parallel Import
             elif raw_type == "PARALLEL_IMPORT":
+                graph.add((product_uri, RDF.type, BASE.ParallelImport))  # ← added
                 if pd.notna(row.get("record_id")):
                     id_val = str(row.get("record_id")).strip()
                     graph.add((product_uri, BASE.federalAdmissionNumber, Literal(id_val, datatype=XSD.string)))
-
-                # foreignAdmissionNumber from "admission_number"
                 if pd.notna(row.get("admission_number")):
                     adm_num = str(row.get("admission_number")).strip()
                     graph.add((product_uri, BASE.foreignAdmissionNumber, Literal(adm_num, datatype=XSD.string)))
-
-                # packageInsertNumber from "w_number_of_reference_product"
                 if pd.notna(row.get("w_number_of_reference_product")):
                     pkg_val = row.get("w_number_of_reference_product")
                     pkg_ins_num = str(pkg_val).split('.')[0]
-                                        
                     graph.add((product_uri, BASE.packageInsertNumber, Literal(pkg_ins_num, datatype=XSD.string)))
 
             # Add producing country
             if pd.notna(row.get("producing_country_id")):
                 country_uuid_str = str(row.get("producing_country_id")).strip()
-                # If the UUID is found in our mapping, link to the official ld.admin country URI
                 if country_uuid_str in COUNTRY_MAPPING:
-                    country_uri = COUNTRY_MAPPING[country_uuid_str]
+                    country_uri = URIRef(COUNTRY_MAPPING[country_uuid_str])
                     graph.add((product_uri, SCHEMA.countryOfOrigin, country_uri))
 
             # Add dates (Exhaustion and Sold Out Deadlines)

@@ -82,10 +82,12 @@ def load_rdf_mappings(namespaces, path="data/mapping/mapping_rdf.yaml", namespac
             print(f"Warning: Namespace '{namespace_name}' not found for '{yaml_key}'")
             continue
 
-        converted = {
-            key: getattr(ns, value)
-            for key, value in mapping_dict.items()
-        }
+        converted = {}
+        for key, value in mapping_dict.items():
+            if str(value).startswith("http"):
+                converted[key] = str(value)  # already a full URI, keep as-is
+            else:
+                converted[key] = getattr(ns, value)  # relative, prepend namespace
 
         result[yaml_key] = converted
 
