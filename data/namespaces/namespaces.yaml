@@ -8,3 +8,8 @@ unit: http://qudt.org/vocab/unit/
 xsd: http://www.w3.org/2001/XMLSchema#
 zefix: https://register.ld.admin.ch/zefix/company/
 country: https://ld.admin.ch/country/
+chebi: https://www.ebi.ac.uk/chebi/
+pubchem_compound: https://pubchem.ncbi.nlm.nih.gov/compound/
+pubchem_substance: https://pubchem.ncbi.nlm.nih.gov/substance/
+wikidata: https://www.wikidata.org/entity/
+

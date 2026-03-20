@@ -85,9 +85,9 @@ def load_rdf_mappings(namespaces, path="data/mapping/mapping_rdf.yaml", namespac
         converted = {}
         for key, value in mapping_dict.items():
             if str(value).startswith("http"):
-                converted[key] = str(value)  # already a full URI, keep as-is
+                converted[key] = str(value)
             else:
-                converted[key] = getattr(ns, value)  # relative, prepend namespace
+                converted[key] = getattr(ns, value)
 
         result[yaml_key] = converted
 
@@ -104,7 +104,7 @@ def ensure_jar(jar_path: str = SHACL_PLAY_JAR_PATH) -> str:
     try:
         urllib.request.urlretrieve(SHACL_PLAY_JAR_URL, jar_path)
         print(f"  ✓ JAR cached at: {jar_path}")
-        return jar_path  # <-- this was missing
+        return jar_path
     except Exception as exc:
         if os.path.isfile(jar_path):
             print("  ⚠ Download failed, using existing cached JAR.")

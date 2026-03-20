@@ -37,8 +37,6 @@ def load_substances_mapping(
             result[col] = None
 
     con = duckdb.connect(db_path)
-    
-    con.execute("DELETE FROM substances_mapping;")
 
     con.execute("""
         CREATE TABLE IF NOT EXISTS substances_mapping (

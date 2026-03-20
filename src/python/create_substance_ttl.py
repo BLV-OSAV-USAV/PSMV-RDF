@@ -24,6 +24,10 @@ ZEFIX = namespaces["zefix"]
 COMPANY = namespaces["company"]
 COUNTRY = namespaces["country"]
 XSD = namespaces["xsd"]
+CHEBI = namespaces["chebi"]
+PUBCHEM_COMPOUND = namespaces["pubchem_compound"]
+PUBCHEM_SUBSTANCE = namespaces["pubchem_substance"]
+WIKIDATA = namespaces["wikidata"]
 
 # Load all RDF mappings
 # Explicitly specify which namespace each mapping uses
@@ -57,6 +61,11 @@ def substance_ttl(
     graph.bind("zefix", ZEFIX)
     graph.bind("unit", UNIT)
     graph.bind("country", COUNTRY)
+    graph.bind("chebi", CHEBI)
+    graph.bind("pubchem_compound", PUBCHEM_COMPOUND)
+    graph.bind("pubchem_substance", PUBCHEM_SUBSTANCE)
+    graph.bind("wikidata", WIKIDATA)
+
     graph.namespace_manager.bind("schema", SCHEMA, override=True, replace=True)
 
     # Read data
@@ -68,7 +77,7 @@ def substance_ttl(
     substance_df = (ingredient_df[[
         "nk_codetable_substance_id", "IUPAC_name", "public_name_de", 
         "active_substance_id", "co_formulant_id", "relevant_co_formulant", 
-        "DE", "EN", "FR", "IT", "hasChebiIdentity", "hasPubChemCompoundIdentity", 
+        "DE", "EN", "FR", "IT", "hasChebiIdentity", "hasPubChemCompoundIdentity", "hasPubChemSubstanceIdentity",
         "isDefinedByBiologicalTaxon"
         ]]
                     .dropna(subset=["nk_codetable_substance_id"]) 
@@ -117,25 +126,21 @@ def substance_ttl(
                 for chebi_id in str(row["hasChebiIdentity"]).split("|"):
                     chebi_id = chebi_id.strip()
                     if chebi_id:
-                        graph.add((substance_uri, OWL.sameAs, URIRef(f"https://www.ebi.ac.uk/chebi/{chebi_id}")))
+                        graph.add((substance_uri, OWL.sameAs, CHEBI[chebi_id]))
 
             # PubChem Compound identities
-            if pd.notna(row.get("isDefinedByBiologicalTaxon")):
-                for taxon in str(row["isDefinedByBiologicalTaxon"]).split("|"):
-                    taxon = taxon.strip()
-                    if taxon:
-                        if taxon.startswith("wikidata:"):
-                            taxon_uri = URIRef(taxon.replace("wikidata:", "https://www.wikidata.org/entity/"))
-                        else:
-                            taxon_uri = URIRef(taxon)
-                        graph.add((substance_uri, OWL.sameAs, taxon_uri))
+            if pd.notna(row.get("hasPubChemCompoundIdentity")):
+                for cid in str(row["hasPubChemCompoundIdentity"]).split("|"):
+                    cid = cid.strip().removeprefix("CID:")
+                    if cid:
+                        graph.add((substance_uri, OWL.sameAs, PUBCHEM_COMPOUND[cid]))
 
             # PubChem Substance identities
             if pd.notna(row.get("hasPubChemSubstanceIdentity")):
                 for sid in str(row["hasPubChemSubstanceIdentity"]).split("|"):
                     sid = sid.strip().removeprefix("SID:")
                     if sid:
-                        graph.add((substance_uri, OWL.sameAs, URIRef(f"https://pubchem.ncbi.nlm.nih.gov/substance/{sid}")))
+                        graph.add((substance_uri, OWL.sameAs, PUBCHEM_SUBSTANCE[sid]))
 
             # Biological taxon
             if pd.notna(row.get("isDefinedByBiologicalTaxon")):
