@@ -6,7 +6,7 @@ import duckdb
 from pathlib import Path
 import pandas as pd
 from rdflib import Graph, Namespace, URIRef, Literal
-from rdflib.namespace import RDF, RDFS
+from rdflib.namespace import RDF, RDFS, OWL
 from rdflib.namespace import NamespaceManager
 
 # local imports
@@ -65,7 +65,12 @@ def substance_ttl(
     con.close()
 
     # Deduplicate nk_codetable_substance_id
-    substance_df = (ingredient_df[["nk_codetable_substance_id", "IUPAC_name", "public_name_de", "active_substance_id", "co_formulant_id", "relevant_co_formulant"]]
+    substance_df = (ingredient_df[[
+        "nk_codetable_substance_id", "IUPAC_name", "public_name_de", 
+        "active_substance_id", "co_formulant_id", "relevant_co_formulant", 
+        "DE", "EN", "FR", "IT", "hasChebiIdentity", "hasPubChemCompoundIdentity", 
+        "isDefinedByBiologicalTaxon"
+        ]]
                     .dropna(subset=["nk_codetable_substance_id"]) 
                     .drop_duplicates(subset=["nk_codetable_substance_id"])
                     .reset_index(drop=True))
@@ -91,9 +96,53 @@ def substance_ttl(
             if pd.notna(row.get("IUPAC_name")):
                 graph.add((substance_uri, BASE.iupacName, Literal(str(row.get("IUPAC_name")).strip())))
 
-            # German public name
-            if pd.notna(row.get("public_name_de")):
-                graph.add((substance_uri, SCHEMA.name, Literal(str(row.get("public_name_de")).strip(), lang="de")))
+            # German  name
+            if pd.notna(row.get("DE")):
+                graph.add((substance_uri, SCHEMA.name, Literal(str(row.get("DE")).strip(), lang="de")))
+            
+            # English name
+            if pd.notna(row.get("EN")):
+                graph.add((substance_uri, SCHEMA.name, Literal(str(row.get("EN")).strip(), lang="en")))
+            
+            # French name
+            if pd.notna(row.get("FR")):
+                graph.add((substance_uri, SCHEMA.name, Literal(str(row.get("FR")).strip(), lang="fr")))
+            
+            # Italian name
+            if pd.notna(row.get("IT")):
+                graph.add((substance_uri, SCHEMA.name, Literal(str(row.get("IT")).strip(), lang="it")))
+
+            # ChEBI identities
+            if pd.notna(row.get("hasChebiIdentity")):
+                for chebi_id in str(row["hasChebiIdentity"]).split("|"):
+                    chebi_id = chebi_id.strip()
+                    if chebi_id:
+                        graph.add((substance_uri, OWL.sameAs, URIRef(f"https://www.ebi.ac.uk/chebi/{chebi_id}")))
+
+            # PubChem Compound identities
+            if pd.notna(row.get("isDefinedByBiologicalTaxon")):
+                for taxon in str(row["isDefinedByBiologicalTaxon"]).split("|"):
+                    taxon = taxon.strip()
+                    if taxon:
+                        if taxon.startswith("wikidata:"):
+                            taxon_uri = URIRef(taxon.replace("wikidata:", "https://www.wikidata.org/entity/"))
+                        else:
+                            taxon_uri = URIRef(taxon)
+                        graph.add((substance_uri, OWL.sameAs, taxon_uri))
+
+            # PubChem Substance identities
+            if pd.notna(row.get("hasPubChemSubstanceIdentity")):
+                for sid in str(row["hasPubChemSubstanceIdentity"]).split("|"):
+                    sid = sid.strip().removeprefix("SID:")
+                    if sid:
+                        graph.add((substance_uri, OWL.sameAs, URIRef(f"https://pubchem.ncbi.nlm.nih.gov/substance/{sid}")))
+
+            # Biological taxon
+            if pd.notna(row.get("isDefinedByBiologicalTaxon")):
+                for taxon in str(row["isDefinedByBiologicalTaxon"]).split("|"):
+                    taxon = taxon.strip()
+                    if taxon:
+                        graph.add((substance_uri, OWL.sameAs, URIRef(taxon)))
 
         except Exception as error:
             print(f"Row {i} (Substance {substance_uri}): {error}")

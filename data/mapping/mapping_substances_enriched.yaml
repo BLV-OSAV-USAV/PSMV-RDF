@@ -696,9 +696,6 @@ substances:
 - schemaname: Anionische Tenside
   hasChebiIdentity: []
   isDefinedByBiologicalTaxon: []
-- schemaname: Fettsäuren
-  hasChebiIdentity:
-  - CHEBI:35366
 - schemaname: Phlebia gigantea
   isDefinedByBiologicalTaxon:
   - wikidata:Q108178965
@@ -866,9 +863,6 @@ substances:
 - schemaname: Hydrocarbons, C10, aromatics, <1% naphthalene
   hasPubChemSubstanceIdentity:
   - SID:505784499
-- schemaname: Benzolsulfonsäure
-  hasChebiIdentity:
-  - CHEBI:64455
   hasPubChemCompoundIdentity:
   - CID:7371
 - schemaname: Reaktionsgemisch, bestehend aus 5-Chlor-2-methyl-2H-isothiazol-3-on
