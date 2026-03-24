@@ -4,6 +4,11 @@ def process_substance_code():
     """
     Creates ProductIngredientCode table with multilingual substance names
     by merging ProductIngredient and Code tables in DuckDB.
+    
+    Note:
+    Substance has the IUPAC_name join condition on top of code_id.
+    So it should stay separate from pivot_indication_code_tables.
+    Mixing substance in would require a special case that breaks the pattern.
     """
     con = duckdb.connect('data/processed/psmv-data.duckdb')
 
