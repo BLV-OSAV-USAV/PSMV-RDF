@@ -40,7 +40,6 @@ shape: a owl:Ontology ;
         "Guy Schnidrig" ;
     dcterms:title "Swiss registry of plant protection products"@en ;
     dcterms:created "2026-02-20"^^xsd:date ;
-    doap:repository <https://github.com/BLV-OSAV-USAV/PSMV-RDF/issues> ;
     owl:versionInfo "3.0.0" ;
     dcterms:abstract
 """
