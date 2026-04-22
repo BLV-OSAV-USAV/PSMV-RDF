@@ -1,0 +1,12 @@
+PREFIX : <https://agriculture.ld.admin.ch/plant-protection/>
+PREFIX schema: <http://schema.org/>
+
+SELECT ?product ?name ?code
+FROM <https://lindas.admin.ch/fsvo/plant-protection-products>
+WHERE {
+  ?product a :Product ;
+    schema:name ?name ;
+    :federalAdmissionNumber ?code .
+}
+ORDER BY ?code
+LIMIT 50

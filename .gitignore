@@ -85,16 +85,13 @@ nosetests.xml
 # Project-specific
 # =============================================================================
 psmv-data.duckdb
+*.jar
+shacl-documentaion-log.txt
 
 # =============================================================================
 # Tests
 # =============================================================================
 
-test/
-tests/
-test.*
-test/
+tests/*
 
-*.jar
-
-shacl-documentaion-log.txt
+!tests/test_connection.py
