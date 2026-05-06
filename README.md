@@ -9,33 +9,31 @@ A Python module for converting Swiss plant protection product data from CSV form
 
 ## Reproduce the data integration pipeline
 
-1. Add variables to `.env`
-
-    ``` bash
-    USER=lindas-fsvo-psm
-    PASSWORD=********
-    GRAPH=https://lindas.admin.ch/foag/psm
-    ENDPOINT=https://stardog.cluster.ldbar.ch/lindas
-    ```
-
-2. Create and activate the conda environment.
+1. Create and activate the conda environment.
 
     ``` bash
     conda env create -f environment.yml
     conda activate psmv-rdf
     ```
 
-3. Install the package in editable mode
+2. Install the package in editable mode
 
     ``` bash
     pip install -e .
     ```
 
-4. Start the data integration pipeline
+3. Start the data integration pipeline
 
     ``` bash
-    python -m service.pipeline
+    python -m service.pipeline.py
     ```
+    
+4. Upload Graph
+    ``` bash
+    python -m service.upload_graph.py
+    ```
+    
+
 
 ## Project Structure
 
