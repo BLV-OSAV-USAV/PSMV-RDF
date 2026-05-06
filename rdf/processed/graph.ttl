@@ -1,7 +1,6 @@
 @prefix : <https://agriculture.ld.admin.ch/plant-protection/> .
 @prefix country: <https://ld.admin.ch/country/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix doap: <http://usefulinc.com/ns/doap#> .
 @prefix ghs: <https://agriculture.ld.admin.ch/plant-protection/ghs/> .
 @prefix ingredient: <https://agriculture.ld.admin.ch/plant-protection/ingredient/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -8933,7 +8932,6 @@ However, to fully leverage the analytical capabilities of this schema, users are
 A comprehensive suite of advanced SPARQL query templates, demonstrating complex relational extraction and data aggregation, is maintained within the project's source control at [https://github.com/BLV-OSAV-USAV/PSMV-RDF/tree/main/src/sparql/examples](https://github.com/BLV-OSAV-USAV/PSMV-RDF/tree/main/src/sparql/examples).
 """@en ;
     dcterms:title "Swiss registry of plant protection products"@en ;
-    doap:repository <https://github.com/BLV-OSAV-USAV/PSMV-RDF/issues> ;
     owl:versionInfo "3.0.0" .
 
 shape:ApplicationArea a sh:NodeShape ;
