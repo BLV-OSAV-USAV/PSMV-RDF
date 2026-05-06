@@ -19,7 +19,7 @@ from src.python.shacl_validator import run_shacl_validation
 from src.python.db_processing.preprocess_data import process_data
 from src.python.db_processing.pivot_substances_code_table import process_substance_code
 from src.python.db_processing.enrich_substances import load_substances_mapping
-
+from src.python.db_processing.pivot_indication_code_tables import process_indication_code
 from src.python.utils.helper_functions import *
 
 def run_pipeline():
@@ -29,8 +29,9 @@ def run_pipeline():
 
     print("\nRun database operations")
     process_substance_code()
+    process_indication_code()
     load_substances_mapping()
-
+    
     print("\nValidate syntax of turtle files")
     validate_ttl_files("rdf")
 
@@ -39,7 +40,7 @@ def run_pipeline():
     organisation_ttl()
     substance_ttl()
     ingredient_ttl()
-
+    #indication_ttl()
 
     print("\nCreate a dedicated ontology file for subsequent WebVOWL visualization")
     inputs = load_inputs(["rdf/ontology/*.ttl"])

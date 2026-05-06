@@ -8,6 +8,7 @@ dependencies:
   - requests>=2.32.5
   - pyyaml>=6.0.3
   - pysftp>=0.2.9
+  - python-dotenv>=1.2.0
   - pip
   - pip:
       - pyshacl>=0.31.0

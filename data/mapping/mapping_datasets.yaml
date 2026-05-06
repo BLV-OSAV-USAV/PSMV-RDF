@@ -24,3 +24,44 @@ datasets:
     delimiter: ","
     encoding: "utf-8"
     description: "PSMV Export ProductIngredient Jan 2026"
+  IndicationCulture:
+    input: "data/raw/IndicationCulture.csv"
+    delimiter: ","
+    encoding: "utf-8"
+    description: "PSMV Export ProductIngredient Jan 2026"
+  IndicationCultureForm:
+    input: "data/raw/IndicationCultureForm.csv"
+    delimiter: ","
+    encoding: "utf-8"
+    description: "PSMV Export ProductIngredient Jan 2026"
+  IndicationMeasure:
+    input: "data/raw/IndicationMeasure.csv"
+    delimiter: ","
+    encoding: "utf-8"
+    description: "PSMV Export ProductIngredient Jan 2026"
+  IndicationTimeMeasure:
+    input: "data/raw/IndicationTimeMeasure.csv"
+    delimiter: ","
+    encoding: "utf-8"
+    description: "PSMV Export ProductIngredient Jan 2026"
+  IndicationObligation:
+    input: "data/raw/IndicationObligation.csv"
+    delimiter: ","
+    encoding: "utf-8"
+    description: "PSMV Export ProductIngredient Jan 2026"
+  IndicationPest:
+    input: "data/raw/IndicationPest.csv"
+    delimiter: ","
+    encoding: "utf-8"
+    description: "PSMV Export ProductIngredient Jan 2026"
+  ApplicationArea:
+    input: "data/raw/ApplicationArea.csv"
+    delimiter: ","
+    encoding: "utf-8"
+    description: "PSMV Export ProductIngredient Jan 2026"
+  ApplicationComment:
+    input: "data/raw/ApplicationComment.csv"
+    delimiter: ","
+    encoding: "utf-8"
+    description: "PSMV Export ProductIngredient Jan 2026"
+    

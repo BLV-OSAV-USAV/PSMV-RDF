@@ -65,3 +65,52 @@ Code:
   MAX_APPLICATIONS: max_applications
   UNIT_MAX_APPLICATIONS: unit_max_applications
   InfofitoRef: infofito_ref
+
+IndicationCulture:
+  NK_Codetable_Culture: culture_id
+  NK_Codetable_Culture_AdditionalText: codetable_culture_additional_text
+  NK_Codetable_Parent_Culture: codetable_parent_culture
+  NK_Culture: culture
+  NK_Indication: indication
+
+IndicationCultureForm:
+  CODE: code
+  NK_Codetable_CultureForm: culture_form_id
+  NK_CultureForm: culture_form
+  NK_Indication: indication
+
+IndicationMeasure:
+  NK_Codetable: indication_measure_id
+  NK_Indication: indication
+  NK_Measure: measure
+
+IndicationTimeMeasure:
+  NK_Codetable: indication_time_measure_id
+  NK_Indication: indication
+  NK_TimeMeasure: time_measure
+
+IndicationObligation:
+  NK_Codetable: indication_obligation_id
+  NK_Indication: indication
+  NK_Obligation: obligation
+  ObligationID: obligation_id
+
+IndicationPest:
+  NK_Codetable_Pest: indication_pest_id
+  NK_Codetable_Pest_additionalTextPrimaryKey: additional_text
+  NK_Indication: indication
+  NK_Pest: pest
+  NK_PestParent: pest_parent
+  PestType: pest_type
+
+ApplicationArea:
+  NK_ApplicationArea: application_area
+  NK_Codetable: application_area_id
+  NK_Indication: indication
+  psa_load_date: load_date
+  SHORT_NAME: short_name
+
+ApplicationComment:
+  NK_ApplicationComment: application_comment
+  NK_Codetable: application_comment_id
+  NK_Indication: indication
