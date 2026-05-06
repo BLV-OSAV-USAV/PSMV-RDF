@@ -23,7 +23,7 @@ dependencies = [
     "pyshacl>=0.31.0",
     "otsrdflib>=0.2.9",
     "duckdb>=1.5.0",
-    "SPARQLWrapper>=2.0.0"
+    "SPARQLWrapper>=2.0.0",
     "python-dotenv>=1.2.0"
 ]
 
