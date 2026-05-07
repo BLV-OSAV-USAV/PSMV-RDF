@@ -15,6 +15,7 @@ from src.python.create_substance_ttl import substance_ttl
 from src.python.create_ingredient_ttl import ingredient_ttl
 from src.python.create_crops_ttl import crops_ttl
 from src.python.create_pests_ttl import pests_ttl
+from src.python.create_application_area_ttl import application_area_ttl
 from src.python.reason import load_inputs, apply_rules, save_graph
 from src.python.shacl_validator import run_shacl_validation
 
@@ -44,6 +45,7 @@ def run_pipeline():
     ingredient_ttl()
     crops_ttl()
     pests_ttl()
+    application_area_ttl()
     #indication_ttl()
 
     print("\nCreate a dedicated ontology file for subsequent WebVOWL visualization")

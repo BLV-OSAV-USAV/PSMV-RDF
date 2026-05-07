@@ -1,0 +1,64 @@
+@prefix : <https://agriculture.ld.admin.ch/plant-protection/> .
+@prefix code: <https://agriculture.ld.admin.ch/plant-protection/code/> .
+@prefix schema: <http://schema.org/> .
+
+code:2E3B421F-6CCE-4F65-8D88-C1EEFD6396A4 a :ApplicationArea ;
+    schema:identifier "B" ;
+    schema:name "Beerenbaubau3"@de,
+        "Culture des baies"@fr,
+        "Coltivazione di bacche"@it .
+
+code:7BF54D0E-43A0-4DF3-A9F0-5B4397064983 a :ApplicationArea ;
+    schema:identifier "N" ;
+    schema:name "Nichtkulturland"@de,
+        "Domaine non agricole"@fr,
+        "Superfici non coltive"@it .
+
+code:850203B1-E088-4544-84AC-609B080D9454 a :ApplicationArea ;
+    schema:identifier "L" ;
+    schema:name "Lager- und Produktionsräume"@de,
+        "Entrepôts et locaux de production"@fr,
+        "Locali di stoccaggio e di produzione"@it .
+
+code:89A736A0-7784-41CC-BB3E-6352F7DB62DF a :ApplicationArea ;
+    schema:identifier "Z" ;
+    schema:name "Zierpflanzen"@de,
+        "Culture ornementale"@fr,
+        "Coltivazione piante ornam."@it .
+
+code:BCA2A96B-7EAB-446E-9C86-CB8CE2D7C5AA a :ApplicationArea ;
+    schema:identifier "Ö" ;
+    schema:name "Biodiversitätsförderflächen (BFF) gemäss DZV"@de,
+        "Surfaces de promotion de la biodiversité (SPB) selon OPD"@fr,
+        "Superfici per la promozione della biodiversità (SPB) secondo OPD"@it .
+
+code:CF7C3309-3DBA-4223-88C2-6BA749F2B344 a :ApplicationArea ;
+    schema:identifier "G" ;
+    schema:name "Gemüsebau"@de,
+        "Culture maraîchère"@fr,
+        "Orticoltura"@it .
+
+code:D331BC35-5E60-43FA-B747-BD7299D9C754 a :ApplicationArea ;
+    schema:identifier "O" ;
+    schema:name "Obstbau"@de,
+        "Arboriculture"@fr,
+        "Frutticoltura"@it .
+
+code:DB593BEF-4B43-4292-ADDC-A1A23B201E0A a :ApplicationArea ;
+    schema:identifier "W" ;
+    schema:name "Weinbau"@de,
+        "Viticulture"@fr,
+        "Viticoltura"@it .
+
+code:F40924B9-8974-4F0F-8AB4-3E8C4E5C4D6A a :ApplicationArea ;
+    schema:identifier "S" ;
+    schema:name "Forstwirtschaft"@de,
+        "Sylviculture"@fr,
+        "Selvicoltura"@it .
+
+code:FB80218B-9E76-4F29-B9DF-B7E542AB950A a :ApplicationArea ;
+    schema:identifier "F" ;
+    schema:name "Feldbau"@de,
+        "Grande culture"@fr,
+        "Campicoltura"@it .
+
