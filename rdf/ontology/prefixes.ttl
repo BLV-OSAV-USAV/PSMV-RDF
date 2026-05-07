@@ -1,10 +1,31 @@
+# ==============================================================================
 # Just a list of all the prefixes used in this project
+# ==============================================================================
 
-@prefix : <https://agriculture.ld.admin.ch/plant-protection/> .
+# Local
+@prefix :            <https://agriculture.ld.admin.ch/plant-protection/> .
+@prefix crop:        <https://agriculture.ld.admin.ch/plant-protection/crop/> .
+@prefix ghs:         <https://agriculture.ld.admin.ch/plant-protection/ghs/> .
+@prefix ingredient:  <https://agriculture.ld.admin.ch/plant-protection/ingredient/> .
+@prefix product:     <https://agriculture.ld.admin.ch/plant-protection/product/> .
+@prefix shape:       <https://agriculture.ld.admin.ch/plant-protection/shape/> .
+@prefix shapes:      <https://agriculture.ld.admin.ch/plant-protection/shapes/> .
+@prefix substance:   <https://agriculture.ld.admin.ch/plant-protection/substance/> .
+
+# LINDAS
+@prefix country: <https://ld.admin.ch/country/> .
+@prefix cube: <https://cube.link/> .
+
+# Global
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pubchem_compound: <https://pubchem.ncbi.nlm.nih.gov/compound/> .
+@prefix pubchem_substance: <https://pubchem.ncbi.nlm.nih.gov/substance/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
