@@ -33,11 +33,7 @@
 # ==============================================================================
 
 shape: a owl:Ontology ;
-    dcterms:creator "Martin Hertach",
-        "Ingrid Nyfeler",
-        "Damian Oswald",
-        "Sara Schärrer",
-        "Guy Schnidrig" ;
+    dcterms:creator "Sara Schärrer, Guy Schnidrig, Damian Oswald, Sara Schärrer, Ingrid Nyfeler, Martin Hertach" ;
     dcterms:title "Swiss registry of plant protection products"@en ;
     dcterms:created "2026-02-20"^^xsd:date ;
     owl:versionInfo "3.0.0" ;
