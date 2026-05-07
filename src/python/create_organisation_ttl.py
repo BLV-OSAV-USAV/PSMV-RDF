@@ -40,7 +40,7 @@ TYPE_MAPPING = rdf_mappings["type_mapping"]
 # Create Products
 def organisation_ttl(
     db_path = "data/processed/psmv-data.duckdb",
-    out_path: str = "rdf/data/organisation_ttl"):
+    out_path: str = "rdf/data/organisation.ttl"):
 
     """
     Creates a organisation_ttl

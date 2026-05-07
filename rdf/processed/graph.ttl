@@ -1,4 +1,5 @@
 @prefix : <https://agriculture.ld.admin.ch/plant-protection/> .
+@prefix company: <https://agriculture.ld.admin.ch/plant-protection/company/> .
 @prefix country: <https://ld.admin.ch/country/> .
 @prefix crop: <https://agriculture.ld.admin.ch/plant-protection/crop/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
@@ -19,6 +20,1597 @@
 @prefix substance: <https://agriculture.ld.admin.ch/plant-protection/substance/> .
 @prefix unit: <http://qudt.org/vocab/unit/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+company:018C0DAB-6CB8-4F46-B684-4F59117A4F6A a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "7C7276F7-7AE4-4389-9865-C0DC767AB2DC"^^xsd:string ;
+            schema:postOfficeBoxNumber "Postfach"^^xsd:string ;
+            schema:streetAddress "Schaffhauserstr. 101"^^xsd:string ] ;
+    schema:name "Syngenta Agro AG" ;
+    schema:telephone "+41 (0)61 323 56 70"^^xsd:string .
+
+company:01A7FE62-324D-4F62-A28D-C9D4876C9856 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:AUT ;
+            schema:addressLocality "9BF7EEBE-F520-45DA-BBAE-F1209DEABFF2"^^xsd:string ;
+            schema:streetAddress "Anton-Baumgartner-Strasse 125"^^xsd:string ] ;
+    schema:name "Syngenta Agro GmbH" .
+
+company:01BDE041-94AD-40BA-9229-5AD014CD52BB a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:DEU ;
+            schema:addressLocality "B1D7BDB0-A5EC-4E38-A648-891BD22C188B"^^xsd:string ;
+            schema:streetAddress "Carl-Bosch-Strasse 38"^^xsd:string ] ;
+    schema:name "BASF SE" .
+
+company:028D7443-0B72-4C38-A408-BF99DBD07703 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:ITA ;
+            schema:addressLocality "57437E55-EC8D-472E-845F-D81BF81D1C5A"^^xsd:string ;
+            schema:streetAddress "Via Marconato"^^xsd:string ] ;
+    schema:name "BASF Italia SpA" .
+
+company:03361EE4-E719-4BB0-BD5E-FCB7203381A4 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "443F61AD-1BE3-4541-A29E-A0E8669F8982"^^xsd:string ;
+            schema:streetAddress "Mosenstrasse 32"^^xsd:string ] ;
+    schema:name "Läubli Feuerwerk AG" ;
+    schema:telephone "041 917 17 10"^^xsd:string .
+
+company:04FDF35E-6B86-429B-B942-D654D14DA1F9 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:DEU ;
+            schema:addressLocality "BB2AB7AB-2156-4166-8894-1C9EDD2BEA78"^^xsd:string ;
+            schema:streetAddress "am Technologiepark 1 - 5"^^xsd:string ] ;
+    schema:name "Syngenta Agro GmbH" .
+
+company:066239D5-BCB5-4AC0-A0A1-9157D59087DD a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "BB9C34C8-23D4-4503-8ECB-4AB52C8EF38D"^^xsd:string ;
+            schema:postOfficeBoxNumber "266"^^xsd:string ;
+            schema:streetAddress "Limmatstrasse 152"^^xsd:string ] ;
+    schema:name "Migros-Genossenschafts-Bund" .
+
+company:0891DE1F-2F9C-491E-BE74-6B381F6ADD48 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:DEU ;
+            schema:addressLocality "53803A92-7768-4017-BE19-987401A79D94"^^xsd:string ;
+            schema:streetAddress "Carl-Bosch-Str. 64"^^xsd:string ] ;
+    schema:name "BASF" ;
+    schema:telephone "+49 4141 9204 248"^^xsd:string .
+
+company:0933EFA5-31C3-4264-9E1F-B71AE70EFC27 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:AUT ;
+            schema:addressLocality "1A5F429B-3170-450F-BB4D-05402EAF0752"^^xsd:string ;
+            schema:postOfficeBoxNumber "8412"^^xsd:string ;
+            schema:streetAddress "Europapark 1"^^xsd:string ] ;
+    schema:name "OGET Innovations GmbH" .
+
+company:0A5D3EDB-8A4A-4C93-B860-DAE06CBDD8A6 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "2B8372BD-B62D-43BE-AA69-904ADF6D6DE3"^^xsd:string ;
+            schema:streetAddress "Archivstrasse 18"^^xsd:string ] ;
+    schema:name "ISK Biosciences (Schweiz) GmbH" .
+
+company:0A9B2D73-3E4F-4B88-8516-DF314AC69884 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:FRA ;
+            schema:addressLocality "6173E059-6A38-45DC-A65D-0B34945AEAA4"^^xsd:string ;
+            schema:streetAddress "21, chemin de la Sauvegard"^^xsd:string ] ;
+    schema:name "BASF Agro SAS" .
+
+company:0B05ECC7-28FE-4D7A-8540-115AE0D662DA a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:ITA ;
+            schema:addressLocality "E026FF15-120D-4574-919F-F0A08C5CC46F"^^xsd:string ;
+            schema:streetAddress "Centro Direzionale Villa Fiorita - Via Piero Gobet"^^xsd:string ] ;
+    schema:name "Du Pont De Nemours Italiana" .
+
+company:0F472504-D8B0-47EA-8CBE-1D597AA82524 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:FRA ;
+            schema:addressLocality "4126D111-467E-42E4-85C1-C85F9FDC87B5"^^xsd:string ;
+            schema:streetAddress "15, rue du Pont, Pontijou - RD 924"^^xsd:string ] ;
+    schema:name "Phyto - Service" .
+
+company:112A67B6-94A0-41A3-A9CB-1B2A0F206FF8 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:FRA ;
+            schema:addressLocality "7045AA08-321A-467E-B608-9EDF09992E66"^^xsd:string ;
+            schema:streetAddress "11 rue du Débarcadère"^^xsd:string ] ;
+    schema:name "Nufarm SAS" .
+
+company:1192722A-427A-4B69-9E7B-C2FD5239CACC a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CYP ;
+            schema:addressLocality "2A1D0F4D-71BC-42BE-AE88-FA6D20E69602"^^xsd:string ;
+            schema:streetAddress "3 Demetriou Vikella Street"^^xsd:string ] ;
+    schema:name "Luxembourg Pamol (Cyprus) LTD." .
+
+company:124995F6-6203-4E05-895C-762E2689486D a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "29E25C80-2C22-4300-A92E-7855FD0177E8"^^xsd:string ;
+            schema:streetAddress "Gewerbestrasse 7A"^^xsd:string ] ;
+    schema:name "Novozymes Switzerland AG" .
+
+company:15BAC516-7F05-4353-82D7-A2BA41438215 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "E9AA4653-0686-4C06-B25A-1EBE72D2DCAE"^^xsd:string ;
+            schema:streetAddress "Henzmannstrasse 17A"^^xsd:string ] ;
+    schema:name "Stähler Suisse SA" ;
+    schema:telephone "+41 62 746 80 05 / +41 62 746 80 00"^^xsd:string .
+
+company:169DD8BE-5713-48C9-B139-F88E12BDDE34 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:DEU ;
+            schema:addressLocality "5E61051A-1013-4555-BB18-AD557A54A403"^^xsd:string ;
+            schema:streetAddress "Vogelsanger Weg 91"^^xsd:string ] ;
+    schema:name "Monsanto Agrar Deutschland GmbH" .
+
+company:16DCD8AE-8BD0-4FAE-90E2-AE2D310AE4A1 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:DEU ;
+            schema:addressLocality "CFA42B21-1997-4C04-940E-A9D476746FB5"^^xsd:string ;
+            schema:streetAddress "Alfred-Nobel-Str. 50"^^xsd:string ] ;
+    schema:name "Bayer CropScience AG" ;
+    schema:telephone "0049 2173 / 38 33 74"^^xsd:string .
+
+company:17486103-B818-49E6-9667-AF90F13F5CC0 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "FD54A8A1-8943-4AFF-A184-B4D91CAA65E0"^^xsd:string ;
+            schema:streetAddress "Route de Bettens 19"^^xsd:string ] ;
+    schema:name "Rovagro SA" .
+
+company:18386E3D-BF3B-4409-A27A-80B143DD15AB a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:DEU ;
+            schema:addressLocality "24607323-F894-4C50-B724-8DAD45015B6F"^^xsd:string ;
+            schema:streetAddress "Olfener Str. 36"^^xsd:string ] ;
+    schema:name "ISK Biosciences Europe S.A." .
+
+company:1B26C54A-FAE0-40A1-BEAF-F43B46D0CC56 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:DEU ;
+            schema:addressLocality "91849348-35A4-4699-A678-44F597720262"^^xsd:string ;
+            schema:streetAddress "Elisabethstrasse 44"^^xsd:string ] ;
+    schema:name "Arysta LifeScience Germany GmbH" .
+
+company:1BCAFD53-2E65-4CEF-A5F0-798223F02438 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:ISR ;
+            schema:addressLocality "0FC04E94-2EAC-4A4E-8C8C-CDB1CFD18EC0"^^xsd:string ;
+            schema:streetAddress "P.O. Box 262"^^xsd:string ] ;
+    schema:name "ADAMA Agan Ltd" .
+
+company:1C045F37-B688-43EC-BEAB-E0A64A479F45 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:ITA ;
+            schema:addressLocality "8213F13E-D235-4E63-A20F-CF2E56867558"^^xsd:string ;
+            schema:streetAddress "VIA PONTACCIO, 10"^^xsd:string ] ;
+    schema:name "DU PONT DE NEMOURS ITALIANA S.R.L." .
+
+company:1CA8733C-F6A1-4182-987D-661CD24CE402 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:NLD ;
+            schema:addressLocality "A8973880-BA32-469A-9B3E-B5ECCE7B069B"^^xsd:string ;
+            schema:streetAddress "Kaya W.F.G. (Jombi) Mensing 34 P.O. Box 403"^^xsd:string ] ;
+    schema:name "Quene Plant Protection N.V." .
+
+company:1CED4440-F01E-412E-A875-A213842B94A2 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "54C4F4AA-6843-4C9B-8FC8-5D283A00590A"^^xsd:string ;
+            schema:postOfficeBoxNumber "1016"^^xsd:string ;
+            schema:streetAddress "Rue du Grand-Chêne  2"^^xsd:string ] ;
+    schema:name "SCAE - Valent BioSciences Sàrl (Switzerland)" ;
+    schema:telephone "+41 22 990 21 25"^^xsd:string .
+
+company:1D52610E-016C-41D8-A5BA-2878F03A6593 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "99D22E18-FA6E-4A2E-8F74-5C894F95B33D"^^xsd:string ;
+            schema:streetAddress "Blegi 3"^^xsd:string ] ;
+    schema:name "UPL Switzerland AG" ;
+    schema:telephone "+49(0) 2232 56934144"^^xsd:string .
+
+company:1E2E9CB1-6B6F-4693-8E8D-C7E8654B50EC a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:IND ;
+            schema:addressLocality "8BC38510-853B-4076-B73E-DED908ADB5FD"^^xsd:string ;
+            schema:streetAddress "29th Road, Bandra (West)"^^xsd:string ] ;
+    schema:name "Sharda Cropchem Ltd." .
+
+company:1E7CC59B-D3B6-439C-A98C-27B0425FFAA2 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:DEU ;
+            schema:addressLocality "A2A3F0B6-7321-407C-AF26-7C351A05C8BB"^^xsd:string ;
+            schema:streetAddress "Riedenburger Str. 7"^^xsd:string ] ;
+    schema:name "Corteva Agriscience Germany GmbH" .
+
+company:1F2C9311-4B2E-4FBB-B8E1-7AE69170C7A5 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:BEL ;
+            schema:addressLocality "F3AC652F-FCF5-41E3-B315-81C74A41218F"^^xsd:string ;
+            schema:streetAddress "Tour Itt., Avenue Louise 480, boite 12"^^xsd:string ] ;
+    schema:name "ISK Biosciences Europe S.A. (B)" .
+
+company:1F589397-11D5-4AC1-B113-84C713BD54E0 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "745D8CCB-0341-4BA5-BEF5-EAF62B51BDB7"^^xsd:string ;
+            schema:streetAddress "Fellstrasse 1"^^xsd:string ] ;
+    schema:name "Leu + Gygax AG" ;
+    schema:telephone "056 201 45 45"^^xsd:string .
+
+company:20CD2969-0578-4E34-86E7-A6ED756874F3 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:ITA ;
+            schema:addressLocality "1B0E8CD2-C06C-4760-8D74-4E15302F75E7"^^xsd:string ;
+            schema:streetAddress "Via Zanica, 19"^^xsd:string ] ;
+    schema:name "ADAMA Italia srl" .
+
+company:21E5EB98-A51B-414B-AF34-89FB8D835019 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "CC266499-EA7B-4279-94F3-A6EDD3CD299C"^^xsd:string ;
+            schema:streetAddress "Zählerweg 6"^^xsd:string ] ;
+    schema:name "Douglas Switzerland GmbH" ;
+    schema:telephone "041 726 82 00"^^xsd:string .
+
+company:22578E7F-56F8-4E35-825A-FBFE5296734D a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "19B88C6C-1907-497A-B5C1-C602C24A306D"^^xsd:string ;
+            schema:streetAddress "Dorfstrasse 12"^^xsd:string ] ;
+    schema:name "Hauert HBG Dünger AG" ;
+    schema:telephone "032 389 10 10"^^xsd:string .
+
+company:25D3D0D5-1E95-474E-AEA3-C752B1A9BEC7 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:DEU ;
+            schema:addressLocality "3A7C9472-32A0-4139-856F-DB9BFCFBB152"^^xsd:string ;
+            schema:streetAddress "Stader Elbstrasse  26"^^xsd:string ] ;
+    schema:name "Cheminova Deutschland GmbH & Co. KG" ;
+    schema:telephone "+49 4141 9204 248"^^xsd:string .
+
+company:28DCC974-015B-48EB-A11F-0EA0F267E9B2 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:ITA ;
+            schema:addressLocality "1954A30A-C270-4FC2-93B5-AA1FAC1D9AFB"^^xsd:string ;
+            schema:streetAddress "Viale Luigi Majno 17/A"^^xsd:string ] ;
+    schema:name "Nufarm Italia S.R.L." .
+
+company:2B7D4FA6-1E82-40F5-86D9-3B1497D93FB9 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:BEL ;
+            schema:addressLocality "ADEB79FE-66DF-407A-AB00-7A73BA94BDF6"^^xsd:string ;
+            schema:streetAddress "Neringstraat 15"^^xsd:string ] ;
+    schema:name "Belchim Crop Protection N.V." .
+
+company:2C865C9C-2072-4249-8F1E-7C6114EEBBEE a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "3E600982-E417-4B23-BC70-FB8ED0DDFB1A"^^xsd:string ;
+            schema:streetAddress "Route de l'Usine 14"^^xsd:string ] ;
+    schema:name "Agribort Phyto SA" ;
+    schema:telephone "027 306 94 14"^^xsd:string .
+
+company:2D42C2A3-CDE2-403A-A89B-1E7CA9F806A0 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "7CA0CB19-7013-46A6-8625-61B52F574A09"^^xsd:string ;
+            schema:streetAddress "Avenue Gratta-Paille 2"^^xsd:string ] ;
+    schema:name "Albaugh Europe Sàrl" ;
+    schema:telephone "+41 21 799 91 30"^^xsd:string .
+
+company:2DF8800C-6B3C-470B-BC4A-6326560275AA a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:ITA ;
+            schema:addressLocality "AE53BC6D-F1C2-43A9-945E-BA7AEE074E1A"^^xsd:string ;
+            schema:streetAddress "Via Marvonato 8"^^xsd:string ] ;
+    schema:name "COMPO Italia Srl" .
+
+company:2EA3C6FA-5BE7-44A5-8202-BBC71D4DD0F2 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "AE41950B-F309-4BD3-9E58-F0890D173313"^^xsd:string ;
+            schema:streetAddress "Weidstrasse 11"^^xsd:string ] ;
+    schema:name "Renovita Wilen GmbH" ;
+    schema:telephone "071 955 00 55"^^xsd:string .
+
+company:307FAE72-DDA8-4B13-82E3-0B8D4D3BCD17 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "32C65211-73CC-4F70-9D34-4C4D3D98295B"^^xsd:string ;
+            schema:streetAddress "Lonzastrasse 2"^^xsd:string ] ;
+    schema:name "Arxada AG" ;
+    schema:telephone "061 316 83 06"^^xsd:string .
+
+company:316632FC-9642-4B6A-90A7-B39642ECD86D a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "EBFE1D04-937E-4E73-89BC-710B64BDDE09"^^xsd:string ;
+            schema:streetAddress "Italienische Strasse 126"^^xsd:string ] ;
+    schema:name "MR Personal & Service GmbH" .
+
+company:31731D1B-B267-4131-BD39-A4BF5EB2A93F a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:DEU ;
+            schema:addressLocality "9B47E471-0E9D-48A9-86CB-8EB6F5B3D733"^^xsd:string ;
+            schema:streetAddress "Edmund-Rumpler-Str. 6"^^xsd:string ] ;
+    schema:name "ADAMA Deutschland GmbH" .
+
+company:31EE96E5-1E95-41ED-9F21-4098CB6C5784 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:NLD ;
+            schema:addressLocality "3978B6B1-A645-458F-9F9D-C8EDE1E7A74A"^^xsd:string ;
+            schema:streetAddress ""^^xsd:string ] ;
+    schema:name "Milentus BV" .
+
+company:32911DDF-66CC-4879-BD38-8D4AD9CC7316 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "A522CF26-8250-4C94-BDA0-DBBE1BD9F756"^^xsd:string ;
+            schema:streetAddress "Bodmerstrasse 7"^^xsd:string ] ;
+    schema:name "Helm Swiss GmbH" .
+
+company:33A0EE2C-04EB-4D4E-917E-8F246342EDC4 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:DEU ;
+            schema:addressLocality "C7AA3C73-06E1-44DE-A851-BFAE1BA5E7BD"^^xsd:string ;
+            schema:streetAddress "Im MediaPark 4 d"^^xsd:string ] ;
+    schema:name "Nufarm Deutschland GmbH" .
+
+company:33A41DBA-EA4D-40EB-BAB9-32858C853782 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:FRA ;
+            schema:addressLocality "B40B9062-AF16-4523-A6BE-3C05BD86119D"^^xsd:string ;
+            schema:streetAddress "12 Che de l'Hobit"^^xsd:string ] ;
+    schema:name "Syngenta France SAS" .
+
+company:34AF8C15-EC18-43F2-A056-21C2F9B85193 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:GBR ;
+            schema:addressLocality "B74B70AD-2EB0-4008-A0B7-D1C3A6FC52EB"^^xsd:string ;
+            schema:streetAddress "Birchwood Park"^^xsd:string ] ;
+    schema:name "United Phosphorus Limited" .
+
+company:352E997E-D2B1-44CD-90ED-BAEFF2B2AB7F a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:AUT ;
+            schema:addressLocality "7BFBB51D-B173-46C3-BCE1-CA5CB24838EE"^^xsd:string ;
+            schema:streetAddress "Franz-Brötzner-Straße 11-13"^^xsd:string ] ;
+    schema:name "Evergreen Garden Care Österreich GmbH" .
+
+company:353714A9-4C7D-4783-B66D-3BFF2F3F7DCD a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:FRA ;
+            schema:addressLocality "DAE7DE3C-5437-4D10-B1BA-FAF56F9D7E0C"^^xsd:string ;
+            schema:streetAddress "5 rue Galilée"^^xsd:string ] ;
+    schema:name "Certis Europe BV" .
+
+company:3741A067-F02B-40A0-8FA5-616E795E0800 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "7D017394-EC49-430A-9332-8D41AD10E47B"^^xsd:string ;
+            schema:streetAddress "Bafflesstrasse 5"^^xsd:string ] ;
+    schema:name "KRONI AG" .
+
+company:3911D0E7-8464-4621-9D52-F303AB1EF220 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "97EDC334-D08A-49FD-A797-2675CF7CAAA3"^^xsd:string ;
+            schema:postOfficeBoxNumber "Postfach"^^xsd:string ;
+            schema:streetAddress "Industriestrasse 34"^^xsd:string ] ;
+    schema:name "JUMBO" .
+
+company:3A45660B-A244-4046-BAA8-DD0BF0103611 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "05E5AF9B-F0E8-45CB-BB14-0CF5BFDF8D4A"^^xsd:string ;
+            schema:streetAddress "Industriestrasse 9"^^xsd:string ] ;
+    schema:name "Regaber Holding AG" .
+
+company:3AEA0E67-7F50-4825-B8BB-CFBAD94D019B a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "22070657-61D5-46AB-8A8F-755A71F4EC2A"^^xsd:string ;
+            schema:streetAddress "Bernapark 23"^^xsd:string ] ;
+    schema:name "Desinfecta AG" .
+
+company:3CA063B7-B2FE-4867-8EF0-8B25AED5E042 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "7172254F-8E90-410D-9047-CA86CC25BEFF"^^xsd:string ;
+            schema:streetAddress "Wydimattstrasse 22"^^xsd:string ] ;
+    schema:name "WASGOM" ;
+    schema:telephone "079 426 98 04"^^xsd:string .
+
+company:3D09D88B-62C8-4577-9BC9-A961757930A5 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:POL ;
+            schema:addressLocality "C297B8A8-7C36-41B9-941C-CDBA08A6FFAD"^^xsd:string ;
+            schema:streetAddress "ul Bydgoskich Przemyslowcow 6"^^xsd:string ] ;
+    schema:name "Agrimotion S. A." .
+
+company:3D0D954C-4EC1-4C71-9266-B70DEE134B29 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "7D7B95EC-23DF-4E51-9D72-010BF2AB198F"^^xsd:string ;
+            schema:postOfficeBoxNumber "45555"^^xsd:string ;
+            schema:streetAddress "Hauptstrasse 84"^^xsd:string ] ;
+    schema:name "808 Biozide Schweiz GmbH" ;
+    schema:telephone "044 3210 20 05"^^xsd:string .
+
+company:3F98B3A7-56C5-42DE-B59E-7C6F84BEC0E6 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:DEU ;
+            schema:addressLocality "FC326115-F15A-451D-A5F9-2BBC8A1AD8E0"^^xsd:string ;
+            schema:streetAddress "An der Mühle 3"^^xsd:string ] ;
+    schema:name "W. Neudorff GmbH KG" ;
+    schema:telephone "0049 5155 624-126"^^xsd:string .
+
+company:3FAB8BC5-245B-432B-9EEB-73F900C64F4F a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:ITA ;
+            schema:addressLocality "5F9469A5-744E-41BD-A5B9-CA75992862A4"^^xsd:string ;
+            schema:streetAddress "Viale Certosa 130"^^xsd:string ] ;
+    schema:name "Bayer CropScience S.r.l." .
+
+company:414B12AF-A2BC-4D35-880B-00025056247F a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "C96FBFFD-F8EE-44B0-8D22-F63F451C2DD5"^^xsd:string ;
+            schema:streetAddress "Spitalstrasse 5"^^xsd:string ] ;
+    schema:name "SFP Europe SA" .
+
+company:420CD1F2-3149-494E-88A0-831910454903 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:GBR ;
+            schema:addressLocality "48D83D55-C21F-4D98-BD80-196DEA53F965"^^xsd:string ;
+            schema:streetAddress "Hall Lane, Rookery Bridge"^^xsd:string ] ;
+    schema:name "UPL Europe Ltd." .
+
+company:43CA8CA4-185E-4F2B-B894-EE50F8FB78D5 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "22DEEECD-906C-42AF-A62A-695C34A1550B"^^xsd:string ;
+            schema:postOfficeBoxNumber "45555"^^xsd:string ;
+            schema:streetAddress "Rengglochstrasse  38"^^xsd:string ] ;
+    schema:name "A. Ziegler AG" .
+
+company:4481BC9B-60A3-4E18-B06C-4CF6CDF65B5D a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:BEL ;
+            schema:addressLocality "56E4BCEC-151F-413E-A6DD-D55EEF3BC56D"^^xsd:string ;
+            schema:streetAddress "Chaussée de la Hulpe 178"^^xsd:string ] ;
+    schema:name "BASF Belgium S.A." .
+
+company:46353DBD-B1C4-4D1E-894B-1CC11FC20B41 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:GBR ;
+            schema:addressLocality "0164F017-7BA9-4AD4-9108-5D6C645C54E7"^^xsd:string ;
+            schema:streetAddress "Birchwood Park"^^xsd:string ] ;
+    schema:name "UPL Europe Ltd" .
+
+company:48FD31FF-F72A-4B5D-8B05-CB392BE261B0 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:NLD ;
+            schema:addressLocality "035C2754-05DB-4E2C-B755-FCB34BCABA76"^^xsd:string ;
+            schema:streetAddress "Stadsplateau 16"^^xsd:string ] ;
+    schema:name "Certis Belchim B.V." .
+
+company:498785B7-989C-4676-BE6D-5B5C616FDE50 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "6CF8678B-9BF9-45BF-B81B-9E7E23804898"^^xsd:string ;
+            schema:postOfficeBoxNumber "45555"^^xsd:string ;
+            schema:streetAddress "Haupstrasse 84"^^xsd:string ] ;
+    schema:name "808 Biozide Schweiz GmbH" .
+
+company:4B828ECC-FB0A-4F3B-B622-A1B9B08DD763 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "6A7BB449-7E3F-4923-B16E-34DA5017ECBE"^^xsd:string ;
+            schema:streetAddress "Birren 30"^^xsd:string ] ;
+    schema:name "Schneiter Agro AG" ;
+    schema:telephone "056 201 45 45"^^xsd:string .
+
+company:4CC31B07-2CD4-401B-908C-DD6E448D012B a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:ITA ;
+            schema:addressLocality "0265C375-2457-4BA9-9EE1-FBF2CB879BFB"^^xsd:string ;
+            schema:streetAddress "Via F. lli Bronzetti, 32/38"^^xsd:string ] ;
+    schema:name "Cheminova Agro Italia S.R.L." .
+
+company:4ECE4614-FC05-4317-B294-95CFCEA84A80 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:ESP ;
+            schema:addressLocality "FC6BBD52-4054-4CF8-8AEF-19BF9E22BD65"^^xsd:string ;
+            schema:streetAddress "Calle Torneros 14"^^xsd:string ] ;
+    schema:name "Quimetal internacional" .
+
+company:5061AF3F-E1C6-4E91-BC0A-10A26CFD01E0 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "61A08899-8186-403D-A7F3-F6814B2993A3"^^xsd:string ;
+            schema:postOfficeBoxNumber "C P 48"^^xsd:string ;
+            schema:streetAddress "Route du Léman 10"^^xsd:string ] ;
+    schema:name "Méoc SA" ;
+    schema:telephone "027 746 16 39"^^xsd:string .
+
+company:5086E8CB-6AF0-48ED-99DF-C3524B2F3A4B a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "E156F657-22A6-4EAA-AAA6-21CFB0FF56E9"^^xsd:string ;
+            schema:streetAddress "Chemin de Blandonnet 8"^^xsd:string ] ;
+    schema:name "FMC International Switzerland Sàrl" ;
+    schema:telephone "+49 4141 9204 248  Mobile +49 171 640 7850"^^xsd:string .
+
+company:50A7859F-7D8C-473F-B38C-26E1A8F2E53F a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:AUT ;
+            schema:addressLocality "A33A7E09-68E8-4ADB-A5EE-B501929C97F0"^^xsd:string ;
+            schema:streetAddress "Metahofgasse 30"^^xsd:string ] ;
+    schema:name "Menora GmbH" .
+
+company:51146CC7-4FCC-4D7D-84AC-829BE7105BB6 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:FRA ;
+            schema:addressLocality "5B5F1209-1030-495B-B890-BCC920216D42"^^xsd:string ;
+            schema:postOfficeBoxNumber "B P 5"^^xsd:string ;
+            schema:streetAddress "Bonnel"^^xsd:string ] ;
+    schema:name "De Sangosse" ;
+    schema:telephone "53 69 36 30"^^xsd:string .
+
+company:51205EA7-73ED-4C5C-A911-B3A11837242B a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:FRA ;
+            schema:addressLocality "4E77FCA9-DBA5-48E1-8DB3-D53E7C6DEC21"^^xsd:string ;
+            schema:streetAddress "VILCERY"^^xsd:string ] ;
+    schema:name "Philagro France" .
+
+company:5164D739-E076-4BF8-BE9A-9D2BB7C73BA4 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:FRA ;
+            schema:addressLocality "E666414E-D459-401E-981D-8A68B5217C49"^^xsd:string ;
+            schema:postOfficeBoxNumber "10150"^^xsd:string ;
+            schema:streetAddress "8 voie vallon"^^xsd:string ] ;
+    schema:name "HMWC SARL" ;
+    schema:telephone "0033608893727"^^xsd:string .
+
+company:53DD0D57-40EA-4F46-AB09-395FF93425F1 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:FRA ;
+            schema:addressLocality "79E8C144-E9E8-45BF-A3B4-81B9D83328E6"^^xsd:string ;
+            schema:streetAddress "VILLA CELONY, 1175 MONTEE D'AVIGNON"^^xsd:string ] ;
+    schema:name "Societe financiere de Pontarlier" .
+
+company:5710564A-E5EF-41D2-A3AF-74B898A51086 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:ESP ;
+            schema:addressLocality "9BA05670-FDC6-47DE-8146-E32CAB59936B"^^xsd:string ;
+            schema:streetAddress "Av. Europa parcela 1-7, poligino de Costanti"^^xsd:string ] ;
+    schema:name "Azufrera y Fertilizantes Pallares, S.A." ;
+    schema:telephone "+34 977 524 650"^^xsd:string .
+
+company:5818668E-F5AA-40EA-A365-F8D92519E46C a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:ITA ;
+            schema:addressLocality "F850670E-237E-4E24-8A42-1CDA6D6C0212"^^xsd:string ;
+            schema:streetAddress "Corso Orbassano 368/18"^^xsd:string ] ;
+    schema:name "Scam SPA" .
+
+company:5825427C-A0FC-4F25-AEE5-87F24A00C745 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:FRA ;
+            schema:addressLocality "870561B2-6662-4E83-8BCA-0A1EE6DF3934"^^xsd:string ;
+            schema:postOfficeBoxNumber "CS 90106"^^xsd:string ;
+            schema:streetAddress "Rue Jean-Marie Leclair 16"^^xsd:string ] ;
+    schema:name "Bayer S.A.S," .
+
+company:592E625C-E353-4E4B-81C7-858535E04FA5 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:DEU ;
+            schema:addressLocality "47AD2AC5-9896-4299-9388-1DEF69062F1C"^^xsd:string ;
+            schema:streetAddress "Bärweilerstrasse 55"^^xsd:string ] ;
+    schema:name "Crop Chem Handelsgesellschaft GmbH" .
+
+company:5A75BA51-7E5D-46BF-824A-6654B96229AD a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:IND ;
+            schema:addressLocality "C4D799C4-60B1-41EB-AF63-FF2796CDFFF4"^^xsd:string ;
+            schema:streetAddress "Domnic Road 29th, Bandra West"^^xsd:string ] ;
+    schema:name "Sharda Worldwide Export Private Ltd." .
+
+company:5BE3C4EA-8E70-4A95-8365-C3F2971327B5 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:ITA ;
+            schema:addressLocality "91B8A68F-37CC-4938-A4AA-33705A2DD6DC"^^xsd:string ;
+            schema:streetAddress "Via Vittorio Veneto 81"^^xsd:string ] ;
+    schema:name "SIPCAM OXON S.p.A." .
+
+company:5CC42699-9538-4927-9CF5-85B7A99ABF00 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:BEL ;
+            schema:addressLocality "EF060BEF-6D43-4240-83DD-EA3E492EFA34"^^xsd:string ;
+            schema:streetAddress "J.E.Mommertslaan 14"^^xsd:string ] ;
+    schema:name "Bayer CropScience N.V." .
+
+company:5D12B703-B7FD-4E5B-A345-B2B27039DC51 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:FRA ;
+            schema:addressLocality "8B019661-A7F7-4027-AB6F-2AA8A7DA2F2A"^^xsd:string ;
+            schema:streetAddress "10a, rue de la Voie Lactée"^^xsd:string ] ;
+    schema:name "Sumitomo Chemical Agro Europe SAS" .
+
+company:5E002797-A3B5-4C00-B6B0-F130F5DA5C02 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:DEU ;
+            schema:addressLocality "94A7318A-5DBC-4F89-AF23-F0CEBD86059A"^^xsd:string ;
+            schema:streetAddress "Elisabeth- Selbert- Straße 4a"^^xsd:string ] ;
+    schema:name "Monsanto Agrar Deutschland GmbH" ;
+    schema:telephone "+49 (0) 2173 2076 569"^^xsd:string .
+
+company:5E2915EB-369E-4C9C-B8B7-9FAAABF0E127 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "7789DD03-D754-4735-9527-542737F3CEB9"^^xsd:string ;
+            schema:streetAddress "Chasseralstrasse 1-3"^^xsd:string ] ;
+    schema:name "Sintagro M. Eggen" ;
+    schema:telephone "062 398 57 57"^^xsd:string .
+
+company:5F2FC518-5717-4E4F-9C2F-BA1E589EDF71 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:BEL ;
+            schema:addressLocality "BDB25425-87A3-4A8A-A924-4900D7F6A2D3"^^xsd:string ;
+            schema:streetAddress "Leeuwerweg 138"^^xsd:string ] ;
+    schema:name "GLOBACHEM NV" ;
+    schema:telephone "+32 11 78 57 17"^^xsd:string .
+
+company:5F914527-3A45-4E33-99A6-E032CD118F53 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:DEU ;
+            schema:addressLocality "917CB2AF-85C1-40CE-B18B-F4A67D514EED"^^xsd:string ;
+            schema:postOfficeBoxNumber "51373"^^xsd:string ;
+            schema:streetAddress "Kaiser-Wilhelm-Allee 1"^^xsd:string ] ;
+    schema:name "Bayer AG" .
+
+company:61A0B237-6FF1-45D4-ADC1-8CB236C139ED a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:AUT ;
+            schema:addressLocality "43BC231B-B563-4C6D-8A6A-BDCE649503F0"^^xsd:string ;
+            schema:streetAddress "Europapark 1"^^xsd:string ] ;
+    schema:name "STAR Agro Handels GmbH" .
+
+company:63D86FDE-6C36-4F4F-8377-A24CE017B396 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:ITA ;
+            schema:addressLocality "F9E31923-C8F7-4756-B076-C8A207CC9945"^^xsd:string ;
+            schema:streetAddress "Via Campobello, 1"^^xsd:string ] ;
+    schema:name "Agrimix S.R.L." .
+
+company:65146811-FE18-4A69-8F7A-200B67B8CC40 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "5474D652-70BA-4A95-8FDE-3D0312C76AEB"^^xsd:string ;
+            schema:streetAddress "Oberfeldstr. 5"^^xsd:string ] ;
+    schema:name "Hans Müller Gärtnerei AG" ;
+    schema:telephone "071/642 11 77"^^xsd:string .
+
+company:6568B359-EF49-4D27-9436-D1B170A97FB7 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:BEL ;
+            schema:addressLocality "02EE1D31-D772-451E-A10C-CCE86ECA2155"^^xsd:string ;
+            schema:streetAddress "Rue de Renory 26/1"^^xsd:string ] ;
+    schema:name "Arysta Lifescience Benelux SPRL" .
+
+company:6670A5CC-9EE1-4710-A809-C03C34BFD838 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "BBA04C94-D866-4C40-9C4A-7D68E84E069E"^^xsd:string ;
+            schema:streetAddress "Stahlermatten 6"^^xsd:string ] ;
+    schema:name "Andermatt Biogarten AG" .
+
+company:66E64A79-0D2F-4157-BA37-DF4370468CE6 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:DEU ;
+            schema:addressLocality "ED239201-0FC3-4995-828A-108859625AE5"^^xsd:string ;
+            schema:streetAddress "Nattermannallee 1"^^xsd:string ] ;
+    schema:name "You Solution" .
+
+company:687369FB-FFAD-40AC-9835-FF3BCB0658F9 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:BEL ;
+            schema:addressLocality "74627943-33EF-4B16-B894-EC6E61F0169D"^^xsd:string ;
+            schema:streetAddress "Pegasus Park / De Kleetlaan 12B"^^xsd:string ] ;
+    schema:name "ISK Biosciences Europe N.V." .
+
+company:690F0868-E925-4727-B57F-B6A802858F67 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:FRA ;
+            schema:addressLocality "6A1DADC7-E6D3-43C1-850E-7C1369BCB2CC"^^xsd:string ;
+            schema:streetAddress "10A, rue de la Voie Lactée"^^xsd:string ] ;
+    schema:name "Nissan Chemical Europe S.A.S." .
+
+company:6ECBC146-CA66-49CC-B558-B3152C08AD80 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:BEL ;
+            schema:addressLocality "92036F74-2763-4280-A87D-C6E0716088B3"^^xsd:string ;
+            schema:streetAddress "Lichtenberglaan 2019"^^xsd:string ] ;
+    schema:name "Globachem N.V." .
+
+company:6FB69C1A-3329-45C1-A17A-090575B52579 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:GBR ;
+            schema:addressLocality "A0B44493-3AA5-4094-9376-A561BBB161CC"^^xsd:string ;
+            schema:streetAddress "Hamilton House, Mobledon Place"^^xsd:string ] ;
+    schema:name "Rotam Agrochemical Europe Ltd" .
+
+company:6FE3CAAD-C709-4DAD-9F44-BB5686D5B0B6 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "EECEFD40-6013-498F-8346-9DB044355FD8"^^xsd:string ;
+            schema:streetAddress "Eichlistrasse 9"^^xsd:string ] ;
+    schema:name "Hauri AG" .
+
+company:70A97C51-FA89-4F90-AF84-391C758FD23F a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "250F9F36-B2E7-4DCA-B1C1-BCC315608B52"^^xsd:string ;
+            schema:streetAddress "Leopoldstr. 1"^^xsd:string ] ;
+    schema:name "Firma Grande IN" .
+
+company:71888824-73FB-4400-9190-D14196162CC8 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:FRA ;
+            schema:addressLocality "F5C41E83-5A35-40D7-A681-09BF5E33C182"^^xsd:string ;
+            schema:streetAddress "53 rue Raspail"^^xsd:string ] ;
+    schema:name "Phyteurop S.A." .
+
+company:737B5A15-E3B7-4E10-8693-5F081490641B a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:GBR ;
+            schema:addressLocality "E791E920-D6C1-458D-9FA2-15ED05E14762"^^xsd:string ;
+            schema:postOfficeBoxNumber "PE27 5HJ"^^xsd:string ;
+            schema:streetAddress "8 Cromwell Mews"^^xsd:string ] ;
+    schema:name "Pan Amenity Ltd" .
+
+company:75AB70BC-9C52-4036-9E20-9B14DE89B805 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:ESP ;
+            schema:addressLocality "2C4735CF-44AA-42BC-8154-36380417FB42"^^xsd:string ;
+            schema:streetAddress "Carril Condomina n°3"^^xsd:string ] ;
+    schema:name "Sharda Cropchem Espana S.L." .
+
+company:78249B4A-2C6E-4552-B20F-5B650EAD4EB6 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "39F47407-E4AE-4ECB-8E75-770401892E17"^^xsd:string ;
+            schema:streetAddress "Steinenschanze 6"^^xsd:string ] ;
+    schema:name "Dormfresh Limited, Perth (UK)" .
+
+company:78383A9B-B46D-42D9-9572-D1C6A5BF36BF a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:GBR ;
+            schema:addressLocality "9712379C-4D05-42FA-A11B-BBB06BEBB514"^^xsd:string ;
+            schema:streetAddress "1 Northumberland Ave, Westminster"^^xsd:string ] ;
+    schema:name "Albaugh UK Limited" .
+
+company:791764F3-536D-4FEB-BA85-99BD14E4F043 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "84936FFB-150B-4425-8F2A-0F9AA863CB8C"^^xsd:string ;
+            schema:streetAddress "Place Numa-Droz 2"^^xsd:string ] ;
+    schema:name "Agrocaps SPRL" .
+
+company:7A282BB5-1EF2-411D-9954-C784F09B4E97 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:AUT ;
+            schema:addressLocality "6475D927-651E-44B2-832A-E3EEC8B512ED"^^xsd:string ;
+            schema:streetAddress "Lerchenfelder Gürtel 9-11"^^xsd:string ] ;
+    schema:name "Bayer Austria GmbH Geschäftsbereich für Pflanzenschutz" .
+
+company:7AF22550-EF69-440A-9671-9EF9D91C37E5 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:FRA ;
+            schema:addressLocality "3BF719A2-574B-49EF-A277-48E0D9864590"^^xsd:string ;
+            schema:streetAddress "49, avenue Georges-Pompidou"^^xsd:string ] ;
+    schema:name "BASF France" .
+
+company:7C206C75-DE66-4D4F-952C-C5E149D31C64 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "16FEBFD0-C7FD-4F64-9EAB-06C13DA82377"^^xsd:string ;
+            schema:streetAddress "Kochergasse 6"^^xsd:string ] ;
+    schema:name "Sharda Swiss Sàrl" ;
+    schema:telephone "T +41 31 328 35 35 | M +41 78 843 8000"^^xsd:string .
+
+company:802723CD-5A92-4E44-82F5-083A105C9F90 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:DEU ;
+            schema:addressLocality "20F35B79-93F1-4B85-879D-025075F55589"^^xsd:string ;
+            schema:streetAddress ""^^xsd:string ] ;
+    schema:name "Bayer CropScience" .
+
+company:80DA1955-1AC4-4180-9BC7-5D76D7D85BBA a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "6841A9E9-9D67-4EBC-9D10-552B28F6A5C4"^^xsd:string ;
+            schema:streetAddress "Maienstrasse 8"^^xsd:string ] ;
+    schema:name "Eric Schweizer AG" ;
+    schema:telephone "033 227 57 57"^^xsd:string .
+
+company:8216BB41-80BD-4A4C-BE63-08EDE7F4C128 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:FRA ;
+            schema:addressLocality "9765E150-DCCF-436B-BDF3-7A7A0355E2ED"^^xsd:string ;
+            schema:streetAddress "14 Rue de la Pierre Follege"^^xsd:string ] ;
+    schema:name "Bayer SAS" .
+
+company:84D0755C-2423-40BE-A70F-F89AD4F7DE47 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:FRA ;
+            schema:addressLocality "3EADFC10-827F-4228-A742-F54964E5DCFB"^^xsd:string ;
+            schema:streetAddress "23/25 rue Delarivière-Lefoullon, La Défense 9"^^xsd:string ] ;
+    schema:name "DuPont de Nemours (France) S.A." .
+
+company:84E721E7-7A4F-4F80-B06A-A49B17EB0311 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "86B30C5E-0D2C-4BA6-B789-EE125BB8F744"^^xsd:string ;
+            schema:streetAddress "Baslerstrasse 42"^^xsd:string ] ;
+    schema:name "Omya (Schweiz) AG" ;
+    schema:telephone ""^^xsd:string .
+
+company:8627FD33-6B14-4071-B4E5-2C83895D524C a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:IRL ;
+            schema:addressLocality "592CB227-2523-4CC6-BB63-A2760480B9C6"^^xsd:string ;
+            schema:streetAddress "Nova UCD, Belfield Innovation Park , UCD Belfield"^^xsd:string ] ;
+    schema:name "Life Scientific Ltd" .
+
+company:866CC9D1-A64D-472F-875A-62D5A92AA74F a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "F20A1CDB-5498-4103-A51A-CCB7B245AF21"^^xsd:string ;
+            schema:postOfficeBoxNumber "Postfach 61"^^xsd:string ;
+            schema:streetAddress "Hohfuhrenweg   14"^^xsd:string ] ;
+    schema:name "Matox AG" ;
+    schema:telephone "032 387 70 70"^^xsd:string .
+
+company:878DE3BA-24BD-424D-9C82-16547C007F5B a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:GBR ;
+            schema:addressLocality "B3D2599C-9E63-48C3-8A4F-254D1D416671"^^xsd:string ;
+            schema:streetAddress "26-28 Bedford Row"^^xsd:string ] ;
+    schema:name "Bernbeck LLP" .
+
+company:8991748A-10D5-471E-BA8F-D0E7E7BF05DF a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:GBR ;
+            schema:addressLocality "F81FF64E-4F3F-4B98-9AF4-9EA2AF5EDF80"^^xsd:string ;
+            schema:streetAddress "5 Pionee Court, Vision Park Histon"^^xsd:string ] ;
+    schema:name "Nichino Europ Co LTD" .
+
+company:8B15104B-9B8E-4443-B27F-7E6C9D1D65A6 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:DEU ;
+            schema:addressLocality "D9A42073-F0DB-47F0-B08E-5B1EDE40F794"^^xsd:string ;
+            schema:streetAddress "Nordkanalstrasse 28"^^xsd:string ] ;
+    schema:name "Helm AG" .
+
+company:8B221BF0-61A1-4185-8241-CCED3F01885D a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:BEL ;
+            schema:addressLocality "8E9C4CE5-8FE4-4A70-9FCD-0D4276838F4B"^^xsd:string ;
+            schema:streetAddress "Avenue de Tervueren 270"^^xsd:string ] ;
+    schema:name "Kanesho Soil Treatment SPRL/BVBA" .
+
+company:8B909492-2AEA-4953-AAAE-E41A449C43B1 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:BEL ;
+            schema:addressLocality "1C4877F6-6417-4F68-A305-46C2ACBCFCCA"^^xsd:string ;
+            schema:streetAddress "Technologielann 7"^^xsd:string ] ;
+    schema:name "Belchim Crop Protection" .
+
+company:8C1C1E63-E78F-4F1D-8596-4277124B8433 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "DCAFA33B-C819-441B-8BB2-1760FB2DF3FB"^^xsd:string ;
+            schema:postOfficeBoxNumber "167"^^xsd:string ;
+            schema:streetAddress "Hauptstrasse 10"^^xsd:string ] ;
+    schema:name "LKC Switzerland Ltd." .
+
+company:8C510474-3722-4678-96A2-3FB596B22E11 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:ITA ;
+            schema:addressLocality "272F4A56-0704-43BD-80F7-D6E8A5EADBBB"^^xsd:string ;
+            schema:streetAddress "Strada Statale 11, Km 190.2"^^xsd:string ] ;
+    schema:name "Corteva Agriscience Italia s.r.l" ;
+    schema:telephone "+39 363 320 474"^^xsd:string .
+
+company:8CEA4B4D-37D7-442B-A6A4-1981A1EDD3E4 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:BEL ;
+            schema:addressLocality "558EB546-DBD9-476F-8385-277D24EE4B6B"^^xsd:string ;
+            schema:streetAddress "Humaniteitslaan 65"^^xsd:string ] ;
+    schema:name "Syngenta Crop Protection N.V." .
+
+company:8E7BB126-CB95-418E-A645-0FCBA6F6CD92 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:ITA ;
+            schema:addressLocality "A2EB8E95-11A3-4FCB-A862-D453BB269B95"^^xsd:string ;
+            schema:streetAddress "Via Bellaria 164"^^xsd:string ] ;
+    schema:name "Scam S.P.A." .
+
+company:908B88F5-3C81-4EAF-9A18-29F9EA09E161 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:ITA ;
+            schema:addressLocality "E046DF49-7B88-4684-A17E-A525847BBE80"^^xsd:string ;
+            schema:streetAddress "Via Varese 25/G"^^xsd:string ] ;
+    schema:name "Ascenza Italia S.r.l." .
+
+company:90FF2D1F-B94F-4DEF-AE94-8D1ECA1F228E a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "FF4BAE53-9B35-4B12-9739-874986B45F69"^^xsd:string ;
+            schema:streetAddress "Chemin du Canal 5"^^xsd:string ] ;
+    schema:name "Nufarm Suisse Sàrl" ;
+    schema:telephone "+43 732 6918 2773"^^xsd:string .
+
+company:91065517-1D9D-4005-A2CF-835870A34EE6 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:ITA ;
+            schema:addressLocality "540A640E-E0DB-4A6D-BF88-C7780812355D"^^xsd:string ;
+            schema:streetAddress "Via Tonale 15"^^xsd:string ] ;
+    schema:name "Diachem SPA" .
+
+company:923F81EF-F04F-46B5-B9A1-C474B82EA339 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:ITA ;
+            schema:addressLocality "333F2E34-4C59-49A1-972B-11220A9AA84B"^^xsd:string ;
+            schema:streetAddress "Via Caldera 21"^^xsd:string ] ;
+    schema:name "Sumitomo Chemical Italia" .
+
+company:9283EC6A-3490-4CE1-B2D6-6BC8735E5081 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "64C05C3D-A63E-4A97-92E7-BBD0851F4500"^^xsd:string ;
+            schema:streetAddress "In der Euelwies 34"^^xsd:string ] ;
+    schema:name "UFA-Samen PROFI GRÜN" ;
+    schema:telephone "0041 58 433 76 76"^^xsd:string .
+
+company:94B73960-84D0-4A2A-A974-C5AFDA828910 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:AUT ;
+            schema:addressLocality "D5041BB6-3EBA-4FB6-81FA-1E013D148BD1"^^xsd:string ;
+            schema:streetAddress "Industriestrasse 20, 21"^^xsd:string ] ;
+    schema:name "SAN Agrow Holding GmbH" ;
+    schema:telephone "+43 2782 8330 0"^^xsd:string .
+
+company:9A79A49D-B193-4B12-AC36-E2CD59498C18 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:FRA ;
+            schema:addressLocality "95D35B6F-7510-43E5-A1F8-6CB1B483AFD9"^^xsd:string ;
+            schema:streetAddress "Route d'Artix"^^xsd:string ] ;
+    schema:name "Arysta Lifescience" .
+
+company:9B3D97EE-DBF8-4DBD-AE4E-E23726022A85 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "4C2E1525-96B4-488E-8426-DF1F22135C3B"^^xsd:string ;
+            schema:streetAddress "Pra Pury  7d"^^xsd:string ] ;
+    schema:name "Medol" ;
+    schema:telephone "079 758 09 37"^^xsd:string .
+
+company:9D2B4634-14EF-4019-9CE8-9AC770D50107 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:DEU ;
+            schema:addressLocality "B3B0B8BE-010C-4D92-89F3-7500CC9AB143"^^xsd:string ;
+            schema:streetAddress "Elisabeth-Selbert-Straße 4a"^^xsd:string ] ;
+    schema:name "Bayer CropScience Deutschland GmbH" .
+
+company:9DBBD9B1-1DD2-4F78-8B9C-2457BF5E3002 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:BEL ;
+            schema:addressLocality "15226068-5D18-4216-B725-EE459E6B3A1E"^^xsd:string ;
+            schema:streetAddress "Boulevard de la Plaine 9/3"^^xsd:string ] ;
+    schema:name "FMC Europe NV" .
+
+company:A055C97B-6C97-4E2F-97D3-8BCD003C98A4 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:GBR ;
+            schema:addressLocality "267C256E-A1AF-4AAD-B34C-6377023FF2F1"^^xsd:string ;
+            schema:streetAddress "Highlands House Reading Basingstoke Road, Spencers"^^xsd:string ] ;
+    schema:name "Gowan Crop Protection Ltd." .
+
+company:A0B6DF01-8500-4DD1-9B85-ED49C3A2DAF2 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "F7FC24D9-7BC9-4844-974C-7D7983C9854E"^^xsd:string ;
+            schema:streetAddress "Konstanzerstrasse 19"^^xsd:string ] ;
+    schema:name "GNS Consult AG" ;
+    schema:telephone "071 670 12 30  - direct call 076 516 12 30"^^xsd:string .
+
+company:A11A28AD-82EF-46E4-8C23-94940CCD7C0B a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "2BFD26B9-7955-4E7A-8344-37242B5261D9"^^xsd:string ;
+            schema:streetAddress "Rosenstrasse 28"^^xsd:string ] ;
+    schema:name "Bio-Agrar-Counsel GmbH" ;
+    schema:telephone "034 413 33 30"^^xsd:string .
+
+company:A128E9C6-FBC1-4649-8E3C-92073B82925B a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "763D5754-09C9-4191-8BF9-116087AEEB96"^^xsd:string ;
+            schema:streetAddress "Hegenheimermattweg 65"^^xsd:string ] ;
+    schema:name "COMPO Jardin AG" ;
+    schema:telephone "061 486 20 23   - mobile 079 681 45 57"^^xsd:string .
+
+company:A17A3AEF-3D87-4C0A-BBF2-18B2A15EF35D a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "971F2D05-1BB5-4077-83D4-F4532FC71BFB"^^xsd:string ;
+            schema:streetAddress "Ueberlandstrasse 341"^^xsd:string ] ;
+    schema:name "Insektol AG Pest Control" ;
+    schema:telephone "+41 44 322 20 20"^^xsd:string .
+
+company:A3C71144-113D-44C0-BEEA-E253F4C5D07B a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "F4725232-AB31-4D70-B064-B39F5E0AC962"^^xsd:string ;
+            schema:streetAddress "Riehenstrasse 43"^^xsd:string ] ;
+    schema:name "Dr. Knoell Consult Schweiz GmbH" ;
+    schema:telephone "061 695 86 50    Mobile 078 625 63 40"^^xsd:string .
+
+company:A4189C47-C19D-49A6-B8E3-FE3DFFA74C4E a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:ITA ;
+            schema:addressLocality "E36B9035-20BA-4405-AD91-8D402E1301E2"^^xsd:string ;
+            schema:streetAddress "Via Caldera, 21"^^xsd:string ] ;
+    schema:name "Isagro S.p.A." .
+
+company:A41EF4FF-34EB-47DC-A947-1B61E608040C a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "F22A69EB-FB68-46A3-9C75-EEB59CBD92E9"^^xsd:string ;
+            schema:streetAddress "Picassoplatz 8"^^xsd:string ] ;
+    schema:name "Kreglinger International AG" .
+
+company:A4DF9EFF-DE2A-4DCF-A6D2-05AA3AE53020 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:DEU ;
+            schema:addressLocality "D84D9B2B-9366-44B1-8244-3E0CD16A9D85"^^xsd:string ;
+            schema:streetAddress "Rudolf-Diesel-Strasse 2"^^xsd:string ] ;
+    schema:name "Biofa AG" ;
+    schema:telephone "0049 7381 93 54 0"^^xsd:string .
+
+company:A652AC69-2536-4145-9953-7E1697A5EB3E a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:DEU ;
+            schema:addressLocality "981CF5B8-9C87-46E9-B887-C8A4ED73AEA2"^^xsd:string ;
+            schema:streetAddress "Werksweg 2"^^xsd:string ] ;
+    schema:name "agrostulln GmbH" .
+
+company:A9064CE9-590A-4B3F-BFBC-91C3635C7A61 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:BEL ;
+            schema:addressLocality "DE611120-5108-4056-9BD3-BBB80959F555"^^xsd:string ;
+            schema:streetAddress "Rue Georges Legrand 6"^^xsd:string ] ;
+    schema:name "FytoFend S.A." .
+
+company:A974C03D-B91C-4DCE-AF78-36543C373421 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "A7CBAD4A-DA4D-4EB0-805A-3B689D0FF573"^^xsd:string ;
+            schema:streetAddress "Moosackerweg 28"^^xsd:string ] ;
+    schema:name "Schneider Formulations Consulting" .
+
+company:AD442666-06A8-4132-83F5-AEDF33E0651D a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:ITA ;
+            schema:addressLocality "FEF84D24-17BE-46ED-AD73-A905FEF7FAFB"^^xsd:string ;
+            schema:postOfficeBoxNumber "30131"^^xsd:string ;
+            schema:streetAddress "Via Venezia, 9/A"^^xsd:string ] ;
+    schema:name "Phoenix-Del S.R.L." .
+
+company:AF74BCEA-AA42-4DAD-A01F-C925C3B4E66F a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:DEU ;
+            schema:addressLocality "5FF9525E-3934-4DA9-8C52-575C887B826A"^^xsd:string ;
+            schema:streetAddress "Berliner Allee 42"^^xsd:string ] ;
+    schema:name "Nisso Chemical Europe GmbH" .
+
+company:B0523241-7DFF-4CC9-847D-E018F2E6C817 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:BEL ;
+            schema:addressLocality "63A06B4C-F976-4B46-89AE-FFCD718E398F"^^xsd:string ;
+            schema:streetAddress "Boulevard de la Woluwe 60"^^xsd:string ] ;
+    schema:name "Mitsui Agriscience Int." .
+
+company:B204A61C-BB26-45CD-BBC8-F1F620B3A79D a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:IRL ;
+            schema:addressLocality "24C6315D-A194-4F70-85F0-68BFDBE521F3"^^xsd:string ;
+            schema:streetAddress "Nova UCD Belfield Innovation Park , UCD Belfield"^^xsd:string ] ;
+    schema:name "Life Scientific Ltd" .
+
+company:B439C393-763A-4189-A56C-B45BB99ECFF5 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:BEL ;
+            schema:addressLocality "B78A4CA4-4EF5-4FF4-B5E0-80106729326C"^^xsd:string ;
+            schema:streetAddress "Assenedestraat 2"^^xsd:string ] ;
+    schema:name "Oleon NV" .
+
+company:B4605D54-048B-47BD-A35D-AA4E4CC0A85A a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:DEU ;
+            schema:addressLocality "7F5FD4EC-08C1-4F30-80F1-CB4839CCC153"^^xsd:string ;
+            schema:streetAddress "Werksweg 2"^^xsd:string ] ;
+    schema:name "Agro-Stulln GmbH" .
+
+company:BC7EE08B-7582-439B-B051-04560BE10614 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "55BB686D-25DE-42D8-A780-793342D2222E"^^xsd:string ;
+            schema:streetAddress "Spitalstrasse 5"^^xsd:string ] ;
+    schema:name "ADAMA Agriculture Swiss AG" .
+
+company:BCCB1CD4-6BE3-4459-B42C-737AA7F494B4 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:BEL ;
+            schema:addressLocality "EB91F17A-9CDC-4B20-9BD8-6CEAFC80504E"^^xsd:string ;
+            schema:streetAddress "Rue de Renory, 26/2"^^xsd:string ] ;
+    schema:name "Arysta LifeScience Ougrée Production sprl" ;
+    schema:telephone "0032 4 385 97 11"^^xsd:string .
+
+company:BD960585-B8EC-495F-B075-FCDC6E99BC22 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "833685B3-B97B-4B2F-B9C7-F8F775D44710"^^xsd:string ;
+            schema:streetAddress "Route de Suisse 160"^^xsd:string ] ;
+    schema:name "Corteva Agriscience International Sàrl" ;
+    schema:telephone "+41 22 717 5868"^^xsd:string .
+
+company:BD9E43F3-0F8C-4B9F-9541-76AD027341F7 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "BD6E6C9E-C1A5-4B8C-A6F6-85509458807A"^^xsd:string ;
+            schema:streetAddress "Via Greina 3"^^xsd:string ] ;
+    schema:name "Agrifutur Srl, Alfaniello" .
+
+company:C1E541C9-A0C5-472E-A189-B73B35C1840C a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:SVN ;
+            schema:addressLocality "AC640A97-7CCF-4205-BBE3-9B8D8A2362AA"^^xsd:string ;
+            schema:streetAddress "Grajski trg  21"^^xsd:string ] ;
+    schema:name "Albaugh TKI d.o.o." .
+
+company:C5D84390-95B5-4C1C-83DF-5A768935B07B a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:DEU ;
+            schema:addressLocality "302D69B3-5AD7-404A-B510-B08459F48368"^^xsd:string ;
+            schema:streetAddress "Otto-Brenner-Str. 13-15"^^xsd:string ] ;
+    schema:name "W. Neudorff GmbH KG" .
+
+company:C6E0547B-AA8D-469C-A459-F5770F34C3BE a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "81BED59C-CAD0-4B15-B302-D1005AAAFB75"^^xsd:string ;
+            schema:streetAddress "Fellstrasse 1"^^xsd:string ] ;
+    schema:name "Cemag Handels AG" .
+
+company:C6FB5DD9-B9BE-45AD-9564-CA168F286AE2 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:DEU ;
+            schema:addressLocality "0F92FC88-242C-4E31-A65C-E5C93E21E666"^^xsd:string ;
+            schema:postOfficeBoxNumber "PF 120"^^xsd:string ;
+            schema:streetAddress ""^^xsd:string ] ;
+    schema:name "BASF AG" .
+
+company:C728938F-0E92-43A7-8CC0-8A00F32E7D1C a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:DEU ;
+            schema:addressLocality "84626811-0C47-493B-A297-5820B49C2F08"^^xsd:string ;
+            schema:streetAddress ""^^xsd:string ] ;
+    schema:name "Bayer CropScience GmbH" .
+
+company:C79DB47D-90A4-4B4D-8337-0677B64FAD81 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:ITA ;
+            schema:addressLocality "0816739E-97E6-43CA-A673-4326F450A92E"^^xsd:string ;
+            schema:postOfficeBoxNumber "32/28"^^xsd:string ;
+            schema:streetAddress "Via F.lli Bronzetti"^^xsd:string ] ;
+    schema:name "FMC AGRO ITALIA S.R.L." .
+
+company:C93D8141-F1E7-4EF5-BA5C-4AA99B00D39F a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "7BC74FF1-3401-4E37-B1AE-9E0391BEB8E1"^^xsd:string ;
+            schema:streetAddress "Poststrasse 30"^^xsd:string ] ;
+    schema:name "Danstar Ferment AG" ;
+    schema:telephone "+358 (0)50 543 5547"^^xsd:string .
+
+company:CB0F961F-AEC2-4327-94E5-07ACBFFA38AF a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "1E3D2663-3643-49E7-B740-09C59BA1B8BE"^^xsd:string ;
+            schema:streetAddress "Winterseistrasse 22"^^xsd:string ] ;
+    schema:name "Blaser Swisslube AG" ;
+    schema:telephone "034 460 03 05"^^xsd:string .
+
+company:CB4021B4-9461-4E27-B531-62DAA0F144A1 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:DEU ;
+            schema:addressLocality "A052E139-CE3B-43CD-951E-F5CB6B89BA50"^^xsd:string ;
+            schema:streetAddress "Carl-Diem-Str. 3"^^xsd:string ] ;
+    schema:name "Agrimotion Deutschland Gmbh" .
+
+company:CB54DDAA-9233-476F-A0D7-E9B29B9BC755 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:ESP ;
+            schema:addressLocality "D197ED59-9257-47D9-896C-1E7BC5F463BD"^^xsd:string ;
+            schema:streetAddress "Av. de Rafael Casanova, 81 Molle del Valles"^^xsd:string ] ;
+    schema:name "industrias químicas del vallés, s.a." .
+
+company:CD1520D1-4C7E-4134-A4DF-F7BABB1F1D5A a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "5E89D53F-7663-4B3A-8787-D221E7809298"^^xsd:string ;
+            schema:streetAddress "Industrie Birren 30"^^xsd:string ] ;
+    schema:name "Racroc AG" ;
+    schema:telephone "062 893 28 83"^^xsd:string .
+
+company:CD1FD0B8-90D8-4032-8262-35F0CC309AD0 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:DEU ;
+            schema:addressLocality "EE8C4788-7C7C-41FA-B777-99E5B28B380A"^^xsd:string ;
+            schema:streetAddress "Carl Bosch Strasse 38"^^xsd:string ] ;
+    schema:name "BASF Aktiengesellschaft" .
+
+company:CD93C7F8-43B9-4EE9-B319-5277F2A417A3 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:DEU ;
+            schema:addressLocality "7366BD3C-6752-41DD-B371-5243AB553C6D"^^xsd:string ;
+            schema:streetAddress "Bärweiler Strasse 55"^^xsd:string ] ;
+    schema:name "Agro Trade GMBH" .
+
+company:CEB15E83-7A70-4DF6-818E-E3FCAC9D976A a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:NLD ;
+            schema:addressLocality "ABCAFC74-3660-4D2D-8D90-C8401C695618"^^xsd:string ;
+            schema:streetAddress "Claudius Prinsenlaan 144 a,"^^xsd:string ] ;
+    schema:name "UPL Benelux B.V." .
+
+company:CFF74E94-F3AA-43B8-83DA-2DEB1C8133EE a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "E8045F60-46C0-4253-9865-C2F5CF5BF916"^^xsd:string ;
+            schema:streetAddress "Bahnhofstrasse 70"^^xsd:string ] ;
+    schema:name "AGFS Switzerland GmbH" .
+
+company:D28B0161-74CE-40DB-8251-E0273FF90F80 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:ESP ;
+            schema:addressLocality "FCADF922-A28C-48BD-AFC4-6E055215BBA2"^^xsd:string ;
+            schema:streetAddress "Pol. Ind. Fuente del Jarro, Ciudad de Sevilla, 53"^^xsd:string ] ;
+    schema:name "Industrias Afrasa S.A" .
+
+company:D37FB52F-E8FD-482E-8609-254207226089 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "09740CC6-07DA-4944-B019-8077A865CA8B"^^xsd:string ;
+            schema:streetAddress "Klybeckstrasse 161"^^xsd:string ] ;
+    schema:name "BASF Schweiz AG" .
+
+company:D38ACFCB-C55E-4D41-8D9C-B8299BA92D7D a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "4BBCDE56-225C-4FD9-B521-90A134E48047"^^xsd:string ;
+            schema:streetAddress "Via San Martino    16 a"^^xsd:string ] ;
+    schema:name "Sofbey SA" ;
+    schema:telephone "091 223 10 90"^^xsd:string .
+
+company:D52843E7-E938-485C-82AF-2E10C2DDE796 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:BEL ;
+            schema:addressLocality "20A90BF7-FBB5-46F6-928A-949E9363E900"^^xsd:string ;
+            schema:streetAddress "Industrielaan 6 B"^^xsd:string ] ;
+    schema:name "Eurofyto" .
+
+company:D6097D20-A99D-4999-829B-63AF6340D81D a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:FRA ;
+            schema:addressLocality "F58B8662-8A19-4986-B16D-0F2A21196E7C"^^xsd:string ;
+            schema:streetAddress "137, Rue de l'université"^^xsd:string ] ;
+    schema:name "DU PONT DE NEMOURS (FRANCE) S.A." .
+
+company:D6D16C61-DC28-412C-95EF-255287481281 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:FRA ;
+            schema:addressLocality "B6D3691C-651A-48B6-BA9D-1265F3FF7AE2"^^xsd:string ;
+            schema:streetAddress "PARC D'AFFAIRES DE CRECY 2, RUE CLAUDE CHAPPE"^^xsd:string ] ;
+    schema:name "Valent Biosciences" .
+
+company:D7EDD8E3-AA53-4E77-AA50-F3BB3DD6C128 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "BD9907D7-574E-4103-BB7C-055A6EA8D1F2"^^xsd:string ;
+            schema:streetAddress "Nordring 4"^^xsd:string ] ;
+    schema:name "fenaco Genossenschaft - AGROLINE" .
+
+company:D8E43CCB-56FB-4FDC-A8D4-8249931D0271 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "BE5935D4-5DA5-4313-B1A6-38B4D97BA6D1"^^xsd:string ;
+            schema:streetAddress "Gewerbestrasse 12"^^xsd:string ] ;
+    schema:name "Koppert Deutschland GmbH" .
+
+company:DA44DD9C-E16D-494A-955B-ACC5370BD0A3 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:BEL ;
+            schema:addressLocality "F02D377D-B7F2-4B3D-B813-1C86DD591B0F"^^xsd:string ;
+            schema:postOfficeBoxNumber "7"^^xsd:string ;
+            schema:streetAddress "Grote Mark"^^xsd:string ] ;
+    schema:name "Kregliner Europe nv" .
+
+company:DA548FE9-0512-425C-B910-EF7CD997758A a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:HUN ;
+            schema:addressLocality "0F1D8DD4-CAB5-49A9-8BE7-A5D18875DAD4"^^xsd:string ;
+            schema:postOfficeBoxNumber "140"^^xsd:string ;
+            schema:streetAddress "Patak setany 140, 2090 Remeteszolos, HU"^^xsd:string ] ;
+    schema:name "Agrocare Chemicals KFT" .
+
+company:DB6D28FB-F4B4-4E3B-9FB0-025A410D38D1 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:PRT ;
+            schema:addressLocality "8F6E5DF5-86FA-49B4-A9EE-166276906D09"^^xsd:string ;
+            schema:streetAddress "Avnida do Rio Tejo, Herdade das Praias"^^xsd:string ] ;
+    schema:name "Ascenza Agro S.A." .
+
+company:DCE9B84C-BFF6-40E0-8DED-B0FDAF578D82 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "AA83B908-6C63-4953-803B-4B0F7786E5C9"^^xsd:string ;
+            schema:streetAddress "Postfach 109"^^xsd:string ] ;
+    schema:name "Amreco AG" ;
+    schema:telephone "032 621 69 70"^^xsd:string .
+
+company:DF50D39B-AB4F-44A0-8443-3047A3E658BE a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:FRA ;
+            schema:addressLocality "275EC287-0D63-403B-8EBC-D7CF85272377"^^xsd:string ;
+            schema:streetAddress "16, rue Jean-Marie Leclair - CS 90106"^^xsd:string ] ;
+    schema:name "Bayer SAS" .
+
+company:E2B788E9-F3EE-4E72-96FA-BE608B2AB14E a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:FRA ;
+            schema:addressLocality "604B2785-0A52-4D67-8C65-3DE4909706E3"^^xsd:string ;
+            schema:postOfficeBoxNumber "B.P. 90149"^^xsd:string ;
+            schema:streetAddress "Rue de Wittelsheim 82"^^xsd:string ] ;
+    schema:name "Corteva Agriscience France S.A.S" .
+
+company:E7574BD1-84C7-4819-8058-F916A9C1A63F a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:AUT ;
+            schema:addressLocality "A510FB6D-4722-4462-8242-A5D693B634BE"^^xsd:string ;
+            schema:streetAddress "Grossfeiting 16a"^^xsd:string ] ;
+    schema:name "TBH Agrochemie GmbH" .
+
+company:E99A9FEC-68DF-4311-85C9-0B3CA1FF72FE a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "CC8B2132-F96B-4042-B3DA-7A2A25B515C9"^^xsd:string ;
+            schema:streetAddress "Peter-Merian-Strasse 84"^^xsd:string ] ;
+    schema:name "Bayer (Schweiz) AG" ;
+    schema:telephone "031 869 16 66"^^xsd:string .
+
+company:E9B180EA-0041-4A07-A2D6-3D7649501FF0 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:ITA ;
+            schema:addressLocality "4538CBF6-E701-4BD4-98B9-C811DC08A284"^^xsd:string ;
+            schema:postOfficeBoxNumber "16121"^^xsd:string ;
+            schema:streetAddress "Via B. Bosco 57/3"^^xsd:string ] ;
+    schema:name "I.B.G. S.R.L." .
+
+company:EAF6DF7B-6DD2-4329-B830-0A6995C8C832 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:DEU ;
+            schema:addressLocality "5F6D3365-2A21-4F71-9485-65DA68B0DBFF"^^xsd:string ;
+            schema:streetAddress "Singapurstrasse 1"^^xsd:string ] ;
+    schema:name "Cosaco GmbH" ;
+    schema:telephone "+49 40 2365 20"^^xsd:string .
+
+company:ED249B21-3380-4D8E-A112-2054AF44416B a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:ESP ;
+            schema:addressLocality "80A92C29-BE22-4312-B599-FBA1EC6C94B8"^^xsd:string ;
+            schema:streetAddress "Valle del Roncal 12-1 Pl Oficina N. 7"^^xsd:string ] ;
+    schema:name "Proplan Plant Protection Company S.L." .
+
+company:EE919F6B-0749-405A-8F34-5BCDA3AC4A70 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:GBR ;
+            schema:addressLocality "F6FA8D37-7FE9-4497-BFCF-F14E51636A6D"^^xsd:string ;
+            schema:streetAddress "1 Bell Street, Maidenhead"^^xsd:string ] ;
+    schema:name "JT Agro Ltd" .
+
+company:EF9276CE-1A8D-4E3F-A200-E88F2616B7AB a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "F0D0C655-191C-4C26-A49D-8B418BABF609"^^xsd:string ;
+            schema:streetAddress "Rudolf-Maag-Strasse  5"^^xsd:string ] ;
+    schema:name "Westland Schweiz GmbH" ;
+    schema:telephone "079 557 99 44"^^xsd:string .
+
+company:F01EC623-86A5-42D3-979A-6EFA1DB0DC50 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "5CDBCC3F-FB83-4459-A40C-EA71105BE77E"^^xsd:string ;
+            schema:streetAddress "Industriepark 10"^^xsd:string ] ;
+    schema:name "Linde Gas Schweiz AG" ;
+    schema:telephone "058 748 17 62  mobile 079 322 32 01"^^xsd:string .
+
+company:F05FD7E3-EA3C-46CE-A537-B40375F273AA a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "5ED5B7CB-70CC-41BB-865D-5DF19CC490B5"^^xsd:string ;
+            schema:streetAddress "Stahlermatten 6"^^xsd:string ] ;
+    schema:name "Andermatt Biocontrol Suisse AG" ;
+    schema:telephone "062 917 50 05"^^xsd:string .
+
+company:F1524125-C104-4360-AC0D-47A2036FC45A a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:BEL ;
+            schema:addressLocality "B5492A16-9287-4CA7-ABCF-F584610D256E"^^xsd:string ;
+            schema:streetAddress "Pantserschipstraat 207"^^xsd:string ] ;
+    schema:name "Taminco N.V." .
+
+company:F266967B-5237-47FD-951C-9BC47F899F44 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:DNK ;
+            schema:addressLocality "7EC06D7C-3D04-424A-9D0A-045B1BC15A11"^^xsd:string ;
+            schema:postOfficeBoxNumber "P.O. Box 9"^^xsd:string ;
+            schema:streetAddress ""^^xsd:string ] ;
+    schema:name "Cheminova Agro A/S" ;
+    schema:telephone "0045 96 90 96 90"^^xsd:string .
+
+company:F3148B35-3C53-4CC8-9A3B-972242D3ADA0 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:GBR ;
+            schema:addressLocality "32297A43-CBA3-4946-90E8-FF2C6EB249FC"^^xsd:string ;
+            schema:postOfficeBoxNumber "WR 2 5AA"^^xsd:string ;
+            schema:streetAddress "3, The Bull Ring"^^xsd:string ] ;
+    schema:name "Fine Agrochemicals Limited" .
+
+company:F3398B14-FE79-4C9A-BCC4-4DE9889E0FDC a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "B60D0C62-FE74-419C-A0DE-094ACFB2F9E8"^^xsd:string ;
+            schema:postOfficeBoxNumber "1468"^^xsd:string ;
+            schema:streetAddress "Rue du Mont-Blanc 9"^^xsd:string ] ;
+    schema:name "IFR Associés SA" .
+
+company:F3A61069-695E-4FB3-A528-AC2E354DD1D8 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "3B6DE63C-18D5-4307-A993-C5456ED54218"^^xsd:string ;
+            schema:streetAddress "Le Ferrajoz 4"^^xsd:string ] ;
+    schema:name "Seydoux Grains Sàrl" .
+
+company:F3FE8D14-435C-4F8B-B9CF-42B336FA43E1 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:ITA ;
+            schema:addressLocality "034FA396-3E62-4F0E-A67C-D84904DC11A4"^^xsd:string ;
+            schema:streetAddress "Via Monterumici 8"^^xsd:string ] ;
+    schema:name "ICL Italia Treviso srl" .
+
+company:F42A9003-20F5-4B57-B02E-599F42EC7C89 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:DEU ;
+            schema:addressLocality "483277E1-CDE5-4FC4-A1F2-928CB0A2B973"^^xsd:string ;
+            schema:postOfficeBoxNumber "67117"^^xsd:string ;
+            schema:streetAddress "Speyerer Straße 2"^^xsd:string ] ;
+    schema:name "BASF SE" .
+
+company:F4A4E0D8-6DC2-4EDD-B90A-C1280B700D01 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:DEU ;
+            schema:addressLocality "FE8338CE-80C1-4468-B184-B1B257B74BB0"^^xsd:string ;
+            schema:streetAddress "Holländerkoppel 1a"^^xsd:string ] ;
+    schema:name "Tilco-Alginure GmbH" .
+
+company:F4CF215F-2BBA-412B-BC41-21DBF3C6081E a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:FRA ;
+            schema:addressLocality "BBF1A97F-5D0C-49CB-B483-5CE971858E94"^^xsd:string ;
+            schema:postOfficeBoxNumber "11"^^xsd:string ;
+            schema:streetAddress "bis quai Perrache"^^xsd:string ] ;
+    schema:name "FMC France" .
+
+company:F55993FC-4748-4645-8ECA-7DF7F9A13783 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:ITA ;
+            schema:addressLocality "A47E38FB-58B9-45FC-8B35-6633C07B72E3"^^xsd:string ;
+            schema:streetAddress "Via Gallarate, 139"^^xsd:string ] ;
+    schema:name "Syngenta Italia S.P.A." .
+
+company:F5ED6854-80CA-411E-AC62-FE31C7179337 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:FRA ;
+            schema:addressLocality "6FCE7F18-9522-45D6-BAB4-C19F72403B54"^^xsd:string ;
+            schema:streetAddress "14-20 Rue Pierre Baizet"^^xsd:string ] ;
+    schema:name "Bayer CropScience S.A." .
+
+company:F9CB71B1-821C-484A-848F-C7B838C9E9EB a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:FRA ;
+            schema:addressLocality "FE05A2F7-16C6-48D7-A607-96AB2AF345BE"^^xsd:string ;
+            schema:streetAddress "33 Rue de Verdun"^^xsd:string ] ;
+    schema:name "Adama France SAS" .
+
+company:FAEB850E-0B1B-45D7-A042-3A8A6962E67C a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:LUX ;
+            schema:addressLocality "76F171BF-1764-409D-B984-845C5851B042"^^xsd:string ;
+            schema:streetAddress "Rte. D'Echternac 15"^^xsd:string ] ;
+    schema:name "Agrostar SARL" .
+
+company:FB53BB8E-8838-4BB2-ACF0-65B5523F31B4 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:DEU ;
+            schema:addressLocality "753882CB-233C-4020-8631-1EF3ECFA49A8"^^xsd:string ;
+            schema:streetAddress ""^^xsd:string ] ;
+    schema:name "Bayer CropScience AG" ;
+    schema:telephone "0049 69 305 3763"^^xsd:string .
+
+company:FB8A3370-44B1-4FD3-B24F-49F362C77A83 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:DNK ;
+            schema:addressLocality "41C49172-0DC8-4D9D-ADC9-1499A884E958"^^xsd:string ;
+            schema:streetAddress "Thyboronvej 78"^^xsd:string ] ;
+    schema:name "FMC Agricultural Solutions A/S" .
+
+company:FC969989-9163-408B-90EE-811D1ACA088C a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:BEL ;
+            schema:addressLocality "10642F81-5DED-4D34-8DC9-776BBFE8E7F0"^^xsd:string ;
+            schema:streetAddress "Heedstraat 58"^^xsd:string ] ;
+    schema:name "Sharda Europe b.v.b.a." .
+
+company:FE30ADE9-FC5C-4C46-B4C7-0B583C7569DA a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "BCB1E4AD-8F6F-4F8E-8514-4050D546F8BA"^^xsd:string ;
+            schema:streetAddress "Rue des Pilettes 3"^^xsd:string ] ;
+    schema:name "SBM Life Science SA" .
+
+company:FF21DE18-8617-453D-B405-444FF3251247 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:CHE ;
+            schema:addressLocality "8FED4B93-C17D-412A-9728-BFAAC065137B"^^xsd:string ;
+            schema:streetAddress "Luzernstrasse 11"^^xsd:string ] ;
+    schema:name "Amstutz-Produkte AG" ;
+    schema:telephone "041 448 14 41"^^xsd:string .
+
+company:FF482DC0-DAC1-48A8-8B42-4120C4BDA2E6 a schema:Organization ;
+    schema:address [ a schema:PostalAddress ;
+            schema:addressCountry country:BEL ;
+            schema:addressLocality "5CE27CCD-6C46-440F-B7C1-2396604387F8"^^xsd:string ;
+            schema:streetAddress "rue du Trone 130"^^xsd:string ] ;
+    schema:name "Tessenderlo Groupe" .
 
 ingredient:00CAE2E6-762B-492B-B54C-5384776F29EB-0B26FA4D-F418-468D-895E-8C368A55B504-gpl a schema:QuantitativeValue ;
     schema:unitCode unit:GM-PER-L ;
