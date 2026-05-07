@@ -36,8 +36,9 @@
 # CORE PHYTOSANITARY CLASSES & PROPERTIES
 # ==============================================================================
 
-:Cultivation a owl:Class ;
-    schema:name "Cultivation"@en .
+:Crop a owl:Class ;
+    schema:name "Crop"@en,
+        "Kultur"@de .
 
 :Pest a owl:Class ;
     schema:name "Pest"@en .

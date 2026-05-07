@@ -366,8 +366,8 @@ It systematically links a target pest with the applicable cultivation domain and
         ] ,
         [
             sh:name "Cultivation"@en ;
-            sh:path :cultivation ;
-            sh:class :Cultivation ;
+            sh:path :crop ;
+            sh:class :Crop ;
             sh:minCount 1 ;
         ] ,
         [
@@ -414,12 +414,20 @@ shape:ApplicationComment a sh:NodeShape ;
     sh:targetClass :ApplicationComment ;
     sh:property shape:multiLanguageDescription .
 
-shape:Cultivation a sh:NodeShape ;
-    rdfs:label "Cultivation"@en,
+shape:Crop a sh:NodeShape ;
+    rdfs:label "Crop"@en,
         "Kultur"@de ;
     rdfs:comment "Denotes the specific agronomic crop, botanical grouping, or agricultural setting targeted for treatment. It forms the biological jurisdiction defining where the product may be legally utilized."@en ;
-    sh:targetClass :Cultivation ;
-    sh:property shape:multiLanguageName .
+    sh:targetClass :Crop ;
+    sh:property shape:multiLanguageName,
+    shape:identifier,
+    [
+        sh:name "Parent crop"@en,
+            "Übergeordnete Kultur"@de ;
+        sh:path schema:isPartOf ;
+        sh:minCount 0 ;
+        sh:maxCount 2 ;
+    ] .
 
 shape:Obligation a sh:NodeShape ;
     rdfs:label "Obligation"@en,
@@ -562,6 +570,12 @@ shape:QuantitativeValue a sh:NodeShape ;
 # ==============================================================================
 # GENERIC PROPERTIES THAT ARE RE-USED
 # ==============================================================================
+
+shape:identifier sh:name "Identifier"@en,
+        "Identifikator"@de ;
+    sh:path schema:identifier ;
+    sh:minCount 1 ;
+    sh:maxCount 1 .
 
 shape:multiLanguageName sh:name "Name"@en ;
     sh:path schema:name ;
