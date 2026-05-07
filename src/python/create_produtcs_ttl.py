@@ -24,7 +24,6 @@ ZEFIX = namespaces["zefix"]
 COMPANY = namespaces["company"]
 COUNTRY = namespaces["country"]
 XSD = namespaces["xsd"]
-INGREDIENT = namespaces["ingredient"]
 
 # Load all RDF mappings
 # Explicitly specify which namespace each mapping uses
@@ -57,7 +56,6 @@ def products_ttl(
     graph.bind("zefix", ZEFIX)
     graph.bind("unit", UNIT)
     graph.bind("country", COUNTRY)
-    graph.bind("ingredient", INGREDIENT)
     graph.bind("rdfs", RDFS)
     graph.bind("xsd", XSD)
     graph.namespace_manager.bind("schema", SCHEMA, override=True, replace=True)
@@ -66,7 +64,6 @@ def products_ttl(
     con = duckdb.connect(db_path, read_only=True)
     products_df = con.execute("SELECT * FROM Product").df()
     pro_org_link_df = con.execute("SELECT * FROM ProductOrganisation").df()
-    product_ingredients_df = con.execute("SELECT * FROM ProductIngredient").df()
     con.close()
 
     # Create product triples
@@ -155,23 +152,6 @@ def products_ttl(
 
         except Exception as error:
             print(f"Row {i} (Product {product_id_str}): {error}")
-
-    # Create product to ingredient relation
-    for i, row in product_ingredients_df.iterrows():
-        try:
-            if pd.isna(row.get("nk_codetable_substance_id")) or pd.isna(row.get("product_ref_or_id")):
-                continue
-
-            product_id_str = str(row.get("product_ref_or_id")).strip()
-            substance_id_str = str(row.get("nk_codetable_substance_id")).strip()
-
-            product_uri = PRODUCT[product_id_str]
-            ingredient_uri = INGREDIENT[f"{product_id_str}-{substance_id_str}"]
-
-            graph.add((product_uri, BASE.hasIngredient, ingredient_uri))
-
-        except Exception as error:
-            print(f"Row {i} (Product-Ingredient link {product_id_str}): {error}")
 
     # Print graph info
     print(f"[i] Total triples: {len(graph)}")
