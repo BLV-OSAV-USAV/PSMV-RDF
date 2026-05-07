@@ -65,6 +65,8 @@ shape:ApplicationArea a sh:NodeShape ;
         "Application Area"@en ;
     rdfs:comment "Establishes the macro-environmental or physical operational theater in which a product's usage is legally authorized. Common delineations include enclosed greenhouse environments, open agricultural fields, or specialized storage facilities."@en ;
     sh:property [ sh:in ( "B" "F" "G" "L" "N" "O" "S" "W" "Z" "Ö" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
             sh:name "Code"@en ;
             sh:path schema:identifier ],
         shape:multiLanguageName ;
