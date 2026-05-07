@@ -25,7 +25,6 @@ def crops_ttl(
     
     # Fallback instantiation if they are not explicitly present in namespaces.yaml
     CROP = namespaces.get("crop", Namespace(str(BASE) + "crop/"))
-    CULTIVATION = namespaces.get("cultivation", Namespace(str(BASE) + "cultivation/"))
 
     # Create empty graph
     graph = Graph()
@@ -33,7 +32,6 @@ def crops_ttl(
     # Bind namespaces
     graph.bind("", BASE)
     graph.bind("crop", CROP)
-    graph.bind("cultivation", CULTIVATION)
     graph.namespace_manager.bind("schema", SCHEMA, override=True, replace=True)
 
     # Read data using a pivoting approach to group translations into a single row
@@ -68,10 +66,10 @@ def crops_ttl(
             # Add Identifier
             graph.add((crop_uri, SCHEMA.identifier, Literal(code_id)))
 
-            # Add Part Of Cultivation link
+            # Add Part
             if pd.notna(row.get("parent_id")):
                 parent_id = str(row["parent_id"]).strip()
-                graph.add((crop_uri, SCHEMA.isPartOf, CULTIVATION[parent_id]))
+                graph.add((crop_uri, SCHEMA.isPartOf, CROP[parent_id]))
 
             # Add language-tagged Names
             if pd.notna(row.get("DE")):

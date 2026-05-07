@@ -1,115 +1,73 @@
 @prefix : <https://agriculture.ld.admin.ch/plant-protection/> .
 @prefix crop: <https://agriculture.ld.admin.ch/plant-protection/crop/> .
-@prefix cultivation: <https://agriculture.ld.admin.ch/plant-protection/cultivation/> .
 @prefix schema: <http://schema.org/> .
-
-crop:00D94F57-BA6F-4BA0-8F68-26D4C497539A a :Crop ;
-    schema:identifier "00D94F57-BA6F-4BA0-8F68-26D4C497539A" ;
-    schema:isPartOf cultivation:890D8A5E-BF86-4B2D-9B98-45B779D80F7F ;
-    schema:name "Ein- und zweijährige Zierpflanzen"@de,
-        "plantes ornementales annuelles et bisannuelles"@fr,
-        "Piante ornamentali annuali e biennali"@it .
-
-crop:0106A8DF-6CDF-4E18-8F46-3D9E1D52D0E5 a :Crop ;
-    schema:identifier "0106A8DF-6CDF-4E18-8F46-3D9E1D52D0E5" ;
-    schema:name "Baby-Leaf"@de,
-        "Baby-Leaf"@fr,
-        "Baby-Leaf"@it .
 
 crop:01AFF6EB-9C8D-4D0D-B225-0BA07B59A72F a :Crop ;
     schema:identifier "01AFF6EB-9C8D-4D0D-B225-0BA07B59A72F" ;
-    schema:isPartOf cultivation:1DD3F253-4B23-4B69-BFB1-1C24CE7D5508 ;
+    schema:isPartOf crop:1DD3F253-4B23-4B69-BFB1-1C24CE7D5508 ;
     schema:name "Hopfen"@de,
         "Houblon"@fr,
         "Luppolo"@it .
 
 crop:02BF379A-E526-422A-952B-3B0CD995F8C1 a :Crop ;
     schema:identifier "02BF379A-E526-422A-952B-3B0CD995F8C1" ;
-    schema:isPartOf cultivation:5DF3AB4D-7CAC-4112-90D9-67BD80EC5E96 ;
+    schema:isPartOf crop:5DF3AB4D-7CAC-4112-90D9-67BD80EC5E96 ;
     schema:name "Erbsen mit Hülsen"@de,
         "pois non écossés"@fr,
         "Piselli con baccello"@it .
 
 crop:037E11B2-128A-4194-9A5B-A3E980AE4113 a :Crop ;
     schema:identifier "037E11B2-128A-4194-9A5B-A3E980AE4113" ;
-    schema:isPartOf cultivation:5AC11C43-B41E-4823-8515-E991D4EA1B3C ;
+    schema:isPartOf crop:5AC11C43-B41E-4823-8515-E991D4EA1B3C ;
     schema:name "Knoblauch"@de,
         "ail"@fr,
         "Aglio"@it .
 
 crop:048FDB44-710A-4801-849C-72F1A458DB82 a :Crop ;
     schema:identifier "048FDB44-710A-4801-849C-72F1A458DB82" ;
-    schema:isPartOf cultivation:8B5A3E2B-2534-4FC0-84C5-685915165A77 ;
+    schema:isPartOf crop:8B5A3E2B-2534-4FC0-84C5-685915165A77 ;
     schema:name "Triticale"@de,
         "Triticale"@fr,
         "Triticale"@it .
 
 crop:07A12E5B-DB0B-4421-A215-E306768AC0BE a :Crop ;
     schema:identifier "07A12E5B-DB0B-4421-A215-E306768AC0BE" ;
-    schema:isPartOf cultivation:E9E3C127-33C1-40D9-8552-3CBE45E8E4C4 ;
+    schema:isPartOf crop:E9E3C127-33C1-40D9-8552-3CBE45E8E4C4 ;
     schema:name "Tomaten Spezialitäten"@de,
         "tomates, spécialités"@fr,
         "Varietà particolari di pomodoro"@it .
 
-crop:086E34F3-82E5-4F92-9224-41C9F7529E70 a :Crop ;
-    schema:identifier "086E34F3-82E5-4F92-9224-41C9F7529E70" ;
-    schema:isPartOf cultivation:1DD3F253-4B23-4B69-BFB1-1C24CE7D5508 ;
-    schema:name "Futter- und Zuckerrüben"@de,
-        "betteraves à sucre et fourragère"@fr,
-        "Barbabietole da foraggio e da zucchero"@it .
-
 crop:09269926-BA07-42DC-BE9D-5B34658BDBF0 a :Crop ;
     schema:identifier "09269926-BA07-42DC-BE9D-5B34658BDBF0" ;
-    schema:isPartOf cultivation:8303C191-3315-4942-91DF-668C019850D7 ;
+    schema:isPartOf crop:8303C191-3315-4942-91DF-668C019850D7 ;
     schema:name "Wassermelonen"@de,
         "pastèque"@fr,
         "Angurie"@it .
 
 crop:095E9650-A880-4BD2-A1BB-39297582BCE6 a :Crop ;
     schema:identifier "095E9650-A880-4BD2-A1BB-39297582BCE6" ;
-    schema:isPartOf cultivation:1DD3F253-4B23-4B69-BFB1-1C24CE7D5508 ;
+    schema:isPartOf crop:1DD3F253-4B23-4B69-BFB1-1C24CE7D5508 ;
     schema:name "Sonnenblume"@de,
         "Tournesol"@fr,
         "Girasole"@it .
 
-crop:096444CD-43E6-41F9-8914-2E7DADA4C801 a :Crop ;
-    schema:identifier "096444CD-43E6-41F9-8914-2E7DADA4C801" ;
-    schema:isPartOf cultivation:46901564-D096-4323-AE81-C93831AFEC64 ;
-    schema:name "Paprika"@de,
-        "poivron"@fr,
-        "Peperone"@it .
-
-crop:0A3519B1-A42F-43EE-AF82-6DCF17EA8DA6 a :Crop ;
-    schema:identifier "0A3519B1-A42F-43EE-AF82-6DCF17EA8DA6" ;
-    schema:isPartOf cultivation:E59545AD-3331-4E3D-B58D-9F67833C060B ;
-    schema:name "Knöterichgewächse (Polygonaceae)"@de,
-        "polygonacées"@fr,
-        "Poligonacee"@it .
-
-crop:0A5F3E91-96B9-4C6D-B99C-2E6E4835F6D5 a :Crop ;
-    schema:identifier "0A5F3E91-96B9-4C6D-B99C-2E6E4835F6D5" ;
-    schema:isPartOf cultivation:7B3C8CEE-526F-4381-A757-669C1864291A ;
-    schema:name "Nadelgehölze (Koniferen)"@de,
-        "conifères"@fr,
-        "Conifere"@it .
-
 crop:0A88EFE2-B85E-4BF7-9C38-AEE8CB2BFE42 a :Crop ;
     schema:identifier "0A88EFE2-B85E-4BF7-9C38-AEE8CB2BFE42" ;
-    schema:isPartOf cultivation:D541F2F5-8BA6-4E26-AA66-9CF469648AFF ;
+    schema:isPartOf crop:D541F2F5-8BA6-4E26-AA66-9CF469648AFF ;
     schema:name "Ysop"@de,
         "Hysope"@fr,
         "Issopo"@it .
 
 crop:0D20E815-633E-4F38-AC93-7B6578B0483E a :Crop ;
     schema:identifier "0D20E815-633E-4F38-AC93-7B6578B0483E" ;
-    schema:isPartOf cultivation:5276BCA7-CEA5-4B6D-90E3-52F3A0532490 ;
+    schema:isPartOf crop:5276BCA7-CEA5-4B6D-90E3-52F3A0532490 ;
     schema:name "Knollenfenchel"@de,
         "fenouil bulbeux"@fr,
         "Finocchio dolce"@it .
 
 crop:0DAB25B6-C3AA-430B-BF83-05FA66D889A4 a :Crop ;
     schema:identifier "0DAB25B6-C3AA-430B-BF83-05FA66D889A4" ;
-    schema:isPartOf cultivation:D541F2F5-8BA6-4E26-AA66-9CF469648AFF ;
+    schema:isPartOf crop:D541F2F5-8BA6-4E26-AA66-9CF469648AFF ;
     schema:name "Koriander"@de,
         "coriandre"@fr,
         "Coriandolo"@it .
@@ -121,23 +79,16 @@ crop:0E2847EB-CEFD-4640-82EB-F09F3F1A5E13 a :Crop ;
         "origan"@fr,
         "origano"@it .
 
-crop:0F5F1FEE-084C-4961-A76F-82F9B17B2635 a :Crop ;
-    schema:identifier "0F5F1FEE-084C-4961-A76F-82F9B17B2635" ;
-    schema:isPartOf cultivation:C6EBB3D7-3050-4C36-BBC2-CBD20D6B9E56 ;
-    schema:name "Kernobst"@de,
-        "fruits à pépins"@fr,
-        "Frutta a granelli"@it .
-
 crop:102C28F6-4AFB-4079-909B-ACE8E0819A77 a :Crop ;
     schema:identifier "102C28F6-4AFB-4079-909B-ACE8E0819A77" ;
-    schema:isPartOf cultivation:A8BAC5BB-239F-4EE0-8CE2-F55590DA3FC0 ;
+    schema:isPartOf crop:A8BAC5BB-239F-4EE0-8CE2-F55590DA3FC0 ;
     schema:name "Bohnen ohne Hülsen"@de,
         "haricots écossés"@fr,
         "Fagioli senza baccello"@it .
 
 crop:10642620-4F7B-4E5E-8F38-D73914354014 a :Crop ;
     schema:identifier "10642620-4F7B-4E5E-8F38-D73914354014" ;
-    schema:isPartOf cultivation:890D8A5E-BF86-4B2D-9B98-45B779D80F7F ;
+    schema:isPartOf crop:890D8A5E-BF86-4B2D-9B98-45B779D80F7F ;
     schema:name "Schnittblumen"@de,
         "fleurs coupées"@fr,
         "Fiori recisi"@it .
@@ -150,23 +101,18 @@ crop:122B909A-CE9C-47BC-B5CA-DCF523646D38 a :Crop ;
 
 crop:13BB4B9E-6CEE-4729-AE29-8A4380EB33B0 a :Crop ;
     schema:identifier "13BB4B9E-6CEE-4729-AE29-8A4380EB33B0" ;
-    schema:isPartOf cultivation:1575BC21-D089-4248-99A6-676F14E1309F ;
+    schema:isPartOf crop:1575BC21-D089-4248-99A6-676F14E1309F ;
     schema:name "Liegendes Rundholz im Wald und auf Lagerplätzen"@de,
         "grumes en forêt et sur les places de stockage"@fr,
         "Tronchi abbattuti nella foresta e presso piazzali di deposito"@it .
 
 crop:14B19DFD-331F-4C30-8724-8EDDF8E2D0D4 a :Crop ;
     schema:identifier "14B19DFD-331F-4C30-8724-8EDDF8E2D0D4" ;
-    schema:isPartOf cultivation:D541F2F5-8BA6-4E26-AA66-9CF469648AFF ;
+    schema:isPartOf crop:D541F2F5-8BA6-4E26-AA66-9CF469648AFF ;
     schema:name "Rosmarin"@de,
         "Rosemary"@en,
         "romarin"@fr,
         "Rosmarino"@it .
-
-crop:1575BC21-D089-4248-99A6-676F14E1309F a :Crop ;
-    schema:identifier "1575BC21-D089-4248-99A6-676F14E1309F" ;
-    schema:name "allg. Forstwirtschaft"@de,
-        "domaine app. sylviculture"@fr .
 
 crop:17B69B05-E650-4A6F-815A-D6DA55A92CDB a :Crop ;
     schema:identifier "17B69B05-E650-4A6F-815A-D6DA55A92CDB" ;
@@ -174,98 +120,65 @@ crop:17B69B05-E650-4A6F-815A-D6DA55A92CDB a :Crop ;
         "Les exploitations tabacoles"@fr,
         "Aziende produttrici di tabacco"@it .
 
-crop:17CE2494-D0C9-484B-A91E-15B7B04733FD a :Crop ;
-    schema:identifier "17CE2494-D0C9-484B-A91E-15B7B04733FD" ;
-    schema:isPartOf cultivation:E59545AD-3331-4E3D-B58D-9F67833C060B ;
-    schema:name "Portulakgewächse (Portulacaceae)"@de,
-        "portulacacées (Portulacaceae)"@fr,
-        "Portulacee (Portulacaceae)"@it .
-
 crop:18C6314C-C067-4E7F-AAB6-2DEF3F01DF9D a :Crop ;
     schema:identifier "18C6314C-C067-4E7F-AAB6-2DEF3F01DF9D" ;
-    schema:isPartOf cultivation:D36B92CB-136F-46C3-8217-10C3F86ECA12 ;
+    schema:isPartOf crop:D36B92CB-136F-46C3-8217-10C3F86ECA12 ;
     schema:name "Suppensellerie"@de,
         "céleri-pomme pour bouillon"@fr,
         "Sedano da condimento"@it .
 
 crop:19C5BA72-A0D5-4409-8D05-0A7C9D821E20 a :Crop ;
     schema:identifier "19C5BA72-A0D5-4409-8D05-0A7C9D821E20" ;
-    schema:isPartOf cultivation:E55D75D3-B805-4BFD-B2B0-D02368BD32AC ;
+    schema:isPartOf crop:E55D75D3-B805-4BFD-B2B0-D02368BD32AC ;
     schema:name "Brunnenkresse"@de,
         "cresson de fontaine"@fr,
         "Crescione acquatico"@it .
 
 crop:19CC4F57-CB08-4970-BEDB-3DB2B2CB1034 a :Crop ;
     schema:identifier "19CC4F57-CB08-4970-BEDB-3DB2B2CB1034" ;
-    schema:isPartOf cultivation:3FEAB48F-0D66-4814-B3E3-C4BC0AB749B3 ;
+    schema:isPartOf crop:3FEAB48F-0D66-4814-B3E3-C4BC0AB749B3 ;
     schema:name "Wald"@de,
         "forêt"@fr,
         "Bosco"@it .
 
 crop:1A1D511B-4ABD-44F2-8BB5-55192F5310D2 a :Crop ;
     schema:identifier "1A1D511B-4ABD-44F2-8BB5-55192F5310D2" ;
-    schema:isPartOf cultivation:D541F2F5-8BA6-4E26-AA66-9CF469648AFF ;
+    schema:isPartOf crop:D541F2F5-8BA6-4E26-AA66-9CF469648AFF ;
     schema:name "Petersilie"@de,
         "persil"@fr,
         "Prezzemolo"@it .
 
-crop:1B9B39A9-D742-4E8D-A88E-280B65C4B913 a :Crop ;
-    schema:identifier "1B9B39A9-D742-4E8D-A88E-280B65C4B913" ;
-    schema:isPartOf cultivation:890D8A5E-BF86-4B2D-9B98-45B779D80F7F ;
-    schema:name "Blumenknollen"@de,
-        "tubercules de fleurs"@fr,
-        "Radici tuberose floreali"@it .
-
 crop:1BFC9694-C7DC-4D74-84B2-1418AB94A8BA a :Crop ;
     schema:identifier "1BFC9694-C7DC-4D74-84B2-1418AB94A8BA" ;
-    schema:isPartOf cultivation:B05127D4-FF0A-4F36-AFDD-0D487043122A ;
+    schema:isPartOf crop:B05127D4-FF0A-4F36-AFDD-0D487043122A ;
     schema:name "Artischocken"@de,
         "artichaut"@fr,
         "Carciofi"@it .
 
 crop:1D9F568C-5170-43A1-86B9-B25808DD6A43 a :Crop ;
     schema:identifier "1D9F568C-5170-43A1-86B9-B25808DD6A43" ;
-    schema:isPartOf cultivation:E9E3C127-33C1-40D9-8552-3CBE45E8E4C4 ;
+    schema:isPartOf crop:E9E3C127-33C1-40D9-8552-3CBE45E8E4C4 ;
     schema:name "Cherrytomaten"@de,
         "tomate-cerise"@fr,
         "Pomodoro ciliegia"@it .
 
-crop:1DD3F253-4B23-4B69-BFB1-1C24CE7D5508 a :Crop ;
-    schema:identifier "1DD3F253-4B23-4B69-BFB1-1C24CE7D5508" ;
-    schema:name "allg. Feldbau"@de,
-        "domaine app. grande culture"@fr .
-
 crop:1E129025-DFD8-42D1-8A86-D90485B282A1 a :Crop ;
     schema:identifier "1E129025-DFD8-42D1-8A86-D90485B282A1" ;
-    schema:isPartOf cultivation:4A22B9D3-747C-4323-A852-1CB1F6ADB680 ;
+    schema:isPartOf crop:4A22B9D3-747C-4323-A852-1CB1F6ADB680 ;
     schema:name "Blumenkohl"@de,
         "chou-fleur"@fr,
         "Cavolfiore"@it .
 
-crop:1F004DAA-89AD-4A9D-A172-95D24B8A45FA a :Crop ;
-    schema:identifier "1F004DAA-89AD-4A9D-A172-95D24B8A45FA" ;
-    schema:isPartOf cultivation:A0C29069-5DBA-4E89-B7F9-4C556C272821 ;
-    schema:name "Brassica napus-Rüben"@de,
-        "rave de Brassica napus"@fr,
-        "Rapa di Brassica napus"@it .
-
-crop:1F03DDC0-19CF-48F1-BAB8-61CA4CEF24CF a :Crop ;
-    schema:identifier "1F03DDC0-19CF-48F1-BAB8-61CA4CEF24CF" ;
-    schema:isPartOf cultivation:1DD3F253-4B23-4B69-BFB1-1C24CE7D5508 ;
-    schema:name "Wiesen und Weiden"@de,
-        "Prairies et pâturages"@fr,
-        "Prati e pascoli"@it .
-
 crop:1F0B6451-EC2C-4647-A53A-23B0EAE626B1 a :Crop ;
     schema:identifier "1F0B6451-EC2C-4647-A53A-23B0EAE626B1" ;
-    schema:isPartOf cultivation:BA6FCA8F-68B8-4408-A267-2546B1FA5764 ;
+    schema:isPartOf crop:BA6FCA8F-68B8-4408-A267-2546B1FA5764 ;
     schema:name "Stachys"@de,
         "crosnes du japon"@fr,
         "Tuberina"@it .
 
 crop:21228D46-5B00-4CDD-9C71-48C0A0B21C78 a :Crop ;
     schema:identifier "21228D46-5B00-4CDD-9C71-48C0A0B21C78" ;
-    schema:isPartOf cultivation:5276BCA7-CEA5-4B6D-90E3-52F3A0532490 ;
+    schema:isPartOf crop:5276BCA7-CEA5-4B6D-90E3-52F3A0532490 ;
     schema:name "Wurzelpetersilie"@de,
         "Turnip-rooted parsley"@en,
         "persil à grosse racine"@fr,
@@ -284,26 +197,12 @@ crop:230F7417-5500-4124-B273-95AA1FFB940B a :Crop ;
         "ranunculus"@fr,
         "ranuncolo"@it .
 
-crop:2314EB9F-7207-409F-A0D4-89B6A1177363 a :Crop ;
-    schema:identifier "2314EB9F-7207-409F-A0D4-89B6A1177363" ;
-    schema:isPartOf cultivation:43ED81C2-40E7-4A22-9114-3E623BE1B14C ;
-    schema:name "Reben"@de,
-        "vigne"@fr,
-        "Vite"@it .
-
 crop:238AB652-AD62-4703-A74B-7550C693ED6E a :Crop ;
     schema:identifier "238AB652-AD62-4703-A74B-7550C693ED6E" ;
-    schema:isPartOf cultivation:30F9F737-0A18-43EC-AF88-F28940E567F1 ;
+    schema:isPartOf crop:30F9F737-0A18-43EC-AF88-F28940E567F1 ;
     schema:name "Einlegegurken"@de,
         "cornichons"@fr,
         "cetrioli per conserva"@it .
-
-crop:24A364B9-6BD7-42A6-A9EC-AB9E94E010FF a :Crop ;
-    schema:identifier "24A364B9-6BD7-42A6-A9EC-AB9E94E010FF" ;
-    schema:isPartOf cultivation:CA722B7E-8F16-4502-8139-C33F749545D4 ;
-    schema:name "Zwetschge / Pflaume"@de,
-        "prunier (pruneau/prune)"@fr,
-        "Prugno/Susino"@it .
 
 crop:24EA0CC6-D1D5-4BB4-981C-A836E3D7125D a :Crop ;
     schema:identifier "24EA0CC6-D1D5-4BB4-981C-A836E3D7125D" ;
@@ -313,14 +212,14 @@ crop:24EA0CC6-D1D5-4BB4-981C-A836E3D7125D a :Crop ;
 
 crop:25DA6F5A-1BD0-4040-A210-BB05CCB66AE4 a :Crop ;
     schema:identifier "25DA6F5A-1BD0-4040-A210-BB05CCB66AE4" ;
-    schema:isPartOf cultivation:E786D43D-444B-49D6-B0D0-294265F91403 ;
+    schema:isPartOf crop:E786D43D-444B-49D6-B0D0-294265F91403 ;
     schema:name "Löwenzahn"@de,
         "dent-de-lion"@fr,
         "Dente di leone"@it .
 
 crop:25DC9B01-CA06-426A-B743-C0D293447898 a :Crop ;
     schema:identifier "25DC9B01-CA06-426A-B743-C0D293447898" ;
-    schema:isPartOf cultivation:D541F2F5-8BA6-4E26-AA66-9CF469648AFF ;
+    schema:isPartOf crop:D541F2F5-8BA6-4E26-AA66-9CF469648AFF ;
     schema:name "Römische Kamille"@de,
         "lat. Chamaemelum nobile"@en,
         "Camomille romaine"@fr,
@@ -335,24 +234,17 @@ crop:269900C0-F407-4AFA-B3F2-D857EDACB733 a :Crop ;
 
 crop:27ACD8EA-49E8-4C99-84D4-53E2E605390E a :Crop ;
     schema:identifier "27ACD8EA-49E8-4C99-84D4-53E2E605390E" ;
-    schema:isPartOf cultivation:0A3519B1-A42F-43EE-AF82-6DCF17EA8DA6 ;
+    schema:isPartOf crop:0A3519B1-A42F-43EE-AF82-6DCF17EA8DA6 ;
     schema:name "Rhabarber"@de,
         "rhubarbe"@fr,
         "Rabarbaro"@it .
 
 crop:27FBFA25-5091-4D7E-9C96-3C0BC05B6474 a :Crop ;
     schema:identifier "27FBFA25-5091-4D7E-9C96-3C0BC05B6474" ;
-    schema:isPartOf cultivation:1DD3F253-4B23-4B69-BFB1-1C24CE7D5508 ;
+    schema:isPartOf crop:1DD3F253-4B23-4B69-BFB1-1C24CE7D5508 ;
     schema:name "Sorghum"@de,
         "Sorgho commun"@fr,
         "Sorgo"@it .
-
-crop:287584B7-E43E-494B-84C2-D13B2C9C3736 a :Crop ;
-    schema:identifier "287584B7-E43E-494B-84C2-D13B2C9C3736" ;
-    schema:isPartOf cultivation:8B5A3E2B-2534-4FC0-84C5-685915165A77 ;
-    schema:name "Wintergetreide"@de,
-        "Céréales d'automne"@fr,
-        "Cereali autunnali"@it .
 
 crop:28ECDBFE-F44F-44C6-BF06-9B7E6EBFC1F6 a :Crop ;
     schema:identifier "28ECDBFE-F44F-44C6-BF06-9B7E6EBFC1F6" ;
@@ -362,142 +254,100 @@ crop:28ECDBFE-F44F-44C6-BF06-9B7E6EBFC1F6 a :Crop ;
 
 crop:293D431D-8501-4D41-A0E5-F1A5AD59C8B6 a :Crop ;
     schema:identifier "293D431D-8501-4D41-A0E5-F1A5AD59C8B6" ;
-    schema:isPartOf cultivation:2314EB9F-7207-409F-A0D4-89B6A1177363 ;
+    schema:isPartOf crop:2314EB9F-7207-409F-A0D4-89B6A1177363 ;
     schema:name "Ertragsreben"@de,
         "vigne en production"@fr,
         "Vite in produzione"@it .
 
 crop:2A05DA01-5722-46A2-BCCF-3B75C6D17BB6 a :Crop ;
     schema:identifier "2A05DA01-5722-46A2-BCCF-3B75C6D17BB6" ;
-    schema:isPartOf cultivation:890D8A5E-BF86-4B2D-9B98-45B779D80F7F ;
+    schema:isPartOf crop:890D8A5E-BF86-4B2D-9B98-45B779D80F7F ;
     schema:name "Topf- und Kontainerpflanzen"@de,
         "plantes en pot et en container"@fr,
         "Pianta in vaso e in container"@it .
 
 crop:2AB457D1-DB9D-4545-92FF-04A6BD2CEC08 a :Crop ;
     schema:identifier "2AB457D1-DB9D-4545-92FF-04A6BD2CEC08" ;
-    schema:isPartOf cultivation:5276BCA7-CEA5-4B6D-90E3-52F3A0532490 ;
+    schema:isPartOf crop:5276BCA7-CEA5-4B6D-90E3-52F3A0532490 ;
     schema:name "Karotten"@de,
         "carotte"@fr,
         "Carote"@it .
 
 crop:2C8A4414-AD7F-4708-9C58-BF1969131693 a :Crop ;
     schema:identifier "2C8A4414-AD7F-4708-9C58-BF1969131693" ;
-    schema:isPartOf cultivation:D541F2F5-8BA6-4E26-AA66-9CF469648AFF ;
+    schema:isPartOf crop:D541F2F5-8BA6-4E26-AA66-9CF469648AFF ;
     schema:name "Kerbel"@de,
         "cerfeuil"@fr,
         "Cerfoglio"@it .
 
-crop:2D7D1AE2-E685-4C6B-B8EE-DC5C6391EC76 a :Crop ;
-    schema:identifier "2D7D1AE2-E685-4C6B-B8EE-DC5C6391EC76" ;
-    schema:isPartOf cultivation:E59545AD-3331-4E3D-B58D-9F67833C060B ;
-    schema:name "Spargelgewächse (Asparagaceae)"@de,
-        "asparagacées (Asparagaceae)"@fr,
-        "Asparagacee (Asparagaceae)"@it .
-
 crop:2E38C972-4160-4D2B-8ED2-3B48FC781EF0 a :Crop ;
     schema:identifier "2E38C972-4160-4D2B-8ED2-3B48FC781EF0" ;
-    schema:isPartOf cultivation:75317E57-B194-4B3D-8FF2-3489A39AC177 ;
+    schema:isPartOf crop:75317E57-B194-4B3D-8FF2-3489A39AC177 ;
     schema:name "Begonia"@de,
         "bégonia"@fr,
         "Begonia"@it .
 
 crop:2F7BD13A-BAA5-4708-83C6-17D44E57EA4D a :Crop ;
     schema:identifier "2F7BD13A-BAA5-4708-83C6-17D44E57EA4D" ;
-    schema:isPartOf cultivation:D40E1405-757C-4E3D-B26F-07D5F2251565 ;
+    schema:isPartOf crop:D40E1405-757C-4E3D-B26F-07D5F2251565 ;
     schema:name "Rosskastanie"@de,
         "marronnier d'Inde"@fr,
         "Ippocastano"@it .
 
-crop:2FAEBED2-193A-460C-A538-9B5C78024D98 a :Crop ;
-    schema:identifier "2FAEBED2-193A-460C-A538-9B5C78024D98" ;
-    schema:isPartOf cultivation:E59545AD-3331-4E3D-B58D-9F67833C060B ;
-    schema:name "Baldriangewächse (Valerianaceae)"@de,
-        "valérianacées"@fr,
-        "Valerianacee"@it .
-
 crop:302E5676-26A3-41EB-980F-2B6BDE117D3A a :Crop ;
     schema:identifier "302E5676-26A3-41EB-980F-2B6BDE117D3A" ;
-    schema:isPartOf cultivation:75317E57-B194-4B3D-8FF2-3489A39AC177 ;
+    schema:isPartOf crop:75317E57-B194-4B3D-8FF2-3489A39AC177 ;
     schema:name "Zierkürbis"@de,
         "courge d'ornement"@fr,
         "Zucca ornamentale"@it .
 
 crop:307A62EA-67D6-4D28-9CF7-F1218C9BE2CD a :Crop ;
     schema:identifier "307A62EA-67D6-4D28-9CF7-F1218C9BE2CD" ;
-    schema:isPartOf cultivation:CA722B7E-8F16-4502-8139-C33F749545D4 ;
+    schema:isPartOf crop:CA722B7E-8F16-4502-8139-C33F749545D4 ;
     schema:name "Pfirsich / Nektarine"@de,
         "pêcher / nectarine"@fr,
         "Pesco/pesco noce"@it .
 
 crop:309E5D09-3084-40C6-88F2-D4A14345136C a :Crop ;
     schema:identifier "309E5D09-3084-40C6-88F2-D4A14345136C" ;
-    schema:isPartOf cultivation:E59545AD-3331-4E3D-B58D-9F67833C060B ;
+    schema:isPartOf crop:E59545AD-3331-4E3D-B58D-9F67833C060B ;
     schema:name "Baldrian"@de,
         "Valerian"@en,
         "valériane"@fr,
         "Valeriana"@it .
 
-crop:30F9F737-0A18-43EC-AF88-F28940E567F1 a :Crop ;
-    schema:identifier "30F9F737-0A18-43EC-AF88-F28940E567F1" ;
-    schema:isPartOf cultivation:8303C191-3315-4942-91DF-668C019850D7 ;
-    schema:name "Gurken"@de,
-        "concombre"@fr,
-        "Cetrioli"@it .
-
-crop:31A0539F-1D4C-4BCF-876F-215CEBC4C864 a :Crop ;
-    schema:identifier "31A0539F-1D4C-4BCF-876F-215CEBC4C864" ;
-    schema:isPartOf cultivation:E59545AD-3331-4E3D-B58D-9F67833C060B ;
-    schema:name "Gewürz- und Medizinalkräuter"@de,
-        "herbes aromatiques et médicinales"@fr,
-        "Erbe aromatiche e medicinali"@it .
-
 crop:33097BFE-2487-46DB-85A0-A8A4E06030AF a :Crop ;
     schema:identifier "33097BFE-2487-46DB-85A0-A8A4E06030AF" ;
-    schema:isPartOf cultivation:3A53A166-7559-4E75-BDED-F65CA6FDFDE1 ;
+    schema:isPartOf crop:3A53A166-7559-4E75-BDED-F65CA6FDFDE1 ;
     schema:name "Azaleen"@de,
         "azalée"@fr,
         "Azalee"@it .
 
 crop:3346CB25-6DC9-42AF-8BA2-F725BD92304A a :Crop ;
     schema:identifier "3346CB25-6DC9-42AF-8BA2-F725BD92304A" ;
-    schema:isPartOf cultivation:B05127D4-FF0A-4F36-AFDD-0D487043122A ;
+    schema:isPartOf crop:B05127D4-FF0A-4F36-AFDD-0D487043122A ;
     schema:name "Kardy"@de,
         "Cardy"@en,
         "cardon"@fr,
         "Cardo"@it .
 
-crop:33686F38-1E1A-4698-81E4-C40EE4494EF3 a :Crop ;
-    schema:identifier "33686F38-1E1A-4698-81E4-C40EE4494EF3" ;
-    schema:isPartOf cultivation:E786D43D-444B-49D6-B0D0-294265F91403 ;
-    schema:name "Lactuca-Salate"@de,
-        "salades lactuca"@fr,
-        "Insalate del genere Lactuca"@it .
-
 crop:3447F4C9-2E90-437F-A240-0462AFEDF2B5 a :Crop ;
     schema:identifier "3447F4C9-2E90-437F-A240-0462AFEDF2B5" ;
-    schema:isPartOf cultivation:FE69D926-4BE1-4C67-840E-30C3D299442E ;
+    schema:isPartOf crop:FE69D926-4BE1-4C67-840E-30C3D299442E ;
     schema:name "Patisson"@de,
         "pâtisson"@fr,
         "Patisson"@it .
 
 crop:34753E17-C34D-4D0B-88A0-91143DADABB2 a :Crop ;
     schema:identifier "34753E17-C34D-4D0B-88A0-91143DADABB2" ;
-    schema:isPartOf cultivation:75317E57-B194-4B3D-8FF2-3489A39AC177 ;
+    schema:isPartOf crop:75317E57-B194-4B3D-8FF2-3489A39AC177 ;
     schema:name "Chrysantheme"@de,
         "chrysanthème"@fr,
         "Crisantemo"@it .
 
-crop:35A8338D-9B59-4842-A50C-1B8BF93CDABA a :Crop ;
-    schema:identifier "35A8338D-9B59-4842-A50C-1B8BF93CDABA" ;
-    schema:isPartOf cultivation:C83340F9-9BA9-4C7A-B414-A691C4853D31 ;
-    schema:name "TiKul"@de,
-        "TyCul"@fr,
-        "Tikuli"@it .
-
 crop:36D9AFE2-7506-48CE-BA39-EFD54535294A a :Crop ;
     schema:identifier "36D9AFE2-7506-48CE-BA39-EFD54535294A" ;
-    schema:isPartOf cultivation:3EAC5420-E234-4AA5-8B46-6F9E8542C7AF ;
+    schema:isPartOf crop:3EAC5420-E234-4AA5-8B46-6F9E8542C7AF ;
     schema:name "Schwarze Apfelbeere"@de,
         "aronie noire"@fr,
         "Aronia nera"@it .
@@ -510,194 +360,129 @@ crop:36EC3084-D6AE-494D-A5B2-EC39DCC4F412 a :Crop ;
 
 crop:3702313F-95C6-4FE9-8B6B-C7CE3987CD18 a :Crop ;
     schema:identifier "3702313F-95C6-4FE9-8B6B-C7CE3987CD18" ;
-    schema:isPartOf cultivation:D36B92CB-136F-46C3-8217-10C3F86ECA12 ;
+    schema:isPartOf crop:D36B92CB-136F-46C3-8217-10C3F86ECA12 ;
     schema:name "Stangensellerie"@de,
         "céleri-branche"@fr,
         "Sedano da coste"@it .
 
 crop:37059300-8031-4A64-B75C-7490288E32BA a :Crop ;
     schema:identifier "37059300-8031-4A64-B75C-7490288E32BA" ;
-    schema:isPartOf cultivation:D541F2F5-8BA6-4E26-AA66-9CF469648AFF ;
+    schema:isPartOf crop:D541F2F5-8BA6-4E26-AA66-9CF469648AFF ;
     schema:name "Minze"@de,
         "Mint"@en,
         "menthe"@fr,
         "Menta"@it .
 
-crop:3783A322-9E9C-44F6-B683-FE35221CA6AC a :Crop ;
-    schema:identifier "3783A322-9E9C-44F6-B683-FE35221CA6AC" ;
-    schema:name "Feldbau allg."@de,
-        "grande culture en général"@fr,
-        "Campicoltura in generale"@it .
-
 crop:394AE687-29A0-4BA6-B0B9-D7DFB0C08FCE a :Crop ;
     schema:identifier "394AE687-29A0-4BA6-B0B9-D7DFB0C08FCE" ;
-    schema:isPartOf cultivation:6F26F4E0-401C-4B16-A28B-4CC889907361 ;
+    schema:isPartOf crop:6F26F4E0-401C-4B16-A28B-4CC889907361 ;
     schema:name "Pak-Choi"@de,
         "pakchoi"@fr,
         "Pak-Choi"@it .
 
 crop:399AC89E-29BB-44AD-8B1F-0B2F327D5230 a :Crop ;
     schema:identifier "399AC89E-29BB-44AD-8B1F-0B2F327D5230" ;
-    schema:isPartOf cultivation:8303C191-3315-4942-91DF-668C019850D7 ;
+    schema:isPartOf crop:8303C191-3315-4942-91DF-668C019850D7 ;
     schema:name "Melonen"@de,
         "melons"@fr,
         "Meloni"@it .
 
-crop:39D599AA-B93E-4AC2-970E-5A99A3113572 a :Crop ;
-    schema:identifier "39D599AA-B93E-4AC2-970E-5A99A3113572" ;
-    schema:isPartOf cultivation:E59545AD-3331-4E3D-B58D-9F67833C060B ;
-    schema:name "Gänsefussgewächse (Chenopodiaceae)"@de,
-        "chénopodiacées"@fr,
-        "Chenopodiacee"@it .
-
 crop:3A522DC8-E6D3-426D-AA99-65C148ED1A84 a :Crop ;
     schema:identifier "3A522DC8-E6D3-426D-AA99-65C148ED1A84" ;
-    schema:isPartOf cultivation:BE3C6915-B28E-4CC8-980E-7F243F14F519 ;
+    schema:isPartOf crop:BE3C6915-B28E-4CC8-980E-7F243F14F519 ;
     schema:name "Stachelbeere"@de,
         "groseilles à maquereau"@fr,
         "Uva spina"@it .
 
-crop:3A53A166-7559-4E75-BDED-F65CA6FDFDE1 a :Crop ;
-    schema:identifier "3A53A166-7559-4E75-BDED-F65CA6FDFDE1" ;
-    schema:isPartOf cultivation:D40E1405-757C-4E3D-B26F-07D5F2251565 ;
-    schema:name "Rhododendron"@de,
-        "rhododendron"@fr,
-        "Rododendro"@it .
-
 crop:3BEFA6F7-0D34-4E29-8207-85E9D5783ECC a :Crop ;
     schema:identifier "3BEFA6F7-0D34-4E29-8207-85E9D5783ECC" ;
-    schema:isPartOf cultivation:890D8A5E-BF86-4B2D-9B98-45B779D80F7F ;
+    schema:isPartOf crop:890D8A5E-BF86-4B2D-9B98-45B779D80F7F ;
     schema:name "Baumschule"@de,
         "pépinière"@fr,
         "Vivaio"@it .
 
 crop:3C2F424F-DFA0-4A59-A3DF-6E33A6B0B97E a :Crop ;
     schema:identifier "3C2F424F-DFA0-4A59-A3DF-6E33A6B0B97E" ;
-    schema:isPartOf cultivation:D541F2F5-8BA6-4E26-AA66-9CF469648AFF ;
+    schema:isPartOf crop:D541F2F5-8BA6-4E26-AA66-9CF469648AFF ;
     schema:name "Basilikum"@de,
         "basilic"@fr,
         "Basilico"@it .
 
 crop:3E4AFACC-03CA-4CEC-8392-520B07DDC604 a :Crop ;
     schema:identifier "3E4AFACC-03CA-4CEC-8392-520B07DDC604" ;
-    schema:isPartOf cultivation:8774F019-8BB4-409D-ADA9-B565ECA1A6A9 ;
+    schema:isPartOf crop:8774F019-8BB4-409D-ADA9-B565ECA1A6A9 ;
     schema:name "Verarbeitungsräume"@de,
         "locaux de transformation"@fr,
         "Locali per la lavorazione"@it .
 
-crop:3EAC5420-E234-4AA5-8B46-6F9E8542C7AF a :Crop ;
-    schema:identifier "3EAC5420-E234-4AA5-8B46-6F9E8542C7AF" ;
-    schema:name "allg. Beerenbau"@de,
-        "domaine app. baies"@fr .
-
-crop:3FEAB48F-0D66-4814-B3E3-C4BC0AB749B3 a :Crop ;
-    schema:identifier "3FEAB48F-0D66-4814-B3E3-C4BC0AB749B3" ;
-    schema:name "Forstwirtschaft allg."@de,
-        "sylviculture en général"@fr,
-        "Selvicoltura in generale"@it .
-
 crop:404C1D02-5666-4AA3-8487-65A9EEE0B53D a :Crop ;
     schema:identifier "404C1D02-5666-4AA3-8487-65A9EEE0B53D" ;
-    schema:isPartOf cultivation:1DD3F253-4B23-4B69-BFB1-1C24CE7D5508 ;
+    schema:isPartOf crop:1DD3F253-4B23-4B69-BFB1-1C24CE7D5508 ;
     schema:name "Lupinen"@de,
         "Lupin"@fr,
         "Lupini"@it .
 
 crop:42466A90-AFCD-4DA6-8769-99C4BC5BE217 a :Crop ;
     schema:identifier "42466A90-AFCD-4DA6-8769-99C4BC5BE217" ;
-    schema:isPartOf cultivation:FA0F7C48-BF78-49B0-9046-FBB5ABB4BF75 ;
+    schema:isPartOf crop:FA0F7C48-BF78-49B0-9046-FBB5ABB4BF75 ;
     schema:name "Birne"@de,
         "poirier"@fr,
         "Pero"@it .
 
 crop:42D50BC4-0019-4B55-9CB5-6C3E86C9D112 a :Crop ;
     schema:identifier "42D50BC4-0019-4B55-9CB5-6C3E86C9D112" ;
-    schema:isPartOf cultivation:3EAC5420-E234-4AA5-8B46-6F9E8542C7AF ;
+    schema:isPartOf crop:3EAC5420-E234-4AA5-8B46-6F9E8542C7AF ;
     schema:name "Schwarzer Holunder"@de,
         "Elder berry"@en,
         "grand sureau"@fr,
         "Sambuco nero"@it .
 
-crop:4380EC0F-E195-4783-8BB7-F6B0464B37D6 a :Crop ;
-    schema:identifier "4380EC0F-E195-4783-8BB7-F6B0464B37D6" ;
-    schema:isPartOf cultivation:E55D75D3-B805-4BFD-B2B0-D02368BD32AC ;
-    schema:name "Kohlarten"@de,
-        "choux"@fr,
-        "Specie di cavoli"@it .
-
-crop:43ED81C2-40E7-4A22-9114-3E623BE1B14C a :Crop ;
-    schema:identifier "43ED81C2-40E7-4A22-9114-3E623BE1B14C" ;
-    schema:name "allg. Weinbau"@de,
-        "domaine app. vignes"@fr .
-
-crop:43F8091A-A333-40F5-8845-FF83398B9AC3 a :Crop ;
-    schema:identifier "43F8091A-A333-40F5-8845-FF83398B9AC3" ;
-    schema:isPartOf cultivation:3EAC5420-E234-4AA5-8B46-6F9E8542C7AF ;
-    schema:name "Rubus Arten"@de,
-        "espèces de Rubus"@fr,
-        "Specie di rubus"@it .
-
 crop:43FC7C18-BDA5-4364-B4CA-74EA37B7B8DC a :Crop ;
     schema:identifier "43FC7C18-BDA5-4364-B4CA-74EA37B7B8DC" ;
-    schema:isPartOf cultivation:3FEAB48F-0D66-4814-B3E3-C4BC0AB749B3 ;
+    schema:isPartOf crop:3FEAB48F-0D66-4814-B3E3-C4BC0AB749B3 ;
     schema:name "Forstliche Pflanzgärten"@de,
         "pépinières forestières"@fr,
         "Vivai forestali"@it .
 
 crop:4465118D-78E7-4748-A47A-7F39E593771A a :Crop ;
     schema:identifier "4465118D-78E7-4748-A47A-7F39E593771A" ;
-    schema:isPartOf cultivation:F7BB2F1C-EDE5-4C95-931E-0B2C973F5A29 ;
+    schema:isPartOf crop:F7BB2F1C-EDE5-4C95-931E-0B2C973F5A29 ;
     schema:name "Stangenbohne"@de,
         "haricot à rames"@fr,
         "Fagiolo rampicante"@it .
 
 crop:449A5380-96E3-4C3F-AB31-7CB3D0579561 a :Crop ;
     schema:identifier "449A5380-96E3-4C3F-AB31-7CB3D0579561" ;
-    schema:isPartOf cultivation:8B5A3E2B-2534-4FC0-84C5-685915165A77 ;
+    schema:isPartOf crop:8B5A3E2B-2534-4FC0-84C5-685915165A77 ;
     schema:name "Sommergetreide"@de,
         "Céréales de printemps"@fr,
         "Cereali primaverili"@it .
 
 crop:465E7118-95AB-46A2-9A85-7A0B9070E63A a :Crop ;
     schema:identifier "465E7118-95AB-46A2-9A85-7A0B9070E63A" ;
-    schema:isPartOf cultivation:8774F019-8BB4-409D-ADA9-B565ECA1A6A9 ;
+    schema:isPartOf crop:8774F019-8BB4-409D-ADA9-B565ECA1A6A9 ;
     schema:name "Einrichtungen und Geräte"@de,
         "installations et outils"@fr,
         "Installazioni e apparecchi"@it .
 
-crop:46901564-D096-4323-AE81-C93831AFEC64 a :Crop ;
-    schema:identifier "46901564-D096-4323-AE81-C93831AFEC64" ;
-    schema:isPartOf cultivation:E59545AD-3331-4E3D-B58D-9F67833C060B ;
-    schema:name "Nachtschattengewächse (Solanaceae)"@de,
-        "solanacées"@fr,
-        "Solanacee"@it .
-
 crop:46D3C073-CBD8-4B3A-A9AA-21785BA911CA a :Crop ;
     schema:identifier "46D3C073-CBD8-4B3A-A9AA-21785BA911CA" ;
-    schema:isPartOf cultivation:096444CD-43E6-41F9-8914-2E7DADA4C801 ;
+    schema:isPartOf crop:096444CD-43E6-41F9-8914-2E7DADA4C801 ;
     schema:name "Peperoni"@de,
         "poivron"@fr,
         "Peperone"@it .
 
 crop:49F7DA15-E241-4080-9D42-1523ECA834B5 a :Crop ;
     schema:identifier "49F7DA15-E241-4080-9D42-1523ECA834B5" ;
-    schema:isPartOf cultivation:1DD3F253-4B23-4B69-BFB1-1C24CE7D5508 ;
+    schema:isPartOf crop:1DD3F253-4B23-4B69-BFB1-1C24CE7D5508 ;
     schema:name "Färberdistel (Saflor)"@de,
         "Safflower"@en,
         "Carthame"@fr,
         "Cartamo"@it .
 
-crop:4A22B9D3-747C-4323-A852-1CB1F6ADB680 a :Crop ;
-    schema:identifier "4A22B9D3-747C-4323-A852-1CB1F6ADB680" ;
-    schema:isPartOf cultivation:4380EC0F-E195-4783-8BB7-F6B0464B37D6 ;
-    schema:name "Blumenkohle"@de,
-        "Flowering brassica"@en,
-        "choux (développement de l'inflorescence)"@fr,
-        "Cavoli a infiorescenza"@it .
-
 crop:4A386AE2-A36F-4A55-8668-7B896A1E8092 a :Crop ;
     schema:identifier "4A386AE2-A36F-4A55-8668-7B896A1E8092" ;
-    schema:isPartOf cultivation:1DD3F253-4B23-4B69-BFB1-1C24CE7D5508 ;
+    schema:isPartOf crop:1DD3F253-4B23-4B69-BFB1-1C24CE7D5508 ;
     schema:name "Chinaschilf"@de,
         "Roseau de Chine"@fr,
         "Miscanto"@it .
@@ -722,233 +507,173 @@ crop:4D5AF334-29F4-4854-A14F-4457A8A87D97 a :Crop ;
         "Lager- und Produktionsräume allg."@fr,
         "Lager- und Produktionsräume allg."@it .
 
-crop:4D6B9837-FA9A-4E8D-BAAB-A7249BD01F2D a :Crop ;
-    schema:identifier "4D6B9837-FA9A-4E8D-BAAB-A7249BD01F2D" ;
-    schema:name "allg. Nichtkulturland"@de,
-        "domaine app. non agricole"@fr .
-
 crop:4D799EC6-1483-4D65-90EA-8DDB6A4166CA a :Crop ;
     schema:identifier "4D799EC6-1483-4D65-90EA-8DDB6A4166CA" ;
-    schema:isPartOf cultivation:D541F2F5-8BA6-4E26-AA66-9CF469648AFF ;
+    schema:isPartOf crop:D541F2F5-8BA6-4E26-AA66-9CF469648AFF ;
     schema:name "Bohnenkraut"@de,
         "sarriette"@fr,
         "Santoreggia"@it .
 
-crop:4DD550C5-15BB-4D52-98BD-6770972575F0 a :Crop ;
-    schema:identifier "4DD550C5-15BB-4D52-98BD-6770972575F0" ;
-    schema:isPartOf cultivation:33686F38-1E1A-4698-81E4-C40EE4494EF3 ;
-    schema:name "Kopfsalate"@de,
-        "laitues pommées"@fr,
-        "Insalate cappuccio"@it .
-
 crop:4E1ACD79-F162-4EBB-93CB-C6857A811E9C a :Crop ;
     schema:identifier "4E1ACD79-F162-4EBB-93CB-C6857A811E9C" ;
-    schema:isPartOf cultivation:1F03DDC0-19CF-48F1-BAB8-61CA4CEF24CF ;
+    schema:isPartOf crop:1F03DDC0-19CF-48F1-BAB8-61CA4CEF24CF ;
     schema:name "Kleegrasmischung (Kunstwiese)"@de,
         "mélange trèfles-graminées (prairie arificielle)"@fr,
         "Miscela trifoglio-graminacee (prati artificiali)"@it .
 
 crop:4E8A4BB8-3B5D-4695-B17C-F4C1202D5138 a :Crop ;
     schema:identifier "4E8A4BB8-3B5D-4695-B17C-F4C1202D5138" ;
-    schema:isPartOf cultivation:BE3C6915-B28E-4CC8-980E-7F243F14F519 ;
+    schema:isPartOf crop:BE3C6915-B28E-4CC8-980E-7F243F14F519 ;
     schema:name "Schwarze Johannisbeere"@de,
         "cassis"@fr,
         "Ribes nero"@it .
 
 crop:516862FD-DCB0-42BF-8E18-ADA820B1DB90 a :Crop ;
     schema:identifier "516862FD-DCB0-42BF-8E18-ADA820B1DB90" ;
-    schema:isPartOf cultivation:2314EB9F-7207-409F-A0D4-89B6A1177363 ;
+    schema:isPartOf crop:2314EB9F-7207-409F-A0D4-89B6A1177363 ;
     schema:name "Jungreben"@de,
         "jeune vigne"@fr,
         "Ceppi giovani"@it .
 
 crop:52019F0F-3BAF-4161-A223-62EECBA47871 a :Crop ;
     schema:identifier "52019F0F-3BAF-4161-A223-62EECBA47871" ;
-    schema:isPartOf cultivation:E107FECF-24B6-43D7-B3E6-05C5C239EFBB ;
+    schema:isPartOf crop:E107FECF-24B6-43D7-B3E6-05C5C239EFBB ;
     schema:name "Mulchsaaten"@de,
         "semis sous litière"@fr,
         "Semine a lattiera"@it .
 
-crop:5276BCA7-CEA5-4B6D-90E3-52F3A0532490 a :Crop ;
-    schema:identifier "5276BCA7-CEA5-4B6D-90E3-52F3A0532490" ;
-    schema:isPartOf cultivation:E59545AD-3331-4E3D-B58D-9F67833C060B ;
-    schema:name "Doldenblütler (Apiaceae)"@de,
-        "ombellifères (Apiaceae)"@fr,
-        "Ombrellifere (Apiacee)"@it .
-
 crop:5433C814-C0CD-4815-B236-2D02E1C66F3D a :Crop ;
     schema:identifier "5433C814-C0CD-4815-B236-2D02E1C66F3D" ;
-    schema:isPartOf cultivation:BF77A7F8-C4C5-43AF-9BCD-B7F904506E7A ;
+    schema:isPartOf crop:BF77A7F8-C4C5-43AF-9BCD-B7F904506E7A ;
     schema:name "Zuckermais"@de,
         "maïs sucré"@fr,
         "Mais dolce"@it .
 
 crop:54C75B64-57C4-46E2-BCEA-741EBC10FDDF a :Crop ;
     schema:identifier "54C75B64-57C4-46E2-BCEA-741EBC10FDDF" ;
-    schema:isPartOf cultivation:DB4E4C8B-016C-4C31-8DC5-587A9F1F8FFD ;
+    schema:isPartOf crop:DB4E4C8B-016C-4C31-8DC5-587A9F1F8FFD ;
     schema:name "Linse"@de,
         "lentille"@fr,
         "Lenticchia"@it .
 
 crop:56884AC3-B629-440D-8E82-05075A18697F a :Crop ;
     schema:identifier "56884AC3-B629-440D-8E82-05075A18697F" ;
-    schema:isPartOf cultivation:D36B92CB-136F-46C3-8217-10C3F86ECA12 ;
+    schema:isPartOf crop:D36B92CB-136F-46C3-8217-10C3F86ECA12 ;
     schema:name "Knollensellerie"@de,
         "céleri-pomme"@fr,
         "Sedano rapa"@it .
 
 crop:56AF3EA3-01F4-4F10-B240-7EF4BE1C1CCE a :Crop ;
     schema:identifier "56AF3EA3-01F4-4F10-B240-7EF4BE1C1CCE" ;
-    schema:isPartOf cultivation:DB4E4C8B-016C-4C31-8DC5-587A9F1F8FFD ;
+    schema:isPartOf crop:DB4E4C8B-016C-4C31-8DC5-587A9F1F8FFD ;
     schema:name "Puffbohne"@de,
         "fève"@fr,
         "Fave"@it .
 
 crop:573B50E9-ED1D-4999-B4FD-4537CA2A6306 a :Crop ;
     schema:identifier "573B50E9-ED1D-4999-B4FD-4537CA2A6306" ;
-    schema:isPartOf cultivation:8303C191-3315-4942-91DF-668C019850D7 ;
+    schema:isPartOf crop:8303C191-3315-4942-91DF-668C019850D7 ;
     schema:name "Speisekürbisse (ungeniessbare Schale)"@de,
         "courges (écorce non comestible)"@fr,
         "Zucche (buccia non commestibile)"@it .
 
 crop:5755AD92-721E-431E-8473-6FA2F340532F a :Crop ;
     schema:identifier "5755AD92-721E-431E-8473-6FA2F340532F" ;
-    schema:isPartOf cultivation:E58E502E-BECD-44CB-96A2-3A6771D8A7B7 ;
+    schema:isPartOf crop:E58E502E-BECD-44CB-96A2-3A6771D8A7B7 ;
     schema:name "Winterraps"@de,
         "Colza d'automne"@fr,
         "Colza autunnale"@it .
 
-crop:5AC11C43-B41E-4823-8515-E991D4EA1B3C a :Crop ;
-    schema:identifier "5AC11C43-B41E-4823-8515-E991D4EA1B3C" ;
-    schema:isPartOf cultivation:E59545AD-3331-4E3D-B58D-9F67833C060B ;
-    schema:name "Liliengewächse (Liliaceae)"@de,
-        "liliacées"@fr,
-        "Liliacee"@it .
-
 crop:5B651459-FC70-4D22-9469-4991F847EA89 a :Crop ;
     schema:identifier "5B651459-FC70-4D22-9469-4991F847EA89" ;
-    schema:isPartOf cultivation:D40E1405-757C-4E3D-B26F-07D5F2251565 ;
+    schema:isPartOf crop:D40E1405-757C-4E3D-B26F-07D5F2251565 ;
     schema:name "Blautanne"@de,
         "sapin bleu"@fr,
         "Abete del Colorado"@it .
 
 crop:5C610428-6087-4A2E-B977-3E83EDBB19F0 a :Crop ;
     schema:identifier "5C610428-6087-4A2E-B977-3E83EDBB19F0" ;
-    schema:isPartOf cultivation:890D8A5E-BF86-4B2D-9B98-45B779D80F7F ;
+    schema:isPartOf crop:890D8A5E-BF86-4B2D-9B98-45B779D80F7F ;
     schema:name "Zier- und Sportrasen"@de,
         "gazon d'ornement et terrains de sport"@fr,
         "Tappeti erbosi e terreni sportivi"@it .
 
-crop:5DF3AB4D-7CAC-4112-90D9-67BD80EC5E96 a :Crop ;
-    schema:identifier "5DF3AB4D-7CAC-4112-90D9-67BD80EC5E96" ;
-    schema:isPartOf cultivation:DB4E4C8B-016C-4C31-8DC5-587A9F1F8FFD ;
-    schema:name "Erbsen"@de,
-        "pois"@fr,
-        "Piselli"@it .
-
 crop:61D9C648-0736-43D4-BF04-B8643B1D74E0 a :Crop ;
     schema:identifier "61D9C648-0736-43D4-BF04-B8643B1D74E0" ;
-    schema:isPartOf cultivation:B85EF4C2-C22E-4A5A-A431-98DC8F621D92 ;
+    schema:isPartOf crop:B85EF4C2-C22E-4A5A-A431-98DC8F621D92 ;
     schema:name "Hyazinthe"@de,
         "jacinthe"@fr,
         "Giacinto"@it .
 
-crop:625EA905-7C3D-4BCC-8551-BC1CB14FF647 a :Crop ;
-    schema:identifier "625EA905-7C3D-4BCC-8551-BC1CB14FF647" ;
-    schema:isPartOf cultivation:8B5A3E2B-2534-4FC0-84C5-685915165A77 ;
-    schema:name "Gerste"@de,
-        "Orge"@fr,
-        "Orzo"@it .
-
 crop:62BF86AE-FD69-4F95-A72C-1D57AF1DCD99 a :Crop ;
     schema:identifier "62BF86AE-FD69-4F95-A72C-1D57AF1DCD99" ;
-    schema:isPartOf cultivation:8DB1A579-6BAC-4DCB-8026-E79B65D3BD3A ;
+    schema:isPartOf crop:8DB1A579-6BAC-4DCB-8026-E79B65D3BD3A ;
     schema:name "Endivien"@de,
         "chicorée scarole, chicorée frisée"@fr,
         "Indivia"@it .
 
 crop:6388D9E7-CD0D-4823-80DD-E6FA472AF12C a :Crop ;
     schema:identifier "6388D9E7-CD0D-4823-80DD-E6FA472AF12C" ;
-    schema:isPartOf cultivation:1DD3F253-4B23-4B69-BFB1-1C24CE7D5508 ;
+    schema:isPartOf crop:1DD3F253-4B23-4B69-BFB1-1C24CE7D5508 ;
     schema:name "Klee zur Saatgutproduktion"@de,
         "Trèfles pour la production de semences"@fr,
         "Trifoglio per la produzione di sementi"@it .
 
-crop:6569FC94-60C5-4608-8926-D76D2009B284 a :Crop ;
-    schema:identifier "6569FC94-60C5-4608-8926-D76D2009B284" ;
-    schema:name "allg."@de,
-        "toutes les cultures"@fr,
-        "In generale"@it .
-
 crop:657E4B0A-50BD-424B-9DB4-1B84582AD3D7 a :Crop ;
     schema:identifier "657E4B0A-50BD-424B-9DB4-1B84582AD3D7" ;
-    schema:isPartOf cultivation:1DD3F253-4B23-4B69-BFB1-1C24CE7D5508 ;
+    schema:isPartOf crop:1DD3F253-4B23-4B69-BFB1-1C24CE7D5508 ;
     schema:name "Ackerbohne"@de,
         "féverole"@fr,
         "Fava"@it .
 
 crop:66B27CD1-032A-456E-99C4-28F6E989CC14 a :Crop ;
     schema:identifier "66B27CD1-032A-456E-99C4-28F6E989CC14" ;
-    schema:isPartOf cultivation:24A364B9-6BD7-42A6-A9EC-AB9E94E010FF ;
+    schema:isPartOf crop:24A364B9-6BD7-42A6-A9EC-AB9E94E010FF ;
     schema:name "Zwetschge"@de,
         "prunier (pruneau)"@fr,
         "Prugno"@it .
 
 crop:68688AEC-44E2-490B-AC80-E8DEDCC82B8F a :Crop ;
     schema:identifier "68688AEC-44E2-490B-AC80-E8DEDCC82B8F" ;
-    schema:isPartOf cultivation:096444CD-43E6-41F9-8914-2E7DADA4C801 ;
+    schema:isPartOf crop:096444CD-43E6-41F9-8914-2E7DADA4C801 ;
     schema:name "Gemüsepaprika"@de,
         "poivron doux"@fr,
         "Peperone dolce"@it .
 
 crop:689F7BE7-DA1E-49B6-95D5-E002E210E7B9 a :Crop ;
     schema:identifier "689F7BE7-DA1E-49B6-95D5-E002E210E7B9" ;
-    schema:isPartOf cultivation:B4D50F5E-6028-493D-9B95-85CAE5DADF06 ;
+    schema:isPartOf crop:B4D50F5E-6028-493D-9B95-85CAE5DADF06 ;
     schema:name "Kartoffeln zur Pflanzgutproduktion"@de,
         "pommes de terre pour la production de plants"@fr,
         "Patate per la produzione di tuberi-seme"@it .
 
 crop:6C3D663E-442F-4783-87A2-A46806E119E5 a :Crop ;
     schema:identifier "6C3D663E-442F-4783-87A2-A46806E119E5" ;
-    schema:isPartOf cultivation:0106A8DF-6CDF-4E18-8F46-3D9E1D52D0E5 ;
+    schema:isPartOf crop:0106A8DF-6CDF-4E18-8F46-3D9E1D52D0E5 ;
     schema:name "Baby-Leaf (Brassicaceae)"@de,
         "Baby-Leaf (Brassicaceae)"@fr,
         "Baby-Leaf (Brassicaceae)"@it .
 
 crop:6CC3F1FF-84DF-4E4A-A91E-57C5ECB82F61 a :Crop ;
     schema:identifier "6CC3F1FF-84DF-4E4A-A91E-57C5ECB82F61" ;
-    schema:isPartOf cultivation:46901564-D096-4323-AE81-C93831AFEC64 ;
+    schema:isPartOf crop:46901564-D096-4323-AE81-C93831AFEC64 ;
     schema:name "Aubergine"@de,
         "aubergine"@fr,
         "Melanzana"@it .
 
 crop:6D06A7F9-DF91-4BB5-84B8-FB877C211E66 a :Crop ;
     schema:identifier "6D06A7F9-DF91-4BB5-84B8-FB877C211E66" ;
-    schema:isPartOf cultivation:1DD3F253-4B23-4B69-BFB1-1C24CE7D5508 ;
+    schema:isPartOf crop:1DD3F253-4B23-4B69-BFB1-1C24CE7D5508 ;
     schema:name "Kenaf"@de,
         "Kenaf"@fr,
         "Kenaf"@it .
 
 crop:6D45EAF5-D29C-48AB-A212-91C67357E898 a :Crop ;
     schema:identifier "6D45EAF5-D29C-48AB-A212-91C67357E898" ;
-    schema:isPartOf cultivation:77462EAB-3BD3-4EAC-B740-F95597FFAE35 ;
+    schema:isPartOf crop:77462EAB-3BD3-4EAC-B740-F95597FFAE35 ;
     schema:name "Walnuss"@de,
         "noyer"@fr,
         "Noce comune"@it .
-
-crop:6EDA1989-51C8-490E-90FD-974CE3E8FF03 a :Crop ;
-    schema:identifier "6EDA1989-51C8-490E-90FD-974CE3E8FF03" ;
-    schema:isPartOf cultivation:C6EBB3D7-3050-4C36-BBC2-CBD20D6B9E56 ;
-    schema:name "Hartschalenobst"@de,
-        "noix en général"@fr,
-        "Frutta con guscio"@it .
-
-crop:6F26F4E0-401C-4B16-A28B-4CC889907361 a :Crop ;
-    schema:identifier "6F26F4E0-401C-4B16-A28B-4CC889907361" ;
-    schema:isPartOf cultivation:4380EC0F-E195-4783-8BB7-F6B0464B37D6 ;
-    schema:name "Blattkohle"@de,
-        "choux à feuilles"@fr,
-        "Cavoli fogliacei"@it .
 
 crop:710CC0C8-B138-4B31-9975-4DA04AF67792 a :Crop ;
     schema:identifier "710CC0C8-B138-4B31-9975-4DA04AF67792" ;
@@ -965,14 +690,14 @@ crop:71D9FB13-5AE4-42C3-9F84-956B16C379C1 a :Crop ;
 
 crop:730AACDC-B956-493D-8148-7520019CE0BC a :Crop ;
     schema:identifier "730AACDC-B956-493D-8148-7520019CE0BC" ;
-    schema:isPartOf cultivation:D541F2F5-8BA6-4E26-AA66-9CF469648AFF ;
+    schema:isPartOf crop:D541F2F5-8BA6-4E26-AA66-9CF469648AFF ;
     schema:name "Thymian"@de,
         "thym"@fr,
         "Timo"@it .
 
 crop:74C47437-5700-45F5-86E2-D410DACD39B6 a :Crop ;
     schema:identifier "74C47437-5700-45F5-86E2-D410DACD39B6" ;
-    schema:isPartOf cultivation:46901564-D096-4323-AE81-C93831AFEC64 ;
+    schema:isPartOf crop:46901564-D096-4323-AE81-C93831AFEC64 ;
     schema:name "Andenbeere"@de,
         "cape gooseberry"@en,
         "coqueret du Pérou"@fr,
@@ -984,79 +709,58 @@ crop:75047A9C-12E2-4BAC-89D8-B14BC4C6B100 a :Crop ;
         "Palette en bois, bois d'emballage, bois en général"@fr,
         "Palette in legno, legno da imballaggio, legno non lavorato"@it .
 
-crop:75317E57-B194-4B3D-8FF2-3489A39AC177 a :Crop ;
-    schema:identifier "75317E57-B194-4B3D-8FF2-3489A39AC177" ;
-    schema:isPartOf cultivation:890D8A5E-BF86-4B2D-9B98-45B779D80F7F ;
-    schema:name "Blumenkulturen und Grünpflanzen"@de,
-        "cultures florales et plantes vertes"@fr,
-        "Colture da fiore e piante verdi"@it .
-
 crop:77267F83-907F-4537-98A8-7B9C1E4714F0 a :Crop ;
     schema:identifier "77267F83-907F-4537-98A8-7B9C1E4714F0" ;
-    schema:isPartOf cultivation:8A00630A-32FC-4B5A-8171-EC0F41D39F48 ;
+    schema:isPartOf crop:8A00630A-32FC-4B5A-8171-EC0F41D39F48 ;
     schema:name "Gemüseportulak"@de,
         "pourpier commun"@fr,
         "Portulaca estiva"@it .
 
-crop:77462EAB-3BD3-4EAC-B740-F95597FFAE35 a :Crop ;
-    schema:identifier "77462EAB-3BD3-4EAC-B740-F95597FFAE35" ;
-    schema:isPartOf cultivation:6EDA1989-51C8-490E-90FD-974CE3E8FF03 ;
-    schema:name "Nüsse"@de,
-        "noix"@fr,
-        "Noci"@it .
-
 crop:7870FD70-C44A-4788-ABEA-FB673A5FD106 a :Crop ;
     schema:identifier "7870FD70-C44A-4788-ABEA-FB673A5FD106" ;
-    schema:isPartOf cultivation:82376115-14E2-449A-8DFA-F8119476FE3F ;
+    schema:isPartOf crop:82376115-14E2-449A-8DFA-F8119476FE3F ;
     schema:name "Hartweizen"@de,
         "Blé dur"@fr,
         "Grano duro"@it .
 
 crop:7971013B-801D-4595-8208-782446A6C7E0 a :Crop ;
     schema:identifier "7971013B-801D-4595-8208-782446A6C7E0" ;
-    schema:isPartOf cultivation:7B3C8CEE-526F-4381-A757-669C1864291A ;
+    schema:isPartOf crop:7B3C8CEE-526F-4381-A757-669C1864291A ;
     schema:name "Laubgehölze"@de,
         "feuillus"@fr,
         "Latifoglie"@it .
 
 crop:79C28385-E183-4661-AAC0-80E82C67089C a :Crop ;
     schema:identifier "79C28385-E183-4661-AAC0-80E82C67089C" ;
-    schema:isPartOf cultivation:D40E1405-757C-4E3D-B26F-07D5F2251565 ;
+    schema:isPartOf crop:D40E1405-757C-4E3D-B26F-07D5F2251565 ;
     schema:name "Weihnachtsbäume"@de,
         "arbres de Noël"@fr,
         "Alberi di Natale"@it .
 
 crop:7A993953-3C2F-4BC3-98EE-2EE5E83C6E77 a :Crop ;
     schema:identifier "7A993953-3C2F-4BC3-98EE-2EE5E83C6E77" ;
-    schema:isPartOf cultivation:39D599AA-B93E-4AC2-970E-5A99A3113572 ;
+    schema:isPartOf crop:39D599AA-B93E-4AC2-970E-5A99A3113572 ;
     schema:name "Rande"@de,
         "betterave à salade"@fr,
         "Barbabietola"@it .
 
 crop:7AB6690B-B2B9-4F12-AFAE-A9B0222C2637 a :Crop ;
     schema:identifier "7AB6690B-B2B9-4F12-AFAE-A9B0222C2637" ;
-    schema:isPartOf cultivation:D3D90BE6-0924-4844-98FB-52C4D7F21A38 ;
+    schema:isPartOf crop:D3D90BE6-0924-4844-98FB-52C4D7F21A38 ;
     schema:name "Winterweizen"@de,
         "Blé d'automne"@fr,
         "Frumento autunnale"@it .
 
-crop:7B3C8CEE-526F-4381-A757-669C1864291A a :Crop ;
-    schema:identifier "7B3C8CEE-526F-4381-A757-669C1864291A" ;
-    schema:isPartOf cultivation:890D8A5E-BF86-4B2D-9B98-45B779D80F7F ;
-    schema:name "Gehölze (ausserhalb Forst)"@de,
-        "plantes ligneuses (hors forêt)"@fr,
-        "Boschetti (al di fuori del bosco)"@it .
-
 crop:7B90BAC4-B80F-4039-ADC3-ADF9225CCBB7 a :Crop ;
     schema:identifier "7B90BAC4-B80F-4039-ADC3-ADF9225CCBB7" ;
-    schema:isPartOf cultivation:4380EC0F-E195-4783-8BB7-F6B0464B37D6 ;
+    schema:isPartOf crop:4380EC0F-E195-4783-8BB7-F6B0464B37D6 ;
     schema:name "Rosenkohl"@de,
         "chou de Bruxelles"@fr,
         "Cavoli di Bruxelles"@it .
 
 crop:7CE53BA0-097D-44FB-82FF-C30DFD3769DD a :Crop ;
     schema:identifier "7CE53BA0-097D-44FB-82FF-C30DFD3769DD" ;
-    schema:isPartOf cultivation:E55D75D3-B805-4BFD-B2B0-D02368BD32AC ;
+    schema:isPartOf crop:E55D75D3-B805-4BFD-B2B0-D02368BD32AC ;
     schema:name "Kresse"@de,
         "cresson de jardin"@fr,
         "Crescione"@it .
@@ -1069,83 +773,50 @@ crop:7D23702C-980B-4B90-A86B-70013806D3EA a :Crop ;
 
 crop:7D52C099-7C6F-453C-8513-4BBFB94EE66A a :Crop ;
     schema:identifier "7D52C099-7C6F-453C-8513-4BBFB94EE66A" ;
-    schema:isPartOf cultivation:1DD3F253-4B23-4B69-BFB1-1C24CE7D5508 ;
+    schema:isPartOf crop:1DD3F253-4B23-4B69-BFB1-1C24CE7D5508 ;
     schema:name "Eiweisserbse"@de,
         "pois protéagineux"@fr,
         "Pisello proteico"@it .
 
 crop:7D65DFD2-C26E-4CAB-9E2C-66A6C7CBA641 a :Crop ;
     schema:identifier "7D65DFD2-C26E-4CAB-9E2C-66A6C7CBA641" ;
-    schema:isPartOf cultivation:625EA905-7C3D-4BCC-8551-BC1CB14FF647 ;
+    schema:isPartOf crop:625EA905-7C3D-4BCC-8551-BC1CB14FF647 ;
     schema:name "Wintergerste"@de,
         "Orge d'automne"@fr,
         "Orzo autunnale"@it .
 
-crop:7D76F5F6-5810-4556-A7D5-84C91FDE3FF2 a :Crop ;
-    schema:identifier "7D76F5F6-5810-4556-A7D5-84C91FDE3FF2" ;
-    schema:isPartOf cultivation:8B5A3E2B-2534-4FC0-84C5-685915165A77 ;
-    schema:name "Roggen"@de,
-        "Seigle"@fr,
-        "Segale"@it .
-
-crop:7F20F06C-C950-49B9-A78F-9E2F696B079E a :Crop ;
-    schema:identifier "7F20F06C-C950-49B9-A78F-9E2F696B079E" ;
-    schema:name "Nichtkulturland allg."@de,
-        "domaine non agricole en général"@fr,
-        "Superfici non coltive in generale"@it .
-
 crop:80395E92-C39B-45D9-91AC-AB7E6DCAC3DB a :Crop ;
     schema:identifier "80395E92-C39B-45D9-91AC-AB7E6DCAC3DB" ;
-    schema:isPartOf cultivation:6F26F4E0-401C-4B16-A28B-4CC889907361 ;
+    schema:isPartOf crop:6F26F4E0-401C-4B16-A28B-4CC889907361 ;
     schema:name "Markstammkohl"@de,
         "chou moellier"@fr,
         "Cavolo fustoso"@it .
 
 crop:807F5A2C-7904-456D-BBC7-A80A4B207964 a :Crop ;
     schema:identifier "807F5A2C-7904-456D-BBC7-A80A4B207964" ;
-    schema:isPartOf cultivation:D541F2F5-8BA6-4E26-AA66-9CF469648AFF ;
+    schema:isPartOf crop:D541F2F5-8BA6-4E26-AA66-9CF469648AFF ;
     schema:name "Kümmel"@de,
         "caraway"@en,
         "carvi"@fr,
         "Carvi"@it .
 
-crop:811C79DC-9182-4302-8AEC-AB12D5F69188 a :Crop ;
-    schema:identifier "811C79DC-9182-4302-8AEC-AB12D5F69188" ;
-    schema:name "allg. Ökologische Ausgleichsflächen (gemäss DZV)"@de,
-        "domaine surfaces de compensation écologique (selon OPD)"@fr,
-        "Superfici di compensazione ecologica in generale (conformemente OPD)"@it .
-
-crop:82376115-14E2-449A-8DFA-F8119476FE3F a :Crop ;
-    schema:identifier "82376115-14E2-449A-8DFA-F8119476FE3F" ;
-    schema:isPartOf cultivation:8B5A3E2B-2534-4FC0-84C5-685915165A77 ;
-    schema:name "Weizen"@de,
-        "Blé"@fr,
-        "Frumento"@it .
-
 crop:8262D735-4D45-4499-AE0B-497FF4C0C4AA a :Crop ;
     schema:identifier "8262D735-4D45-4499-AE0B-497FF4C0C4AA" ;
-    schema:isPartOf cultivation:1DD3F253-4B23-4B69-BFB1-1C24CE7D5508 ;
+    schema:isPartOf crop:1DD3F253-4B23-4B69-BFB1-1C24CE7D5508 ;
     schema:name "Tabak"@de,
         "Tabac"@fr,
         "Tabacco"@it .
 
-crop:8303C191-3315-4942-91DF-668C019850D7 a :Crop ;
-    schema:identifier "8303C191-3315-4942-91DF-668C019850D7" ;
-    schema:isPartOf cultivation:E59545AD-3331-4E3D-B58D-9F67833C060B ;
-    schema:name "Kürbisgewächse (Cucurbitaceae)"@de,
-        "cucurbitacées"@fr,
-        "Cucurbitacee"@it .
-
 crop:83A9CEC5-FC31-421C-A3B8-CA219AF649CF a :Crop ;
     schema:identifier "83A9CEC5-FC31-421C-A3B8-CA219AF649CF" ;
-    schema:isPartOf cultivation:75317E57-B194-4B3D-8FF2-3489A39AC177 ;
+    schema:isPartOf crop:75317E57-B194-4B3D-8FF2-3489A39AC177 ;
     schema:name "Nelken"@de,
         "oeillet"@fr,
         "Garofani"@it .
 
 crop:83C510D2-293A-4E1B-B691-06B1F02149B4 a :Crop ;
     schema:identifier "83C510D2-293A-4E1B-B691-06B1F02149B4" ;
-    schema:isPartOf cultivation:DB98FC8E-5AFA-4434-9478-960124F960CA ;
+    schema:isPartOf crop:DB98FC8E-5AFA-4434-9478-960124F960CA ;
     schema:name "Gemüsezwiebel"@de,
         "oignon potager"@fr,
         "Cipolle dolci"@it .
@@ -1158,76 +829,42 @@ crop:8512D352-73CC-4535-9469-965AAF1FD0B1 a :Crop ;
 
 crop:85BB3788-27A8-4E73-800A-0E8F154EC0BE a :Crop ;
     schema:identifier "85BB3788-27A8-4E73-800A-0E8F154EC0BE" ;
-    schema:isPartOf cultivation:E55D75D3-B805-4BFD-B2B0-D02368BD32AC ;
+    schema:isPartOf crop:E55D75D3-B805-4BFD-B2B0-D02368BD32AC ;
     schema:name "Blattsalate (Brassicaceae)"@de,
         "laitues à tondre  (Brassicaceae)"@fr,
         "Insalate a foglie (Brassicacee)"@it .
 
 crop:8621CDCC-EE8A-4188-9F2C-14C9497FBED3 a :Crop ;
     schema:identifier "8621CDCC-EE8A-4188-9F2C-14C9497FBED3" ;
-    schema:isPartOf cultivation:43F8091A-A333-40F5-8845-FF83398B9AC3 ;
+    schema:isPartOf crop:43F8091A-A333-40F5-8845-FF83398B9AC3 ;
     schema:name "Brombeere"@de,
         "mûre"@fr,
         "Mora"@it .
 
 crop:874850AA-2F48-47B6-A789-C67D6DEE97DA a :Crop ;
     schema:identifier "874850AA-2F48-47B6-A789-C67D6DEE97DA" ;
-    schema:isPartOf cultivation:DB98FC8E-5AFA-4434-9478-960124F960CA ;
+    schema:isPartOf crop:DB98FC8E-5AFA-4434-9478-960124F960CA ;
     schema:name "Bundzwiebeln"@de,
         "oignons en botte"@fr,
         "Cipollotti a mazzi"@it .
 
-crop:8774F019-8BB4-409D-ADA9-B565ECA1A6A9 a :Crop ;
-    schema:identifier "8774F019-8BB4-409D-ADA9-B565ECA1A6A9" ;
-    schema:isPartOf cultivation:4D6B9837-FA9A-4E8D-BAAB-A7249BD01F2D ;
-    schema:name "Allgemein Vorratsschutz"@de,
-        "protection des récoltes"@fr,
-        "Protezione delle scorte (in generale)"@it .
-
-crop:890D8A5E-BF86-4B2D-9B98-45B779D80F7F a :Crop ;
-    schema:identifier "890D8A5E-BF86-4B2D-9B98-45B779D80F7F" ;
-    schema:name "Zierpflanzen allg."@de,
-        "culture ornementale en général"@fr,
-        "Coltivazione piante ornam. in generale"@it .
-
-crop:8A00630A-32FC-4B5A-8171-EC0F41D39F48 a :Crop ;
-    schema:identifier "8A00630A-32FC-4B5A-8171-EC0F41D39F48" ;
-    schema:isPartOf cultivation:17CE2494-D0C9-484B-A91E-15B7B04733FD ;
-    schema:name "Portulak"@de,
-        "pourpier"@fr,
-        "Portulaca"@it .
-
 crop:8AFA14F8-CCE3-4012-BD12-9D690EBAE1AD a :Crop ;
     schema:identifier "8AFA14F8-CCE3-4012-BD12-9D690EBAE1AD" ;
-    schema:isPartOf cultivation:4A22B9D3-747C-4323-A852-1CB1F6ADB680 ;
+    schema:isPartOf crop:4A22B9D3-747C-4323-A852-1CB1F6ADB680 ;
     schema:name "Romanesco"@de,
         "romanesco"@fr,
         "Romanesco"@it .
 
-crop:8B5A3E2B-2534-4FC0-84C5-685915165A77 a :Crop ;
-    schema:identifier "8B5A3E2B-2534-4FC0-84C5-685915165A77" ;
-    schema:isPartOf cultivation:3783A322-9E9C-44F6-B683-FE35221CA6AC ;
-    schema:name "Getreide"@de,
-        "Céréales"@fr,
-        "Cereali"@it .
-
 crop:8BDDCACC-13C1-4676-9322-402ECF20BE85 a :Crop ;
     schema:identifier "8BDDCACC-13C1-4676-9322-402ECF20BE85" ;
-    schema:isPartOf cultivation:811C79DC-9182-4302-8AEC-AB12D5F69188 ;
+    schema:isPartOf crop:811C79DC-9182-4302-8AEC-AB12D5F69188 ;
     schema:name "Offene Ackerfläche"@de,
         "terres ouvertes"@fr,
         "Superficie coltiva aperta"@it .
 
-crop:8DB1A579-6BAC-4DCB-8026-E79B65D3BD3A a :Crop ;
-    schema:identifier "8DB1A579-6BAC-4DCB-8026-E79B65D3BD3A" ;
-    schema:isPartOf cultivation:E786D43D-444B-49D6-B0D0-294265F91403 ;
-    schema:name "Endivien und Blattzichorien"@de,
-        "chicorée pommée et chicorée à feuilles"@fr,
-        "Indivia e cicoria da foglia"@it .
-
 crop:8DFDE2D1-C004-4C25-BF54-21CF7C815232 a :Crop ;
     schema:identifier "8DFDE2D1-C004-4C25-BF54-21CF7C815232" ;
-    schema:isPartOf cultivation:5AC11C43-B41E-4823-8515-E991D4EA1B3C ;
+    schema:isPartOf crop:5AC11C43-B41E-4823-8515-E991D4EA1B3C ;
     schema:name "Lauch"@de,
         "poireau"@fr,
         "Porro"@it .
@@ -1240,21 +877,21 @@ crop:8E6C3D3A-6D7A-4D82-94CC-E4F227CC1EB2 a :Crop ;
 
 crop:8FF3D364-2BA6-40AA-A370-4B72E3CAC8DF a :Crop ;
     schema:identifier "8FF3D364-2BA6-40AA-A370-4B72E3CAC8DF" ;
-    schema:isPartOf cultivation:E55D75D3-B805-4BFD-B2B0-D02368BD32AC ;
+    schema:isPartOf crop:E55D75D3-B805-4BFD-B2B0-D02368BD32AC ;
     schema:name "Radies"@de,
         "radis de tous les mois"@fr,
         "Ravanello"@it .
 
 crop:91406007-35B9-49E2-A62F-04BDE262366F a :Crop ;
     schema:identifier "91406007-35B9-49E2-A62F-04BDE262366F" ;
-    schema:isPartOf cultivation:BE3C6915-B28E-4CC8-980E-7F243F14F519 ;
+    schema:isPartOf crop:BE3C6915-B28E-4CC8-980E-7F243F14F519 ;
     schema:name "Rote Johannisbeere"@de,
         "groseilles à grappes"@fr,
         "Ribes rosso"@it .
 
 crop:91522E50-F1AC-42B1-870B-68218110C235 a :Crop ;
     schema:identifier "91522E50-F1AC-42B1-870B-68218110C235" ;
-    schema:isPartOf cultivation:D541F2F5-8BA6-4E26-AA66-9CF469648AFF ;
+    schema:isPartOf crop:D541F2F5-8BA6-4E26-AA66-9CF469648AFF ;
     schema:name "Dill"@de,
         "dill"@en,
         "aneth"@fr,
@@ -1262,7 +899,7 @@ crop:91522E50-F1AC-42B1-870B-68218110C235 a :Crop ;
 
 crop:915B2192-1651-4B8A-B2D8-C162A5D27211 a :Crop ;
     schema:identifier "915B2192-1651-4B8A-B2D8-C162A5D27211" ;
-    schema:isPartOf cultivation:AB0798FE-64B8-49A2-8E75-14467EB7AB58 ;
+    schema:isPartOf crop:AB0798FE-64B8-49A2-8E75-14467EB7AB58 ;
     schema:name "Krautstiel"@de,
         "Swiss chard"@en,
         "bette à côte"@fr,
@@ -1270,28 +907,28 @@ crop:915B2192-1651-4B8A-B2D8-C162A5D27211 a :Crop ;
 
 crop:92CAB39E-ACC3-44DC-9EF3-0D27B8600E83 a :Crop ;
     schema:identifier "92CAB39E-ACC3-44DC-9EF3-0D27B8600E83" ;
-    schema:isPartOf cultivation:B4D50F5E-6028-493D-9B95-85CAE5DADF06 ;
+    schema:isPartOf crop:B4D50F5E-6028-493D-9B95-85CAE5DADF06 ;
     schema:name "Speise- und Futterkartoffeln"@de,
         "pommes de terre de consommation et fourragère"@fr,
         "Patate da tavola e da foraggio"@it .
 
 crop:930524FB-BD0A-4CA9-A89D-4FEEE1F9174F a :Crop ;
     schema:identifier "930524FB-BD0A-4CA9-A89D-4FEEE1F9174F" ;
-    schema:isPartOf cultivation:F7BB2F1C-EDE5-4C95-931E-0B2C973F5A29 ;
+    schema:isPartOf crop:F7BB2F1C-EDE5-4C95-931E-0B2C973F5A29 ;
     schema:name "Buschbohne"@de,
         "haricot nain"@fr,
         "Fagiolo nano"@it .
 
 crop:93A2DA1B-F920-461B-A9C9-BA9981CDB278 a :Crop ;
     schema:identifier "93A2DA1B-F920-461B-A9C9-BA9981CDB278" ;
-    schema:isPartOf cultivation:39D599AA-B93E-4AC2-970E-5A99A3113572 ;
+    schema:isPartOf crop:39D599AA-B93E-4AC2-970E-5A99A3113572 ;
     schema:name "Spinat"@de,
         "épinard"@fr,
         "Spinaci"@it .
 
 crop:94589F70-1F3A-4AEF-A26A-2267EB5BDA4B a :Crop ;
     schema:identifier "94589F70-1F3A-4AEF-A26A-2267EB5BDA4B" ;
-    schema:isPartOf cultivation:8DB1A579-6BAC-4DCB-8026-E79B65D3BD3A ;
+    schema:isPartOf crop:8DB1A579-6BAC-4DCB-8026-E79B65D3BD3A ;
     schema:name "Zuckerhut"@de,
         "chicorée pain de sucre"@fr,
         "Cicoria pan di zucchero"@it .
@@ -1305,28 +942,28 @@ crop:9650E36A-38F4-4375-9594-25785BACE1DC a :Crop ;
 
 crop:99379C08-8682-4628-BD67-6E566F5130FA a :Crop ;
     schema:identifier "99379C08-8682-4628-BD67-6E566F5130FA" ;
-    schema:isPartOf cultivation:3783A322-9E9C-44F6-B683-FE35221CA6AC ;
+    schema:isPartOf crop:3783A322-9E9C-44F6-B683-FE35221CA6AC ;
     schema:name "Trockenreis"@de,
         "Riz semis sur terrain sec"@fr,
         "Riso seminato su terreno asciutto"@it .
 
 crop:9A9333CA-AD6C-459D-9AFF-B8E8FB2FF8D4 a :Crop ;
     schema:identifier "9A9333CA-AD6C-459D-9AFF-B8E8FB2FF8D4" ;
-    schema:isPartOf cultivation:B05127D4-FF0A-4F36-AFDD-0D487043122A ;
+    schema:isPartOf crop:B05127D4-FF0A-4F36-AFDD-0D487043122A ;
     schema:name "Schwarzwurzel"@de,
         "scorsonère"@fr,
         "Scorzonera"@it .
 
 crop:9A9A2586-34FF-4256-8FA4-BA9F2FA38CAE a :Crop ;
     schema:identifier "9A9A2586-34FF-4256-8FA4-BA9F2FA38CAE" ;
-    schema:isPartOf cultivation:75317E57-B194-4B3D-8FF2-3489A39AC177 ;
+    schema:isPartOf crop:75317E57-B194-4B3D-8FF2-3489A39AC177 ;
     schema:name "Cyclame"@de,
         "cyclamen"@fr,
         "Ciclamino"@it .
 
 crop:9AA59D6B-D6AA-49BE-8BF8-A7A53BE54759 a :Crop ;
     schema:identifier "9AA59D6B-D6AA-49BE-8BF8-A7A53BE54759" ;
-    schema:isPartOf cultivation:2FAEBED2-193A-460C-A538-9B5C78024D98 ;
+    schema:isPartOf crop:2FAEBED2-193A-460C-A538-9B5C78024D98 ;
     schema:name "Nüsslisalat"@de,
         "mâche, rampon"@fr,
         "Valerianella"@it .
@@ -1339,21 +976,21 @@ crop:9B8F475B-C6FA-4642-9CD8-89A98A293D50 a :Crop ;
 
 crop:9BA6BDE9-AD45-4F91-A190-708D39AD5B63 a :Crop ;
     schema:identifier "9BA6BDE9-AD45-4F91-A190-708D39AD5B63" ;
-    schema:isPartOf cultivation:1DD3F253-4B23-4B69-BFB1-1C24CE7D5508 ;
+    schema:isPartOf crop:1DD3F253-4B23-4B69-BFB1-1C24CE7D5508 ;
     schema:name "Lein"@de,
         "Lin"@fr,
         "Lino"@it .
 
 crop:9BB00FC5-181F-4F3F-94C8-E4141143F44A a :Crop ;
     schema:identifier "9BB00FC5-181F-4F3F-94C8-E4141143F44A" ;
-    schema:isPartOf cultivation:CA722B7E-8F16-4502-8139-C33F749545D4 ;
+    schema:isPartOf crop:CA722B7E-8F16-4502-8139-C33F749545D4 ;
     schema:name "Aprikose"@de,
         "abricotier"@fr,
         "Albicocco"@it .
 
 crop:9BCEB85B-1578-4001-839D-68BFB9CE4CD8 a :Crop ;
     schema:identifier "9BCEB85B-1578-4001-839D-68BFB9CE4CD8" ;
-    schema:isPartOf cultivation:C6EBB3D7-3050-4C36-BBC2-CBD20D6B9E56 ;
+    schema:isPartOf crop:C6EBB3D7-3050-4C36-BBC2-CBD20D6B9E56 ;
     schema:name "Olive"@de,
         "Olive"@en,
         "olivier"@fr,
@@ -1361,32 +998,25 @@ crop:9BCEB85B-1578-4001-839D-68BFB9CE4CD8 a :Crop ;
 
 crop:9BD6A435-E370-4DFE-82E5-7E7813B4D193 a :Crop ;
     schema:identifier "9BD6A435-E370-4DFE-82E5-7E7813B4D193" ;
-    schema:isPartOf cultivation:0106A8DF-6CDF-4E18-8F46-3D9E1D52D0E5 ;
+    schema:isPartOf crop:0106A8DF-6CDF-4E18-8F46-3D9E1D52D0E5 ;
     schema:name "Baby-Leaf (Chenopodiaceae)"@de,
         "Baby-Leaf (Chenopodiaceae)"@fr,
         "Baby-Leaf (Chenopodiaceae)"@it .
 
 crop:9C38BA77-FDC8-461A-800A-9E2467C52105 a :Crop ;
     schema:identifier "9C38BA77-FDC8-461A-800A-9E2467C52105" ;
-    schema:isPartOf cultivation:24A364B9-6BD7-42A6-A9EC-AB9E94E010FF ;
+    schema:isPartOf crop:24A364B9-6BD7-42A6-A9EC-AB9E94E010FF ;
     schema:name "Pflaume"@de,
         "prunier (prune)"@fr,
         "Prugnolo"@it .
 
 crop:9C6CEE37-8105-4E48-9CA4-11BA3AB556FB a :Crop ;
     schema:identifier "9C6CEE37-8105-4E48-9CA4-11BA3AB556FB" ;
-    schema:isPartOf cultivation:75317E57-B194-4B3D-8FF2-3489A39AC177 ;
+    schema:isPartOf crop:75317E57-B194-4B3D-8FF2-3489A39AC177 ;
     schema:name "Gerbera"@de,
         "Gerbera"@en,
         "gerbera"@fr,
         "Gerbera"@it .
-
-crop:9CA61204-7EA7-4F2F-BAD3-BD02EDD6A829 a :Crop ;
-    schema:identifier "9CA61204-7EA7-4F2F-BAD3-BD02EDD6A829" ;
-    schema:isPartOf cultivation:33686F38-1E1A-4698-81E4-C40EE4494EF3 ;
-    schema:name "Blattsalate (Asteraceae)"@de,
-        "laitues à tondre (Asteraceae)"@fr,
-        "Insalate a foglie (Asteracee)"@it .
 
 crop:9DE574C1-EE11-42BC-9C05-930BCAE13A44 a :Crop ;
     schema:identifier "9DE574C1-EE11-42BC-9C05-930BCAE13A44" ;
@@ -1396,7 +1026,7 @@ crop:9DE574C1-EE11-42BC-9C05-930BCAE13A44 a :Crop ;
 
 crop:9F6AE17C-0BE1-457A-B780-D408BCD333BF a :Crop ;
     schema:identifier "9F6AE17C-0BE1-457A-B780-D408BCD333BF" ;
-    schema:isPartOf cultivation:1DD3F253-4B23-4B69-BFB1-1C24CE7D5508 ;
+    schema:isPartOf crop:1DD3F253-4B23-4B69-BFB1-1C24CE7D5508 ;
     schema:name "Sojabohne"@de,
         "Soja"@fr,
         "Soia"@it .
@@ -1409,24 +1039,17 @@ crop:A0012475-8478-4CA9-A18A-DC1CB96D788B a :Crop ;
 
 crop:A024CDFC-A05D-46B8-B08A-221C26BDF5DE a :Crop ;
     schema:identifier "A024CDFC-A05D-46B8-B08A-221C26BDF5DE" ;
-    schema:isPartOf cultivation:890D8A5E-BF86-4B2D-9B98-45B779D80F7F ;
+    schema:isPartOf crop:890D8A5E-BF86-4B2D-9B98-45B779D80F7F ;
     schema:name "Rosen"@de,
         "rosier"@fr,
         "Rose"@it .
 
 crop:A067CC81-6A5D-4684-BE95-7941A51B9EF2 a :Crop ;
     schema:identifier "A067CC81-6A5D-4684-BE95-7941A51B9EF2" ;
-    schema:isPartOf cultivation:D541F2F5-8BA6-4E26-AA66-9CF469648AFF ;
+    schema:isPartOf crop:D541F2F5-8BA6-4E26-AA66-9CF469648AFF ;
     schema:name "Salbei"@de,
         "sauge"@fr,
         "Salvia"@it .
-
-crop:A0C29069-5DBA-4E89-B7F9-4C556C272821 a :Crop ;
-    schema:identifier "A0C29069-5DBA-4E89-B7F9-4C556C272821" ;
-    schema:isPartOf cultivation:E55D75D3-B805-4BFD-B2B0-D02368BD32AC ;
-    schema:name "Speisekohlrüben"@de,
-        "rave de Brassica rapa et B. napus"@fr,
-        "Rapa di Brassica rapa e B. napus"@it .
 
 crop:A1B43C0A-8077-47D4-9171-8E6B2C9A95C4 a :Crop ;
     schema:identifier "A1B43C0A-8077-47D4-9171-8E6B2C9A95C4" ;
@@ -1437,21 +1060,21 @@ crop:A1B43C0A-8077-47D4-9171-8E6B2C9A95C4 a :Crop ;
 
 crop:A21391C3-A1A3-4472-8AA1-56449FB56B36 a :Crop ;
     schema:identifier "A21391C3-A1A3-4472-8AA1-56449FB56B36" ;
-    schema:isPartOf cultivation:D40E1405-757C-4E3D-B26F-07D5F2251565 ;
+    schema:isPartOf crop:D40E1405-757C-4E3D-B26F-07D5F2251565 ;
     schema:name "Kirschlorbeer"@de,
         "laurier-cerise"@fr,
         "Lauro ceraso"@it .
 
 crop:A22521E4-7D71-40C2-9FDF-B1230008D934 a :Crop ;
     schema:identifier "A22521E4-7D71-40C2-9FDF-B1230008D934" ;
-    schema:isPartOf cultivation:7F20F06C-C950-49B9-A78F-9E2F696B079E ;
+    schema:isPartOf crop:7F20F06C-C950-49B9-A78F-9E2F696B079E ;
     schema:name "Böschungen und Grünstreifen entlang von Verkehrswegen (gem. ChemRRV)"@de,
         "talus et bandes vertes le long des voies de communication (selon ORRChim)"@fr,
         "Scarpate e strisce verdi lungo le vie di comunicazione (conformemente ORRPChim)"@it .
 
 crop:A2D0B83F-9BB5-477C-AD44-24B31F2EF276 a :Crop ;
     schema:identifier "A2D0B83F-9BB5-477C-AD44-24B31F2EF276" ;
-    schema:isPartOf cultivation:E59545AD-3331-4E3D-B58D-9F67833C060B ;
+    schema:isPartOf crop:E59545AD-3331-4E3D-B58D-9F67833C060B ;
     schema:name "Speisepilze"@de,
         "champignons comestibles"@fr,
         "Funghi commestibili"@it .
@@ -1472,49 +1095,35 @@ crop:A3E943A5-C6D8-4CB0-A069-85BFC48E8B8A a :Crop ;
 
 crop:A4BC1F92-959A-4449-A039-B98E3ABCD9B1 a :Crop ;
     schema:identifier "A4BC1F92-959A-4449-A039-B98E3ABCD9B1" ;
-    schema:isPartOf cultivation:9CA61204-7EA7-4F2F-BAD3-BD02EDD6A829 ;
+    schema:isPartOf crop:9CA61204-7EA7-4F2F-BAD3-BD02EDD6A829 ;
     schema:name "Schnittsalat"@de,
         "laitue à tondre"@fr,
         "Lattuga da taglio"@it .
 
 crop:A519A894-B754-44D1-A032-155F57B0CBFE a :Crop ;
     schema:identifier "A519A894-B754-44D1-A032-155F57B0CBFE" ;
-    schema:isPartOf cultivation:D541F2F5-8BA6-4E26-AA66-9CF469648AFF ;
+    schema:isPartOf crop:D541F2F5-8BA6-4E26-AA66-9CF469648AFF ;
     schema:name "Liebstöckel"@de,
         "livèche"@fr,
         "Levistico"@it .
 
 crop:A8647F38-2A16-46AB-8B0E-2257EBF53C63 a :Crop ;
     schema:identifier "A8647F38-2A16-46AB-8B0E-2257EBF53C63" ;
-    schema:isPartOf cultivation:75317E57-B194-4B3D-8FF2-3489A39AC177 ;
+    schema:isPartOf crop:75317E57-B194-4B3D-8FF2-3489A39AC177 ;
     schema:name "Iris"@de,
         "iris"@fr,
         "Iris"@it .
 
-crop:A8BAC5BB-239F-4EE0-8CE2-F55590DA3FC0 a :Crop ;
-    schema:identifier "A8BAC5BB-239F-4EE0-8CE2-F55590DA3FC0" ;
-    schema:isPartOf cultivation:DB4E4C8B-016C-4C31-8DC5-587A9F1F8FFD ;
-    schema:name "Bohnen"@de,
-        "haricots"@fr,
-        "Fagioli"@it .
-
 crop:A9F01BDE-468A-477A-8ED5-704359B663F6 a :Crop ;
     schema:identifier "A9F01BDE-468A-477A-8ED5-704359B663F6" ;
-    schema:isPartOf cultivation:3EAC5420-E234-4AA5-8B46-6F9E8542C7AF ;
+    schema:isPartOf crop:3EAC5420-E234-4AA5-8B46-6F9E8542C7AF ;
     schema:name "Heidelbeere"@de,
         "myrtille"@fr,
         "Mirtillo"@it .
 
-crop:AB0798FE-64B8-49A2-8E75-14467EB7AB58 a :Crop ;
-    schema:identifier "AB0798FE-64B8-49A2-8E75-14467EB7AB58" ;
-    schema:isPartOf cultivation:39D599AA-B93E-4AC2-970E-5A99A3113572 ;
-    schema:name "Mangold"@de,
-        "bette"@fr,
-        "Bietola"@it .
-
 crop:AB1C4E54-EE4E-4414-8282-A3431F321DCD a :Crop ;
     schema:identifier "AB1C4E54-EE4E-4414-8282-A3431F321DCD" ;
-    schema:isPartOf cultivation:6569FC94-60C5-4608-8926-D76D2009B284 ;
+    schema:isPartOf crop:6569FC94-60C5-4608-8926-D76D2009B284 ;
     schema:name "TestKultur 12"@de,
         "TestKultur 12"@en,
         "TestKultur 12"@fr,
@@ -1522,14 +1131,14 @@ crop:AB1C4E54-EE4E-4414-8282-A3431F321DCD a :Crop ;
 
 crop:ABF54D5D-620B-4A08-A37D-416C1AD8D1BF a :Crop ;
     schema:identifier "ABF54D5D-620B-4A08-A37D-416C1AD8D1BF" ;
-    schema:isPartOf cultivation:D541F2F5-8BA6-4E26-AA66-9CF469648AFF ;
+    schema:isPartOf crop:D541F2F5-8BA6-4E26-AA66-9CF469648AFF ;
     schema:name "Estragon"@de,
         "estragon"@fr,
         "Dragoncello"@it .
 
 crop:AC0240B5-B610-4D7C-8704-AA8E182821AC a :Crop ;
     schema:identifier "AC0240B5-B610-4D7C-8704-AA8E182821AC" ;
-    schema:isPartOf cultivation:8774F019-8BB4-409D-ADA9-B565ECA1A6A9 ;
+    schema:isPartOf crop:8774F019-8BB4-409D-ADA9-B565ECA1A6A9 ;
     schema:name "Lagerhallen, Mühlen, Silogebäude"@de,
         "entrepôts, moulins, silos"@fr,
         "Depositi, mulini, sili"@it .
@@ -1542,7 +1151,7 @@ crop:AE465EA2-A950-4661-B631-D5A267B2F076 a :Crop ;
 
 crop:AE97719E-9D0F-425C-BCD7-0F5D84092113 a :Crop ;
     schema:identifier "AE97719E-9D0F-425C-BCD7-0F5D84092113" ;
-    schema:isPartOf cultivation:31A0539F-1D4C-4BCF-876F-215CEBC4C864 ;
+    schema:isPartOf crop:31A0539F-1D4C-4BCF-876F-215CEBC4C864 ;
     schema:name "Johanniskraut"@de,
         "Saint-John's-wort"@en,
         "millepertuis"@fr,
@@ -1550,31 +1159,24 @@ crop:AE97719E-9D0F-425C-BCD7-0F5D84092113 a :Crop ;
 
 crop:AEC07D17-6D8B-4180-A368-056A187DE2F8 a :Crop ;
     schema:identifier "AEC07D17-6D8B-4180-A368-056A187DE2F8" ;
-    schema:isPartOf cultivation:1B9B39A9-D742-4E8D-A88E-280B65C4B913 ;
+    schema:isPartOf crop:1B9B39A9-D742-4E8D-A88E-280B65C4B913 ;
     schema:name "Dahlien"@de,
         "dahlia"@fr,
         "Dalie"@it .
 
 crop:AED83C4B-0546-4C91-B370-4AB5B425942F a :Crop ;
     schema:identifier "AED83C4B-0546-4C91-B370-4AB5B425942F" ;
-    schema:isPartOf cultivation:30F9F737-0A18-43EC-AF88-F28940E567F1 ;
+    schema:isPartOf crop:30F9F737-0A18-43EC-AF88-F28940E567F1 ;
     schema:name "Nostranogurken"@de,
         "concombre nostrano"@fr,
         "Cetriolo nostrano"@it .
 
 crop:B02E0EFA-B8AF-425A-A779-6A4DFE8D4172 a :Crop ;
     schema:identifier "B02E0EFA-B8AF-425A-A779-6A4DFE8D4172" ;
-    schema:isPartOf cultivation:4DD550C5-15BB-4D52-98BD-6770972575F0 ;
+    schema:isPartOf crop:4DD550C5-15BB-4D52-98BD-6770972575F0 ;
     schema:name "Kopfsalat"@de,
         "laitue pommée"@fr,
         "Lattuga cappuccio"@it .
-
-crop:B05127D4-FF0A-4F36-AFDD-0D487043122A a :Crop ;
-    schema:identifier "B05127D4-FF0A-4F36-AFDD-0D487043122A" ;
-    schema:isPartOf cultivation:E59545AD-3331-4E3D-B58D-9F67833C060B ;
-    schema:name "Korbblütler (Asteraceae)"@de,
-        "composées (Asteracea)"@fr,
-        "Composite (Asteracee)"@it .
 
 crop:B4CA8F81-4A66-4880-98AB-C7760AECCDA6 a :Crop ;
     schema:identifier "B4CA8F81-4A66-4880-98AB-C7760AECCDA6" ;
@@ -1582,75 +1184,61 @@ crop:B4CA8F81-4A66-4880-98AB-C7760AECCDA6 a :Crop ;
         "culture maraîchère en général"@fr,
         "Orticoltura in generale"@it .
 
-crop:B4D50F5E-6028-493D-9B95-85CAE5DADF06 a :Crop ;
-    schema:identifier "B4D50F5E-6028-493D-9B95-85CAE5DADF06" ;
-    schema:isPartOf cultivation:3783A322-9E9C-44F6-B683-FE35221CA6AC ;
-    schema:name "Kartoffeln"@de,
-        "pommes de terre"@fr,
-        "Patate"@it .
-
 crop:B535B6DD-517D-4A62-ACC7-2948B15175ED a :Crop ;
     schema:identifier "B535B6DD-517D-4A62-ACC7-2948B15175ED" ;
-    schema:isPartOf cultivation:8DB1A579-6BAC-4DCB-8026-E79B65D3BD3A ;
+    schema:isPartOf crop:8DB1A579-6BAC-4DCB-8026-E79B65D3BD3A ;
     schema:name "Radicchio- und Cicorino-Typen"@de,
         "types de radicchio/trévises et cicorino"@fr,
         "Tipi di radicchio e cicorino"@it .
 
 crop:B542EC7D-B423-43B4-9010-82A6889BB3B4 a :Crop ;
     schema:identifier "B542EC7D-B423-43B4-9010-82A6889BB3B4" ;
-    schema:isPartOf cultivation:086E34F3-82E5-4F92-9224-41C9F7529E70 ;
+    schema:isPartOf crop:086E34F3-82E5-4F92-9224-41C9F7529E70 ;
     schema:name "Zuckerrübe"@de,
         "Betterave à sucre"@fr,
         "Barbabietola da zucchero"@it .
 
 crop:B5FFA375-D9A5-4FD1-9DCF-76F230FEA725 a :Crop ;
     schema:identifier "B5FFA375-D9A5-4FD1-9DCF-76F230FEA725" ;
-    schema:isPartOf cultivation:E55D75D3-B805-4BFD-B2B0-D02368BD32AC ;
+    schema:isPartOf crop:E55D75D3-B805-4BFD-B2B0-D02368BD32AC ;
     schema:name "Asia-Salate (Brassicaceae)"@de,
         "salades Asia (Brassicaceae)"@fr,
         "Insalate asiatiche (Brassicacee)"@it .
 
 crop:B6669854-1833-4BBC-A931-E67505848EA7 a :Crop ;
     schema:identifier "B6669854-1833-4BBC-A931-E67505848EA7" ;
-    schema:isPartOf cultivation:D3D90BE6-0924-4844-98FB-52C4D7F21A38 ;
+    schema:isPartOf crop:D3D90BE6-0924-4844-98FB-52C4D7F21A38 ;
     schema:name "Sommerweizen"@de,
         "Blé de printemps"@fr,
         "Frumento primaverile"@it .
 
 crop:B74E61A6-30BD-4A63-8A24-94FC0A54D489 a :Crop ;
     schema:identifier "B74E61A6-30BD-4A63-8A24-94FC0A54D489" ;
-    schema:isPartOf cultivation:7D76F5F6-5810-4556-A7D5-84C91FDE3FF2 ;
+    schema:isPartOf crop:7D76F5F6-5810-4556-A7D5-84C91FDE3FF2 ;
     schema:name "Winterroggen"@de,
         "Seigle d'automne"@fr,
         "Segale autunnale"@it .
 
 crop:B75AC4CC-6BB7-4A99-808A-9F7BDFCF8E6A a :Crop ;
     schema:identifier "B75AC4CC-6BB7-4A99-808A-9F7BDFCF8E6A" ;
-    schema:isPartOf cultivation:75317E57-B194-4B3D-8FF2-3489A39AC177 ;
+    schema:isPartOf crop:75317E57-B194-4B3D-8FF2-3489A39AC177 ;
     schema:name "Pelargonien"@de,
         "géranium"@fr,
         "Geranio"@it .
 
 crop:B7DE9539-35FD-4172-B72D-488EA12F2DF7 a :Crop ;
     schema:identifier "B7DE9539-35FD-4172-B72D-488EA12F2DF7" ;
-    schema:isPartOf cultivation:AB0798FE-64B8-49A2-8E75-14467EB7AB58 ;
+    schema:isPartOf crop:AB0798FE-64B8-49A2-8E75-14467EB7AB58 ;
     schema:name "Schnittmangold"@de,
         "bette à tondre"@fr,
         "Bietola da taglio"@it .
 
 crop:B82B5C60-02CB-4B7A-B3D3-A4CA34A809C3 a :Crop ;
     schema:identifier "B82B5C60-02CB-4B7A-B3D3-A4CA34A809C3" ;
-    schema:isPartOf cultivation:75317E57-B194-4B3D-8FF2-3489A39AC177 ;
+    schema:isPartOf crop:75317E57-B194-4B3D-8FF2-3489A39AC177 ;
     schema:name "Liliengewächse (Zierpflanzen)"@de,
         "liliacées (plantes ornementales)"@fr,
         "Liliacee (pianti ornamentali)"@it .
-
-crop:B85EF4C2-C22E-4A5A-A431-98DC8F621D92 a :Crop ;
-    schema:identifier "B85EF4C2-C22E-4A5A-A431-98DC8F621D92" ;
-    schema:isPartOf cultivation:890D8A5E-BF86-4B2D-9B98-45B779D80F7F ;
-    schema:name "Blumenzwiebeln"@de,
-        "bulbes des fleurs"@fr,
-        "Bulbi di fiori"@it .
 
 crop:B92BA12C-EA9D-4EA8-ADEE-A4547872DD58 a :Crop ;
     schema:identifier "B92BA12C-EA9D-4EA8-ADEE-A4547872DD58" ;
@@ -1660,24 +1248,17 @@ crop:B92BA12C-EA9D-4EA8-ADEE-A4547872DD58 a :Crop ;
 
 crop:B9323B4D-249D-4CF3-A5DF-4FDA2E66532F a :Crop ;
     schema:identifier "B9323B4D-249D-4CF3-A5DF-4FDA2E66532F" ;
-    schema:isPartOf cultivation:4A22B9D3-747C-4323-A852-1CB1F6ADB680 ;
+    schema:isPartOf crop:4A22B9D3-747C-4323-A852-1CB1F6ADB680 ;
     schema:name "Broccoli"@de,
         "brocoli"@fr,
         "Broccoli"@it .
 
 crop:BA2DECCF-5987-4987-B56E-C5EC6E5D19C0 a :Crop ;
     schema:identifier "BA2DECCF-5987-4987-B56E-C5EC6E5D19C0" ;
-    schema:isPartOf cultivation:E55D75D3-B805-4BFD-B2B0-D02368BD32AC ;
+    schema:isPartOf crop:E55D75D3-B805-4BFD-B2B0-D02368BD32AC ;
     schema:name "Barbarakraut"@de,
         "Barbarée du printemps"@fr,
         "Erba di Santa Barbara vernale"@it .
-
-crop:BA6FCA8F-68B8-4408-A267-2546B1FA5764 a :Crop ;
-    schema:identifier "BA6FCA8F-68B8-4408-A267-2546B1FA5764" ;
-    schema:isPartOf cultivation:E59545AD-3331-4E3D-B58D-9F67833C060B ;
-    schema:name "Lippenblütler (Labiatae)"@de,
-        "lamiacées (Labiatae)"@fr,
-        "Lamiacee (Labiatae)"@it .
 
 crop:BAE217C2-8C72-4706-8A0E-911FB18FC723 a :Crop ;
     schema:identifier "BAE217C2-8C72-4706-8A0E-911FB18FC723" ;
@@ -1687,77 +1268,63 @@ crop:BAE217C2-8C72-4706-8A0E-911FB18FC723 a :Crop ;
 
 crop:BB923645-6E65-48EE-9C64-DA2232EEE7EF a :Crop ;
     schema:identifier "BB923645-6E65-48EE-9C64-DA2232EEE7EF" ;
-    schema:isPartOf cultivation:E55D75D3-B805-4BFD-B2B0-D02368BD32AC ;
+    schema:isPartOf crop:E55D75D3-B805-4BFD-B2B0-D02368BD32AC ;
     schema:name "Rettich"@de,
         "radis long"@fr,
         "Ramolaccio"@it .
 
 crop:BBD16782-6EB3-4923-9DBB-CC7D97EBCB0E a :Crop ;
     schema:identifier "BBD16782-6EB3-4923-9DBB-CC7D97EBCB0E" ;
-    schema:isPartOf cultivation:8303C191-3315-4942-91DF-668C019850D7 ;
+    schema:isPartOf crop:8303C191-3315-4942-91DF-668C019850D7 ;
     schema:name "Ölkürbisse"@de,
         "courges oléagineuses"@fr,
         "Zucca da olio"@it .
 
 crop:BDB73EC5-46E5-413B-85B5-78D3801F4E7E a :Crop ;
     schema:identifier "BDB73EC5-46E5-413B-85B5-78D3801F4E7E" ;
-    schema:isPartOf cultivation:B05127D4-FF0A-4F36-AFDD-0D487043122A ;
+    schema:isPartOf crop:B05127D4-FF0A-4F36-AFDD-0D487043122A ;
     schema:name "Topinambur"@de,
         "topinambour"@fr,
         "Topinambur"@it .
 
-crop:BE3C6915-B28E-4CC8-980E-7F243F14F519 a :Crop ;
-    schema:identifier "BE3C6915-B28E-4CC8-980E-7F243F14F519" ;
-    schema:isPartOf cultivation:3EAC5420-E234-4AA5-8B46-6F9E8542C7AF ;
-    schema:name "Ribes Arten"@de,
-        "espèces de Ribes"@fr,
-        "Specie di ribes"@it .
-
-crop:BF77A7F8-C4C5-43AF-9BCD-B7F904506E7A a :Crop ;
-    schema:identifier "BF77A7F8-C4C5-43AF-9BCD-B7F904506E7A" ;
-    schema:isPartOf cultivation:E59545AD-3331-4E3D-B58D-9F67833C060B ;
-    schema:name "Süssgräser (Poaceae)"@de,
-        "poacées (Gramineae)"@fr,
-        "Poacee (Graminaceae)"@it .
-
 crop:BFD1B79E-ABD1-4A44-8E61-891FF97960A1 a :Crop ;
     schema:identifier "BFD1B79E-ABD1-4A44-8E61-891FF97960A1" ;
-    schema:isPartOf cultivation:A0C29069-5DBA-4E89-B7F9-4C556C272821 ;
+    schema:isPartOf crop:A0C29069-5DBA-4E89-B7F9-4C556C272821 ;
     schema:name "Brassica rapa-Rüben"@de,
         "rave de Brassica rapa"@fr,
         "Rapa di Brassica rapa"@it .
 
 crop:C026CB2D-39B4-4FDF-AD04-FBA22AD2B4F1 a :Crop ;
     schema:identifier "C026CB2D-39B4-4FDF-AD04-FBA22AD2B4F1" ;
-    schema:isPartOf cultivation:625EA905-7C3D-4BCC-8551-BC1CB14FF647 ;
+    schema:isPartOf crop:625EA905-7C3D-4BCC-8551-BC1CB14FF647 ;
     schema:name "Sommergerste"@de,
         "orge de printemps"@fr,
         "Orzo primaverile"@it .
 
 crop:C1A1842A-37E5-46D3-9646-9ECC15BAEE99 a :Crop ;
     schema:identifier "C1A1842A-37E5-46D3-9646-9ECC15BAEE99" ;
-    schema:isPartOf cultivation:FE69D926-4BE1-4C67-840E-30C3D299442E ;
+    schema:isPartOf crop:FE69D926-4BE1-4C67-840E-30C3D299442E ;
     schema:name "Zucchetti"@de,
         "courgette"@fr,
         "Zucchine"@it .
 
 crop:C264982A-CA81-4311-9E38-67D2D956BC78 a :Crop ;
     schema:identifier "C264982A-CA81-4311-9E38-67D2D956BC78" ;
-    schema:isPartOf cultivation:E55D75D3-B805-4BFD-B2B0-D02368BD32AC ;
+    schema:isPartOf crop:E55D75D3-B805-4BFD-B2B0-D02368BD32AC ;
     schema:name "Cima di Rapa"@de,
         "cima di rapa"@fr,
         "Cima di rapa"@it .
 
 crop:C37A7EE2-D06B-4204-809A-F50A934F79E3 a :Crop ;
     schema:identifier "C37A7EE2-D06B-4204-809A-F50A934F79E3" ;
-    schema:isPartOf cultivation:6F26F4E0-401C-4B16-A28B-4CC889907361 ;
+    schema:isPartOf crop:6F26F4E0-401C-4B16-A28B-4CC889907361 ;
     schema:name "Chinakohl"@de,
         "chou de Chine"@fr,
         "Cavolo cinese"@it .
 
 crop:C38D7DE4-C804-4F7C-AA2F-A536D03E0DFC a :Crop ;
     schema:identifier "C38D7DE4-C804-4F7C-AA2F-A536D03E0DFC" ;
-    schema:isPartOf cultivation:E981BFA6-288D-4EA6-B81B-4F610611EB36 ;
+    schema:isPartOf crop:E981BFA6-288D-4EA6-B81B-4F610611EB36 ;
     schema:name "Wolliger Fingerhut"@de,
         "Grecian foxglove"@en,
         "digitale lanifère"@fr,
@@ -1765,60 +1332,49 @@ crop:C38D7DE4-C804-4F7C-AA2F-A536D03E0DFC a :Crop ;
 
 crop:C3A65223-4A74-461D-AE47-0E8F7223E0C2 a :Crop ;
     schema:identifier "C3A65223-4A74-461D-AE47-0E8F7223E0C2" ;
-    schema:isPartOf cultivation:35A8338D-9B59-4842-A50C-1B8BF93CDABA ;
+    schema:isPartOf crop:35A8338D-9B59-4842-A50C-1B8BF93CDABA ;
     schema:name "Alfalfa"@de,
         "alfalfa"@fr,
         "Alfalfa"@it .
 
 crop:C3E12AAE-119E-47CF-9B8A-6F1CA657CF6B a :Crop ;
     schema:identifier "C3E12AAE-119E-47CF-9B8A-6F1CA657CF6B" ;
-    schema:isPartOf cultivation:7F20F06C-C950-49B9-A78F-9E2F696B079E ;
+    schema:isPartOf crop:7F20F06C-C950-49B9-A78F-9E2F696B079E ;
     schema:name "Auf und an National- und Kantonsstrassen (gem. ChemRRV)"@de,
         "le long des routes nationales et cantonales  (selon ORRChim)"@fr,
         "Lungo le strade nazionali e cantonali (conformemente ORRPChim)"@it .
 
 crop:C3F940E4-D07C-4F4D-851C-D1024F8A6A62 a :Crop ;
     schema:identifier "C3F940E4-D07C-4F4D-851C-D1024F8A6A62" ;
-    schema:isPartOf cultivation:E59545AD-3331-4E3D-B58D-9F67833C060B ;
+    schema:isPartOf crop:E59545AD-3331-4E3D-B58D-9F67833C060B ;
     schema:name "Kräuter"@de,
         "herbes"@fr,
         "Erbe"@it .
 
 crop:C5188A42-9C79-4110-B1E8-AEE9D6078BEA a :Crop ;
     schema:identifier "C5188A42-9C79-4110-B1E8-AEE9D6078BEA" ;
-    schema:isPartOf cultivation:5DF3AB4D-7CAC-4112-90D9-67BD80EC5E96 ;
+    schema:isPartOf crop:5DF3AB4D-7CAC-4112-90D9-67BD80EC5E96 ;
     schema:name "Erbsen ohne Hülsen"@de,
         "pois écossés"@fr,
         "Piselli senza baccello"@it .
 
 crop:C69EBD93-43E5-457F-9CBE-EE1C04791274 a :Crop ;
     schema:identifier "C69EBD93-43E5-457F-9CBE-EE1C04791274" ;
-    schema:isPartOf cultivation:00D94F57-BA6F-4BA0-8F68-26D4C497539A ;
+    schema:isPartOf crop:00D94F57-BA6F-4BA0-8F68-26D4C497539A ;
     schema:name "Sommerflor"@de,
         "fleurs estivales"@fr,
         "Fiori estivi"@it .
 
-crop:C6EBB3D7-3050-4C36-BBC2-CBD20D6B9E56 a :Crop ;
-    schema:identifier "C6EBB3D7-3050-4C36-BBC2-CBD20D6B9E56" ;
-    schema:name "allg. Obstbau"@de,
-        "domaine app. arboriculture"@fr .
-
 crop:C763D817-B4AC-43DB-9C6E-A262CC32F400 a :Crop ;
     schema:identifier "C763D817-B4AC-43DB-9C6E-A262CC32F400" ;
-    schema:isPartOf cultivation:086E34F3-82E5-4F92-9224-41C9F7529E70 ;
+    schema:isPartOf crop:086E34F3-82E5-4F92-9224-41C9F7529E70 ;
     schema:name "Futterrübe"@de,
         "Betterave fourragère"@fr,
         "Barbabietola da foraggio"@it .
 
-crop:C83340F9-9BA9-4C7A-B414-A691C4853D31 a :Crop ;
-    schema:identifier "C83340F9-9BA9-4C7A-B414-A691C4853D31" ;
-    schema:name "--"@de,
-        "---"@fr,
-        "---"@it .
-
 crop:C883F887-6B72-4917-9385-7A757E5FD8D6 a :Crop ;
     schema:identifier "C883F887-6B72-4917-9385-7A757E5FD8D6" ;
-    schema:isPartOf cultivation:DB98FC8E-5AFA-4434-9478-960124F960CA ;
+    schema:isPartOf crop:DB98FC8E-5AFA-4434-9478-960124F960CA ;
     schema:name "Speisezwiebel"@de,
         "oignon (condiment)"@fr,
         "Cipolle da tavola"@it .
@@ -1831,42 +1387,35 @@ crop:C8AB8319-939E-4CF3-B78E-549A85DEF756 a :Crop ;
 
 crop:C96EE4F4-12EA-49DE-9BEF-21EA73B52760 a :Crop ;
     schema:identifier "C96EE4F4-12EA-49DE-9BEF-21EA73B52760" ;
-    schema:isPartOf cultivation:2D7D1AE2-E685-4C6B-B8EE-DC5C6391EC76 ;
+    schema:isPartOf crop:2D7D1AE2-E685-4C6B-B8EE-DC5C6391EC76 ;
     schema:name "Spargel"@de,
         "asperge"@fr,
         "Asparagi"@it .
 
 crop:C9DB1105-33C7-44E8-92BA-9BBE5BA2BB3F a :Crop ;
     schema:identifier "C9DB1105-33C7-44E8-92BA-9BBE5BA2BB3F" ;
-    schema:isPartOf cultivation:F8A8C1D8-E2C7-4230-8435-4D5AEE69813E ;
+    schema:isPartOf crop:F8A8C1D8-E2C7-4230-8435-4D5AEE69813E ;
     schema:name "Sommerhafer"@de,
         "Avoine de printemps"@fr,
         "Avena primaverile"@it .
 
 crop:CA58ABAE-E494-4608-BE51-5FF49D853A03 a :Crop ;
     schema:identifier "CA58ABAE-E494-4608-BE51-5FF49D853A03" ;
-    schema:isPartOf cultivation:4380EC0F-E195-4783-8BB7-F6B0464B37D6 ;
+    schema:isPartOf crop:4380EC0F-E195-4783-8BB7-F6B0464B37D6 ;
     schema:name "Kopfkohle"@de,
         "choux pommés"@fr,
         "Cavoli a testa"@it .
 
-crop:CA722B7E-8F16-4502-8139-C33F749545D4 a :Crop ;
-    schema:identifier "CA722B7E-8F16-4502-8139-C33F749545D4" ;
-    schema:isPartOf cultivation:C6EBB3D7-3050-4C36-BBC2-CBD20D6B9E56 ;
-    schema:name "Steinobst"@de,
-        "fruits à noyaux"@fr,
-        "Frutta a nocciolo"@it .
-
 crop:CA9B7EDC-8626-4E01-B979-4856CFA9893E a :Crop ;
     schema:identifier "CA9B7EDC-8626-4E01-B979-4856CFA9893E" ;
-    schema:isPartOf cultivation:3EAC5420-E234-4AA5-8B46-6F9E8542C7AF ;
+    schema:isPartOf crop:3EAC5420-E234-4AA5-8B46-6F9E8542C7AF ;
     schema:name "Mini-Kiwi"@de,
         "mini-Kiwi (Kiwaï)"@fr,
         "Mini-Kiwi"@it .
 
 crop:CB7061F0-B1D8-4AC0-9C50-A596763B68CF a :Crop ;
     schema:identifier "CB7061F0-B1D8-4AC0-9C50-A596763B68CF" ;
-    schema:isPartOf cultivation:890D8A5E-BF86-4B2D-9B98-45B779D80F7F ;
+    schema:isPartOf crop:890D8A5E-BF86-4B2D-9B98-45B779D80F7F ;
     schema:name "Euphorbia"@de,
         "euphorbe"@fr,
         "Euforbia"@it .
@@ -1879,7 +1428,7 @@ crop:CC08E1E6-655D-4FAA-B0E8-AD968A68A536 a :Crop ;
 
 crop:CC9D982D-A99F-4143-8298-BC029BD1D1AD a :Crop ;
     schema:identifier "CC9D982D-A99F-4143-8298-BC029BD1D1AD" ;
-    schema:isPartOf cultivation:E55D75D3-B805-4BFD-B2B0-D02368BD32AC ;
+    schema:isPartOf crop:E55D75D3-B805-4BFD-B2B0-D02368BD32AC ;
     schema:name "Rucola"@de,
         "rocket"@en,
         "roquette"@fr,
@@ -1887,42 +1436,42 @@ crop:CC9D982D-A99F-4143-8298-BC029BD1D1AD a :Crop ;
 
 crop:CCCD6417-ED96-4A46-82EF-2EC848F719A7 a :Crop ;
     schema:identifier "CCCD6417-ED96-4A46-82EF-2EC848F719A7" ;
-    schema:isPartOf cultivation:3EAC5420-E234-4AA5-8B46-6F9E8542C7AF ;
+    schema:isPartOf crop:3EAC5420-E234-4AA5-8B46-6F9E8542C7AF ;
     schema:name "Erdbeere"@de,
         "fraise"@fr,
         "Fragola"@it .
 
 crop:CDF1E5BC-0740-4214-8912-870CC2BB37F4 a :Crop ;
     schema:identifier "CDF1E5BC-0740-4214-8912-870CC2BB37F4" ;
-    schema:isPartOf cultivation:1DD3F253-4B23-4B69-BFB1-1C24CE7D5508 ;
+    schema:isPartOf crop:1DD3F253-4B23-4B69-BFB1-1C24CE7D5508 ;
     schema:name "Grasbestände zur Saatgutproduktion"@de,
         "Graminées pour la production de semences"@fr,
         "Graminacee per la produzione di sementi"@it .
 
 crop:CE13A930-22B8-44D6-98E4-97707B0F7F6C a :Crop ;
     schema:identifier "CE13A930-22B8-44D6-98E4-97707B0F7F6C" ;
-    schema:isPartOf cultivation:30F9F737-0A18-43EC-AF88-F28940E567F1 ;
+    schema:isPartOf crop:30F9F737-0A18-43EC-AF88-F28940E567F1 ;
     schema:name "Gewächshausgurken"@de,
         "concombre de serre"@fr,
         "Cetriolo olandese"@it .
 
 crop:CEC488FC-D9AD-4515-A28E-DEEC6C807926 a :Crop ;
     schema:identifier "CEC488FC-D9AD-4515-A28E-DEEC6C807926" ;
-    schema:isPartOf cultivation:287584B7-E43E-494B-84C2-D13B2C9C3736 ;
+    schema:isPartOf crop:287584B7-E43E-494B-84C2-D13B2C9C3736 ;
     schema:name "Wintertriticale"@de,
         "Triticale d'automne"@fr,
         "Triticale autunnale"@it .
 
 crop:CF9B4B3C-DCDC-4E2E-A613-D784936842D2 a :Crop ;
     schema:identifier "CF9B4B3C-DCDC-4E2E-A613-D784936842D2" ;
-    schema:isPartOf cultivation:CA722B7E-8F16-4502-8139-C33F749545D4 ;
+    schema:isPartOf crop:CA722B7E-8F16-4502-8139-C33F749545D4 ;
     schema:name "Kirsche"@de,
         "cerisier"@fr,
         "Ciliegio"@it .
 
 crop:D100976A-2598-4614-AB7A-61436FF2B053 a :Crop ;
     schema:identifier "D100976A-2598-4614-AB7A-61436FF2B053" ;
-    schema:isPartOf cultivation:E9E3C127-33C1-40D9-8552-3CBE45E8E4C4 ;
+    schema:isPartOf crop:E9E3C127-33C1-40D9-8552-3CBE45E8E4C4 ;
     schema:name "Rispentomaten"@de,
         "tomate à grappe"@fr,
         "Pomodoro ramato"@it .
@@ -1939,53 +1488,25 @@ crop:D1E8D0D6-BD3C-4C47-9017-DBEADC9215A9 a :Crop ;
         "argousier"@fr,
         "Olivello spinoso"@it .
 
-crop:D36B92CB-136F-46C3-8217-10C3F86ECA12 a :Crop ;
-    schema:identifier "D36B92CB-136F-46C3-8217-10C3F86ECA12" ;
-    schema:isPartOf cultivation:5276BCA7-CEA5-4B6D-90E3-52F3A0532490 ;
-    schema:name "Sellerie"@de,
-        "céleri"@fr,
-        "Sedano"@it .
-
 crop:D3CD23DC-4C49-4EE5-8BF8-6B074E74352A a :Crop ;
     schema:identifier "D3CD23DC-4C49-4EE5-8BF8-6B074E74352A" ;
-    schema:isPartOf cultivation:1DD3F253-4B23-4B69-BFB1-1C24CE7D5508 ;
+    schema:isPartOf crop:1DD3F253-4B23-4B69-BFB1-1C24CE7D5508 ;
     schema:name "Luzerne"@de,
         "Luzerne"@fr,
         "Erba medica"@it .
 
 crop:D3D49C53-8EBC-4DAC-9C4C-B988AA162F7D a :Crop ;
     schema:identifier "D3D49C53-8EBC-4DAC-9C4C-B988AA162F7D" ;
-    schema:isPartOf cultivation:82376115-14E2-449A-8DFA-F8119476FE3F ;
+    schema:isPartOf crop:82376115-14E2-449A-8DFA-F8119476FE3F ;
     schema:name "Korn (Dinkel)"@de,
         "Épeautre"@fr,
         "Spelta"@it .
-
-crop:D3D90BE6-0924-4844-98FB-52C4D7F21A38 a :Crop ;
-    schema:identifier "D3D90BE6-0924-4844-98FB-52C4D7F21A38" ;
-    schema:isPartOf cultivation:82376115-14E2-449A-8DFA-F8119476FE3F ;
-    schema:name "Weichweizen"@de,
-        "Blé tendre"@fr,
-        "Grano tenero"@it .
-
-crop:D40E1405-757C-4E3D-B26F-07D5F2251565 a :Crop ;
-    schema:identifier "D40E1405-757C-4E3D-B26F-07D5F2251565" ;
-    schema:isPartOf cultivation:890D8A5E-BF86-4B2D-9B98-45B779D80F7F ;
-    schema:name "Bäume und Sträucher (ausserhalb Forst)"@de,
-        "arbres et arbustes (hors fôret)"@fr,
-        "Alberi e arbusti (al di fuori della foresta)"@it .
 
 crop:D51188F1-9F8F-46E6-8F5B-550A7D45A4BE a :Crop ;
     schema:identifier "D51188F1-9F8F-46E6-8F5B-550A7D45A4BE" ;
     schema:name "Melisse"@de,
         "mélisse"@fr,
         "Melissa"@it .
-
-crop:D541F2F5-8BA6-4E26-AA66-9CF469648AFF a :Crop ;
-    schema:identifier "D541F2F5-8BA6-4E26-AA66-9CF469648AFF" ;
-    schema:isPartOf cultivation:E59545AD-3331-4E3D-B58D-9F67833C060B ;
-    schema:name "Küchenkräuter"@de,
-        "fines herbes"@fr,
-        "Erbette da cucina"@it .
 
 crop:D605CAA5-9199-4739-8C9C-343C74DABAEB a :Crop ;
     schema:identifier "D605CAA5-9199-4739-8C9C-343C74DABAEB" ;
@@ -1995,28 +1516,28 @@ crop:D605CAA5-9199-4739-8C9C-343C74DABAEB a :Crop ;
 
 crop:D63D73AC-87B1-41F7-82AC-D1DFF12F6704 a :Crop ;
     schema:identifier "D63D73AC-87B1-41F7-82AC-D1DFF12F6704" ;
-    schema:isPartOf cultivation:43F8091A-A333-40F5-8845-FF83398B9AC3 ;
+    schema:isPartOf crop:43F8091A-A333-40F5-8845-FF83398B9AC3 ;
     schema:name "Himbeere"@de,
         "framboise"@fr,
         "Lampone"@it .
 
 crop:D8A50212-BD15-456A-9D2E-2A401C2EF21D a :Crop ;
     schema:identifier "D8A50212-BD15-456A-9D2E-2A401C2EF21D" ;
-    schema:isPartOf cultivation:4380EC0F-E195-4783-8BB7-F6B0464B37D6 ;
+    schema:isPartOf crop:4380EC0F-E195-4783-8BB7-F6B0464B37D6 ;
     schema:name "Kohlrabi"@de,
         "colrave"@fr,
         "Cavolo rapa"@it .
 
 crop:D95CD842-A5BC-4DAA-935D-F009DA7BA748 a :Crop ;
     schema:identifier "D95CD842-A5BC-4DAA-935D-F009DA7BA748" ;
-    schema:isPartOf cultivation:0A5F3E91-96B9-4C6D-B99C-2E6E4835F6D5 ;
+    schema:isPartOf crop:0A5F3E91-96B9-4C6D-B99C-2E6E4835F6D5 ;
     schema:name "Fichte"@de,
         "épicéa"@fr,
         "Abete rosso"@it .
 
 crop:DA5835F6-C295-4A4F-829D-007B1FA50A6D a :Crop ;
     schema:identifier "DA5835F6-C295-4A4F-829D-007B1FA50A6D" ;
-    schema:isPartOf cultivation:E55D75D3-B805-4BFD-B2B0-D02368BD32AC ;
+    schema:isPartOf crop:E55D75D3-B805-4BFD-B2B0-D02368BD32AC ;
     schema:name "Stielmus"@de,
         "navet à tondre"@fr,
         "Cavoli / rape da taglio"@it .
@@ -2029,123 +1550,63 @@ crop:DA71526F-AC1D-40F1-8EF5-109E3F3FFD76 a :Crop ;
 
 crop:DAF00AE7-5272-4E07-9A66-E9F9BD8FEE43 a :Crop ;
     schema:identifier "DAF00AE7-5272-4E07-9A66-E9F9BD8FEE43" ;
-    schema:isPartOf cultivation:75317E57-B194-4B3D-8FF2-3489A39AC177 ;
+    schema:isPartOf crop:75317E57-B194-4B3D-8FF2-3489A39AC177 ;
     schema:name "Blaudistel"@de,
         "chardon bleu"@fr,
         "Cardo azzurro"@it .
 
 crop:DB0DCB7D-CA9F-454A-8398-606F066FBF4F a :Crop ;
     schema:identifier "DB0DCB7D-CA9F-454A-8398-606F066FBF4F" ;
-    schema:isPartOf cultivation:0106A8DF-6CDF-4E18-8F46-3D9E1D52D0E5 ;
+    schema:isPartOf crop:0106A8DF-6CDF-4E18-8F46-3D9E1D52D0E5 ;
     schema:name "Baby-Leaf (Asteraceae)"@de,
         "Baby-Leaf (Asteraceae)"@fr,
         "Baby-Leaf (Asteraceae)"@it .
 
-crop:DB4E4C8B-016C-4C31-8DC5-587A9F1F8FFD a :Crop ;
-    schema:identifier "DB4E4C8B-016C-4C31-8DC5-587A9F1F8FFD" ;
-    schema:isPartOf cultivation:E59545AD-3331-4E3D-B58D-9F67833C060B ;
-    schema:name "Hülsenfrüchtler (Fabaceae)"@de,
-        "fabacées (légumineuses)"@fr,
-        "Fabacee (Leguminose)"@it .
-
-crop:DB98FC8E-5AFA-4434-9478-960124F960CA a :Crop ;
-    schema:identifier "DB98FC8E-5AFA-4434-9478-960124F960CA" ;
-    schema:isPartOf cultivation:5AC11C43-B41E-4823-8515-E991D4EA1B3C ;
-    schema:name "Zwiebeln"@de,
-        "oignon"@fr,
-        "Cipolle"@it .
-
 crop:DF455946-B2AB-45D2-9780-4A45A98D72D6 a :Crop ;
     schema:identifier "DF455946-B2AB-45D2-9780-4A45A98D72D6" ;
-    schema:isPartOf cultivation:D40E1405-757C-4E3D-B26F-07D5F2251565 ;
+    schema:isPartOf crop:D40E1405-757C-4E3D-B26F-07D5F2251565 ;
     schema:name "Buchsbäume (Buxus)"@de,
         "buis (Buxus)"@fr,
         "Bosso (Buxus)"@it .
 
 crop:DF4B3775-8361-41CE-9843-AC953197403D a :Crop ;
     schema:identifier "DF4B3775-8361-41CE-9843-AC953197403D" ;
-    schema:isPartOf cultivation:6F26F4E0-401C-4B16-A28B-4CC889907361 ;
+    schema:isPartOf crop:6F26F4E0-401C-4B16-A28B-4CC889907361 ;
     schema:name "Federkohl"@de,
         "chou frisé non pommé"@fr,
         "Cavolo piuma"@it .
 
-crop:E107FECF-24B6-43D7-B3E6-05C5C239EFBB a :Crop ;
-    schema:identifier "E107FECF-24B6-43D7-B3E6-05C5C239EFBB" ;
-    schema:isPartOf cultivation:1DD3F253-4B23-4B69-BFB1-1C24CE7D5508 ;
-    schema:name "Anbautechnik"@de,
-        "techniques culturales"@fr,
-        "Tecnica di coltivazione"@it .
-
 crop:E2A335E5-D797-46E7-9CE4-9CB3F301AAA2 a :Crop ;
     schema:identifier "E2A335E5-D797-46E7-9CE4-9CB3F301AAA2" ;
-    schema:isPartOf cultivation:75317E57-B194-4B3D-8FF2-3489A39AC177 ;
+    schema:isPartOf crop:75317E57-B194-4B3D-8FF2-3489A39AC177 ;
     schema:name "Gladiole"@de,
         "glaïeul"@fr,
         "Gladiolo"@it .
 
 crop:E36FADB4-A022-42A0-81CF-F041CABB93A4 a :Crop ;
     schema:identifier "E36FADB4-A022-42A0-81CF-F041CABB93A4" ;
-    schema:isPartOf cultivation:E107FECF-24B6-43D7-B3E6-05C5C239EFBB ;
+    schema:isPartOf crop:E107FECF-24B6-43D7-B3E6-05C5C239EFBB ;
     schema:name "Frässaaten"@de,
         "semis après travail superficiel"@fr,
         "Semine dopo la fresatura"@it .
 
-crop:E55D75D3-B805-4BFD-B2B0-D02368BD32AC a :Crop ;
-    schema:identifier "E55D75D3-B805-4BFD-B2B0-D02368BD32AC" ;
-    schema:isPartOf cultivation:E59545AD-3331-4E3D-B58D-9F67833C060B ;
-    schema:name "Kreuzblütler (Brassicaceae)"@de,
-        "crucifères (Brassicaceae)"@fr,
-        "Crocifere (Brassicacee)"@it .
-
-crop:E58E502E-BECD-44CB-96A2-3A6771D8A7B7 a :Crop ;
-    schema:identifier "E58E502E-BECD-44CB-96A2-3A6771D8A7B7" ;
-    schema:isPartOf cultivation:1DD3F253-4B23-4B69-BFB1-1C24CE7D5508 ;
-    schema:name "Raps"@de,
-        "Colza"@fr,
-        "Colza"@it .
-
-crop:E59545AD-3331-4E3D-B58D-9F67833C060B a :Crop ;
-    schema:identifier "E59545AD-3331-4E3D-B58D-9F67833C060B" ;
-    schema:name "allg. Gemüsebau"@de,
-        "domaine app. maraîchère"@fr .
-
 crop:E5B9C6F0-5C57-4A12-8ED9-D65B669B8243 a :Crop ;
     schema:identifier "E5B9C6F0-5C57-4A12-8ED9-D65B669B8243" ;
-    schema:isPartOf cultivation:B05127D4-FF0A-4F36-AFDD-0D487043122A ;
+    schema:isPartOf crop:B05127D4-FF0A-4F36-AFDD-0D487043122A ;
     schema:name "Chicorée"@de,
         "chicorée witloof (chicorée-endive)"@fr,
         "Cicoria belga"@it .
 
-crop:E786D43D-444B-49D6-B0D0-294265F91403 a :Crop ;
-    schema:identifier "E786D43D-444B-49D6-B0D0-294265F91403" ;
-    schema:isPartOf cultivation:B05127D4-FF0A-4F36-AFDD-0D487043122A ;
-    schema:name "Salate (Asteraceae)"@de,
-        "salades (Asteraceae)"@fr,
-        "Insalate (Asteracee)"@it .
-
 crop:E8B23A5E-B65E-4DC8-977D-BD84F143A442 a :Crop ;
     schema:identifier "E8B23A5E-B65E-4DC8-977D-BD84F143A442" ;
-    schema:isPartOf cultivation:75317E57-B194-4B3D-8FF2-3489A39AC177 ;
+    schema:isPartOf crop:75317E57-B194-4B3D-8FF2-3489A39AC177 ;
     schema:name "Primeln"@de,
         "primevères"@fr,
         "Primule"@it .
 
-crop:E981BFA6-288D-4EA6-B81B-4F610611EB36 a :Crop ;
-    schema:identifier "E981BFA6-288D-4EA6-B81B-4F610611EB36" ;
-    schema:name "Medizinalkräuter"@de,
-        "plantes médicinales"@fr,
-        "erbe medicinali"@it .
-
-crop:E9E3C127-33C1-40D9-8552-3CBE45E8E4C4 a :Crop ;
-    schema:identifier "E9E3C127-33C1-40D9-8552-3CBE45E8E4C4" ;
-    schema:isPartOf cultivation:46901564-D096-4323-AE81-C93831AFEC64 ;
-    schema:name "Tomaten"@de,
-        "tomate"@fr,
-        "Pomodori"@it .
-
 crop:EA82A16B-4A8C-4917-A08F-C2AD3B266640 a :Crop ;
     schema:identifier "EA82A16B-4A8C-4917-A08F-C2AD3B266640" ;
-    schema:isPartOf cultivation:3783A322-9E9C-44F6-B683-FE35221CA6AC ;
+    schema:isPartOf crop:3783A322-9E9C-44F6-B683-FE35221CA6AC ;
     schema:name "Hanf"@de,
         "Hemp"@en,
         "Chanvre"@fr,
@@ -2153,21 +1614,21 @@ crop:EA82A16B-4A8C-4917-A08F-C2AD3B266640 a :Crop ;
 
 crop:EACDD832-D1CD-479C-973F-CD0DB6A9FBC3 a :Crop ;
     schema:identifier "EACDD832-D1CD-479C-973F-CD0DB6A9FBC3" ;
-    schema:isPartOf cultivation:E55D75D3-B805-4BFD-B2B0-D02368BD32AC ;
+    schema:isPartOf crop:E55D75D3-B805-4BFD-B2B0-D02368BD32AC ;
     schema:name "Meerrettich"@de,
         "raifort"@fr,
         "Rafano rusticana / Ramolaccio"@it .
 
 crop:EB0C465C-50B7-4DC0-914B-ABE4C284A907 a :Crop ;
     schema:identifier "EB0C465C-50B7-4DC0-914B-ABE4C284A907" ;
-    schema:isPartOf cultivation:E59545AD-3331-4E3D-B58D-9F67833C060B ;
+    schema:isPartOf crop:E59545AD-3331-4E3D-B58D-9F67833C060B ;
     schema:name "Kohlgemüse"@de,
         "choux"@fr,
         "Cavoli"@it .
 
 crop:EB820B26-DE4E-4AF4-8BA3-46844F045306 a :Crop ;
     schema:identifier "EB820B26-DE4E-4AF4-8BA3-46844F045306" ;
-    schema:isPartOf cultivation:1F004DAA-89AD-4A9D-A172-95D24B8A45FA ;
+    schema:isPartOf crop:1F004DAA-89AD-4A9D-A172-95D24B8A45FA ;
     schema:name "Bodenkohlrabi"@de,
         "rutabaga"@fr,
         "Cavolo navone"@it .
@@ -2181,7 +1642,7 @@ crop:EC349B29-6A2B-4E43-990F-C553D278DC0E a :Crop ;
 
 crop:ED17FD35-4C96-4D28-902B-ACEA3F4950D6 a :Crop ;
     schema:identifier "ED17FD35-4C96-4D28-902B-ACEA3F4950D6" ;
-    schema:isPartOf cultivation:D40E1405-757C-4E3D-B26F-07D5F2251565 ;
+    schema:isPartOf crop:D40E1405-757C-4E3D-B26F-07D5F2251565 ;
     schema:name "Zypressengewächse"@de,
         "Cupressaceae"@en,
         "cupressacées"@fr,
@@ -2189,7 +1650,7 @@ crop:ED17FD35-4C96-4D28-902B-ACEA3F4950D6 a :Crop ;
 
 crop:EE7EE009-EBD4-471D-AE85-1A98130F6119 a :Crop ;
     schema:identifier "EE7EE009-EBD4-471D-AE85-1A98130F6119" ;
-    schema:isPartOf cultivation:5276BCA7-CEA5-4B6D-90E3-52F3A0532490 ;
+    schema:isPartOf crop:5276BCA7-CEA5-4B6D-90E3-52F3A0532490 ;
     schema:name "Pastinake"@de,
         "Panais"@fr,
         "Pastinaca"@it .
@@ -2203,21 +1664,21 @@ crop:EF29B430-95C5-45D4-A812-DCCE046E1B8E a :Crop ;
 
 crop:F171615D-81A1-4654-BF30-BF51620DFFB9 a :Crop ;
     schema:identifier "F171615D-81A1-4654-BF30-BF51620DFFB9" ;
-    schema:isPartOf cultivation:8774F019-8BB4-409D-ADA9-B565ECA1A6A9 ;
+    schema:isPartOf crop:8774F019-8BB4-409D-ADA9-B565ECA1A6A9 ;
     schema:name "Lagerräume"@de,
         "entrepôts"@fr,
         "Depositi"@it .
 
 crop:F4479311-1516-49F1-95BA-E232030F9AAC a :Crop ;
     schema:identifier "F4479311-1516-49F1-95BA-E232030F9AAC" ;
-    schema:isPartOf cultivation:890D8A5E-BF86-4B2D-9B98-45B779D80F7F ;
+    schema:isPartOf crop:890D8A5E-BF86-4B2D-9B98-45B779D80F7F ;
     schema:name "Ziergehölze (ausserhalb Forst)"@de,
         "arbustes d'ornement (hors forêt)"@fr,
         "Arbusti ornamentali (al di fuori della foresta)"@it .
 
 crop:F512809F-5CC7-44A2-A378-8FDAFA67CFEA a :Crop ;
     schema:identifier "F512809F-5CC7-44A2-A378-8FDAFA67CFEA" ;
-    schema:isPartOf cultivation:46901564-D096-4323-AE81-C93831AFEC64 ;
+    schema:isPartOf crop:46901564-D096-4323-AE81-C93831AFEC64 ;
     schema:name "Pepino"@de,
         "pear melon"@en,
         "poire melon"@fr,
@@ -2225,77 +1686,56 @@ crop:F512809F-5CC7-44A2-A378-8FDAFA67CFEA a :Crop ;
 
 crop:F6A02973-2AF5-47AF-B99D-FFAD9A24BCB4 a :Crop ;
     schema:identifier "F6A02973-2AF5-47AF-B99D-FFAD9A24BCB4" ;
-    schema:isPartOf cultivation:FE69D926-4BE1-4C67-840E-30C3D299442E ;
+    schema:isPartOf crop:FE69D926-4BE1-4C67-840E-30C3D299442E ;
     schema:name "Rondini"@de,
         "rondini"@fr,
         "Rondini"@it .
 
 crop:F718EA3C-F363-4DB2-BDF6-2D6236706822 a :Crop ;
     schema:identifier "F718EA3C-F363-4DB2-BDF6-2D6236706822" ;
-    schema:isPartOf cultivation:5AC11C43-B41E-4823-8515-E991D4EA1B3C ;
+    schema:isPartOf crop:5AC11C43-B41E-4823-8515-E991D4EA1B3C ;
     schema:name "Schalotten"@de,
         "échalote"@fr,
         "Scalogni"@it .
 
 crop:F730D531-B0C8-4A20-AC4B-4F86445E2491 a :Crop ;
     schema:identifier "F730D531-B0C8-4A20-AC4B-4F86445E2491" ;
-    schema:isPartOf cultivation:82376115-14E2-449A-8DFA-F8119476FE3F ;
+    schema:isPartOf crop:82376115-14E2-449A-8DFA-F8119476FE3F ;
     schema:name "Emmer"@de,
         "Amidonnier"@fr,
         "Farro"@it .
 
-crop:F7BB2F1C-EDE5-4C95-931E-0B2C973F5A29 a :Crop ;
-    schema:identifier "F7BB2F1C-EDE5-4C95-931E-0B2C973F5A29" ;
-    schema:isPartOf cultivation:A8BAC5BB-239F-4EE0-8CE2-F55590DA3FC0 ;
-    schema:name "Bohnen mit Hülsen"@de,
-        "haricots non écossés"@fr,
-        "Fagioli con baccello"@it .
-
-crop:F8A8C1D8-E2C7-4230-8435-4D5AEE69813E a :Crop ;
-    schema:identifier "F8A8C1D8-E2C7-4230-8435-4D5AEE69813E" ;
-    schema:isPartOf cultivation:8B5A3E2B-2534-4FC0-84C5-685915165A77 ;
-    schema:name "Hafer"@de,
-        "Avoine"@fr,
-        "Avena"@it .
-
 crop:F9426E5C-7D4D-45E5-80DA-64BB12336CA4 a :Crop ;
     schema:identifier "F9426E5C-7D4D-45E5-80DA-64BB12336CA4" ;
-    schema:isPartOf cultivation:3783A322-9E9C-44F6-B683-FE35221CA6AC ;
+    schema:isPartOf crop:3783A322-9E9C-44F6-B683-FE35221CA6AC ;
     schema:name "Mais"@de,
         "Maïs"@fr,
         "Mais"@it .
 
-crop:FA0F7C48-BF78-49B0-9046-FBB5ABB4BF75 a :Crop ;
-    schema:identifier "FA0F7C48-BF78-49B0-9046-FBB5ABB4BF75" ;
-    schema:isPartOf cultivation:0F5F1FEE-084C-4961-A76F-82F9B17B2635 ;
-    schema:name "Birne / Nashi"@de,
-        "poirier / nashi"@fr,
-        "Pero / Nashi"@it .
-
 crop:FA8C26CF-E3B4-456D-AA4E-94D21AEADA1A a :Crop ;
     schema:identifier "FA8C26CF-E3B4-456D-AA4E-94D21AEADA1A" ;
-    schema:isPartOf cultivation:D541F2F5-8BA6-4E26-AA66-9CF469648AFF ;
+    schema:isPartOf crop:D541F2F5-8BA6-4E26-AA66-9CF469648AFF ;
     schema:name "Schnittlauch"@de,
         "ciboulette"@fr,
         "Erba cipollina"@it .
 
 crop:FCF24426-CAB8-43C8-9E42-B09581420287 a :Crop ;
     schema:identifier "FCF24426-CAB8-43C8-9E42-B09581420287" ;
-    schema:isPartOf cultivation:890D8A5E-BF86-4B2D-9B98-45B779D80F7F ;
+    schema:isPartOf crop:890D8A5E-BF86-4B2D-9B98-45B779D80F7F ;
     schema:name "Stauden"@de,
         "plantes vivaces"@fr,
         "Arbusti"@it .
 
 crop:FD180555-9DEF-42BA-86E0-EBD31AB8FABB a :Crop ;
     schema:identifier "FD180555-9DEF-42BA-86E0-EBD31AB8FABB" ;
-    schema:isPartOf cultivation:0F5F1FEE-084C-4961-A76F-82F9B17B2635 ;
+    schema:isPartOf crop:0F5F1FEE-084C-4961-A76F-82F9B17B2635 ;
     schema:name "Quitte"@de,
         "cognassier"@fr,
         "Cotogno"@it .
 
 crop:FD18F42C-C390-4701-B07B-B8108B33320B a :Crop ;
     schema:identifier "FD18F42C-C390-4701-B07B-B8108B33320B" ;
-    schema:isPartOf cultivation:0F5F1FEE-084C-4961-A76F-82F9B17B2635 ;
+    schema:isPartOf crop:0F5F1FEE-084C-4961-A76F-82F9B17B2635 ;
     schema:name "Apfel"@de,
         "pommier"@fr,
         "Melo"@it .
@@ -2305,24 +1745,583 @@ crop:FD7AB34C-F432-445D-9440-F44FDAB8422C a :Crop ;
     schema:name "allg. Wiesen und Weiden"@de,
         "domaine app. prairies et paturages"@fr .
 
-crop:FE69D926-4BE1-4C67-840E-30C3D299442E a :Crop ;
-    schema:identifier "FE69D926-4BE1-4C67-840E-30C3D299442E" ;
-    schema:isPartOf cultivation:8303C191-3315-4942-91DF-668C019850D7 ;
-    schema:name "Kürbisse mit geniessbarer Schale"@de,
-        "courges à peau comestible"@fr,
-        "Zucche con buccia commestibile"@it .
-
 crop:FF0DF95C-A3A9-47EE-95FA-00FCB428A4ED a :Crop ;
     schema:identifier "FF0DF95C-A3A9-47EE-95FA-00FCB428A4ED" ;
-    schema:isPartOf cultivation:75317E57-B194-4B3D-8FF2-3489A39AC177 ;
+    schema:isPartOf crop:75317E57-B194-4B3D-8FF2-3489A39AC177 ;
     schema:name "Tulpe"@de,
         "tulipe"@fr,
         "Tulipano"@it .
 
 crop:FFDDDA7D-B340-473C-94F4-841272B602FA a :Crop ;
     schema:identifier "FFDDDA7D-B340-473C-94F4-841272B602FA" ;
-    schema:isPartOf cultivation:BE3C6915-B28E-4CC8-980E-7F243F14F519 ;
+    schema:isPartOf crop:BE3C6915-B28E-4CC8-980E-7F243F14F519 ;
     schema:name "Jostabeere"@de,
         "josta"@fr,
         "Josta"@it .
+
+crop:00D94F57-BA6F-4BA0-8F68-26D4C497539A a :Crop ;
+    schema:identifier "00D94F57-BA6F-4BA0-8F68-26D4C497539A" ;
+    schema:isPartOf crop:890D8A5E-BF86-4B2D-9B98-45B779D80F7F ;
+    schema:name "Ein- und zweijährige Zierpflanzen"@de,
+        "plantes ornementales annuelles et bisannuelles"@fr,
+        "Piante ornamentali annuali e biennali"@it .
+
+crop:0A3519B1-A42F-43EE-AF82-6DCF17EA8DA6 a :Crop ;
+    schema:identifier "0A3519B1-A42F-43EE-AF82-6DCF17EA8DA6" ;
+    schema:isPartOf crop:E59545AD-3331-4E3D-B58D-9F67833C060B ;
+    schema:name "Knöterichgewächse (Polygonaceae)"@de,
+        "polygonacées"@fr,
+        "Poligonacee"@it .
+
+crop:0A5F3E91-96B9-4C6D-B99C-2E6E4835F6D5 a :Crop ;
+    schema:identifier "0A5F3E91-96B9-4C6D-B99C-2E6E4835F6D5" ;
+    schema:isPartOf crop:7B3C8CEE-526F-4381-A757-669C1864291A ;
+    schema:name "Nadelgehölze (Koniferen)"@de,
+        "conifères"@fr,
+        "Conifere"@it .
+
+crop:1575BC21-D089-4248-99A6-676F14E1309F a :Crop ;
+    schema:identifier "1575BC21-D089-4248-99A6-676F14E1309F" ;
+    schema:name "allg. Forstwirtschaft"@de,
+        "domaine app. sylviculture"@fr .
+
+crop:17CE2494-D0C9-484B-A91E-15B7B04733FD a :Crop ;
+    schema:identifier "17CE2494-D0C9-484B-A91E-15B7B04733FD" ;
+    schema:isPartOf crop:E59545AD-3331-4E3D-B58D-9F67833C060B ;
+    schema:name "Portulakgewächse (Portulacaceae)"@de,
+        "portulacacées (Portulacaceae)"@fr,
+        "Portulacee (Portulacaceae)"@it .
+
+crop:1B9B39A9-D742-4E8D-A88E-280B65C4B913 a :Crop ;
+    schema:identifier "1B9B39A9-D742-4E8D-A88E-280B65C4B913" ;
+    schema:isPartOf crop:890D8A5E-BF86-4B2D-9B98-45B779D80F7F ;
+    schema:name "Blumenknollen"@de,
+        "tubercules de fleurs"@fr,
+        "Radici tuberose floreali"@it .
+
+crop:1F004DAA-89AD-4A9D-A172-95D24B8A45FA a :Crop ;
+    schema:identifier "1F004DAA-89AD-4A9D-A172-95D24B8A45FA" ;
+    schema:isPartOf crop:A0C29069-5DBA-4E89-B7F9-4C556C272821 ;
+    schema:name "Brassica napus-Rüben"@de,
+        "rave de Brassica napus"@fr,
+        "Rapa di Brassica napus"@it .
+
+crop:1F03DDC0-19CF-48F1-BAB8-61CA4CEF24CF a :Crop ;
+    schema:identifier "1F03DDC0-19CF-48F1-BAB8-61CA4CEF24CF" ;
+    schema:isPartOf crop:1DD3F253-4B23-4B69-BFB1-1C24CE7D5508 ;
+    schema:name "Wiesen und Weiden"@de,
+        "Prairies et pâturages"@fr,
+        "Prati e pascoli"@it .
+
+crop:287584B7-E43E-494B-84C2-D13B2C9C3736 a :Crop ;
+    schema:identifier "287584B7-E43E-494B-84C2-D13B2C9C3736" ;
+    schema:isPartOf crop:8B5A3E2B-2534-4FC0-84C5-685915165A77 ;
+    schema:name "Wintergetreide"@de,
+        "Céréales d'automne"@fr,
+        "Cereali autunnali"@it .
+
+crop:2D7D1AE2-E685-4C6B-B8EE-DC5C6391EC76 a :Crop ;
+    schema:identifier "2D7D1AE2-E685-4C6B-B8EE-DC5C6391EC76" ;
+    schema:isPartOf crop:E59545AD-3331-4E3D-B58D-9F67833C060B ;
+    schema:name "Spargelgewächse (Asparagaceae)"@de,
+        "asparagacées (Asparagaceae)"@fr,
+        "Asparagacee (Asparagaceae)"@it .
+
+crop:2FAEBED2-193A-460C-A538-9B5C78024D98 a :Crop ;
+    schema:identifier "2FAEBED2-193A-460C-A538-9B5C78024D98" ;
+    schema:isPartOf crop:E59545AD-3331-4E3D-B58D-9F67833C060B ;
+    schema:name "Baldriangewächse (Valerianaceae)"@de,
+        "valérianacées"@fr,
+        "Valerianacee"@it .
+
+crop:31A0539F-1D4C-4BCF-876F-215CEBC4C864 a :Crop ;
+    schema:identifier "31A0539F-1D4C-4BCF-876F-215CEBC4C864" ;
+    schema:isPartOf crop:E59545AD-3331-4E3D-B58D-9F67833C060B ;
+    schema:name "Gewürz- und Medizinalkräuter"@de,
+        "herbes aromatiques et médicinales"@fr,
+        "Erbe aromatiche e medicinali"@it .
+
+crop:35A8338D-9B59-4842-A50C-1B8BF93CDABA a :Crop ;
+    schema:identifier "35A8338D-9B59-4842-A50C-1B8BF93CDABA" ;
+    schema:isPartOf crop:C83340F9-9BA9-4C7A-B414-A691C4853D31 ;
+    schema:name "TiKul"@de,
+        "TyCul"@fr,
+        "Tikuli"@it .
+
+crop:3A53A166-7559-4E75-BDED-F65CA6FDFDE1 a :Crop ;
+    schema:identifier "3A53A166-7559-4E75-BDED-F65CA6FDFDE1" ;
+    schema:isPartOf crop:D40E1405-757C-4E3D-B26F-07D5F2251565 ;
+    schema:name "Rhododendron"@de,
+        "rhododendron"@fr,
+        "Rododendro"@it .
+
+crop:43ED81C2-40E7-4A22-9114-3E623BE1B14C a :Crop ;
+    schema:identifier "43ED81C2-40E7-4A22-9114-3E623BE1B14C" ;
+    schema:name "allg. Weinbau"@de,
+        "domaine app. vignes"@fr .
+
+crop:4D6B9837-FA9A-4E8D-BAAB-A7249BD01F2D a :Crop ;
+    schema:identifier "4D6B9837-FA9A-4E8D-BAAB-A7249BD01F2D" ;
+    schema:name "allg. Nichtkulturland"@de,
+        "domaine app. non agricole"@fr .
+
+crop:4DD550C5-15BB-4D52-98BD-6770972575F0 a :Crop ;
+    schema:identifier "4DD550C5-15BB-4D52-98BD-6770972575F0" ;
+    schema:isPartOf crop:33686F38-1E1A-4698-81E4-C40EE4494EF3 ;
+    schema:name "Kopfsalate"@de,
+        "laitues pommées"@fr,
+        "Insalate cappuccio"@it .
+
+crop:6569FC94-60C5-4608-8926-D76D2009B284 a :Crop ;
+    schema:identifier "6569FC94-60C5-4608-8926-D76D2009B284" ;
+    schema:name "allg."@de,
+        "toutes les cultures"@fr,
+        "In generale"@it .
+
+crop:6EDA1989-51C8-490E-90FD-974CE3E8FF03 a :Crop ;
+    schema:identifier "6EDA1989-51C8-490E-90FD-974CE3E8FF03" ;
+    schema:isPartOf crop:C6EBB3D7-3050-4C36-BBC2-CBD20D6B9E56 ;
+    schema:name "Hartschalenobst"@de,
+        "noix en général"@fr,
+        "Frutta con guscio"@it .
+
+crop:77462EAB-3BD3-4EAC-B740-F95597FFAE35 a :Crop ;
+    schema:identifier "77462EAB-3BD3-4EAC-B740-F95597FFAE35" ;
+    schema:isPartOf crop:6EDA1989-51C8-490E-90FD-974CE3E8FF03 ;
+    schema:name "Nüsse"@de,
+        "noix"@fr,
+        "Noci"@it .
+
+crop:7D76F5F6-5810-4556-A7D5-84C91FDE3FF2 a :Crop ;
+    schema:identifier "7D76F5F6-5810-4556-A7D5-84C91FDE3FF2" ;
+    schema:isPartOf crop:8B5A3E2B-2534-4FC0-84C5-685915165A77 ;
+    schema:name "Roggen"@de,
+        "Seigle"@fr,
+        "Segale"@it .
+
+crop:811C79DC-9182-4302-8AEC-AB12D5F69188 a :Crop ;
+    schema:identifier "811C79DC-9182-4302-8AEC-AB12D5F69188" ;
+    schema:name "allg. Ökologische Ausgleichsflächen (gemäss DZV)"@de,
+        "domaine surfaces de compensation écologique (selon OPD)"@fr,
+        "Superfici di compensazione ecologica in generale (conformemente OPD)"@it .
+
+crop:8A00630A-32FC-4B5A-8171-EC0F41D39F48 a :Crop ;
+    schema:identifier "8A00630A-32FC-4B5A-8171-EC0F41D39F48" ;
+    schema:isPartOf crop:17CE2494-D0C9-484B-A91E-15B7B04733FD ;
+    schema:name "Portulak"@de,
+        "pourpier"@fr,
+        "Portulaca"@it .
+
+crop:9CA61204-7EA7-4F2F-BAD3-BD02EDD6A829 a :Crop ;
+    schema:identifier "9CA61204-7EA7-4F2F-BAD3-BD02EDD6A829" ;
+    schema:isPartOf crop:33686F38-1E1A-4698-81E4-C40EE4494EF3 ;
+    schema:name "Blattsalate (Asteraceae)"@de,
+        "laitues à tondre (Asteraceae)"@fr,
+        "Insalate a foglie (Asteracee)"@it .
+
+crop:B85EF4C2-C22E-4A5A-A431-98DC8F621D92 a :Crop ;
+    schema:identifier "B85EF4C2-C22E-4A5A-A431-98DC8F621D92" ;
+    schema:isPartOf crop:890D8A5E-BF86-4B2D-9B98-45B779D80F7F ;
+    schema:name "Blumenzwiebeln"@de,
+        "bulbes des fleurs"@fr,
+        "Bulbi di fiori"@it .
+
+crop:BA6FCA8F-68B8-4408-A267-2546B1FA5764 a :Crop ;
+    schema:identifier "BA6FCA8F-68B8-4408-A267-2546B1FA5764" ;
+    schema:isPartOf crop:E59545AD-3331-4E3D-B58D-9F67833C060B ;
+    schema:name "Lippenblütler (Labiatae)"@de,
+        "lamiacées (Labiatae)"@fr,
+        "Lamiacee (Labiatae)"@it .
+
+crop:BF77A7F8-C4C5-43AF-9BCD-B7F904506E7A a :Crop ;
+    schema:identifier "BF77A7F8-C4C5-43AF-9BCD-B7F904506E7A" ;
+    schema:isPartOf crop:E59545AD-3331-4E3D-B58D-9F67833C060B ;
+    schema:name "Süssgräser (Poaceae)"@de,
+        "poacées (Gramineae)"@fr,
+        "Poacee (Graminaceae)"@it .
+
+crop:C83340F9-9BA9-4C7A-B414-A691C4853D31 a :Crop ;
+    schema:identifier "C83340F9-9BA9-4C7A-B414-A691C4853D31" ;
+    schema:name "--"@de,
+        "---"@fr,
+        "---"@it .
+
+crop:E58E502E-BECD-44CB-96A2-3A6771D8A7B7 a :Crop ;
+    schema:identifier "E58E502E-BECD-44CB-96A2-3A6771D8A7B7" ;
+    schema:isPartOf crop:1DD3F253-4B23-4B69-BFB1-1C24CE7D5508 ;
+    schema:name "Raps"@de,
+        "Colza"@fr,
+        "Colza"@it .
+
+crop:E981BFA6-288D-4EA6-B81B-4F610611EB36 a :Crop ;
+    schema:identifier "E981BFA6-288D-4EA6-B81B-4F610611EB36" ;
+    schema:name "Medizinalkräuter"@de,
+        "plantes médicinales"@fr,
+        "erbe medicinali"@it .
+
+crop:F8A8C1D8-E2C7-4230-8435-4D5AEE69813E a :Crop ;
+    schema:identifier "F8A8C1D8-E2C7-4230-8435-4D5AEE69813E" ;
+    schema:isPartOf crop:8B5A3E2B-2534-4FC0-84C5-685915165A77 ;
+    schema:name "Hafer"@de,
+        "Avoine"@fr,
+        "Avena"@it .
+
+crop:FA0F7C48-BF78-49B0-9046-FBB5ABB4BF75 a :Crop ;
+    schema:identifier "FA0F7C48-BF78-49B0-9046-FBB5ABB4BF75" ;
+    schema:isPartOf crop:0F5F1FEE-084C-4961-A76F-82F9B17B2635 ;
+    schema:name "Birne / Nashi"@de,
+        "poirier / nashi"@fr,
+        "Pero / Nashi"@it .
+
+crop:086E34F3-82E5-4F92-9224-41C9F7529E70 a :Crop ;
+    schema:identifier "086E34F3-82E5-4F92-9224-41C9F7529E70" ;
+    schema:isPartOf crop:1DD3F253-4B23-4B69-BFB1-1C24CE7D5508 ;
+    schema:name "Futter- und Zuckerrüben"@de,
+        "betteraves à sucre et fourragère"@fr,
+        "Barbabietole da foraggio e da zucchero"@it .
+
+crop:096444CD-43E6-41F9-8914-2E7DADA4C801 a :Crop ;
+    schema:identifier "096444CD-43E6-41F9-8914-2E7DADA4C801" ;
+    schema:isPartOf crop:46901564-D096-4323-AE81-C93831AFEC64 ;
+    schema:name "Paprika"@de,
+        "poivron"@fr,
+        "Peperone"@it .
+
+crop:2314EB9F-7207-409F-A0D4-89B6A1177363 a :Crop ;
+    schema:identifier "2314EB9F-7207-409F-A0D4-89B6A1177363" ;
+    schema:isPartOf crop:43ED81C2-40E7-4A22-9114-3E623BE1B14C ;
+    schema:name "Reben"@de,
+        "vigne"@fr,
+        "Vite"@it .
+
+crop:24A364B9-6BD7-42A6-A9EC-AB9E94E010FF a :Crop ;
+    schema:identifier "24A364B9-6BD7-42A6-A9EC-AB9E94E010FF" ;
+    schema:isPartOf crop:CA722B7E-8F16-4502-8139-C33F749545D4 ;
+    schema:name "Zwetschge / Pflaume"@de,
+        "prunier (pruneau/prune)"@fr,
+        "Prugno/Susino"@it .
+
+crop:33686F38-1E1A-4698-81E4-C40EE4494EF3 a :Crop ;
+    schema:identifier "33686F38-1E1A-4698-81E4-C40EE4494EF3" ;
+    schema:isPartOf crop:E786D43D-444B-49D6-B0D0-294265F91403 ;
+    schema:name "Lactuca-Salate"@de,
+        "salades lactuca"@fr,
+        "Insalate del genere Lactuca"@it .
+
+crop:3FEAB48F-0D66-4814-B3E3-C4BC0AB749B3 a :Crop ;
+    schema:identifier "3FEAB48F-0D66-4814-B3E3-C4BC0AB749B3" ;
+    schema:name "Forstwirtschaft allg."@de,
+        "sylviculture en général"@fr,
+        "Selvicoltura in generale"@it .
+
+crop:43F8091A-A333-40F5-8845-FF83398B9AC3 a :Crop ;
+    schema:identifier "43F8091A-A333-40F5-8845-FF83398B9AC3" ;
+    schema:isPartOf crop:3EAC5420-E234-4AA5-8B46-6F9E8542C7AF ;
+    schema:name "Rubus Arten"@de,
+        "espèces de Rubus"@fr,
+        "Specie di rubus"@it .
+
+crop:5DF3AB4D-7CAC-4112-90D9-67BD80EC5E96 a :Crop ;
+    schema:identifier "5DF3AB4D-7CAC-4112-90D9-67BD80EC5E96" ;
+    schema:isPartOf crop:DB4E4C8B-016C-4C31-8DC5-587A9F1F8FFD ;
+    schema:name "Erbsen"@de,
+        "pois"@fr,
+        "Piselli"@it .
+
+crop:625EA905-7C3D-4BCC-8551-BC1CB14FF647 a :Crop ;
+    schema:identifier "625EA905-7C3D-4BCC-8551-BC1CB14FF647" ;
+    schema:isPartOf crop:8B5A3E2B-2534-4FC0-84C5-685915165A77 ;
+    schema:name "Gerste"@de,
+        "Orge"@fr,
+        "Orzo"@it .
+
+crop:7B3C8CEE-526F-4381-A757-669C1864291A a :Crop ;
+    schema:identifier "7B3C8CEE-526F-4381-A757-669C1864291A" ;
+    schema:isPartOf crop:890D8A5E-BF86-4B2D-9B98-45B779D80F7F ;
+    schema:name "Gehölze (ausserhalb Forst)"@de,
+        "plantes ligneuses (hors forêt)"@fr,
+        "Boschetti (al di fuori del bosco)"@it .
+
+crop:7F20F06C-C950-49B9-A78F-9E2F696B079E a :Crop ;
+    schema:identifier "7F20F06C-C950-49B9-A78F-9E2F696B079E" ;
+    schema:name "Nichtkulturland allg."@de,
+        "domaine non agricole en général"@fr,
+        "Superfici non coltive in generale"@it .
+
+crop:A0C29069-5DBA-4E89-B7F9-4C556C272821 a :Crop ;
+    schema:identifier "A0C29069-5DBA-4E89-B7F9-4C556C272821" ;
+    schema:isPartOf crop:E55D75D3-B805-4BFD-B2B0-D02368BD32AC ;
+    schema:name "Speisekohlrüben"@de,
+        "rave de Brassica rapa et B. napus"@fr,
+        "Rapa di Brassica rapa e B. napus"@it .
+
+crop:A8BAC5BB-239F-4EE0-8CE2-F55590DA3FC0 a :Crop ;
+    schema:identifier "A8BAC5BB-239F-4EE0-8CE2-F55590DA3FC0" ;
+    schema:isPartOf crop:DB4E4C8B-016C-4C31-8DC5-587A9F1F8FFD ;
+    schema:name "Bohnen"@de,
+        "haricots"@fr,
+        "Fagioli"@it .
+
+crop:AB0798FE-64B8-49A2-8E75-14467EB7AB58 a :Crop ;
+    schema:identifier "AB0798FE-64B8-49A2-8E75-14467EB7AB58" ;
+    schema:isPartOf crop:39D599AA-B93E-4AC2-970E-5A99A3113572 ;
+    schema:name "Mangold"@de,
+        "bette"@fr,
+        "Bietola"@it .
+
+crop:B4D50F5E-6028-493D-9B95-85CAE5DADF06 a :Crop ;
+    schema:identifier "B4D50F5E-6028-493D-9B95-85CAE5DADF06" ;
+    schema:isPartOf crop:3783A322-9E9C-44F6-B683-FE35221CA6AC ;
+    schema:name "Kartoffeln"@de,
+        "pommes de terre"@fr,
+        "Patate"@it .
+
+crop:D3D90BE6-0924-4844-98FB-52C4D7F21A38 a :Crop ;
+    schema:identifier "D3D90BE6-0924-4844-98FB-52C4D7F21A38" ;
+    schema:isPartOf crop:82376115-14E2-449A-8DFA-F8119476FE3F ;
+    schema:name "Weichweizen"@de,
+        "Blé tendre"@fr,
+        "Grano tenero"@it .
+
+crop:E107FECF-24B6-43D7-B3E6-05C5C239EFBB a :Crop ;
+    schema:identifier "E107FECF-24B6-43D7-B3E6-05C5C239EFBB" ;
+    schema:isPartOf crop:1DD3F253-4B23-4B69-BFB1-1C24CE7D5508 ;
+    schema:name "Anbautechnik"@de,
+        "techniques culturales"@fr,
+        "Tecnica di coltivazione"@it .
+
+crop:F7BB2F1C-EDE5-4C95-931E-0B2C973F5A29 a :Crop ;
+    schema:identifier "F7BB2F1C-EDE5-4C95-931E-0B2C973F5A29" ;
+    schema:isPartOf crop:A8BAC5BB-239F-4EE0-8CE2-F55590DA3FC0 ;
+    schema:name "Bohnen mit Hülsen"@de,
+        "haricots non écossés"@fr,
+        "Fagioli con baccello"@it .
+
+crop:0106A8DF-6CDF-4E18-8F46-3D9E1D52D0E5 a :Crop ;
+    schema:identifier "0106A8DF-6CDF-4E18-8F46-3D9E1D52D0E5" ;
+    schema:name "Baby-Leaf"@de,
+        "Baby-Leaf"@fr,
+        "Baby-Leaf"@it .
+
+crop:0F5F1FEE-084C-4961-A76F-82F9B17B2635 a :Crop ;
+    schema:identifier "0F5F1FEE-084C-4961-A76F-82F9B17B2635" ;
+    schema:isPartOf crop:C6EBB3D7-3050-4C36-BBC2-CBD20D6B9E56 ;
+    schema:name "Kernobst"@de,
+        "fruits à pépins"@fr,
+        "Frutta a granelli"@it .
+
+crop:30F9F737-0A18-43EC-AF88-F28940E567F1 a :Crop ;
+    schema:identifier "30F9F737-0A18-43EC-AF88-F28940E567F1" ;
+    schema:isPartOf crop:8303C191-3315-4942-91DF-668C019850D7 ;
+    schema:name "Gurken"@de,
+        "concombre"@fr,
+        "Cetrioli"@it .
+
+crop:39D599AA-B93E-4AC2-970E-5A99A3113572 a :Crop ;
+    schema:identifier "39D599AA-B93E-4AC2-970E-5A99A3113572" ;
+    schema:isPartOf crop:E59545AD-3331-4E3D-B58D-9F67833C060B ;
+    schema:name "Gänsefussgewächse (Chenopodiaceae)"@de,
+        "chénopodiacées"@fr,
+        "Chenopodiacee"@it .
+
+crop:4A22B9D3-747C-4323-A852-1CB1F6ADB680 a :Crop ;
+    schema:identifier "4A22B9D3-747C-4323-A852-1CB1F6ADB680" ;
+    schema:isPartOf crop:4380EC0F-E195-4783-8BB7-F6B0464B37D6 ;
+    schema:name "Blumenkohle"@de,
+        "Flowering brassica"@en,
+        "choux (développement de l'inflorescence)"@fr,
+        "Cavoli a infiorescenza"@it .
+
+crop:8DB1A579-6BAC-4DCB-8026-E79B65D3BD3A a :Crop ;
+    schema:identifier "8DB1A579-6BAC-4DCB-8026-E79B65D3BD3A" ;
+    schema:isPartOf crop:E786D43D-444B-49D6-B0D0-294265F91403 ;
+    schema:name "Endivien und Blattzichorien"@de,
+        "chicorée pommée et chicorée à feuilles"@fr,
+        "Indivia e cicoria da foglia"@it .
+
+crop:D36B92CB-136F-46C3-8217-10C3F86ECA12 a :Crop ;
+    schema:identifier "D36B92CB-136F-46C3-8217-10C3F86ECA12" ;
+    schema:isPartOf crop:5276BCA7-CEA5-4B6D-90E3-52F3A0532490 ;
+    schema:name "Sellerie"@de,
+        "céleri"@fr,
+        "Sedano"@it .
+
+crop:DB98FC8E-5AFA-4434-9478-960124F960CA a :Crop ;
+    schema:identifier "DB98FC8E-5AFA-4434-9478-960124F960CA" ;
+    schema:isPartOf crop:5AC11C43-B41E-4823-8515-E991D4EA1B3C ;
+    schema:name "Zwiebeln"@de,
+        "oignon"@fr,
+        "Cipolle"@it .
+
+crop:E786D43D-444B-49D6-B0D0-294265F91403 a :Crop ;
+    schema:identifier "E786D43D-444B-49D6-B0D0-294265F91403" ;
+    schema:isPartOf crop:B05127D4-FF0A-4F36-AFDD-0D487043122A ;
+    schema:name "Salate (Asteraceae)"@de,
+        "salades (Asteraceae)"@fr,
+        "Insalate (Asteracee)"@it .
+
+crop:E9E3C127-33C1-40D9-8552-3CBE45E8E4C4 a :Crop ;
+    schema:identifier "E9E3C127-33C1-40D9-8552-3CBE45E8E4C4" ;
+    schema:isPartOf crop:46901564-D096-4323-AE81-C93831AFEC64 ;
+    schema:name "Tomaten"@de,
+        "tomate"@fr,
+        "Pomodori"@it .
+
+crop:FE69D926-4BE1-4C67-840E-30C3D299442E a :Crop ;
+    schema:identifier "FE69D926-4BE1-4C67-840E-30C3D299442E" ;
+    schema:isPartOf crop:8303C191-3315-4942-91DF-668C019850D7 ;
+    schema:name "Kürbisse mit geniessbarer Schale"@de,
+        "courges à peau comestible"@fr,
+        "Zucche con buccia commestibile"@it .
+
+crop:5AC11C43-B41E-4823-8515-E991D4EA1B3C a :Crop ;
+    schema:identifier "5AC11C43-B41E-4823-8515-E991D4EA1B3C" ;
+    schema:isPartOf crop:E59545AD-3331-4E3D-B58D-9F67833C060B ;
+    schema:name "Liliengewächse (Liliaceae)"@de,
+        "liliacées"@fr,
+        "Liliacee"@it .
+
+crop:6F26F4E0-401C-4B16-A28B-4CC889907361 a :Crop ;
+    schema:identifier "6F26F4E0-401C-4B16-A28B-4CC889907361" ;
+    schema:isPartOf crop:4380EC0F-E195-4783-8BB7-F6B0464B37D6 ;
+    schema:name "Blattkohle"@de,
+        "choux à feuilles"@fr,
+        "Cavoli fogliacei"@it .
+
+crop:82376115-14E2-449A-8DFA-F8119476FE3F a :Crop ;
+    schema:identifier "82376115-14E2-449A-8DFA-F8119476FE3F" ;
+    schema:isPartOf crop:8B5A3E2B-2534-4FC0-84C5-685915165A77 ;
+    schema:name "Weizen"@de,
+        "Blé"@fr,
+        "Frumento"@it .
+
+crop:8774F019-8BB4-409D-ADA9-B565ECA1A6A9 a :Crop ;
+    schema:identifier "8774F019-8BB4-409D-ADA9-B565ECA1A6A9" ;
+    schema:isPartOf crop:4D6B9837-FA9A-4E8D-BAAB-A7249BD01F2D ;
+    schema:name "Allgemein Vorratsschutz"@de,
+        "protection des récoltes"@fr,
+        "Protezione delle scorte (in generale)"@it .
+
+crop:BE3C6915-B28E-4CC8-980E-7F243F14F519 a :Crop ;
+    schema:identifier "BE3C6915-B28E-4CC8-980E-7F243F14F519" ;
+    schema:isPartOf crop:3EAC5420-E234-4AA5-8B46-6F9E8542C7AF ;
+    schema:name "Ribes Arten"@de,
+        "espèces de Ribes"@fr,
+        "Specie di ribes"@it .
+
+crop:C6EBB3D7-3050-4C36-BBC2-CBD20D6B9E56 a :Crop ;
+    schema:identifier "C6EBB3D7-3050-4C36-BBC2-CBD20D6B9E56" ;
+    schema:name "allg. Obstbau"@de,
+        "domaine app. arboriculture"@fr .
+
+crop:CA722B7E-8F16-4502-8139-C33F749545D4 a :Crop ;
+    schema:identifier "CA722B7E-8F16-4502-8139-C33F749545D4" ;
+    schema:isPartOf crop:C6EBB3D7-3050-4C36-BBC2-CBD20D6B9E56 ;
+    schema:name "Steinobst"@de,
+        "fruits à noyaux"@fr,
+        "Frutta a nocciolo"@it .
+
+crop:DB4E4C8B-016C-4C31-8DC5-587A9F1F8FFD a :Crop ;
+    schema:identifier "DB4E4C8B-016C-4C31-8DC5-587A9F1F8FFD" ;
+    schema:isPartOf crop:E59545AD-3331-4E3D-B58D-9F67833C060B ;
+    schema:name "Hülsenfrüchtler (Fabaceae)"@de,
+        "fabacées (légumineuses)"@fr,
+        "Fabacee (Leguminose)"@it .
+
+crop:3783A322-9E9C-44F6-B683-FE35221CA6AC a :Crop ;
+    schema:identifier "3783A322-9E9C-44F6-B683-FE35221CA6AC" ;
+    schema:name "Feldbau allg."@de,
+        "grande culture en général"@fr,
+        "Campicoltura in generale"@it .
+
+crop:4380EC0F-E195-4783-8BB7-F6B0464B37D6 a :Crop ;
+    schema:identifier "4380EC0F-E195-4783-8BB7-F6B0464B37D6" ;
+    schema:isPartOf crop:E55D75D3-B805-4BFD-B2B0-D02368BD32AC ;
+    schema:name "Kohlarten"@de,
+        "choux"@fr,
+        "Specie di cavoli"@it .
+
+crop:46901564-D096-4323-AE81-C93831AFEC64 a :Crop ;
+    schema:identifier "46901564-D096-4323-AE81-C93831AFEC64" ;
+    schema:isPartOf crop:E59545AD-3331-4E3D-B58D-9F67833C060B ;
+    schema:name "Nachtschattengewächse (Solanaceae)"@de,
+        "solanacées"@fr,
+        "Solanacee"@it .
+
+crop:5276BCA7-CEA5-4B6D-90E3-52F3A0532490 a :Crop ;
+    schema:identifier "5276BCA7-CEA5-4B6D-90E3-52F3A0532490" ;
+    schema:isPartOf crop:E59545AD-3331-4E3D-B58D-9F67833C060B ;
+    schema:name "Doldenblütler (Apiaceae)"@de,
+        "ombellifères (Apiaceae)"@fr,
+        "Ombrellifere (Apiacee)"@it .
+
+crop:8303C191-3315-4942-91DF-668C019850D7 a :Crop ;
+    schema:identifier "8303C191-3315-4942-91DF-668C019850D7" ;
+    schema:isPartOf crop:E59545AD-3331-4E3D-B58D-9F67833C060B ;
+    schema:name "Kürbisgewächse (Cucurbitaceae)"@de,
+        "cucurbitacées"@fr,
+        "Cucurbitacee"@it .
+
+crop:B05127D4-FF0A-4F36-AFDD-0D487043122A a :Crop ;
+    schema:identifier "B05127D4-FF0A-4F36-AFDD-0D487043122A" ;
+    schema:isPartOf crop:E59545AD-3331-4E3D-B58D-9F67833C060B ;
+    schema:name "Korbblütler (Asteraceae)"@de,
+        "composées (Asteracea)"@fr,
+        "Composite (Asteracee)"@it .
+
+crop:3EAC5420-E234-4AA5-8B46-6F9E8542C7AF a :Crop ;
+    schema:identifier "3EAC5420-E234-4AA5-8B46-6F9E8542C7AF" ;
+    schema:name "allg. Beerenbau"@de,
+        "domaine app. baies"@fr .
+
+crop:8B5A3E2B-2534-4FC0-84C5-685915165A77 a :Crop ;
+    schema:identifier "8B5A3E2B-2534-4FC0-84C5-685915165A77" ;
+    schema:isPartOf crop:3783A322-9E9C-44F6-B683-FE35221CA6AC ;
+    schema:name "Getreide"@de,
+        "Céréales"@fr,
+        "Cereali"@it .
+
+crop:D40E1405-757C-4E3D-B26F-07D5F2251565 a :Crop ;
+    schema:identifier "D40E1405-757C-4E3D-B26F-07D5F2251565" ;
+    schema:isPartOf crop:890D8A5E-BF86-4B2D-9B98-45B779D80F7F ;
+    schema:name "Bäume und Sträucher (ausserhalb Forst)"@de,
+        "arbres et arbustes (hors fôret)"@fr,
+        "Alberi e arbusti (al di fuori della foresta)"@it .
+
+crop:75317E57-B194-4B3D-8FF2-3489A39AC177 a :Crop ;
+    schema:identifier "75317E57-B194-4B3D-8FF2-3489A39AC177" ;
+    schema:isPartOf crop:890D8A5E-BF86-4B2D-9B98-45B779D80F7F ;
+    schema:name "Blumenkulturen und Grünpflanzen"@de,
+        "cultures florales et plantes vertes"@fr,
+        "Colture da fiore e piante verdi"@it .
+
+crop:E55D75D3-B805-4BFD-B2B0-D02368BD32AC a :Crop ;
+    schema:identifier "E55D75D3-B805-4BFD-B2B0-D02368BD32AC" ;
+    schema:isPartOf crop:E59545AD-3331-4E3D-B58D-9F67833C060B ;
+    schema:name "Kreuzblütler (Brassicaceae)"@de,
+        "crucifères (Brassicaceae)"@fr,
+        "Crocifere (Brassicacee)"@it .
+
+crop:890D8A5E-BF86-4B2D-9B98-45B779D80F7F a :Crop ;
+    schema:identifier "890D8A5E-BF86-4B2D-9B98-45B779D80F7F" ;
+    schema:name "Zierpflanzen allg."@de,
+        "culture ornementale en général"@fr,
+        "Coltivazione piante ornam. in generale"@it .
+
+crop:D541F2F5-8BA6-4E26-AA66-9CF469648AFF a :Crop ;
+    schema:identifier "D541F2F5-8BA6-4E26-AA66-9CF469648AFF" ;
+    schema:isPartOf crop:E59545AD-3331-4E3D-B58D-9F67833C060B ;
+    schema:name "Küchenkräuter"@de,
+        "fines herbes"@fr,
+        "Erbette da cucina"@it .
+
+crop:1DD3F253-4B23-4B69-BFB1-1C24CE7D5508 a :Crop ;
+    schema:identifier "1DD3F253-4B23-4B69-BFB1-1C24CE7D5508" ;
+    schema:name "allg. Feldbau"@de,
+        "domaine app. grande culture"@fr .
+
+crop:E59545AD-3331-4E3D-B58D-9F67833C060B a :Crop ;
+    schema:identifier "E59545AD-3331-4E3D-B58D-9F67833C060B" ;
+    schema:name "allg. Gemüsebau"@de,
+        "domaine app. maraîchère"@fr .
 
