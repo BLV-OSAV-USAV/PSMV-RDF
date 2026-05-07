@@ -405,7 +405,14 @@ shape:ApplicationArea a sh:NodeShape ;
         "Anwendungsbereich"@de ;
     rdfs:comment "Establishes the macro-environmental or physical operational theater in which a product's usage is legally authorized. Common delineations include enclosed greenhouse environments, open agricultural fields, or specialized storage facilities."@en ;
     sh:targetClass :ApplicationArea ;
-    sh:property shape:multiLanguageName .
+    sh:property shape:multiLanguageName,
+    [
+        sh:name "Code"@en ;
+        sh:path schema:identifier ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:in ( "B" "F" "G" "L" "N" "O" "S" "W" "Z" "Ö" ) ;
+    ] .
 
 shape:ApplicationComment a sh:NodeShape ;
     rdfs:label "Application Comment"@en,
