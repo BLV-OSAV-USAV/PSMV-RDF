@@ -43,10 +43,10 @@ UNIT_MAPPING = rdf_mappings["unit_mapping"]
 # Create Products
 def ingredient_ttl(
     db_path="data/processed/psmv-data.duckdb",
-    out_path: str = "rdf/data/ingredient_ttl"
+    out_path: str = "rdf/data/ingredients.ttl"
 ):
     """
-    Creates a ingredient_ttl
+    Creates a ingredients_ttl
     """
 
     # Create empty graph
@@ -78,15 +78,11 @@ def ingredient_ttl(
             product_id = str(row.get("product_ref_or_id")).strip()
             substance_id = str(row.get("nk_codetable_substance_id")).strip()
 
-            product_uri = PRODUCT[product_id]
             substance_uri = SUBSTANCE[substance_id]
             ingredient_uri = INGREDIENT[f"{product_id}-{substance_id}"]
 
             # Type ingredient
             graph.add((ingredient_uri, RDF.type, BASE.Ingredient))
-
-            # Link product to ingredient
-            graph.add((product_uri, BASE.hasIngredient, ingredient_uri))
 
             # Link ingredient to substance
             graph.add((ingredient_uri, BASE.substance, substance_uri))
@@ -114,10 +110,10 @@ def ingredient_ttl(
     print(f"[i] Total triples: {len(graph)}")
 
     # Save to file
-    out_path = Path("rdf/data/ingredient.ttl")
-    out_path.parent.mkdir(parents=True, exist_ok=True)
-    graph.serialize(destination=out_path, format="turtle")
-    print(f"\nSaved to `{out_path}`")
+    out_path_obj = Path(out_path)
+    out_path_obj.parent.mkdir(parents=True, exist_ok=True)
+    graph.serialize(destination=out_path_obj, format="turtle")
+    print(f"\nSaved to `{out_path_obj}`")
     return graph
 
 if __name__ == "__main__":
