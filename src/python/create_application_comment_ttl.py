@@ -1,5 +1,6 @@
 import os
 import sys
+import html
 import duckdb
 from pathlib import Path
 import pandas as pd
@@ -65,15 +66,15 @@ def application_comment_ttl(
             # Add Type
             graph.add((comment_uri, RDF.type, BASE.ApplicationComment))
 
-            # Add language-tagged Names
+            # Add language-tagged Descriptions (unescaping HTML entities like &gt;)
             if pd.notna(row.get("DE")):
-                graph.add((comment_uri, SCHEMA.name, Literal(str(row["DE"]).strip(), lang="de")))
+                graph.add((comment_uri, SCHEMA.description, Literal(html.unescape(str(row["DE"]).strip()), lang="de")))
             if pd.notna(row.get("EN")):
-                graph.add((comment_uri, SCHEMA.name, Literal(str(row["EN"]).strip(), lang="en")))
+                graph.add((comment_uri, SCHEMA.description, Literal(html.unescape(str(row["EN"]).strip()), lang="en")))
             if pd.notna(row.get("FR")):
-                graph.add((comment_uri, SCHEMA.name, Literal(str(row["FR"]).strip(), lang="fr")))
+                graph.add((comment_uri, SCHEMA.description, Literal(html.unescape(str(row["FR"]).strip()), lang="fr")))
             if pd.notna(row.get("IT")):
-                graph.add((comment_uri, SCHEMA.name, Literal(str(row["IT"]).strip(), lang="it")))
+                graph.add((comment_uri, SCHEMA.description, Literal(html.unescape(str(row["IT"]).strip()), lang="it")))
 
             # Add waiting period blank node if applicable
             if pd.notna(row.get("min_interval_between_uses")):
