@@ -7,8 +7,7 @@ on:
       - 'data/raw/**'
   pull_request:
     branches: [main]
-    paths:
-      - 'data/raw/**'
+
 permissions:
   contents: write
 jobs:
