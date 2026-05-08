@@ -25,12 +25,13 @@ A Python module for converting Swiss plant protection product data from CSV form
 3. Start the data integration pipeline
 
     ``` bash
-    python -m service.pipeline.py
+    python -m service.pipeline
     ```
     
 4. Upload Graph
+
     ``` bash
-    python -m service.upload_graph.py
+    python -m service.upload_graph
     ```
     
 

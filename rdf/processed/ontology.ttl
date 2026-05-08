@@ -126,8 +126,9 @@ schema:QuantitativeValue a owl:Class ;
     rdfs:comment "An inactive ingredient in a plant protection product that supports the formulation but has no direct pesticidal activity."@en ;
     rdfs:subClassOf :Substance .
 
-:Cultivation a owl:Class ;
-    rdfs:label "Cultivation"@en .
+:Crop a owl:Class ;
+    rdfs:label "Kultur"@de,
+        "Crop"@en .
 
 :Disinfectant a owl:Class ;
     rdfs:label "Disinfectant"@en ;
