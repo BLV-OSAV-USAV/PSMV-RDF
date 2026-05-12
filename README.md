@@ -1,10 +1,9 @@
 # PSMV-RDF
-![Python](https://img.shields.io/badge/python-3.11+-blue)
+![Python](https://img.shields.io/badge/python-3.12+-blue)
 ![License](https://img.shields.io/github/license/BLV-OSAV-USAV/PSMV-RDF)
 ![Status](https://img.shields.io/badge/status-active--development-orange)
 [![Docs](https://img.shields.io/badge/docs-github--pages-blue)](https://blv-osav-usav.github.io/PSMV-RDF/)
 ![CI](https://github.com/BLV-OSAV-USAV/PSMV-RDF/actions/workflows/psmv_rdf_primary_pipeline.yml/badge.svg)
-![Coverage](https://codecov.io/gh/BLV-OSAV-USAV/PSMV-RDF/branch/main/graph/badge.svg)
 
 > [!NOTE]
 > This repository is under active development. Features, documentation, and structure will change frequently.
