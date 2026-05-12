@@ -21,7 +21,7 @@ A Python module for converting Swiss plant protection product data from CSV form
 2. Install the package in editable mode
 
     ``` bash
-    pip install -e .
+    uv pip install -e .
     ```
 
 3. Start the data integration pipeline
