@@ -13,5 +13,6 @@ NEEDED_FILES = {
 
 with FTP(os.environ["SFTP_HOST"]) as ftp:
     ftp.login(user=os.environ["SFTP_USERNAME"], passwd=os.environ["SFTP_PASSWORD"])
+    ftp.cwd("Daten_ALVPH/PSM_Verzeichnis")
     for filename in sorted(NEEDED_FILES & set(ftp.nlst())):
         print(filename)
