@@ -11,6 +11,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Check files on SFTP
+        run: python tests/test_sftp.py
+        env:
+          SFTP_HOST: ${{ secrets.SFTP_HOST }}
+          SFTP_USERNAME: ${{ secrets.SFTP_USERNAME }}
+          SFTP_PASSWORD: ${{ secrets.SFTP_PASSWORD }}    
       - run: python src/python/db_processing/fetch_data.py
         env:
           SFTP_HOST: ${{ secrets.SFTP_HOST }}
