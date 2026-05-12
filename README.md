@@ -35,9 +35,6 @@ A Python module for converting Swiss plant protection product data from CSV form
     ``` bash
     python -m service.upload_graph
     ```
-    pip install uv
-
-
 
 ## Project Structure
 
