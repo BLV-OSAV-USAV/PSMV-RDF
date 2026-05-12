@@ -9,7 +9,7 @@ A Python module for converting Swiss plant protection product data from CSV form
 
 ## Reproduce the data integration pipeline
 
-1. Create and activate the  environment.
+1. Set up the virtual environment
 
     ``` bash
     uv venv psmv-rdf
