@@ -1,0 +1,574 @@
+@prefix : <https://agriculture.ld.admin.ch/plant-protection/> .
+@prefix country: <https://ld.admin.ch/country/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ghs: <https://agriculture.ld.admin.ch/plant-protection/ghs/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix product: <https://agriculture.ld.admin.ch/plant-protection/product/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix shape: <https://agriculture.ld.admin.ch/plant-protection/shape/> .
+@prefix shapes: <https://agriculture.ld.admin.ch/plant-protection/shapes/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+shape: a owl:Ontology ;
+    dcterms:abstract """
+This data model describes the data of the Swiss registry for plant production products.
+It is supposed to help the reader understand the data.
+The actual data is available on [the linked data service LINDAS](https://lindas.admin.ch/).
+"""@en ;
+    dcterms:created "2026-02-20"^^xsd:date ;
+    dcterms:creator "Sara Schärrer, Guy Schnidrig, Damian Oswald, Sara Schärrer, Ingrid Nyfeler, Martin Hertach" ;
+    dcterms:description """
+**NOTE:** This is filler text. Proper introduction needs to be written, still.
+
+The data model in this document describes the data of the Swiss registry of plant protection products (SRPPP), encoded via the Shapes Constraint Language (SHACL).
+
+Fundamentally, the data model describes plant protection products and their attributes.
+
+All data described in this SHACL data model in is hosted on LINDAS (Linked Data Service), the semantic web infrastructure of the Swiss federal government.
+The complete, dynamically updated dataset resides at <https://lindas.admin.ch/>.
+To interact with this knowledge graph, practitioners must employ the [SPARQL Protocol and RDF Query Language](https://www.w3.org/TR/sparql11-overview/).
+Querying the LINDAS endpoint allows users to execute highly specific, multi-dimensional graph traversals. 
+
+An introductory query is provided below to demonstrate the fundamental semantic extraction of arbitrary triples:
+
+``` rq
+PREFIX : <https://agriculture.ld.admin.ch/plant-protection/>
+PREFIX country: <https://ld.admin.ch/country/>
+PREFIX schema: <http://schema.org/>
+
+SELECT *
+FROM <https://lindas.admin.ch/foag/plant-protection>
+WHERE {
+  ?product a :ParallelImport ;
+    schema:name ?name ;
+    schema:countryOfOrigin country:DEU ;
+    :federalAdmissionNumber ?wNumber .
+}
+LIMIT 10
+```
+
+To run this query, you may visit the [LINDAS SPARQL GUI](https://s.zazuko.com/23Aw5hp).
+
+However, to fully leverage the analytical capabilities of this schema, users are directed to the centralized query repository.
+A comprehensive suite of advanced SPARQL query templates, demonstrating complex relational extraction and data aggregation, is maintained within the project's source control at [https://github.com/BLV-OSAV-USAV/PSMV-RDF/tree/main/src/sparql/examples](https://github.com/BLV-OSAV-USAV/PSMV-RDF/tree/main/src/sparql/examples).
+"""@en ;
+    dcterms:title "Swiss registry of plant protection products"@en ;
+    owl:versionInfo "3.0.0" .
+
+shape:ApplicationArea a sh:NodeShape ;
+    rdfs:label "Anwendungsbereich"@de,
+        "Application Area"@en ;
+    rdfs:comment "Establishes the macro-environmental or physical operational theater in which a product's usage is legally authorized. Common delineations include enclosed greenhouse environments, open agricultural fields, or specialized storage facilities."@en ;
+    sh:property [ sh:in ( "B" "F" "G" "L" "N" "O" "S" "W" "Z" "Ö" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "Code"@en ;
+            sh:path schema:identifier ],
+        shape:multiLanguageName ;
+    sh:targetClass :ApplicationArea .
+
+shape:ApplicationComment a sh:NodeShape ;
+    rdfs:label "Anwendungskommentar"@de,
+        "Application Comment"@en ;
+    rdfs:comment "Captures precise textual directives and technical stipulations regarding the physical deployment of a product. These annotations often clarify exceptional conditions, temporal constraints, or best-practice methodologies necessary for efficacy."@en ;
+    sh:property shape:multiLanguageDescription ;
+    sh:targetClass :ApplicationComment .
+
+shape:ClassProperty a sh:NodeShape ;
+    sh:property [ sh:description "Preferred name of the class or property in English"@en ;
+            sh:message "Any class or property must have at least one name in English."@en ;
+            sh:name "English name"@en ;
+            sh:order 1 ;
+            sh:path schema:name ;
+            sh:qualifiedMinCount 1 ;
+            sh:qualifiedValueShape [ sh:languageIn ( "en" ) ] ],
+        [ sh:description "Preferred name of the class or property"@de ;
+            sh:message "There can be at most one name per language tag."@en ;
+            sh:name "Name"@en ;
+            sh:order 2 ;
+            sh:path schema:name ;
+            sh:uniqueLang true ],
+        [ sh:message "A class or property can have at most one description per language."@en ;
+            sh:name "Description"@en ;
+            sh:order 3 ;
+            sh:path schema:description ;
+            sh:uniqueLang true ],
+        [ schema:name "Forbid rdfs:label"@en ;
+            sh:maxCount 0 ;
+            sh:message "Any use of rdfs:label is forbidden; the preferred property is schema:name."@en ;
+            sh:path rdfs:label ],
+        [ schema:name "Forbid rdfs:comment"@en ;
+            sh:maxCount 0 ;
+            sh:message "Any use of rdfs:comment is forbidden; the preferred property is schema:description."@en ;
+            sh:path rdfs:comment ] ;
+    sh:targetClass owl:Class,
+        owl:DatatypeProperty,
+        owl:ObjectProperty .
+
+shape:Crop a sh:NodeShape ;
+    rdfs:label "Kultur"@de,
+        "Crop"@en ;
+    rdfs:comment "Denotes the specific agronomic crop, botanical grouping, or agricultural setting targeted for treatment. It forms the biological jurisdiction defining where the product may be legally utilized."@en ;
+    sh:property [ sh:maxCount 2 ;
+            sh:minCount 0 ;
+            sh:name "Übergeordnete Kultur"@de,
+                "Parent crop"@en ;
+            sh:path schema:isPartOf ],
+        shape:identifier,
+        shape:multiLanguageName ;
+    sh:targetClass :Crop .
+
+shape:GHSStatement a sh:NodeShape ;
+    rdfs:label "GHS-Hinweis"@de,
+        "GHS statement"@en ;
+    rdfs:comment "Encodes a standardized hazard or precautionary directive derived from the Globally Harmonized System of Classification and Labelling of Chemicals."@en ;
+    sh:property [ sh:datatype rdf:langString ;
+            sh:description "The localized text of the GHS statement."@en ;
+            sh:minCount 1 ;
+            sh:name "Name"@en ;
+            sh:path schema:name ],
+        [ sh:datatype xsd:string ;
+            sh:description "The official alphanumeric GHS identifier code."@en ;
+            sh:maxCount 1 ;
+            sh:name "Identifier"@en ;
+            sh:path schema:identifier ] ;
+    sh:targetClass ghs:GHSStatement .
+
+shape:HazardPictogram a sh:NodeShape ;
+    rdfs:label "Gefahrenpiktogramm"@de,
+        "Hazard pictogram"@en ;
+    rdfs:comment "A graphical composition intended to convey specific hazard information."@en ;
+    sh:node shape:GHSStatement ;
+    sh:property [ sh:message "Hazard pictograms must follow the identifier pattern 'GHS0X' where X is a digit from 1 to 9."@en ;
+            sh:minCount 1 ;
+            sh:path schema:identifier ;
+            sh:pattern "^GHS0[1-9]$" ],
+        [ sh:description "The URI pointing to the visual representation of the pictogram."@en ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "Image"@en ;
+            sh:nodeKind sh:IRI ;
+            sh:path schema:image ] ;
+    sh:targetClass ghs:HazardPictogram .
+
+shape:HazardStatement a sh:NodeShape ;
+    rdfs:label "Gefahrenhinweis"@de,
+        "Hazard statement"@en ;
+    rdfs:comment "A standard phrase assigned to a hazard class and category that describes the nature of the hazards."@en ;
+    sh:node shape:GHSStatement ;
+    sh:property [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path schema:identifier ;
+            sh:pattern "^H\\S*$" ] ;
+    sh:targetClass ghs:HazardStatement .
+
+shape:Indication a sh:NodeShape ;
+    rdfs:label "Indikation"@de,
+        "Indication"@en ;
+    rdfs:comment """
+The indication formally outlines an approved, highly specific usage profile for a plant protection product.
+It systematically links a target pest with the applicable cultivation domain and delineates parameters like dosage, legal obligations, and mandatory waiting periods.
+"""@en ;
+    sh:property [ sh:class :ApplicationArea ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "Application Area"@en ;
+            sh:path :applicationArea ],
+        [ sh:class :ApplicationComment ;
+            sh:name "Application Comment"@en ;
+            sh:path :applicationComment ],
+        [ sh:class :Crop ;
+            sh:minCount 1 ;
+            sh:name "Cultivation"@en ;
+            sh:path :crop ],
+        [ sh:maxCount 1 ;
+            sh:name "Dosage"@en ;
+            sh:node shape:QuantitativeValue ;
+            sh:path :dosage ],
+        [ sh:maxCount 1 ;
+            sh:name "Expenditure"@en ;
+            sh:node shape:QuantitativeValue ;
+            sh:path :expenditure ],
+        [ sh:class :Obligation ;
+            sh:name "Obligation"@en ;
+            sh:path :obligation ],
+        [ sh:class :Pest ;
+            sh:minCount 1 ;
+            sh:name "Pest"@en ;
+            sh:path :pest ],
+        [ sh:maxCount 1 ;
+            sh:name "Waiting Period"@en ;
+            sh:node shape:QuantitativeValue ;
+            sh:path :waitingPeriod ] ;
+    sh:targetClass :Indication .
+
+shape:Ingredient a sh:NodeShape ;
+    rdfs:label "Inhaltsstoff"@de,
+        "Ingredient"@en ;
+    rdfs:comment "Represents a constituent component of a product. It specifies both the underlying chemical or biological substance and its corresponding quantitative share within the final formulation."@en ;
+    sh:property [ sh:class :Substance ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "Substance"@en ;
+            sh:path :substance ],
+        [ sh:minCount 1 ;
+            sh:name "Share (Quantitative Value)"@en ;
+            sh:node shape:QuantitativeValue ;
+            sh:path :share ] .
+
+shape:Obligation a sh:NodeShape ;
+    rdfs:label "Auflage"@de,
+        "Obligation"@en ;
+    rdfs:comment "Specifies statutory mandates, restrictions, or operational conditions that an applicator must strictly observe. These parameters are designed to mitigate environmental impact, safeguard human health, and ensure regulatory compliance."@en ;
+    sh:property shape:multiLanguageDescription ;
+    sh:targetClass :Obligation .
+
+shape:Organization a sh:NodeShape ;
+    rdfs:label "Organisation"@de,
+        "Organization"@en ;
+    rdfs:comment "Represents a legally recognized entity or organization involved in the lifecycle of a plant protection product. This encompasses administrative and commercial actors such as authorisation holders, primary manufacturers, or registered distributors."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:pattern "^https://register\\.ld\\.admin\\.ch/zefix/company/" ;
+                sh:property [ sh:hasValue country:CHE ;
+                        sh:path ( schema:address schema:addressCountry ) ] ] [ sh:pattern "^https://agriculture\\.ld\\.admin\\.ch/plant-protection/company/" ;
+                sh:property [ sh:minCount 1 ;
+                        sh:not [ sh:hasValue country:CHE ] ;
+                        sh:path ( schema:address schema:addressCountry ) ] ] ) ;
+    sh:order 5 ;
+    sh:property [ sh:description "The official, legally registered name of the organization."@en ;
+            sh:minCount 1 ;
+            sh:name "Legal name"@en ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:legalName ;
+            sh:uniqueLang true ],
+        [ sh:description "The primary postal address of the organization."@en ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "Address"@en ;
+            sh:node shape:PostalAddress ;
+            sh:path schema:address ],
+        [ sh:datatype xsd:string ;
+            sh:description "A telephone number associated with the organization. The validation pattern accommodates a flexible subset of the ITU-T E.164 recommendation, permitting common typographic separators such as spaces and hyphens."@en ;
+            sh:message "Telephone number must be a valid format, optionally starting with '+' and containing only numbers, spaces, hyphens, or parentheses."@en ;
+            sh:name "Telephone"@en ;
+            sh:path schema:telephone ;
+            sh:pattern "^\\+?[0-9\\s\\-()]{7,20}$" ],
+        [ sh:datatype xsd:string ;
+            sh:description "A facsimile number associated with the organization. The validation pattern accommodates a flexible subset of the ITU-T E.164 recommendation, permitting common typographic separators."@en ;
+            sh:message "Fax number must be a valid format, optionally starting with '+' and containing only numbers, spaces, hyphens, or parentheses."@en ;
+            sh:name "Fax number"@en ;
+            sh:path schema:faxNumber ;
+            sh:pattern "^\\+?[0-9\\s\\-()]{7,20}$" ],
+        [ sh:datatype xsd:string ;
+            sh:description "An electronic mail address associated with the organization. The validation pattern enforces an approximation of the RFC 5322 specification syntax for internet message formats."@en ;
+            sh:message "Email must be a valid address format (e.g., user@example.com)."@en ;
+            sh:name "Email"@en ;
+            sh:path schema:email ;
+            sh:pattern "^[a-zA-Z0-9._%+\\-]+@[a-zA-Z0-9.\\-]+\\.[a-zA-Z]{2,}$" ] ;
+    sh:targetClass schema:Organization .
+
+shape:ParallelImport a sh:NodeShape ;
+    rdfs:label "Parallelimport"@de,
+        "Parallel Import"@en ;
+    rdfs:comment "Placing a plant protection product with a foreign authorisation onto the market, predicated on an equivalent reference product already authorised in Switzerland. The continued validity of this import permission requires the parallel validity of the domestic reference product (PSMV Art. 47 Abs. 1)."@en ;
+    sh:node shape:Product ;
+    sh:order 4 ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "An identifier assigned by the FSVO that uniquely identifies an admissions of a plant protection product."@en ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "Federal admission number"@en ;
+            sh:path :federalAdmissionNumber ;
+            sh:pattern "^[A-Z]-[0-9]{4}(-[0-9]{1,2})?$" ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:node shape:Product ;
+            sh:path :referenceProduct ],
+        [ sh:datatype xsd:string ;
+            sh:description "An identifier assigned by any foreign authority."@en ;
+            sh:name "Foreign admission number"@en ;
+            sh:order 3 ;
+            sh:path :foreignAdmissionNumber ] ;
+    sh:targetClass :ParallelImport .
+
+shape:Pest a sh:NodeShape ;
+    rdfs:label "Schadorganismus"@de,
+        "Pest"@en ;
+    rdfs:comment "Identifies the pathogenic, competitive, or destructive organism—such as an insect species, fungal strain, or weed profile—that the corresponding plant protection product is engineered to neutralize or suppress."@en ;
+    sh:property shape:multiLanguageName ;
+    sh:targetClass :Pest .
+
+shape:PostalAddress a sh:NodeShape ;
+    rdfs:label "Adresse"@de,
+        "Address"@en ;
+    rdfs:comment "Defines the physical or postal routing information for an organization. It encapsulates granular fields required for proper geospatial identification, including country, specific street, postal routing code, and locality."@en ;
+    sh:order 6 ;
+    sh:property [ sh:maxCount 1 ;
+            sh:name "Address country"@en ;
+            sh:nodeKind sh:IRI ;
+            sh:path schema:addressCountry ;
+            sh:pattern "^https://ld\\.admin\\.ch/country/[A-Z0-9]{3}$" ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:name "Street address"@en ;
+            sh:path schema:streetAddress ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:name "Postal code"@en ;
+            sh:path schema:postalCode ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:name "Address locality"@en ;
+            sh:path schema:addressLocality ] ;
+    sh:targetClass schema:PostalAddress .
+
+shape:PrecautionaryStatement a sh:NodeShape ;
+    rdfs:label "Sicherheitshinweis"@de,
+        "Precautionary statement"@en ;
+    rdfs:comment "A phrase that describes recommended measures to minimize or prevent adverse effects."@en ;
+    sh:node shape:GHSStatement ;
+    sh:property [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path schema:identifier ;
+            sh:pattern "^P\\S*$" ] ;
+    sh:targetClass ghs:PrecautionaryStatement .
+
+shape:Product a sh:NodeShape ;
+    rdfs:label "Produkt"@de,
+        "Product"@en ;
+    rdfs:comment "Represents any plant protection product that is officially registered and listed on <https://psm.admin.ch/>. It serves as the abstract base class encompassing all regular products, sale permissions, and parallel imports."@en ;
+    skos:example product:01967F79-C3AA-4417-BBEB-89B678003DD8 ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1 ;
+    sh:pattern "^https://agriculture\\.ld\\.admin\\.ch/plant-protection/product/.+$" ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "Name of the product"@en ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "Name"@en ;
+            sh:order 1 ;
+            sh:path schema:name ],
+        [ sh:description "The indications outlining allowed applications."@en ;
+            sh:name "Indications"@en ;
+            sh:node shape:Indication ;
+            sh:order 10 ;
+            sh:path :indication ],
+        [ sh:datatype xsd:date ;
+            sh:description "The date by which the product must no longer be used, typically after the product registration has been revoked."@en ;
+            sh:maxCount 1 ;
+            sh:name "Exhaustion deadline"@en ;
+            sh:order 4 ;
+            sh:path :exhaustionDeadline ],
+        [ sh:datatype xsd:date ;
+            sh:description "The date by which the product can no longer be sold, typically after the product registration has been revoked"@en ;
+            sh:maxCount 1 ;
+            sh:name "Soldout deadline"@en ;
+            sh:order 5 ;
+            sh:path :soldOutDeadline ],
+        [ sh:minCount 1 ;
+            sh:name "Ingredient"@en ;
+            sh:node shape:Ingredient ;
+            sh:order 6 ;
+            sh:path :ingredient ],
+        [ sh:description "The legal entity authorized to place the product on the market [...]."@en ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "Permission holder"@en ;
+            sh:node shape:Organization ;
+            sh:order 7 ;
+            sh:path :permissionHolder ],
+        [ sh:description "The Globally Harmonized System of Classification and Labelling of Chemicals (GHS) hazard and precautionary statements."@en ;
+            sh:name "GHS code"@en ;
+            sh:node shape:GHSStatement ;
+            sh:order 8 ;
+            sh:path :ghs ],
+        [ sh:description "The country where a plant protection product was produced."@en ;
+            sh:in ( country:CHE country:DEU country:ITA country:FRA country:AUT country:BEL ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "Producing country"@en ;
+            sh:order 9 ;
+            sh:path schema:countryOfOrigin ] ;
+    sh:targetClass :Product .
+
+shape:QuantitativeValue a sh:NodeShape ;
+    rdfs:label "Quantitativer Wert"@de,
+        "Quantitative value"@en ;
+    rdfs:comment "Represents a measurable quantity, providing a strict numerical value coupled with its corresponding unit of measurement. It is routinely utilized to quantify precise attributes such as application dosages, required waiting periods, or formulation concentrations."@en ;
+    sh:property [ sh:datatype rdf:langString ;
+            sh:description "The quantitative value in textual form as it was originally written in the admission documents."@en ;
+            sh:maxCount 1 ;
+            sh:name "Display text"@en ;
+            sh:path schema:name ],
+        [ sh:datatype xsd:decimal ;
+            sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:minExclusive 0 ;
+            sh:name "Value"@en ;
+            sh:path schema:value ],
+        [ sh:in ( unit:PERCENT unit:GM-PER-L ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "Unit"@en ;
+            sh:path schema:unitCode ] ;
+    sh:targetClass schema:QuantitativeValue .
+
+shape:RegularProduct a sh:NodeShape ;
+    rdfs:label "Regular product"@en ;
+    rdfs:comment "A plant protection product with a standard Swiss authorisation. This represents the primary admission granted by the federal authorities, acting as the foundation for derivative market permissions."@en ;
+    sh:node shape:Product ;
+    sh:order 2 ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "An identifier assigned by the FSVO that uniquely identifies an admissions of a plant protection product."@en ;
+            sh:maxCount 1 ;
+            sh:message "The federal admission number must match the pattern 'L-DDDD' or 'L-DDDD-D', where L is an uppercase letter and D a digit."@en ;
+            sh:minCount 1 ;
+            sh:name "Federal admission number"@en ;
+            sh:path :federalAdmissionNumber ;
+            sh:pattern "^[A-Z]-[0-9]{1,4}(-[0-9]{1,2})?$" ] ;
+    sh:targetClass :RegularProduct .
+
+shape:SalePermission a sh:NodeShape ;
+    rdfs:label "Sale Permission"@en ;
+    rdfs:comment "Permission to market a plant protection product under an alternative nomenclature based on an existing regular authorisation. The legality of this permission is inextricably linked to the validity of the underlying basic authorisation pursuant to PSMV Art. 66."@en ;
+    sh:node shape:Product ;
+    sh:order 3 ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "An identifier assigned by the FSVO that uniquely identifies an admissions of a plant protection product."@en ;
+            sh:maxCount 1 ;
+            sh:message "The federal admission number must match the pattern 'L-DDDD' or 'L-DDDD-D', where L is an uppercase letter and D a digit."@en ;
+            sh:minCount 1 ;
+            sh:name "Federal admission number"@en ;
+            sh:path :federalAdmissionNumber ;
+            sh:pattern "^[A-Z]-[0-9]{4}(-[0-9]{1,2})?$" ] ;
+    sh:targetClass :SalePermission .
+
+shape:SignalWord a sh:NodeShape ;
+    rdfs:label "Signalwort"@de,
+        "Signal word"@en ;
+    rdfs:comment "A word used to indicate the relative level of severity of hazard and alert the reader to a potential hazard on the label."@en ;
+    sh:node shape:GHSStatement ;
+    sh:property [ sh:maxCount 0 ;
+            sh:message "Signal words do not utilize alphanumeric identifiers in this scheme."@en ;
+            sh:path schema:identifier ] ;
+    sh:targetClass ghs:SignalWord .
+
+shape:Substance a sh:NodeShape ;
+    rdfs:label "Wirkstoff"@de,
+        "Substance"@en ;
+    rdfs:comment "Denotes the foundational chemical entity or active biological agent embedded within a formulation. It abstracts the physical formulation to reference the fundamental molecule or organism responsible for the product's protective action."@en ;
+    sh:property shape:multiLanguageName ;
+    sh:targetClass :Substance .
+
+shapes:IngredientSubstanceAndShareShape a sh:NodeShape ;
+    sh:property [ schema:name "Substance reference"@en ;
+            sh:class :Substance ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path :substance ],
+        [ schema:name "Share (Quantitative Value)"@en ;
+            sh:minCount 1 ;
+            sh:node shapes:ShareShape ;
+            sh:path :share ] .
+
+shapes:NoRdfsAnnotationsShape a sh:NodeShape ;
+    schema:name "Prohibition of RDFS annotations"@en ;
+    sh:property [ schema:name "Forbid rdfs:label"@en ;
+            sh:maxCount 0 ;
+            sh:message "Any use of rdfs:label is forbidden; the preferred property is schema:name."@en ;
+            sh:path rdfs:label ],
+        [ schema:name "Forbid rdfs:comment"@en ;
+            sh:maxCount 0 ;
+            sh:message "Any use of rdfs:comment is forbidden; the preferred property is schema:description."@en ;
+            sh:path rdfs:comment ] ;
+    sh:targetClass owl:Class,
+        owl:DatatypeProperty,
+        owl:ObjectProperty .
+
+shapes:OntologyDocumentationShape a sh:NodeShape ;
+    schema:name "Ontology documentation rules"@en ;
+    sh:property [ schema:name "No more than one name per language"@en ;
+            sh:message "There can be at most one name per language tag."@en ;
+            sh:path schema:name ;
+            sh:uniqueLang true ],
+        [ schema:name "Mandatory English name"@en ;
+            sh:message "A class or property must have at least one name in English."@en ;
+            sh:path schema:name ;
+            sh:qualifiedMinCount 1 ;
+            sh:qualifiedValueShape [ sh:languageIn ( "en" ) ] ],
+        [ schema:name "Maximally one description per language"@en ;
+            sh:message "A class or property can have at most one description per language."@en ;
+            sh:path schema:description ;
+            sh:uniqueLang true ] ;
+    sh:targetClass owl:Class,
+        owl:DatatypeProperty,
+        owl:ObjectProperty .
+
+shapes:OrganizationShape a sh:NodeShape ;
+    sh:property [ schema:name "Legal name required"@en ;
+            sh:datatype xsd:string ;
+            sh:minCount 1 ;
+            sh:path schema:legalName ] ;
+    sh:targetClass schema:Organization .
+
+shapes:ProductAdmissionAndIngredientShape a sh:NodeShape ;
+    sh:property [ schema:name "Permission holder must be an Organization"@en ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:node shapes:OrganizationShape ;
+            sh:path :permissionHolder ],
+        [ schema:name "Federal admission number syntax"@en ;
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "The federal admission number must match the pattern 'L-DDDD' or 'L-DDDD-D', where L is an uppercase letter and D a digit."@en ;
+            sh:minCount 1 ;
+            sh:path :federalAdmissionNumber ;
+            sh:pattern "^[A-Z]-[0-9]{1,4}(-[0-9]{1,2})?$" ],
+        [ schema:name "Ingredient validation"@en ;
+            sh:minCount 1 ;
+            sh:node shapes:IngredientShape ;
+            sh:path :ingredient ] ;
+    sh:targetClass :Product .
+
+shapes:QuantitativeValueUnitAndPositiveValueShape a sh:NodeShape ;
+    sh:property [ schema:name "Positive value constraint"@en ;
+            sh:message "The ingredient share value must be strictly greater than 0."@en ;
+            sh:minExclusive 0 ;
+            sh:path schema:value ],
+        [ schema:name "Unit validation"@en ;
+            sh:in ( unit:PERCENT unit:GM-PER-L ) ;
+            sh:maxCount 1 ;
+            sh:message "The unit must be either % or g/l represented as a `qudt:Unit`."@en ;
+            sh:minCount 1 ;
+            sh:path schema:unitCode ] ;
+    sh:targetClass schema:QuantitativeValue .
+
+shape:identifier sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "Identifikator"@de,
+        "Identifier"@en ;
+    sh:path schema:identifier .
+
+shape:multiLanguageDescription sh:datatype rdf:langString ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "Description"@en ;
+    sh:path schema:description ;
+    sh:qualifiedMinCount 3 ;
+    sh:qualifiedValueShape [ sh:languageIn ( "de" "fr" "it" ) ] ;
+    sh:uniqueLang true .
+
+shape:multiLanguageName sh:datatype rdf:langString ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "Name"@en ;
+    sh:path schema:name ;
+    sh:qualifiedMinCount 3 ;
+    sh:qualifiedValueShape [ sh:languageIn ( "de" "fr" "it" ) ] ;
+    sh:uniqueLang true .
+
