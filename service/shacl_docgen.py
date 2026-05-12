@@ -10,7 +10,9 @@ from src.python.utils.helper_functions import *
 
 def generate_documentaion():
     print("\nWriting documentation using SHACL")
-    generate_documentation()
+    generate_documentation(
+        include_diagram=True
+    )
 
     print(f"\n{"\033[92m"}✓ Documentation generated successfully.{"\033[0m"}")
 
