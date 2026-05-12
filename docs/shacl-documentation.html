@@ -3,288 +3,287 @@
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
       <style>
 		
-			body {
-						margin: 0;
-						font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-							"Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
-							"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-							"Noto Color Emoji";
-						background-color: #fff;
-					}
+		body {
+			margin: 0;
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+				"Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+				"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+				"Noto Color Emoji";
+			background-color: #fff;
+		}
 		
 		/* Pour la colonne Description */
-		td,
-		th {
-		white-space: normal;
-		word-break: break-word;
+		td, th {
+			white-space: normal;
+			word-break: break-word;
 		}
 		/* Limite la largeur de la colonne Description */
 		td.description,
 		th.description {
-		max-width: 300px;
+			max-width: 300px;
 		}
 		/* Pour éviter le scroll horizontal du tableau */
 		table {
-		/*width: 100%;*/
-		max-width: 1100px;
-		table-layout: fixed;
+			/*width: 100%;*/
+			max-width: 1100px;
+			table-layout: fixed;
 		}
-			  
+
+		.anchor {
+			float: left;
+			padding-right: 4px;
+			margin-left: -20px;
+			line-height: 1;
+			padding-top: 12px;
+		}
+				
+		a {
+			color: #007bff;
+			text-decoration: none;
+			background-color: transparent;
+		}
+		
+		a:-webkit-any-link {
+			cursor: pointer;
+		}
+		
+		.p {
+			font-size: 0.875em;
+		}
+		
+		h2 {
+			margin: 25px 0px 10px 0px;
+		}
 					
-					.anchor {
-						float: left;
-						padding-right: 4px;
-						margin-left: -20px;
-						line-height: 1;
-						padding-top: 12px;
-					}
+		h3 {
+			font-size: 1.4em;
+		}
+
+		h4 {
+			font-size: 1.1em;
+			font-weight: bold;
+		}
+
+		.constraint_list li {
+			list-style:"> ";
+			font-style: italic;
+		}
+		
+		@media only print {
+		}
+		
+		@page {
+			size: A4 portrait;
+			margin-top: 1.2cm;
+			margin-bottom: 1.2cm;
+			margin-left: 1.2cm;
+			margin-right: 1.2cm;
+			background-repeat: no-repeat;
+			background-position: 40px 10px;
+			
+			@bottom-center
+			{
+				content: counter(page);
+			}
+		
+		}
 							
-					a {
-						color: #007bff;
-						text-decoration: none;
-						background-color: transparent;
-					}
-					
-					a:-webkit-any-link {
-						cursor: pointer;
-					}
-					
-					.p {
-						font-size: 0.875em;
-					}
-					
-					h2 {
-						margin: 25px 0px 10px 0px;
-					}
-					
-					h3 {
-						font-size: 1.4em;
-					}
+		/* This section draw the format web */
+		.ul_type_none {
+			list-style-type: none;
+		}
+		
+		.sp_list_description_properties {
+			/* don't set it lower otherwise it gets hidden in PDF */
+			padding-left: 20px;
+		}
+		
+		dl, ol, ul {
+			margin-top: 0;
+			margin-bottom: 1rem;
+		}
+		
+		.sp_list_toc_section {
+			margin-top: 0;
+			margin-bottom: 1rem;
+		}
 
-					h4 {
-						font-size: 1.1em;
-						font-weight: bold;
-					}
 
-					.constraint_list li {
-						list-style:"> ";
-						font-style: italic;
-					}
+		li {
+			display: list-item;
+			text-align: -webkit-match-parent;
+		}
 					
-					@media only print {
-					}
+		.sp_section_title_header {
+			font-family: Georgia, Garamond, serif;	
+			margin-top: 25px;
+			margin-bottom: 2.5rem;
+			font-size: 1.5625rem;
+			display: block;
+			font-weight: 500;
+			color: #1e1e1f;
+			line-height: 1.2em;   
+		}
+		
+		.sp_section_subtitle {
+			font-family: Georgia, Garamond, serif;	
+			margin-top: 0;
+			margin-bottom: 0.5rem;
+			display: block;
+			font-weight: 500;
+			color: #1e1e1f;
+			line-height: 1.2em;  
+		}
 					
-					@page {
-						size: A4 portrait;
-						margin-top: 1.2cm;
-						margin-bottom: 1.2cm;
-						margin-left: 1.2cm;
-						margin-right: 1.2cm;
-						background-repeat: no-repeat;
-						background-position: 40px 10px;
-						
-						@bottom-center
-						{
-						content
-						:
-						counter(
-						page
-						);
-					}
+		.sp_section_title_table {
+			font-family: Georgia, Garamond, serif;	
+			/* 0 because URI is right under */
+			margin-bottom: 0rem;
+			display: block;
+			font-weight: 500;
+			color: #1e1e1f;
+			line-height: 1.2em; 
+		}				
+
+		.sp_section_title_toc {
+			font-family: Georgia, Garamond, serif;	
+		}
+
+		/* URI below the title of the section */
+		.sp_section_uri	 {
+			margin-top: 0px;
+		}
+
+		/* div wrapping section title and URI below - same as a paragraph margin */
+		.sp_section_title_table_wrapper {
+			margin-bottom: 16px;
+			border-bottom: 1px solid;	
+		}
+		
+		.sp_section_nodeshape_diagram {
+			padding-bottom: 16px;
+		}
+		
+		.sp_section_nodeshape_center {
+			display: flex;
+			justify-content: center;
+		}
 					
-					}
+		table {
+			display: table;
+			border-spacing: 0px;
+			margin-bottom: 1rem;
+		}
+		
+		.table-striped tr:nth-child(even) {
+			background-color: #eee;
+		}
+				
+		.sp_table_prefixes table {
+			border-collapse: collapse;
+			margin-bottom: 1rem;
+			color: #212529;
+		}
+								
+		.sp_table_prefixes td {
+			padding: 0.25rem;
+			vertical-align: top;
+			border-top: 1px solid #dee2e6;
+		}
+		
+		.sp_table_propertyshapes {
+			border-collapse: collapse;
+			width: 100%;
+		}
 							
-					/* This section draw the format web */
-					.ul_type_none {
-						list-style-type: none;
-					}
-					
-					.sp_list_description_properties {
-						/* don't set it lower otherwise it gets hidden in PDF */
-						padding-left: 20px;
-					}
-					
-					dl, ol, ul {
-						margin-top: 0;
-						margin-bottom: 1rem;
-					}
-					
-					li {
-						display: list-item;
-						text-align: -webkit-match-parent;
-					}
-					
-					.sp_section_title_header {
-						font-family: Georgia, Garamond, serif;	
-						margin-top: 25px;
-						margin-bottom: 2.5rem;
-					    font-size: 1.5625rem;
-						display: block;
-						font-weight: 500;
-						color: #1e1e1f;
-						line-height: 1.2em;   
-					}
-					
-					.sp_section_subtitle {
-						font-family: Georgia, Garamond, serif;	
-						margin-top: 0;
-						margin-bottom: 0.5rem;
-						display: block;
-						font-weight: 500;
-						color: #1e1e1f;
-						line-height: 1.2em;  
-					}
-					
-					.sp_section_title_table {
-						font-family: Georgia, Garamond, serif;	
-						/* 0 because URI is right under */
-						margin-bottom: 0rem;
-						display: block;
-						font-weight: 500;
-						color: #1e1e1f;
-						line-height: 1.2em; 
-					}
-							
-
-					.sp_section_title_toc {
-						font-family: Georgia, Garamond, serif;	
-					}
-
-					/* URI below the title of the section */
-					.sp_section_uri	 {
-						margin-top: 0px;
-					}
-
-					/* div wrapping section title and URI below - same as a paragraph margin */
-					.sp_section_title_table_wrapper {
-						margin-bottom: 16px;
-						border-bottom: 1px solid;	
-					}
-					
-					.sp_section_nodeshape_diagram {
-						padding-bottom: 16px;
-					}
-					
-					.sp_section_nodeshape_center {
-						display: flex;
-						justify-content: center;
-					}
-					
-					table {
-						display: table;
-						border-spacing: 0px;
-						margin-bottom: 1rem;
-					}
-					
-					.table-striped tr:nth-child(even) {
-						background-color: #eee;
-					}
-							
-					.sp_table_prefixes table {
-						border-collapse: collapse;
-						margin-bottom: 1rem;
-						color: #212529;
-					}
-											
-					.sp_table_prefixes td {
-						padding: 0.25rem;
-						vertical-align: top;
-						border-top: 1px solid #dee2e6;
-					}
-					
-					.sp_table_propertyshapes {
-						border-collapse: collapse;
-						width: 100%;
-					}
+		.sp_table_propertyshapes thead {
+			display: table-header-group;
+			vertical-align: middle;
+			border-color: inherit;
+		}
+													
+		.sp_table_propertyshapes tr {
+			display: table-row;
+			vertical-align: inherit;
+			border-color: inherit;					    
+		}
 										
-					.sp_table_propertyshapes thead {
-						display: table-header-group;
-						vertical-align: middle;
-						border-color: inherit;
-					}
-													
-					.sp_table_propertyshapes tr {
-					    display: table-row;
-					    vertical-align: inherit;
-					    border-color: inherit;					    
-					}
-													
-					.sp_table_propertyshapes th:nth-child(4) {
-						width: 6%;
-					}
-													
-					.sp_table_propertyshapes td {
-						padding: 0.75rem;
-						border-top: 1px solid #dee2e6;
-					}
-													
-					.sp_table_propertyshapes tbody {
-						display: table-row-group;
-						vertical-align: middle;
-						border-color: inherit;
-					}
+		.sp_table_propertyshapes th:nth-child(4) {
+			width: 6%;
+		}
 										
-					.sp_table_propertyshapes_col_description {
-						word-break: break-word;
-					}
-					
-					tr.sp_propertyGroup {
-						font-style: italic;
-						background-color: #def0f7;
-					}
-					
-					tr.sp_propertyGroup td {
-						border-bottom: 1px solid black;
-						padding-bottom: 0.25 rem;
-					}
-					
-					.sp_serialization_badge {
-						margin-right: 0.5em;
-					}
+		.sp_table_propertyshapes td {
+			padding: 0.75rem;
+			border-top: 1px solid #dee2e6;
+		}
+										
+		.sp_table_propertyshapes tbody {
+			display: table-row-group;
+			vertical-align: middle;
+			border-color: inherit;
+		}
+							
+		.sp_table_propertyshapes_col_description {
+			word-break: break-word;
+		}
+		
+		tr.sp_propertyGroup {
+			font-style: italic;
+			background-color: #def0f7;
+		}
+		
+		tr.sp_propertyGroup td {
+			border-bottom: 1px solid black;
+			padding-bottom: 0.25 rem;
+		}
+		
+		.sp_serialization_badge {
+			margin-right: 0.5em;
+		}
 
-					.sp_nodeshape_description {
-						background: #efefef;
-						padding-top:1px;
-						padding-bottom:1px;
-						padding-left:10px;
-						padding-right:10px;
-						border-radius: 5px;
-						margin-bottom:10px;
-					}
+		.sp_nodeshape_description {
+			background: #efefef;
+			padding-top:1px;
+			padding-bottom:1px;
+			padding-left:10px;
+			padding-right:10px;
+			border-radius: 5px;
+			margin-bottom:10px;
+		}
 					
-					
-							/*
-							.container {
-							    width: calc(100% - 40px);
-							    max-width: 1100px;
-							    margin-left: 300px;
-							    margin-right: auto;
-							}
-							.container {width: calc(100% - 500px);}
-							*/
-							.container {
-								width: auto;
-								max-width: 1100px;
-								margin-left: 300px;
-								margin-right: 120px;
-							}
-							.toc {
-								position: fixed;
-								top: 0;
-								left: 0;
-								font-size: small;
-								padding: 10px 10px;
-								width: auto;
-								border-right: solid 2px #eeeeee;
-								bottom: 0;
-								overflow-y: scroll;
-								background-color:white;
-								max-width:255px;
-							}
-							.sp_list_toc {padding-left: 0px;}
-							.sp_list_toc_l2 {padding-left: 10px;}	
-							.sp_list_toc_l3 {padding-left: 8px;}					
-						</style>
+		
+				/*
+				.container {
+					width: calc(100% - 40px);
+					max-width: 1100px;
+					margin-left: 300px;
+					margin-right: auto;
+				}
+				.container {width: calc(100% - 500px);}
+				*/
+				.container {
+					width: auto;
+					max-width: 1100px;
+					margin-left: 300px;
+					margin-right: 120px;
+				}
+				.toc {
+					position: fixed;
+					top: 0;
+					left: 0;
+					font-size: small;
+					padding: 10px 10px;
+					width: auto;
+					border-right: solid 2px #eeeeee;
+					bottom: 0;
+					overflow-y: scroll;
+					background-color:white;
+					max-width:255px;
+				}
+				.sp_list_toc {padding-left: 0px;}
+				.sp_list_toc_l2 {padding-left: 10px;}	
+				.sp_list_toc_l3 {padding-left: 8px;}					
+			</style>
       <!--EXTRA CSS-->
       <meta charset="UTF-8">
       <meta name="lang" content="en">
@@ -319,9 +318,9 @@ The actual data is available on <a href="https://lindas.admin.ch/">the linked da
          <div class="sp_section_title_toc toc">
             <h2 id="index">Table of Contents</h2>
             <ul role="list" class="sp_list_toc ul_type_none t-x-mode">
-               <li><a href="#prefixes">Namespaces</a></li>
-               <li><a href="#description">Description</a></li>
-               <li><a href="#documentation">Model documentation</a><ul role="list" class="ul_type_none sp_list_toc_l2">
+               <li class="sp_list_toc_section"><a href="#prefixes">Namespaces</a></li>
+               <li class="sp_list_toc_section"><a href="#description">Description</a></li>
+               <li class="sp_list_toc_section"><a href="#documentation">Main Entities</a><ul role="list" class="ul_type_none sp_list_toc_l2">
                      <li><a href="#:shape/Product">Product</a></li>
                      <li><a href="#:shape/RegularProduct">Regular product</a></li>
                      <li><a href="#:shape/SalePermission">Sale Permission</a></li>
@@ -329,7 +328,6 @@ The actual data is available on <a href="https://lindas.admin.ch/">the linked da
                      <li><a href="#:shape/Organization">Organization</a></li>
                      <li><a href="#:shape/PostalAddress">Address</a></li>
                      <li><a href="#:shape/ClassProperty">:shape/ClassProperty</a></li>
-                     <li><a href="#:shapes/IngredientSubstanceAndShareShape">:shapes/IngredientSubstanceAndShareShape</a></li>
                      <li><a href="#:shapes/NoRdfsAnnotationsShape">:shapes/NoRdfsAnnotationsShape</a></li>
                      <li><a href="#:shapes/OntologyDocumentationShape">:shapes/OntologyDocumentationShape</a></li>
                      <li><a href="#:shapes/OrganizationShape">:shapes/OrganizationShape</a></li>
@@ -342,13 +340,15 @@ The actual data is available on <a href="https://lindas.admin.ch/">the linked da
                      <li><a href="#:shape/HazardPictogram">Hazard pictogram</a></li>
                      <li><a href="#:shape/HazardStatement">Hazard statement</a></li>
                      <li><a href="#:shape/Indication">Indication</a></li>
-                     <li><a href="#:shape/Ingredient">Ingredient</a></li>
                      <li><a href="#:shape/Obligation">Obligation</a></li>
                      <li><a href="#:shape/Pest">Pest</a></li>
                      <li><a href="#:shape/PrecautionaryStatement">Precautionary statement</a></li>
                      <li><a href="#:shape/QuantitativeValue">Quantitative value</a></li>
                      <li><a href="#:shape/SignalWord">Signal word</a></li>
                      <li><a href="#:shape/Substance">Substance</a></li>
+                  </ul><a href="#documentation">Supportive Entities</a><ul role="list" class="ul_type_none sp_list_toc_l2">
+                     <li><a href="#:shapes/IngredientSubstanceAndShareShape">:shapes/IngredientSubstanceAndShareShape</a></li>
+                     <li><a href="#:shape/Ingredient">Ingredient</a></li>
                   </ul>
                </li>
             </ul>
@@ -432,7 +432,7 @@ LIMIT 10
 <p>However, to fully leverage the analytical capabilities of this schema, users are directed to the centralized query repository.
 A comprehensive suite of advanced SPARQL query templates, demonstrating complex relational extraction and data aggregation, is maintained within the project's source control at <a href="https://github.com/BLV-OSAV-USAV/PSMV-RDF/tree/main/src/sparql/examples">https://github.com/BLV-OSAV-USAV/PSMV-RDF/tree/main/src/sparql/examples</a>.</p>
 </div>
-         <h2 id="documentation" class="sp_section_subtitle">Model documentation</h2>
+         <h2 id="documentation" class="sp_section_subtitle">Main Entities</h2>
          <div class="row mt-3">
             <div class="col">
                <section>
@@ -572,6 +572,10 @@ remove @unlinked
                      <h3 id=":shape/RegularProduct" class="sp_section_title_table">Regular product</h3><code class="sp_section_uri">https://agriculture.ld.admin.ch/plant-protection/shape/RegularProduct</code></div>
                   <div class="sp_nodeshape_description"><p>A plant protection product with a standard Swiss authorisation. This represents the primary admission granted by the federal authorities, acting as the foundation for derivative market permissions.</p>
 </div>
+                  <ul class="sp_list_description_properties">
+                     <li>Applies to: <a href="https://agriculture.ld.admin.ch/plant-protection/RegularProduct">:RegularProduct</a></li>
+                     <li>Conforms to: <a href="#:shape/Product">Product</a></li>
+                  </ul>
                   <div class="sp_section_nodeshape_diagram">
                      <div class="sp_section_nodeshape_center"><?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="71px" preserveAspectRatio="none" style="width:340px;height:71px;background:#FFFFFF;" version="1.1" viewBox="0 0 340 71" width="340px" zoomAndPan="magnify"><defs xmlns=""/><g><!--class :shape/RegularProduct (:RegularProduct)--><a href="#:shape/RegularProduct" target="_top" title="#:shape/RegularProduct" xlink:actuate="onRequest" xlink:href="#:shape/RegularProduct" xlink:show="new" xlink:title="#:shape/RegularProduct" xlink:type="simple"><g id="elem_:shape/RegularProduct (:RegularProduct)"><rect codeLine="8" fill="#F1F1F1" height="50.5938" id=":shape/RegularProduct (:RegularProduct)" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="319" x="7" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="286" x="23.5" y="24.9951">:shape/RegularProduct (:RegularProduct)</text><line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="325" y1="33.2969" y2="33.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="307" x="13" y="50.292">:federalAdmissionNumber  : xsd:string  [1..1]</text></g></a><!--SRC=[ZOvDIyD048Rl-ol6zgANseYdt4BHAjWghU0Xv31cfydYVZ6peTPVxuPU8YXuctdUXvTNA857HnAnfJr5P4o1mGTFIZwC7u63rgB8VV1fRxu8YbjreUbWFC7Ju_hXzNbNRTTtKpsuc0kodawMO73sPf8U6UE6HB2ZDwDJ3yLoEOahvd1S1PjNp3V88NWbVuy4jHgtmQoK7YDTxwWRBF8B1psq2IxBd-1g1dKz_zLj6b3_RocXF90cHbjfPqHCyDl1lHD3ZZv5bvBO-0wWBXQBeW5GlT44hU7MqlbsbFgWvVoGY-cKqLWXtm00]--></g></svg></div><small class="form-text text-muted">Click diagram to navigate to corresponding section | <a href="http://www.plantuml.com/plantuml/png/ZOvDIyD048Rl-ol6zgANseYdt4BHAjWghU0Xv31cfydYVZ6peTPVxuPU8YXuctdUXvTNA857HnAnfJr5P4o1mGTFIZwC7u63rgB8VV1fRxu8YbjreUbWFC7Ju_hXzNbNRTTtKpsuc0kodawMO73sPf8U6UE6HB2ZDwDJ3yLoEOahvd1S1PjNp3V88NWbVuy4jHgtmQoK7YDTxwWRBF8B1psq2IxBd-1g1dKz_zLj6b3_RocXF90cHbjfPqHCyDl1lHD3ZZv5bvBO-0wWBXQBeW5GlT44hU7MqlbsbFgWvVoGY-cKqLWXtm00" target="_blank">View as PNG</a></small>
                      <!--@startuml
@@ -702,6 +706,10 @@ hide empty members
                      <h3 id=":shape/SalePermission" class="sp_section_title_table">Sale Permission</h3><code class="sp_section_uri">https://agriculture.ld.admin.ch/plant-protection/shape/SalePermission</code></div>
                   <div class="sp_nodeshape_description"><p>Permission to market a plant protection product under an alternative nomenclature based on an existing regular authorisation. The legality of this permission is inextricably linked to the validity of the underlying basic authorisation pursuant to PSMV Art. 66.</p>
 </div>
+                  <ul class="sp_list_description_properties">
+                     <li>Applies to: <a href="https://agriculture.ld.admin.ch/plant-protection/SalePermission">:SalePermission</a></li>
+                     <li>Conforms to: <a href="#:shape/Product">Product</a></li>
+                  </ul>
                   <div class="sp_section_nodeshape_diagram">
                      <div class="sp_section_nodeshape_center"><?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="71px" preserveAspectRatio="none" style="width:340px;height:71px;background:#FFFFFF;" version="1.1" viewBox="0 0 340 71" width="340px" zoomAndPan="magnify"><defs xmlns=""/><g><!--class :shape/SalePermission (:SalePermission)--><a href="#:shape/SalePermission" target="_top" title="#:shape/SalePermission" xlink:actuate="onRequest" xlink:href="#:shape/SalePermission" xlink:show="new" xlink:title="#:shape/SalePermission" xlink:type="simple"><g id="elem_:shape/SalePermission (:SalePermission)"><rect codeLine="8" fill="#F1F1F1" height="50.5938" id=":shape/SalePermission (:SalePermission)" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="319" x="7" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="282" x="25.5" y="24.9951">:shape/SalePermission (:SalePermission)</text><line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="325" y1="33.2969" y2="33.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="307" x="13" y="50.292">:federalAdmissionNumber  : xsd:string  [1..1]</text></g></a><!--SRC=[ZOvDIyD048Rl-ol6zgANjX5FkOLYgs2h6C53o67CJfl5_M9cIws_tWtr4471sypplBoyGWayEfA87TKKaJ451XyyANatVW0EEeiYg-1JRJu9YXjreMbdFC73_VhkvV6vsgvln_7WOYx8yNIo10TdhqVso1Wt989xUZKwzL0i5YDTCOVZCjYyOhf13i4h-NiagEMm3IQbz1XfNgEb9s9dH4pmS5d-15SJQ9hfhzcs1VN_bXBA7MbYj9N-fjk3UoE6h3v4bvBO-3r0KyncHGkWUgC9EiETfVFjAFL1o_aX5zCfew52lW00]--></g></svg></div><small class="form-text text-muted">Click diagram to navigate to corresponding section | <a href="http://www.plantuml.com/plantuml/png/ZOvDIyD048Rl-ol6zgANjX5FkOLYgs2h6C53o67CJfl5_M9cIws_tWtr4471sypplBoyGWayEfA87TKKaJ451XyyANatVW0EEeiYg-1JRJu9YXjreMbdFC73_VhkvV6vsgvln_7WOYx8yNIo10TdhqVso1Wt989xUZKwzL0i5YDTCOVZCjYyOhf13i4h-NiagEMm3IQbz1XfNgEb9s9dH4pmS5d-15SJQ9hfhzcs1VN_bXBA7MbYj9N-fjk3UoE6h3v4bvBO-3r0KyncHGkWUgC9EiETfVFjAFL1o_aX5zCfew52lW00" target="_blank">View as PNG</a></small>
                      <!--@startuml
@@ -832,6 +840,10 @@ hide empty members
                      <h3 id=":shape/ParallelImport" class="sp_section_title_table">Parallel Import</h3><code class="sp_section_uri">https://agriculture.ld.admin.ch/plant-protection/shape/ParallelImport</code></div>
                   <div class="sp_nodeshape_description"><p>Placing a plant protection product with a foreign authorisation onto the market, predicated on an equivalent reference product already authorised in Switzerland. The continued validity of this import permission requires the parallel validity of the domestic reference product (PSMV Art. 47 Abs. 1).</p>
 </div>
+                  <ul class="sp_list_description_properties">
+                     <li>Applies to: <a href="https://agriculture.ld.admin.ch/plant-protection/ParallelImport">:ParallelImport</a></li>
+                     <li>Conforms to: <a href="#:shape/Product">Product</a></li>
+                  </ul>
                   <div class="sp_section_nodeshape_diagram">
                      <div class="sp_section_nodeshape_center"><?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="183px" preserveAspectRatio="none" style="width:333px;height:183px;background:#FFFFFF;" version="1.1" viewBox="0 0 333 183" width="333px" zoomAndPan="magnify"><defs xmlns=""/><g><!--class :shape/ParallelImport (:ParallelImport)--><a href="#:shape/ParallelImport" target="_top" title="#:shape/ParallelImport" xlink:actuate="onRequest" xlink:href="#:shape/ParallelImport" xlink:show="new" xlink:title="#:shape/ParallelImport" xlink:type="simple"><g id="elem_:shape/ParallelImport (:ParallelImport)"><rect codeLine="8" fill="#F1F1F1" height="66.8906" id=":shape/ParallelImport (:ParallelImport)" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="319" x="7" y="110"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="256" x="38.5" y="127.9951">:shape/ParallelImport (:ParallelImport)</text><line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="325" y1="136.2969" y2="136.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="264" x="13" y="153.292">:foreignAdmissionNumber  : xsd:string</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="307" x="13" y="169.5889">:federalAdmissionNumber  : xsd:string  [1..1]</text></g></a><!--class :shape/Product (:Product)--><a href="#:shape/Product" target="_top" title="#:shape/Product" xlink:actuate="onRequest" xlink:href="#:shape/Product" xlink:show="new" xlink:title="#:shape/Product" xlink:type="simple"><g id="elem_:shape/Product (:Product)"><rect codeLine="13" fill="#F1F1F1" height="26.2969" id=":shape/Product (:Product)" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="186" x="73.5" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="180" x="76.5" y="24.9951">:shape/Product (:Product)</text></g></a><!--reverse link :shape/Product (:Product) to :shape/ParallelImport (:ParallelImport)--><g id="link_:shape/Product (:Product)_:shape/ParallelImport (:ParallelImport)"><path codeLine="9" d="M160.4849,50.7233 C158.8449,59.0833 160.34,52.83 159.5,63 C158.23,78.33 159.38,95.31 161.09,109.63 " fill="none" id=":shape/Product (:Product)-backto-:shape/ParallelImport (:ParallelImport)" style="stroke:#808080;stroke-width:2.0;"/><polygon fill="none" points="163.95,33.06,154.5972,49.5683,166.3727,51.8784,163.95,33.06" style="stroke:#808080;stroke-width:2.0;"/></g><!--reverse link :shape/Product (:Product) to :shape/ParallelImport (:ParallelImport)--><g id="link_:shape/Product (:Product)_:shape/ParallelImport (:ParallelImport)"><path codeLine="12" d="M166.5,39.09 C166.5,56.8 166.5,84.42 166.5,109.74 " fill="none" id=":shape/Product (:Product)-backto-:shape/ParallelImport (:ParallelImport)-1" style="stroke:#800000;stroke-width:1.0;"/><polygon fill="#800000" points="166.5,33.09,162.5,42.09,166.5,38.09,170.5,42.09,166.5,33.09" style="stroke:#800000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="152" x="167.5" y="76.0669">:referenceProduct&#xa0;[1..1]</text></g><!--SRC=[bL5DJy904BttLunmaIZO6a-D8JP4aKJGYCP3qyFI7TeD-z7CRaMCFzxM6gq6FxZDlZVxviqyYmuqKsWBbk8S2qRC6G9jD7fs9NGDA4Wbi_R2Q3SNpmZ1YRV7SIaqmjLaV7btVHlDnkVjTgEAIg1gTnk9K2fvt6BNn8efMiioV13SvH3uVekEYCnwP6JbeZjbP8psxCycmHlLtg0JsfmLU7HJSLAYd5GEoC5- -1NeTI2EkrjxamIy_wlqooBkPiGsXmiZUT9_6NvQ8CFBzErNK_KwEmY742uDeSXqn9MmLXWzAzK22IhgoVBGEX8w0zXH4pbMw1-QSJ0O10diTeZ-hwlNmmcNIAXJV4TFxmzyF_A77-E-PRX5fPLQWzLnvO8Zf89IYKsjqEM6s-Q1gd2R2geNjHwXCey8PwMMGg-Glm80]--></g></svg></div><small class="form-text text-muted">Click diagram to navigate to corresponding section | <a href="http://www.plantuml.com/plantuml/png/bL5DJy904BttLunmaIZO6a-D8JP4aKJGYCP3qyFI7TeD-z7CRaMCFzxM6gq6FxZDlZVxviqyYmuqKsWBbk8S2qRC6G9jD7fs9NGDA4Wbi_R2Q3SNpmZ1YRV7SIaqmjLaV7btVHlDnkVjTgEAIg1gTnk9K2fvt6BNn8efMiioV13SvH3uVekEYCnwP6JbeZjbP8psxCycmHlLtg0JsfmLU7HJSLAYd5GEoC5--1NeTI2EkrjxamIy_wlqooBkPiGsXmiZUT9_6NvQ8CFBzErNK_KwEmY742uDeSXqn9MmLXWzAzK22IhgoVBGEX8w0zXH4pbMw1-QSJ0O10diTeZ-hwlNmmcNIAXJV4TFxmzyF_A77-E-PRX5fPLQWzLnvO8Zf89IYKsjqEM6s-Q1gd2R2geNjHwXCey8PwMMGg-Glm80" target="_blank">View as PNG</a></small>
                      <!--@startuml
@@ -1162,7 +1174,7 @@ hide empty members
                   <div class="sp_section_title_table_wrapper">
                      <h3 id=":shape/ClassProperty" class="sp_section_title_table">:shape/ClassProperty</h3><code class="sp_section_uri">https://agriculture.ld.admin.ch/plant-protection/shape/ClassProperty</code></div>
                   <div class="sp_section_nodeshape_diagram">
-                     <div class="sp_section_nodeshape_center"><?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="231px" preserveAspectRatio="none" style="width:288px;height:231px;background:#FFFFFF;" version="1.1" viewBox="0 0 288 231" width="288px" zoomAndPan="magnify"><defs xmlns=""/><g><!--class :shape/ClassProperty (owl:Class)--><a href="#:shape/ClassProperty" target="_top" title="#:shape/ClassProperty" xlink:actuate="onRequest" xlink:href="#:shape/ClassProperty" xlink:show="new" xlink:title="#:shape/ClassProperty" xlink:type="simple"><g id="elem_:shape/ClassProperty (owl:Class)"><rect codeLine="8" fill="#F1F1F1" height="99.4844" id=":shape/ClassProperty (owl:Class)" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="234" x="27" y="125"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="227" x="30.5" y="142.9951">:shape/ClassProperty (owl:Class)</text><line style="stroke:#181818;stroke-width:0.5;" x1="28" x2="260" y1="151.2969" y2="151.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="184" x="33" y="168.292">schema:name uniqueLang</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="222" x="33" y="184.5889">schema:description uniqueLang</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="141" x="33" y="200.8857">rdfs:comment  [0..0]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="107" x="33" y="217.1826">rdfs:label  [0..0]</text></g></a><!--class 045c2c7b55e5e1acba0478dfffb3d465--><g id="elem_045c2c7b55e5e1acba0478dfffb3d465"><rect fill="#F1F1F1" height="26.2969" id="uml_045c2c7b55e5e1acba0478dfffb3d465" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="274" x="7" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="268" x="10" y="24.9951">045c2c7b55e5e1acba0478dfffb3d465</text></g><!--reverse link 045c2c7b55e5e1acba0478dfffb3d465 to :shape/ClassProperty (owl:Class)--><g id="link_045c2c7b55e5e1acba0478dfffb3d465_:shape/ClassProperty (owl:Class)"><path codeLine="13" d="M144,39.22 C144,58.87 144,92.54 144,124.69 " fill="none" id="045c2c7b55e5e1acba0478dfffb3d465-backto-:shape/ClassProperty (owl:Class)" style="stroke:#800000;stroke-width:1.0;"/><polygon fill="#800000" points="144,33.22,140,42.22,144,38.22,148,42.22,144,33.22" style="stroke:#800000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="92" x="145" y="76.0669">schema:name</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="33" x="174.5" y="91.1997">[1..*]</text></g><!--SRC=[dL1DIyD04BtdLupjHON6f2PMSX1AqIgqAbRm47hOx4wQnVroPqkflzwalHHHiDvcvhqtx_480nYcaHpZk437F0lMWx468tgNfZjeu8eHtLaJ5l8J8SsY4u6rD0YpX-dzwzFB-75wUqYtshKFMdhOAeIrLiC3TEEPcoCHM-6R5A61D4aEuB7tTZEngatHdpDlhOdezv0GJRfiq2keOGulTjkpjmvzsCAftQXYTphhGLdsVo8jbn3zGLq0yGOrAxeWi3RoOuqpPbPmd5eWSIzTaDRyuuaNDHLjkxhj5g1CuZXP7gLLh49rd7Am7jn0ByboFkIZAiynnvJnYYNPw5hKTLrTYkmg_rvGcSRnUUVGI870fUSAzxF6q5X1-mMrQ_qqwWezVG40]--></g></svg></div><small class="form-text text-muted">Click diagram to navigate to corresponding section | <a href="http://www.plantuml.com/plantuml/png/dL1DIyD04BtdLupjHON6f2PMSX1AqIgqAbRm47hOx4wQnVroPqkflzwalHHHiDvcvhqtx_480nYcaHpZk437F0lMWx468tgNfZjeu8eHtLaJ5l8J8SsY4u6rD0YpX-dzwzFB-75wUqYtshKFMdhOAeIrLiC3TEEPcoCHM-6R5A61D4aEuB7tTZEngatHdpDlhOdezv0GJRfiq2keOGulTjkpjmvzsCAftQXYTphhGLdsVo8jbn3zGLq0yGOrAxeWi3RoOuqpPbPmd5eWSIzTaDRyuuaNDHLjkxhj5g1CuZXP7gLLh49rd7Am7jn0ByboFkIZAiynnvJnYYNPw5hKTLrTYkmg_rvGcSRnUUVGI870fUSAzxF6q5X1-mMrQ_qqwWezVG40" target="_blank">View as PNG</a></small>
+                     <div class="sp_section_nodeshape_center"><?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="231px" preserveAspectRatio="none" style="width:293px;height:231px;background:#FFFFFF;" version="1.1" viewBox="0 0 293 231" width="293px" zoomAndPan="magnify"><defs xmlns=""/><g><!--class :shape/ClassProperty (owl:Class)--><a href="#:shape/ClassProperty" target="_top" title="#:shape/ClassProperty" xlink:actuate="onRequest" xlink:href="#:shape/ClassProperty" xlink:show="new" xlink:title="#:shape/ClassProperty" xlink:type="simple"><g id="elem_:shape/ClassProperty (owl:Class)"><rect codeLine="8" fill="#F1F1F1" height="99.4844" id=":shape/ClassProperty (owl:Class)" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="234" x="29.5" y="125"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="227" x="33" y="142.9951">:shape/ClassProperty (owl:Class)</text><line style="stroke:#181818;stroke-width:0.5;" x1="30.5" x2="262.5" y1="151.2969" y2="151.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="184" x="35.5" y="168.292">schema:name uniqueLang</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="222" x="35.5" y="184.5889">schema:description uniqueLang</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="141" x="35.5" y="200.8857">rdfs:comment  [0..0]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="107" x="35.5" y="217.1826">rdfs:label  [0..0]</text></g></a><!--class 1fd6a8a6b4fa758d81e854be2ac0b47d--><g id="elem_1fd6a8a6b4fa758d81e854be2ac0b47d"><rect fill="#F1F1F1" height="26.2969" id="uml_1fd6a8a6b4fa758d81e854be2ac0b47d" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="279" x="7" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="273" x="10" y="24.9951">1fd6a8a6b4fa758d81e854be2ac0b47d</text></g><!--reverse link 1fd6a8a6b4fa758d81e854be2ac0b47d to :shape/ClassProperty (owl:Class)--><g id="link_1fd6a8a6b4fa758d81e854be2ac0b47d_:shape/ClassProperty (owl:Class)"><path codeLine="13" d="M146.5,39.22 C146.5,58.87 146.5,92.54 146.5,124.69 " fill="none" id="1fd6a8a6b4fa758d81e854be2ac0b47d-backto-:shape/ClassProperty (owl:Class)" style="stroke:#800000;stroke-width:1.0;"/><polygon fill="#800000" points="146.5,33.22,142.5,42.22,146.5,38.22,150.5,42.22,146.5,33.22" style="stroke:#800000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="92" x="147.5" y="76.0669">schema:name</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="33" x="177" y="91.1997">[1..*]</text></g><!--SRC=[dL1DJy904BttLunmKHDgImeqFPWGecW2OiJ4GyDXsftIZVlbxZO4VxqjN8ZHHBpDp7jltijpv46X96Umf3KPjEYr1QKL1UwTg-uWeHJetBrMViq_2U8ak61KSKMmU9m_lAvUfa_pkrEwbgPzqDBzNX0qKWnFq9r5ioJdS4jldFaQuYWwWQVMwjrCYpP5VubMQnMutqD2CEkoGIzpDHgwEMpFLXkoVW-NUYUom-cg1tdU_ucqsK3m1tK6hgn9OjO5WKRnZuOMgBPmdfgHAoqtdclrZoUMLIvhsvLjjm1v58RHvYojm8B4USf1CxY5NbonCQOuBf8A9wEKfJ6bewIW8PPHaKpOzuBoE0olEuUQCuAIsrBGSPRaQytSSI5fMZz9iY3hlW00]--></g></svg></div><small class="form-text text-muted">Click diagram to navigate to corresponding section | <a href="http://www.plantuml.com/plantuml/png/dL1DJy904BttLunmKHDgImeqFPWGecW2OiJ4GyDXsftIZVlbxZO4VxqjN8ZHHBpDp7jltijpv46X96Umf3KPjEYr1QKL1UwTg-uWeHJetBrMViq_2U8ak61KSKMmU9m_lAvUfa_pkrEwbgPzqDBzNX0qKWnFq9r5ioJdS4jldFaQuYWwWQVMwjrCYpP5VubMQnMutqD2CEkoGIzpDHgwEMpFLXkoVW-NUYUom-cg1tdU_ucqsK3m1tK6hgn9OjO5WKRnZuOMgBPmdfgHAoqtdclrZoUMLIvhsvLjjm1v58RHvYojm8B4USf1CxY5NbonCQOuBf8A9wEKfJ6bewIW8PPHaKpOzuBoE0olEuUQCuAIsrBGSPRaQytSSI5fMZz9iY3hlW00" target="_blank">View as PNG</a></small>
                      <!--@startuml
 set namespaceSeparator none
 skinparam classFontSize 14
@@ -1176,7 +1188,7 @@ Class ":shape/ClassProperty (owl:Class)" [[#:shape/ClassProperty]]
 ":shape/ClassProperty (owl:Class)" : schema:description uniqueLang  
 ":shape/ClassProperty (owl:Class)" : rdfs:comment  [0..0]  
 ":shape/ClassProperty (owl:Class)" : rdfs:label  [0..0]  
-":shape/ClassProperty (owl:Class)" -u-> "045c2c7b55e5e1acba0478dfffb3d465" : schema:name [1..*]  
+":shape/ClassProperty (owl:Class)" -u-> "1fd6a8a6b4fa758d81e854be2ac0b47d" : schema:name [1..*]  
 hide circle
 hide methods
 hide empty members
@@ -1246,65 +1258,6 @@ hide empty members
             <div class="col">
                <section>
                   <div class="sp_section_title_table_wrapper">
-                     <h3 id=":shapes/IngredientSubstanceAndShareShape" class="sp_section_title_table">:shapes/IngredientSubstanceAndShareShape</h3><code class="sp_section_uri">https://agriculture.ld.admin.ch/plant-protection/shapes/IngredientSubstanceAndShareShape</code></div>
-                  <div class="sp_section_nodeshape_diagram">
-                     <div class="sp_section_nodeshape_center"><?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="245px" preserveAspectRatio="none" style="width:336px;height:245px;background:#FFFFFF;" version="1.1" viewBox="0 0 336 245" width="336px" zoomAndPan="magnify"><defs xmlns=""/><g><!--class :shapes/IngredientSubstanceAndShareShape--><a href="#:shapes/IngredientSubstanceAndShareShape" target="_top" title="#:shapes/IngredientSubstanceAndShareShape" xlink:actuate="onRequest" xlink:href="#:shapes/IngredientSubstanceAndShareShape" xlink:show="new" xlink:title="#:shapes/IngredientSubstanceAndShareShape" xlink:type="simple"><g id="elem_:shapes/IngredientSubstanceAndShareShape"><rect codeLine="8" fill="#F1F1F1" height="26.2969" id="uml_:shapes/IngredientSubstanceAndShareShape" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="322" x="7" y="110"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="316" x="10" y="127.9951">:shapes/IngredientSubstanceAndShareShape</text></g></a><!--class :shapes/ShareShape--><a href="#:shapes/ShareShape" target="_top" title="#:shapes/ShareShape" xlink:actuate="onRequest" xlink:href="#:shapes/ShareShape" xlink:show="new" xlink:title="#:shapes/ShareShape" xlink:type="simple"><g id="elem_:shapes/ShareShape"><rect codeLine="11" fill="#F1F1F1" height="26.2969" id="uml_:shapes/ShareShape" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="151" x="92.5" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="145" x="95.5" y="24.9951">:shapes/ShareShape</text></g></a><!--class :shape/Substance (:Substance)--><a href="#:shape/Substance" target="_top" title="#:shape/Substance" xlink:actuate="onRequest" xlink:href="#:shape/Substance" xlink:show="new" xlink:title="#:shape/Substance" xlink:type="simple"><g id="elem_:shape/Substance (:Substance)"><rect codeLine="12" fill="#F1F1F1" height="26.2969" id=":shape/Substance (:Substance)" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="226" x="55" y="213"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="220" x="58" y="230.9951">:shape/Substance (:Substance)</text></g></a><!--reverse link :shapes/ShareShape to :shapes/IngredientSubstanceAndShareShape--><g id="link_:shapes/ShareShape_:shapes/IngredientSubstanceAndShareShape"><path codeLine="9" d="M168,39.38 C168,58.87 168,90.47 168,109.83 " fill="none" id=":shapes/ShareShape-backto-:shapes/IngredientSubstanceAndShareShape" style="stroke:#800000;stroke-width:1.0;"/><polygon fill="#800000" points="168,33.38,164,42.38,168,38.38,172,42.38,168,33.38" style="stroke:#800000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="77" x="169" y="76.0669">:share&#xa0;[1..*]</text></g><!--link :shapes/IngredientSubstanceAndShareShape to :shape/Substance (:Substance)--><g id="link_:shapes/IngredientSubstanceAndShareShape_:shape/Substance (:Substance)"><path codeLine="10" d="M168,136.38 C168,155.87 168,187.47 168,206.83 " fill="none" id=":shapes/IngredientSubstanceAndShareShape-to-:shape/Substance (:Substance)" style="stroke:#800000;stroke-width:1.0;"/><polygon fill="#800000" points="168,212.83,172,203.83,168,207.83,164,203.83,168,212.83" style="stroke:#800000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="108" x="169" y="179.0669">:substance&#xa0;[1..1]</text></g><!--SRC=[bL1DIyD04BtdLupjnG_Q9k8fI34KhGMhO1GF8OTjTcoMPdV3piPIVxrPWaag1EnjPjwRzzuCeGN595B9CeonP8PPRK1fXHxjX7832Ld1Y1wqih7uHWXkl3EEdq8XFAsMZsylhz7pyhvFrxAi1MgwFHG8bIokU-ZUi7ADH6oB7uBR70BVxy6HCNg_q4MTOhncHclbqN18y1Ok6un2obc9D5kfhK4kd7cr8SjKXf7YSSuCneunWYGP_vUSfk2Te3of9lCkIHy9mKqDthvV-NxapvDWEhrCuJHrtgdFMXASXsrzqHZzjdspm9dzUTN0KuxFFzePj6tNEuPRpWL7o8J92cngYJRNd9e6PMaFzKXkq91dKEelXBjA5KBjaFy0]--></g></svg></div><small class="form-text text-muted">Click diagram to navigate to corresponding section | <a href="http://www.plantuml.com/plantuml/png/bL1DIyD04BtdLupjnG_Q9k8fI34KhGMhO1GF8OTjTcoMPdV3piPIVxrPWaag1EnjPjwRzzuCeGN595B9CeonP8PPRK1fXHxjX7832Ld1Y1wqih7uHWXkl3EEdq8XFAsMZsylhz7pyhvFrxAi1MgwFHG8bIokU-ZUi7ADH6oB7uBR70BVxy6HCNg_q4MTOhncHclbqN18y1Ok6un2obc9D5kfhK4kd7cr8SjKXf7YSSuCneunWYGP_vUSfk2Te3of9lCkIHy9mKqDthvV-NxapvDWEhrCuJHrtgdFMXASXsrzqHZzjdspm9dzUTN0KuxFFzePj6tNEuPRpWL7o8J92cngYJRNd9e6PMaFzKXkq91dKEelXBjA5KBjaFy0" target="_blank">View as PNG</a></small>
-                     <!--@startuml
-set namespaceSeparator none
-skinparam classFontSize 14
-!define LIGHTORANGE
-skinparam componentStyle uml2
-skinparam wrapMessageWidth 100
-skinparam ArrowColor #Maroon
-set namespaceSeparator none 
-Class ":shapes/IngredientSubstanceAndShareShape" [[#:shapes/IngredientSubstanceAndShareShape]] 
-":shapes/IngredientSubstanceAndShareShape" -u-> ":shapes/ShareShape" : :share<U+00A0>[1..*]  
-":shapes/IngredientSubstanceAndShareShape" -d-> ":shape/Substance (:Substance)" : :substance<U+00A0>[1..1]  
-Class ":shapes/ShareShape" [[#:shapes/ShareShape]] 
-Class ":shape/Substance (:Substance)" [[#:shape/Substance]] 
-hide circle
-hide methods
-hide empty members
-remove @unlinked
-@enduml
---></div>
-                  <table class="sp_table_propertyshapes table-striped table-responsive">
-                     <thead>
-                        <tr>
-                           <th>Property name</th>
-                           <th>URI</th>
-                           <th>Expected value</th>
-                           <th>Card.</th>
-                           <th class="sp_description_column">Description</th>
-                        </tr>
-                     </thead>
-                     <tbody>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td></td>
-                           <td id=":shapes/IngredientSubstanceAndShareShape_:share"><code><a href="https://agriculture.ld.admin.ch/plant-protection/share">:share</a></code></td>
-                           <td><code><a href="https://agriculture.ld.admin.ch/plant-protection/shapes/ShareShape">:shapes/ShareShape</a></code><br><small></small></td>
-                           <td>
-                              <div style="width:30px">1..*</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description"></td>
-                        </tr>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td></td>
-                           <td id=":shapes/IngredientSubstanceAndShareShape_:substance"><code><a href="https://agriculture.ld.admin.ch/plant-protection/substance">:substance</a></code></td>
-                           <td><code><a href="#:shape/Substance">Substance</a></code><br><small></small></td>
-                           <td>
-                              <div style="width:30px">1..1</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description"></td>
-                        </tr>
-                     </tbody>
-                  </table>
-               </section>
-            </div>
-         </div><br><div class="row mt-3">
-            <div class="col">
-               <section>
-                  <div class="sp_section_title_table_wrapper">
                      <h3 id=":shapes/NoRdfsAnnotationsShape" class="sp_section_title_table">:shapes/NoRdfsAnnotationsShape</h3><code class="sp_section_uri">https://agriculture.ld.admin.ch/plant-protection/shapes/NoRdfsAnnotationsShape</code></div>
                   <div class="sp_section_nodeshape_diagram">
                      <div class="sp_section_nodeshape_center"><?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="87px" preserveAspectRatio="none" style="width:344px;height:87px;background:#FFFFFF;" version="1.1" viewBox="0 0 344 87" width="344px" zoomAndPan="magnify"><defs xmlns=""/><g><!--class :shapes/NoRdfsAnnotationsShape (owl:Class)--><a href="#:shapes/NoRdfsAnnotationsShape" target="_top" title="#:shapes/NoRdfsAnnotationsShape" xlink:actuate="onRequest" xlink:href="#:shapes/NoRdfsAnnotationsShape" xlink:show="new" xlink:title="#:shapes/NoRdfsAnnotationsShape" xlink:type="simple"><g id="elem_:shapes/NoRdfsAnnotationsShape (owl:Class)"><rect codeLine="8" fill="#F1F1F1" height="66.8906" id=":shapes/NoRdfsAnnotationsShape (owl:Class)" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="323" x="7" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="317" x="10" y="24.9951">:shapes/NoRdfsAnnotationsShape (owl:Class)</text><line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="329" y1="33.2969" y2="33.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="141" x="13" y="50.292">rdfs:comment  [0..0]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="107" x="13" y="66.5889">rdfs:label  [0..0]</text></g></a><!--SRC=[dOynJyCm48Lt_ugZNM0fAMBA5bNG8j4YDKWCKOPhV2LMRP_bCuhAhyUXInQGOBjxxzFJUq89F3gIW1tL531YuWYUFIav6JyA3ZgB8e_iKsq-2PRtwahJqNY2vwVrvlLbN-tM3rESNSW16KzdI_3XxDt47IA6BOdWExqPdNfO5iN4hcBaOSKsjvXlCJ9x9J-N1BKQky6ib1u3oUsEz_eebVUSC1dsKeywNFDWos_qPWPDC_yTRrjGVqei8MQcpCDTdWtG58j5qSB_KYmUo4uoUgC9EXCxIvVRKUfPo-KX5z8vI-v0KRu0]--></g></svg></div><small class="form-text text-muted">Click diagram to navigate to corresponding section | <a href="http://www.plantuml.com/plantuml/png/dOynJyCm48Lt_ugZNM0fAMBA5bNG8j4YDKWCKOPhV2LMRP_bCuhAhyUXInQGOBjxxzFJUq89F3gIW1tL531YuWYUFIav6JyA3ZgB8e_iKsq-2PRtwahJqNY2vwVrvlLbN-tM3rESNSW16KzdI_3XxDt47IA6BOdWExqPdNfO5iN4hcBaOSKsjvXlCJ9x9J-N1BKQky6ib1u3oUsEz_eebVUSC1dsKeywNFDWos_qPWPDC_yTRrjGVqei8MQcpCDTdWtG58j5qSB_KYmUo4uoUgC9EXCxIvVRKUfPo-KX5z8vI-v0KRu0" target="_blank">View as PNG</a></small>
@@ -1363,7 +1316,7 @@ hide empty members
                   <div class="sp_section_title_table_wrapper">
                      <h3 id=":shapes/OntologyDocumentationShape" class="sp_section_title_table">:shapes/OntologyDocumentationShape</h3><code class="sp_section_uri">https://agriculture.ld.admin.ch/plant-protection/shapes/OntologyDocumentationShape</code></div>
                   <div class="sp_section_nodeshape_diagram">
-                     <div class="sp_section_nodeshape_center"><?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="198px" preserveAspectRatio="none" style="width:373px;height:198px;background:#FFFFFF;" version="1.1" viewBox="0 0 373 198" width="373px" zoomAndPan="magnify"><defs xmlns=""/><g><!--class :shapes/OntologyDocumentationShape (owl:Class)--><a href="#:shapes/OntologyDocumentationShape" target="_top" title="#:shapes/OntologyDocumentationShape" xlink:actuate="onRequest" xlink:href="#:shapes/OntologyDocumentationShape" xlink:show="new" xlink:title="#:shapes/OntologyDocumentationShape" xlink:type="simple"><g id="elem_:shapes/OntologyDocumentationShape (owl:Class)"><rect codeLine="8" fill="#F1F1F1" height="66.8906" id=":shapes/OntologyDocumentationShape (owl:Class)" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="359" x="7" y="125"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="353" x="10" y="142.9951">:shapes/OntologyDocumentationShape (owl:Class)</text><line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="365" y1="151.2969" y2="151.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="222" x="13" y="168.292">schema:description uniqueLang</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="184" x="13" y="184.5889">schema:name uniqueLang</text></g></a><!--class 95bf914e46c02b2a1984b40635325890--><g id="elem_95bf914e46c02b2a1984b40635325890"><rect fill="#F1F1F1" height="26.2969" id="uml_95bf914e46c02b2a1984b40635325890" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="287" x="43" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="281" x="46" y="24.9951">95bf914e46c02b2a1984b40635325890</text></g><!--reverse link 95bf914e46c02b2a1984b40635325890 to :shapes/OntologyDocumentationShape (owl:Class)--><g id="link_95bf914e46c02b2a1984b40635325890_:shapes/OntologyDocumentationShape (owl:Class)"><path codeLine="11" d="M186.5,39.11 C186.5,59.54 186.5,95.47 186.5,124.99 " fill="none" id="95bf914e46c02b2a1984b40635325890-backto-:shapes/OntologyDocumentationShape (owl:Class)" style="stroke:#800000;stroke-width:1.0;"/><polygon fill="#800000" points="186.5,33.11,182.5,42.11,186.5,38.11,190.5,42.11,186.5,33.11" style="stroke:#800000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="92" x="187.5" y="76.0669">schema:name</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="33" x="217" y="91.1997">[1..*]</text></g><!--SRC=[fL1BIyD04BxdLupjHONM94rBauDGgbQXjM053oM7pMRQB6OVxcmezTUxiPSWY4XlC_Cz6K87YaaampXkq33BdBQWjCA0teLg3n9upOWUj78RyOaG9S55YJkX49PFYyVNzSliUN7VfMjfl86dksEDqCWwxg07oymAYTWUtqJfAeZ2i0FFhDM7kQvzY_wAMQrLGB-NX63UTeDUHXKpI3ThvRnsVxpJl96-0dD2gqsBmQK-rDat_Qe7sst_RqcUG_1lvmo8LoXPLY9nAqnBWqQ9ZmQNJEtX7Cls2sTw3Ph1BVJISR5BemIJ2G_Z8cPHEasA99oCngDuF4t3dvdRQ3YypdrU9Ke4BYolyJHBT9KkwRIWDExeJx90Iry0]--></g></svg></div><small class="form-text text-muted">Click diagram to navigate to corresponding section | <a href="http://www.plantuml.com/plantuml/png/fL1BIyD04BxdLupjHONM94rBauDGgbQXjM053oM7pMRQB6OVxcmezTUxiPSWY4XlC_Cz6K87YaaampXkq33BdBQWjCA0teLg3n9upOWUj78RyOaG9S55YJkX49PFYyVNzSliUN7VfMjfl86dksEDqCWwxg07oymAYTWUtqJfAeZ2i0FFhDM7kQvzY_wAMQrLGB-NX63UTeDUHXKpI3ThvRnsVxpJl96-0dD2gqsBmQK-rDat_Qe7sst_RqcUG_1lvmo8LoXPLY9nAqnBWqQ9ZmQNJEtX7Cls2sTw3Ph1BVJISR5BemIJ2G_Z8cPHEasA99oCngDuF4t3dvdRQ3YypdrU9Ke4BYolyJHBT9KkwRIWDExeJx90Iry0" target="_blank">View as PNG</a></small>
+                     <div class="sp_section_nodeshape_center"><?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="198px" preserveAspectRatio="none" style="width:373px;height:198px;background:#FFFFFF;" version="1.1" viewBox="0 0 373 198" width="373px" zoomAndPan="magnify"><defs xmlns=""/><g><!--class :shapes/OntologyDocumentationShape (owl:Class)--><a href="#:shapes/OntologyDocumentationShape" target="_top" title="#:shapes/OntologyDocumentationShape" xlink:actuate="onRequest" xlink:href="#:shapes/OntologyDocumentationShape" xlink:show="new" xlink:title="#:shapes/OntologyDocumentationShape" xlink:type="simple"><g id="elem_:shapes/OntologyDocumentationShape (owl:Class)"><rect codeLine="8" fill="#F1F1F1" height="66.8906" id=":shapes/OntologyDocumentationShape (owl:Class)" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="359" x="7" y="125"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="353" x="10" y="142.9951">:shapes/OntologyDocumentationShape (owl:Class)</text><line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="365" y1="151.2969" y2="151.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="222" x="13" y="168.292">schema:description uniqueLang</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="184" x="13" y="184.5889">schema:name uniqueLang</text></g></a><!--class 9b537241027950f4a6ba7e49a4dc561a--><g id="elem_9b537241027950f4a6ba7e49a4dc561a"><rect fill="#F1F1F1" height="26.2969" id="uml_9b537241027950f4a6ba7e49a4dc561a" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="284" x="44.5" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="278" x="47.5" y="24.9951">9b537241027950f4a6ba7e49a4dc561a</text></g><!--reverse link 9b537241027950f4a6ba7e49a4dc561a to :shapes/OntologyDocumentationShape (owl:Class)--><g id="link_9b537241027950f4a6ba7e49a4dc561a_:shapes/OntologyDocumentationShape (owl:Class)"><path codeLine="11" d="M186.5,39.11 C186.5,59.54 186.5,95.47 186.5,124.99 " fill="none" id="9b537241027950f4a6ba7e49a4dc561a-backto-:shapes/OntologyDocumentationShape (owl:Class)" style="stroke:#800000;stroke-width:1.0;"/><polygon fill="#800000" points="186.5,33.11,182.5,42.11,186.5,38.11,190.5,42.11,186.5,33.11" style="stroke:#800000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="92" x="187.5" y="76.0669">schema:name</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="33" x="217" y="91.1997">[1..*]</text></g><!--SRC=[fL3DIm9H4B_lNp7ffG9jrrONzn28bGMQa447yJ2-7Tr7-pvwynQnlzwtUP4W8hpDpE-JOVAWKH5R5BGWYmwzSQ2DfeW_f6uE2aI5p8z6-uNy8aZIwAAWZTG4q-V9qzlyTVGoUJYb6sM3GQ3xVKLGgwftWkuSsXanuvRUPU5BIEBu11uvPtPZKuKMxHawOtJ4lvU4QDnqWrRE9LhYcxdsGRlTtnjHgr01lJHwqM1mQNPL_as_Qi5osVvRibf1z6_d75YKf30lY8MJjg51hULdJLFKMpZ7ild2cLwTkdC7hU6wVvlrqYJkPSD-l4bniCQCqY6cXUWF4loPkKowtUjLo2jbGI2a4nKTPqM-D0KV5rBMxyD9hSdn0G00]--></g></svg></div><small class="form-text text-muted">Click diagram to navigate to corresponding section | <a href="http://www.plantuml.com/plantuml/png/fL3DIm9H4B_lNp7ffG9jrrONzn28bGMQa447yJ2-7Tr7-pvwynQnlzwtUP4W8hpDpE-JOVAWKH5R5BGWYmwzSQ2DfeW_f6uE2aI5p8z6-uNy8aZIwAAWZTG4q-V9qzlyTVGoUJYb6sM3GQ3xVKLGgwftWkuSsXanuvRUPU5BIEBu11uvPtPZKuKMxHawOtJ4lvU4QDnqWrRE9LhYcxdsGRlTtnjHgr01lJHwqM1mQNPL_as_Qi5osVvRibf1z6_d75YKf30lY8MJjg51hULdJLFKMpZ7ild2cLwTkdC7hU6wVvlrqYJkPSD-l4bniCQCqY6cXUWF4loPkKowtUjLo2jbGI2a4nKTPqM-D0KV5rBMxyD9hSdn0G00" target="_blank">View as PNG</a></small>
                      <!--@startuml
 set namespaceSeparator none
 skinparam classFontSize 14
@@ -1375,7 +1328,7 @@ set namespaceSeparator none
 Class ":shapes/OntologyDocumentationShape (owl:Class)" [[#:shapes/OntologyDocumentationShape]] 
 ":shapes/OntologyDocumentationShape (owl:Class)" : schema:description uniqueLang  
 ":shapes/OntologyDocumentationShape (owl:Class)" : schema:name uniqueLang  
-":shapes/OntologyDocumentationShape (owl:Class)" -u-> "95bf914e46c02b2a1984b40635325890" : schema:name [1..*]  
+":shapes/OntologyDocumentationShape (owl:Class)" -u-> "9b537241027950f4a6ba7e49a4dc561a" : schema:name [1..*]  
 hide circle
 hide methods
 hide empty members
@@ -1602,7 +1555,7 @@ hide empty members
                   <div class="sp_nodeshape_description"><p>Establishes the macro-environmental or physical operational theater in which a product's usage is legally authorized. Common delineations include enclosed greenhouse environments, open agricultural fields, or specialized storage facilities.</p>
 </div>
                   <div class="sp_section_nodeshape_diagram">
-                     <div class="sp_section_nodeshape_center"><?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="182px" preserveAspectRatio="none" style="width:304px;height:182px;background:#FFFFFF;" version="1.1" viewBox="0 0 304 182" width="304px" zoomAndPan="magnify"><defs xmlns=""/><g><!--class :shape/ApplicationArea (:ApplicationArea)--><a href="#:shape/ApplicationArea" target="_top" title="#:shape/ApplicationArea" xlink:actuate="onRequest" xlink:href="#:shape/ApplicationArea" xlink:show="new" xlink:title="#:shape/ApplicationArea" xlink:type="simple"><g id="elem_:shape/ApplicationArea (:ApplicationArea)"><rect codeLine="8" fill="#F1F1F1" height="50.5938" id=":shape/ApplicationArea (:ApplicationArea)" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="290" x="7" y="125"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="284" x="10" y="142.9951">:shape/ApplicationArea (:ApplicationArea)</text><line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="296" y1="151.2969" y2="151.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="163" x="13" y="168.292">schema:identifier  [1..1]</text></g></a><!--class 8220f9d45c39793ffa0c3d6ec7c1f479--><g id="elem_8220f9d45c39793ffa0c3d6ec7c1f479"><rect fill="#F1F1F1" height="26.2969" id="uml_8220f9d45c39793ffa0c3d6ec7c1f479" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="269" x="17.5" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="263" x="20.5" y="24.9951">8220f9d45c39793ffa0c3d6ec7c1f479</text></g><!--reverse link 8220f9d45c39793ffa0c3d6ec7c1f479 to :shape/ApplicationArea (:ApplicationArea)--><g id="link_8220f9d45c39793ffa0c3d6ec7c1f479_:shape/ApplicationArea (:ApplicationArea)"><path codeLine="10" d="M152,39.32 C152,60.3 152,97.35 152,124.75 " fill="none" id="8220f9d45c39793ffa0c3d6ec7c1f479-backto-:shape/ApplicationArea (:ApplicationArea)" style="stroke:#800000;stroke-width:1.0;"/><polygon fill="#800000" points="152,33.32,148,42.32,152,38.32,156,42.32,152,33.32" style="stroke:#800000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="92" x="153" y="76.0669">schema:name</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="33" x="182.5" y="91.1997">[3..*]</text></g><!--SRC=[bL1DIyD04BtdLupfHON6V5HZSX12qIhO2bRm478ODnEpcFrWTqkflzuDlGJHGsypxptUUpEM74WKP3Kosf96WquPa4fIOB-u7041R41h7vHqM_vDa2o2ivOwBWcUdrQFRo-lrMPrFvKheRs1bxl3GB0JGpfXzmRrcgp5JthdhUiXYUC9NHcZzair-1QpDHgbP63_Bmd1Skm6OMbxr7HLQJrmXeuhMHb2E2z_8HSXrFNiRtNJG72AKGcMzIImvAq_bdUS342TH57Im6bEyzty3iBRD8sxebrSiwp8YwphC6PPUqCiPqcto8j9ulWEgBCekXoZUby063TieECioFMgjSU5X7O73uaFClO7]--></g></svg></div><small class="form-text text-muted">Click diagram to navigate to corresponding section | <a href="http://www.plantuml.com/plantuml/png/bL1DIyD04BtdLupfHON6V5HZSX12qIhO2bRm478ODnEpcFrWTqkflzuDlGJHGsypxptUUpEM74WKP3Kosf96WquPa4fIOB-u7041R41h7vHqM_vDa2o2ivOwBWcUdrQFRo-lrMPrFvKheRs1bxl3GB0JGpfXzmRrcgp5JthdhUiXYUC9NHcZzair-1QpDHgbP63_Bmd1Skm6OMbxr7HLQJrmXeuhMHb2E2z_8HSXrFNiRtNJG72AKGcMzIImvAq_bdUS342TH57Im6bEyzty3iBRD8sxebrSiwp8YwphC6PPUqCiPqcto8j9ulWEgBCekXoZUby063TieECioFMgjSU5X7O73uaFClO7" target="_blank">View as PNG</a></small>
+                     <div class="sp_section_nodeshape_center"><?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="182px" preserveAspectRatio="none" style="width:304px;height:182px;background:#FFFFFF;" version="1.1" viewBox="0 0 304 182" width="304px" zoomAndPan="magnify"><defs xmlns=""/><g><!--class :shape/ApplicationArea (:ApplicationArea)--><a href="#:shape/ApplicationArea" target="_top" title="#:shape/ApplicationArea" xlink:actuate="onRequest" xlink:href="#:shape/ApplicationArea" xlink:show="new" xlink:title="#:shape/ApplicationArea" xlink:type="simple"><g id="elem_:shape/ApplicationArea (:ApplicationArea)"><rect codeLine="8" fill="#F1F1F1" height="50.5938" id=":shape/ApplicationArea (:ApplicationArea)" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="290" x="7" y="125"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="284" x="10" y="142.9951">:shape/ApplicationArea (:ApplicationArea)</text><line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="296" y1="151.2969" y2="151.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="163" x="13" y="168.292">schema:identifier  [1..1]</text></g></a><!--class e5cb0f1e25256f54b05f8117b89e9774--><g id="elem_e5cb0f1e25256f54b05f8117b89e9774"><rect fill="#F1F1F1" height="26.2969" id="uml_e5cb0f1e25256f54b05f8117b89e9774" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="278" x="13" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="272" x="16" y="24.9951">e5cb0f1e25256f54b05f8117b89e9774</text></g><!--reverse link e5cb0f1e25256f54b05f8117b89e9774 to :shape/ApplicationArea (:ApplicationArea)--><g id="link_e5cb0f1e25256f54b05f8117b89e9774_:shape/ApplicationArea (:ApplicationArea)"><path codeLine="10" d="M152,39.32 C152,60.3 152,97.35 152,124.75 " fill="none" id="e5cb0f1e25256f54b05f8117b89e9774-backto-:shape/ApplicationArea (:ApplicationArea)" style="stroke:#800000;stroke-width:1.0;"/><polygon fill="#800000" points="152,33.32,148,42.32,152,38.32,156,42.32,152,33.32" style="stroke:#800000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="92" x="153" y="76.0669">schema:name</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="33" x="182.5" y="91.1997">[3..*]</text></g><!--SRC=[bL1DIyD05BpdLppJYmgDsPYODWSX5As2hM053o67pUR5BEuNkrjA_VKcz1943xszDpFCp7iEFIWgqHdAS8U6Mkgr1QKL1kwBgn6Gm0Hrxb4hl-FV22GDBbhik49uULu_lR- -bTlrmrIkfHaC1ha_2eIz5Cc4FLXgDkWS_SGFtleUI1nFwD9QVLXfCRIORQZLMWNk_v8GhCPk41QkfmPlIcC4PzHphKgB52wBNyXL25Kr-rjTrn2SOrI0OprAMl1sE9Pt72r0HQA8r72Uqtm_luSGCzR47S4aIxAxBakREEiMXEJDOedBF4ydYUCxeBgDekingXyA0EEM2JpD4dslMtTQK1f_723Pe7K_]--></g></svg></div><small class="form-text text-muted">Click diagram to navigate to corresponding section | <a href="http://www.plantuml.com/plantuml/png/bL1DIyD05BpdLppJYmgDsPYODWSX5As2hM053o67pUR5BEuNkrjA_VKcz1943xszDpFCp7iEFIWgqHdAS8U6Mkgr1QKL1kwBgn6Gm0Hrxb4hl-FV22GDBbhik49uULu_lR--bTlrmrIkfHaC1ha_2eIz5Cc4FLXgDkWS_SGFtleUI1nFwD9QVLXfCRIORQZLMWNk_v8GhCPk41QkfmPlIcC4PzHphKgB52wBNyXL25Kr-rjTrn2SOrI0OprAMl1sE9Pt72r0HQA8r72Uqtm_luSGCzR47S4aIxAxBakREEiMXEJDOedBF4ydYUCxeBgDekingXyA0EEM2JpD4dslMtTQK1f_723Pe7K_" target="_blank">View as PNG</a></small>
                      <!--@startuml
 set namespaceSeparator none
 skinparam classFontSize 14
@@ -1613,7 +1566,7 @@ skinparam ArrowColor #Maroon
 set namespaceSeparator none 
 Class ":shape/ApplicationArea (:ApplicationArea)" [[#:shape/ApplicationArea]] 
 ":shape/ApplicationArea (:ApplicationArea)" : schema:identifier  [1..1]  
-":shape/ApplicationArea (:ApplicationArea)" -u-> "8220f9d45c39793ffa0c3d6ec7c1f479" : schema:name [3..*]  
+":shape/ApplicationArea (:ApplicationArea)" -u-> "e5cb0f1e25256f54b05f8117b89e9774" : schema:name [3..*]  
 hide circle
 hide methods
 hide empty members
@@ -1660,7 +1613,7 @@ hide empty members
                   <div class="sp_nodeshape_description"><p>Captures precise textual directives and technical stipulations regarding the physical deployment of a product. These annotations often clarify exceptional conditions, temporal constraints, or best-practice methodologies necessary for efficacy.</p>
 </div>
                   <div class="sp_section_nodeshape_diagram">
-                     <div class="sp_section_nodeshape_center"><?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="157px" preserveAspectRatio="none" style="width:378px;height:157px;background:#FFFFFF;" version="1.1" viewBox="0 0 378 157" width="378px" zoomAndPan="magnify"><defs xmlns=""/><g><!--class :shape/ApplicationComment (:ApplicationComment)--><a href="#:shape/ApplicationComment" target="_top" title="#:shape/ApplicationComment" xlink:actuate="onRequest" xlink:href="#:shape/ApplicationComment" xlink:show="new" xlink:title="#:shape/ApplicationComment" xlink:type="simple"><g id="elem_:shape/ApplicationComment (:ApplicationComment)"><rect codeLine="8" fill="#F1F1F1" height="26.2969" id=":shape/ApplicationComment (:ApplicationComment)" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="364" x="7" y="125"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="358" x="10" y="142.9951">:shape/ApplicationComment (:ApplicationComment)</text></g></a><!--class 165ad492158dcbdd3aa2be2a01cfbd70--><g id="elem_165ad492158dcbdd3aa2be2a01cfbd70"><rect fill="#F1F1F1" height="26.2969" id="uml_165ad492158dcbdd3aa2be2a01cfbd70" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="283" x="47.5" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="277" x="50.5" y="24.9951">165ad492158dcbdd3aa2be2a01cfbd70</text></g><!--reverse link 165ad492158dcbdd3aa2be2a01cfbd70 to :shape/ApplicationComment (:ApplicationComment)--><g id="link_165ad492158dcbdd3aa2be2a01cfbd70_:shape/ApplicationComment (:ApplicationComment)"><path codeLine="9" d="M189,39.41 C189,61.74 189,102.41 189,124.68 " fill="none" id="165ad492158dcbdd3aa2be2a01cfbd70-backto-:shape/ApplicationComment (:ApplicationComment)" style="stroke:#800000;stroke-width:1.0;"/><polygon fill="#800000" points="189,33.41,185,42.41,189,38.41,193,42.41,189,33.41" style="stroke:#800000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="125" x="190" y="76.0669">schema:description</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="33" x="236" y="91.1997">[3..*]</text></g><!--SRC=[bOvDIyD048Rl-HLZUb6XDKbRFt8GGj0gM0KhU0WvJ7QdPZ7xmSwMKd-z2Rq4f0TlytxCoyCKmA0cTYXeGmuz1kl1M4CHVoip61f4XyoFreID-Y585z6PfAqo12_FgwUFj_VYTVKmhblj-e6-7WuTmKvtsIZTUtHhOiOl-bGoj90coIWklBVxqdOznMIDtbeJyMb8YCg13UASMtHqLJZNAO51MLDQhNi6EC__cXSnLDNav4zTG_J_nUbkUWznUhr4kRZBqkMj58sKSyIieGoJL6mRUPF4a0EBbZJcabXuvOOLgEQpsMKD4BLA4WZbHKV7MrDehUIZ8Et2eRTqGvv_0G00]--></g></svg></div><small class="form-text text-muted">Click diagram to navigate to corresponding section | <a href="http://www.plantuml.com/plantuml/png/bOvDIyD048Rl-HLZUb6XDKbRFt8GGj0gM0KhU0WvJ7QdPZ7xmSwMKd-z2Rq4f0TlytxCoyCKmA0cTYXeGmuz1kl1M4CHVoip61f4XyoFreID-Y585z6PfAqo12_FgwUFj_VYTVKmhblj-e6-7WuTmKvtsIZTUtHhOiOl-bGoj90coIWklBVxqdOznMIDtbeJyMb8YCg13UASMtHqLJZNAO51MLDQhNi6EC__cXSnLDNav4zTG_J_nUbkUWznUhr4kRZBqkMj58sKSyIieGoJL6mRUPF4a0EBbZJcabXuvOOLgEQpsMKD4BLA4WZbHKV7MrDehUIZ8Et2eRTqGvv_0G00" target="_blank">View as PNG</a></small>
+                     <div class="sp_section_nodeshape_center"><?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="157px" preserveAspectRatio="none" style="width:378px;height:157px;background:#FFFFFF;" version="1.1" viewBox="0 0 378 157" width="378px" zoomAndPan="magnify"><defs xmlns=""/><g><!--class :shape/ApplicationComment (:ApplicationComment)--><a href="#:shape/ApplicationComment" target="_top" title="#:shape/ApplicationComment" xlink:actuate="onRequest" xlink:href="#:shape/ApplicationComment" xlink:show="new" xlink:title="#:shape/ApplicationComment" xlink:type="simple"><g id="elem_:shape/ApplicationComment (:ApplicationComment)"><rect codeLine="8" fill="#F1F1F1" height="26.2969" id=":shape/ApplicationComment (:ApplicationComment)" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="364" x="7" y="125"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="358" x="10" y="142.9951">:shape/ApplicationComment (:ApplicationComment)</text></g></a><!--class 7eceb044ba188bef182f2999ad11a092--><g id="elem_7eceb044ba188bef182f2999ad11a092"><rect fill="#F1F1F1" height="26.2969" id="uml_7eceb044ba188bef182f2999ad11a092" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="280" x="49" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="274" x="52" y="24.9951">7eceb044ba188bef182f2999ad11a092</text></g><!--reverse link 7eceb044ba188bef182f2999ad11a092 to :shape/ApplicationComment (:ApplicationComment)--><g id="link_7eceb044ba188bef182f2999ad11a092_:shape/ApplicationComment (:ApplicationComment)"><path codeLine="9" d="M189,39.41 C189,61.74 189,102.41 189,124.68 " fill="none" id="7eceb044ba188bef182f2999ad11a092-backto-:shape/ApplicationComment (:ApplicationComment)" style="stroke:#800000;stroke-width:1.0;"/><polygon fill="#800000" points="189,33.41,185,42.41,189,38.41,193,42.41,189,33.41" style="stroke:#800000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="125" x="190" y="76.0669">schema:description</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="33" x="236" y="91.1997">[3..*]</text></g><!--SRC=[bOvDIyD048Rl-HLZUb6XDOa1ano44BGALi4A7a8Eayt4B6O_sDbIwgytfPU0zE1jtezvUPWyQ5J45WLjoQ93RnneeodWRwcFXW8n8lEZqNuhVmZYDBZeg9UQuELv_VJnzbw-hX_cTQFiD33L_M4asAancQLxXtP3pFX5dxBp0yHHD8jBvyo-CkD4iTYWCqO7V1uIWkh81c710rgwAQqTfK0lZQwCKXC3N1P_pQiGwdfnzgTf8FZ_udAtl8VmZWIrKPgs66TPItsS9NsIvpbsSOnHdeHG08k151OTiN3I7bUWlbsjhXk0O90TWP1EZ7Iw5Vd1T7mIfAm_J9PgoV4l]--></g></svg></div><small class="form-text text-muted">Click diagram to navigate to corresponding section | <a href="http://www.plantuml.com/plantuml/png/bOvDIyD048Rl-HLZUb6XDOa1ano44BGALi4A7a8Eayt4B6O_sDbIwgytfPU0zE1jtezvUPWyQ5J45WLjoQ93RnneeodWRwcFXW8n8lEZqNuhVmZYDBZeg9UQuELv_VJnzbw-hX_cTQFiD33L_M4asAancQLxXtP3pFX5dxBp0yHHD8jBvyo-CkD4iTYWCqO7V1uIWkh81c710rgwAQqTfK0lZQwCKXC3N1P_pQiGwdfnzgTf8FZ_udAtl8VmZWIrKPgs66TPItsS9NsIvpbsSOnHdeHG08k151OTiN3I7bUWlbsjhXk0O90TWP1EZ7Iw5Vd1T7mIfAm_J9PgoV4l" target="_blank">View as PNG</a></small>
                      <!--@startuml
 set namespaceSeparator none
 skinparam classFontSize 14
@@ -1670,7 +1623,7 @@ skinparam wrapMessageWidth 100
 skinparam ArrowColor #Maroon
 set namespaceSeparator none 
 Class ":shape/ApplicationComment (:ApplicationComment)" [[#:shape/ApplicationComment]] 
-":shape/ApplicationComment (:ApplicationComment)" -u-> "165ad492158dcbdd3aa2be2a01cfbd70" : schema:description [3..*]  
+":shape/ApplicationComment (:ApplicationComment)" -u-> "7eceb044ba188bef182f2999ad11a092" : schema:description [3..*]  
 hide circle
 hide methods
 hide empty members
@@ -1708,7 +1661,7 @@ hide empty members
                   <div class="sp_nodeshape_description"><p>Denotes the specific agronomic crop, botanical grouping, or agricultural setting targeted for treatment. It forms the biological jurisdiction defining where the product may be legally utilized.</p>
 </div>
                   <div class="sp_section_nodeshape_diagram">
-                     <div class="sp_section_nodeshape_center"><?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="198px" preserveAspectRatio="none" style="width:283px;height:198px;background:#FFFFFF;" version="1.1" viewBox="0 0 283 198" width="283px" zoomAndPan="magnify"><defs xmlns=""/><g><!--class :shape/Crop (:Crop)--><a href="#:shape/Crop" target="_top" title="#:shape/Crop" xlink:actuate="onRequest" xlink:href="#:shape/Crop" xlink:show="new" xlink:title="#:shape/Crop" xlink:type="simple"><g id="elem_:shape/Crop (:Crop)"><rect codeLine="8" fill="#F1F1F1" height="66.8906" id=":shape/Crop (:Crop)" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="175" x="54" y="125"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="138" x="72.5" y="142.9951">:shape/Crop (:Crop)</text><line style="stroke:#181818;stroke-width:0.5;" x1="55" x2="228" y1="151.2969" y2="151.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="163" x="60" y="168.292">schema:identifier  [1..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="157" x="60" y="184.5889">schema:isPartOf  [0..2]</text></g></a><!--class 8220f9d45c39793ffa0c3d6ec7c1f479--><g id="elem_8220f9d45c39793ffa0c3d6ec7c1f479"><rect fill="#F1F1F1" height="26.2969" id="uml_8220f9d45c39793ffa0c3d6ec7c1f479" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="269" x="7" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="263" x="10" y="24.9951">8220f9d45c39793ffa0c3d6ec7c1f479</text></g><!--reverse link 8220f9d45c39793ffa0c3d6ec7c1f479 to :shape/Crop (:Crop)--><g id="link_8220f9d45c39793ffa0c3d6ec7c1f479_:shape/Crop (:Crop)"><path codeLine="11" d="M141.5,39.11 C141.5,59.54 141.5,95.47 141.5,124.99 " fill="none" id="8220f9d45c39793ffa0c3d6ec7c1f479-backto-:shape/Crop (:Crop)" style="stroke:#800000;stroke-width:1.0;"/><polygon fill="#800000" points="141.5,33.11,137.5,42.11,141.5,38.11,145.5,42.11,141.5,33.11" style="stroke:#800000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="92" x="142.5" y="76.0669">schema:name</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="33" x="172" y="91.1997">[3..*]</text></g><!--SRC=[XOzBJyCm48Jl-HLBUm6aXhoW90UageA2H2cYI1oY78op9XRnGrvNLVdrEEeb1ofEwvsT6NqczA2PGhACunOjSymR1zfeZEXRwa5Gm7j6z62qtyeVXBI8pbeKKYCyFwqUtpTlYvVL_TXkb0q5mUuFFS9EzTdekdVChf68VU67R7q7QPACpWldp7vf-a0nNJDdZ8xeD2H4ou4D9XLrpEBLqXaBvzKmBYPGrzEHtZGG_UshW7Y7YbMo3THII7G0THh7QGF_P-YLERyH8P74SNOwCTlDxc1ocsM9ADlYckVblCo5O0dFsnlaSvwAObwEceS_Gvt7yULGsWKuuDBn7ezlXRupBHqNLDOVWgG-qT4l]--></g></svg></div><small class="form-text text-muted">Click diagram to navigate to corresponding section | <a href="http://www.plantuml.com/plantuml/png/XOzBJyCm48Jl-HLBUm6aXhoW90UageA2H2cYI1oY78op9XRnGrvNLVdrEEeb1ofEwvsT6NqczA2PGhACunOjSymR1zfeZEXRwa5Gm7j6z62qtyeVXBI8pbeKKYCyFwqUtpTlYvVL_TXkb0q5mUuFFS9EzTdekdVChf68VU67R7q7QPACpWldp7vf-a0nNJDdZ8xeD2H4ou4D9XLrpEBLqXaBvzKmBYPGrzEHtZGG_UshW7Y7YbMo3THII7G0THh7QGF_P-YLERyH8P74SNOwCTlDxc1ocsM9ADlYckVblCo5O0dFsnlaSvwAObwEceS_Gvt7yULGsWKuuDBn7ezlXRupBHqNLDOVWgG-qT4l" target="_blank">View as PNG</a></small>
+                     <div class="sp_section_nodeshape_center"><?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="198px" preserveAspectRatio="none" style="width:292px;height:198px;background:#FFFFFF;" version="1.1" viewBox="0 0 292 198" width="292px" zoomAndPan="magnify"><defs xmlns=""/><g><!--class :shape/Crop (:Crop)--><a href="#:shape/Crop" target="_top" title="#:shape/Crop" xlink:actuate="onRequest" xlink:href="#:shape/Crop" xlink:show="new" xlink:title="#:shape/Crop" xlink:type="simple"><g id="elem_:shape/Crop (:Crop)"><rect codeLine="8" fill="#F1F1F1" height="66.8906" id=":shape/Crop (:Crop)" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="175" x="58.5" y="125"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="138" x="77" y="142.9951">:shape/Crop (:Crop)</text><line style="stroke:#181818;stroke-width:0.5;" x1="59.5" x2="232.5" y1="151.2969" y2="151.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="163" x="64.5" y="168.292">schema:identifier  [1..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="157" x="64.5" y="184.5889">schema:isPartOf  [0..2]</text></g></a><!--class e5cb0f1e25256f54b05f8117b89e9774--><g id="elem_e5cb0f1e25256f54b05f8117b89e9774"><rect fill="#F1F1F1" height="26.2969" id="uml_e5cb0f1e25256f54b05f8117b89e9774" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="278" x="7" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="272" x="10" y="24.9951">e5cb0f1e25256f54b05f8117b89e9774</text></g><!--reverse link e5cb0f1e25256f54b05f8117b89e9774 to :shape/Crop (:Crop)--><g id="link_e5cb0f1e25256f54b05f8117b89e9774_:shape/Crop (:Crop)"><path codeLine="11" d="M146,39.11 C146,59.54 146,95.47 146,124.99 " fill="none" id="e5cb0f1e25256f54b05f8117b89e9774-backto-:shape/Crop (:Crop)" style="stroke:#800000;stroke-width:1.0;"/><polygon fill="#800000" points="146,33.11,142,42.11,146,38.11,150,42.11,146,33.11" style="stroke:#800000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="92" x="147" y="76.0669">schema:name</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="33" x="176.5" y="91.1997">[3..*]</text></g><!--SRC=[XOzFIyD04CNl-HHZUb6XCHiJs-OWbA1Li5Qiu27qi4acPZ7xXvqjfNvwD_IIWyNJxBnvx_5RGWUAIoJ3QzoYuPOxRK5fXG5z2pK84kgU4prgvRRY1u6bmKM3hL08By-hfu_D-_9rzJ2sQsbyWRUxOu-mbtqokXuiDsiaub_uAHhN0OlZqNbfhJuKklSKapMtMgk0paD2K0ni4ERKSOCtXTK6BlDXN8LGbfEHljj1yBSl1wexb3mNZQSMhK0BKB8eOZluFqDltBfDwnDn52Nd4zFzz1v2pEegRXacMPBTjLbQnLaxPsnMpHUucCtIKVFmPoXle-XwAEqy7DJ2rZsUtX9TfniwBIYDEtf9LcZf5m00]--></g></svg></div><small class="form-text text-muted">Click diagram to navigate to corresponding section | <a href="http://www.plantuml.com/plantuml/png/XOzFIyD04CNl-HHZUb6XCHiJs-OWbA1Li5Qiu27qi4acPZ7xXvqjfNvwD_IIWyNJxBnvx_5RGWUAIoJ3QzoYuPOxRK5fXG5z2pK84kgU4prgvRRY1u6bmKM3hL08By-hfu_D-_9rzJ2sQsbyWRUxOu-mbtqokXuiDsiaub_uAHhN0OlZqNbfhJuKklSKapMtMgk0paD2K0ni4ERKSOCtXTK6BlDXN8LGbfEHljj1yBSl1wexb3mNZQSMhK0BKB8eOZluFqDltBfDwnDn52Nd4zFzz1v2pEegRXacMPBTjLbQnLaxPsnMpHUucCtIKVFmPoXle-XwAEqy7DJ2rZsUtX9TfniwBIYDEtf9LcZf5m00" target="_blank">View as PNG</a></small>
                      <!--@startuml
 set namespaceSeparator none
 skinparam classFontSize 14
@@ -1720,7 +1673,7 @@ set namespaceSeparator none
 Class ":shape/Crop (:Crop)" [[#:shape/Crop]] 
 ":shape/Crop (:Crop)" : schema:identifier  [1..1]  
 ":shape/Crop (:Crop)" : schema:isPartOf  [0..2]  
-":shape/Crop (:Crop)" -u-> "8220f9d45c39793ffa0c3d6ec7c1f479" : schema:name [3..*]  
+":shape/Crop (:Crop)" -u-> "e5cb0f1e25256f54b05f8117b89e9774" : schema:name [3..*]  
 hide circle
 hide methods
 hide empty members
@@ -1833,6 +1786,10 @@ hide empty members
                      <h3 id=":shape/HazardPictogram" class="sp_section_title_table">Hazard pictogram</h3><code class="sp_section_uri">https://agriculture.ld.admin.ch/plant-protection/shape/HazardPictogram</code></div>
                   <div class="sp_nodeshape_description"><p>A graphical composition intended to convey specific hazard information.</p>
 </div>
+                  <ul class="sp_list_description_properties">
+                     <li>Applies to: <a href="https://agriculture.ld.admin.ch/plant-protection/ghs/HazardPictogram">:ghs/HazardPictogram</a></li>
+                     <li>Conforms to: <a href="#:shape/GHSStatement">GHS statement</a></li>
+                  </ul>
                   <div class="sp_section_nodeshape_diagram">
                      <div class="sp_section_nodeshape_center"><?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="87px" preserveAspectRatio="none" style="width:364px;height:87px;background:#FFFFFF;" version="1.1" viewBox="0 0 364 87" width="364px" zoomAndPan="magnify"><defs xmlns=""/><g><!--class :shape/HazardPictogram (:ghs/HazardPictogram)--><a href="#:shape/HazardPictogram" target="_top" title="#:shape/HazardPictogram" xlink:actuate="onRequest" xlink:href="#:shape/HazardPictogram" xlink:show="new" xlink:title="#:shape/HazardPictogram" xlink:type="simple"><g id="elem_:shape/HazardPictogram (:ghs/HazardPictogram)"><rect codeLine="8" fill="#F1F1F1" height="66.8906" id=":shape/HazardPictogram (:ghs/HazardPictogram)" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="343" x="7" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="337" x="10" y="24.9951">:shape/HazardPictogram (:ghs/HazardPictogram)</text><line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="349" y1="33.2969" y2="33.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="161" x="13" y="50.292">schema:identifier  [1..*]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="146" x="13" y="66.5889">schema:image  [1..1]</text></g></a><!--SRC=[fP0_JmCn3CNtV0gtNIX3wI6csweAMYGAY28nd6umYNk9o3_5GLNxwSdfbXE20R7Pxza_FPifWqT7757IdY8cp2613vu4VnZV2mwaHUQxuFFUd0cg6p5HT32UuE5-itrzUbazRcx7uy750YZZ-MG9Ffsz7hd7X757pDZHcr5PGxLSZknLIk6u3hQacEqmXU05_nuInBhF1jEQDKQwsk8PatesCeUkfrtKdURlwdmAJJFxUQDjGVmLLWDBJGvheyhHvc0e0JJLOd7Pmdzehhne05KzI1SyI9EafQ5sb7LGF3JaOZuLoRrJuYy0]--></g></svg></div><small class="form-text text-muted">Click diagram to navigate to corresponding section | <a href="http://www.plantuml.com/plantuml/png/fP0_JmCn3CNtV0gtNIX3wI6csweAMYGAY28nd6umYNk9o3_5GLNxwSdfbXE20R7Pxza_FPifWqT7757IdY8cp2613vu4VnZV2mwaHUQxuFFUd0cg6p5HT32UuE5-itrzUbazRcx7uy750YZZ-MG9Ffsz7hd7X757pDZHcr5PGxLSZknLIk6u3hQacEqmXU05_nuInBhF1jEQDKQwsk8PatesCeUkfrtKdURlwdmAJJFxUQDjGVmLLWDBJGvheyhHvc0e0JJLOd7Pmdzehhne05KzI1SyI9EafQ5sb7LGF3JaOZuLoRrJuYy0" target="_blank">View as PNG</a></small>
                      <!--@startuml
@@ -1915,6 +1872,10 @@ hide empty members
                      <h3 id=":shape/HazardStatement" class="sp_section_title_table">Hazard statement</h3><code class="sp_section_uri">https://agriculture.ld.admin.ch/plant-protection/shape/HazardStatement</code></div>
                   <div class="sp_nodeshape_description"><p>A standard phrase assigned to a hazard class and category that describes the nature of the hazards.</p>
 </div>
+                  <ul class="sp_list_description_properties">
+                     <li>Applies to: <a href="https://agriculture.ld.admin.ch/plant-protection/ghs/HazardStatement">:ghs/HazardStatement</a></li>
+                     <li>Conforms to: <a href="#:shape/GHSStatement">GHS statement</a></li>
+                  </ul>
                   <div class="sp_section_nodeshape_diagram">
                      <div class="sp_section_nodeshape_center"><?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="71px" preserveAspectRatio="none" style="width:370px;height:71px;background:#FFFFFF;" version="1.1" viewBox="0 0 370 71" width="370px" zoomAndPan="magnify"><defs xmlns=""/><g><!--class :shape/HazardStatement (:ghs/HazardStatement)--><a href="#:shape/HazardStatement" target="_top" title="#:shape/HazardStatement" xlink:actuate="onRequest" xlink:href="#:shape/HazardStatement" xlink:show="new" xlink:title="#:shape/HazardStatement" xlink:type="simple"><g id="elem_:shape/HazardStatement (:ghs/HazardStatement)"><rect codeLine="8" fill="#F1F1F1" height="50.5938" id=":shape/HazardStatement (:ghs/HazardStatement)" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="349" x="7" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="343" x="10" y="24.9951">:shape/HazardStatement (:ghs/HazardStatement)</text><line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="355" y1="33.2969" y2="33.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="163" x="13" y="50.292">schema:identifier  [1..1]</text></g></a><!--SRC=[bOuzImD148Rx_HLZqcWJSs9rNGYQ24R14ooEAoQxa-pYVZ6p4f9VxuOqXsXXD_EyxmoFK868WIIZfeuoCfR445Ca9Pykda40xL7aCSNIkHD1Sw-k3ErS97X-MgtVNzyMBwk7SJs5N1_KUZbwWg_WxqRfWJ5lI0JtzE5CiT3CvwDumPmEo-IhnNI3d59KyhSagENP3IQjMCnqkyOJikaA5WfL0AxRlPMVz6O2VJ_z_M8OGFttMGkYBGLidQd0xHmnGD_CPiq0e6obe1rhJvSvKB79o6MXaCkneh0bbcy0]--></g></svg></div><small class="form-text text-muted">Click diagram to navigate to corresponding section | <a href="http://www.plantuml.com/plantuml/png/bOuzImD148Rx_HLZqcWJSs9rNGYQ24R14ooEAoQxa-pYVZ6p4f9VxuOqXsXXD_EyxmoFK868WIIZfeuoCfR445Ca9Pykda40xL7aCSNIkHD1Sw-k3ErS97X-MgtVNzyMBwk7SJs5N1_KUZbwWg_WxqRfWJ5lI0JtzE5CiT3CvwDumPmEo-IhnNI3d59KyhSagENP3IQjMCnqkyOJikaA5WfL0AxRlPMVz6O2VJ_z_M8OGFttMGkYBGLidQd0xHmnGD_CPiq0e6obe1rhJvSvKB79o6MXaCkneh0bbcy0" target="_blank">View as PNG</a></small>
                      <!--@startuml
@@ -2108,72 +2069,11 @@ remove @unlinked
             <div class="col">
                <section>
                   <div class="sp_section_title_table_wrapper">
-                     <h3 id=":shape/Ingredient" class="sp_section_title_table">Ingredient</h3><code class="sp_section_uri">https://agriculture.ld.admin.ch/plant-protection/shape/Ingredient</code></div>
-                  <div class="sp_nodeshape_description"><p>Represents a constituent component of a product. It specifies both the underlying chemical or biological substance and its corresponding quantitative share within the final formulation.</p>
-</div>
-                  <div class="sp_section_nodeshape_diagram">
-                     <div class="sp_section_nodeshape_center"><?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="245px" preserveAspectRatio="none" style="width:387px;height:245px;background:#FFFFFF;" version="1.1" viewBox="0 0 387 245" width="387px" zoomAndPan="magnify"><defs xmlns=""/><g><!--class :shape/Ingredient--><a href="#:shape/Ingredient" target="_top" title="#:shape/Ingredient" xlink:actuate="onRequest" xlink:href="#:shape/Ingredient" xlink:show="new" xlink:title="#:shape/Ingredient" xlink:type="simple"><g id="elem_:shape/Ingredient"><rect codeLine="8" fill="#F1F1F1" height="26.2969" id="uml_:shape/Ingredient" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="129" x="129" y="110"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="123" x="132" y="127.9951">:shape/Ingredient</text></g></a><!--class :shape/Substance (:Substance)--><a href="#:shape/Substance" target="_top" title="#:shape/Substance" xlink:actuate="onRequest" xlink:href="#:shape/Substance" xlink:show="new" xlink:title="#:shape/Substance" xlink:type="simple"><g id="elem_:shape/Substance (:Substance)"><rect codeLine="12" fill="#F1F1F1" height="26.2969" id=":shape/Substance (:Substance)" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="226" x="80.5" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="220" x="83.5" y="24.9951">:shape/Substance (:Substance)</text></g></a><!--class :shape/QuantitativeValue (schema:QuantitativeValue)--><a href="#:shape/QuantitativeValue" target="_top" title="#:shape/QuantitativeValue" xlink:actuate="onRequest" xlink:href="#:shape/QuantitativeValue" xlink:show="new" xlink:title="#:shape/QuantitativeValue" xlink:type="simple"><g id="elem_:shape/QuantitativeValue (schema:QuantitativeValue)"><rect codeLine="11" fill="#F1F1F1" height="26.2969" id=":shape/QuantitativeValue (schema:QuantitativeValue)" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="373" x="7" y="213"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="367" x="10" y="230.9951">:shape/QuantitativeValue (schema:QuantitativeValue)</text></g></a><!--reverse link :shape/Substance (:Substance) to :shape/Ingredient--><g id="link_:shape/Substance (:Substance)_:shape/Ingredient"><path codeLine="9" d="M193.5,39.38 C193.5,58.87 193.5,90.47 193.5,109.83 " fill="none" id=":shape/Substance (:Substance)-backto-:shape/Ingredient" style="stroke:#800000;stroke-width:1.0;"/><polygon fill="#800000" points="193.5,33.38,189.5,42.38,193.5,38.38,197.5,42.38,193.5,33.38" style="stroke:#800000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="108" x="194.5" y="76.0669">:substance&#xa0;[1..1]</text></g><!--link :shape/Ingredient to :shape/QuantitativeValue (schema:QuantitativeValue)--><g id="link_:shape/Ingredient_:shape/QuantitativeValue (schema:QuantitativeValue)"><path codeLine="10" d="M193.5,136.38 C193.5,155.87 193.5,187.47 193.5,206.83 " fill="none" id=":shape/Ingredient-to-:shape/QuantitativeValue (schema:QuantitativeValue)" style="stroke:#800000;stroke-width:1.0;"/><polygon fill="#800000" points="193.5,212.83,197.5,203.83,193.5,207.83,189.5,203.83,193.5,212.83" style="stroke:#800000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="77" x="194.5" y="179.0669">:share&#xa0;[1..*]</text></g><!--SRC=[bP1DJy9048Rl_HKZNFm8s1fFZI4IeaWY6iMFGzF3q1tfXlreThOG_FMqGQ44ENYRUT_PvvqT9Wy6DN616KseG8VUEZ3MKC1pQMf1GwQG-TuQFv7V1D5rS2BeIng2nz7muUtvjVyql6kEMrrKW6hShnH1gTLLmrqwBCR4Z3FwbCBd48LXm-uxPvS3gwejscDqrfg0Zoy9mQ3U3LenvrZGvSZC70bPPRSWITe7Qff2yDTif-pqjf19EMMF9YCuZRVrMGjYYFctlNc_2CD-s4kYRZTAuGXLDAWl9HelFNgve0zKPKNdB2UDyO7pavMZsyivhtFs__i_wEuY1svzc7tqiIli85krVfnBGP19bodQr9fyRWLl6jA5NrMIdfBZm96s2uBRqYXfvYJM]--></g></svg></div><small class="form-text text-muted">Click diagram to navigate to corresponding section | <a href="http://www.plantuml.com/plantuml/png/bP1DJy9048Rl_HKZNFm8s1fFZI4IeaWY6iMFGzF3q1tfXlreThOG_FMqGQ44ENYRUT_PvvqT9Wy6DN616KseG8VUEZ3MKC1pQMf1GwQG-TuQFv7V1D5rS2BeIng2nz7muUtvjVyql6kEMrrKW6hShnH1gTLLmrqwBCR4Z3FwbCBd48LXm-uxPvS3gwejscDqrfg0Zoy9mQ3U3LenvrZGvSZC70bPPRSWITe7Qff2yDTif-pqjf19EMMF9YCuZRVrMGjYYFctlNc_2CD-s4kYRZTAuGXLDAWl9HelFNgve0zKPKNdB2UDyO7pavMZsyivhtFs__i_wEuY1svzc7tqiIli85krVfnBGP19bodQr9fyRWLl6jA5NrMIdfBZm96s2uBRqYXfvYJM" target="_blank">View as PNG</a></small>
-                     <!--@startuml
-set namespaceSeparator none
-skinparam classFontSize 14
-!define LIGHTORANGE
-skinparam componentStyle uml2
-skinparam wrapMessageWidth 100
-skinparam ArrowColor #Maroon
-set namespaceSeparator none 
-Class ":shape/Ingredient" [[#:shape/Ingredient]] 
-":shape/Ingredient" -u-> ":shape/Substance (:Substance)" : :substance<U+00A0>[1..1]  
-":shape/Ingredient" -d-> ":shape/QuantitativeValue (schema:QuantitativeValue)" : :share<U+00A0>[1..*]  
-Class ":shape/QuantitativeValue (schema:QuantitativeValue)" [[#:shape/QuantitativeValue]] 
-Class ":shape/Substance (:Substance)" [[#:shape/Substance]] 
-hide circle
-hide methods
-hide empty members
-remove @unlinked
-@enduml
---></div>
-                  <table class="sp_table_propertyshapes table-striped table-responsive">
-                     <thead>
-                        <tr>
-                           <th>Property name</th>
-                           <th>URI</th>
-                           <th>Expected value</th>
-                           <th>Card.</th>
-                           <th class="sp_description_column">Description</th>
-                        </tr>
-                     </thead>
-                     <tbody>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>Share (Quantitative Value)</td>
-                           <td id=":shape/Ingredient_:share"><code><a href="https://agriculture.ld.admin.ch/plant-protection/share">:share</a></code></td>
-                           <td><code><a href="#:shape/QuantitativeValue">Quantitative value</a></code><br><small></small></td>
-                           <td>
-                              <div style="width:30px">1..*</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description"></td>
-                        </tr>
-                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
-                           <td>Substance</td>
-                           <td id=":shape/Ingredient_:substance"><code><a href="https://agriculture.ld.admin.ch/plant-protection/substance">:substance</a></code></td>
-                           <td><code><a href="#:shape/Substance">Substance</a></code><br><small></small></td>
-                           <td>
-                              <div style="width:30px">1..1</div>
-                           </td>
-                           <td class="sp_table_propertyshapes_col_description"></td>
-                        </tr>
-                     </tbody>
-                  </table>
-               </section>
-            </div>
-         </div><br><div class="row mt-3">
-            <div class="col">
-               <section>
-                  <div class="sp_section_title_table_wrapper">
                      <h3 id=":shape/Obligation" class="sp_section_title_table">Obligation</h3><code class="sp_section_uri">https://agriculture.ld.admin.ch/plant-protection/shape/Obligation</code></div>
                   <div class="sp_nodeshape_description"><p>Specifies statutory mandates, restrictions, or operational conditions that an applicator must strictly observe. These parameters are designed to mitigate environmental impact, safeguard human health, and ensure regulatory compliance.</p>
 </div>
                   <div class="sp_section_nodeshape_diagram">
-                     <div class="sp_section_nodeshape_center"><?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="157px" preserveAspectRatio="none" style="width:297px;height:157px;background:#FFFFFF;" version="1.1" viewBox="0 0 297 157" width="297px" zoomAndPan="magnify"><defs xmlns=""/><g><!--class :shape/Obligation (:Obligation)--><a href="#:shape/Obligation" target="_top" title="#:shape/Obligation" xlink:actuate="onRequest" xlink:href="#:shape/Obligation" xlink:show="new" xlink:title="#:shape/Obligation" xlink:type="simple"><g id="elem_:shape/Obligation (:Obligation)"><rect codeLine="8" fill="#F1F1F1" height="26.2969" id=":shape/Obligation (:Obligation)" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="216" x="40.5" y="125"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="210" x="43.5" y="142.9951">:shape/Obligation (:Obligation)</text></g></a><!--class 165ad492158dcbdd3aa2be2a01cfbd70--><g id="elem_165ad492158dcbdd3aa2be2a01cfbd70"><rect fill="#F1F1F1" height="26.2969" id="uml_165ad492158dcbdd3aa2be2a01cfbd70" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="283" x="7" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="277" x="10" y="24.9951">165ad492158dcbdd3aa2be2a01cfbd70</text></g><!--reverse link 165ad492158dcbdd3aa2be2a01cfbd70 to :shape/Obligation (:Obligation)--><g id="link_165ad492158dcbdd3aa2be2a01cfbd70_:shape/Obligation (:Obligation)"><path codeLine="9" d="M148.5,39.41 C148.5,61.74 148.5,102.41 148.5,124.68 " fill="none" id="165ad492158dcbdd3aa2be2a01cfbd70-backto-:shape/Obligation (:Obligation)" style="stroke:#800000;stroke-width:1.0;"/><polygon fill="#800000" points="148.5,33.41,144.5,42.41,148.5,38.41,152.5,42.41,148.5,33.41" style="stroke:#800000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="125" x="149.5" y="76.0669">schema:description</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="33" x="195.5" y="91.1997">[3..*]</text></g><!--SRC=[XOvDIyD048Rl-ol6zA92QvAsVkGWbA9Li1Qiu27aCDcTDelP3tQsbFhhJTk31H5lytxCoyCKmQ8XzYXfIHu3HXV0Eak2FxNT6mPaYyoFpiQb_YB8Hk9CqKfRWfVdsTFxuctoEdiuhJlZku6k7dSjmSQq-Kcw3UZdn8nh-j0gDf2bwKay2S5jfwxjA7fp3CvPmNz3WfZksI0fk45FLukwrMkCsbauBtx4HG9bsVlLgIeG_t_sD_rxIBBhCQhHNPwDRvMibHeYvZNbc6PoLQkRD842M3Pai534CcX_s2g7Wy5b1I0QhGYa3hAbusqeDaxnKP3nSTTPfgR0tm00]--></g></svg></div><small class="form-text text-muted">Click diagram to navigate to corresponding section | <a href="http://www.plantuml.com/plantuml/png/XOvDIyD048Rl-ol6zA92QvAsVkGWbA9Li1Qiu27aCDcTDelP3tQsbFhhJTk31H5lytxCoyCKmQ8XzYXfIHu3HXV0Eak2FxNT6mPaYyoFpiQb_YB8Hk9CqKfRWfVdsTFxuctoEdiuhJlZku6k7dSjmSQq-Kcw3UZdn8nh-j0gDf2bwKay2S5jfwxjA7fp3CvPmNz3WfZksI0fk45FLukwrMkCsbauBtx4HG9bsVlLgIeG_t_sD_rxIBBhCQhHNPwDRvMibHeYvZNbc6PoLQkRD842M3Pai534CcX_s2g7Wy5b1I0QhGYa3hAbusqeDaxnKP3nSTTPfgR0tm00" target="_blank">View as PNG</a></small>
+                     <div class="sp_section_nodeshape_center"><?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="157px" preserveAspectRatio="none" style="width:294px;height:157px;background:#FFFFFF;" version="1.1" viewBox="0 0 294 157" width="294px" zoomAndPan="magnify"><defs xmlns=""/><g><!--class :shape/Obligation (:Obligation)--><a href="#:shape/Obligation" target="_top" title="#:shape/Obligation" xlink:actuate="onRequest" xlink:href="#:shape/Obligation" xlink:show="new" xlink:title="#:shape/Obligation" xlink:type="simple"><g id="elem_:shape/Obligation (:Obligation)"><rect codeLine="8" fill="#F1F1F1" height="26.2969" id=":shape/Obligation (:Obligation)" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="216" x="39" y="125"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="210" x="42" y="142.9951">:shape/Obligation (:Obligation)</text></g></a><!--class 7eceb044ba188bef182f2999ad11a092--><g id="elem_7eceb044ba188bef182f2999ad11a092"><rect fill="#F1F1F1" height="26.2969" id="uml_7eceb044ba188bef182f2999ad11a092" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="280" x="7" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="274" x="10" y="24.9951">7eceb044ba188bef182f2999ad11a092</text></g><!--reverse link 7eceb044ba188bef182f2999ad11a092 to :shape/Obligation (:Obligation)--><g id="link_7eceb044ba188bef182f2999ad11a092_:shape/Obligation (:Obligation)"><path codeLine="9" d="M147,39.41 C147,61.74 147,102.41 147,124.68 " fill="none" id="7eceb044ba188bef182f2999ad11a092-backto-:shape/Obligation (:Obligation)" style="stroke:#800000;stroke-width:1.0;"/><polygon fill="#800000" points="147,33.41,143,42.41,147,38.41,151,42.41,147,33.41" style="stroke:#800000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="125" x="148" y="76.0669">schema:description</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="33" x="194" y="91.1997">[3..*]</text></g><!--SRC=[XOvDIyD048Rl-HLZUb6XDOa1ano4KhGAre8LF8GS9fj9ivZzO6TBgR_Uj3qO4F4sxyUyF4mUD2fYYu8sPD6XDmwqqHJmfzH7Gu7eaVdHQB-HNmHn6bmqr4fDyFAyV7fVlyrVbm_Zkb5s61Zg_j0Jx5IVZDAzGxiYPjpIXsny1t4KZUAvSsQ_CFr0CLcXCqO7_3Sa18iZ6uG5TsZfPbttSejU6WsNnO-u2g4i9xywLGN1_v_JtVGUmZiIL4TfMcESPJMrSPQqIPxdsCGnHdaIGW4iEb9ODCJ2INlQAczdi-iA8EXaGo2a4psTRqM-CmsV1Idh3uEbQdBy3G00]--></g></svg></div><small class="form-text text-muted">Click diagram to navigate to corresponding section | <a href="http://www.plantuml.com/plantuml/png/XOvDIyD048Rl-HLZUb6XDOa1ano4KhGAre8LF8GS9fj9ivZzO6TBgR_Uj3qO4F4sxyUyF4mUD2fYYu8sPD6XDmwqqHJmfzH7Gu7eaVdHQB-HNmHn6bmqr4fDyFAyV7fVlyrVbm_Zkb5s61Zg_j0Jx5IVZDAzGxiYPjpIXsny1t4KZUAvSsQ_CFr0CLcXCqO7_3Sa18iZ6uG5TsZfPbttSejU6WsNnO-u2g4i9xywLGN1_v_JtVGUmZiIL4TfMcESPJMrSPQqIPxdsCGnHdaIGW4iEb9ODCJ2INlQAczdi-iA8EXaGo2a4psTRqM-CmsV1Idh3uEbQdBy3G00" target="_blank">View as PNG</a></small>
                      <!--@startuml
 set namespaceSeparator none
 skinparam classFontSize 14
@@ -2183,7 +2083,7 @@ skinparam wrapMessageWidth 100
 skinparam ArrowColor #Maroon
 set namespaceSeparator none 
 Class ":shape/Obligation (:Obligation)" [[#:shape/Obligation]] 
-":shape/Obligation (:Obligation)" -u-> "165ad492158dcbdd3aa2be2a01cfbd70" : schema:description [3..*]  
+":shape/Obligation (:Obligation)" -u-> "7eceb044ba188bef182f2999ad11a092" : schema:description [3..*]  
 hide circle
 hide methods
 hide empty members
@@ -2221,7 +2121,7 @@ hide empty members
                   <div class="sp_nodeshape_description"><p>Identifies the pathogenic, competitive, or destructive organism—such as an insect species, fungal strain, or weed profile—that the corresponding plant protection product is engineered to neutralize or suppress.</p>
 </div>
                   <div class="sp_section_nodeshape_diagram">
-                     <div class="sp_section_nodeshape_center"><?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="157px" preserveAspectRatio="none" style="width:283px;height:157px;background:#FFFFFF;" version="1.1" viewBox="0 0 283 157" width="283px" zoomAndPan="magnify"><defs xmlns=""/><g><!--class :shape/Pest (:Pest)--><a href="#:shape/Pest" target="_top" title="#:shape/Pest" xlink:actuate="onRequest" xlink:href="#:shape/Pest" xlink:show="new" xlink:title="#:shape/Pest" xlink:type="simple"><g id="elem_:shape/Pest (:Pest)"><rect codeLine="8" fill="#F1F1F1" height="26.2969" id=":shape/Pest (:Pest)" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="140" x="71.5" y="125"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="134" x="74.5" y="142.9951">:shape/Pest (:Pest)</text></g></a><!--class 8220f9d45c39793ffa0c3d6ec7c1f479--><g id="elem_8220f9d45c39793ffa0c3d6ec7c1f479"><rect fill="#F1F1F1" height="26.2969" id="uml_8220f9d45c39793ffa0c3d6ec7c1f479" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="269" x="7" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="263" x="10" y="24.9951">8220f9d45c39793ffa0c3d6ec7c1f479</text></g><!--reverse link 8220f9d45c39793ffa0c3d6ec7c1f479 to :shape/Pest (:Pest)--><g id="link_8220f9d45c39793ffa0c3d6ec7c1f479_:shape/Pest (:Pest)"><path codeLine="9" d="M141.5,39.41 C141.5,61.74 141.5,102.41 141.5,124.68 " fill="none" id="8220f9d45c39793ffa0c3d6ec7c1f479-backto-:shape/Pest (:Pest)" style="stroke:#800000;stroke-width:1.0;"/><polygon fill="#800000" points="141.5,33.41,137.5,42.41,141.5,38.41,145.5,42.41,141.5,33.41" style="stroke:#800000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="92" x="142.5" y="76.0669">schema:name</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="33" x="172" y="91.1997">[3..*]</text></g><!--SRC=[TOvDIyD048Rl-ol6zA92Qxuq9WUX5As2LR62Xv33kZinYzaFThQK-kkRq4iEUfgPvtqP7i80XcianmLkqN7FW_LWh456FygCG8FeET63DM6hVX6Id9r9R9L1U7vQFtwylYzVrlVJkjLkU33Kmw57sEa-dQHxpzq6YVWtVYePEaZYU18llRVxbUq7Yzc6UsiDe_ybWQr6DuWgwhZ3gpUa0EVLE2uYgElPX3SDiBzxyzty3gBRD8tRKkRN8YkBCcjR7ejCtg0eHDBcHHb11IGwrBmQRQ3E5elB1e1rIY88vKMFfrrZwAoaqu7QXSE0z1TwEW80]--></g></svg></div><small class="form-text text-muted">Click diagram to navigate to corresponding section | <a href="http://www.plantuml.com/plantuml/png/TOvDIyD048Rl-ol6zA92Qxuq9WUX5As2LR62Xv33kZinYzaFThQK-kkRq4iEUfgPvtqP7i80XcianmLkqN7FW_LWh456FygCG8FeET63DM6hVX6Id9r9R9L1U7vQFtwylYzVrlVJkjLkU33Kmw57sEa-dQHxpzq6YVWtVYePEaZYU18llRVxbUq7Yzc6UsiDe_ybWQr6DuWgwhZ3gpUa0EVLE2uYgElPX3SDiBzxyzty3gBRD8tRKkRN8YkBCcjR7ejCtg0eHDBcHHb11IGwrBmQRQ3E5elB1e1rIY88vKMFfrrZwAoaqu7QXSE0z1TwEW80" target="_blank">View as PNG</a></small>
+                     <div class="sp_section_nodeshape_center"><?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="157px" preserveAspectRatio="none" style="width:292px;height:157px;background:#FFFFFF;" version="1.1" viewBox="0 0 292 157" width="292px" zoomAndPan="magnify"><defs xmlns=""/><g><!--class :shape/Pest (:Pest)--><a href="#:shape/Pest" target="_top" title="#:shape/Pest" xlink:actuate="onRequest" xlink:href="#:shape/Pest" xlink:show="new" xlink:title="#:shape/Pest" xlink:type="simple"><g id="elem_:shape/Pest (:Pest)"><rect codeLine="8" fill="#F1F1F1" height="26.2969" id=":shape/Pest (:Pest)" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="140" x="76" y="125"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="134" x="79" y="142.9951">:shape/Pest (:Pest)</text></g></a><!--class e5cb0f1e25256f54b05f8117b89e9774--><g id="elem_e5cb0f1e25256f54b05f8117b89e9774"><rect fill="#F1F1F1" height="26.2969" id="uml_e5cb0f1e25256f54b05f8117b89e9774" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="278" x="7" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="272" x="10" y="24.9951">e5cb0f1e25256f54b05f8117b89e9774</text></g><!--reverse link e5cb0f1e25256f54b05f8117b89e9774 to :shape/Pest (:Pest)--><g id="link_e5cb0f1e25256f54b05f8117b89e9774_:shape/Pest (:Pest)"><path codeLine="9" d="M146,39.41 C146,61.74 146,102.41 146,124.68 " fill="none" id="e5cb0f1e25256f54b05f8117b89e9774-backto-:shape/Pest (:Pest)" style="stroke:#800000;stroke-width:1.0;"/><polygon fill="#800000" points="146,33.41,142,42.41,146,38.41,150,42.41,146,33.41" style="stroke:#800000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="92" x="147" y="76.0669">schema:name</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="33" x="176.5" y="91.1997">[3..*]</text></g><!--SRC=[TOvDIyD048Rl-ol6zAA5rYGcfir1A4MhO5LQmKF8OREPcCNi1pjRIltrJUWb1ptDpFE-30-X1yqLakK2zsYvuzuuq4OZen-f1w10T9peoMY_bxy8KSAkQcoaHdXzsJn_lkzMRvl7STqesp_ew_xK8HnK5u_Ie-DsYqJy6xzaxLk8md0KhvmpnxNfUel9bZjZDAF_9O6j1pS8ScgvnTiF90_N-J1k0YYAoOYN9R2_UxF3x042J4KLDX76QPpUDsbIXMcpYAAiMYnncML903cGQ57nVB21ucu-dvO0h9KrWf1ET7ZP5VhMr7GvK5b_wf6gqD4P]--></g></svg></div><small class="form-text text-muted">Click diagram to navigate to corresponding section | <a href="http://www.plantuml.com/plantuml/png/TOvDIyD048Rl-ol6zAA5rYGcfir1A4MhO5LQmKF8OREPcCNi1pjRIltrJUWb1ptDpFE-30-X1yqLakK2zsYvuzuuq4OZen-f1w10T9peoMY_bxy8KSAkQcoaHdXzsJn_lkzMRvl7STqesp_ew_xK8HnK5u_Ie-DsYqJy6xzaxLk8md0KhvmpnxNfUel9bZjZDAF_9O6j1pS8ScgvnTiF90_N-J1k0YYAoOYN9R2_UxF3x042J4KLDX76QPpUDsbIXMcpYAAiMYnncML903cGQ57nVB21ucu-dvO0h9KrWf1ET7ZP5VhMr7GvK5b_wf6gqD4P" target="_blank">View as PNG</a></small>
                      <!--@startuml
 set namespaceSeparator none
 skinparam classFontSize 14
@@ -2231,7 +2131,7 @@ skinparam wrapMessageWidth 100
 skinparam ArrowColor #Maroon
 set namespaceSeparator none 
 Class ":shape/Pest (:Pest)" [[#:shape/Pest]] 
-":shape/Pest (:Pest)" -u-> "8220f9d45c39793ffa0c3d6ec7c1f479" : schema:name [3..*]  
+":shape/Pest (:Pest)" -u-> "e5cb0f1e25256f54b05f8117b89e9774" : schema:name [3..*]  
 hide circle
 hide methods
 hide empty members
@@ -2268,6 +2168,10 @@ hide empty members
                      <h3 id=":shape/PrecautionaryStatement" class="sp_section_title_table">Precautionary statement</h3><code class="sp_section_uri">https://agriculture.ld.admin.ch/plant-protection/shape/PrecautionaryStatement</code></div>
                   <div class="sp_nodeshape_description"><p>A phrase that describes recommended measures to minimize or prevent adverse effects.</p>
 </div>
+                  <ul class="sp_list_description_properties">
+                     <li>Applies to: <a href="https://agriculture.ld.admin.ch/plant-protection/ghs/PrecautionaryStatement">:ghs/PrecautionaryStatement</a></li>
+                     <li>Conforms to: <a href="#:shape/GHSStatement">GHS statement</a></li>
+                  </ul>
                   <div class="sp_section_nodeshape_diagram">
                      <div class="sp_section_nodeshape_center"><?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="71px" preserveAspectRatio="none" style="width:462px;height:71px;background:#FFFFFF;" version="1.1" viewBox="0 0 462 71" width="462px" zoomAndPan="magnify"><defs xmlns=""/><g><!--class :shape/PrecautionaryStatement (:ghs/PrecautionaryStatement)--><a href="#:shape/PrecautionaryStatement" target="_top" title="#:shape/PrecautionaryStatement" xlink:actuate="onRequest" xlink:href="#:shape/PrecautionaryStatement" xlink:show="new" xlink:title="#:shape/PrecautionaryStatement" xlink:type="simple"><g id="elem_:shape/PrecautionaryStatement (:ghs/PrecautionaryStatement)"><rect codeLine="8" fill="#F1F1F1" height="50.5938" id=":shape/PrecautionaryStatement (:ghs/PrecautionaryStatement)" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="441" x="7" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="435" x="10" y="24.9951">:shape/PrecautionaryStatement (:ghs/PrecautionaryStatement)</text><line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="447" y1="33.2969" y2="33.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="163" x="13" y="50.292">schema:identifier  [1..1]</text></g></a><!--SRC=[fOuzJm9148Rx_HKZDDe0Pwok8qJ1HDHu9XQNAuQzWTsuNvbPGivVxnAQQx2nctdU-NY4CWJq90arDPIGCKU640Cf-RRX33neXo9FCUJ6_X1K3-gcfxqD12_FwytdsyVoTVqu7ey-bGDbF0-EuEZT_IWzCQOjYU21lcoV3LIBnIXUCiVJAhfYCTqYnnYKN9S4jJgxmQGMWudcxqmQZzd6W3mq6JFvuW6tzS78bV1k0cqx_NE_wq3zxqCDeWrvh6rVWDrROe2scisg3a2PGa5RreukjQTiOY-NXdpAGq5-Hoo_]--></g></svg></div><small class="form-text text-muted">Click diagram to navigate to corresponding section | <a href="http://www.plantuml.com/plantuml/png/fOuzJm9148Rx_HKZDDe0Pwok8qJ1HDHu9XQNAuQzWTsuNvbPGivVxnAQQx2nctdU-NY4CWJq90arDPIGCKU640Cf-RRX33neXo9FCUJ6_X1K3-gcfxqD12_FwytdsyVoTVqu7ey-bGDbF0-EuEZT_IWzCQOjYU21lcoV3LIBnIXUCiVJAhfYCTqYnnYKN9S4jJgxmQGMWudcxqmQZzd6W3mq6JFvuW6tzS78bV1k0cqx_NE_wq3zxqCDeWrvh6rVWDrROe2scisg3a2PGa5RreukjQTiOY-NXdpAGq5-Hoo_" target="_blank">View as PNG</a></small>
                      <!--@startuml
@@ -2409,6 +2313,10 @@ hide empty members
                      <h3 id=":shape/SignalWord" class="sp_section_title_table">Signal word</h3><code class="sp_section_uri">https://agriculture.ld.admin.ch/plant-protection/shape/SignalWord</code></div>
                   <div class="sp_nodeshape_description"><p>A word used to indicate the relative level of severity of hazard and alert the reader to a potential hazard on the label.</p>
 </div>
+                  <ul class="sp_list_description_properties">
+                     <li>Applies to: <a href="https://agriculture.ld.admin.ch/plant-protection/ghs/SignalWord">:ghs/SignalWord</a></li>
+                     <li>Conforms to: <a href="#:shape/GHSStatement">GHS statement</a></li>
+                  </ul>
                   <div class="sp_section_nodeshape_diagram">
                      <div class="sp_section_nodeshape_center"><?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="71px" preserveAspectRatio="none" style="width:284px;height:71px;background:#FFFFFF;" version="1.1" viewBox="0 0 284 71" width="284px" zoomAndPan="magnify"><defs xmlns=""/><g><!--class :shape/SignalWord (:ghs/SignalWord)--><a href="#:shape/SignalWord" target="_top" title="#:shape/SignalWord" xlink:actuate="onRequest" xlink:href="#:shape/SignalWord" xlink:show="new" xlink:title="#:shape/SignalWord" xlink:type="simple"><g id="elem_:shape/SignalWord (:ghs/SignalWord)"><rect codeLine="8" fill="#F1F1F1" height="50.5938" id=":shape/SignalWord (:ghs/SignalWord)" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="263" x="7" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="257" x="10" y="24.9951">:shape/SignalWord (:ghs/SignalWord)</text><line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="269" y1="33.2969" y2="33.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="163" x="13" y="50.292">schema:identifier  [0..0]</text></g></a><!--SRC=[ZOzFImD13CNlyobYUz5BtOgdlPMYLR0Ahj33ieTq9jqPd7ya8wL-UgVqiY22j-JtNi9xGWKY1fACcZhAo5WIGqoHb7owU0O1j4UHnnHBvxu9blVgoj31HOANvytJnzlxwdNpCBMdaEk3QYydJ_0L_Dr4FJBcBOdWI3jdYeLbqqpa5NCwhfElAUPRv9IYahz3WbgViy6i5OkPRZitHlIxn0Qksz7A1DpCeE_dltp30Ef_ros8jXImTQPsSmT73D0tYqKp02XRAMZ7sjDb3bHiCd9PAEHogYZiYUK7]--></g></svg></div><small class="form-text text-muted">Click diagram to navigate to corresponding section | <a href="http://www.plantuml.com/plantuml/png/ZOzFImD13CNlyobYUz5BtOgdlPMYLR0Ahj33ieTq9jqPd7ya8wL-UgVqiY22j-JtNi9xGWKY1fACcZhAo5WIGqoHb7owU0O1j4UHnnHBvxu9blVgoj31HOANvytJnzlxwdNpCBMdaEk3QYydJ_0L_Dr4FJBcBOdWI3jdYeLbqqpa5NCwhfElAUPRv9IYahz3WbgViy6i5OkPRZitHlIxn0Qksz7A1DpCeE_dltp30Ef_ros8jXImTQPsSmT73D0tYqKp02XRAMZ7sjDb3bHiCd9PAEHogYZiYUK7" target="_blank">View as PNG</a></small>
                      <!--@startuml
@@ -2482,7 +2390,7 @@ hide empty members
                   <div class="sp_nodeshape_description"><p>Denotes the foundational chemical entity or active biological agent embedded within a formulation. It abstracts the physical formulation to reference the fundamental molecule or organism responsible for the product's protective action.</p>
 </div>
                   <div class="sp_section_nodeshape_diagram">
-                     <div class="sp_section_nodeshape_center"><?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="157px" preserveAspectRatio="none" style="width:283px;height:157px;background:#FFFFFF;" version="1.1" viewBox="0 0 283 157" width="283px" zoomAndPan="magnify"><defs xmlns=""/><g><!--class :shape/Substance (:Substance)--><a href="#:shape/Substance" target="_top" title="#:shape/Substance" xlink:actuate="onRequest" xlink:href="#:shape/Substance" xlink:show="new" xlink:title="#:shape/Substance" xlink:type="simple"><g id="elem_:shape/Substance (:Substance)"><rect codeLine="8" fill="#F1F1F1" height="26.2969" id=":shape/Substance (:Substance)" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="226" x="28.5" y="125"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="220" x="31.5" y="142.9951">:shape/Substance (:Substance)</text></g></a><!--class 8220f9d45c39793ffa0c3d6ec7c1f479--><g id="elem_8220f9d45c39793ffa0c3d6ec7c1f479"><rect fill="#F1F1F1" height="26.2969" id="uml_8220f9d45c39793ffa0c3d6ec7c1f479" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="269" x="7" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="263" x="10" y="24.9951">8220f9d45c39793ffa0c3d6ec7c1f479</text></g><!--reverse link 8220f9d45c39793ffa0c3d6ec7c1f479 to :shape/Substance (:Substance)--><g id="link_8220f9d45c39793ffa0c3d6ec7c1f479_:shape/Substance (:Substance)"><path codeLine="9" d="M141.5,39.41 C141.5,61.74 141.5,102.41 141.5,124.68 " fill="none" id="8220f9d45c39793ffa0c3d6ec7c1f479-backto-:shape/Substance (:Substance)" style="stroke:#800000;stroke-width:1.0;"/><polygon fill="#800000" points="141.5,33.41,137.5,42.41,141.5,38.41,145.5,42.41,141.5,33.41" style="stroke:#800000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="92" x="142.5" y="76.0669">schema:name</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="33" x="172" y="91.1997">[3..*]</text></g><!--SRC=[XOvDIyD048Rl-ol6zA92Qxuq9WUX5As2LJ22Xv33TdTY5hExOMT3gR_Ub489WdXxlsPu23qOhf5wBh34dZlkhGDZ3JBwKkOGQ10T9tgmnfVg6o5AsPd4HXc4vwVru_lhs_9bVJ-TMzsF3yQvttS8W-xYIRjplDyW4V_43oLz2r4OJkgbStQtijr8CTjmPwrXz3SaiDM13OA2MjxZLJbioNCZ4CwBaxu8eAfclnTr3Uo_i_amluFWDex39fVfjKZoB4-QXeSYaJSeCX4rQPO7K0295ZKl3fXG9Ol5PGt0MYKHX7AYmwFMw5ihwMXGztu_HdgBZdu0]--></g></svg></div><small class="form-text text-muted">Click diagram to navigate to corresponding section | <a href="http://www.plantuml.com/plantuml/png/XOvDIyD048Rl-ol6zA92Qxuq9WUX5As2LJ22Xv33TdTY5hExOMT3gR_Ub489WdXxlsPu23qOhf5wBh34dZlkhGDZ3JBwKkOGQ10T9tgmnfVg6o5AsPd4HXc4vwVru_lhs_9bVJ-TMzsF3yQvttS8W-xYIRjplDyW4V_43oLz2r4OJkgbStQtijr8CTjmPwrXz3SaiDM13OA2MjxZLJbioNCZ4CwBaxu8eAfclnTr3Uo_i_amluFWDex39fVfjKZoB4-QXeSYaJSeCX4rQPO7K0295ZKl3fXG9Ol5PGt0MYKHX7AYmwFMw5ihwMXGztu_HdgBZdu0" target="_blank">View as PNG</a></small>
+                     <div class="sp_section_nodeshape_center"><?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="157px" preserveAspectRatio="none" style="width:292px;height:157px;background:#FFFFFF;" version="1.1" viewBox="0 0 292 157" width="292px" zoomAndPan="magnify"><defs xmlns=""/><g><!--class :shape/Substance (:Substance)--><a href="#:shape/Substance" target="_top" title="#:shape/Substance" xlink:actuate="onRequest" xlink:href="#:shape/Substance" xlink:show="new" xlink:title="#:shape/Substance" xlink:type="simple"><g id="elem_:shape/Substance (:Substance)"><rect codeLine="8" fill="#F1F1F1" height="26.2969" id=":shape/Substance (:Substance)" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="226" x="33" y="125"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="220" x="36" y="142.9951">:shape/Substance (:Substance)</text></g></a><!--class e5cb0f1e25256f54b05f8117b89e9774--><g id="elem_e5cb0f1e25256f54b05f8117b89e9774"><rect fill="#F1F1F1" height="26.2969" id="uml_e5cb0f1e25256f54b05f8117b89e9774" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="278" x="7" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="272" x="10" y="24.9951">e5cb0f1e25256f54b05f8117b89e9774</text></g><!--reverse link e5cb0f1e25256f54b05f8117b89e9774 to :shape/Substance (:Substance)--><g id="link_e5cb0f1e25256f54b05f8117b89e9774_:shape/Substance (:Substance)"><path codeLine="9" d="M146,39.41 C146,61.74 146,102.41 146,124.68 " fill="none" id="e5cb0f1e25256f54b05f8117b89e9774-backto-:shape/Substance (:Substance)" style="stroke:#800000;stroke-width:1.0;"/><polygon fill="#800000" points="146,33.41,142,42.41,146,38.41,150,42.41,146,33.41" style="stroke:#800000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="92" x="147" y="76.0669">schema:name</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="33" x="176.5" y="91.1997">[3..*]</text></g><!--SRC=[XOvDIyD048Rl-ol6zA92Qn8Jq-OWbA9Li0f6y11os6mcPZ7xmSw6Kd-zAGK9WdXxlsPu23rehf0i5rYWvOvxuq0RZOm-fJu62aJFYUwDzeNyGeWITjPWApN2q-FsuUtbTVsylPlEZRBZWt7k3pt2eFfuqkuTjpiauX_uBXlVGHI6athjdDblJ3zIp7RS6QCP_Gq9R7DaWo2dZbkyAeQQFDS2uJp_qHS1bENizwAgWFrtDX_cjn1WAkgmZJ1Eu_IcJPCwJDjb56NrSeMhB4i2o854XuhdHqmehnUBomg0TR914DA97azQeUzCGoU3olh36AaQ7Nq3]--></g></svg></div><small class="form-text text-muted">Click diagram to navigate to corresponding section | <a href="http://www.plantuml.com/plantuml/png/XOvDIyD048Rl-ol6zA92Qn8Jq-OWbA9Li0f6y11os6mcPZ7xmSw6Kd-zAGK9WdXxlsPu23rehf0i5rYWvOvxuq0RZOm-fJu62aJFYUwDzeNyGeWITjPWApN2q-FsuUtbTVsylPlEZRBZWt7k3pt2eFfuqkuTjpiauX_uBXlVGHI6athjdDblJ3zIp7RS6QCP_Gq9R7DaWo2dZbkyAeQQFDS2uJp_qHS1bENizwAgWFrtDX_cjn1WAkgmZJ1Eu_IcJPCwJDjb56NrSeMhB4i2o854XuhdHqmehnUBomg0TR914DA97azQeUzCGoU3olh36AaQ7Nq3" target="_blank">View as PNG</a></small>
                      <!--@startuml
 set namespaceSeparator none
 skinparam classFontSize 14
@@ -2492,7 +2400,7 @@ skinparam wrapMessageWidth 100
 skinparam ArrowColor #Maroon
 set namespaceSeparator none 
 Class ":shape/Substance (:Substance)" [[#:shape/Substance]] 
-":shape/Substance (:Substance)" -u-> "8220f9d45c39793ffa0c3d6ec7c1f479" : schema:name [3..*]  
+":shape/Substance (:Substance)" -u-> "e5cb0f1e25256f54b05f8117b89e9774" : schema:name [3..*]  
 hide circle
 hide methods
 hide empty members
@@ -2515,6 +2423,127 @@ hide empty members
                            <td><br><small></small></td>
                            <td>
                               <div style="width:30px">3..*</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description"></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </section>
+            </div>
+         </div><br><h2 id="documentation" class="sp_section_subtitle">Supportive Entities</h2>
+         <div class="row mt-3">
+            <div class="col">
+               <section>
+                  <div class="sp_section_title_table_wrapper">
+                     <h3 id=":shapes/IngredientSubstanceAndShareShape" class="sp_section_title_table">:shapes/IngredientSubstanceAndShareShape</h3><code class="sp_section_uri">https://agriculture.ld.admin.ch/plant-protection/shapes/IngredientSubstanceAndShareShape</code></div>
+                  <div class="sp_section_nodeshape_diagram">
+                     <div class="sp_section_nodeshape_center"><?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="245px" preserveAspectRatio="none" style="width:336px;height:245px;background:#FFFFFF;" version="1.1" viewBox="0 0 336 245" width="336px" zoomAndPan="magnify"><defs xmlns=""/><g><!--class :shapes/IngredientSubstanceAndShareShape--><a href="#:shapes/IngredientSubstanceAndShareShape" target="_top" title="#:shapes/IngredientSubstanceAndShareShape" xlink:actuate="onRequest" xlink:href="#:shapes/IngredientSubstanceAndShareShape" xlink:show="new" xlink:title="#:shapes/IngredientSubstanceAndShareShape" xlink:type="simple"><g id="elem_:shapes/IngredientSubstanceAndShareShape"><rect codeLine="8" fill="#F1F1F1" height="26.2969" id="uml_:shapes/IngredientSubstanceAndShareShape" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="322" x="7" y="110"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="316" x="10" y="127.9951">:shapes/IngredientSubstanceAndShareShape</text></g></a><!--class :shapes/ShareShape--><a href="#:shapes/ShareShape" target="_top" title="#:shapes/ShareShape" xlink:actuate="onRequest" xlink:href="#:shapes/ShareShape" xlink:show="new" xlink:title="#:shapes/ShareShape" xlink:type="simple"><g id="elem_:shapes/ShareShape"><rect codeLine="11" fill="#F1F1F1" height="26.2969" id="uml_:shapes/ShareShape" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="151" x="92.5" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="145" x="95.5" y="24.9951">:shapes/ShareShape</text></g></a><!--class :shape/Substance (:Substance)--><a href="#:shape/Substance" target="_top" title="#:shape/Substance" xlink:actuate="onRequest" xlink:href="#:shape/Substance" xlink:show="new" xlink:title="#:shape/Substance" xlink:type="simple"><g id="elem_:shape/Substance (:Substance)"><rect codeLine="12" fill="#F1F1F1" height="26.2969" id=":shape/Substance (:Substance)" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="226" x="55" y="213"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="220" x="58" y="230.9951">:shape/Substance (:Substance)</text></g></a><!--reverse link :shapes/ShareShape to :shapes/IngredientSubstanceAndShareShape--><g id="link_:shapes/ShareShape_:shapes/IngredientSubstanceAndShareShape"><path codeLine="9" d="M168,39.38 C168,58.87 168,90.47 168,109.83 " fill="none" id=":shapes/ShareShape-backto-:shapes/IngredientSubstanceAndShareShape" style="stroke:#800000;stroke-width:1.0;"/><polygon fill="#800000" points="168,33.38,164,42.38,168,38.38,172,42.38,168,33.38" style="stroke:#800000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="77" x="169" y="76.0669">:share&#xa0;[1..*]</text></g><!--link :shapes/IngredientSubstanceAndShareShape to :shape/Substance (:Substance)--><g id="link_:shapes/IngredientSubstanceAndShareShape_:shape/Substance (:Substance)"><path codeLine="10" d="M168,136.38 C168,155.87 168,187.47 168,206.83 " fill="none" id=":shapes/IngredientSubstanceAndShareShape-to-:shape/Substance (:Substance)" style="stroke:#800000;stroke-width:1.0;"/><polygon fill="#800000" points="168,212.83,172,203.83,168,207.83,164,203.83,168,212.83" style="stroke:#800000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="108" x="169" y="179.0669">:substance&#xa0;[1..1]</text></g><!--SRC=[bL1DIyD04BtdLupjnG_Q9k8fI34KhGMhO1GF8OTjTcoMPdV3piPIVxrPWaag1EnjPjwRzzuCeGN595B9CeonP8PPRK1fXHxjX7832Ld1Y1wqih7uHWXkl3EEdq8XFAsMZsylhz7pyhvFrxAi1MgwFHG8bIokU-ZUi7ADH6oB7uBR70BVxy6HCNg_q4MTOhncHclbqN18y1Ok6un2obc9D5kfhK4kd7cr8SjKXf7YSSuCneunWYGP_vUSfk2Te3of9lCkIHy9mKqDthvV-NxapvDWEhrCuJHrtgdFMXASXsrzqHZzjdspm9dzUTN0KuxFFzePj6tNEuPRpWL7o8J92cngYJRNd9e6PMaFzKXkq91dKEelXBjA5KBjaFy0]--></g></svg></div><small class="form-text text-muted">Click diagram to navigate to corresponding section | <a href="http://www.plantuml.com/plantuml/png/bL1DIyD04BtdLupjnG_Q9k8fI34KhGMhO1GF8OTjTcoMPdV3piPIVxrPWaag1EnjPjwRzzuCeGN595B9CeonP8PPRK1fXHxjX7832Ld1Y1wqih7uHWXkl3EEdq8XFAsMZsylhz7pyhvFrxAi1MgwFHG8bIokU-ZUi7ADH6oB7uBR70BVxy6HCNg_q4MTOhncHclbqN18y1Ok6un2obc9D5kfhK4kd7cr8SjKXf7YSSuCneunWYGP_vUSfk2Te3of9lCkIHy9mKqDthvV-NxapvDWEhrCuJHrtgdFMXASXsrzqHZzjdspm9dzUTN0KuxFFzePj6tNEuPRpWL7o8J92cngYJRNd9e6PMaFzKXkq91dKEelXBjA5KBjaFy0" target="_blank">View as PNG</a></small>
+                     <!--@startuml
+set namespaceSeparator none
+skinparam classFontSize 14
+!define LIGHTORANGE
+skinparam componentStyle uml2
+skinparam wrapMessageWidth 100
+skinparam ArrowColor #Maroon
+set namespaceSeparator none 
+Class ":shapes/IngredientSubstanceAndShareShape" [[#:shapes/IngredientSubstanceAndShareShape]] 
+":shapes/IngredientSubstanceAndShareShape" -u-> ":shapes/ShareShape" : :share<U+00A0>[1..*]  
+":shapes/IngredientSubstanceAndShareShape" -d-> ":shape/Substance (:Substance)" : :substance<U+00A0>[1..1]  
+Class ":shapes/ShareShape" [[#:shapes/ShareShape]] 
+Class ":shape/Substance (:Substance)" [[#:shape/Substance]] 
+hide circle
+hide methods
+hide empty members
+remove @unlinked
+@enduml
+--></div>
+                  <table class="sp_table_propertyshapes table-striped table-responsive">
+                     <thead>
+                        <tr>
+                           <th>Property name</th>
+                           <th>URI</th>
+                           <th>Expected value</th>
+                           <th>Card.</th>
+                           <th class="sp_description_column">Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
+                           <td></td>
+                           <td id=":shapes/IngredientSubstanceAndShareShape_:share"><code><a href="https://agriculture.ld.admin.ch/plant-protection/share">:share</a></code></td>
+                           <td><code><a href="https://agriculture.ld.admin.ch/plant-protection/shapes/ShareShape">:shapes/ShareShape</a></code><br><small></small></td>
+                           <td>
+                              <div style="width:30px">1..*</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description"></td>
+                        </tr>
+                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
+                           <td></td>
+                           <td id=":shapes/IngredientSubstanceAndShareShape_:substance"><code><a href="https://agriculture.ld.admin.ch/plant-protection/substance">:substance</a></code></td>
+                           <td><code><a href="#:shape/Substance">Substance</a></code><br><small></small></td>
+                           <td>
+                              <div style="width:30px">1..1</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description"></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </section>
+            </div>
+         </div><br><div class="row mt-3">
+            <div class="col">
+               <section>
+                  <div class="sp_section_title_table_wrapper">
+                     <h3 id=":shape/Ingredient" class="sp_section_title_table">Ingredient</h3><code class="sp_section_uri">https://agriculture.ld.admin.ch/plant-protection/shape/Ingredient</code></div>
+                  <div class="sp_nodeshape_description"><p>Represents a constituent component of a product. It specifies both the underlying chemical or biological substance and its corresponding quantitative share within the final formulation.</p>
+</div>
+                  <div class="sp_section_nodeshape_diagram">
+                     <div class="sp_section_nodeshape_center"><?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="245px" preserveAspectRatio="none" style="width:387px;height:245px;background:#FFFFFF;" version="1.1" viewBox="0 0 387 245" width="387px" zoomAndPan="magnify"><defs xmlns=""/><g><!--class :shape/Ingredient--><a href="#:shape/Ingredient" target="_top" title="#:shape/Ingredient" xlink:actuate="onRequest" xlink:href="#:shape/Ingredient" xlink:show="new" xlink:title="#:shape/Ingredient" xlink:type="simple"><g id="elem_:shape/Ingredient"><rect codeLine="8" fill="#F1F1F1" height="26.2969" id="uml_:shape/Ingredient" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="129" x="129" y="110"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="123" x="132" y="127.9951">:shape/Ingredient</text></g></a><!--class :shape/Substance (:Substance)--><a href="#:shape/Substance" target="_top" title="#:shape/Substance" xlink:actuate="onRequest" xlink:href="#:shape/Substance" xlink:show="new" xlink:title="#:shape/Substance" xlink:type="simple"><g id="elem_:shape/Substance (:Substance)"><rect codeLine="12" fill="#F1F1F1" height="26.2969" id=":shape/Substance (:Substance)" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="226" x="80.5" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="220" x="83.5" y="24.9951">:shape/Substance (:Substance)</text></g></a><!--class :shape/QuantitativeValue (schema:QuantitativeValue)--><a href="#:shape/QuantitativeValue" target="_top" title="#:shape/QuantitativeValue" xlink:actuate="onRequest" xlink:href="#:shape/QuantitativeValue" xlink:show="new" xlink:title="#:shape/QuantitativeValue" xlink:type="simple"><g id="elem_:shape/QuantitativeValue (schema:QuantitativeValue)"><rect codeLine="11" fill="#F1F1F1" height="26.2969" id=":shape/QuantitativeValue (schema:QuantitativeValue)" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="373" x="7" y="213"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="367" x="10" y="230.9951">:shape/QuantitativeValue (schema:QuantitativeValue)</text></g></a><!--reverse link :shape/Substance (:Substance) to :shape/Ingredient--><g id="link_:shape/Substance (:Substance)_:shape/Ingredient"><path codeLine="9" d="M193.5,39.38 C193.5,58.87 193.5,90.47 193.5,109.83 " fill="none" id=":shape/Substance (:Substance)-backto-:shape/Ingredient" style="stroke:#800000;stroke-width:1.0;"/><polygon fill="#800000" points="193.5,33.38,189.5,42.38,193.5,38.38,197.5,42.38,193.5,33.38" style="stroke:#800000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="108" x="194.5" y="76.0669">:substance&#xa0;[1..1]</text></g><!--link :shape/Ingredient to :shape/QuantitativeValue (schema:QuantitativeValue)--><g id="link_:shape/Ingredient_:shape/QuantitativeValue (schema:QuantitativeValue)"><path codeLine="10" d="M193.5,136.38 C193.5,155.87 193.5,187.47 193.5,206.83 " fill="none" id=":shape/Ingredient-to-:shape/QuantitativeValue (schema:QuantitativeValue)" style="stroke:#800000;stroke-width:1.0;"/><polygon fill="#800000" points="193.5,212.83,197.5,203.83,193.5,207.83,189.5,203.83,193.5,212.83" style="stroke:#800000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="77" x="194.5" y="179.0669">:share&#xa0;[1..*]</text></g><!--SRC=[bP1DJy9048Rl_HKZNFm8s1fFZI4IeaWY6iMFGzF3q1tfXlreThOG_FMqGQ44ENYRUT_PvvqT9Wy6DN616KseG8VUEZ3MKC1pQMf1GwQG-TuQFv7V1D5rS2BeIng2nz7muUtvjVyql6kEMrrKW6hShnH1gTLLmrqwBCR4Z3FwbCBd48LXm-uxPvS3gwejscDqrfg0Zoy9mQ3U3LenvrZGvSZC70bPPRSWITe7Qff2yDTif-pqjf19EMMF9YCuZRVrMGjYYFctlNc_2CD-s4kYRZTAuGXLDAWl9HelFNgve0zKPKNdB2UDyO7pavMZsyivhtFs__i_wEuY1svzc7tqiIli85krVfnBGP19bodQr9fyRWLl6jA5NrMIdfBZm96s2uBRqYXfvYJM]--></g></svg></div><small class="form-text text-muted">Click diagram to navigate to corresponding section | <a href="http://www.plantuml.com/plantuml/png/bP1DJy9048Rl_HKZNFm8s1fFZI4IeaWY6iMFGzF3q1tfXlreThOG_FMqGQ44ENYRUT_PvvqT9Wy6DN616KseG8VUEZ3MKC1pQMf1GwQG-TuQFv7V1D5rS2BeIng2nz7muUtvjVyql6kEMrrKW6hShnH1gTLLmrqwBCR4Z3FwbCBd48LXm-uxPvS3gwejscDqrfg0Zoy9mQ3U3LenvrZGvSZC70bPPRSWITe7Qff2yDTif-pqjf19EMMF9YCuZRVrMGjYYFctlNc_2CD-s4kYRZTAuGXLDAWl9HelFNgve0zKPKNdB2UDyO7pavMZsyivhtFs__i_wEuY1svzc7tqiIli85krVfnBGP19bodQr9fyRWLl6jA5NrMIdfBZm96s2uBRqYXfvYJM" target="_blank">View as PNG</a></small>
+                     <!--@startuml
+set namespaceSeparator none
+skinparam classFontSize 14
+!define LIGHTORANGE
+skinparam componentStyle uml2
+skinparam wrapMessageWidth 100
+skinparam ArrowColor #Maroon
+set namespaceSeparator none 
+Class ":shape/Ingredient" [[#:shape/Ingredient]] 
+":shape/Ingredient" -u-> ":shape/Substance (:Substance)" : :substance<U+00A0>[1..1]  
+":shape/Ingredient" -d-> ":shape/QuantitativeValue (schema:QuantitativeValue)" : :share<U+00A0>[1..*]  
+Class ":shape/QuantitativeValue (schema:QuantitativeValue)" [[#:shape/QuantitativeValue]] 
+Class ":shape/Substance (:Substance)" [[#:shape/Substance]] 
+hide circle
+hide methods
+hide empty members
+remove @unlinked
+@enduml
+--></div>
+                  <table class="sp_table_propertyshapes table-striped table-responsive">
+                     <thead>
+                        <tr>
+                           <th>Property name</th>
+                           <th>URI</th>
+                           <th>Expected value</th>
+                           <th>Card.</th>
+                           <th class="sp_description_column">Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
+                           <td>Share (Quantitative Value)</td>
+                           <td id=":shape/Ingredient_:share"><code><a href="https://agriculture.ld.admin.ch/plant-protection/share">:share</a></code></td>
+                           <td><code><a href="#:shape/QuantitativeValue">Quantitative value</a></code><br><small></small></td>
+                           <td>
+                              <div style="width:30px">1..*</div>
+                           </td>
+                           <td class="sp_table_propertyshapes_col_description"></td>
+                        </tr>
+                        <tr style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;">
+                           <td>Substance</td>
+                           <td id=":shape/Ingredient_:substance"><code><a href="https://agriculture.ld.admin.ch/plant-protection/substance">:substance</a></code></td>
+                           <td><code><a href="#:shape/Substance">Substance</a></code><br><small></small></td>
+                           <td>
+                              <div style="width:30px">1..1</div>
                            </td>
                            <td class="sp_table_propertyshapes_col_description"></td>
                         </tr>
