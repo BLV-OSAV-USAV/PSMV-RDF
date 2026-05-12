@@ -9,13 +9,15 @@ A Python module for converting Swiss plant protection product data from CSV form
 
 ## Reproduce the data integration pipeline
 
-1. Create and activate the conda environment.
+1. Create and activate the  environment.
 
     ``` bash
-    conda env create -f environment.yml
-    conda activate psmv-rdf
+    uv venv psmv-rdf
+    source psmv-rdf/bin/activate  
+    uv pip install -r pyproject.toml
     ```
-
+    > If `uv` is not available: `pip install uv`
+    
 2. Install the package in editable mode
 
     ``` bash
@@ -33,7 +35,8 @@ A Python module for converting Swiss plant protection product data from CSV form
     ``` bash
     python -m service.upload_graph
     ```
-    
+    pip install uv
+
 
 
 ## Project Structure
