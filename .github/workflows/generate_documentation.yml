@@ -18,7 +18,7 @@ permissions:
   contents: write
 
 env:
-  SHACL_PLAY_VERSION: "0.11.6"
+  SHACL_PLAY_VERSION: "0.12.0"
 
 jobs:
   run-pipeline:
