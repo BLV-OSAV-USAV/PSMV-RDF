@@ -89,7 +89,8 @@ psmv-data.duckdb
 *.jar
 shacl-documentaion-log.txt
 rdf/data/
-rdf/processed/
+rdf/processed/*
+!rdf/processed/graph.ttl
 
 # =============================================================================
 # Tests
