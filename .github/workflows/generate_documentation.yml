@@ -48,7 +48,8 @@ jobs:
           key: shacl-play-jar-${{ env.SHACL_PLAY_VERSION }}
 
       - name: Run documentation script
-        run: uv run python service/shacl_docgen.py
+        run: |
+          uv run python service/shacl_docgen.py --diagram
 
       - name: Save SHACL-Play JAR cache
         if: steps.cache-jar.outputs.cache-hit != 'true'
