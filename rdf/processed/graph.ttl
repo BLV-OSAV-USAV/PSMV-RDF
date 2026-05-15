@@ -10036,83 +10036,83 @@ ingredient:FFBC75F5-3CDB-48B5-8A98-DEE61AA1B0BF-34CDA556-62F3-449F-8B48-22888FA6
     schema:unitCode unit:PERCENT ;
     schema:value 2.5 .
 
-_:nc0d2df021fd24fdba7e1ef2ebca4c99db1 a schema:QuantitativeValue ;
+_:ndebaa7542a9947249bb0d8ae19a78387b1 a schema:QuantitativeValue ;
     schema:minValue 8 ;
     schema:unitCode unit:DAY .
 
-_:nc0d2df021fd24fdba7e1ef2ebca4c99db10 a schema:QuantitativeValue ;
+_:ndebaa7542a9947249bb0d8ae19a78387b10 a schema:QuantitativeValue ;
     schema:minValue 10 ;
     schema:unitCode unit:DAY .
 
-_:nc0d2df021fd24fdba7e1ef2ebca4c99db11 a schema:QuantitativeValue ;
+_:ndebaa7542a9947249bb0d8ae19a78387b11 a schema:QuantitativeValue ;
     schema:minValue 8 ;
     schema:unitCode unit:DAY .
 
-_:nc0d2df021fd24fdba7e1ef2ebca4c99db12 a schema:QuantitativeValue ;
+_:ndebaa7542a9947249bb0d8ae19a78387b12 a schema:QuantitativeValue ;
     schema:minValue 7 ;
     schema:unitCode unit:DAY .
 
-_:nc0d2df021fd24fdba7e1ef2ebca4c99db13 a schema:QuantitativeValue ;
+_:ndebaa7542a9947249bb0d8ae19a78387b13 a schema:QuantitativeValue ;
     schema:minValue 5 ;
     schema:unitCode unit:DAY .
 
-_:nc0d2df021fd24fdba7e1ef2ebca4c99db14 a schema:QuantitativeValue ;
+_:ndebaa7542a9947249bb0d8ae19a78387b14 a schema:QuantitativeValue ;
     schema:minValue 7 ;
     schema:unitCode unit:DAY .
 
-_:nc0d2df021fd24fdba7e1ef2ebca4c99db15 a schema:QuantitativeValue ;
+_:ndebaa7542a9947249bb0d8ae19a78387b15 a schema:QuantitativeValue ;
     schema:minValue 9 ;
     schema:unitCode unit:DAY .
 
-_:nc0d2df021fd24fdba7e1ef2ebca4c99db16 a schema:QuantitativeValue ;
+_:ndebaa7542a9947249bb0d8ae19a78387b16 a schema:QuantitativeValue ;
     schema:minValue 35 ;
     schema:unitCode unit:DAY .
 
-_:nc0d2df021fd24fdba7e1ef2ebca4c99db17 a schema:QuantitativeValue ;
+_:ndebaa7542a9947249bb0d8ae19a78387b17 a schema:QuantitativeValue ;
     schema:minValue 5 ;
     schema:unitCode unit:DAY .
 
-_:nc0d2df021fd24fdba7e1ef2ebca4c99db18 a schema:QuantitativeValue ;
+_:ndebaa7542a9947249bb0d8ae19a78387b18 a schema:QuantitativeValue ;
     schema:minValue 7 ;
     schema:unitCode unit:DAY .
 
-_:nc0d2df021fd24fdba7e1ef2ebca4c99db19 a schema:QuantitativeValue ;
+_:ndebaa7542a9947249bb0d8ae19a78387b19 a schema:QuantitativeValue ;
     schema:minValue 35 ;
     schema:unitCode unit:DAY .
 
-_:nc0d2df021fd24fdba7e1ef2ebca4c99db2 a schema:QuantitativeValue ;
+_:ndebaa7542a9947249bb0d8ae19a78387b2 a schema:QuantitativeValue ;
     schema:minValue 5 ;
     schema:unitCode unit:DAY .
 
-_:nc0d2df021fd24fdba7e1ef2ebca4c99db20 a schema:QuantitativeValue ;
+_:ndebaa7542a9947249bb0d8ae19a78387b20 a schema:QuantitativeValue ;
     schema:minValue 7 ;
     schema:unitCode unit:DAY .
 
-_:nc0d2df021fd24fdba7e1ef2ebca4c99db3 a schema:QuantitativeValue ;
+_:ndebaa7542a9947249bb0d8ae19a78387b3 a schema:QuantitativeValue ;
     schema:minValue 7 ;
     schema:unitCode unit:DAY .
 
-_:nc0d2df021fd24fdba7e1ef2ebca4c99db4 a schema:QuantitativeValue ;
+_:ndebaa7542a9947249bb0d8ae19a78387b4 a schema:QuantitativeValue ;
     schema:minValue 8 ;
     schema:unitCode unit:DAY .
 
-_:nc0d2df021fd24fdba7e1ef2ebca4c99db5 a schema:QuantitativeValue ;
+_:ndebaa7542a9947249bb0d8ae19a78387b5 a schema:QuantitativeValue ;
     schema:minValue 5 ;
     schema:unitCode unit:DAY .
 
-_:nc0d2df021fd24fdba7e1ef2ebca4c99db6 a schema:QuantitativeValue ;
+_:ndebaa7542a9947249bb0d8ae19a78387b6 a schema:QuantitativeValue ;
     schema:minValue 7 ;
     schema:unitCode unit:DAY .
 
-_:nc0d2df021fd24fdba7e1ef2ebca4c99db7 a schema:QuantitativeValue ;
+_:ndebaa7542a9947249bb0d8ae19a78387b7 a schema:QuantitativeValue ;
     schema:minValue 7 ;
     schema:unitCode unit:DAY .
 
-_:nc0d2df021fd24fdba7e1ef2ebca4c99db8 a schema:QuantitativeValue ;
+_:ndebaa7542a9947249bb0d8ae19a78387b8 a schema:QuantitativeValue ;
     schema:minValue 7 ;
     schema:unitCode unit:DAY .
 
-_:nc0d2df021fd24fdba7e1ef2ebca4c99db9 a schema:QuantitativeValue ;
+_:ndebaa7542a9947249bb0d8ae19a78387b9 a schema:QuantitativeValue ;
     schema:minValue 7 ;
     schema:unitCode unit:DAY .
 
@@ -14507,7 +14507,7 @@ code:1C67AF716F9F36BD18BEF461DCDA0F9C951B a :ApplicationComment ;
         "Interval (in days): 8."@en,
         "Intervalle min. entre les applications (en jours): 8."@fr,
         "Intervallo minimo tra le applicazioni (in giorni): 8."@it ;
-    :waitingPeriod _:nc0d2df021fd24fdba7e1ef2ebca4c99db1 .
+    :waitingPeriod _:ndebaa7542a9947249bb0d8ae19a78387b1 .
 
 code:1C74C6EF-CDC2-477F-9141-A0AE71C4A636 a :ApplicationComment ;
     schema:description "Ab Mitte des Farbumschlags (BBCH 83) oder bei den ersten Eiablagen."@de,
@@ -14804,7 +14804,7 @@ code:2E531AF138DF5C703AE4157FC3B59EFE7665 a :ApplicationComment ;
         "Interval (in days): 5."@en,
         "Intervalle min. entre les applications (en jours): 5."@fr,
         "Intervallo minimo tra le applicazioni (in giorni): 5."@it ;
-    :waitingPeriod _:nc0d2df021fd24fdba7e1ef2ebca4c99db2 .
+    :waitingPeriod _:ndebaa7542a9947249bb0d8ae19a78387b2 .
 
 code:2E53E538-FDF2-40AB-B0EF-848EDB92B926 a :ApplicationComment ;
     schema:description "Ab Stadium BBCH 12."@de,
@@ -15098,7 +15098,7 @@ code:417493D9B5FC06C8F9E3212B6E874BED8D59 a :ApplicationComment ;
         "Interval (in days): 7."@en,
         "Intervalle min. entre les applications (en jours): 7."@fr,
         "Intervallo minimo tra le applicazioni (in giorni): 7."@it ;
-    :waitingPeriod _:nc0d2df021fd24fdba7e1ef2ebca4c99db3 .
+    :waitingPeriod _:ndebaa7542a9947249bb0d8ae19a78387b3 .
 
 code:4185DF22-4586-4C89-A7DC-A98C2E5F9C64 a :ApplicationComment ;
     schema:description "Vor der Blüte."@de,
@@ -15311,7 +15311,7 @@ code:51FB7A7F8C5864F4D4D00AA2067ADC8F6C7A a :ApplicationComment ;
         "Interval (in days): 8."@en,
         "Intervalle min. entre les applications (en jours): 8."@fr,
         "Intervallo minimo tra le applicazioni (in giorni): 8."@it ;
-    :waitingPeriod _:nc0d2df021fd24fdba7e1ef2ebca4c99db4 .
+    :waitingPeriod _:ndebaa7542a9947249bb0d8ae19a78387b4 .
 
 code:5247C4CC-8859-4660-BC2B-E18C093E0DCC a :ApplicationComment ;
     schema:description "Beim Abblühen."@de,
@@ -15497,7 +15497,7 @@ code:58A77403859F70601AFF18B37212B26C87BD a :ApplicationComment ;
         "Interval (in days): 5."@en,
         "Intervalle min. entre les applications (en jours): 5."@fr,
         "Intervallo minimo tra le applicazioni (in giorni): 5."@it ;
-    :waitingPeriod _:nc0d2df021fd24fdba7e1ef2ebca4c99db5 .
+    :waitingPeriod _:ndebaa7542a9947249bb0d8ae19a78387b5 .
 
 code:58D3211B-4CCC-49F3-B1A4-1197BBD637BA a :ApplicationComment ;
     schema:description "Im Pflanzjahr."@de,
@@ -15524,7 +15524,7 @@ code:5A00C548C9991042A1E9017A28941837AAD2 a :ApplicationComment ;
         "Interval (in days): 7."@en,
         "Intervalle min. entre les applications (en jours): 7."@fr,
         "Intervallo minimo tra le applicazioni (in giorni): 7."@it ;
-    :waitingPeriod _:nc0d2df021fd24fdba7e1ef2ebca4c99db6 .
+    :waitingPeriod _:ndebaa7542a9947249bb0d8ae19a78387b6 .
 
 code:5A957633-CDB9-4E66-B79B-52FA42E5A9DD a :ApplicationComment ;
     schema:description "Aufhängen, im 28-tägigem Rhythmus auswechseln."@de,
@@ -15617,7 +15617,7 @@ code:5E31F4A2E82EFE3B18FADB0B84694DC3402E a :ApplicationComment ;
         "Interval (in days): 7."@en,
         "Intervalle min. entre les applications (en jours): 7."@fr,
         "Intervallo minimo tra le applicazioni (in giorni): 7."@it ;
-    :waitingPeriod _:nc0d2df021fd24fdba7e1ef2ebca4c99db7 .
+    :waitingPeriod _:ndebaa7542a9947249bb0d8ae19a78387b7 .
 
 code:5E668160-DDE5-4479-AF8E-84201A3682E8 a :ApplicationComment ;
     schema:description "Frühjahr, besonders bei sehr humosen Böden."@de,
@@ -15779,7 +15779,7 @@ code:69C0EDDC208D10C3E304BB0BFD2DF425473D a :ApplicationComment ;
         "Interval (in days): 7."@en,
         "Intervalle min. entre les applications (en jours): 7."@fr,
         "Intervallo minimo tra le applicazioni (in giorni): 7."@it ;
-    :waitingPeriod _:nc0d2df021fd24fdba7e1ef2ebca4c99db8 .
+    :waitingPeriod _:ndebaa7542a9947249bb0d8ae19a78387b8 .
 
 code:69F05AF2-75B6-4D10-8C0E-601EDEE04F38 a :ApplicationComment ;
     schema:description "Stadium 51-69 (BBCH)."@de,
@@ -15954,7 +15954,7 @@ code:7519AA554A770FC9EADD63EFCD28A1EDEE8D a :ApplicationComment ;
         "Interval (in days): 7."@en,
         "Intervalle min. entre les applications (en jours): 7."@fr,
         "Intervallo minimo tra le applicazioni (in giorni): 7."@it ;
-    :waitingPeriod _:nc0d2df021fd24fdba7e1ef2ebca4c99db9 .
+    :waitingPeriod _:ndebaa7542a9947249bb0d8ae19a78387b9 .
 
 code:75320ECF-F552-4140-8EF1-A76B8403B2F7 a :ApplicationComment ;
     schema:description "2. Generation"@de,
@@ -16095,7 +16095,7 @@ code:7C7EE260C602445F1905C1FD89B258841D8D a :ApplicationComment ;
         "Interval (in days): 10."@en,
         "Intervalle min. entre les applications (en jours): 10."@fr,
         "Intervallo minimo tra le applicazioni (in giorni): 10."@it ;
-    :waitingPeriod _:nc0d2df021fd24fdba7e1ef2ebca4c99db10 .
+    :waitingPeriod _:ndebaa7542a9947249bb0d8ae19a78387b10 .
 
 code:7C828736-B22C-4B62-8900-58CEA5335C77 a :ApplicationComment ;
     schema:description "Nacherntebehandlung"@de,
@@ -16193,7 +16193,7 @@ code:84399B10974AF8A1FF9C90355A491380439B a :ApplicationComment ;
         "Interval (in days): 8."@en,
         "Intervalle min. entre les applications (en jours): 8."@fr,
         "Intervallo minimo tra le applicazioni (in giorni): 8."@it ;
-    :waitingPeriod _:nc0d2df021fd24fdba7e1ef2ebca4c99db11 .
+    :waitingPeriod _:ndebaa7542a9947249bb0d8ae19a78387b11 .
 
 code:84CCE2CA-B926-4EA5-899A-20E17592598C a :ApplicationComment ;
     schema:description "Während der Vegetationsperiode."@de,
@@ -16290,7 +16290,7 @@ code:8B110E03FBD41CBA99FE1F9CCC4CBC115B7E a :ApplicationComment ;
         "Interval (in days): 7."@en,
         "Intervalle min. entre les applications (en jours): 7."@fr,
         "Intervallo minimo tra le applicazioni (in giorni): 7."@it ;
-    :waitingPeriod _:nc0d2df021fd24fdba7e1ef2ebca4c99db12 .
+    :waitingPeriod _:ndebaa7542a9947249bb0d8ae19a78387b12 .
 
 code:8B89DA0C3D4C910A952B756CE12B2C18AC08 a :ApplicationComment ;
     schema:description "BBCH 55 - 69"@de,
@@ -16775,7 +16775,7 @@ code:A903475736AA56C85CECDA22C57DF7EFAE25 a :ApplicationComment ;
         "Interval (in days): 5."@en,
         "Intervalle min. entre les applications (en jours): 5."@fr,
         "Intervallo minimo tra le applicazioni (in giorni): 5."@it ;
-    :waitingPeriod _:nc0d2df021fd24fdba7e1ef2ebca4c99db13 .
+    :waitingPeriod _:ndebaa7542a9947249bb0d8ae19a78387b13 .
 
 code:A9123C3B-3BF0-4FD4-9F3F-4EF01E2634E9 a :ApplicationComment ;
     schema:description "Stadium 00-18 (BBCH)."@de,
@@ -17174,7 +17174,7 @@ code:BE11CC86FF6F03077BD2F8C45319AF1D1121 a :ApplicationComment ;
         "Interval (in days): 7."@en,
         "Intervalle min. entre les applications (en jours): 7."@fr,
         "Intervallo minimo tra le applicazioni (in giorni): 7."@it ;
-    :waitingPeriod _:nc0d2df021fd24fdba7e1ef2ebca4c99db14 .
+    :waitingPeriod _:ndebaa7542a9947249bb0d8ae19a78387b14 .
 
 code:BE1D8CB3D5D7F8F659C5616483254527D0C6 a :ApplicationComment ;
     schema:description "6 pro Kultur."@de,
@@ -17680,7 +17680,7 @@ code:D8D631727554D9982A79389E266E77AE5B5B a :ApplicationComment ;
         "Interval (in days): 9."@en,
         "Intervalle min. entre les applications (en jours): 9."@fr,
         "Intervallo minimo tra le applicazioni (in giorni): 9."@it ;
-    :waitingPeriod _:nc0d2df021fd24fdba7e1ef2ebca4c99db15 .
+    :waitingPeriod _:ndebaa7542a9947249bb0d8ae19a78387b15 .
 
 code:D8E83612-A6FB-4D19-8B64-9F7E82870BC5 a :ApplicationComment ;
     schema:description "Unmittelbar vor der Saat mit flacher Einarbeitung."@de,
@@ -17707,7 +17707,7 @@ code:D99D6091342878C30DB32375F220448B3A0C a :ApplicationComment ;
         "Interval (in days): 35."@en,
         "Intervalle min. entre les applications (en jours): 35."@fr,
         "Intervallo minimo tra le applicazioni (in giorni): 35."@it ;
-    :waitingPeriod _:nc0d2df021fd24fdba7e1ef2ebca4c99db16 .
+    :waitingPeriod _:ndebaa7542a9947249bb0d8ae19a78387b16 .
 
 code:DA1B42D4-EF37-4269-97D3-85C3E33D3CBC a :ApplicationComment ;
     schema:description "Unmittelbar nach der Pflanzung."@de,
@@ -17819,7 +17819,7 @@ code:DFCEC32E1C6CBC136BA38E4E368C7750C26C a :ApplicationComment ;
         "Interval (in days): 5."@en,
         "Intervalle min. entre les applications (en jours): 5."@fr,
         "Intervallo minimo tra le applicazioni (in giorni): 5."@it ;
-    :waitingPeriod _:nc0d2df021fd24fdba7e1ef2ebca4c99db17 .
+    :waitingPeriod _:ndebaa7542a9947249bb0d8ae19a78387b17 .
 
 code:DFD2CA06-88B0-47CB-96D9-FB2E32EF6228 a :ApplicationComment ;
     schema:description "Vorauflauf, unmittelbar bis 3 Tage nach der Saat."@de,
@@ -17960,7 +17960,7 @@ code:E6B74084A6CADF896039241527CE8D9EFC49 a :ApplicationComment ;
         "Interval (in days): 7."@en,
         "Intervalle min. entre les applications (en jours): 7."@fr,
         "Intervallo minimo tra le applicazioni (in giorni): 7."@it ;
-    :waitingPeriod _:nc0d2df021fd24fdba7e1ef2ebca4c99db18 .
+    :waitingPeriod _:ndebaa7542a9947249bb0d8ae19a78387b18 .
 
 code:E6BC6B6BCDA1A3A09470185CED3D1B27E715 a :ApplicationComment ;
     schema:description "1 pro Kultur."@de,
@@ -17988,7 +17988,7 @@ code:E8361D41C29FEC5DC493F4E61037EEDE6523 a :ApplicationComment ;
         "Interval (in days): 35."@en,
         "Intervalle min. entre les applications (en jours): 35."@fr,
         "Intervallo minimo tra le applicazioni (in giorni): 35."@it ;
-    :waitingPeriod _:nc0d2df021fd24fdba7e1ef2ebca4c99db19 .
+    :waitingPeriod _:ndebaa7542a9947249bb0d8ae19a78387b19 .
 
 code:E83CDF77-AD39-4373-A3B3-BC11411B5459 a :ApplicationComment ;
     schema:description "Herbst, Winter."@de,
@@ -18229,7 +18229,7 @@ code:F616C801E48521F62CB64C517A91187147FC a :ApplicationComment ;
         "Interval (in days): 7."@en,
         "Intervalle min. entre les applications (en jours): 7."@fr,
         "Intervallo minimo tra le applicazioni (in giorni): 7."@it ;
-    :waitingPeriod _:nc0d2df021fd24fdba7e1ef2ebca4c99db20 .
+    :waitingPeriod _:ndebaa7542a9947249bb0d8ae19a78387b20 .
 
 code:F66517AF-516D-497D-B9D4-8FD9E304B137 a :ApplicationComment ;
     schema:description "Nur im Anzuchtjahr."@de,
