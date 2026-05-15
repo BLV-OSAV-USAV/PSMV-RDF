@@ -458,45 +458,36 @@ shape:Substance a sh:NodeShape ;
     sh:property shape:multiLanguageName .
 
 # ==============================================================================
-# BASE GHS SHAPE
+# GHS CLASSES
 # ==============================================================================
 
 shape:GHSStatement a sh:NodeShape ;
-    rdfs:label "GHS statement"@en, "GHS-Hinweis"@de ;
+    sh:order 10 ;
+    rdfs:label "GHS statement"@en,
+        "GHS-Hinweis"@de ;
     rdfs:comment "Encodes a standardized hazard or precautionary directive derived from the Globally Harmonized System of Classification and Labelling of Chemicals."@en ;
     sh:targetClass ghs:GHSStatement ;
     sh:property
-        [
-            sh:name "Name"@en ;
-            sh:description "The localized text of the GHS statement."@en ;
-            sh:path schema:name ;
-            sh:datatype rdf:langString ;
-            sh:minCount 1 ;
-        ] ,
+        shape:multiLanguageName ,
         [
             sh:name "Identifier"@en ;
+            sh:order 1 ;
             sh:description "The official alphanumeric GHS identifier code."@en ;
             sh:path schema:identifier ;
             sh:datatype xsd:string ;
             sh:maxCount 1 ;
         ] .
 
-# ==============================================================================
-# SUB-SHAPES FOR GHS TAXONOMY
-# ==============================================================================
-
 shape:SignalWord a sh:NodeShape ;
+    sh:order 11 ;
     rdfs:label "Signal word"@en, "Signalwort"@de ;
     rdfs:comment "A word used to indicate the relative level of severity of hazard and alert the reader to a potential hazard on the label."@en ;
     sh:targetClass ghs:SignalWord ;
     sh:node shape:GHSStatement ;
-    sh:property [
-        sh:path schema:identifier ;
-        sh:maxCount 0 ; # Signal words typically lack formal identifiers in this taxonomy
-        sh:message "Signal words do not utilize alphanumeric identifiers in this scheme."@en ;
-    ] .
+    sh:property shape:multiLanguageName .
 
 shape:HazardPictogram a sh:NodeShape ;
+    sh:order 12 ;
     rdfs:label "Hazard pictogram"@en, "Gefahrenpiktogramm"@de ;
     rdfs:comment "A graphical composition intended to convey specific hazard information."@en ;
     sh:targetClass ghs:HazardPictogram ;
@@ -508,6 +499,7 @@ shape:HazardPictogram a sh:NodeShape ;
             sh:minCount 1 ;
             sh:message "Hazard pictograms must follow the identifier pattern 'GHS0X' where X is a digit from 1 to 9."@en ;
         ] ,
+        shape:multiLanguageName,
         [
             sh:name "Image"@en ;
             sh:description "The URI pointing to the visual representation of the pictogram."@en ;
@@ -518,6 +510,7 @@ shape:HazardPictogram a sh:NodeShape ;
         ] .
 
 shape:HazardStatement a sh:NodeShape ;
+    sh:order 13 ;
     rdfs:label "Hazard statement"@en,
         "Gefahrenhinweis"@de ;
     rdfs:comment "A standard phrase assigned to a hazard class and category that describes the nature of the hazards."@en ;
@@ -531,6 +524,7 @@ shape:HazardStatement a sh:NodeShape ;
     ] .
 
 shape:PrecautionaryStatement a sh:NodeShape ;
+    sh:order 14 ;
     rdfs:label "Precautionary statement"@en,
         "Sicherheitshinweis"@de ;
     rdfs:comment "A phrase that describes recommended measures to minimize or prevent adverse effects."@en ;
@@ -580,24 +574,36 @@ shape:QuantitativeValue a sh:NodeShape ;
 
 shape:identifier sh:name "Identifier"@en,
         "Identifikator"@de ;
+    sh:order 1 ;
     sh:path schema:identifier ;
     sh:minCount 1 ;
     sh:maxCount 1 .
 
 shape:multiLanguageName sh:name "Name"@en ;
+    sh:description """Multilingual name. German ('de') and French ('fr') translations are mandatory. Italian ('it') and English ('en') are optional. Only one entry per language is allowed, and no other languages are permitted."""@en ;
+    sh:order 2 ;
     sh:path schema:name ;
-    sh:minCount 1 ;
-    sh:maxCount 1 ;
+    sh:minCount 2 ;
+    sh:maxCount 4 ;
     sh:datatype rdf:langString ;
     sh:uniqueLang true ;
-    sh:qualifiedValueShape [ sh:languageIn ( "de" "fr" "it" ) ; ] ;
-    sh:qualifiedMinCount 3 .
+    sh:languageIn ( "de" "fr" "it" "en" ) ;
+    sh:qualifiedValueShape [ 
+        sh:languageIn ( "de" "fr" ) ;
+    ] ;
+    sh:qualifiedMinCount 2 .
 
-shape:multiLanguageDescription sh:name "Description"@en ;
+shape:multiLanguageDescription sh:name "Description"@en,
+        "Beschreibung"@de ;
+    sh:description """Multilingual description. German ('de') and French ('fr') translations are mandatory. Italian ('it') and English ('en') are optional. Only one entry per language is allowed, and no other languages are permitted."""@en ;
+    sh:order 2 ;
     sh:path schema:description ;
-    sh:minCount 1 ;
-    sh:maxCount 1 ;
+    sh:minCount 2 ;
+    sh:maxCount 4 ;
     sh:datatype rdf:langString ;
     sh:uniqueLang true ;
-    sh:qualifiedValueShape [ sh:languageIn ( "de" "fr" "it" ) ; ] ;
-    sh:qualifiedMinCount 3 .
+    sh:languageIn ( "de" "fr" "it" "en" ) ;
+    sh:qualifiedValueShape [ 
+        sh:languageIn ( "de" "fr" ) ;
+    ] ;
+    sh:qualifiedMinCount 2 .
