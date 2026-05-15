@@ -97,8 +97,8 @@ shape:Product a sh:NodeShape ;
         sh:name "Product type"@en ;
         sh:path :productType ;
         sh:in ( :BCA :ABA :BBA :FBA :IVA :BIA :BMA :BNA :CPP :ACA :WAA :BAC :DIS :FUN :HER :INS :PHE :SBI :MOL :PDI :NEM :PGR :ROD :STP :SPP :VIR ) ;
-    ],
-    [
+    ] ;
+    sh:property [
         sh:order 1 ;
         sh:name "Name"@en ;
         sh:description "Name of the product"@en ;
@@ -128,7 +128,6 @@ shape:Product a sh:NodeShape ;
         sh:name "Ingredient"@en ;
         sh:path :ingredient ;
         sh:node shape:Ingredient ;
-        sh:minCount 1 ;
     ] ;
     sh:property [
         sh:order 7 ;
@@ -239,7 +238,7 @@ shape:Organization a sh:NodeShape ;
     sh:nodeKind sh:IRI ;    
     sh:or (
         [
-            sh:pattern "^https://register\\.ld\\.admin\\.ch/zefix/company/" ;
+            # sh:pattern "^https://register\\.ld\\.admin\\.ch/zefix/company/" ; --> Needs mapping + fixes, first...
             sh:property [
                 sh:path ( schema:address schema:addressCountry ) ;
                 sh:hasValue country:CHE ;
@@ -353,7 +352,7 @@ shape:Ingredient a sh:NodeShape ;
         sh:description "The share of the substance of the total formulation, typically provided in g/L and/or percent."@en ;
         sh:path :share ;
         sh:node shape:QuantitativeValue ;
-        sh:minCount 1 ;
+        sh:minCount 0 ;
         sh:maxCount 2 ;
         sh:property [
             sh:path schema:unitCode ;

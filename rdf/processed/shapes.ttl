@@ -224,7 +224,7 @@ shape:Ingredient a sh:NodeShape ;
             sh:path :substance ],
         [ sh:description "The share of the substance of the total formulation, typically provided in g/L and/or percent."@en ;
             sh:maxCount 2 ;
-            sh:minCount 1 ;
+            sh:minCount 0 ;
             sh:name "Anteil"@de,
                 "Share"@en ;
             sh:node shape:QuantitativeValue ;
@@ -247,8 +247,7 @@ shape:Organization a sh:NodeShape ;
         "Organization"@en ;
     rdfs:comment "Represents a legally recognized entity or organization involved in the lifecycle of a plant protection product. This encompasses administrative and commercial actors such as authorisation holders, primary manufacturers, or registered distributors."@en ;
     sh:nodeKind sh:IRI ;
-    sh:or ( [ sh:pattern "^https://register\\.ld\\.admin\\.ch/zefix/company/" ;
-                sh:property [ sh:hasValue country:CHE ;
+    sh:or ( [ sh:property [ sh:hasValue country:CHE ;
                         sh:path ( schema:address schema:addressCountry ) ] ] [ sh:pattern "^https://agriculture\\.ld\\.admin\\.ch/plant-protection/company/" ;
                 sh:property [ sh:minCount 1 ;
                         sh:not [ sh:hasValue country:CHE ] ;
@@ -384,8 +383,7 @@ shape:Product a sh:NodeShape ;
             sh:name "Soldout deadline"@en ;
             sh:order 5 ;
             sh:path :soldOutDeadline ],
-        [ sh:minCount 1 ;
-            sh:name "Ingredient"@en ;
+        [ sh:name "Ingredient"@en ;
             sh:node shape:Ingredient ;
             sh:order 6 ;
             sh:path :ingredient ],
