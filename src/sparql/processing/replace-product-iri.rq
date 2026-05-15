@@ -1,0 +1,11 @@
+PREFIX : <https://agriculture.ld.admin.ch/plant-protection/>
+DELETE {
+  ?oldURI ?p ?o .
+}
+INSERT {
+  ?newURI ?p ?o .
+}
+WHERE {
+  ?oldURI a :Product ; :federalAdmissionNumber ?number ; ?p ?o .
+  BIND(URI(CONCAT("https://agriculture.ld.admin.ch/plant-protection/product/", ENCODE_FOR_URI(?number))) AS ?newURI)
+}
