@@ -127,16 +127,14 @@ shape:GHSStatement a sh:NodeShape ;
     rdfs:label "GHS-Hinweis"@de,
         "GHS statement"@en ;
     rdfs:comment "Encodes a standardized hazard or precautionary directive derived from the Globally Harmonized System of Classification and Labelling of Chemicals."@en ;
-    sh:property [ sh:datatype rdf:langString ;
-            sh:description "The localized text of the GHS statement."@en ;
-            sh:minCount 1 ;
-            sh:name "Name"@en ;
-            sh:path schema:name ],
-        [ sh:datatype xsd:string ;
+    sh:order 10 ;
+    sh:property [ sh:datatype xsd:string ;
             sh:description "The official alphanumeric GHS identifier code."@en ;
             sh:maxCount 1 ;
             sh:name "Identifier"@en ;
-            sh:path schema:identifier ] ;
+            sh:order 1 ;
+            sh:path schema:identifier ],
+        shape:multiLanguageName ;
     sh:targetClass ghs:GHSStatement .
 
 shape:HazardPictogram a sh:NodeShape ;
@@ -144,6 +142,7 @@ shape:HazardPictogram a sh:NodeShape ;
         "Hazard pictogram"@en ;
     rdfs:comment "A graphical composition intended to convey specific hazard information."@en ;
     sh:node shape:GHSStatement ;
+    sh:order 12 ;
     sh:property [ sh:message "Hazard pictograms must follow the identifier pattern 'GHS0X' where X is a digit from 1 to 9."@en ;
             sh:minCount 1 ;
             sh:path schema:identifier ;
@@ -153,7 +152,8 @@ shape:HazardPictogram a sh:NodeShape ;
             sh:minCount 1 ;
             sh:name "Image"@en ;
             sh:nodeKind sh:IRI ;
-            sh:path schema:image ] ;
+            sh:path schema:image ],
+        shape:multiLanguageName ;
     sh:targetClass ghs:HazardPictogram .
 
 shape:HazardStatement a sh:NodeShape ;
@@ -161,6 +161,7 @@ shape:HazardStatement a sh:NodeShape ;
         "Hazard statement"@en ;
     rdfs:comment "A standard phrase assigned to a hazard class and category that describes the nature of the hazards."@en ;
     sh:node shape:GHSStatement ;
+    sh:order 13 ;
     sh:property [ sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:path schema:identifier ;
@@ -332,6 +333,7 @@ shape:PrecautionaryStatement a sh:NodeShape ;
         "Precautionary statement"@en ;
     rdfs:comment "A phrase that describes recommended measures to minimize or prevent adverse effects."@en ;
     sh:node shape:GHSStatement ;
+    sh:order 14 ;
     sh:property [ sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:path schema:identifier ;
@@ -453,9 +455,8 @@ shape:SignalWord a sh:NodeShape ;
         "Signal word"@en ;
     rdfs:comment "A word used to indicate the relative level of severity of hazard and alert the reader to a potential hazard on the label."@en ;
     sh:node shape:GHSStatement ;
-    sh:property [ sh:maxCount 0 ;
-            sh:message "Signal words do not utilize alphanumeric identifiers in this scheme."@en ;
-            sh:path schema:identifier ] ;
+    sh:order 11 ;
+    sh:property shape:multiLanguageName ;
     sh:targetClass ghs:SignalWord .
 
 shape:Substance a sh:NodeShape ;
@@ -552,23 +553,31 @@ shape:identifier sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:name "Identifikator"@de,
         "Identifier"@en ;
+    sh:order 1 ;
     sh:path schema:identifier .
 
 shape:multiLanguageDescription sh:datatype rdf:langString ;
-    sh:maxCount 1 ;
-    sh:minCount 1 ;
-    sh:name "Description"@en ;
+    sh:description "Multilingual description. German ('de') and French ('fr') translations are mandatory. Italian ('it') and English ('en') are optional. Only one entry per language is allowed, and no other languages are permitted."@en ;
+    sh:languageIn ( "de" "fr" "it" "en" ) ;
+    sh:maxCount 4 ;
+    sh:minCount 2 ;
+    sh:name "Beschreibung"@de,
+        "Description"@en ;
+    sh:order 2 ;
     sh:path schema:description ;
-    sh:qualifiedMinCount 3 ;
-    sh:qualifiedValueShape [ sh:languageIn ( "de" "fr" "it" ) ] ;
+    sh:qualifiedMinCount 2 ;
+    sh:qualifiedValueShape [ sh:languageIn ( "de" "fr" ) ] ;
     sh:uniqueLang true .
 
 shape:multiLanguageName sh:datatype rdf:langString ;
-    sh:maxCount 1 ;
-    sh:minCount 1 ;
+    sh:description "Multilingual name. German ('de') and French ('fr') translations are mandatory. Italian ('it') and English ('en') are optional. Only one entry per language is allowed, and no other languages are permitted."@en ;
+    sh:languageIn ( "de" "fr" "it" "en" ) ;
+    sh:maxCount 4 ;
+    sh:minCount 2 ;
     sh:name "Name"@en ;
+    sh:order 2 ;
     sh:path schema:name ;
-    sh:qualifiedMinCount 3 ;
-    sh:qualifiedValueShape [ sh:languageIn ( "de" "fr" "it" ) ] ;
+    sh:qualifiedMinCount 2 ;
+    sh:qualifiedValueShape [ sh:languageIn ( "de" "fr" ) ] ;
     sh:uniqueLang true .
 
