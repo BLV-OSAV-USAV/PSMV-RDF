@@ -84,3 +84,8 @@ datasets:
     delimiter: ","
     encoding: "utf-8"
     description: "PSMV Export Signal Words"
+  ProductProductCategory:
+    input: "data/raw/ProductProductCategory.csv"
+    delimiter: ","
+    encoding: "utf-8"
+    description: "PSMV Export Product Categories"

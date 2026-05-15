@@ -40,7 +40,8 @@ def products_ttl(
     namespace_config = {
         "country_mapping": "country",
         "type_mapping": "base",
-        "unit_mapping": "unit"
+        "unit_mapping": "unit",
+        "category_mapping": "base"
     }
 
     rdf_mappings = load_rdf_mappings(namespaces, namespace_map=namespace_config)  
@@ -48,6 +49,8 @@ def products_ttl(
     COUNTRY_MAPPING = rdf_mappings["country_mapping"]
     TYPE_MAPPING = rdf_mappings["type_mapping"]
     UNIT_MAPPING = rdf_mappings["unit_mapping"]
+    # Dict comprehension to ensure safe uppercase key matching
+    CATEGORY_MAPPING = {k.upper(): v for k, v in rdf_mappings.get("category_mapping", {}).items()}
 
     # Create empty graph
     graph = Graph()
@@ -70,6 +73,7 @@ def products_ttl(
     products_df = con.execute("SELECT * FROM Product").df()
     pro_org_link_df = con.execute("SELECT * FROM ProductOrganisation").df()
     ingredient_df = con.execute("SELECT * FROM ProductIngredient").df()
+    prod_cat_df = con.execute("SELECT * FROM ProductProductCategory").df()
     
     # Unify GHS mappings across the 4 newly added reference tables
     ghs_links_query = """
@@ -111,6 +115,15 @@ def products_ttl(
         if pid not in ingredient_dict:
             ingredient_dict[pid] = []
         ingredient_dict[pid].append(row)
+
+    # Pre-process Product Categories for O(1) lookup
+    cat_dict = {}
+    for _, row in prod_cat_df.iterrows():
+        pid = str(row["product_id"]).strip()
+        cid = str(row["code_id"]).strip().upper()
+        if pid not in cat_dict:
+            cat_dict[pid] = []
+        cat_dict[pid].append(cid)
 
     # Create product triples
     for i, row in products_df.iterrows():
@@ -192,6 +205,13 @@ def products_ttl(
 
             rdf_type_uri = TYPE_MAPPING.get(raw_type, BASE.Product)
             graph.add((product_uri, RDF.type, rdf_type_uri))
+
+            # Add specific product categories from mapping as :productType
+            if product_id_str in cat_dict:
+                for cat_id in cat_dict[product_id_str]:
+                    if cat_id in CATEGORY_MAPPING:
+                        cat_uri = CATEGORY_MAPPING[cat_id]
+                        graph.add((product_uri, BASE.productType, cat_uri))
 
             # Add link to reference product
             if pd.notna(row.get("product_ref_or_id")):

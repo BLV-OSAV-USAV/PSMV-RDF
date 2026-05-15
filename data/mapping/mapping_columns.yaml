@@ -131,3 +131,7 @@ ProductSignalWords:
   NK_Codetable: code_id
   NK_SignalWord: signal_word_id
   NK_PROD_REF: product_id
+
+ProductProductCategory:
+  NK_Codetable: code_id
+  NK_Product: product_id
