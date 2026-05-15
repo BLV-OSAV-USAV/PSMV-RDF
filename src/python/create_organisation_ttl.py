@@ -7,6 +7,7 @@ import yaml
 import duckdb
 from pathlib import Path
 import pandas as pd
+import re
 from rdflib import Graph, Namespace, URIRef, Literal
 from rdflib.namespace import RDF
 from rdflib import BNode
@@ -38,6 +39,74 @@ rdf_mappings = load_rdf_mappings(namespaces, namespace_map=namespace_config)
 
 COUNTRY_MAPPING = rdf_mappings["country_mapping"]
 TYPE_MAPPING = rdf_mappings["type_mapping"]
+
+def parse_phone_numbers(raw_str):
+    if pd.isna(raw_str) or not str(raw_str).strip():
+        return []
+    
+    s = str(raw_str).strip()
+    # Remove standard international (0) 
+    s = re.sub(r'\(0\)', '', s)
+    
+    # Split by '/' if followed by '+', '00', or '0' and a digit
+    s = re.sub(r'\s*/\s*(?=\+|00|0[1-9])', ' SEP ', s)
+    # Split by '|'
+    s = re.sub(r'\s*\|\s*', ' SEP ', s)
+    # Split by any letters (e.g., 'mobile', 'direct call', 'M', 'T')
+    s = re.sub(r'[a-zA-Z]+', ' SEP ', s)
+    
+    parts = s.split(' SEP ')
+    
+    formatted_nums = []
+    for part in parts:
+        # Keep only digits and the plus sign
+        digits = re.sub(r'[^\d+]', '', part)
+        
+        if len(digits) < 7:
+            continue
+            
+        # Convert initial '00' to '+'
+        if digits.startswith('00'):
+            digits = '+' + digits[2:]
+        # Convert initial '0' to '+41'
+        elif digits.startswith('0'):
+            digits = '+41' + digits[1:]
+        # Handle cases missing a country code prefix but having a length implying one
+        elif not digits.startswith('+'):
+            if len(digits) == 9:
+                digits = '+41' + digits
+            elif len(digits) > 9:
+                digits = '+' + digits
+                
+        # Format typical Swiss numbers like: +41-76-472-24-53
+        if digits.startswith('+41') and len(digits) == 12:
+            formatted = f"{digits[0:3]}-{digits[3:5]}-{digits[5:8]}-{digits[8:10]}-{digits[10:12]}"
+        # Format German numbers or long international numbers
+        elif digits.startswith('+49') and len(digits) >= 12:
+            formatted = f"{digits[0:3]}-" + "-".join(re.findall(r'.{1,4}', digits[3:]))
+        # Format other numbers generically with hyphens
+        else:
+            if digits.startswith('+'):
+                two_digit_cc = [
+                    '30', '31', '32', '33', '34', '36', '39', '40', '41', '43', '44', '45', '46', 
+                    '47', '48', '49', '51', '52', '53', '54', '55', '56', '57', '58', '60', '61', 
+                    '62', '63', '64', '65', '66', '81', '82', '84', '86', '90', '91', '92', '93', 
+                    '94', '95', '98'
+                ]
+                if digits[1] == '1' or digits[1] == '7':
+                    cc_len = 2
+                elif digits[1:3] in two_digit_cc:
+                    cc_len = 3
+                else:
+                    cc_len = 4
+                formatted = f"{digits[:cc_len]}-" + "-".join(re.findall(r'.{1,3}', digits[cc_len:]))
+            else:
+                formatted = "-".join(re.findall(r'.{1,3}', digits))
+                
+        if formatted not in formatted_nums:
+            formatted_nums.append(formatted)
+            
+    return formatted_nums
 
 # Create Products
 def organisation_ttl(
@@ -95,7 +164,14 @@ def organisation_ttl(
 
             # Add contact info
             if pd.notna(row.get("phone_number")):
-                graph.add((org_uri, SCHEMA.telephone, Literal(str(row["phone_number"]).strip(), datatype=XSD.string)))
+                phones = parse_phone_numbers(row.get("phone_number"))
+                for p in phones:
+                    graph.add((org_uri, SCHEMA.telephone, Literal(p, datatype=XSD.string)))
+                    
+            if pd.notna(row.get("FAX")):
+                faxes = parse_phone_numbers(row.get("FAX"))
+                for f in faxes:
+                    graph.add((org_uri, SCHEMA.faxNumber, Literal(f, datatype=XSD.string)))
 
             # Add address node
             address_node = BNode()

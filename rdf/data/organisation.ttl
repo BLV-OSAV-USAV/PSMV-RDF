@@ -10,7 +10,7 @@ company:018C0DAB-6CB8-4F46-B684-4F59117A4F6A a schema:Organization ;
             schema:postOfficeBoxNumber "Postfach"^^xsd:string ;
             schema:streetAddress "Schaffhauserstr. 101"^^xsd:string ] ;
     schema:legalName "Syngenta Agro AG" ;
-    schema:telephone "+41 (0)61 323 56 70"^^xsd:string .
+    schema:telephone "+41-61-323-56-70"^^xsd:string .
 
 company:01A7FE62-324D-4F62-A28D-C9D4876C9856 a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -39,7 +39,7 @@ company:03361EE4-E719-4BB0-BD5E-FCB7203381A4 a schema:Organization ;
             schema:addressLocality "Aesch"^^xsd:string ;
             schema:streetAddress "Mosenstrasse 32"^^xsd:string ] ;
     schema:legalName "Läubli Feuerwerk AG" ;
-    schema:telephone "041 917 17 10"^^xsd:string .
+    schema:telephone "+41-41-917-17-10"^^xsd:string .
 
 company:04FDF35E-6B86-429B-B942-D654D14DA1F9 a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -62,7 +62,7 @@ company:0891DE1F-2F9C-491E-BE74-6B381F6ADD48 a schema:Organization ;
             schema:addressLocality "Limburgerhof"^^xsd:string ;
             schema:streetAddress "Carl-Bosch-Str. 64"^^xsd:string ] ;
     schema:legalName "BASF" ;
-    schema:telephone "+49 4141 9204 248"^^xsd:string .
+    schema:telephone "+49-4141-9204-248"^^xsd:string .
 
 company:0933EFA5-31C3-4264-9E1F-B71AE70EFC27 a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -127,7 +127,8 @@ company:15BAC516-7F05-4353-82D7-A2BA41438215 a schema:Organization ;
             schema:addressLocality "Zofingen"^^xsd:string ;
             schema:streetAddress "Henzmannstrasse 17A"^^xsd:string ] ;
     schema:legalName "Stähler Suisse SA" ;
-    schema:telephone "+41 62 746 80 05 / +41 62 746 80 00"^^xsd:string .
+    schema:telephone "+41-62-746-80-00"^^xsd:string,
+        "+41-62-746-80-05"^^xsd:string .
 
 company:169DD8BE-5713-48C9-B139-F88E12BDDE34 a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -142,7 +143,7 @@ company:16DCD8AE-8BD0-4FAE-90E2-AE2D310AE4A1 a schema:Organization ;
             schema:addressLocality "Monheim am Rhein"^^xsd:string ;
             schema:streetAddress "Alfred-Nobel-Str. 50"^^xsd:string ] ;
     schema:legalName "Bayer CropScience AG" ;
-    schema:telephone "0049 2173 / 38 33 74"^^xsd:string .
+    schema:telephone "+49-2173-3833-74"^^xsd:string .
 
 company:17486103-B818-49E6-9667-AF90F13F5CC0 a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -193,7 +194,7 @@ company:1CED4440-F01E-412E-A875-A213842B94A2 a schema:Organization ;
             schema:postOfficeBoxNumber "1016"^^xsd:string ;
             schema:streetAddress "Rue du Grand-Chêne  2"^^xsd:string ] ;
     schema:legalName "SCAE - Valent BioSciences Sàrl (Switzerland)" ;
-    schema:telephone "+41 22 990 21 25"^^xsd:string .
+    schema:telephone "+41-22-990-21-25"^^xsd:string .
 
 company:1D52610E-016C-41D8-A5BA-2878F03A6593 a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -201,7 +202,7 @@ company:1D52610E-016C-41D8-A5BA-2878F03A6593 a schema:Organization ;
             schema:addressLocality "Rotkreuz"^^xsd:string ;
             schema:streetAddress "Blegi 3"^^xsd:string ] ;
     schema:legalName "UPL Switzerland AG" ;
-    schema:telephone "+49(0) 2232 56934144"^^xsd:string .
+    schema:telephone "+49-2232-5693-4144"^^xsd:string .
 
 company:1E2E9CB1-6B6F-4693-8E8D-C7E8654B50EC a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -230,7 +231,7 @@ company:1F589397-11D5-4AC1-B113-84C713BD54E0 a schema:Organization ;
             schema:addressLocality "Birmenstorf AG"^^xsd:string ;
             schema:streetAddress "Fellstrasse 1"^^xsd:string ] ;
     schema:legalName "Leu + Gygax AG" ;
-    schema:telephone "056 201 45 45"^^xsd:string .
+    schema:telephone "+41-56-201-45-45"^^xsd:string .
 
 company:20CD2969-0578-4E34-86E7-A6ED756874F3 a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -245,7 +246,7 @@ company:21E5EB98-A51B-414B-AF34-89FB8D835019 a schema:Organization ;
             schema:addressLocality "Zug"^^xsd:string ;
             schema:streetAddress "Zählerweg 6"^^xsd:string ] ;
     schema:legalName "Douglas Switzerland GmbH" ;
-    schema:telephone "041 726 82 00"^^xsd:string .
+    schema:telephone "+41-41-726-82-00"^^xsd:string .
 
 company:22578E7F-56F8-4E35-825A-FBFE5296734D a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -253,7 +254,7 @@ company:22578E7F-56F8-4E35-825A-FBFE5296734D a schema:Organization ;
             schema:addressLocality "Grossaffoltern"^^xsd:string ;
             schema:streetAddress "Dorfstrasse 12"^^xsd:string ] ;
     schema:legalName "Hauert HBG Dünger AG" ;
-    schema:telephone "032 389 10 10"^^xsd:string .
+    schema:telephone "+41-32-389-10-10"^^xsd:string .
 
 company:25D3D0D5-1E95-474E-AEA3-C752B1A9BEC7 a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -261,7 +262,7 @@ company:25D3D0D5-1E95-474E-AEA3-C752B1A9BEC7 a schema:Organization ;
             schema:addressLocality "Stade"^^xsd:string ;
             schema:streetAddress "Stader Elbstrasse  26"^^xsd:string ] ;
     schema:legalName "Cheminova Deutschland GmbH & Co. KG" ;
-    schema:telephone "+49 4141 9204 248"^^xsd:string .
+    schema:telephone "+49-4141-9204-248"^^xsd:string .
 
 company:28DCC974-015B-48EB-A11F-0EA0F267E9B2 a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -283,7 +284,7 @@ company:2C865C9C-2072-4249-8F1E-7C6114EEBBEE a schema:Organization ;
             schema:addressLocality "Saxon"^^xsd:string ;
             schema:streetAddress "Route de l'Usine 14"^^xsd:string ] ;
     schema:legalName "Agribort Phyto SA" ;
-    schema:telephone "027 306 94 14"^^xsd:string .
+    schema:telephone "+41-27-306-94-14"^^xsd:string .
 
 company:2D42C2A3-CDE2-403A-A89B-1E7CA9F806A0 a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -291,7 +292,7 @@ company:2D42C2A3-CDE2-403A-A89B-1E7CA9F806A0 a schema:Organization ;
             schema:addressLocality "Lausanne"^^xsd:string ;
             schema:streetAddress "Avenue Gratta-Paille 2"^^xsd:string ] ;
     schema:legalName "Albaugh Europe Sàrl" ;
-    schema:telephone "+41 21 799 91 30"^^xsd:string .
+    schema:telephone "+41-21-799-91-30"^^xsd:string .
 
 company:2DF8800C-6B3C-470B-BC4A-6326560275AA a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -306,7 +307,7 @@ company:2EA3C6FA-5BE7-44A5-8202-BBC71D4DD0F2 a schema:Organization ;
             schema:addressLocality "Wilen b. Wil"^^xsd:string ;
             schema:streetAddress "Weidstrasse 11"^^xsd:string ] ;
     schema:legalName "Renovita Wilen GmbH" ;
-    schema:telephone "071 955 00 55"^^xsd:string .
+    schema:telephone "+41-71-955-00-55"^^xsd:string .
 
 company:307FAE72-DDA8-4B13-82E3-0B8D4D3BCD17 a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -314,7 +315,7 @@ company:307FAE72-DDA8-4B13-82E3-0B8D4D3BCD17 a schema:Organization ;
             schema:addressLocality "Visp"^^xsd:string ;
             schema:streetAddress "Lonzastrasse 2"^^xsd:string ] ;
     schema:legalName "Arxada AG" ;
-    schema:telephone "061 316 83 06"^^xsd:string .
+    schema:telephone "+41-61-316-83-06"^^xsd:string .
 
 company:316632FC-9642-4B6A-90A7-B39642ECD86D a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -414,7 +415,7 @@ company:3CA063B7-B2FE-4867-8EF0-8B25AED5E042 a schema:Organization ;
             schema:addressLocality "Schafhausen"^^xsd:string ;
             schema:streetAddress "Wydimattstrasse 22"^^xsd:string ] ;
     schema:legalName "WASGOM" ;
-    schema:telephone "079 426 98 04"^^xsd:string .
+    schema:telephone "+41-79-426-98-04"^^xsd:string .
 
 company:3D09D88B-62C8-4577-9BC9-A961757930A5 a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -430,7 +431,7 @@ company:3D0D954C-4EC1-4C71-9266-B70DEE134B29 a schema:Organization ;
             schema:postOfficeBoxNumber "45555"^^xsd:string ;
             schema:streetAddress "Hauptstrasse 84"^^xsd:string ] ;
     schema:legalName "808 Biozide Schweiz GmbH" ;
-    schema:telephone "044 3210 20 05"^^xsd:string .
+    schema:telephone "+41-443-210-200-5"^^xsd:string .
 
 company:3F98B3A7-56C5-42DE-B59E-7C6F84BEC0E6 a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -438,7 +439,7 @@ company:3F98B3A7-56C5-42DE-B59E-7C6F84BEC0E6 a schema:Organization ;
             schema:addressLocality "Emmerthal"^^xsd:string ;
             schema:streetAddress "An der Mühle 3"^^xsd:string ] ;
     schema:legalName "W. Neudorff GmbH KG" ;
-    schema:telephone "0049 5155 624-126"^^xsd:string .
+    schema:telephone "+49-5155-6241-26"^^xsd:string .
 
 company:3FAB8BC5-245B-432B-9EEB-73F900C64F4F a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -504,7 +505,7 @@ company:4B828ECC-FB0A-4F3B-B622-A1B9B08DD763 a schema:Organization ;
             schema:addressLocality "Seon"^^xsd:string ;
             schema:streetAddress "Birren 30"^^xsd:string ] ;
     schema:legalName "Schneiter Agro AG" ;
-    schema:telephone "056 201 45 45"^^xsd:string .
+    schema:telephone "+41-56-201-45-45"^^xsd:string .
 
 company:4CC31B07-2CD4-401B-908C-DD6E448D012B a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -527,7 +528,7 @@ company:5061AF3F-E1C6-4E91-BC0A-10A26CFD01E0 a schema:Organization ;
             schema:postOfficeBoxNumber "C P 48"^^xsd:string ;
             schema:streetAddress "Route du Léman 10"^^xsd:string ] ;
     schema:legalName "Méoc SA" ;
-    schema:telephone "027 746 16 39"^^xsd:string .
+    schema:telephone "+41-27-746-16-39"^^xsd:string .
 
 company:5086E8CB-6AF0-48ED-99DF-C3524B2F3A4B a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -535,7 +536,8 @@ company:5086E8CB-6AF0-48ED-99DF-C3524B2F3A4B a schema:Organization ;
             schema:addressLocality "Vernier"^^xsd:string ;
             schema:streetAddress "Chemin de Blandonnet 8"^^xsd:string ] ;
     schema:legalName "FMC International Switzerland Sàrl" ;
-    schema:telephone "+49 4141 9204 248  Mobile +49 171 640 7850"^^xsd:string .
+    schema:telephone "+49-1716-4078-50"^^xsd:string,
+        "+49-4141-9204-248"^^xsd:string .
 
 company:50A7859F-7D8C-473F-B38C-26E1A8F2E53F a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -551,7 +553,7 @@ company:51146CC7-4FCC-4D7D-84AC-829BE7105BB6 a schema:Organization ;
             schema:postOfficeBoxNumber "B P 5"^^xsd:string ;
             schema:streetAddress "Bonnel"^^xsd:string ] ;
     schema:legalName "De Sangosse" ;
-    schema:telephone "53 69 36 30"^^xsd:string .
+    schema:telephone "536-936-30"^^xsd:string .
 
 company:51205EA7-73ED-4C5C-A911-B3A11837242B a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -567,7 +569,7 @@ company:5164D739-E076-4BF8-BE9A-9D2BB7C73BA4 a schema:Organization ;
             schema:postOfficeBoxNumber "10150"^^xsd:string ;
             schema:streetAddress "8 voie vallon"^^xsd:string ] ;
     schema:legalName "HMWC SARL" ;
-    schema:telephone "0033608893727"^^xsd:string .
+    schema:telephone "+33-608-893-727"^^xsd:string .
 
 company:53DD0D57-40EA-4F46-AB09-395FF93425F1 a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -582,7 +584,7 @@ company:5710564A-E5EF-41D2-A3AF-74B898A51086 a schema:Organization ;
             schema:addressLocality "Costanti"^^xsd:string ;
             schema:streetAddress "Av. Europa parcela 1-7, poligino de Costanti"^^xsd:string ] ;
     schema:legalName "Azufrera y Fertilizantes Pallares, S.A." ;
-    schema:telephone "+34 977 524 650"^^xsd:string .
+    schema:telephone "+34-977-524-650"^^xsd:string .
 
 company:5818668E-F5AA-40EA-A365-F8D92519E46C a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -640,7 +642,7 @@ company:5E002797-A3B5-4C00-B6B0-F130F5DA5C02 a schema:Organization ;
             schema:addressLocality "Langenfeld"^^xsd:string ;
             schema:streetAddress "Elisabeth- Selbert- Straße 4a"^^xsd:string ] ;
     schema:legalName "Monsanto Agrar Deutschland GmbH" ;
-    schema:telephone "+49 (0) 2173 2076 569"^^xsd:string .
+    schema:telephone "+49-2173-2076-569"^^xsd:string .
 
 company:5E2915EB-369E-4C9C-B8B7-9FAAABF0E127 a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -648,7 +650,7 @@ company:5E2915EB-369E-4C9C-B8B7-9FAAABF0E127 a schema:Organization ;
             schema:addressLocality "Langenthal"^^xsd:string ;
             schema:streetAddress "Chasseralstrasse 1-3"^^xsd:string ] ;
     schema:legalName "Sintagro M. Eggen" ;
-    schema:telephone "062 398 57 57"^^xsd:string .
+    schema:telephone "+41-62-398-57-57"^^xsd:string .
 
 company:5F2FC518-5717-4E4F-9C2F-BA1E589EDF71 a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -656,7 +658,7 @@ company:5F2FC518-5717-4E4F-9C2F-BA1E589EDF71 a schema:Organization ;
             schema:addressLocality "Sint-Truiden"^^xsd:string ;
             schema:streetAddress "Leeuwerweg 138"^^xsd:string ] ;
     schema:legalName "GLOBACHEM NV" ;
-    schema:telephone "+32 11 78 57 17"^^xsd:string .
+    schema:telephone "+32-117-857-17"^^xsd:string .
 
 company:5F914527-3A45-4E33-99A6-E032CD118F53 a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -686,7 +688,7 @@ company:65146811-FE18-4A69-8F7A-200B67B8CC40 a schema:Organization ;
             schema:addressLocality "Kradolf"^^xsd:string ;
             schema:streetAddress "Oberfeldstr. 5"^^xsd:string ] ;
     schema:legalName "Hans Müller Gärtnerei AG" ;
-    schema:telephone "071/642 11 77"^^xsd:string .
+    schema:telephone "+41-71-642-11-77"^^xsd:string .
 
 company:6568B359-EF49-4D27-9436-D1B170A97FB7 a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -814,7 +816,8 @@ company:7C206C75-DE66-4D4F-952C-C5E149D31C64 a schema:Organization ;
             schema:addressLocality "Bern"^^xsd:string ;
             schema:streetAddress "Kochergasse 6"^^xsd:string ] ;
     schema:legalName "Sharda Swiss Sàrl" ;
-    schema:telephone "T +41 31 328 35 35 | M +41 78 843 8000"^^xsd:string .
+    schema:telephone "+41-31-328-35-35"^^xsd:string,
+        "+41-78-843-80-00"^^xsd:string .
 
 company:802723CD-5A92-4E44-82F5-083A105C9F90 a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -829,7 +832,7 @@ company:80DA1955-1AC4-4180-9BC7-5D76D7D85BBA a schema:Organization ;
             schema:addressLocality "Steffisburg"^^xsd:string ;
             schema:streetAddress "Maienstrasse 8"^^xsd:string ] ;
     schema:legalName "Eric Schweizer AG" ;
-    schema:telephone "033 227 57 57"^^xsd:string .
+    schema:telephone "+41-33-227-57-57"^^xsd:string .
 
 company:8216BB41-80BD-4A4C-BE63-08EDE7F4C128 a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -850,8 +853,7 @@ company:84E721E7-7A4F-4F80-B06A-A49B17EB0311 a schema:Organization ;
             schema:addressCountry country:CHE ;
             schema:addressLocality "Oftringen"^^xsd:string ;
             schema:streetAddress "Baslerstrasse 42"^^xsd:string ] ;
-    schema:legalName "Omya (Schweiz) AG" ;
-    schema:telephone ""^^xsd:string .
+    schema:legalName "Omya (Schweiz) AG" .
 
 company:8627FD33-6B14-4071-B4E5-2C83895D524C a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -867,7 +869,7 @@ company:866CC9D1-A64D-472F-875A-62D5A92AA74F a schema:Organization ;
             schema:postOfficeBoxNumber "Postfach 61"^^xsd:string ;
             schema:streetAddress "Hohfuhrenweg   14"^^xsd:string ] ;
     schema:legalName "Matox AG" ;
-    schema:telephone "032 387 70 70"^^xsd:string .
+    schema:telephone "+41-32-387-70-70"^^xsd:string .
 
 company:878DE3BA-24BD-424D-9C82-16547C007F5B a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -918,7 +920,7 @@ company:8C510474-3722-4678-96A2-3FB596B22E11 a schema:Organization ;
             schema:addressLocality "Mozzanica, Bergamo"^^xsd:string ;
             schema:streetAddress "Strada Statale 11, Km 190.2"^^xsd:string ] ;
     schema:legalName "Corteva Agriscience Italia s.r.l" ;
-    schema:telephone "+39 363 320 474"^^xsd:string .
+    schema:telephone "+39-363-320-474"^^xsd:string .
 
 company:8CEA4B4D-37D7-442B-A6A4-1981A1EDD3E4 a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -947,7 +949,7 @@ company:90FF2D1F-B94F-4DEF-AE94-8D1ECA1F228E a schema:Organization ;
             schema:addressLocality "Nyon"^^xsd:string ;
             schema:streetAddress "Chemin du Canal 5"^^xsd:string ] ;
     schema:legalName "Nufarm Suisse Sàrl" ;
-    schema:telephone "+43 732 6918 2773"^^xsd:string .
+    schema:telephone "+43-732-691-827-73"^^xsd:string .
 
 company:91065517-1D9D-4005-A2CF-835870A34EE6 a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -969,7 +971,7 @@ company:9283EC6A-3490-4CE1-B2D6-6BC8735E5081 a schema:Organization ;
             schema:addressLocality "Winterthur"^^xsd:string ;
             schema:streetAddress "In der Euelwies 34"^^xsd:string ] ;
     schema:legalName "UFA-Samen PROFI GRÜN" ;
-    schema:telephone "0041 58 433 76 76"^^xsd:string .
+    schema:telephone "+41-58-433-76-76"^^xsd:string .
 
 company:94B73960-84D0-4A2A-A974-C5AFDA828910 a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -977,7 +979,7 @@ company:94B73960-84D0-4A2A-A974-C5AFDA828910 a schema:Organization ;
             schema:addressLocality "Herzogenburg"^^xsd:string ;
             schema:streetAddress "Industriestrasse 20, 21"^^xsd:string ] ;
     schema:legalName "SAN Agrow Holding GmbH" ;
-    schema:telephone "+43 2782 8330 0"^^xsd:string .
+    schema:telephone "+43-278-283-300"^^xsd:string .
 
 company:9A79A49D-B193-4B12-AC36-E2CD59498C18 a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -992,7 +994,7 @@ company:9B3D97EE-DBF8-4DBD-AE4E-E23726022A85 a schema:Organization ;
             schema:addressLocality "Murten"^^xsd:string ;
             schema:streetAddress "Pra Pury  7d"^^xsd:string ] ;
     schema:legalName "Medol" ;
-    schema:telephone "079 758 09 37"^^xsd:string .
+    schema:telephone "+41-79-758-09-37"^^xsd:string .
 
 company:9D2B4634-14EF-4019-9CE8-9AC770D50107 a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -1021,7 +1023,8 @@ company:A0B6DF01-8500-4DD1-9B85-ED49C3A2DAF2 a schema:Organization ;
             schema:addressLocality "Tägerwilen"^^xsd:string ;
             schema:streetAddress "Konstanzerstrasse 19"^^xsd:string ] ;
     schema:legalName "GNS Consult AG" ;
-    schema:telephone "071 670 12 30  - direct call 076 516 12 30"^^xsd:string .
+    schema:telephone "+41-71-670-12-30"^^xsd:string,
+        "+41-76-516-12-30"^^xsd:string .
 
 company:A11A28AD-82EF-46E4-8C23-94940CCD7C0B a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -1029,7 +1032,7 @@ company:A11A28AD-82EF-46E4-8C23-94940CCD7C0B a schema:Organization ;
             schema:addressLocality "Interlaken"^^xsd:string ;
             schema:streetAddress "Rosenstrasse 28"^^xsd:string ] ;
     schema:legalName "Bio-Agrar-Counsel GmbH" ;
-    schema:telephone "034 413 33 30"^^xsd:string .
+    schema:telephone "+41-34-413-33-30"^^xsd:string .
 
 company:A128E9C6-FBC1-4649-8E3C-92073B82925B a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -1037,7 +1040,8 @@ company:A128E9C6-FBC1-4649-8E3C-92073B82925B a schema:Organization ;
             schema:addressLocality "Allschwil"^^xsd:string ;
             schema:streetAddress "Hegenheimermattweg 65"^^xsd:string ] ;
     schema:legalName "COMPO Jardin AG" ;
-    schema:telephone "061 486 20 23   - mobile 079 681 45 57"^^xsd:string .
+    schema:telephone "+41-61-486-20-23"^^xsd:string,
+        "+41-79-681-45-57"^^xsd:string .
 
 company:A17A3AEF-3D87-4C0A-BBF2-18B2A15EF35D a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -1045,7 +1049,7 @@ company:A17A3AEF-3D87-4C0A-BBF2-18B2A15EF35D a schema:Organization ;
             schema:addressLocality "Zürich"^^xsd:string ;
             schema:streetAddress "Ueberlandstrasse 341"^^xsd:string ] ;
     schema:legalName "Insektol AG Pest Control" ;
-    schema:telephone "+41 44 322 20 20"^^xsd:string .
+    schema:telephone "+41-44-322-20-20"^^xsd:string .
 
 company:A3C71144-113D-44C0-BEEA-E253F4C5D07B a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -1053,7 +1057,8 @@ company:A3C71144-113D-44C0-BEEA-E253F4C5D07B a schema:Organization ;
             schema:addressLocality "Basel"^^xsd:string ;
             schema:streetAddress "Riehenstrasse 43"^^xsd:string ] ;
     schema:legalName "Dr. Knoell Consult Schweiz GmbH" ;
-    schema:telephone "061 695 86 50    Mobile 078 625 63 40"^^xsd:string .
+    schema:telephone "+41-61-695-86-50"^^xsd:string,
+        "+41-78-625-63-40"^^xsd:string .
 
 company:A4189C47-C19D-49A6-B8E3-FE3DFFA74C4E a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -1075,7 +1080,7 @@ company:A4DF9EFF-DE2A-4DCF-A6D2-05AA3AE53020 a schema:Organization ;
             schema:addressLocality "Münsingen"^^xsd:string ;
             schema:streetAddress "Rudolf-Diesel-Strasse 2"^^xsd:string ] ;
     schema:legalName "Biofa AG" ;
-    schema:telephone "0049 7381 93 54 0"^^xsd:string .
+    schema:telephone "+49-7381-9354-0"^^xsd:string .
 
 company:A652AC69-2536-4145-9953-7E1697A5EB3E a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -1154,7 +1159,7 @@ company:BCCB1CD4-6BE3-4459-B42C-737AA7F494B4 a schema:Organization ;
             schema:addressLocality "Ougrée"^^xsd:string ;
             schema:streetAddress "Rue de Renory, 26/2"^^xsd:string ] ;
     schema:legalName "Arysta LifeScience Ougrée Production sprl" ;
-    schema:telephone "0032 4 385 97 11"^^xsd:string .
+    schema:telephone "+32-438-597-11"^^xsd:string .
 
 company:BD960585-B8EC-495F-B075-FCDC6E99BC22 a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -1162,7 +1167,7 @@ company:BD960585-B8EC-495F-B075-FCDC6E99BC22 a schema:Organization ;
             schema:addressLocality "Versoix"^^xsd:string ;
             schema:streetAddress "Route de Suisse 160"^^xsd:string ] ;
     schema:legalName "Corteva Agriscience International Sàrl" ;
-    schema:telephone "+41 22 717 5868"^^xsd:string .
+    schema:telephone "+41-22-717-58-68"^^xsd:string .
 
 company:BD9E43F3-0F8C-4B9F-9541-76AD027341F7 a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -1221,7 +1226,7 @@ company:C93D8141-F1E7-4EF5-BA5C-4AA99B00D39F a schema:Organization ;
             schema:addressLocality "Zug"^^xsd:string ;
             schema:streetAddress "Poststrasse 30"^^xsd:string ] ;
     schema:legalName "Danstar Ferment AG" ;
-    schema:telephone "+358 (0)50 543 5547"^^xsd:string .
+    schema:telephone "+358-505-435-547"^^xsd:string .
 
 company:CB0F961F-AEC2-4327-94E5-07ACBFFA38AF a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -1229,7 +1234,7 @@ company:CB0F961F-AEC2-4327-94E5-07ACBFFA38AF a schema:Organization ;
             schema:addressLocality "Rüegsauschachen"^^xsd:string ;
             schema:streetAddress "Winterseistrasse 22"^^xsd:string ] ;
     schema:legalName "Blaser Swisslube AG" ;
-    schema:telephone "034 460 03 05"^^xsd:string .
+    schema:telephone "+41-34-460-03-05"^^xsd:string .
 
 company:CB4021B4-9461-4E27-B531-62DAA0F144A1 a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -1251,7 +1256,7 @@ company:CD1520D1-4C7E-4134-A4DF-F7BABB1F1D5A a schema:Organization ;
             schema:addressLocality "Seon"^^xsd:string ;
             schema:streetAddress "Industrie Birren 30"^^xsd:string ] ;
     schema:legalName "Racroc AG" ;
-    schema:telephone "062 893 28 83"^^xsd:string .
+    schema:telephone "+41-62-893-28-83"^^xsd:string .
 
 company:CD1FD0B8-90D8-4032-8262-35F0CC309AD0 a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -1301,7 +1306,7 @@ company:D38ACFCB-C55E-4D41-8D9C-B8299BA92D7D a schema:Organization ;
             schema:addressLocality "Mendrisio"^^xsd:string ;
             schema:streetAddress "Via San Martino    16 a"^^xsd:string ] ;
     schema:legalName "Sofbey SA" ;
-    schema:telephone "091 223 10 90"^^xsd:string .
+    schema:telephone "+41-91-223-10-90"^^xsd:string .
 
 company:D52843E7-E938-485C-82AF-2E10C2DDE796 a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -1367,7 +1372,7 @@ company:DCE9B84C-BFF6-40E0-8DED-B0FDAF578D82 a schema:Organization ;
             schema:addressLocality "Solothurn"^^xsd:string ;
             schema:streetAddress "Postfach 109"^^xsd:string ] ;
     schema:legalName "Amreco AG" ;
-    schema:telephone "032 621 69 70"^^xsd:string .
+    schema:telephone "+41-32-621-69-70"^^xsd:string .
 
 company:DF50D39B-AB4F-44A0-8443-3047A3E658BE a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -1397,7 +1402,7 @@ company:E99A9FEC-68DF-4311-85C9-0B3CA1FF72FE a schema:Organization ;
             schema:addressLocality "Basel"^^xsd:string ;
             schema:streetAddress "Peter-Merian-Strasse 84"^^xsd:string ] ;
     schema:legalName "Bayer (Schweiz) AG" ;
-    schema:telephone "031 869 16 66"^^xsd:string .
+    schema:telephone "+41-31-869-16-66"^^xsd:string .
 
 company:E9B180EA-0041-4A07-A2D6-3D7649501FF0 a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -1413,7 +1418,7 @@ company:EAF6DF7B-6DD2-4329-B830-0A6995C8C832 a schema:Organization ;
             schema:addressLocality "Hamburg"^^xsd:string ;
             schema:streetAddress "Singapurstrasse 1"^^xsd:string ] ;
     schema:legalName "Cosaco GmbH" ;
-    schema:telephone "+49 40 2365 20"^^xsd:string .
+    schema:telephone "+49-402-365-20"^^xsd:string .
 
 company:ED249B21-3380-4D8E-A112-2054AF44416B a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -1435,7 +1440,7 @@ company:EF9276CE-1A8D-4E3F-A200-E88F2616B7AB a schema:Organization ;
             schema:addressLocality "Dielsdorf"^^xsd:string ;
             schema:streetAddress "Rudolf-Maag-Strasse  5"^^xsd:string ] ;
     schema:legalName "Westland Schweiz GmbH" ;
-    schema:telephone "079 557 99 44"^^xsd:string .
+    schema:telephone "+41-79-557-99-44"^^xsd:string .
 
 company:F01EC623-86A5-42D3-979A-6EFA1DB0DC50 a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -1443,7 +1448,8 @@ company:F01EC623-86A5-42D3-979A-6EFA1DB0DC50 a schema:Organization ;
             schema:addressLocality "Dagmersellen"^^xsd:string ;
             schema:streetAddress "Industriepark 10"^^xsd:string ] ;
     schema:legalName "Linde Gas Schweiz AG" ;
-    schema:telephone "058 748 17 62  mobile 079 322 32 01"^^xsd:string .
+    schema:telephone "+41-58-748-17-62"^^xsd:string,
+        "+41-79-322-32-01"^^xsd:string .
 
 company:F05FD7E3-EA3C-46CE-A537-B40375F273AA a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -1451,7 +1457,7 @@ company:F05FD7E3-EA3C-46CE-A537-B40375F273AA a schema:Organization ;
             schema:addressLocality "Grossdietwil"^^xsd:string ;
             schema:streetAddress "Stahlermatten 6"^^xsd:string ] ;
     schema:legalName "Andermatt Biocontrol Suisse AG" ;
-    schema:telephone "062 917 50 05"^^xsd:string .
+    schema:telephone "+41-62-917-50-05"^^xsd:string .
 
 company:F1524125-C104-4360-AC0D-47A2036FC45A a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -1467,7 +1473,7 @@ company:F266967B-5237-47FD-951C-9BC47F899F44 a schema:Organization ;
             schema:postOfficeBoxNumber "P.O. Box 9"^^xsd:string ;
             schema:streetAddress ""^^xsd:string ] ;
     schema:legalName "Cheminova Agro A/S" ;
-    schema:telephone "0045 96 90 96 90"^^xsd:string .
+    schema:telephone "+45-969-096-90"^^xsd:string .
 
 company:F3148B35-3C53-4CC8-9A3B-972242D3ADA0 a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -1556,7 +1562,7 @@ company:FB53BB8E-8838-4BB2-ACF0-65B5523F31B4 a schema:Organization ;
             schema:addressLocality "Frankfurt Griesheim"^^xsd:string ;
             schema:streetAddress ""^^xsd:string ] ;
     schema:legalName "Bayer CropScience AG" ;
-    schema:telephone "0049 69 305 3763"^^xsd:string .
+    schema:telephone "+49-6930-5376-3"^^xsd:string .
 
 company:FB8A3370-44B1-4FD3-B24F-49F362C77A83 a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -1585,7 +1591,7 @@ company:FF21DE18-8617-453D-B405-444FF3251247 a schema:Organization ;
             schema:addressLocality "Eschenbach"^^xsd:string ;
             schema:streetAddress "Luzernstrasse 11"^^xsd:string ] ;
     schema:legalName "Amstutz-Produkte AG" ;
-    schema:telephone "041 448 14 41"^^xsd:string .
+    schema:telephone "+41-41-448-14-41"^^xsd:string .
 
 company:FF482DC0-DAC1-48A8-8B42-4120C4BDA2E6 a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
