@@ -18,6 +18,7 @@ from src.python.create_application_area_ttl import application_area_ttl
 from src.python.create_application_comment_ttl import application_comment_ttl
 from src.python.create_obligation_ttl import obligation_ttl
 from src.python.create_ghs_ttl import ghs_ttl
+from src.python.create_indications_ttl import indication_ttl
 from src.python.reason import load_inputs, apply_rules, save_graph
 from src.python.shacl_validator import run_shacl_validation
 
@@ -50,7 +51,7 @@ def run_pipeline():
     application_comment_ttl()
     obligation_ttl()
     ghs_ttl()
-    #indication_ttl()
+    indication_ttl()
 
     print("\nCreate a dedicated ontology file for subsequent WebVOWL visualization")
     inputs = load_inputs(["rdf/ontology/*.ttl"])
