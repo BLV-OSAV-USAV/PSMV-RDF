@@ -212,15 +212,28 @@ shape:Ingredient a sh:NodeShape ;
     rdfs:label "Inhaltsstoff"@de,
         "Ingredient"@en ;
     rdfs:comment "Represents a constituent component of a product. It specifies both the underlying chemical or biological substance and its corresponding quantitative share within the final formulation."@en ;
+    sh:nodeKind sh:BlankNode ;
     sh:property [ sh:class :Substance ;
+            sh:description "The substance that makes up this part of the formulation."@en ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
-            sh:name "Substance"@en ;
+            sh:name "Wirkstoff"@de,
+                "Substance"@en ;
+            sh:node shape:Substance ;
+            sh:order 1 ;
             sh:path :substance ],
-        [ sh:minCount 1 ;
-            sh:name "Share (Quantitative Value)"@en ;
+        [ sh:description "The share of the substance of the total formulation, typically provided in g/L and/or percent."@en ;
+            sh:maxCount 2 ;
+            sh:minCount 1 ;
+            sh:name "Anteil"@de,
+                "Share"@en ;
             sh:node shape:QuantitativeValue ;
-            sh:path :share ] .
+            sh:order 2 ;
+            sh:path :share ;
+            sh:property [ sh:in ( unit:PERCENT unit:GM-PER-L ) ;
+                    sh:message "The unit of an ingredient share must be either percent or g/L."@en ;
+                    sh:path schema:unitCode ] ] ;
+    sh:targetClass :Ingredient .
 
 shape:Obligation a sh:NodeShape ;
     rdfs:label "Auflage"@de,
@@ -402,6 +415,10 @@ shape:QuantitativeValue a sh:NodeShape ;
     rdfs:label "Quantitativer Wert"@de,
         "Quantitative value"@en ;
     rdfs:comment "Represents a measurable quantity, providing a strict numerical value coupled with its corresponding unit of measurement. It is routinely utilized to quantify precise attributes such as application dosages, required waiting periods, or formulation concentrations."@en ;
+    sh:or ( [ sh:property [ sh:minCount 1 ;
+                        sh:path schema:value ] ] [ sh:property [ sh:minCount 1 ;
+                        sh:path schema:minValue ] ] [ sh:property [ sh:minCount 1 ;
+                        sh:path schema:maxValue ] ] ) ;
     sh:property [ sh:datatype rdf:langString ;
             sh:description "The quantitative value in textual form as it was originally written in the admission documents."@en ;
             sh:maxCount 1 ;
@@ -409,14 +426,21 @@ shape:QuantitativeValue a sh:NodeShape ;
             sh:path schema:name ],
         [ sh:datatype xsd:decimal ;
             sh:maxCount 1 ;
-            sh:minCount 0 ;
             sh:minExclusive 0 ;
             sh:name "Value"@en ;
             sh:path schema:value ],
-        [ sh:in ( unit:PERCENT unit:GM-PER-L ) ;
-            sh:maxCount 1 ;
+        [ sh:maxCount 1 ;
+            sh:minExclusive 0 ;
+            sh:name "Minimum value"@en ;
+            sh:path schema:minValue ],
+        [ sh:maxCount 1 ;
+            sh:minExclusive 0 ;
+            sh:name "Maximum value"@en ;
+            sh:path schema:maxValue ],
+        [ sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:name "Unit"@en ;
+            sh:nodeKind sh:IRI ;
             sh:path schema:unitCode ] ;
     sh:targetClass schema:QuantitativeValue .
 

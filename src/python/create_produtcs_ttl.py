@@ -5,7 +5,7 @@ import yaml
 from pathlib import Path
 import pandas as pd
 import duckdb
-from rdflib import Graph, Namespace, URIRef, Literal
+from rdflib import Graph, Namespace, URIRef, Literal, BNode
 from rdflib.namespace import RDF, RDFS
 from rdflib.namespace import NamespaceManager
 
@@ -39,13 +39,15 @@ def products_ttl(
     # Explicitly specify which namespace each mapping uses
     namespace_config = {
         "country_mapping": "country",
-        "type_mapping": "base"
+        "type_mapping": "base",
+        "unit_mapping": "unit"
     }
 
     rdf_mappings = load_rdf_mappings(namespaces, namespace_map=namespace_config)  
 
     COUNTRY_MAPPING = rdf_mappings["country_mapping"]
     TYPE_MAPPING = rdf_mappings["type_mapping"]
+    UNIT_MAPPING = rdf_mappings["unit_mapping"]
 
     # Create empty graph
     graph = Graph()
@@ -67,6 +69,7 @@ def products_ttl(
     con = duckdb.connect(db_path, read_only=True)
     products_df = con.execute("SELECT * FROM Product").df()
     pro_org_link_df = con.execute("SELECT * FROM ProductOrganisation").df()
+    ingredient_df = con.execute("SELECT * FROM ProductIngredient").df()
     
     # Unify GHS mappings across the 4 newly added reference tables
     ghs_links_query = """
@@ -91,6 +94,23 @@ def products_ttl(
         if pid not in ghs_dict:
             ghs_dict[pid] = set()
         ghs_dict[pid].add(cid)
+
+    # Pre-process Organisation links for O(1) lookup
+    org_dict = {}
+    for _, row in pro_org_link_df.iterrows():
+        pid = str(row["product_id"]).strip()
+        oid = str(row["organisation_id"]).strip()
+        if pid not in org_dict:
+            org_dict[pid] = []
+        org_dict[pid].append(oid)
+        
+    # Pre-process Ingredient links for O(1) lookup
+    ingredient_dict = {}
+    for _, row in ingredient_df.iterrows():
+        pid = str(row["product_ref_or_id"]).strip()
+        if pid not in ingredient_dict:
+            ingredient_dict[pid] = []
+        ingredient_dict[pid].append(row)
 
     # Create product triples
     for i, row in products_df.iterrows():
@@ -135,6 +155,11 @@ def products_ttl(
                     pkg_ins_num = str(pkg_val).split('.')[0]
                     graph.add((product_uri, BASE.packageInsertNumber, Literal(pkg_ins_num, datatype=XSD.string)))
 
+            # Add permission holder
+            if product_id_str in org_dict:
+                for oid in org_dict[product_id_str]:
+                    graph.add((product_uri, BASE.permissionHolder, COMPANY[oid]))
+
             # Add producing country
             if pd.notna(row.get("producing_country_id")):
                 country_uuid_str = str(row.get("producing_country_id")).strip()
@@ -176,6 +201,32 @@ def products_ttl(
                     ref_product_uri = PRODUCT[ref_id_str]
                     graph.add((product_uri, BASE.referenceProduct, ref_product_uri))
                     
+            # Add ingredients as nested Blank Nodes
+            if product_id_str in ingredient_dict:
+                for ing_row in ingredient_dict[product_id_str]:
+                    substance_id = str(ing_row.get("nk_codetable_substance_id")).strip()
+                    if substance_id == "nan" or not substance_id:
+                        continue
+                    
+                    ingredient_node = BNode()
+                    graph.add((product_uri, BASE.ingredient, ingredient_node))
+                    graph.add((ingredient_node, RDF.type, BASE.Ingredient))
+                    graph.add((ingredient_node, BASE.substance, SUBSTANCE[substance_id]))
+                    
+                    if pd.notna(ing_row.get("in_gram_per_litre")):
+                        gpl_node = BNode()
+                        graph.add((ingredient_node, BASE.share, gpl_node))
+                        graph.add((gpl_node, RDF.type, SCHEMA.QuantitativeValue))
+                        graph.add((gpl_node, SCHEMA.value, Literal(float(ing_row.get("in_gram_per_litre")), datatype=XSD.decimal)))
+                        graph.add((gpl_node, SCHEMA.unitCode, URIRef(UNIT_MAPPING["gram_per_litre"])))
+
+                    if pd.notna(ing_row.get("in_percent")):
+                        pct_node = BNode()
+                        graph.add((ingredient_node, BASE.share, pct_node))
+                        graph.add((pct_node, RDF.type, SCHEMA.QuantitativeValue))
+                        graph.add((pct_node, SCHEMA.value, Literal(float(ing_row.get("in_percent")), datatype=XSD.decimal)))
+                        graph.add((pct_node, SCHEMA.unitCode, URIRef(UNIT_MAPPING["percent"])))
+
             # Add GHS connections
             if product_id_str in ghs_dict:
                 for code_id in ghs_dict[product_id_str]:

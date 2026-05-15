@@ -329,18 +329,31 @@ shape:PostalAddress a sh:NodeShape ;
 shape:Ingredient a sh:NodeShape ;
     rdfs:label "Ingredient"@en, "Inhaltsstoff"@de ;
     rdfs:comment "Represents a constituent component of a product. It specifies both the underlying chemical or biological substance and its corresponding quantitative share within the final formulation."@en ;
+    sh:targetClass :Ingredient ;
+    sh:nodeKind sh:BlankNode ;
     sh:property [
-        sh:name "Substance"@en ;
+        sh:order 1 ;
+        sh:name "Substance"@en, "Wirkstoff"@de ;
+        sh:description "The substance that makes up this part of the formulation."@en ;
         sh:path :substance ;
         sh:class :Substance ;
+        sh:node shape:Substance ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
     ] ;
     sh:property [
-        sh:name "Share (Quantitative Value)"@en ;
+        sh:order 2 ;
+        sh:name "Share"@en, "Anteil"@de ;
+        sh:description "The share of the substance of the total formulation, typically provided in g/L and/or percent."@en ;
         sh:path :share ;
         sh:node shape:QuantitativeValue ;
         sh:minCount 1 ;
+        sh:maxCount 2 ;
+        sh:property [
+            sh:path schema:unitCode ;
+            sh:in ( unit:PERCENT unit:GM-PER-L ) ;
+            sh:message "The unit of an ingredient share must be either percent or g/L."@en ;
+        ] ;
     ] .
 
 shape:Indication a sh:NodeShape ;
@@ -542,28 +555,51 @@ shape:PrecautionaryStatement a sh:NodeShape ;
 # ==============================================================================
 
 shape:QuantitativeValue a sh:NodeShape ;
-    rdfs:label "Quantitative value"@en, "Quantitativer Wert"@de ;
-    rdfs:comment "Represents a measurable quantity, providing a strict numerical value coupled with its corresponding unit of measurement. It is routinely utilized to quantify precise attributes such as application dosages, required waiting periods, or formulation concentrations."@en ;
+    rdfs:label "Quantitative value"@en, "Quantitativer Wert"@de ; 
+    rdfs:comment "Represents a measurable quantity, providing a strict numerical (standard, minimal, or maximal) value coupled with a unit of measurement. It is used to quantify attributes such as application dosages, required waiting periods, or formulation concentrations in a machine-readable and consistent manner. Because it's important to be able to display a quantitative value exactly as it was written in the original admission documents, the quantitative value is also provided in textual form."@en ; 
     sh:targetClass schema:QuantitativeValue ;
-    sh:property [
+    sh:or (
+        [ sh:property [ sh:path schema:value ; sh:minCount 1 ; ] ]
+        [ sh:property [ sh:path schema:minValue ; sh:minCount 1 ; ] ]
+        [ sh:property [ sh:path schema:maxValue ; sh:minCount 1 ; ] ]
+    ) ;
+    sh:property [ 
         sh:name "Display text"@en ;
-        sh:description "The quantitative value in textual form as it was originally written in the admission documents."@en ;
-        sh:path schema:name ;
-        sh:maxCount 1 ;
-        sh:datatype rdf:langString ;
-    ] ;
-    sh:property [
+        sh:order 1 ;
+        sh:description "The quantitative value in textual form as it was originally written in the admission documents."@en ; 
+        sh:path schema:name ; 
+        sh:maxCount 1 ; 
+        sh:datatype rdf:langString ; 
+    ] ; 
+    sh:property [ 
         sh:name "Value"@en ;
+        sh:order 2 ;
         sh:path schema:value ;
         sh:minExclusive 0 ;
-        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:decimal ;
+    ] ; 
+    sh:property [ 
+        sh:name "Minimum value"@en ;
+        sh:order 3 ;
+        sh:path schema:minValue ;
+        sh:minExclusive 0 ;
         sh:maxCount 1 ;
         sh:datatype xsd:decimal ;
     ] ;
     sh:property [
+        sh:name "Maximum value"@en ;
+        sh:order 4 ;
+        sh:path schema:maxValue ;
+        sh:minExclusive 0 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:decimal ;
+    ] ; 
+    sh:property [ 
         sh:name "Unit"@en ;
+        sh:order 5 ;
         sh:path schema:unitCode ;
-        sh:in ( unit:PERCENT unit:GM-PER-L ) ; 
+        sh:nodeKind sh:IRI ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
     ] .
