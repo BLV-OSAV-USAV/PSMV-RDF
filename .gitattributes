@@ -1,3 +1,4 @@
 *.ttl linguist-detectable=true
 *.rq linguist-detectable=true
 *.sparql linguist-detectable=true
+data/raw/*.csv linguist-generated=true

@@ -1,4 +1,9 @@
 # PSMV-RDF
+![Python](https://img.shields.io/badge/python-3.12+-blue)
+![License](https://img.shields.io/github/license/BLV-OSAV-USAV/PSMV-RDF)
+![Status](https://img.shields.io/badge/status-active--development-orange)
+[![Docs](https://img.shields.io/badge/docs-github--pages-blue)](https://blv-osav-usav.github.io/PSMV-RDF/)
+![CI](https://github.com/BLV-OSAV-USAV/PSMV-RDF/actions/workflows/psmv_rdf_primary_pipeline.yml/badge.svg)
 
 > [!NOTE]
 > This repository is under active development. Features, documentation, and structure will change frequently.
@@ -9,17 +14,19 @@ A Python module for converting Swiss plant protection product data from CSV form
 
 ## Reproduce the data integration pipeline
 
-1. Create and activate the conda environment.
+1. Set up the virtual environment
 
     ``` bash
-    conda env create -f environment.yml
-    conda activate psmv-rdf
+    uv venv psmv-rdf
+    source psmv-rdf/bin/activate  
+    uv pip install -r pyproject.toml
     ```
-
+    > If `uv` is not available: `pip install uv`
+    
 2. Install the package in editable mode
 
     ``` bash
-    pip install -e .
+    uv pip install -e .
     ```
 
 3. Start the data integration pipeline
@@ -28,6 +35,7 @@ A Python module for converting Swiss plant protection product data from CSV form
     python -m service.pipeline
     ```
     
+<<<<<<< HEAD
 4. To upload the graph, first, place a `.env` file in the directory root:
 
     ``` bash
@@ -38,6 +46,9 @@ A Python module for converting Swiss plant protection product data from CSV form
     ```
 
     Then trigger the upload to LINDAS:
+=======
+4. Upload graph
+>>>>>>> 60647f72c94c0e9fa267cf79a6d0ff5d0417368f
 
     ``` bash
     python -m service.upload_graph
@@ -74,7 +85,15 @@ psmv-rdf/
 All ontology documentation files are written to `rdf/ontology`.
 [You may inspect a visual representation of the ontology used here.](https://service.tib.eu/webvowl/#iri=https://raw.githubusercontent.com/BLV-OSAV-USAV/PSMV-RDF/refs/heads/main/rdf/ontology/core.ttl)
 
+<<<<<<< HEAD
 A more restricted data model is written in SHACL and [can be inspected here](https://blv-osav-usav.github.io/PSMV-RDF/shacl-documentation.html).
+=======
+## Data model
+
+A more restricted data model is written in SHACL and [can be inspected here](https://blv-osav-usav.github.io/PSMV-RDF/shacl-documentation.html).
+
+## Dependencies
+>>>>>>> 60647f72c94c0e9fa267cf79a6d0ff5d0417368f
 
 Project dependencies are listed in [pyproject.toml](pyproject.toml).
 

@@ -43,7 +43,8 @@ def generate_documentation(
             "Make sure the SHACL processing step ran first."
         )
 
-    os.makedirs(os.path.dirname(os.path.abspath(output_file)), exist_ok=True)
+    output_dir = os.path.dirname(os.path.abspath(output_file))
+    os.makedirs(output_dir, exist_ok=True)
 
     if shutil.which("java") is None:
         raise RuntimeError("Java not found on PATH. Install Java 11+ and retry.")
@@ -67,7 +68,7 @@ def generate_documentation(
     if hide_datatype_properties:
         cmd.append("--hide")
 
-    log_path = os.path.join(os.path.dirname(os.path.abspath(output_file)), "shacl-documentaion-log.txt")
+    log_path = os.path.join(output_dir, "shacl-documentation-log.txt")
 
     print(f"  Shapes file : {shapes_file}")
     print(f"  Output file : {output_file}")
@@ -113,8 +114,8 @@ if __name__ == "__main__":
                         help="Include the UML diagram in the output")
 
     parser.add_argument("--format", dest="output_format", default="html",
-                        choices=["html", "pdf", "xml"],
-                        help="Output format (default: html)")
+                    choices=["html", "respec", "pdf", "xml"],
+                    help="Output format (default: html; 'html' uses legacy format, 'respec' uses new ReSpec renderer)")
 
     parser.add_argument("--hide", action="store_true", default=False,
                         help="Hide datatype properties from the output")

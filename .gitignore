@@ -84,9 +84,14 @@ nosetests.xml
 # =============================================================================
 # Project-specific
 # =============================================================================
+
 psmv-data.duckdb
 *.jar
 shacl-documentaion-log.txt
+rdf/data/
+rdf/processed/*
+!rdf/processed/graph.ttl
+!rdf/processed/shapes.ttl
 
 # =============================================================================
 # Tests

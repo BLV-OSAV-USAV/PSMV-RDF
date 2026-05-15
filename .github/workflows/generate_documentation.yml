@@ -9,13 +9,17 @@ on:
     branches: [main]
     paths:
       - 'rdf/processed/shapes.ttl'
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
+
 permissions:
   contents: write
+
 env:
-  SHACL_PLAY_VERSION: "0.11.6"
+  SHACL_PLAY_VERSION: "0.12.0"
+
 jobs:
   run-pipeline:
     runs-on: ubuntu-latest
@@ -23,42 +27,37 @@ jobs:
       - uses: actions/checkout@v6
         with:
           fetch-depth: 0
+
       - name: Set up uv
         uses: astral-sh/setup-uv@v5
         with:
           python-version: "3.12"
           enable-caching: true
-      - name: Install dependencies from environment.yml
-        run: |
-          uv pip install pyyaml
-          uv run python -c "
-          import yaml, subprocess
-          env = yaml.safe_load(open('environment.yml'))
-          deps = [d for d in env.get('dependencies', []) if isinstance(d, str) and not d.startswith('python')]
-          pip_deps = next((d['pip'] for d in env.get('dependencies', []) if isinstance(d, dict) and 'pip' in d), [])
-          if deps:
-              subprocess.run(['uv', 'pip', 'install'] + deps, check=True)
-          if pip_deps:
-              subprocess.run(['uv', 'pip', 'install'] + pip_deps, check=True)
-          "
-      - name: Install psmv as editable package
-        run: uv pip install -e .
+
+      - name: Install system dependencies
+        run: sudo apt-get install -y libssh2-1-dev graphviz
+
+      - name: Install dependencies
+        run: uv sync
+
       - name: Restore SHACL-Play JAR cache
         id: cache-jar
         uses: actions/cache/restore@v4
         with:
           path: service/shacl_play
           key: shacl-play-jar-${{ env.SHACL_PLAY_VERSION }}
-      - name: Install Graphviz
-        run: sudo apt-get install -y graphviz
-      - name: Run pipeline script
-        run: uv run python service/shacl_docgen.py
+
+      - name: Run documentation script
+        run: |
+          uv run python service/shacl_docgen.py --diagram
+
       - name: Save SHACL-Play JAR cache
         if: steps.cache-jar.outputs.cache-hit != 'true'
         uses: actions/cache/save@v4
         with:
           path: service/shacl_play
           key: shacl-play-jar-${{ env.SHACL_PLAY_VERSION }}
+
       - name: Commit and push changes
         if: github.event_name != 'pull_request'
         run: |

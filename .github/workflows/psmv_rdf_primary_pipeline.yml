@@ -7,41 +7,37 @@ on:
       - 'data/raw/**'
   pull_request:
     branches: [main]
-    paths:
-      - 'data/raw/**'
+
 permissions:
   contents: write
+
 jobs:
   run-pipeline:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+
       - name: Set up uv
         uses: astral-sh/setup-uv@v5
         with:
           python-version: "3.12"
           enable-caching: true
-      - name: Install dependencies from environment.yml
-        run: |
-          uv pip install pyyaml
-          uv run python -c "
-          import yaml, subprocess
-          env = yaml.safe_load(open('environment.yml'))
-          deps = [d for d in env.get('dependencies', []) if isinstance(d, str) and not d.startswith('python')]
-          pip_deps = next((d['pip'] for d in env.get('dependencies', []) if isinstance(d, dict) and 'pip' in d), [])
-          if deps:
-              subprocess.run(['uv', 'pip', 'install'] + deps, check=True)
-          if pip_deps:
-              subprocess.run(['uv', 'pip', 'install'] + pip_deps, check=True)
-          "
-      - name: Install psmv as editable package
-        run: uv pip install -e .
+
+      - name: Install system dependencies
+        run: sudo apt-get install -y libssh2-1-dev
+
+      - name: Install dependencies
+        run: uv sync
+
       - name: Show installed packages
         run: uv pip list
+
       - name: Verify src import
         run: uv run python -c "import src; print(src.__file__)"
+
       - name: Run pipeline script
         run: uv run python service/pipeline.py
+
       - name: Commit and push changes
         if: github.event_name != 'pull_request'
         run: |

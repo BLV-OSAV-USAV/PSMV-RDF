@@ -9,7 +9,7 @@ import urllib.request
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT_DIR = os.path.abspath(os.path.join(BASE_DIR, "..", "..", "..")) 
 
-SHACL_PLAY_VERSION = "0.11.6"
+SHACL_PLAY_VERSION = "0.12.0"
 
 SHACL_PLAY_JAR_PATH = os.path.join(
     ROOT_DIR,
