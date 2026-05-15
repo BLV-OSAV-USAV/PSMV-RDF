@@ -63,7 +63,8 @@ def run_pipeline():
     graph = apply_rules(inputs, [
         "src/sparql/rules/inverse.rq",
         "src/sparql/rules/subclass.rq",
-        "src/sparql/rules/subproperty.rq"
+        "src/sparql/rules/subproperty.rq",
+        "src/sparql/processing/remove-empty-indications.rq"
     ])
     save_graph(graph, "rdf/processed/graph.ttl")
 
