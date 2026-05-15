@@ -1,3 +1,5 @@
+# src/python/create_organisation_ttl.py
+
 import os
 import sys
 import csv
@@ -61,7 +63,19 @@ def organisation_ttl(
 
     # Read data
     con = duckdb.connect(db_path, read_only=True)
-    organsiation_df = con.execute("SELECT * FROM Organisation").df()
+    # Join Organisation with the Code table to get the actual city name
+    query = """
+    SELECT 
+        o.*,
+        c.city_name
+    FROM Organisation o
+    LEFT JOIN (
+        SELECT code_id, MAX(value) AS city_name 
+        FROM Code 
+        GROUP BY code_id
+    ) c ON o.city_id = c.code_id
+    """
+    organsiation_df = con.execute(query).df()
     con.close()
 
     # Create organisation triples
@@ -77,7 +91,7 @@ def organisation_ttl(
 
             # Add organisation name
             if pd.notna(row.get("organisation_name")):
-                graph.add((org_uri, SCHEMA.name, Literal(str(row["organisation_name"]).strip())))
+                graph.add((org_uri, SCHEMA.legalName, Literal(str(row["organisation_name"]).strip())))
 
             # Add contact info
             if pd.notna(row.get("phone_number")):
@@ -94,7 +108,12 @@ def organisation_ttl(
             if pd.notna(row.get("post_office_box")):
                 graph.add((address_node, SCHEMA.postOfficeBoxNumber, Literal(str(row["post_office_box"]).strip(), datatype=XSD.string)))
 
-            if pd.notna(row.get("city_id")):
+            # Add city
+            if pd.notna(row.get("city_name")):
+                # Prefer the mapped city name from the Code table
+                graph.add((address_node, SCHEMA.addressLocality, Literal(str(row["city_name"]).strip(), datatype=XSD.string)))
+            elif pd.notna(row.get("city_id")):
+                # Fallback to ID if no match is found
                 graph.add((address_node, SCHEMA.addressLocality, Literal(str(row["city_id"]).strip(), datatype=XSD.string)))
 
             # country as iso3

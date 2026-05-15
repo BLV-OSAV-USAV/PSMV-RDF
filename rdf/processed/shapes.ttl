@@ -414,7 +414,7 @@ shape:Product a sh:NodeShape ;
 shape:QuantitativeValue a sh:NodeShape ;
     rdfs:label "Quantitativer Wert"@de,
         "Quantitative value"@en ;
-    rdfs:comment "Represents a measurable quantity, providing a strict numerical value coupled with its corresponding unit of measurement. It is routinely utilized to quantify precise attributes such as application dosages, required waiting periods, or formulation concentrations."@en ;
+    rdfs:comment "Represents a measurable quantity, providing a strict numerical (standard, minimal, or maximal) value coupled with a unit of measurement. It is used to quantify attributes such as application dosages, required waiting periods, or formulation concentrations in a machine-readable and consistent manner. Because it's important to be able to display a quantitative value exactly as it was written in the original admission documents, the quantitative value is also provided in textual form."@en ;
     sh:or ( [ sh:property [ sh:minCount 1 ;
                         sh:path schema:value ] ] [ sh:property [ sh:minCount 1 ;
                         sh:path schema:minValue ] ] [ sh:property [ sh:minCount 1 ;
@@ -423,24 +423,31 @@ shape:QuantitativeValue a sh:NodeShape ;
             sh:description "The quantitative value in textual form as it was originally written in the admission documents."@en ;
             sh:maxCount 1 ;
             sh:name "Display text"@en ;
+            sh:order 1 ;
             sh:path schema:name ],
         [ sh:datatype xsd:decimal ;
             sh:maxCount 1 ;
             sh:minExclusive 0 ;
             sh:name "Value"@en ;
+            sh:order 2 ;
             sh:path schema:value ],
-        [ sh:maxCount 1 ;
+        [ sh:datatype xsd:decimal ;
+            sh:maxCount 1 ;
             sh:minExclusive 0 ;
             sh:name "Minimum value"@en ;
+            sh:order 3 ;
             sh:path schema:minValue ],
-        [ sh:maxCount 1 ;
+        [ sh:datatype xsd:decimal ;
+            sh:maxCount 1 ;
             sh:minExclusive 0 ;
             sh:name "Maximum value"@en ;
+            sh:order 4 ;
             sh:path schema:maxValue ],
         [ sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:name "Unit"@en ;
             sh:nodeKind sh:IRI ;
+            sh:order 5 ;
             sh:path schema:unitCode ] ;
     sh:targetClass schema:QuantitativeValue .
 

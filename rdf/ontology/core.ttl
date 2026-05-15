@@ -479,3 +479,9 @@ schema:QuantitativeValue a owl:Class ;
         owl:onProperty schema:name ;
         owl:allValuesFrom xsd:string
     ] .
+
+# ==============================================================================
+# PROPERTIES
+# ==============================================================================
+
+schema:legalName rdfs:subPropertyOf schema:name .

@@ -2512,3 +2512,5 @@ ghs:danger a ghs:GHSStatement,
         "danger"@fr,
         "Pericolo"@it .
 
+schema:legalName rdfs:subPropertyOf schema:name .
+
