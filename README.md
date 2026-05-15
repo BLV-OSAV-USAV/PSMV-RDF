@@ -35,7 +35,16 @@ A Python module for converting Swiss plant protection product data from CSV form
     python -m service.pipeline
     ```
     
-4. Upload graph
+4. To upload the graph, first, place a `.env` file in the directory root:
+
+    ``` bash
+    LINDAS_USER=lindas-foag-plant-protection
+    LINDAS_PASSWORD=************
+    ENDPOINT=https://graphdb.lindas.admin.ch/repositories/lindas/rdf-graphs/service
+    GRAPH=https://lindas.admin.ch/fsvo/plant-protection-products
+    ```
+
+    Then trigger the upload to LINDAS:
 
     ``` bash
     python -m service.upload_graph
@@ -46,14 +55,14 @@ A Python module for converting Swiss plant protection product data from CSV form
 ``` bash
 psmv-rdf/
 ├── .github/
-├── data/           # any non-RDF data files
+├── README.md
+├── data/           # any non-RDF data files, used as input data
 │   ├── raw/        # input CSV files
-│   ├── mapping/    # yaml mapping files
-│   └── processed/  # intermediately generated CSV files
+│   └── mapping/    # yaml mapping files
 ├── services/
 │   └── pipeline.py       
 ├── src/
-│    ├── sparql     # SPARQL inference rules
+│    ├── sparql     # SPARQL queries and inference rules
 │    └── python/    # Python scripts for specific tasks
 ├── rdf/
 │   ├── ontology/   # OWL ontology documentation
@@ -64,20 +73,15 @@ psmv-rdf/
 ├── tests/
 ├── docs/           # project documentation
 ├── .gitignore
-├── README.md
 └── environment.yml
 ```
 
-## Ontology documentation
+## Documentation
 
 All ontology documentation files are written to `rdf/ontology`.
-You may inspect a visual representation of the ontology used here: <https://service.tib.eu/webvowl/#iri=https://raw.githubusercontent.com/BLV-OSAV-USAV/PSMV-RDF/refs/heads/main/rdf/ontology/core.ttl>
-
-## Data model
+[You may inspect a visual representation of the ontology used here.](https://service.tib.eu/webvowl/#iri=https://raw.githubusercontent.com/BLV-OSAV-USAV/PSMV-RDF/refs/heads/main/rdf/ontology/core.ttl)
 
 A more restricted data model is written in SHACL and [can be inspected here](https://blv-osav-usav.github.io/PSMV-RDF/shacl-documentation.html).
-
-## Dependencies
 
 Project dependencies are listed in [pyproject.toml](pyproject.toml).
 

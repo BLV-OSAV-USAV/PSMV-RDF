@@ -1,0 +1,56 @@
+PREFIX : <https://agriculture.ld.admin.ch/plant-protection/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <http://schema.org/>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+
+SELECT
+    ?class
+    ?instances
+    ?property
+    (CONCAT(STR(?p_inst), " (", STR(?percent), "%)") AS ?frequency)
+    ?min
+    ?avg
+    ?max
+FROM <https://lindas.admin.ch/foag/plant-protection>
+WHERE {  
+    {
+        SELECT ?class (COUNT(DISTINCT ?s) AS ?instances)
+        WHERE {
+            ?s rdf:type/rdfs:subClassOf* ?class .
+            FILTER(isIRI(?class))
+            FILTER NOT EXISTS {
+                ?class rdfs:subClassOf ?superclass .
+                FILTER(?superclass != ?class && ?superclass != owl:Thing && ?superclass != rdfs:Resource)
+            }
+        }
+        GROUP BY ?class
+    }
+    {
+        SELECT
+            ?class
+            ?property 
+            (MIN(?count) AS ?min) 
+            (ROUND(AVG(?count) * 100.0) / 100.0 AS ?avg) 
+            (MAX(?count) AS ?max) 
+            (COUNT(DISTINCT ?s) AS ?p_inst)
+        WHERE {      
+            {
+                SELECT ?class ?s ?property (COUNT(?o) AS ?count) WHERE {
+                    ?s rdf:type/rdfs:subClassOf* ?class .
+                    FILTER(isIRI(?class))
+                    FILTER NOT EXISTS {
+                        ?class rdfs:subClassOf ?superclass .
+                        FILTER(?superclass != ?class && ?superclass != owl:Thing && ?superclass != rdfs:Resource)
+                    }
+                    ?s ?property ?o .
+                }
+                GROUP BY ?class ?s ?property
+            }
+        }
+        GROUP BY ?class ?property
+  }
+  BIND((ROUND(1000.0 * ?p_inst / ?instances) / 10.0) AS ?percent)
+}
+ORDER BY DESC(?instances) ?class DESC(?percent)

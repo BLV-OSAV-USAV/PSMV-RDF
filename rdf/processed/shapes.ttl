@@ -127,16 +127,14 @@ shape:GHSStatement a sh:NodeShape ;
     rdfs:label "GHS-Hinweis"@de,
         "GHS statement"@en ;
     rdfs:comment "Encodes a standardized hazard or precautionary directive derived from the Globally Harmonized System of Classification and Labelling of Chemicals."@en ;
-    sh:property [ sh:datatype rdf:langString ;
-            sh:description "The localized text of the GHS statement."@en ;
-            sh:minCount 1 ;
-            sh:name "Name"@en ;
-            sh:path schema:name ],
-        [ sh:datatype xsd:string ;
+    sh:order 10 ;
+    sh:property [ sh:datatype xsd:string ;
             sh:description "The official alphanumeric GHS identifier code."@en ;
             sh:maxCount 1 ;
             sh:name "Identifier"@en ;
-            sh:path schema:identifier ] ;
+            sh:order 1 ;
+            sh:path schema:identifier ],
+        shape:multiLanguageName ;
     sh:targetClass ghs:GHSStatement .
 
 shape:HazardPictogram a sh:NodeShape ;
@@ -144,6 +142,7 @@ shape:HazardPictogram a sh:NodeShape ;
         "Hazard pictogram"@en ;
     rdfs:comment "A graphical composition intended to convey specific hazard information."@en ;
     sh:node shape:GHSStatement ;
+    sh:order 12 ;
     sh:property [ sh:message "Hazard pictograms must follow the identifier pattern 'GHS0X' where X is a digit from 1 to 9."@en ;
             sh:minCount 1 ;
             sh:path schema:identifier ;
@@ -153,7 +152,8 @@ shape:HazardPictogram a sh:NodeShape ;
             sh:minCount 1 ;
             sh:name "Image"@en ;
             sh:nodeKind sh:IRI ;
-            sh:path schema:image ] ;
+            sh:path schema:image ],
+        shape:multiLanguageName ;
     sh:targetClass ghs:HazardPictogram .
 
 shape:HazardStatement a sh:NodeShape ;
@@ -161,6 +161,7 @@ shape:HazardStatement a sh:NodeShape ;
         "Hazard statement"@en ;
     rdfs:comment "A standard phrase assigned to a hazard class and category that describes the nature of the hazards."@en ;
     sh:node shape:GHSStatement ;
+    sh:order 13 ;
     sh:property [ sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:path schema:identifier ;
@@ -178,32 +179,43 @@ It systematically links a target pest with the applicable cultivation domain and
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:name "Application Area"@en ;
+            sh:order 1 ;
             sh:path :applicationArea ],
-        [ sh:class :ApplicationComment ;
-            sh:name "Application Comment"@en ;
-            sh:path :applicationComment ],
         [ sh:class :Crop ;
             sh:minCount 1 ;
             sh:name "Cultivation"@en ;
+            sh:order 2 ;
             sh:path :crop ],
-        [ sh:maxCount 1 ;
-            sh:name "Dosage"@en ;
-            sh:node shape:QuantitativeValue ;
-            sh:path :dosage ],
-        [ sh:maxCount 1 ;
-            sh:name "Expenditure"@en ;
-            sh:node shape:QuantitativeValue ;
-            sh:path :expenditure ],
-        [ sh:class :Obligation ;
-            sh:name "Obligation"@en ;
-            sh:path :obligation ],
         [ sh:class :Pest ;
             sh:minCount 1 ;
             sh:name "Pest"@en ;
+            sh:order 3 ;
             sh:path :pest ],
+        [ sh:class :ApplicationComment ;
+            sh:name "Application Comment"@en ;
+            sh:order 4 ;
+            sh:path :applicationComment ],
+        [ sh:class :Obligation ;
+            sh:name "Obligation"@en ;
+            sh:order 5 ;
+            sh:path :obligation ],
         [ sh:maxCount 1 ;
-            sh:name "Waiting Period"@en ;
+            sh:name "Konzentration"@de,
+                "Dosage"@en ;
             sh:node shape:QuantitativeValue ;
+            sh:order 6 ;
+            sh:path :dosage ],
+        [ sh:maxCount 1 ;
+            sh:name "Aufwandmenge"@de,
+                "Expenditure"@en ;
+            sh:node shape:QuantitativeValue ;
+            sh:order 7 ;
+            sh:path :expenditure ],
+        [ sh:maxCount 1 ;
+            sh:name "Wartefrist"@de,
+                "Waiting Period"@en ;
+            sh:node shape:QuantitativeValue ;
+            sh:order 8 ;
             sh:path :waitingPeriod ] ;
     sh:targetClass :Indication .
 
@@ -211,15 +223,28 @@ shape:Ingredient a sh:NodeShape ;
     rdfs:label "Inhaltsstoff"@de,
         "Ingredient"@en ;
     rdfs:comment "Represents a constituent component of a product. It specifies both the underlying chemical or biological substance and its corresponding quantitative share within the final formulation."@en ;
+    sh:nodeKind sh:BlankNode ;
     sh:property [ sh:class :Substance ;
+            sh:description "The substance that makes up this part of the formulation."@en ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
-            sh:name "Substance"@en ;
+            sh:name "Wirkstoff"@de,
+                "Substance"@en ;
+            sh:node shape:Substance ;
+            sh:order 1 ;
             sh:path :substance ],
-        [ sh:minCount 1 ;
-            sh:name "Share (Quantitative Value)"@en ;
+        [ sh:description "The share of the substance of the total formulation, typically provided in g/L and/or percent."@en ;
+            sh:maxCount 2 ;
+            sh:minCount 0 ;
+            sh:name "Anteil"@de,
+                "Share"@en ;
             sh:node shape:QuantitativeValue ;
-            sh:path :share ] .
+            sh:order 2 ;
+            sh:path :share ;
+            sh:property [ sh:in ( unit:PERCENT unit:GM-PER-L ) ;
+                    sh:message "The unit of an ingredient share must be either percent or g/L."@en ;
+                    sh:path schema:unitCode ] ] ;
+    sh:targetClass :Ingredient .
 
 shape:Obligation a sh:NodeShape ;
     rdfs:label "Auflage"@de,
@@ -233,8 +258,7 @@ shape:Organization a sh:NodeShape ;
         "Organization"@en ;
     rdfs:comment "Represents a legally recognized entity or organization involved in the lifecycle of a plant protection product. This encompasses administrative and commercial actors such as authorisation holders, primary manufacturers, or registered distributors."@en ;
     sh:nodeKind sh:IRI ;
-    sh:or ( [ sh:pattern "^https://register\\.ld\\.admin\\.ch/zefix/company/" ;
-                sh:property [ sh:hasValue country:CHE ;
+    sh:or ( [ sh:property [ sh:hasValue country:CHE ;
                         sh:path ( schema:address schema:addressCountry ) ] ] [ sh:pattern "^https://agriculture\\.ld\\.admin\\.ch/plant-protection/company/" ;
                 sh:property [ sh:minCount 1 ;
                         sh:not [ sh:hasValue country:CHE ] ;
@@ -332,6 +356,7 @@ shape:PrecautionaryStatement a sh:NodeShape ;
         "Precautionary statement"@en ;
     rdfs:comment "A phrase that describes recommended measures to minimize or prevent adverse effects."@en ;
     sh:node shape:GHSStatement ;
+    sh:order 14 ;
     sh:property [ sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:path schema:identifier ;
@@ -346,18 +371,17 @@ shape:Product a sh:NodeShape ;
     sh:nodeKind sh:IRI ;
     sh:order 1 ;
     sh:pattern "^https://agriculture\\.ld\\.admin\\.ch/plant-protection/product/.+$" ;
-    sh:property [ sh:datatype xsd:string ;
+    sh:property [ sh:in ( :BCA :ABA :BBA :FBA :IVA :BIA :BMA :BNA :CPP :ACA :WAA :BAC :DIS :FUN :HER :INS :PHE :SBI :MOL :PDI :NEM :PGR :ROD :STP :SPP :VIR ) ;
+            sh:name "Product type"@en ;
+            sh:order 0 ;
+            sh:path :productType ],
+        [ sh:datatype xsd:string ;
             sh:description "Name of the product"@en ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:name "Name"@en ;
             sh:order 1 ;
             sh:path schema:name ],
-        [ sh:description "The indications outlining allowed applications."@en ;
-            sh:name "Indications"@en ;
-            sh:node shape:Indication ;
-            sh:order 10 ;
-            sh:path :indication ],
         [ sh:datatype xsd:date ;
             sh:description "The date by which the product must no longer be used, typically after the product registration has been revoked."@en ;
             sh:maxCount 1 ;
@@ -370,8 +394,7 @@ shape:Product a sh:NodeShape ;
             sh:name "Soldout deadline"@en ;
             sh:order 5 ;
             sh:path :soldOutDeadline ],
-        [ sh:minCount 1 ;
-            sh:name "Ingredient"@en ;
+        [ sh:name "Ingredient"@en ;
             sh:node shape:Ingredient ;
             sh:order 6 ;
             sh:path :ingredient ],
@@ -393,28 +416,51 @@ shape:Product a sh:NodeShape ;
             sh:minCount 1 ;
             sh:name "Producing country"@en ;
             sh:order 9 ;
-            sh:path schema:countryOfOrigin ] ;
+            sh:path schema:countryOfOrigin ],
+        [ sh:description "The indications outlining allowed applications."@en ;
+            sh:name "Indications"@en ;
+            sh:node shape:Indication ;
+            sh:order 10 ;
+            sh:path :indication ] ;
     sh:targetClass :Product .
 
 shape:QuantitativeValue a sh:NodeShape ;
     rdfs:label "Quantitativer Wert"@de,
         "Quantitative value"@en ;
-    rdfs:comment "Represents a measurable quantity, providing a strict numerical value coupled with its corresponding unit of measurement. It is routinely utilized to quantify precise attributes such as application dosages, required waiting periods, or formulation concentrations."@en ;
+    rdfs:comment "Represents a measurable quantity, providing a strict numerical (standard, minimal, or maximal) value coupled with a unit of measurement. It is used to quantify attributes such as application dosages, required waiting periods, or formulation concentrations in a machine-readable and consistent manner. Because it's important to be able to display a quantitative value exactly as it was written in the original admission documents, the quantitative value is also provided in textual form."@en ;
+    sh:or ( [ sh:property [ sh:minCount 1 ;
+                        sh:path schema:value ] ] [ sh:property [ sh:minCount 1 ;
+                        sh:path schema:minValue ] ] [ sh:property [ sh:minCount 1 ;
+                        sh:path schema:maxValue ] ] ) ;
     sh:property [ sh:datatype rdf:langString ;
             sh:description "The quantitative value in textual form as it was originally written in the admission documents."@en ;
             sh:maxCount 1 ;
             sh:name "Display text"@en ;
+            sh:order 1 ;
             sh:path schema:name ],
         [ sh:datatype xsd:decimal ;
             sh:maxCount 1 ;
-            sh:minCount 0 ;
             sh:minExclusive 0 ;
             sh:name "Value"@en ;
+            sh:order 2 ;
             sh:path schema:value ],
-        [ sh:in ( unit:PERCENT unit:GM-PER-L ) ;
+        [ sh:datatype xsd:decimal ;
             sh:maxCount 1 ;
+            sh:minExclusive 0 ;
+            sh:name "Minimum value"@en ;
+            sh:order 3 ;
+            sh:path schema:minValue ],
+        [ sh:datatype xsd:decimal ;
+            sh:maxCount 1 ;
+            sh:minExclusive 0 ;
+            sh:name "Maximum value"@en ;
+            sh:order 4 ;
+            sh:path schema:maxValue ],
+        [ sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:name "Unit"@en ;
+            sh:nodeKind sh:IRI ;
+            sh:order 5 ;
             sh:path schema:unitCode ] ;
     sh:targetClass schema:QuantitativeValue .
 
@@ -453,9 +499,8 @@ shape:SignalWord a sh:NodeShape ;
         "Signal word"@en ;
     rdfs:comment "A word used to indicate the relative level of severity of hazard and alert the reader to a potential hazard on the label."@en ;
     sh:node shape:GHSStatement ;
-    sh:property [ sh:maxCount 0 ;
-            sh:message "Signal words do not utilize alphanumeric identifiers in this scheme."@en ;
-            sh:path schema:identifier ] ;
+    sh:order 11 ;
+    sh:property shape:multiLanguageName ;
     sh:targetClass ghs:SignalWord .
 
 shape:Substance a sh:NodeShape ;
@@ -552,23 +597,31 @@ shape:identifier sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:name "Identifikator"@de,
         "Identifier"@en ;
+    sh:order 1 ;
     sh:path schema:identifier .
 
 shape:multiLanguageDescription sh:datatype rdf:langString ;
-    sh:maxCount 1 ;
-    sh:minCount 1 ;
-    sh:name "Description"@en ;
+    sh:description "Multilingual description. German ('de') and French ('fr') translations are mandatory. Italian ('it') and English ('en') are optional. Only one entry per language is allowed, and no other languages are permitted."@en ;
+    sh:languageIn ( "de" "fr" "it" "en" ) ;
+    sh:maxCount 4 ;
+    sh:minCount 2 ;
+    sh:name "Beschreibung"@de,
+        "Description"@en ;
+    sh:order 2 ;
     sh:path schema:description ;
-    sh:qualifiedMinCount 3 ;
-    sh:qualifiedValueShape [ sh:languageIn ( "de" "fr" "it" ) ] ;
+    sh:qualifiedMinCount 2 ;
+    sh:qualifiedValueShape [ sh:languageIn ( "de" "fr" ) ] ;
     sh:uniqueLang true .
 
 shape:multiLanguageName sh:datatype rdf:langString ;
-    sh:maxCount 1 ;
-    sh:minCount 1 ;
+    sh:description "Multilingual name. German ('de') and French ('fr') translations are mandatory. Italian ('it') and English ('en') are optional. Only one entry per language is allowed, and no other languages are permitted."@en ;
+    sh:languageIn ( "de" "fr" "it" "en" ) ;
+    sh:maxCount 4 ;
+    sh:minCount 2 ;
     sh:name "Name"@en ;
+    sh:order 2 ;
     sh:path schema:name ;
-    sh:qualifiedMinCount 3 ;
-    sh:qualifiedValueShape [ sh:languageIn ( "de" "fr" "it" ) ] ;
+    sh:qualifiedMinCount 2 ;
+    sh:qualifiedValueShape [ sh:languageIn ( "de" "fr" ) ] ;
     sh:uniqueLang true .
 

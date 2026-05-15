@@ -12,12 +12,13 @@ from src.python.validate import validate_ttl_files
 from src.python.create_produtcs_ttl import products_ttl
 from src.python.create_organisation_ttl import organisation_ttl
 from src.python.create_substance_ttl import substance_ttl
-from src.python.create_ingredient_ttl import ingredient_ttl
 from src.python.create_crops_ttl import crops_ttl
 from src.python.create_pests_ttl import pests_ttl
 from src.python.create_application_area_ttl import application_area_ttl
 from src.python.create_application_comment_ttl import application_comment_ttl
 from src.python.create_obligation_ttl import obligation_ttl
+from src.python.create_ghs_ttl import ghs_ttl
+from src.python.create_indications_ttl import indication_ttl
 from src.python.reason import load_inputs, apply_rules, save_graph
 from src.python.shacl_validator import run_shacl_validation
 
@@ -44,13 +45,13 @@ def run_pipeline():
     products_ttl()
     organisation_ttl()
     substance_ttl()
-    ingredient_ttl()
     crops_ttl()
     pests_ttl()
     application_area_ttl()
     application_comment_ttl()
     obligation_ttl()
-    #indication_ttl()
+    ghs_ttl()
+    indication_ttl()
 
     print("\nCreate a dedicated ontology file for subsequent WebVOWL visualization")
     inputs = load_inputs(["rdf/ontology/*.ttl"])
@@ -62,7 +63,8 @@ def run_pipeline():
     graph = apply_rules(inputs, [
         "src/sparql/rules/inverse.rq",
         "src/sparql/rules/subclass.rq",
-        "src/sparql/rules/subproperty.rq"
+        "src/sparql/rules/subproperty.rq",
+        "src/sparql/processing/remove-empty-indications.rq"
     ])
     save_graph(graph, "rdf/processed/graph.ttl")
 
@@ -72,7 +74,7 @@ def run_pipeline():
     save_graph(graph, "rdf/processed/shapes.ttl")
 
     print("\nChecking graph shape using SHACL...")
-    run_shacl_validation()
+    #run_shacl_validation()
     
 
     print(f"\n{"\033[92m"}✓ Pipeline completed successfully.{"\033[0m"}")

@@ -64,4 +64,28 @@ datasets:
     delimiter: ","
     encoding: "utf-8"
     description: "PSMV Export ProductIngredient Jan 2026"
-    
+  ProductCodeR:
+    input: "data/raw/ProductCodeR.csv"
+    delimiter: ","
+    encoding: "utf-8"
+    description: "PSMV Export Hazard Statements (R-Codes)"
+  ProductCodeS:
+    input: "data/raw/ProductCodeS.csv"
+    delimiter: ","
+    encoding: "utf-8"
+    description: "PSMV Export Precautionary Statements (S-Codes)"
+  ProductDangerSymbol:
+    input: "data/raw/ProductDangerSymbol.csv"
+    delimiter: ","
+    encoding: "utf-8"
+    description: "PSMV Export Hazard Pictograms"
+  ProductSignalWords:
+    input: "data/raw/ProductSignalWords.csv"
+    delimiter: ","
+    encoding: "utf-8"
+    description: "PSMV Export Signal Words"
+  ProductProductCategory:
+    input: "data/raw/ProductProductCategory.csv"
+    delimiter: ","
+    encoding: "utf-8"
+    description: "PSMV Export Product Categories"

@@ -88,9 +88,8 @@ nosetests.xml
 psmv-data.duckdb
 *.jar
 shacl-documentaion-log.txt
-rdf/data/
-rdf/processed/*
-!rdf/processed/graph.ttl
+rdf/data/**
+rdf/processed/**
 !rdf/processed/shapes.ttl
 
 # =============================================================================
@@ -99,6 +98,13 @@ rdf/processed/*
 
 tests/*
 !tests/test_connection.py
+
+# =============================================================================
+# Specific RDF files
+# =============================================================================
+
+# SHACL valication report
+rdf/processed/shacl-report.ttl
 
 # =============================================================================
 # Notes
