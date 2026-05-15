@@ -42,22 +42,20 @@ A Python module for converting Swiss plant protection product data from CSV form
     ``` bash
     python -m service.upload_graph
     ```
-    
-
 
 ## Project Structure
 
 ``` bash
 psmv-rdf/
 ├── .github/
-├── data/           # any non-RDF data files
+├── README.md
+├── data/           # any non-RDF data files, used as input data
 │   ├── raw/        # input CSV files
-│   ├── mapping/    # yaml mapping files
-│   └── processed/  # intermediately generated CSV files
+│   └── mapping/    # yaml mapping files
 ├── services/
 │   └── pipeline.py       
 ├── src/
-│    ├── sparql     # SPARQL inference rules
+│    ├── sparql     # SPARQL queries and inference rules
 │    └── python/    # Python scripts for specific tasks
 ├── rdf/
 │   ├── ontology/   # OWL ontology documentation
@@ -68,20 +66,15 @@ psmv-rdf/
 ├── tests/
 ├── docs/           # project documentation
 ├── .gitignore
-├── README.md
 └── environment.yml
 ```
 
-## Ontology documentation
+## Documentation
 
 All ontology documentation files are written to `rdf/ontology`.
-You may inspect a visual representation of the ontology used here: <https://service.tib.eu/webvowl/#iri=https://raw.githubusercontent.com/BLV-OSAV-USAV/PSMV-RDF/refs/heads/main/rdf/ontology/core.ttl>
+[You may inspect a visual representation of the ontology used here.](https://service.tib.eu/webvowl/#iri=https://raw.githubusercontent.com/BLV-OSAV-USAV/PSMV-RDF/refs/heads/main/rdf/ontology/core.ttl)
 
-## Data model
-
-Are more restricted data model is written in SHACL and [can be inspected here](https://blv-osav-usav.github.io/PSMV-RDF/shacl-documentation.html).
-
-## Dependencies
+A more restricted data model is written in SHACL and [can be inspected here](https://blv-osav-usav.github.io/PSMV-RDF/shacl-documentation.html).
 
 Project dependencies are listed in [pyproject.toml](pyproject.toml).
 
