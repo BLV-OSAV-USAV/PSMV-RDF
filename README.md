@@ -38,7 +38,7 @@ A Python module for converting Swiss plant protection product data from CSV form
 4. To upload the graph, first, place a `.env` file in the directory root:
 
     ``` bash
-    LINDAS_USER=lindas-foag-plant-protection
+    LINDAS_USER=********
     LINDAS_PASSWORD=************
     ENDPOINT=https://graphdb.lindas.admin.ch/repositories/lindas/rdf-graphs/service
     GRAPH=https://lindas.admin.ch/fsvo/plant-protection-products
