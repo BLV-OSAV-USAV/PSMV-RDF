@@ -114,3 +114,20 @@ ApplicationComment:
   NK_ApplicationComment: application_comment
   NK_Codetable: application_comment_id
   NK_Indication: indication
+
+ProductCodeR:
+  NK_Codetable: code_id
+  NK_PROD_REF: product_id
+
+ProductCodeS:
+  NK_codetable: code_id
+  NK_PROD_REF: product_id
+
+ProductDangerSymbol:
+  NK_Codetable: code_id
+  NK_PROD_REF: product_id
+
+ProductSignalWords:
+  NK_Codetable: code_id
+  NK_SignalWord: signal_word_id
+  NK_PROD_REF: product_id

@@ -12,32 +12,6 @@ from rdflib.namespace import NamespaceManager
 # local imports
 from src.python.utils.helper_functions import load_namespaces, load_rdf_mappings
 
-# Set namespaces
-namespaces = load_namespaces()
-
-BASE = namespaces["base"]
-PRODUCT = namespaces["product"]
-SUBSTANCE = namespaces["substance"]
-SCHEMA = namespaces["schema"]
-UNIT = namespaces["unit"]
-ZEFIX = namespaces["zefix"]
-COMPANY = namespaces["company"]
-COUNTRY = namespaces["country"]
-XSD = namespaces["xsd"]
-
-# Load all RDF mappings
-# Explicitly specify which namespace each mapping uses
-namespace_config = {
-    "country_mapping": "country",
-    "type_mapping": "base"
-}
-
-rdf_mappings = load_rdf_mappings(namespaces, namespace_map=namespace_config)  
-
-COUNTRY_MAPPING = rdf_mappings["country_mapping"]
-TYPE_MAPPING = rdf_mappings["type_mapping"]
-
-# Create Products
 def products_ttl(
     db_path = "data/processed/psmv-data.duckdb",
     product_organisation_link_path = "data/processed/ProductOrganisation.csv"):
@@ -45,6 +19,34 @@ def products_ttl(
     """
     Creates products_ttl
     """
+    # Set namespaces
+    namespaces = load_namespaces()
+
+    BASE = namespaces["base"]
+    PRODUCT = namespaces["product"]
+    SUBSTANCE = namespaces["substance"]
+    SCHEMA = namespaces["schema"]
+    UNIT = namespaces["unit"]
+    ZEFIX = namespaces["zefix"]
+    COMPANY = namespaces["company"]
+    COUNTRY = namespaces["country"]
+    XSD = namespaces["xsd"]
+    
+    # Required for GHS linking
+    CODE = namespaces.get("code", Namespace(str(BASE) + "code/"))
+
+    # Load all RDF mappings
+    # Explicitly specify which namespace each mapping uses
+    namespace_config = {
+        "country_mapping": "country",
+        "type_mapping": "base"
+    }
+
+    rdf_mappings = load_rdf_mappings(namespaces, namespace_map=namespace_config)  
+
+    COUNTRY_MAPPING = rdf_mappings["country_mapping"]
+    TYPE_MAPPING = rdf_mappings["type_mapping"]
+
     # Create empty graph
     graph = Graph()
     
@@ -56,6 +58,7 @@ def products_ttl(
     graph.bind("zefix", ZEFIX)
     graph.bind("unit", UNIT)
     graph.bind("country", COUNTRY)
+    graph.bind("code", CODE)
     graph.bind("rdfs", RDFS)
     graph.bind("xsd", XSD)
     graph.namespace_manager.bind("schema", SCHEMA, override=True, replace=True)
@@ -64,7 +67,30 @@ def products_ttl(
     con = duckdb.connect(db_path, read_only=True)
     products_df = con.execute("SELECT * FROM Product").df()
     pro_org_link_df = con.execute("SELECT * FROM ProductOrganisation").df()
+    
+    # Unify GHS mappings across the 4 newly added reference tables
+    ghs_links_query = """
+    SELECT product_id, code_id FROM ProductCodeR WHERE code_id IS NOT NULL AND code_id != ''
+    UNION ALL
+    SELECT product_id, code_id FROM ProductCodeS WHERE code_id IS NOT NULL AND code_id != ''
+    UNION ALL
+    SELECT product_id, code_id FROM ProductDangerSymbol WHERE code_id IS NOT NULL AND code_id != ''
+    UNION ALL
+    SELECT product_id, COALESCE(NULLIF(code_id, ''), signal_word_id) as code_id 
+    FROM ProductSignalWords 
+    WHERE COALESCE(NULLIF(code_id, ''), signal_word_id) IS NOT NULL AND COALESCE(NULLIF(code_id, ''), signal_word_id) != ''
+    """
+    ghs_df = con.execute(ghs_links_query).df()
     con.close()
+
+    # Pre-process GHS mappings for O(1) lookup
+    ghs_dict = {}
+    for _, row in ghs_df.iterrows():
+        pid = str(row["product_id"]).strip()
+        cid = str(row["code_id"]).strip()
+        if pid not in ghs_dict:
+            ghs_dict[pid] = set()
+        ghs_dict[pid].add(cid)
 
     # Create product triples
     for i, row in products_df.iterrows():
@@ -81,7 +107,7 @@ def products_ttl(
             
             # Case 1: Regular Product
             if raw_type == "REGULAR":
-                graph.add((product_uri, RDF.type, BASE.RegularProduct))  # ← added
+                graph.add((product_uri, RDF.type, BASE.RegularProduct))
                 if pd.notna(row.get("w_number")):
                     w_number_str = str(row.get("w_number")).strip()
                     fed_adm_num = f"W-{w_number_str}"
@@ -89,7 +115,7 @@ def products_ttl(
 
             # Case 2: Sale Permission
             elif raw_type == "SALE_PERMISSION":
-                graph.add((product_uri, RDF.type, BASE.SalePermission))  # ← added
+                graph.add((product_uri, RDF.type, BASE.SalePermission))
                 if pd.notna(row.get("w_number")):
                     w_number_str = str(row.get("w_number")).strip()
                     fed_adm_num = f"W-{w_number_str}"
@@ -97,7 +123,7 @@ def products_ttl(
 
             # Case 3: Parallel Import
             elif raw_type == "PARALLEL_IMPORT":
-                graph.add((product_uri, RDF.type, BASE.ParallelImport))  # ← added
+                graph.add((product_uri, RDF.type, BASE.ParallelImport))
                 if pd.notna(row.get("record_id")):
                     id_val = str(row.get("record_id")).strip()
                     graph.add((product_uri, BASE.federalAdmissionNumber, Literal(id_val, datatype=XSD.string)))
@@ -149,6 +175,11 @@ def products_ttl(
                 if product_id_str != ref_id_str:
                     ref_product_uri = PRODUCT[ref_id_str]
                     graph.add((product_uri, BASE.referenceProduct, ref_product_uri))
+                    
+            # Add GHS connections
+            if product_id_str in ghs_dict:
+                for code_id in ghs_dict[product_id_str]:
+                    graph.add((product_uri, BASE.ghs, CODE[code_id]))
 
         except Exception as error:
             print(f"Row {i} (Product {product_id_str}): {error}")
