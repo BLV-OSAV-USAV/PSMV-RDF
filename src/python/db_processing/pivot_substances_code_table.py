@@ -6,9 +6,10 @@ def process_substance_code():
     by merging ProductIngredient and Code tables in DuckDB.
     
     Note:
-    Substance has the IUPAC_name join condition on top of code_id.
-    So it should stay separate from pivot_indication_code_tables.
-    Mixing substance in would require a special case that breaks the pattern.
+    This process joins ProductIngredient with the subset of the Code table
+    where text_key is 'Substance', using the substance ID as the key.
+    This ensures that the correct multilingual labels are attached to each
+    ingredient record.
     """
     con = duckdb.connect('data/processed/psmv-data.duckdb')
 
@@ -19,9 +20,8 @@ def process_substance_code():
         c.value,
         c.language
     FROM ProductIngredient i
-    LEFT JOIN Code c
-        ON i.nk_codetable_substance_id = c.code_id
-        AND i.IUPAC_name = c.IUPAC_name;
+    LEFT JOIN (SELECT * FROM Code WHERE text_key = 'Substance') c
+        ON i.nk_codetable_substance_id = c.code_id;
 
     CREATE OR REPLACE VIEW pivot_vals AS
     SELECT
