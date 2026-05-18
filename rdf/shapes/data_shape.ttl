@@ -214,7 +214,7 @@ shape:ParallelImport a sh:NodeShape ;
     ] ;
     sh:property [
         sh:path :referenceProduct ;
-        sh:node shape:Product ;
+        sh:node shape:RegularProduct ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
     ] ;
