@@ -1,0 +1,10 @@
+PREFIX : <https://agriculture.ld.admin.ch/plant-protection/>
+DELETE {
+    ?Indication :obligation ?Obligation .
+}
+WHERE {
+  ?Indication :obligation ?Obligation .
+  FILTER NOT EXISTS {
+    ?Obligation ?p ?o .
+  }
+}
