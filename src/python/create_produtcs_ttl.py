@@ -49,6 +49,7 @@ def products_ttl(
     COUNTRY_MAPPING = rdf_mappings["country_mapping"]
     TYPE_MAPPING = rdf_mappings["type_mapping"]
     UNIT_MAPPING = rdf_mappings["unit_mapping"]
+
     # Dict comprehension to ensure safe uppercase key matching
     CATEGORY_MAPPING = {k.upper(): v for k, v in rdf_mappings.get("category_mapping", {}).items()}
 
@@ -74,20 +75,8 @@ def products_ttl(
     pro_org_link_df = con.execute("SELECT * FROM ProductOrganisation").df()
     ingredient_df = con.execute("SELECT * FROM ProductIngredient").df()
     prod_cat_df = con.execute("SELECT * FROM ProductProductCategory").df()
-    
-    # Unify GHS mappings across the 4 newly added reference tables
-    ghs_links_query = """
-    SELECT product_id, code_id FROM ProductCodeR WHERE code_id IS NOT NULL AND code_id != ''
-    UNION ALL
-    SELECT product_id, code_id FROM ProductCodeS WHERE code_id IS NOT NULL AND code_id != ''
-    UNION ALL
-    SELECT product_id, code_id FROM ProductDangerSymbol WHERE code_id IS NOT NULL AND code_id != ''
-    UNION ALL
-    SELECT product_id, COALESCE(NULLIF(code_id, ''), signal_word_id) as code_id 
-    FROM ProductSignalWords 
-    WHERE COALESCE(NULLIF(code_id, ''), signal_word_id) IS NOT NULL AND COALESCE(NULLIF(code_id, ''), signal_word_id) != ''
-    """
-    ghs_df = con.execute(ghs_links_query).df()
+    ghs_df= con.execute("SELECT * FROM ProductGHS").df()
+
     con.close()
 
     # Pre-process GHS mappings for O(1) lookup

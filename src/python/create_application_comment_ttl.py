@@ -37,21 +37,9 @@ def application_comment_ttl(
     graph.bind("unit", UNIT)
     graph.namespace_manager.bind("schema", SCHEMA, override=True, replace=True)
 
-    # Read data using a pivoting approach to group translations into a single row
+    # Read data
     con = duckdb.connect(db_path, read_only=True)
-    query = """
-    SELECT 
-        code_id,
-        MAX(CASE WHEN language = 'en' THEN value END) AS EN,
-        MAX(CASE WHEN language = 'de' THEN value END) AS DE,
-        MAX(CASE WHEN language = 'fr' THEN value END) AS FR,
-        MAX(CASE WHEN language = 'it' THEN value END) AS IT,
-        MAX(min_interval_between_uses) AS min_interval_between_uses
-    FROM Code
-    WHERE text_key = 'ApplicationComment'
-    GROUP BY code_id
-    """
-    app_comment_df = con.execute(query).df()
+    app_comment_df = con.execute("SELECT * FROM ApplicationCommentCode").df()
     con.close()
 
     # Create application comment triples

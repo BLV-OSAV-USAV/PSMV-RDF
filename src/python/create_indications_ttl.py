@@ -43,64 +43,19 @@ def indication_ttl(
     graph.bind("code", CODE)
     graph.namespace_manager.bind("schema", SCHEMA, override=True, replace=True)
 
+    # Read data
     con = duckdb.connect(db_path, read_only=True)
     
-    # 1. Product to Indication
-    try:
-        prod_ind_df = con.execute(
-            "SELECT DISTINCT product_id, product_indicator FROM Product WHERE product_id IS NOT NULL AND product_indicator IS NOT NULL"
-        ).df()
-    except Exception as e:
-        print(f"Warning: Could not fetch Product-Indication relations: {e}")
-        prod_ind_df = pd.DataFrame(columns=["product_id", "product_indicator"])
-
-    # 2. Indication Cultures (Crops)
-    try:
-        cult_df = con.execute(
-            "SELECT DISTINCT indication, culture_id FROM IndicationCulture WHERE indication IS NOT NULL AND culture_id IS NOT NULL"
-        ).df()
-    except Exception as e:
-        print(f"Warning: Could not fetch IndicationCulture: {e}")
-        cult_df = pd.DataFrame(columns=["indication", "culture_id"])
-
-    # 3. Indication Pests
-    try:
-        pest_df = con.execute(
-            "SELECT DISTINCT indication, indication_pest_id FROM IndicationPest WHERE indication IS NOT NULL AND indication_pest_id IS NOT NULL"
-        ).df()
-    except Exception as e:
-        print(f"Warning: Could not fetch IndicationPest: {e}")
-        pest_df = pd.DataFrame(columns=["indication", "indication_pest_id"])
-
-    # 4. Indication Obligations
-    try:
-        obl_df = con.execute(
-            "SELECT DISTINCT indication, indication_obligation_id FROM IndicationObligation WHERE indication IS NOT NULL AND indication_obligation_id IS NOT NULL"
-        ).df()
-    except Exception as e:
-        print(f"Warning: Could not fetch IndicationObligation: {e}")
-        obl_df = pd.DataFrame(columns=["indication", "indication_obligation_id"])
-
-    # 5. Application Areas
-    try:
-        app_area_df = con.execute(
-            "SELECT DISTINCT indication, application_area_id FROM ApplicationArea WHERE indication IS NOT NULL AND application_area_id IS NOT NULL"
-        ).df()
-    except Exception as e:
-        print(f"Warning: Could not fetch ApplicationArea: {e}")
-        app_area_df = pd.DataFrame(columns=["indication", "application_area_id"])
-
-    # 6. Application Comments
-    try:
-        app_comment_df = con.execute(
-            "SELECT DISTINCT indication, application_comment_id FROM ApplicationComment WHERE indication IS NOT NULL AND application_comment_id IS NOT NULL"
-        ).df()
-    except Exception as e:
-        print(f"Warning: Could not fetch ApplicationComment: {e}")
-        app_comment_df = pd.DataFrame(columns=["indication", "application_comment_id"])
+    prod_ind_df    = con.execute("SELECT * FROM ProductIndication").df()
+    cult_df        = con.execute("SELECT * FROM IndicationCultureLink").df()
+    pest_df        = con.execute("SELECT * FROM IndicationPestLink").df()
+    obl_df         = con.execute("SELECT * FROM IndicationObligationLink").df()
+    app_area_df    = con.execute("SELECT * FROM ApplicationAreaLink").df()
+    app_comment_df = con.execute("SELECT * FROM ApplicationCommentLink").df()
 
     con.close()
 
+    # Ensure indication
     seen_indications = set()
 
     def ensure_indication(ind_id):

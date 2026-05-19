@@ -311,7 +311,7 @@ shape:ParallelImport a sh:NodeShape ;
             sh:pattern "^[A-Z]-[0-9]{4}(-[0-9]{1,2})?$" ],
         [ sh:maxCount 1 ;
             sh:minCount 1 ;
-            sh:node shape:Product ;
+            sh:node shape:RegularProduct ;
             sh:path :referenceProduct ],
         [ sh:datatype xsd:string ;
             sh:description "An identifier assigned by any foreign authority."@en ;

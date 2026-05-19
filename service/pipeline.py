@@ -26,6 +26,13 @@ from src.python.db_processing.preprocess_data import process_data
 from src.python.db_processing.pivot_substances_code_table import process_substance_code
 from src.python.db_processing.enrich_substances import load_substances_mapping
 from src.python.db_processing.pivot_indication_code_tables import process_indication_code
+from src.python.db_processing.process_product_code import process_product_code 
+from src.python.db_processing.process_pest_code import process_pest_code 
+
+process_obligation_code
+process_indication_links
+process_application_comment_code
+
 from src.python.utils.helper_functions import *
 
 def run_pipeline():
@@ -36,6 +43,9 @@ def run_pipeline():
     print("\nRun database operations")
     process_substance_code()
     process_indication_code()
+    process_product_code()
+    process_pest_code()
+    process_obligation_code()
     load_substances_mapping()
     
     print("\nValidate syntax of turtle files")

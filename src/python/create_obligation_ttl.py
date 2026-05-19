@@ -33,21 +33,9 @@ def obligation_ttl(
     graph.bind("code", CODE)
     graph.namespace_manager.bind("schema", SCHEMA, override=True, replace=True)
 
-    # Read data using a pivoting approach
+    # Read data
     con = duckdb.connect(db_path, read_only=True)
-    query = """
-    SELECT 
-        code_id,
-        MAX(code_value) AS code_value,
-        MAX(CASE WHEN language = 'en' THEN value END) AS EN,
-        MAX(CASE WHEN language = 'de' THEN value END) AS DE,
-        MAX(CASE WHEN language = 'fr' THEN value END) AS FR,
-        MAX(CASE WHEN language = 'it' THEN value END) AS IT
-    FROM Code
-    WHERE text_key = 'Obligation'
-    GROUP BY code_id
-    """
-    obligation_df = con.execute(query).df()
+    obligation_df = con.execute("SELECT * FROM ObligationCode").df()
     con.close()
 
     # Create triples
