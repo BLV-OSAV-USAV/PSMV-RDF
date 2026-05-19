@@ -23,15 +23,16 @@ from src.python.reason import load_inputs, apply_rules, save_graph
 from src.python.shacl_validator import run_shacl_validation
 
 from src.python.db_processing.preprocess_data import process_data
-from src.python.db_processing.pivot_substances_code_table import process_substance_code
+from src.python.db_processing.process_substance_code import process_substance_code
 from src.python.db_processing.enrich_substances import load_substances_mapping
-from src.python.db_processing.pivot_indication_code_tables import process_indication_code
+from src.python.db_processing.process_indication_code import process_indication_code
 from src.python.db_processing.process_product_code import process_product_code 
 from src.python.db_processing.process_pest_code import process_pest_code 
-
-process_obligation_code
-process_indication_links
-process_application_comment_code
+from src.python.db_processing.process_obligation_code import process_obligation_code
+from src.python.db_processing.process_indication_links import process_indication_links
+from src.python.db_processing.process_application_comment_code import process_application_comment_code
+from src.python.db_processing.process_organisation import process_organisation
+from src.python.db_processing.process_culture_code import process_culture_code 
 
 from src.python.utils.helper_functions import *
 
@@ -46,7 +47,11 @@ def run_pipeline():
     process_product_code()
     process_pest_code()
     process_obligation_code()
+    process_organisation()
+    process_indication_links()
+    process_culture_code()
     load_substances_mapping()
+    process_application_comment_code()
     
     print("\nValidate syntax of turtle files")
     validate_ttl_files("rdf")
