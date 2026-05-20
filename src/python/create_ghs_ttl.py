@@ -38,7 +38,7 @@ def ghs_ttl(
 
     # Read data
     con = duckdb.connect(db_path, read_only=True)
-    ghs_df = con.execute("SELECT * FROM ProductGHS").df()
+    ghs_df = df = con.execute("SELECT * FROM ProductGHS").df()
     con.close()
 
     type_mapping = {
