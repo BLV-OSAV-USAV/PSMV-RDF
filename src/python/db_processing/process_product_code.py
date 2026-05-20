@@ -49,7 +49,7 @@ def process_product_code(db_path: str = 'data/processed/psmv-data.duckdb'):
     """)
 
     count = con.execute("SELECT COUNT(*) FROM ProductGHS").fetchone()[0]
-    print(f"[i] ProductGHS_RDF created with {count} rows.")
+    print(f"[i] ProductGHS created with {count} rows.")
 
     con.close()
 
