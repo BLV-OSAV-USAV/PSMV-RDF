@@ -72,8 +72,8 @@ psmv-rdf/
 │   └── processed/  # any automatically written/derived/merged turtle files
 ├── tests/
 ├── docs/           # project documentation
-├── .gitignore
-└── environment.yml
+├── LICENSE
+└── .gitignore
 ```
 
 ## Documentation
