@@ -54,6 +54,7 @@ def run_pipeline():
 
     print("\nRun database operations")
     process_substance_code()
+    load_substances_mapping()
     process_indication_code()
     process_product_code()
     process_pest_code()
@@ -61,7 +62,7 @@ def run_pipeline():
     process_organisation()
     process_indication_links()
     process_culture_code()
-    load_substances_mapping()
+    
     process_application_comment_code()
     
     print("\nValidate syntax of turtle files")

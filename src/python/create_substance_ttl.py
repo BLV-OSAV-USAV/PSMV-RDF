@@ -71,6 +71,15 @@ def substance_ttl(
     # Read data
     con = duckdb.connect(db_path, read_only=True)
     ingredient_df = con.execute("SELECT * FROM ProductIngredientCode").df()
+
+    print(ingredient_df["DE"].isna().sum())
+    test_df = con.execute("""
+SELECT COUNT(*) AS missing_de
+FROM ProductIngredientCode
+WHERE DE IS NULL
+""").fetchone()
+    print(test_df)
+
     con.close()
 
     # Deduplicate nk_codetable_substance_id

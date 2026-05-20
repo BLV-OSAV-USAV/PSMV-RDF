@@ -84,10 +84,10 @@ def load_substances_mapping(
     
     after = con.execute("SELECT COUNT(*) FROM ProductIngredientCode").fetchone()[0]
 
-
     con.close()
     print(f"[i] Inserted {len(result)} rows into '{db_path}' (table: substances_mapping).")
     print(f"[i] ProductIngredientCode: {before} rows before → {after} rows after replacement.")
+    
 
 if __name__ == "__main__":
     load_substances_mapping()
