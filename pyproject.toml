@@ -36,11 +36,12 @@ dev = [
 ]
 
 [project.scripts]
-# Allows running the pipeline from the command line after install:
-# $ psmv-rdf
-psmv-rdf = "src.python.pipeline:main"
+psmv-rdf = "service.pipeline:run_pipeline"
 
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["src*"]
 
+[tool.setuptools_scm]
+version_scheme = "guess-next-dev"
+local_scheme = "no-local-version"
