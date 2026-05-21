@@ -37,6 +37,7 @@ def application_area_ttl(
     # Read data
     con = duckdb.connect(db_path, read_only=True)
     app_area_df = con.execute("SELECT * FROM ApplicationAreaCode").df()
+    print(app_area_df)
     con.close()
 
     # Create application area triples
