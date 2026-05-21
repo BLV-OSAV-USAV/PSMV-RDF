@@ -13,17 +13,19 @@ from pyshacl import validate as pyshacl_validate
 from src.python.utils.helper_functions import parse_phone_numbers, ensure_jar, load_rdf_mappings, load_namespaces
 
 from src.python.db_processing.preprocess_data import process_data
-from src.python.db_processing.process_substance_code import process_substance_code
 from src.python.db_processing.process_indication_code import process_indication_code
+from src.python.db_processing.process_indication_links import process_indication_links
 from src.python.db_processing.process_product_code import process_product_code
 from src.python.db_processing.process_pest_code import process_pest_code
 from src.python.db_processing.process_obligation_code import process_obligation_code
 from src.python.db_processing.process_culture_code import process_culture_code
 from src.python.db_processing.process_organisation import process_organisation
+from src.python.db_processing.process_application_area_code import process_application_area_code
 from src.python.db_processing.process_application_comment_code import process_application_comment_code
 
+# Substances
+from src.python.db_processing.process_substance_code import process_substance_code
 from src.python.db_processing.enrich_substances import load_substances_mapping
-from src.python.db_processing.process_indication_links import process_indication_links
 
 # Class modules
 from src.python.create_produtcs_ttl import products_ttl
@@ -62,7 +64,7 @@ def run_pipeline():
     process_organisation()
     process_indication_links()
     process_culture_code()
-    
+    process_application_area_code()
     process_application_comment_code()
     
     print("\nValidate syntax of turtle files")
