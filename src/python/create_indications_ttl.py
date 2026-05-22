@@ -57,11 +57,12 @@ def indication_ttl(
     ind_time_masure_df = con.execute("SELECT * FROM IndicationTimeMeasureCode").df()
     ind_clt_df = con.execute("SELECT * FROM IndicationCultureCode").df()
     ind_clt_frm_df = con.execute("SELECT * FROM IndicationCultureFormCode").df()
-    ind_clt_obl_df = con.execute("SELECT * FROM IndicationObligationCode").df()
+    ind_obl_df = con.execute("SELECT * FROM IndicationObligationCode").df()
+    ind_pst = con.execute("SELECT * FROM IndicationPestCode").df()
     
-    print(ind_measure_df.columns)
-    print(ind_measure_df.head(10))
-    #ind_measure_df.to_csv("ind_measure_df.csv", index=False)
+    #print(ind_pst.columns)
+    #print(ind_pst.head(10))
+    #ind_pst.to_csv("ind_pst.csv", index=False)
     #ind_time_masure_df.to_csv("ind_time_masure_df.csv", index=False)
     #ind_clt_df.to_csv("ind_clt_df.csv", index=False)
     #ind_clt_obl_df.to_csv("ind_clt_obl_df.csv", index=False)
@@ -92,14 +93,6 @@ def indication_ttl(
         if ind_id and cult_id:
             ind_uri = ensure_indication(ind_id)
             graph.add((ind_uri, BASE.crop, CROP[cult_id]))
-
-    # Map Indication -> Pest
-    for _, row in pest_df.iterrows():
-        ind_id = str(row["indication"]).strip()
-        pest_id = str(row["indication_pest_id"]).strip()
-        if ind_id and pest_id:
-            ind_uri = ensure_indication(ind_id)
-            graph.add((ind_uri, BASE.pest, PEST[pest_id]))
 
     # Map Indication -> Obligation
     for _, row in obl_df.iterrows():
@@ -143,32 +136,56 @@ def indication_ttl(
             if not match.empty:
                 m_row = match.iloc[0]
                 measure_node = BNode()
-                graph.add((indication_uri, BASE.measure, measure_node))
-                graph.add((measure_node, RDF.type, BASE.measure))
+                graph.add((indication_uri, BASE.Measure, measure_node))
+                graph.add((measure_node, RDF.type, BASE.Measure))
 
-                if pd.notna(m_row.get("EN")): graph.add((measure_node, SCHEMA.name, Literal(str(m_row["EN"]).strip(), lang="en")))
-                if pd.notna(m_row.get("DE")): graph.add((measure_node, SCHEMA.name, Literal(str(m_row["DE"]).strip(), lang="de")))
-                if pd.notna(m_row.get("FR")): graph.add((measure_node, SCHEMA.name, Literal(str(m_row["FR"]).strip(), lang="fr")))
-                if pd.notna(m_row.get("IT")): graph.add((measure_node, SCHEMA.name, Literal(str(m_row["IT"]).strip(), lang="it")))
+                if pd.notna(m_row.get("EN")): 
+                    graph.add((measure_node, SCHEMA.name, Literal(str(m_row["EN"]).strip(), lang="en")))
+                if pd.notna(m_row.get("DE")): 
+                    graph.add((measure_node, SCHEMA.name, Literal(str(m_row["DE"]).strip(), lang="de")))
+                if pd.notna(m_row.get("FR")): 
+                    graph.add((measure_node, SCHEMA.name, Literal(str(m_row["FR"]).strip(), lang="fr")))
+                if pd.notna(m_row.get("IT")): 
+                    graph.add((measure_node, SCHEMA.name, Literal(str(m_row["IT"]).strip(), lang="it")))
 
 
             # Time Measure
             match_time = ind_time_masure_df[ind_time_masure_df["indication"].astype(str).str.strip() == indication_id_str]
 
             if not match_time.empty:
-                mt_row = match_time.iloc[0]  # separate variable, no bleed
-                time_measure_node = BNode()  # separate node
-                graph.add((indication_uri, BASE.timeMeasure, time_measure_node))  # separate predicate
-                graph.add((time_measure_node, RDF.type, BASE.timeMeasure))
+                mt_row = match_time.iloc[0]
+                time_measure_node = BNode()
+                graph.add((indication_uri, BASE.TimeMeasure, time_measure_node)) 
+                graph.add((time_measure_node, RDF.type, BASE.TimeMeasure))
 
-                if pd.notna(mt_row.get("EN")): graph.add((time_measure_node, SCHEMA.name, Literal(str(mt_row["EN"]).strip(), lang="en")))
-                if pd.notna(mt_row.get("DE")): graph.add((time_measure_node, SCHEMA.name, Literal(str(mt_row["DE"]).strip(), lang="de")))
-                if pd.notna(mt_row.get("FR")): graph.add((time_measure_node, SCHEMA.name, Literal(str(mt_row["FR"]).strip(), lang="fr")))
-                if pd.notna(mt_row.get("IT")): graph.add((time_measure_node, SCHEMA.name, Literal(str(mt_row["IT"]).strip(), lang="it")))
+                if pd.notna(mt_row.get("EN")): 
+                    graph.add((time_measure_node, SCHEMA.name, Literal(str(mt_row["EN"]).strip(), lang="en")))
+                if pd.notna(mt_row.get("DE")): 
+                    graph.add((time_measure_node, SCHEMA.name, Literal(str(mt_row["DE"]).strip(), lang="de")))
+                if pd.notna(mt_row.get("FR")): 
+                    graph.add((time_measure_node, SCHEMA.name, Literal(str(mt_row["FR"]).strip(), lang="fr")))
+                if pd.notna(mt_row.get("IT")): 
+                    graph.add((time_measure_node, SCHEMA.name, Literal(str(mt_row["IT"]).strip(), lang="it")))
 
 
-            # Indication 
+            # Pest Type 
+            pest_matches = ind_pst[ind_pst["indication"].astype(str).str.strip() == indication_id_str]
 
+            for _, pest_row in pest_matches.iterrows():
+                pest_id = str(pest_row["indication_pest_id"]).strip()
+                if not pest_id:
+                    continue
+
+                pest_uri = PEST[pest_id]
+
+                rel_node = BNode()
+                graph.add((indication_uri, BASE.indicationPest, rel_node))
+
+                graph.add((rel_node, RDF.type, BASE.IndicationPest))
+                graph.add((rel_node, BASE.pest, pest_uri))
+
+                if pd.notna(pest_row.get("pest_type")):
+                    graph.add((rel_node,BASE.pestType,Literal(str(pest_row["pest_type"]).strip())))
 
         except Exception as error:
             print(f"Row {i} (INDICATION {indication_id_str}): {error}")
