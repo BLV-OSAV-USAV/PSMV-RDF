@@ -68,7 +68,7 @@ def indication_ttl(
 
     # Map Product -> Indication
     for _, row in prod_ind_df.iterrows():
-        prod_id = str(row["product_id"]).strip()
+        prod_id = str(row["product_ref_or_id"]).strip()
         ind_id = str(row["product_indicator"]).strip()
         if prod_id and ind_id:
             ind_uri = ensure_indication(ind_id)

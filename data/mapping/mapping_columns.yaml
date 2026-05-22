@@ -117,21 +117,21 @@ ApplicationComment:
 
 ProductCodeR:
   NK_Codetable: code_id
-  NK_PROD_REF: product_id
+  NK_PROD_REF: product_ref_or_id
 
 ProductCodeS:
   NK_codetable: code_id
-  NK_PROD_REF: product_id
+  NK_PROD_REF: product_ref_or_id
 
 ProductDangerSymbol:
   NK_Codetable: code_id
-  NK_PROD_REF: product_id
+  NK_PROD_REF: product_ref_or_id
 
 ProductSignalWords:
   NK_Codetable: code_id
   NK_SignalWord: signal_word_id
-  NK_PROD_REF: product_id
+  NK_PROD_REF: product_ref_or_id
 
 ProductProductCategory:
   NK_Codetable: code_id
-  NK_Product: product_id
+  NK_Product: product_ref_or_id

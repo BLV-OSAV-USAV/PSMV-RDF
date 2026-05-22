@@ -6,7 +6,7 @@ def process_product_code(db_path: str = 'data/processed/psmv-data.duckdb'):
     con.execute("""
     CREATE OR REPLACE TABLE ProductGHS AS
     SELECT 
-        p.product_id,
+        p.product_ref_or_id,
         p.code_id,
         c.text_key,
         c.code_value,
@@ -15,23 +15,23 @@ def process_product_code(db_path: str = 'data/processed/psmv-data.duckdb'):
         c.FR,
         c.IT
     FROM (
-        SELECT product_id, code_id FROM ProductCodeR
-        WHERE product_id IS NOT NULL AND code_id IS NOT NULL
+        SELECT product_ref_or_id, code_id FROM ProductCodeR
+        WHERE product_ref_or_id IS NOT NULL AND code_id IS NOT NULL
 
         UNION ALL
 
-        SELECT product_id, code_id FROM ProductCodeS
-        WHERE product_id IS NOT NULL AND code_id IS NOT NULL
+        SELECT product_ref_or_id, code_id FROM ProductCodeS
+        WHERE product_ref_or_id IS NOT NULL AND code_id IS NOT NULL
 
         UNION ALL
 
-        SELECT product_id, code_id FROM ProductDangerSymbol
-        WHERE product_id IS NOT NULL AND code_id IS NOT NULL
+        SELECT product_ref_or_id, code_id FROM ProductDangerSymbol
+        WHERE product_ref_or_id IS NOT NULL AND code_id IS NOT NULL
 
         UNION ALL
 
-        SELECT product_id, code_id FROM ProductSignalWords
-        WHERE product_id IS NOT NULL AND code_id IS NOT NULL
+        SELECT product_ref_or_id, code_id FROM ProductSignalWords
+        WHERE product_ref_or_id IS NOT NULL AND code_id IS NOT NULL
     ) p
     LEFT JOIN (
         SELECT 

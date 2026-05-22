@@ -2,7 +2,7 @@ import duckdb
 
 def process_indication_links(db_path: str = 'data/processed/psmv-data.duckdb'):
     tables = {
-        "ProductIndication":       "SELECT DISTINCT product_id, product_indicator FROM Product WHERE product_id IS NOT NULL AND product_indicator IS NOT NULL",
+        "ProductIndication":       "SELECT DISTINCT product_ref_or_id, product_indicator FROM Product WHERE product_ref_or_id IS NOT NULL AND product_indicator IS NOT NULL",
         "IndicationCultureLink":   "SELECT DISTINCT indication, culture_id FROM IndicationCulture WHERE indication IS NOT NULL AND culture_id IS NOT NULL",
         "IndicationPestLink":      "SELECT DISTINCT indication, indication_pest_id FROM IndicationPest WHERE indication IS NOT NULL AND indication_pest_id IS NOT NULL",
         "IndicationObligationLink":"SELECT DISTINCT indication, indication_obligation_id FROM IndicationObligation WHERE indication IS NOT NULL AND indication_obligation_id IS NOT NULL",
