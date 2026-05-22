@@ -10,8 +10,6 @@ def process_indication_code():
         "IndicationTimeMeasure": "indication_time_measure_id",
         "IndicationObligation":  "indication_obligation_id",
         "IndicationPest":        "indication_pest_id",
-        "ApplicationArea":       "application_area_id",
-        "ApplicationComment":    "application_comment_id",
     }
 
     for table, id_col in tables.items():

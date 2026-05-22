@@ -3,7 +3,7 @@ import sys
 import duckdb
 from pathlib import Path
 import pandas as pd
-from rdflib import Graph, Namespace, URIRef, Literal
+from rdflib import Graph, Namespace, URIRef, Literal, BNode
 from rdflib.namespace import RDF
 from rdflib.namespace import NamespaceManager
 
@@ -52,8 +52,19 @@ def indication_ttl(
     obl_df         = con.execute("SELECT * FROM IndicationObligationLink").df()
     app_area_df    = con.execute("SELECT * FROM ApplicationAreaLink").df()
     app_comment_df = con.execute("SELECT * FROM ApplicationCommentLink").df()
-
-    con.close()
+    
+    ind_measure_df  = con.execute("SELECT * FROM IndicationMeasureCode").df()
+    ind_time_masure_df = con.execute("SELECT * FROM IndicationTimeMeasureCode").df()
+    ind_clt_df = con.execute("SELECT * FROM IndicationCultureCode").df()
+    ind_clt_frm_df = con.execute("SELECT * FROM IndicationCultureFormCode").df()
+    ind_clt_obl_df = con.execute("SELECT * FROM IndicationObligationCode").df()
+    
+    print(ind_measure_df.columns)
+    print(ind_measure_df.head(10))
+    #ind_measure_df.to_csv("ind_measure_df.csv", index=False)
+    #ind_time_masure_df.to_csv("ind_time_masure_df.csv", index=False)
+    #ind_clt_df.to_csv("ind_clt_df.csv", index=False)
+    #ind_clt_obl_df.to_csv("ind_clt_obl_df.csv", index=False)
 
     # Ensure indication
     seen_indications = set()
@@ -113,6 +124,55 @@ def indication_ttl(
         if ind_id and comment_id:
             ind_uri = ensure_indication(ind_id)
             graph.add((ind_uri, BASE.applicationComment, CODE[comment_id]))
+
+   # Create indication triples
+    all_indications = pd.DataFrame(list(seen_indications), columns=["indication"])
+    for i, row in all_indications.iterrows():
+        try: 
+            if pd.isna(row.get("indication")):
+                continue
+            
+            # Add Identifier
+            indication_id_str = str(row.get("indication")).strip()
+            indication_uri = INDICATION[indication_id_str]
+            graph.add((indication_uri, SCHEMA.identifier, Literal(indication_id_str)))
+
+            # Measure
+            match = ind_measure_df[ind_measure_df["indication"].astype(str).str.strip() == indication_id_str]
+
+            if not match.empty:
+                m_row = match.iloc[0]
+                measure_node = BNode()
+                graph.add((indication_uri, BASE.measure, measure_node))
+                graph.add((measure_node, RDF.type, BASE.measure))
+
+                if pd.notna(m_row.get("EN")): graph.add((measure_node, SCHEMA.name, Literal(str(m_row["EN"]).strip(), lang="en")))
+                if pd.notna(m_row.get("DE")): graph.add((measure_node, SCHEMA.name, Literal(str(m_row["DE"]).strip(), lang="de")))
+                if pd.notna(m_row.get("FR")): graph.add((measure_node, SCHEMA.name, Literal(str(m_row["FR"]).strip(), lang="fr")))
+                if pd.notna(m_row.get("IT")): graph.add((measure_node, SCHEMA.name, Literal(str(m_row["IT"]).strip(), lang="it")))
+
+
+            # Time Measure
+            match_time = ind_time_masure_df[ind_time_masure_df["indication"].astype(str).str.strip() == indication_id_str]
+
+            if not match_time.empty:
+                mt_row = match_time.iloc[0]  # separate variable, no bleed
+                time_measure_node = BNode()  # separate node
+                graph.add((indication_uri, BASE.timeMeasure, time_measure_node))  # separate predicate
+                graph.add((time_measure_node, RDF.type, BASE.timeMeasure))
+
+                if pd.notna(mt_row.get("EN")): graph.add((time_measure_node, SCHEMA.name, Literal(str(mt_row["EN"]).strip(), lang="en")))
+                if pd.notna(mt_row.get("DE")): graph.add((time_measure_node, SCHEMA.name, Literal(str(mt_row["DE"]).strip(), lang="de")))
+                if pd.notna(mt_row.get("FR")): graph.add((time_measure_node, SCHEMA.name, Literal(str(mt_row["FR"]).strip(), lang="fr")))
+                if pd.notna(mt_row.get("IT")): graph.add((time_measure_node, SCHEMA.name, Literal(str(mt_row["IT"]).strip(), lang="it")))
+
+
+            # Indication 
+
+
+        except Exception as error:
+            print(f"Row {i} (INDICATION {indication_id_str}): {error}")
+
 
     print(f"[i] Total indication triples: {len(graph)}")
 
