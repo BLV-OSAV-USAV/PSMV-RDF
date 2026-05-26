@@ -1,11 +1,11 @@
 Product:
-  NK_PRODUCT: product_id # use this for unique product id or link to organisations
-  NK_PRODUCT_REF: product_ref_or_id # use this for reference to other tables
-  wNbr: w_number # 7420-1 is w number + lauf nummer from sales permission
-  NK_PI_Product: product_internal_id # parallel import ID, nur für Controlling if not nul == NK_Produkt
-  NK_SP_PRODUCT: service_provider_product_id # same as above just for Salespermission
-  NK_PRODUCT_INDICATION: product_indicator # This is what we use to link to indication, Third key - use after Update in Infofito
-  ID: record_id # is shown in psmv interface
+  NK_PRODUCT: product_id
+  NK_PRODUCT_REF: product_ref_or_id
+  wNbr: w_number
+  NK_PI_Product: product_internal_id
+  NK_SP_PRODUCT: service_provider_product_id
+  NK_PRODUCT_INDICATION: product_indicator
+  ID: record_id
   CODE: product_code
   TYPE: rdf:type
   NAME: schema:name
@@ -14,7 +14,7 @@ Product:
   exhaustionDeadline: exhaustion_deadline
   soldoutDeadline: sold_out_deadline
   isSalePermission: sale_permission
-  packageInsert: w_number_of_reference_product # pk-id from refrecne product 
+  packageInsert: w_number_of_reference_product
   terminationReason: termination_reason
 
 Organisation:
@@ -117,21 +117,21 @@ ApplicationComment:
 
 ProductCodeR:
   NK_Codetable: code_id
-  NK_PROD_REF: product_id
+  NK_PROD_REF: product_ref_or_id
 
 ProductCodeS:
   NK_codetable: code_id
-  NK_PROD_REF: product_id
+  NK_PROD_REF: product_ref_or_id
 
 ProductDangerSymbol:
   NK_Codetable: code_id
-  NK_PROD_REF: product_id
+  NK_PROD_REF: product_ref_or_id
 
 ProductSignalWords:
   NK_Codetable: code_id
   NK_SignalWord: signal_word_id
-  NK_PROD_REF: product_id
+  NK_PROD_REF: product_ref_or_id
 
 ProductProductCategory:
   NK_Codetable: code_id
-  NK_Product: product_id
+  NK_Product: product_ref_or_id

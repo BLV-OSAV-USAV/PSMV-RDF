@@ -90,7 +90,7 @@ psmv-data.duckdb
 shacl-documentaion-log.txt
 rdf/data/**
 rdf/processed/**
-!rdf/processed/graph.ttl
+rdf/processed/graph.ttl
 !rdf/processed/shapes.ttl
 
 # =============================================================================

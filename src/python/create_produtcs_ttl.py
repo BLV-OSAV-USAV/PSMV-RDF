@@ -49,6 +49,7 @@ def products_ttl(
     COUNTRY_MAPPING = rdf_mappings["country_mapping"]
     TYPE_MAPPING = rdf_mappings["type_mapping"]
     UNIT_MAPPING = rdf_mappings["unit_mapping"]
+
     # Dict comprehension to ensure safe uppercase key matching
     CATEGORY_MAPPING = {k.upper(): v for k, v in rdf_mappings.get("category_mapping", {}).items()}
 
@@ -74,26 +75,14 @@ def products_ttl(
     pro_org_link_df = con.execute("SELECT * FROM ProductOrganisation").df()
     ingredient_df = con.execute("SELECT * FROM ProductIngredient").df()
     prod_cat_df = con.execute("SELECT * FROM ProductProductCategory").df()
-    
-    # Unify GHS mappings across the 4 newly added reference tables
-    ghs_links_query = """
-    SELECT product_id, code_id FROM ProductCodeR WHERE code_id IS NOT NULL AND code_id != ''
-    UNION ALL
-    SELECT product_id, code_id FROM ProductCodeS WHERE code_id IS NOT NULL AND code_id != ''
-    UNION ALL
-    SELECT product_id, code_id FROM ProductDangerSymbol WHERE code_id IS NOT NULL AND code_id != ''
-    UNION ALL
-    SELECT product_id, COALESCE(NULLIF(code_id, ''), signal_word_id) as code_id 
-    FROM ProductSignalWords 
-    WHERE COALESCE(NULLIF(code_id, ''), signal_word_id) IS NOT NULL AND COALESCE(NULLIF(code_id, ''), signal_word_id) != ''
-    """
-    ghs_df = con.execute(ghs_links_query).df()
+    ghs_df= con.execute("SELECT * FROM ProductGHS").df()
+
     con.close()
 
     # Pre-process GHS mappings for O(1) lookup
     ghs_dict = {}
     for _, row in ghs_df.iterrows():
-        pid = str(row["product_id"]).strip()
+        pid = str(row["product_ref_or_id"]).strip()
         cid = str(row["code_id"]).strip()
         if pid not in ghs_dict:
             ghs_dict[pid] = set()
@@ -119,7 +108,7 @@ def products_ttl(
     # Pre-process Product Categories for O(1) lookup
     cat_dict = {}
     for _, row in prod_cat_df.iterrows():
-        pid = str(row["product_id"]).strip()
+        pid = str(row["product_ref_or_id"]).strip()
         cid = str(row["code_id"]).strip().upper()
         if pid not in cat_dict:
             cat_dict[pid] = []
@@ -132,6 +121,7 @@ def products_ttl(
                 continue
 
             product_id_str = str(row.get("product_id")).strip()
+            product_ref_id_str = str(row.get("product_ref_or_id")).strip()
             product_uri = PRODUCT[product_id_str]
             
             graph.add((product_uri, SCHEMA.name, Literal(str(row.get("schema:name")).strip())))
@@ -207,8 +197,8 @@ def products_ttl(
             graph.add((product_uri, RDF.type, rdf_type_uri))
 
             # Add specific product categories from mapping as :productType
-            if product_id_str in cat_dict:
-                for cat_id in cat_dict[product_id_str]:
+            if product_ref_id_str in cat_dict:
+                for cat_id in cat_dict[product_ref_id_str]:
                     if cat_id in CATEGORY_MAPPING:
                         cat_uri = CATEGORY_MAPPING[cat_id]
                         graph.add((product_uri, BASE.productType, cat_uri))
@@ -222,8 +212,8 @@ def products_ttl(
                     graph.add((product_uri, BASE.referenceProduct, ref_product_uri))
                     
             # Add ingredients as nested Blank Nodes
-            if product_id_str in ingredient_dict:
-                for ing_row in ingredient_dict[product_id_str]:
+            if product_ref_id_str in ingredient_dict:
+                for ing_row in ingredient_dict[product_ref_id_str]:
                     substance_id = str(ing_row.get("nk_codetable_substance_id")).strip()
                     if substance_id == "nan" or not substance_id:
                         continue
@@ -248,8 +238,8 @@ def products_ttl(
                         graph.add((pct_node, SCHEMA.unitCode, URIRef(UNIT_MAPPING["percent"])))
 
             # Add GHS connections
-            if product_id_str in ghs_dict:
-                for code_id in ghs_dict[product_id_str]:
+            if product_ref_id_str in ghs_dict:
+                for code_id in ghs_dict[product_ref_id_str]:
                     graph.add((product_uri, BASE.ghs, CODE[code_id]))
 
         except Exception as error:

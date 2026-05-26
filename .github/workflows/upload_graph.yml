@@ -15,8 +15,14 @@ jobs:
           python-version: "3.12"
           enable-caching: true
 
+      - name: Install system dependencies
+        run: sudo apt-get install -y libssh2-1-dev
+
       - name: Install dependencies
         run: uv sync
+
+      - name: Run pipeline script
+        run: uv run python service/pipeline.py
 
       - name: Upload to LINDAS
         env:

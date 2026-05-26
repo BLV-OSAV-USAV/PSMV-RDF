@@ -34,21 +34,9 @@ def crops_ttl(
     graph.bind("crop", CROP)
     graph.namespace_manager.bind("schema", SCHEMA, override=True, replace=True)
 
-    # Read data using a pivoting approach to group translations into a single row
+    # Read data
     con = duckdb.connect(db_path, read_only=True)
-    query = """
-    SELECT 
-        code_id,
-        MAX(parent_id) AS parent_id,
-        MAX(CASE WHEN language = 'en' THEN value END) AS EN,
-        MAX(CASE WHEN language = 'de' THEN value END) AS DE,
-        MAX(CASE WHEN language = 'fr' THEN value END) AS FR,
-        MAX(CASE WHEN language = 'it' THEN value END) AS IT
-    FROM Code
-    WHERE text_key = 'Culture'
-    GROUP BY code_id
-    """
-    crops_df = con.execute(query).df()
+    crops_df = con.execute("SELECT * FROM CultureCode").df()
     con.close()
 
     # Create crop triples
