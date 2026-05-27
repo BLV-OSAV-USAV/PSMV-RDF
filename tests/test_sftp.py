@@ -9,7 +9,7 @@ NEEDED_FILES = {
     "IndicationTimeMeasure.csv", "ProductCodeR.csv", "ProductCodeS.csv",
     "ProductDangerSymbol.csv", "ProductFormulationCode.csv", "ProductIngredient.csv",
     "ProductPermissionHolder.csv", "ProductProductCategory.csv",
-    "ProductSignalWords.csv", "PsmvPermissionholder.csv",
+    "ProductSignalWords.csv", "PsmvPermissionholder.csv", "ProductIndication.csv"
 }
 
 try:
