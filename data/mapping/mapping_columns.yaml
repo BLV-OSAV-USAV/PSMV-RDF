@@ -4,7 +4,7 @@ Product:
   wNbr: w_number
   NK_PI_Product: product_internal_id
   NK_SP_PRODUCT: service_provider_product_id
-  NK_PRODUCT_INDICATION: product_indicator
+  NK_PRODUCT_INDICATION: product_indication
   ID: record_id
   CODE: product_code
   TYPE: rdf:type
@@ -135,3 +135,16 @@ ProductSignalWords:
 ProductProductCategory:
   NK_Codetable: code_id
   NK_Product: product_ref_or_id
+
+ProductIndication:
+  NK_PROD_REF: product_ref_or_id
+  dosageFrom: dosage_from
+  dosageTo: dosage_to
+  expenditureFrom: expenditure_from
+  expenditureTo: expenditure_to
+  NK_ApplicationArea: application_area_id
+  NK_Indication: indication
+  NK_Measure: measure
+  NK_TimeMeasure: time_measure
+  serialNumber: serial_number
+  waitingPeriod: waiting_period

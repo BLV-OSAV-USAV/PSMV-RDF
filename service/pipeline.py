@@ -15,6 +15,7 @@ from src.python.utils.helper_functions import parse_phone_numbers, ensure_jar, l
 from src.python.db_processing.preprocess_data import preprocess_data
 from src.python.db_processing.process_indication_code import process_indication_code
 from src.python.db_processing.process_indication_links import process_indication_links
+from src.python.db_processing.process_indication_product import process_indication_product
 from src.python.db_processing.process_product_code import process_product_code
 from src.python.db_processing.process_pest_code import process_pest_code
 from src.python.db_processing.process_obligation_code import process_obligation_code
@@ -63,6 +64,7 @@ def run_pipeline():
     process_obligation_code()
     process_organisation()
     process_indication_links()
+    process_indication_product()
     process_culture_code()
     process_application_area_code()
     process_application_comment_code()
