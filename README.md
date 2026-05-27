@@ -16,25 +16,26 @@ A Python module for converting Swiss plant protection product data from CSV form
 
 1. Set up the virtual environment
 
+   > If `uv` is not yet installed: `curl -LsSf https://astral.sh/uv/install.sh | sh`
     ``` bash
     uv venv psmv-rdf
     source psmv-rdf/bin/activate  
     ```
-    > If `uv` is not available: `pip install uv`
+   
     
-2. Install the package in editable mode
+3. Install the package in editable mode
 
     ``` bash
     uv pip install -e .
     ```
 
-3. Start the data integration pipeline
+4. Start the data integration pipeline
 
     ``` bash
     python -m service.pipeline
     ```
     
-4. To upload the graph, first, place a `.env` file in the directory root:
+5. To upload the graph, first, place a `.env` file in the directory root:
 
     ``` bash
     LINDAS_USER=********
