@@ -1,4 +1,6 @@
 import os
+import gzip
+import shutil
 from ftplib import FTP
 from pathlib import Path
 
@@ -11,7 +13,6 @@ NEEDED_FILES = {
     "ProductPermissionHolder.csv", "ProductProductCategory.csv",
     "ProductSignalWords.csv", "PsmvPermissionholder.csv", "ProductIndication.csv"
 }
-
 DEST = Path("data/raw")
 DEST.mkdir(parents=True, exist_ok=True)
 
@@ -19,6 +20,14 @@ with FTP(os.environ["SFTP_HOST"]) as ftp:
     ftp.login(user=os.environ["SFTP_USERNAME"], passwd=os.environ["SFTP_PASSWORD"])
     ftp.cwd("PSM_Verzeichnis")
     for filename in NEEDED_FILES & set(ftp.nlst()):
-        with open(DEST / filename, "wb") as f:
+        raw_path = DEST / filename
+        gz_path = DEST / (filename + ".gz")
+
+        with open(raw_path, "wb") as f:
             ftp.retrbinary(f"RETR {filename}", f.write)
-        print(f"Downloaded: {filename}")
+
+        with open(raw_path, "rb") as f_in, gzip.open(gz_path, "wb") as f_out:
+            shutil.copyfileobj(f_in, f_out)
+
+        raw_path.unlink()  # remove uncompressed file
+        print(f"Downloaded and compressed: {gz_path}")
