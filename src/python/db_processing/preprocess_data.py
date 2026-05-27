@@ -63,7 +63,8 @@ def process_data(
                 sep=sep,
                 quotechar=quotechar,
                 encoding=encoding,
-                engine="python"
+                engine="python",
+                compression="infer"
             )
             print(f"[i] Read {len(df):,} rows, {len(df.columns)} columns")
 
