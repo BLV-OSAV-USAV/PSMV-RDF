@@ -19,7 +19,6 @@ A Python module for converting Swiss plant protection product data from CSV form
     ``` bash
     uv venv psmv-rdf
     source psmv-rdf/bin/activate  
-    uv pip install -r pyproject.toml
     ```
     > If `uv` is not available: `pip install uv`
     
