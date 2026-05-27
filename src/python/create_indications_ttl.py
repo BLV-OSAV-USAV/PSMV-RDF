@@ -46,9 +46,9 @@ def indication_ttl(
     # Read data
     con = duckdb.connect(db_path, read_only=True)
     
-    prod_ind_df    = con.execute("SELECT * FROM ProductIndication").df()
+    prod_ind_df   = con.execute("SELECT * FROM ProductIndicationExpanded").df()
     cult_df        = con.execute("SELECT * FROM IndicationCultureLink").df()
-    pest_df        = con.execute("SELECT * FROM IndicationPestLink").df()
+    #pest_df        = con.execute("SELECT * FROM IndicationPestLink").df()
     obl_df         = con.execute("SELECT * FROM IndicationObligationLink").df()
     app_area_df    = con.execute("SELECT * FROM ApplicationAreaLink").df()
     app_comment_df = con.execute("SELECT * FROM ApplicationCommentLink").df()
@@ -60,8 +60,9 @@ def indication_ttl(
     ind_obl_df = con.execute("SELECT * FROM IndicationObligationCode").df()
     ind_pst = con.execute("SELECT * FROM IndicationPestCode").df()
     
-    #print(ind_pst.columns)
-    #print(ind_pst.head(10))
+    print(prod_ind_df.columns)
+    print(prod_ind_df.head(10))
+    #print(pest_df.head(10))
     #ind_pst.to_csv("ind_pst.csv", index=False)
     #ind_time_masure_df.to_csv("ind_time_masure_df.csv", index=False)
     #ind_clt_df.to_csv("ind_clt_df.csv", index=False)
@@ -78,13 +79,14 @@ def indication_ttl(
             seen_indications.add(ind_id)
         return INDICATION[ind_id]
 
-    # Map Product -> Indication
+    # Map Indication -> Product
     for _, row in prod_ind_df.iterrows():
         prod_id = str(row["product_ref_or_id"]).strip()
-        ind_id = str(row["product_indicator"]).strip()
+        ind_id = str(row["linked_product_indication"]).strip()
+
         if prod_id and ind_id:
             ind_uri = ensure_indication(ind_id)
-            graph.add((PRODUCT[prod_id], BASE.indication, ind_uri))
+            graph.add((ind_uri, BASE.product, PRODUCT[prod_id]))
 
     # Map Indication -> Crop
     for _, row in cult_df.iterrows():
@@ -172,20 +174,20 @@ def indication_ttl(
             pest_matches = ind_pst[ind_pst["indication"].astype(str).str.strip() == indication_id_str]
 
             for _, pest_row in pest_matches.iterrows():
-                pest_id = str(pest_row["indication_pest_id"]).strip()
-                if not pest_id:
+                pest_id = str(pest_row.get("indication_pest_id", "")).strip()
+                if not pest_id or pest_id.lower() == "nan":
                     continue
 
                 pest_uri = PEST[pest_id]
 
                 rel_node = BNode()
                 graph.add((indication_uri, BASE.indicationPest, rel_node))
-
                 graph.add((rel_node, RDF.type, BASE.IndicationPest))
                 graph.add((rel_node, BASE.pest, pest_uri))
 
-                if pd.notna(pest_row.get("pest_type")):
-                    graph.add((rel_node,BASE.pestType,Literal(str(pest_row["pest_type"]).strip())))
+                pest_type = pest_row.get("pest_type")
+                if pd.notna(pest_type):
+                    graph.add((rel_node, BASE.pestType, Literal(str(pest_type).strip())))
 
         except Exception as error:
             print(f"Row {i} (INDICATION {indication_id_str}): {error}")
