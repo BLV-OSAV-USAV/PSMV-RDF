@@ -8,10 +8,10 @@ def process_indication_product():
     SELECT 
         P.product_id,
         P.product_ref_or_id,
-        AC.indication
+        PI.indication
     FROM Product P
-    LEFT JOIN ApplicationComment AC
-        ON AC.application_comment_id = AC.application_comment_id;
+    LEFT JOIN ProductIndication PI
+        ON PI.product_ref_or_id = P.product_ref_or_id;
     """)
     
     row_count = con.execute("SELECT COUNT(*) FROM ProductIndicationExpanded").fetchone()[0]
