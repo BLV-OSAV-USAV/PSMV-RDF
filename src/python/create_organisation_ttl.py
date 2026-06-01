@@ -71,10 +71,23 @@ def organisation_ttl(
     # Create organisation triples
     for i, row in organsiation_df.iterrows():
         try:
-            if pd.isna(row.get("organisation_id")) or pd.isna(row.get("organisation_name")):
+            # Validation of mandatory fields
+            organisation_id = row.get("organisation_id")
+            organisation_name = row.get("organisation_name")
+
+            if pd.isna(organisation_id) or not str(organisation_id).strip():
+                print(f"Organisation row {i}: missing organisation_id -> skipped")
                 continue
 
-            org_uri = COMPANY[str(row["organisation_id"]).strip()]
+            if pd.isna(organisation_name) or not str(organisation_name).strip():
+                print(f"Organisation row {i}: missing organisation_name -> skipped")
+                continue
+
+            organisation_id = str(organisation_id).strip()
+            organisation_name = str(organisation_name).strip()
+
+            # Create organisation URI
+            org_uri = COMPANY[organisation_id]
 
             # Add organisation type
             graph.add((org_uri, RDF.type, SCHEMA.Organization))
@@ -114,7 +127,13 @@ def organisation_ttl(
                 graph.add((address_node, SCHEMA.addressLocality, Literal(str(row["city_id"]).strip(), datatype=XSD.string)))
 
             # country as iso3
-            country_id = (row.get("country_id") or "").strip().lower()
+            country_raw = row.get("country_id")
+
+            if pd.notna(country_raw):
+                country_id = str(country_raw).strip().lower()
+            else:
+                country_id = ""
+                
             if country_id:
                 iso3 = (COUNTRY_MAPPING.get(country_id) or "").strip()
                 if iso3:
