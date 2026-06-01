@@ -55,24 +55,27 @@ A Python module for converting Swiss plant protection product data from CSV form
 ``` bash
 psmv-rdf/
 ├── .github/
-├── README.md
+│   └── workflows/  # github actions
 ├── data/           # any non-RDF data files, used as input data
-│   ├── raw/        # input CSV files
-│   └── mapping/    # yaml mapping files
-├── services/
-│   └── pipeline.py       
-├── src/
-│    ├── sparql     # SPARQL queries and inference rules
-│    └── python/    # Python scripts for specific tasks
+│   ├── mapping/    # yaml mapping files
+│   ├── namespaces/ # 
+│   ├── processed/  # 
+│   └── mapping/    # input CSV files
+├── docs/           # project documentation
 ├── rdf/
 │   ├── ontology/   # OWL ontology documentation
 │   ├── shapes/     # SHACL shapes, also used as data model documentation
 │   ├── data/       # the actual RDF data, split by classes
 │   ├── example/    # example turtle files used for reference
 │   └── processed/  # any automatically written/derived/merged turtle files
+├── services/
+│   └── pipeline.py       
+├── src/
+│    ├── sparql     # SPARQL queries and inference rules
+│    └── python/    # Python scripts for specific tasks
 ├── tests/
-├── docs/           # project documentation
 ├── LICENSE
+├── README.md
 └── .gitignore
 ```
 
