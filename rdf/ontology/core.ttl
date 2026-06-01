@@ -168,11 +168,6 @@ schema:PostalAddress a owl:Class ;
     rdfs:domain :Product ;
     rdfs:range :Indication .
 
-:ingredient a owl:ObjectProperty ;
-    schema:name "Ingredient"@en ;
-    rdfs:domain :Product ;
-    rdfs:range :Ingredient .
-
 :federalAdmissionNumber a owl:DatatypeProperty, owl:FunctionalDataProperty ;
     schema:name "Eidgenössische Zulassungsnummer"@de,
         "Federal admission number"@en ;
