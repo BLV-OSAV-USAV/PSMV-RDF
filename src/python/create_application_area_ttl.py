@@ -1,11 +1,8 @@
-import os
-import sys
 import duckdb
 from pathlib import Path
 import pandas as pd
 from rdflib import Graph, Namespace, URIRef, Literal
 from rdflib.namespace import RDF
-from rdflib.namespace import NamespaceManager
 
 # local imports
 from src.python.utils.helper_functions import load_namespaces
@@ -15,13 +12,14 @@ def application_area_ttl(
     out_path="rdf/data/application_areas.ttl"
 ):
     """
-    Creates a application_areas_ttl graph extracting ApplicationArea entities from the Code table.
+    Creates an application_areas_ttl graph extracting ApplicationArea entities from the ApplicationAreaCode table.
     """
     # Set namespaces
     namespaces = load_namespaces()
     
     BASE = namespaces["base"]
     SCHEMA = namespaces["schema"]
+    XSD = namespaces["xsd"]
     
     # Fallback instantiation if explicitly missing in namespaces.yaml
     CODE = namespaces.get("code", Namespace(str(BASE) + "code/"))
@@ -32,6 +30,7 @@ def application_area_ttl(
     # Bind namespaces
     graph.bind("", BASE)
     graph.bind("code", CODE)
+    graph.bind("xsd", XSD)
     graph.namespace_manager.bind("schema", SCHEMA, override=True, replace=True)
 
     # Read data
@@ -41,8 +40,10 @@ def application_area_ttl(
 
     # Create application area triples
     for i, row in app_area_df.iterrows():
+        code_id = None
         try:
-            if pd.isna(row.get("code_id")):
+            if pd.isna(row.get("code_id")) or not str(row.get("code_id")).strip():
+                print(f"Application area row {i}: missing code_id -> skipped")
                 continue
 
             code_id = str(row["code_id"]).strip()
@@ -55,7 +56,7 @@ def application_area_ttl(
             if pd.notna(row.get("code_value")):
                 code_val = str(row["code_value"]).strip()
                 if code_val:
-                    graph.add((area_uri, SCHEMA.identifier, Literal(code_val)))
+                    graph.add((area_uri, SCHEMA.identifier, Literal(code_val, datatype=XSD.string)))
 
             # Add language-tagged Names
             if pd.notna(row.get("DE")):
@@ -68,7 +69,7 @@ def application_area_ttl(
                 graph.add((area_uri, SCHEMA.name, Literal(str(row["IT"]).strip(), lang="it")))
 
         except Exception as error:
-            print(f"Row {i} (Application Area {code_id}): {error}")
+            print(f"Application area row {i} ({code_id or 'unknown'}): {error}")
 
     # Print graph info
     print(f"[i] Total application area triples: {len(graph)}")

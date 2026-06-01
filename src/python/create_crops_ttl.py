@@ -1,11 +1,8 @@
-import os
-import sys
 import duckdb
 from pathlib import Path
 import pandas as pd
 from rdflib import Graph, Namespace, URIRef, Literal
 from rdflib.namespace import RDF
-from rdflib.namespace import NamespaceManager
 
 # local imports
 from src.python.utils.helper_functions import load_namespaces
@@ -15,13 +12,14 @@ def crops_ttl(
     out_path="rdf/data/crops.ttl"
 ):
     """
-    Creates a crops_ttl graph extracting Culture entities from the Code table.
+    Creates a crops_ttl graph extracting Crop entities from the CultureCode table.
     """
     # Set namespaces
     namespaces = load_namespaces()
     
     BASE = namespaces["base"]
     SCHEMA = namespaces["schema"]
+    XSD = namespaces["xsd"]
     
     # Fallback instantiation if they are not explicitly present in namespaces.yaml
     CROP = namespaces.get("crop", Namespace(str(BASE) + "crop/"))
@@ -32,6 +30,7 @@ def crops_ttl(
     # Bind namespaces
     graph.bind("", BASE)
     graph.bind("crop", CROP)
+    graph.bind("xsd", XSD)
     graph.namespace_manager.bind("schema", SCHEMA, override=True, replace=True)
 
     # Read data
@@ -41,8 +40,10 @@ def crops_ttl(
 
     # Create crop triples
     for i, row in crops_df.iterrows():
+        code_id = None
         try:
-            if pd.isna(row.get("code_id")):
+            if pd.isna(row.get("code_id")) or not str(row.get("code_id")).strip():
+                print(f"Crop row {i}: missing code_id -> skipped")
                 continue
 
             code_id = str(row["code_id"]).strip()
@@ -52,10 +53,10 @@ def crops_ttl(
             graph.add((crop_uri, RDF.type, BASE.Crop))
             
             # Add Identifier
-            graph.add((crop_uri, SCHEMA.identifier, Literal(code_id)))
+            graph.add((crop_uri, SCHEMA.identifier, Literal(code_id, datatype=XSD.string)))
 
             # Add Part
-            if pd.notna(row.get("parent_id")):
+            if pd.notna(row.get("parent_id")) and str(row.get("parent_id")).strip():
                 parent_id = str(row["parent_id"]).strip()
                 graph.add((crop_uri, SCHEMA.isPartOf, CROP[parent_id]))
 
@@ -70,7 +71,7 @@ def crops_ttl(
                 graph.add((crop_uri, SCHEMA.name, Literal(str(row["IT"]).strip(), lang="it")))
 
         except Exception as error:
-            print(f"Row {i} (Crop {code_id}): {error}")
+            print(f"Crop row {i} ({code_id or 'unknown'}): {error}")
 
     # Print graph info
     print(f"[i] Total crop triples: {len(graph)}")

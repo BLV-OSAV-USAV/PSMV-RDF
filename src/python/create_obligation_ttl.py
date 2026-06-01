@@ -1,9 +1,7 @@
-import os
-import sys
 import duckdb
 from pathlib import Path
 import pandas as pd
-from rdflib import Graph, Namespace, URIRef, Literal
+from rdflib import Graph, Namespace, Literal
 from rdflib.namespace import RDF
 
 # local imports
@@ -14,13 +12,14 @@ def obligation_ttl(
     out_path="rdf/data/obligations.ttl"
 ):
     """
-    Creates an obligations_ttl graph extracting Obligation entities from the Code table.
+    Creates an obligations_ttl graph extracting Obligation entities from the ObligationCode table.
     """
     # Set namespaces
     namespaces = load_namespaces()
     
     BASE = namespaces["base"]
     SCHEMA = namespaces["schema"]
+    XSD = namespaces["xsd"]
     
     # Fallback instantiation if explicitly missing in namespaces.yaml
     CODE = namespaces.get("code", Namespace(str(BASE) + "code/"))
@@ -31,6 +30,7 @@ def obligation_ttl(
     # Bind namespaces
     graph.bind("", BASE)
     graph.bind("code", CODE)
+    graph.bind("xsd", XSD)
     graph.namespace_manager.bind("schema", SCHEMA, override=True, replace=True)
 
     # Read data
@@ -41,7 +41,8 @@ def obligation_ttl(
     # Create triples
     for i, row in obligation_df.iterrows():
         try:
-            if pd.isna(row.get("code_id")):
+            if pd.isna(row.get("code_id")) or not str(row.get("code_id")).strip():
+                print(f"Obligation row {i}: missing code_id -> skipped")
                 continue
 
             code_id = str(row["code_id"]).strip()
@@ -51,9 +52,9 @@ def obligation_ttl(
             graph.add((obl_uri, RDF.type, BASE.Obligation))
             
             # Add Identifier (CODE_VALUE)
-            if pd.notna(row.get("code_value")):
+            if pd.notna(row.get("code_value")) and str(row.get("code_value")).strip():
                 code_val = str(row["code_value"]).strip()
-                graph.add((obl_uri, SCHEMA.identifier, Literal(code_val)))
+                graph.add((obl_uri, SCHEMA.identifier, Literal(code_val, datatype=XSD.string)))
 
             # Add language-tagged Descriptions
             # Using schema:description as requested
