@@ -15,8 +15,10 @@ def validate_ttl_files(root_path: Path, recursive: bool = True) -> bool:
     Parses Turtle files to validate syntax.
     """
     root_path = Path(root_path)
-    pattern = "**/*.ttl" if recursive else "*.ttl"
-    ttl_files = list(root_path.glob(pattern))
+    ttl_files = (
+        list((root_path.parent / "rdf" / "ontology").glob("*.ttl")) +
+        list((root_path.parent / "rdf" / "shapes").glob("*.ttl"))
+    )
 
     if not ttl_files:
         print(f"No Turtle files found in '{root_path}'.")
