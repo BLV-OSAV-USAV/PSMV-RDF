@@ -12,7 +12,7 @@ from pyshacl import validate as pyshacl_validate
 # Data processors
 from src.python.utils.helper_functions import parse_phone_numbers, ensure_jar, load_rdf_mappings, load_namespaces
 
-from src.python.db_processing.preprocess_data import process_data
+from src.python.db_processing.preprocess_data import preprocess_data
 from src.python.db_processing.process_indication_code import process_indication_code
 from src.python.db_processing.process_indication_links import process_indication_links
 from src.python.db_processing.process_product_code import process_product_code
@@ -51,10 +51,10 @@ def run_pipeline():
     pipeline_start = time.perf_counter()
     print("\n\033[1m── PSMV RDF Pipeline ──\033[0m")
 
-    print("\nPreprocess data")
-    process_data()
+    print("\n\033[1mPreprocess data\033[0m")
+    preprocess_data()
 
-    print("\nRun database operations")
+    print("\n\033[1mRun database operations\033[0m")
     process_substance_code()
     load_substances_mapping()
     process_indication_code()
@@ -67,10 +67,10 @@ def run_pipeline():
     process_application_area_code()
     process_application_comment_code()
     
-    print("\nValidate syntax of turtle files")
+    print("\n\033[1mValidate syntax of ontology turtle files and shacl shapes\033[0m")
     validate_ttl_files("rdf")
 
-    print("\nRun data integration pipeline")
+    print("\n\033[1mGenerate RDF datasets (ttl)\033[0m")
     products_ttl()
     organisation_ttl()
     substance_ttl()
@@ -82,12 +82,12 @@ def run_pipeline():
     ghs_ttl()
     indication_ttl()
 
-    print("\nCreate a dedicated ontology file for subsequent WebVOWL visualization")
+    print("\n\033[1mCreate a dedicated ontology file for subsequent WebVOWL visualization\033[0m")
     inputs = load_inputs(["rdf/ontology/*.ttl"])
     graph = apply_rules(inputs, ["src/sparql/rules/*.rq"])
     save_graph(graph, "rdf/processed/ontology.ttl")
 
-    print("\nMerge all data into one graph for subsequent LINDAS upload")
+    print("\n\033[1mMerge all data into one graph for subsequent LINDAS upload\033[0m")
     inputs = load_inputs(["rdf/ontology/*.ttl", "rdf/data/*.ttl", "rdf/shapes/*.ttl"])
     graph = apply_rules(inputs, [
         "src/sparql/rules/inverse.rq",
@@ -97,12 +97,12 @@ def run_pipeline():
     ])
     save_graph(graph, "rdf/processed/graph.ttl")
 
-    print("\nCombine all SHACL rules into one shape")
+    print("\n\033[1mCombine all SHACL rules into one shape\033[0m")
     inputs = load_inputs(["rdf/shapes/*.ttl"])
     graph = apply_rules(inputs, [])
     save_graph(graph, "rdf/processed/shapes.ttl")
 
-    print("\nChecking graph shape using SHACL...")
+    # print("\n\033[1mChecking graph shape using SHACL...\033[0m")
     # run_shacl_validation()
     # uncomment when we are sure what to validate via SHACL here
     

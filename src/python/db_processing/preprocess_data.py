@@ -5,7 +5,7 @@ import yaml
 import csv
 import duckdb
 
-def process_data(
+def preprocess_data(
     datasets_path="data/mapping/mapping_datasets.yaml",
     col_mapping_path="data/mapping/mapping_columns.yaml",
     value_mapping_path="data/mapping/mapping_values.yaml",
