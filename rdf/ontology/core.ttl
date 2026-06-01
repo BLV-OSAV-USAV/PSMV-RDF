@@ -146,7 +146,7 @@ schema:PostalAddress a owl:Class ;
         a owl:Restriction ;
         owl:onProperty schema:addressLocality ;
         owl:allValuesFrom xsd:string ;
-    ].
+    ] .
 
 # ==============================================================================
 # PRODUCT TAXONOMY AND PROPERTIES (Herbicides, Insecticides etc.)
