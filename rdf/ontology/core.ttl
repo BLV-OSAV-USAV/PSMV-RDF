@@ -248,19 +248,19 @@ schema:PostalAddress a owl:Class ;
     rdfs:domain :Indication ;
     rdfs:range :ApplicationComment .
 
-:dosage a owl:DatatypeProperty ;
+:dosage a owl:ObjectProperty ;
     schema:name "Dosierung"@de,
         "Dosage"@en ;
     rdfs:domain :Indication ;
     rdfs:range schema:QuantitativeValue .
 
-:expenditure a owl:DatatypeProperty ;
+:expenditure a owl:ObjectProperty ;
     schema:name "Ausbringungsmenge"@de,
         "Expenditure"@en ;
     rdfs:domain :Indication ;
     rdfs:range schema:QuantitativeValue .
 
-:waitingPeriod a owl:DatatypeProperty ;
+:waitingPeriod a owl:ObjectProperty ;
     schema:name "Wartezeit"@de,
         "Waiting period"@en ;
     schema:description "The required time interval after a treatment during which the same product should not be applied again to the same crop."@en ;
