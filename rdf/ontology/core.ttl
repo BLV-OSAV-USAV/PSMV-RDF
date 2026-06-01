@@ -37,24 +37,51 @@
 # ==============================================================================
 
 :Crop a owl:Class ;
-    schema:name "Crop"@en,
-        "Kultur"@de .
+    schema:name
+        "Crop"@en,
+        "Kultur"@de,
+        "Culture"@fr,
+        "Coltura"@it .
 
 :Pest a owl:Class ;
-    schema:name "Pest"@en .
+    schema:name
+        "Pest"@en,
+        "Schadorganismus"@de,
+        "Organisme nuisible"@fr,
+        "Agenti patogeni"@it .
 
 :ApplicationComment a owl:Class ;
-    schema:name "Application comments"@en , "Anwendungskommentar"@de ;
-    schema:description "Comments on how the product must be applied (dosage, etc.)"@en .
+    schema:name
+        "Application comment"@en,
+        "Anwendungskommentar"@de,
+        "Commentaire d'application"@fr,
+        "Commento sull'applicazione"@it ;
+    schema:description
+        "Comments on how the product must be applied (dosage, etc.)."@en,
+        "Kommentar zur Anwendung des Produkts (Dosierung usw.)."@de,
+        "Commentaire sur la manière dont le produit doit être appliqué (dosage, etc.)."@fr,
+        "Commento sulle modalità di applicazione del prodotto (dosaggio ecc.)."@it .
 
 :Obligation a owl:Class ;
-    schema:name "Obligation"@en .
+    schema:name
+        "Obligation"@en,
+        "Auflage"@de,
+        "Charge"@fr,
+        "Restrizione"@it .
 
 :ApplicationArea a owl:Class ;
-    schema:name "Application Area"@en .
+    schema:name
+        "Application area"@en,
+        "Anwendungsgebiet"@de,
+        "Domaine d'application"@fr,
+        "Campo di applicazione"@it .
 
 :applicationArea a owl:ObjectProperty ;
-    schema:name "Application area"@en ;
+    schema:name
+        "applies to application area"@en,
+        "gilt für Anwendungsgebiet"@de,
+        "s'applique au domaine d'application"@fr,
+        "si applica al campo di applicazione"@it ;
     rdfs:domain :Indication ;
     rdfs:range :ApplicationArea .
 
@@ -63,8 +90,11 @@
 # ==============================================================================
 
 schema:Organization a owl:Class ;
-    schema:name "Organization"@en,
-        "Organisation"@de ;
+    schema:name
+        "Organization"@en,
+        "Organisation"@de,
+        "Organisation"@fr,
+        "Organizzazione"@it ;
     rdfs:subClassOf [
         a owl:Restriction ;
         owl:onProperty schema:legalName ;
@@ -92,7 +122,11 @@ schema:Organization a owl:Class ;
     ] .
 
 schema:PostalAddress a owl:Class ;
-    schema:name "Address"@en ;
+    schema:name
+        "Address"@en,
+        "Adresse"@de,
+        "Adresse"@fr,
+        "Indirizzo"@it ;
     rdfs:subClassOf [
         a owl:Restriction ;
         owl:onProperty schema:addressCountry ;
@@ -121,8 +155,16 @@ schema:PostalAddress a owl:Class ;
 # Product class and product-specific properties --------------------------------
 
 :Product a owl:Class ;
-    schema:name "Product"@en ;
-    schema:description "Represents any plant protection product that is officially registered and listed on <https://psm.admin.ch/>."@en ;
+    schema:name
+        "Product"@en,
+        "Produkt"@de,
+        "Produit"@fr,
+        "Prodotto"@it ;
+    schema:description
+        "Represents any plant protection product that is officially registered and listed on <https://psm.admin.ch/>."@en,
+        "Repräsentiert ein Pflanzenschutzmittel, das offiziell registriert und im Pflanzenschutzmittelverzeichnis aufgeführt ist."@de,
+        "Représente un produit phytosanitaire officiellement enregistré et répertorié dans le répertoire des produits phytosanitaires."@fr,
+        "Rappresenta un prodotto fitosanitario ufficialmente registrato e iscritto nell'elenco dei prodotti fitosanitari."@it ;
     rdfs:subClassOf [
         a owl:Restriction ;
         owl:onProperty schema:countryOfOrigin ;
@@ -133,29 +175,41 @@ schema:PostalAddress a owl:Class ;
     rdfs:subClassOf :Product ;
     schema:name
         "Regular product"@en,
-        "Reguläres Produkt"@de ;
+        "Reguläres Produkt"@de,
+        "Produit ordinaire"@fr,
+        "Prodotto ordinario"@it ;
     schema:description
-        "Product with Swiss marketing authorization holder that have been approved in Switzerland."@en,
-        "Produkt mit Schweizer Zulassungsinhaber, welcher in der Schweiz zugelassen wurden."@de .
+        "Product with a Swiss marketing authorization holder that has been approved in Switzerland."@en,
+        "Produkt mit Schweizer Zulassungsinhaber, das in der Schweiz zugelassen wurde."@de,
+        "Produit dont le titulaire de l'autorisation de mise sur le marché est établi en Suisse et qui a été autorisé en Suisse."@fr,
+        "Prodotto con titolare dell'autorizzazione all'immissione in commercio in Svizzera e autorizzato in Svizzera."@it .
 
 :SalePermission a owl:Class ;
     rdfs:subClassOf :Product ;
     schema:name
-        "Sale Permission"@en,
-        "Verkaufserlaubnis"@de ;
+        "Sale permission"@en,
+        "Verkaufserlaubnis"@de,
+        "Autorisation de vente"@fr,
+        "Autorizzazione di vendita"@it ;
     schema:description
         "Marketing authorization holders may grant other companies permission to sell a product. This is assessed and approved by the marketing authorization authority. The originally approved product is referred to as the reference product. All information in the plant protection product directory for sales permits, except for the product name, authorization numbers, and authorization holders, is taken from the reference product. In the case of sales permits, individual applications of the reference product may be withdrawn (i.e., not all applications of the reference product are necessarily valid for the sales permit)."@en,
-        "Zulassungsinhaber können anderen Unternehmen eine Verkaufserlaubnis für ein Produkt erteilen. Diese wird von der Zulassungsstelle beurteilt und bewilligt. Das ursprünglich bewilligte Produkt wird als Referenzprodukt bezeichnet. Alle Angaben im Pflanzenschutzmittelverzeichnis für Verkaufserlaubnisse – mit Ausnahme von Produktname, Zulassungsnummern und Zulassungsinhaber – werden vom Referenzprodukt übernommen. Im Falle von Verkaufserlaubnissen können einzelne Anwendungen des Referenzprodukts zurückgezogen werden (d. h. nicht alle Anwendungen des Referenzprodukts sind zwingend für die Verkaufserlaubnis gültig)."@de .
+        "Zulassungsinhaber können anderen Unternehmen eine Verkaufserlaubnis für ein Produkt erteilen. Diese wird von der Zulassungsstelle beurteilt und bewilligt. Das ursprünglich bewilligte Produkt wird als Referenzprodukt bezeichnet. Alle Angaben im Pflanzenschutzmittelverzeichnis für Verkaufserlaubnisse – mit Ausnahme von Produktname, Zulassungsnummern und Zulassungsinhaber – werden vom Referenzprodukt übernommen. Im Falle von Verkaufserlaubnissen können einzelne Anwendungen des Referenzprodukts zurückgezogen werden (d. h. nicht alle Anwendungen des Referenzprodukts sind zwingend für die Verkaufserlaubnis gültig)."@de,
+        "Les titulaires d'une autorisation de mise sur le marché peuvent accorder à d'autres entreprises une autorisation de vendre un produit. Celle-ci est évaluée et approuvée par l'autorité d'homologation. Le produit initialement homologué est appelé produit de référence. Toutes les informations figurant dans le répertoire des produits phytosanitaires pour les autorisations de vente, à l'exception du nom du produit, des numéros d'autorisation et des titulaires de l'autorisation, sont reprises du produit de référence. Dans le cas des autorisations de vente, certaines utilisations du produit de référence peuvent être retirées (c.-à-d. que toutes les utilisations du produit de référence ne sont pas nécessairement valables pour l'autorisation de vente)."@fr,
+        "I titolari di un'autorizzazione all'immissione in commercio possono concedere ad altre imprese l'autorizzazione a vendere un prodotto. Tale autorizzazione viene valutata e approvata dall'autorità competente. Il prodotto originariamente autorizzato è definito prodotto di riferimento. Tutte le informazioni contenute nell'elenco dei prodotti fitosanitari per le autorizzazioni di vendita, ad eccezione del nome del prodotto, dei numeri di autorizzazione e dei titolari dell'autorizzazione, sono riprese dal prodotto di riferimento. Nel caso delle autorizzazioni di vendita, singoli impieghi del prodotto di riferimento possono essere revocati (vale a dire che non tutti gli impieghi del prodotto di riferimento sono necessariamente validi per l'autorizzazione di vendita)."@it .
 
 :ParallelImport a owl:Class ;
     rdfs:subClassOf :Product ;
     schema:name
-        "Parallel Import"@en,
-        "Parallelimport"@de ;
+        "Parallel import"@en,
+        "Parallelimport"@de,
+        "Importation parallèle"@fr,
+        "Importazione parallela"@it ;
     schema:description
         "Products with a foreign marketing authorization holder for which an equivalent regular product (in terms of chemical composition and formulation) exists. This product is referred to as the reference product. All information in the plant protection product directory for parallel imports, except for the product name, authorization numbers, and authorization holder, is taken from the reference product. The same applications apply to parallel imports as to the reference product."@en,
-        "Produkte mit einer ausländischen Zulassungsinhaberin oder einem ausländischen Zulassungsinhaber, für die ein äquivalentes reguläres Produkt (hinsichtlich chemischer Zusammensetzung und Formulierung) existiert. Dieses Produkt wird als Referenzprodukt bezeichnet. Alle Angaben im Pflanzenschutzmittelverzeichnis für Parallelimporte – mit Ausnahme von Produktname, Zulassungsnummern und Zulassungsinhaber – werden vom Referenzprodukt übernommen. Für Parallelimporte gelten dieselben Anwendungen wie für das Referenzprodukt."@de .
-        
+        "Produkte mit einer ausländischen Zulassungsinhaberin oder einem ausländischen Zulassungsinhaber, für die ein äquivalentes reguläres Produkt (hinsichtlich chemischer Zusammensetzung und Formulierung) existiert. Dieses Produkt wird als Referenzprodukt bezeichnet. Alle Angaben im Pflanzenschutzmittelverzeichnis für Parallelimporte – mit Ausnahme von Produktname, Zulassungsnummern und Zulassungsinhaber – werden vom Referenzprodukt übernommen. Für Parallelimporte gelten dieselben Anwendungen wie für das Referenzprodukt."@de,
+        "Produits dont le titulaire de l'autorisation de mise sur le marché est établi à l'étranger et pour lesquels il existe un produit ordinaire équivalent (du point de vue de la composition chimique et de la formulation). Ce produit est appelé produit de référence. Toutes les informations figurant dans le répertoire des produits phytosanitaires pour les importations parallèles, à l'exception du nom du produit, des numéros d'autorisation et du titulaire de l'autorisation, sont reprises du produit de référence. Les mêmes utilisations s'appliquent aux importations parallèles qu'au produit de référence."@fr,
+        "Prodotti con un titolare dell'autorizzazione all'immissione in commercio all'estero per i quali esiste un prodotto ordinario equivalente (in termini di composizione chimica e formulazione). Tale prodotto è definito prodotto di riferimento. Tutte le informazioni contenute nell'elenco dei prodotti fitosanitari per le importazioni parallele, ad eccezione del nome del prodotto, dei numeri di autorizzazione e del titolare dell'autorizzazione, sono riprese dal prodotto di riferimento. Alle importazioni parallele si applicano gli stessi impieghi del prodotto di riferimento."@it .
+
 # Logical statement: All subclasses based on permissions are disjoint from each other
 [] a owl:AllDisjointClasses ;
     owl:members (
@@ -170,54 +224,92 @@ schema:PostalAddress a owl:Class ;
     rdfs:range ghs:GHSStatement .
 
 :indication a owl:ObjectProperty ;
-    schema:name "has indications"@en ;
+    schema:name
+        "is authorised for indication"@en,
+        "ist zugelassen für Anwendung"@de,
+        "est autorisé pour l'utilisation"@fr,
+        "è autorizzato per l'impiego"@it ;
     rdfs:domain :Product ;
     rdfs:range :Indication .
 
 :federalAdmissionNumber a owl:DatatypeProperty, owl:FunctionalDataProperty ;
-    schema:name "Eidgenössische Zulassungsnummer"@de,
-        "Federal admission number"@en ;
-    schema:description "The federal admission number uniquely identifies a product registration. It is either constructed as a W-Number in the case of federal admissions (e.g., W-18) or as a parallel import number with the country of origin's initial letter in the code in the case of parallel imports (e.g., I-2789 for a parallel import from Italy). Numbers with a dash (e.g., W-18-1, W-18-2) represent equivalent products held by different legal entities, while numbers without a dash (e.g., W-18) represent the original registration."@en ;
+    schema:name
+        "Federal admission number"@en,
+        "Eidgenössische Zulassungsnummer"@de,
+        "Numéro fédéral d'autorisation"@fr,
+        "Numero federale di autorizzazione"@it ;
+    schema:description
+        "The federal admission number uniquely identifies a product registration. It is either constructed as a W-Number in the case of federal admissions (e.g., W-18) or as a parallel import number with the country of origin's initial letter in the code in the case of parallel imports (e.g., I-2789 for a parallel import from Italy). Numbers with a dash (e.g., W-18-1, W-18-2) represent equivalent products held by different legal entities, while numbers without a dash (e.g., W-18) represent the original registration."@en,
+        "Die eidgenössische Zulassungsnummer identifiziert eine Produktzulassung eindeutig. Sie wird entweder als W-Nummer für eidgenössische Zulassungen (z. B. W-18) oder als Parallelimportnummer mit dem Anfangsbuchstaben des Herkunftslandes im Code für Parallelimporte (z. B. I-2789 für einen Parallelimport aus Italien) gebildet. Nummern mit einem Zusatz nach einem Bindestrich (z. B. W-18-1, W-18-2) kennzeichnen gleichwertige Produkte verschiedener Rechtsträger, während Nummern ohne Zusatz (z. B. W-18) die ursprüngliche Zulassung bezeichnen."@de,
+        "Le numéro fédéral d'autorisation identifie de manière unique une autorisation de produit. Il est constitué soit d'un numéro W dans le cas des autorisations fédérales (p. ex. W-18), soit d'un numéro d'importation parallèle comprenant l'initiale du pays d'origine dans le code (p. ex. I-2789 pour une importation parallèle en provenance d'Italie). Les numéros comportant un suffixe après un tiret (p. ex. W-18-1, W-18-2) désignent des produits équivalents détenus par différentes entités juridiques, tandis que les numéros sans suffixe (p. ex. W-18) désignent l'autorisation d'origine."@fr,
+        "Il numero federale di autorizzazione identifica in modo univoco un'autorizzazione di prodotto. È costituito da un numero W nel caso delle autorizzazioni federali (ad es. W-18) oppure da un numero di importazione parallela che include l'iniziale del Paese d'origine nel codice (ad es. I-2789 per un'importazione parallela dall'Italia). I numeri con un suffisso dopo un trattino (ad es. W-18-1, W-18-2) identificano prodotti equivalenti detenuti da soggetti giuridici diversi, mentre i numeri senza suffisso (ad es. W-18) identificano l'autorizzazione originaria."@it ;
     rdfs:subPropertyOf schema:identifier ;
     rdfs:domain :Product ;
     rdfs:range xsd:NCName .
 
 :referenceProduct a owl:ObjectProperty ;
-    schema:name "Referenzprodukt"@de,
-        "Reference product"@en ;
-    rdfs:range :Product ;
-    rdfs:domain :Product .
+    schema:name
+        "has reference product"@en,
+        "hat Referenzprodukt"@de,
+        "a pour produit de référence"@fr,
+        "ha come prodotto di riferimento"@it ;
+    rdfs:domain :Product ;
+    rdfs:range :Product .
 
 :foreignAdmissionNumber a owl:DatatypeProperty ;
-    schema:name "Ausländische Zulassungsnummer"@de,
-        "Foreign admission number"@en ;
+    schema:name
+        "Foreign admission number"@en,
+        "Ausländische Zulassungsnummer"@de,
+        "Numéro d'autorisation étranger"@fr,
+        "Numero di autorizzazione estero"@it ;
     rdfs:subPropertyOf schema:identifier ;
     rdfs:domain :ParallelImport ;
     rdfs:range xsd:NCName .
 
 :packageInsertNumber a owl:DatatypeProperty ;
-    schema:name "Packungsbeilagenummer"@de,
-        "Package insert number"@en ;
+    schema:name
+        "Package insert number"@en,
+        "Packungsbeilagenummer"@de,
+        "Numéro de la notice d'emballage"@fr,
+        "Numero del foglietto illustrativo"@it ;
     rdfs:subPropertyOf schema:identifier ;
     rdfs:domain :Product ;
     rdfs:range xsd:string .
 
 :permissionHolder a owl:ObjectProperty ;
-    schema:name "Permission holder"@en ;
+    schema:name
+        "has permission holder"@en,
+        "hat Zulassungsinhaber"@de,
+        "a pour titulaire de l'autorisation"@fr,
+        "ha come titolare dell'autorizzazione"@it ;
     rdfs:domain :Product ;
     rdfs:range schema:Organization .
 
 :exhaustionDeadline a owl:DatatypeProperty ;
-    schema:name "Ablaufdatum der Nutzung"@de,
-        "Exhaustion deadline"@en ;
-    schema:description "The date by which the product must no longer be used, typically after the product registration has been revoked."@en ;
+    schema:name
+        "Exhaustion deadline"@en,
+        "Ablaufdatum der Nutzung"@de,
+        "Date limite d'utilisation"@fr,
+        "Data limite di utilizzo"@it ;
+    schema:description
+        "The date after which the product may no longer be used, typically following the withdrawal of the product authorization."@en,
+        "Das Datum, nach dem das Produkt nicht mehr verwendet werden darf, in der Regel nach dem Widerruf der Produktzulassung."@de,
+        "La date après laquelle le produit ne peut plus être utilisé, généralement à la suite du retrait de l'autorisation du produit."@fr,
+        "La data dopo la quale il prodotto non può più essere utilizzato, generalmente a seguito della revoca dell'autorizzazione del prodotto."@it ;
     rdfs:domain :Product ;
     rdfs:range xsd:date .
 
 :soldOutDeadline a owl:DatatypeProperty ;
-    schema:name "Ausverkauft-Frist"@de,
-        "Sold out deadline"@en ;
-    schema:description "The date by which the product can no longer be sold, typically after the product registration has been revoked."@en ;
+    schema:name
+        "Sold-out deadline"@en,
+        "Ausverkauft-Frist"@de,
+        "Délai de vente"@fr,
+        "Termine di vendita"@it ;
+    schema:description
+        "The date after which the product may no longer be sold, typically following the withdrawal of the product authorization."@en,
+        "Das Datum, nach dem das Produkt nicht mehr verkauft werden darf, in der Regel nach dem Widerruf der Produktzulassung."@de,
+        "La date après laquelle le produit ne peut plus être vendu, généralement à la suite du retrait de l'autorisation du produit."@fr,
+        "La data dopo la quale il prodotto non può più essere venduto, generalmente a seguito della revoca dell'autorizzazione del prodotto."@it ;
     rdfs:domain :Product ;
     rdfs:range xsd:date .
 
@@ -226,45 +318,82 @@ schema:PostalAddress a owl:Class ;
 # ==============================================================================
 
 :Indication a owl:Class ;
-    schema:name "Indication"@en ;
-    schema:alternateName "Application"@en .
+    schema:name
+        "Indication"@en,
+        "Anwendung"@de,
+        "Utilisation"@fr,
+        "Impiego"@it ;
+    schema:alternateName
+        "Application"@en,
+        "Anwendung"@de,
+        "Application"@fr,
+        "Applicazione"@it .
 
 :pest a owl:ObjectProperty ;
-    schema:name "allowed against pests"@en ;
+    schema:name
+        "allowed against pest"@en,
+        "zugelassen gegen Schadorganismus"@de,
+        "autorisé contre un organisme nuisible"@fr,
+        "autorizzato contro un organismo nocivo"@it ;
     rdfs:domain :Indication ;
     rdfs:range :Pest .
 
 :cultivation a owl:ObjectProperty ;
-    schema:name "allowed on cultivations"@en ;
+    schema:name
+        "allowed on crop"@en,
+        "zugelassen für Kultur"@de,
+        "autorisé pour la culture"@fr,
+        "autorizzato per la coltura"@it ;
     rdfs:domain :Indication ;
     rdfs:range :Cultivation .
 
 :obligation a owl:ObjectProperty ;
-    schema:name "Obligation"@en ;
+    schema:name
+        "has obligation"@en,
+        "hat Auflage"@de,
+        "a pour condition"@fr,
+        "ha come condizione"@it ;
     rdfs:domain :Indication ;
     rdfs:range :Obligation .
 
 :applicationComment a owl:ObjectProperty ;
-    schema:name "Application Comment"@en ;
+    schema:name
+        "has application comment"@en,
+        "hat Anwendungskommentar"@de,
+        "a pour commentaire d'application"@fr,
+        "ha come commento sull'applicazione"@it ;
     rdfs:domain :Indication ;
     rdfs:range :ApplicationComment .
 
 :dosage a owl:ObjectProperty ;
-    schema:name "Dosierung"@de,
-        "Dosage"@en ;
+    schema:name
+        "has dosage"@en,
+        "hat Dosierung"@de,
+        "a pour dosage"@fr,
+        "ha come dosaggio"@it ;
     rdfs:domain :Indication ;
     rdfs:range schema:QuantitativeValue .
 
 :expenditure a owl:ObjectProperty ;
-    schema:name "Ausbringungsmenge"@de,
-        "Expenditure"@en ;
+    schema:name
+        "has application rate"@en,
+        "hat Ausbringungsmenge"@de,
+        "a pour quantité d'application"@fr,
+        "ha come quantità di applicazione"@it ;
     rdfs:domain :Indication ;
     rdfs:range schema:QuantitativeValue .
 
 :waitingPeriod a owl:ObjectProperty ;
-    schema:name "Wartezeit"@de,
-        "Waiting period"@en ;
-    schema:description "The required time interval after a treatment during which the same product should not be applied again to the same crop."@en ;
+    schema:name
+        "has waiting period"@en,
+        "hat Wartezeit"@de,
+        "a pour délai d'attente"@fr,
+        "ha come periodo di attesa"@it ;
+    schema:description
+        "The required time interval after a treatment during which the same product should not be applied again to the same crop."@en,
+        "Der erforderliche Zeitraum nach einer Behandlung, während dessen dasselbe Produkt nicht erneut auf derselben Kultur angewendet werden darf."@de,
+        "Délai requis après un traitement pendant lequel le même produit ne doit pas être appliqué à nouveau sur la même culture."@fr,
+        "Intervallo di tempo richiesto dopo un trattamento durante il quale lo stesso prodotto non deve essere applicato nuovamente sulla stessa coltura."@it ;
     rdfs:domain :Indication ;
     rdfs:range schema:QuantitativeValue .
 
@@ -273,8 +402,16 @@ schema:PostalAddress a owl:Class ;
 # ==============================================================================
 
 :Ingredient a owl:Class ;
-    schema:name "Ingredient"@en ;
-    schema:description "A composition entry linking a product to a substance with a specified concentration."@en ;
+    schema:name
+        "Ingredient"@en,
+        "Bestandteil"@de,
+        "Composant"@fr,
+        "Componente"@it ;
+    schema:description
+        "A composition entry linking a product to a substance with a specified concentration."@en,
+        "Ein Zusammensetzungseintrag, der ein Produkt mit einem Stoff und einer angegebenen Konzentration verknüpft."@de,
+        "Une entrée de composition reliant un produit à une substance avec une concentration spécifiée."@fr,
+        "Una voce di composizione che collega un prodotto a una sostanza con una concentrazione specificata."@it ;
     rdfs:subClassOf [
         a owl:Restriction ;
         owl:onProperty :substance ;
@@ -286,41 +423,80 @@ schema:PostalAddress a owl:Class ;
     ] .
 
 :Substance a owl:Class ;
-    schema:name "Substance"@en .
+    schema:name
+        "Substance"@en,
+        "Stoff"@de,
+        "Substance"@fr,
+        "Sostanza"@it .
 
 :ActiveSubstance a owl:Class ;
     rdfs:subClassOf :Substance ;
-    schema:name "Active Substance"@en ;
-    schema:description "A biologically active ingredient in a plant protection product that acts against pests or diseases."@en .
+    schema:name
+        "Active substance"@en,
+        "Wirkstoff"@de,
+        "Substance active"@fr,
+        "Sostanza attiva"@it ;
+    schema:description
+        "A biologically active ingredient in a plant protection product that acts against pests or diseases."@en,
+        "Ein biologisch aktiver Bestandteil eines Pflanzenschutzmittels, der gegen Schadorganismen oder Krankheiten wirkt."@de,
+        "Un composant biologiquement actif d'un produit phytosanitaire qui agit contre les organismes nuisibles ou les maladies."@fr,
+        "Un componente biologicamente attivo di un prodotto fitosanitario che agisce contro organismi nocivi o malattie."@it .
 
 :CoFormulant a owl:Class ;
     rdfs:subClassOf :Substance ;
-    schema:name "Co-formulant"@en ;
-    schema:description "An inactive ingredient in a plant protection product that supports the formulation but has no direct pesticidal activity."@en .
+    schema:name
+        "Co-formulant"@en,
+        "Beistoff"@de,
+        "Coformulant"@fr,
+        "Coformulante"@it ;
+    schema:description
+        "An inactive ingredient in a plant protection product that supports the formulation but has no direct pesticidal activity."@en,
+        "Ein inaktiver Bestandteil eines Pflanzenschutzmittels, der die Formulierung unterstützt, jedoch keine direkte pestizide Wirkung hat."@de,
+        "Un composant inactif d'un produit phytosanitaire qui soutient la formulation mais n'a pas d'activité pesticide directe."@fr,
+        "Un componente inattivo di un prodotto fitosanitario che supporta la formulazione ma non ha un'attività pesticida diretta."@it .
 
 :substance a owl:ObjectProperty ;
-    schema:name "Has Substance"@en ;
+    schema:name
+        "has substance"@en,
+        "hat Stoff"@de,
+        "a pour substance"@fr,
+        "ha come sostanza"@it ;
     rdfs:domain :Ingredient ;
     rdfs:range :Substance .
 
 :concentration a owl:ObjectProperty ;
-    schema:name "Concentration"@en ;
+    schema:name
+        "has concentration"@en,
+        "hat Konzentration"@de,
+        "a pour concentration"@fr,
+        "ha come concentrazione"@it ;
     rdfs:domain :Ingredient ;
     rdfs:range schema:QuantitativeValue .
 
 :hasIngredient a owl:ObjectProperty ;
-    schema:name "Has Ingredient"@en ;
+    schema:name
+        "has ingredient"@en,
+        "hat Bestandteil"@de,
+        "a pour composant"@fr,
+        "ha come componente"@it ;
     rdfs:domain :Product ;
     rdfs:range :Ingredient .
 
-
 :iupacName a owl:DatatypeProperty ;
-    schema:name "IUPAC Name"@en ;
+    schema:name
+        "IUPAC name"@en,
+        "IUPAC-Name"@de,
+        "Nom IUPAC"@fr,
+        "Nome IUPAC"@it ;
     rdfs:domain :Substance ;
     rdfs:range xsd:string .
 
 schema:QuantitativeValue a owl:Class ;
-    schema:name "Quantitative value"@en ;
+    schema:name
+        "Quantitative value"@en,
+        "Quantitativer Wert"@de,
+        "Valeur quantitative"@fr,
+        "Valore quantitativo"@it ;
     rdfs:subClassOf [
         a owl:Restriction ;
         owl:onProperty schema:value ;
@@ -335,7 +511,7 @@ schema:QuantitativeValue a owl:Class ;
         owl:allValuesFrom xsd:decimal
     ], [
         a owl:Restriction ;
-        owl:onProperty schema:unitCode ;
+        owl:onProperty qudt:unit ;
         owl:allValuesFrom qudt:Unit
     ], [
         a owl:Restriction ;
