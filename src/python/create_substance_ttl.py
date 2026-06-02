@@ -1,13 +1,8 @@
-import os
-import sys
-import csv
-import yaml
 import duckdb
 from pathlib import Path
 import pandas as pd
 from rdflib import Graph, Namespace, URIRef, Literal
-from rdflib.namespace import RDF, RDFS, OWL
-from rdflib.namespace import NamespaceManager
+from rdflib.namespace import RDF, OWL
 
 # local imports
 from src.python.utils.helper_functions import load_namespaces, load_rdf_mappings
@@ -44,7 +39,7 @@ TYPE_MAPPING = rdf_mappings["type_mapping"]
 # Create Products
 def substance_ttl(
     db_path = "data/processed/psmv-data.duckdb",
-    out_path: str = "rdf/data/substance_ttl"):
+    out_path: str = "rdf/data/substance.ttl"):
 
     """
     Creates a substance_ttl
@@ -86,8 +81,13 @@ def substance_ttl(
 
     # Create substance triples
     for i, row in substance_df.iterrows():
+        substance_uri = None
         try:
-            if pd.isna(row.get("nk_codetable_substance_id")):
+            if (
+                pd.isna(row.get("nk_codetable_substance_id"))
+                or not str(row.get("nk_codetable_substance_id")).strip()
+            ):
+                print(f"Substance row {i}: missing nk_codetable_substance_id -> skipped")
                 continue
         
             nk_codetable_substance_id = str(row.get("nk_codetable_substance_id")).strip()
@@ -106,40 +106,40 @@ def substance_ttl(
                 graph.add((substance_uri, BASE.iupacName, Literal(str(row.get("IUPAC_name")).strip())))
 
             # German  name
-            if pd.notna(row.get("DE")):
+            if pd.notna(row.get("DE")) and str(row.get("DE")).strip():
                 graph.add((substance_uri, SCHEMA.name, Literal(str(row.get("DE")).strip(), lang="de")))
             
             # English name
-            if pd.notna(row.get("EN")):
+            if pd.notna(row.get("EN")) and str(row.get("EN")).strip():
                 graph.add((substance_uri, SCHEMA.name, Literal(str(row.get("EN")).strip(), lang="en")))
             
             # French name
-            if pd.notna(row.get("FR")):
+            if pd.notna(row.get("FR")) and str(row.get("FR")).strip():
                 graph.add((substance_uri, SCHEMA.name, Literal(str(row.get("FR")).strip(), lang="fr")))
             
             # Italian name
-            if pd.notna(row.get("IT")):
+            if pd.notna(row.get("IT")) and str(row.get("IT")).strip():
                 graph.add((substance_uri, SCHEMA.name, Literal(str(row.get("IT")).strip(), lang="it")))
 
             # ChEBI identities
             if pd.notna(row.get("hasChebiIdentity")):
                 for chebi_id in str(row["hasChebiIdentity"]).split("|"):
                     chebi_id = chebi_id.strip()
-                    if chebi_id:
+                    if chebi_id and chebi_id.lower() != "nan":
                         graph.add((substance_uri, OWL.sameAs, CHEBI[chebi_id]))
 
             # PubChem Compound identities
             if pd.notna(row.get("hasPubChemCompoundIdentity")):
                 for cid in str(row["hasPubChemCompoundIdentity"]).split("|"):
                     cid = cid.strip().removeprefix("CID:")
-                    if cid:
+                    if cid and cid.lower() != "nan":
                         graph.add((substance_uri, OWL.sameAs, PUBCHEM_COMPOUND[cid]))
 
             # PubChem Substance identities
             if pd.notna(row.get("hasPubChemSubstanceIdentity")):
                 for sid in str(row["hasPubChemSubstanceIdentity"]).split("|"):
                     sid = sid.strip().removeprefix("SID:")
-                    if sid:
+                    if sid and sid.lower() != "nan":
                         graph.add((substance_uri, OWL.sameAs, PUBCHEM_SUBSTANCE[sid]))
 
             # Biological taxon
@@ -150,15 +150,18 @@ def substance_ttl(
                         graph.add((substance_uri, OWL.sameAs, URIRef(taxon)))
 
         except Exception as error:
-            print(f"Row {i} (Substance {substance_uri}): {error}")
+            print(
+                f"Substance row {i} "
+                f"({substance_uri or 'unknown'}): {error}"
+            )
 
     # Print graph info
-    print(f"[i] Total triples: {len(graph)}")
+    print(f"[i] Total substance triples: {len(graph)}")
 
     # Save to file
-    out_path = Path("rdf/data/substance.ttl")
-    out_path.parent.mkdir(parents=True, exist_ok=True)
-    graph.serialize(destination=out_path, format="turtle")
+    out_file = Path(out_path)
+    out_file.parent.mkdir(parents=True, exist_ok=True)
+    graph.serialize(destination=out_file, format="turtle")
     print(f"\nSaved to `{out_path}`")
     return graph
 

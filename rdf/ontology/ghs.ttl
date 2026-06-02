@@ -3,7 +3,6 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 
@@ -12,14 +11,24 @@
 # ==============================================================================
 
 ghs: a owl:Ontology ;
-    dcterms:title "GHS phrase classification scheme"@en .
+    dcterms:title
+        "GHS phrase classification scheme"@en,
+        "Klassifikationsschema für GHS-Sätze"@de,
+        "Schéma de classification des phrases GHS"@fr,
+        "Schema di classificazione delle frasi GHS"@it ;
+    dcterms:description
+        "Controlled vocabulary for hazard statements (H phrases) and precautionary statements (P phrases) based on the Globally Harmonized System of Classification and Labelling of Chemicals (GHS)."@en .
 
 # ==============================================================================
 # GHS CLASSIFICATION
 # ==============================================================================
 
 ghs:GHSStatement a owl:Class ;
-    schema:name "GHS statement"@en ;
+    schema:name
+        "GHS statement"@en,
+        "GHS-Satz"@de,
+        "Phrase SGH"@fr,
+        "Frase GHS"@it ;
     rdfs:subClassOf
         [
             a owl:Restriction ;
@@ -33,9 +42,14 @@ ghs:GHSStatement a owl:Class ;
         ] .
 
 ghs:HazardPictogram a owl:Class ;
-    schema:name "Hazard pictogram"@en ;
+    schema:name
+        "Hazard pictogram"@en,
+        "Gefahrenpiktogramm"@de,
+        "Pictogramme de danger"@fr,
+        "Pittogramma di pericolo"@it ;
     rdfs:seeAlso <https://en.wikipedia.org/wiki/GHS_hazard_pictograms> ;
-    rdfs:subClassOf ghs:GHSStatement ,
+    rdfs:subClassOf
+        ghs:GHSStatement ,
         [
             a owl:Restriction ;
             owl:onProperty schema:image ;
@@ -43,53 +57,95 @@ ghs:HazardPictogram a owl:Class ;
         ] .
 
 ghs:HazardStatement a owl:Class ;
-    schema:name "Hazard statements"@en ;
-    schema:alternateName "R phrase"@en ;
-    schema:description "A hazard statement is a standardized description of the risks associated with hazardous chemical substances, indicating specific dangers such as toxicity or flammability. These were used in the European Union to denote risks on safety data sheets and labels."@en ;
+    schema:name
+        "Hazard statement"@en,
+        "Gefahrenhinweis"@de,
+        "Mention de danger"@fr,
+        "Indicazione di pericolo"@it ;
+    schema:alternateName
+        "R phrase"@en,
+        "R-Satz"@de,
+        "Phrase R"@fr,
+        "Frase R"@it ;
+    schema:description
+        "A hazard statement is a standardized description of the risks associated with hazardous chemical substances."@en,
+        "Ein Gefahrenhinweis ist eine standardisierte Beschreibung der Gefahren, die mit gefährlichen chemischen Stoffen verbunden sind."@de,
+        "Une mention de danger est une description normalisée des dangers associés aux substances chimiques dangereuses."@fr,
+        "Un'indicazione di pericolo è una descrizione standardizzata dei pericoli associati alle sostanze chimiche pericolose."@it ;
     rdfs:subClassOf ghs:GHSStatement .
 
 ghs:PrecautionaryStatement a owl:Class ;
-    schema:name "Precautionary statements"@en ;
-    schema:alternateName "S phrase"@en ;
-    schema:description "A precautionary statement is a standardized safety instruction for handling hazardous chemical substances. These phrases were used in the European Union to recommend safe handling, storage, and emergency measures on safety data sheets and labels."@en ;
+    schema:name
+        "Precautionary statement"@en,
+        "Sicherheitshinweis"@de,
+        "Conseil de prudence"@fr,
+        "Consiglio di prudenza"@it ;
+    schema:alternateName
+        "S phrase"@en,
+        "S-Satz"@de,
+        "Phrase S"@fr,
+        "Frase S"@it ;
+    schema:description
+        "A precautionary statement is a standardized safety instruction for the handling, storage, disposal, and emergency response related to hazardous chemical substances."@en,
+        "Ein Sicherheitshinweis ist eine standardisierte Sicherheitsanweisung für den Umgang, die Lagerung, die Entsorgung und Notfallmassnahmen im Zusammenhang mit gefährlichen chemischen Stoffen."@de,
+        "Un conseil de prudence est une instruction de sécurité normalisée concernant la manipulation, le stockage, l'élimination et les mesures d'urgence relatives aux substances chimiques dangereuses."@fr,
+        "Un consiglio di prudenza è un'istruzione di sicurezza standardizzata relativa alla manipolazione, allo stoccaggio, allo smaltimento e alle misure di emergenza riguardanti sostanze chimiche pericolose."@it ;
     rdfs:subClassOf ghs:GHSStatement .
 
 ghs:SignalWord a owl:Class ;
-    schema:name "Signal word"@en ;
+    schema:name
+        "Signal word"@en,
+        "Signalwort"@de,
+        "Mention d'avertissement"@fr,
+        "Avvertenza"@it ;
     rdfs:subClassOf ghs:GHSStatement .
 
 ghs:PrecautionaryStatementCombination a owl:Class ;
-    schema:name "Combinations of precautionary statements"@en ;
-    rdfs:subClassOf ghs:PrecautionaryStatement ;
-    rdfs:subClassOf [
-        a owl:Restriction ;
-        owl:onProperty schema:hasPart ;
-        owl:allValuesFrom ghs:PrecautionaryStatement ;
-    ] .
+    schema:name
+        "Precautionary statement combination"@en,
+        "Kombination von Sicherheitshinweisen"@de,
+        "Combinaison de conseils de prudence"@fr,
+        "Combinazione di consigli di prudenza"@it ;
+    rdfs:subClassOf
+        ghs:PrecautionaryStatement ,
+        [
+            a owl:Restriction ;
+            owl:onProperty schema:hasPart ;
+            owl:allValuesFrom ghs:PrecautionaryStatement
+        ] .
 
 ghs:HazardStatementCombination a owl:Class ;
-    schema:name "Combinations of hazard statements"@en ;
-    rdfs:subClassOf ghs:HazardStatement ;
-    rdfs:subClassOf [
-        a owl:Restriction ;
-        owl:onProperty schema:hasPart ;
-        owl:allValuesFrom ghs:HazardStatement ;
-    ] .
+    schema:name
+        "Hazard statement combination"@en,
+        "Kombination von Gefahrenhinweisen"@de,
+        "Combinaison de mentions de danger"@fr,
+        "Combinazione di indicazioni di pericolo"@it ;
+    rdfs:subClassOf
+        ghs:HazardStatement ,
+        [
+            a owl:Restriction ;
+            owl:onProperty schema:hasPart ;
+            owl:allValuesFrom ghs:HazardStatement
+        ] .
 
 # ==============================================================================
 # GHS SIGNAL WORDS
 # ==============================================================================
 
 ghs:attention a ghs:SignalWord ;
-    schema:name "Achtung"@de,
+    schema:identifier "Warning" ;
+    schema:name
         "Warning"@en,
-        "attention"@fr,
+        "Achtung"@de,
+        "Attention"@fr,
         "Attenzione"@it .
 
 ghs:danger a ghs:SignalWord ;
-    schema:name "Gefahr"@de,
+    schema:identifier "Danger" ;
+    schema:name
         "Danger"@en,
-        "danger"@fr,
+        "Gefahr"@de,
+        "Danger"@fr,
         "Pericolo"@it .
 
 # ==============================================================================

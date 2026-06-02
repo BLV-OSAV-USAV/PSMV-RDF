@@ -1,12 +1,9 @@
-import os
-import sys
 import html
 import duckdb
 from pathlib import Path
 import pandas as pd
 from rdflib import Graph, Namespace, URIRef, Literal, BNode
 from rdflib.namespace import RDF
-from rdflib.namespace import NamespaceManager
 
 # local imports
 from src.python.utils.helper_functions import load_namespaces
@@ -16,7 +13,7 @@ def application_comment_ttl(
     out_path="rdf/data/application_comments.ttl"
 ):
     """
-    Creates an application_comments_ttl graph extracting ApplicationComment entities from the Code table.
+    Creates an application_comments_ttl graph extracting ApplicationComment entities from the ApplicationCommentCode table.
     """
     # Set namespaces
     namespaces = load_namespaces()
@@ -24,6 +21,7 @@ def application_comment_ttl(
     BASE = namespaces["base"]
     SCHEMA = namespaces["schema"]
     UNIT = namespaces["unit"]
+    XSD = namespaces["xsd"]
     
     # Fallback instantiation if explicitly missing in namespaces.yaml
     CODE = namespaces.get("code", Namespace(str(BASE) + "code/"))
@@ -35,6 +33,7 @@ def application_comment_ttl(
     graph.bind("", BASE)
     graph.bind("code", CODE)
     graph.bind("unit", UNIT)
+    graph.bind("xsd", XSD)
     graph.namespace_manager.bind("schema", SCHEMA, override=True, replace=True)
 
     # Read data
@@ -44,8 +43,10 @@ def application_comment_ttl(
 
     # Create application comment triples
     for i, row in app_comment_df.iterrows():
+        code_id = None
         try:
-            if pd.isna(row.get("code_id")):
+            if pd.isna(row.get("code_id")) or not str(row.get("code_id")).strip():
+                print(f"Application comment row {i}: missing code_id -> skipped")
                 continue
 
             code_id = str(row["code_id"]).strip()
@@ -76,13 +77,13 @@ def application_comment_ttl(
                     try:
                         # Parse string to an integer
                         num_val = int(float(interval_val))
-                        graph.add((wp_node, SCHEMA.minValue, Literal(num_val)))
+                        graph.add((wp_node, SCHEMA.minValue, Literal(num_val, datatype=XSD.integer)))
                     except ValueError:
                         # Fallback for unexpected non-numeric formats
-                        graph.add((wp_node, SCHEMA.minValue, Literal(interval_val)))
+                        graph.add((wp_node, SCHEMA.minValue, Literal(interval_val, datatype=XSD.integer)))
 
         except Exception as error:
-            print(f"Row {i} (Application Comment {code_id}): {error}")
+            print(f"Application comment row {i} ({code_id or 'unknown'}): {error}")
 
     # Print graph info
     print(f"[i] Total application comment triples: {len(graph)}")

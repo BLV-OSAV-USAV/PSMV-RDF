@@ -1,13 +1,8 @@
-import os
-import sys
-import csv
-import yaml
 from pathlib import Path
 import pandas as pd
 import duckdb
 from rdflib import Graph, Namespace, URIRef, Literal, BNode
 from rdflib.namespace import RDF, RDFS
-from rdflib.namespace import NamespaceManager
 
 # local imports
 from src.python.utils.helper_functions import load_namespaces, load_rdf_mappings
@@ -117,11 +112,21 @@ def products_ttl(
     # Create product triples
     for i, row in products_df.iterrows():
         try: 
-            if pd.isna(row.get("product_id")) or pd.isna(row.get("schema:name")):
+
+            if pd.isna(row.get("product_id")) or not str(row.get("product_id")).strip():
+                print(f"Product row {i}: missing product_id -> skipped")
                 continue
 
+            if pd.isna(row.get("schema:name")) or not str(row.get("schema:name")).strip():
+                print(f"Product row {i}: missing schema:name -> skipped")
+                continue            
+
             product_id_str = str(row.get("product_id")).strip()
-            product_ref_id_str = str(row.get("product_ref_or_id")).strip()
+            product_ref_id_str = (
+                str(row.get("product_ref_or_id")).strip()
+                if pd.notna(row.get("product_ref_or_id"))
+                else product_id_str
+            )
             product_uri = PRODUCT[product_id_str]
             
             graph.add((product_uri, SCHEMA.name, Literal(str(row.get("schema:name")).strip())))
@@ -181,7 +186,7 @@ def products_ttl(
                         date_str = dt.strftime("%Y-%m-%d")
                         graph.add((product_uri, BASE.exhaustionDeadline, Literal(date_str, datatype=XSD.date)))
                     except ValueError:
-                        pass 
+                        print(f"Product row {i}: invalid date '{exhaustion_raw}' -> skipped") 
 
             if pd.notna(row.get("sold_out_deadline")):
                 sold_out_raw = row.get("sold_out_deadline")
@@ -191,7 +196,7 @@ def products_ttl(
                         date_str = dt.strftime("%Y-%m-%d")
                         graph.add((product_uri, BASE.soldOutDeadline, Literal(date_str, datatype=XSD.date)))
                     except ValueError:
-                        pass 
+                        print(f"Product row {i}: invalid date '{exhaustion_raw}' -> skipped")  
 
             rdf_type_uri = TYPE_MAPPING.get(raw_type, BASE.Product)
             graph.add((product_uri, RDF.type, rdf_type_uri))

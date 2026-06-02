@@ -1,14 +1,9 @@
 # src/python/create_organisation_ttl.py
 
-import os
-import sys
-import csv
-import yaml
 import duckdb
 from pathlib import Path
 import pandas as pd
-import re
-from rdflib import Graph, Namespace, URIRef, Literal
+from rdflib import Graph, URIRef, Literal
 from rdflib.namespace import RDF
 from rdflib import BNode
 
@@ -47,7 +42,7 @@ def organisation_ttl(
     out_path: str = "rdf/data/organisation.ttl"):
 
     """
-    Creates a organisation_ttl
+    Creates RDF descriptions for organisations and their contact information.
     """
 
     # Create empty graph
@@ -71,25 +66,38 @@ def organisation_ttl(
     # Create organisation triples
     for i, row in organsiation_df.iterrows():
         try:
-            if pd.isna(row.get("organisation_id")) or pd.isna(row.get("organisation_name")):
+            # Validation of mandatory fields
+            organisation_id = row.get("organisation_id")
+            organisation_name = row.get("organisation_name")
+
+            if pd.isna(organisation_id) or not str(organisation_id).strip():
+                print(f"Organisation row {i}: missing organisation_id -> skipped")
                 continue
 
-            org_uri = COMPANY[str(row["organisation_id"]).strip()]
+            if pd.isna(organisation_name) or not str(organisation_name).strip():
+                print(f"Organisation row {i}: missing organisation_name -> skipped")
+                continue
+
+            organisation_id = str(organisation_id).strip()
+            organisation_name = str(organisation_name).strip()
+
+            # Create organisation URI
+            org_uri = COMPANY[organisation_id]
 
             # Add organisation type
             graph.add((org_uri, RDF.type, SCHEMA.Organization))
 
             # Add organisation name
             if pd.notna(row.get("organisation_name")):
-                graph.add((org_uri, SCHEMA.legalName, Literal(str(row["organisation_name"]).strip())))
+                graph.add((org_uri, SCHEMA.legalName, Literal(organisation_name, datatype=XSD.string)))
 
             # Add contact info
-            if pd.notna(row.get("phone_number")):
+            if pd.notna(row.get("phone_number")) and str(row.get("phone_number")).strip():                
                 phones = parse_phone_numbers(row.get("phone_number"))
                 for p in phones:
                     graph.add((org_uri, SCHEMA.telephone, Literal(p, datatype=XSD.string)))
                     
-            if pd.notna(row.get("FAX")):
+            if pd.notna(row.get("FAX")) and str(row.get("FAX")).strip():                
                 faxes = parse_phone_numbers(row.get("FAX"))
                 for f in faxes:
                     graph.add((org_uri, SCHEMA.faxNumber, Literal(f, datatype=XSD.string)))
@@ -99,22 +107,28 @@ def organisation_ttl(
             graph.add((org_uri, SCHEMA.address, address_node))
             graph.add((address_node, RDF.type, SCHEMA.PostalAddress))
 
-            if pd.notna(row.get("street_address")):
+            if pd.notna(row.get("street_address")) and str(row.get("street_address")).strip():
                 graph.add((address_node, SCHEMA.streetAddress, Literal(str(row["street_address"]).strip(), datatype=XSD.string)))
 
-            if pd.notna(row.get("post_office_box")):
+            if pd.notna(row.get("post_office_box")) and str(row.get("post_office_box")).strip():
                 graph.add((address_node, SCHEMA.postOfficeBoxNumber, Literal(str(row["post_office_box"]).strip(), datatype=XSD.string)))
 
             # Add city
-            if pd.notna(row.get("city_name")):
+            if pd.notna(row.get("city_name")) and str(row.get("city_name")).strip():                
                 # Prefer the mapped city name from the Code table
                 graph.add((address_node, SCHEMA.addressLocality, Literal(str(row["city_name"]).strip(), datatype=XSD.string)))
-            elif pd.notna(row.get("city_id")):
+            elif pd.notna(row.get("city_id")) and str(row.get("city_id")).strip():
                 # Fallback to ID if no match is found
                 graph.add((address_node, SCHEMA.addressLocality, Literal(str(row["city_id"]).strip(), datatype=XSD.string)))
 
             # country as iso3
-            country_id = (row.get("country_id") or "").strip().lower()
+            country_raw = row.get("country_id")
+
+            if pd.notna(country_raw):
+                country_id = str(country_raw).strip().lower()
+            else:
+                country_id = ""
+                
             if country_id:
                 iso3 = (COUNTRY_MAPPING.get(country_id) or "").strip()
                 if iso3:

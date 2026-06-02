@@ -1,11 +1,8 @@
-import os
-import sys
 import duckdb
 from pathlib import Path
 import pandas as pd
-from rdflib import Graph, Namespace, URIRef, Literal
+from rdflib import Graph, Namespace, Literal
 from rdflib.namespace import RDF
-from rdflib.namespace import NamespaceManager
 
 # local imports
 from src.python.utils.helper_functions import load_namespaces
@@ -15,13 +12,14 @@ def pests_ttl(
     out_path="rdf/data/pests.ttl"
 ):
     """
-    Creates a pests_ttl graph extracting Culture entities from the Code table.
+    Creates a pests_ttl graph extracting Pest entities from the Code table.
     """
     # Set namespaces
     namespaces = load_namespaces()
     
     BASE = namespaces["base"]
     SCHEMA = namespaces["schema"]
+    XSD = namespaces["xsd"]
     
     # Fallback instantiation if they are not explicitly present in namespaces.yaml
     PEST = namespaces.get("pest", Namespace(str(BASE) + "pest/"))
@@ -42,7 +40,8 @@ def pests_ttl(
     # Create pest triples
     for i, row in pests_df.iterrows():
         try:
-            if pd.isna(row.get("code_id")):
+            if pd.isna(row.get("code_id")) or not str(row.get("code_id")).strip():
+                print(f"Pest row {i}: missing code_id -> skipped")
                 continue
 
             code_id = str(row["code_id"]).strip()
@@ -50,27 +49,27 @@ def pests_ttl(
 
             # Add Type
             graph.add((pest_uri, RDF.type, BASE.Pest))
-            
+
             # Add Identifier
-            graph.add((pest_uri, SCHEMA.identifier, Literal(code_id)))
+            graph.add((pest_uri, SCHEMA.identifier, Literal(code_id, datatype=XSD.string)))
 
             # Add Part
-            if pd.notna(row.get("parent_id")):
+            if pd.notna(row.get("parent_id")) and str(row.get("parent_id")).strip():
                 parent_id = str(row["parent_id"]).strip()
                 graph.add((pest_uri, SCHEMA.isPartOf, PEST[parent_id]))
 
             # Add language-tagged Names
-            if pd.notna(row.get("DE")):
+            if pd.notna(row.get("DE")) and str(row.get("DE")).strip():
                 graph.add((pest_uri, SCHEMA.name, Literal(str(row["DE"]).strip(), lang="de")))
-            if pd.notna(row.get("EN")):
+            if pd.notna(row.get("EN")) and str(row.get("EN")).strip():
                 graph.add((pest_uri, SCHEMA.name, Literal(str(row["EN"]).strip(), lang="en")))
-            if pd.notna(row.get("FR")):
+            if pd.notna(row.get("FR")) and str(row.get("FR")).strip():
                 graph.add((pest_uri, SCHEMA.name, Literal(str(row["FR"]).strip(), lang="fr")))
-            if pd.notna(row.get("IT")):
+            if pd.notna(row.get("IT")) and str(row.get("IT")).strip():
                 graph.add((pest_uri, SCHEMA.name, Literal(str(row["IT"]).strip(), lang="it")))
 
         except Exception as error:
-            print(f"Row {i} (Crop {code_id}): {error}")
+            print(f"Row {i} (Pest {code_id}): {error}")
 
     # Print graph info
     print(f"[i] Total pest triples: {len(graph)}")
