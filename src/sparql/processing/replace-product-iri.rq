@@ -1,4 +1,19 @@
 PREFIX : <https://agriculture.ld.admin.ch/plant-protection/>
+
+# first replace IRI where the product is the object (incoming links)
+DELETE {
+  ?s ?p ?oldURI .
+}
+INSERT {
+  ?s ?p ?newURI .
+}
+WHERE {
+  ?oldURI a :Product ; :federalAdmissionNumber ?number .
+  ?s ?p ?oldURI .
+  BIND(URI(CONCAT("https://agriculture.ld.admin.ch/plant-protection/product/", ENCODE_FOR_URI(STR(?number)))) AS ?newURI)
+} ;
+
+# second replace IRI where the product is the subject (outgoing links)
 DELETE {
   ?oldURI ?p ?o .
 }
@@ -7,5 +22,5 @@ INSERT {
 }
 WHERE {
   ?oldURI a :Product ; :federalAdmissionNumber ?number ; ?p ?o .
-  BIND(URI(CONCAT("https://agriculture.ld.admin.ch/plant-protection/product/", ENCODE_FOR_URI(?number))) AS ?newURI)
-}
+  BIND(URI(CONCAT("https://agriculture.ld.admin.ch/plant-protection/product/", ENCODE_FOR_URI(STR(?number)))) AS ?newURI)
+} ;
