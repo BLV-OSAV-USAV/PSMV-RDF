@@ -7,6 +7,8 @@ import subprocess
 import urllib.request
 import pandas as pd
 import re
+from rdflib.namespace import RDF
+from rdflib import Literal
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT_DIR = os.path.abspath(os.path.join(BASE_DIR, "..", "..", "..")) 
@@ -181,3 +183,28 @@ def parse_phone_numbers(raw_str):
             formatted_nums.append(formatted)
             
     return formatted_nums
+
+def ensure_indication(graph, seen_indications, ind_id, INDICATION, BASE):
+    """Ensure the Indication node is declared only once."""
+    if ind_id not in seen_indications:
+        ind_uri = INDICATION[ind_id]
+        graph.add((ind_uri, RDF.type, BASE.Indication))
+        seen_indications.add(ind_id)
+    return INDICATION[ind_id]
+
+
+def group_to_dict(df: pd.DataFrame, key_col: str) -> dict:
+    return (
+        df.dropna(subset=[key_col])
+        .assign(**{key_col: lambda d: d[key_col].astype(str).str.strip()})
+        .groupby(key_col, sort=False)
+        .apply(lambda g: g.to_dict("records"), include_groups=False)
+        .to_dict()
+    )
+
+
+def add_lang_labels(graph, subject, predicate, row):
+    for lang in ("EN", "DE", "FR", "IT"):
+        val = row.get(lang)
+        if pd.notna(val) and str(val).strip():
+            graph.add((subject, predicate, Literal(str(val).strip(), lang=lang.lower())))

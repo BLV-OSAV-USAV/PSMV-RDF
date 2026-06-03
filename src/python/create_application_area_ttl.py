@@ -5,7 +5,7 @@ from rdflib import Graph, Namespace, URIRef, Literal
 from rdflib.namespace import RDF
 
 # local imports
-from src.python.utils.helper_functions import load_namespaces
+from src.python.utils.helper_functions import load_namespaces, add_lang_labels
 
 def application_area_ttl(
     db_path="data/processed/psmv-data.duckdb",
@@ -59,14 +59,7 @@ def application_area_ttl(
                     graph.add((area_uri, SCHEMA.identifier, Literal(code_val, datatype=XSD.string)))
 
             # Add language-tagged Names
-            if pd.notna(row.get("DE")):
-                graph.add((area_uri, SCHEMA.name, Literal(str(row["DE"]).strip(), lang="de")))
-            if pd.notna(row.get("EN")):
-                graph.add((area_uri, SCHEMA.name, Literal(str(row["EN"]).strip(), lang="en")))
-            if pd.notna(row.get("FR")):
-                graph.add((area_uri, SCHEMA.name, Literal(str(row["FR"]).strip(), lang="fr")))
-            if pd.notna(row.get("IT")):
-                graph.add((area_uri, SCHEMA.name, Literal(str(row["IT"]).strip(), lang="it")))
+            add_lang_labels(graph, area_uri, SCHEMA.name, row)
 
         except Exception as error:
             print(f"Application area row {i} ({code_id or 'unknown'}): {error}")
