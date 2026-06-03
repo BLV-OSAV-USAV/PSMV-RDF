@@ -45,10 +45,10 @@ def indication_ttl(
     # Read data
     con = duckdb.connect(db_path, read_only=True)
     
-    prod_ind_df   = con.execute("SELECT * FROM ProductIndicationExpanded").df()
-    cult_df        = con.execute("SELECT * FROM IndicationCultureLink").df()
-    obl_df         = con.execute("SELECT * FROM IndicationObligationLink").df()
-    app_area_df    = con.execute("SELECT * FROM ApplicationAreaLink").df()
+    prod_ind_df = con.execute("SELECT * FROM ProductIndicationExpanded").df()
+    cult_df = con.execute("SELECT * FROM IndicationCultureLink").df()
+    obl_df = con.execute("SELECT * FROM IndicationObligationLink").df()
+    app_area_df = con.execute("SELECT * FROM ApplicationAreaLink").df()
     app_comment_df = con.execute("SELECT * FROM ApplicationCommentLink").df()
     
     ind_measure_df  = con.execute("SELECT * FROM IndicationMeasureCode").df()
@@ -81,13 +81,13 @@ def indication_ttl(
     graph.addN(triples)
 
     link_configs = [
-    (cult_df,        "culture_id",              "crop",               CROP),
-    (obl_df,         "indication_obligation_id", "obligation",         CODE),
-    (app_area_df,    "application_area_id",      "applicationArea",    CODE),
-    (app_comment_df, "application_comment_id",   "applicationComment", CODE),
+    (cult_df,"culture_id","crop", CROP),
+    (obl_df,"indication_obligation_id", "obligation", CODE),
+    (app_area_df,"application_area_id", "applicationArea",CODE),
+    (app_comment_df, "application_comment_id", "applicationComment", CODE),
     ]
 
-    # Crop, Obligation, Area, Comment
+    # Map Indication -> Crop, Obligation, Area, Comment
     for df_link, id_col, predicate_name, ns in link_configs:
         predicate = BASE[predicate_name]
         pairs = (
