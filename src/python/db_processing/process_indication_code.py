@@ -31,7 +31,7 @@ def process_indication_code():
             MAX(c.unit_max_applications)   AS unit_max_applications,
             MAX(c.infofito_ref)            AS infofito_ref
         FROM {table} i
-        LEFT JOIN Code c ON i.{id_col} = c.code_id
+        LEFT JOIN Code c ON LOWER(TRIM(i.{id_col})) = LOWER(TRIM(c.code_id))
         GROUP BY i.{id_col};
 
         CREATE OR REPLACE TABLE {table}Code AS
@@ -51,7 +51,7 @@ def process_indication_code():
             p.unit_max_applications,
             p.infofito_ref
         FROM {table} i
-        LEFT JOIN pivot_vals p ON i.{id_col} = p.{id_col};
+        LEFT JOIN pivot_vals p ON LOWER(TRIM(i.{id_col})) = LOWER(TRIM(p.{id_col}));
         """
 
         con.execute(sql_script)

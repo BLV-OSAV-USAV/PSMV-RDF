@@ -6,6 +6,7 @@ def process_substance_code():
     sql_script = """
     CREATE OR REPLACE VIEW code_typed AS
     SELECT *,
+        LOWER(TRIM(code_id)) AS norm_id,
         CASE
             WHEN TRY_CAST(code_id AS INTEGER) IS NOT NULL THEN 'legacy'
             ELSE 'uuid'
@@ -15,14 +16,14 @@ def process_substance_code():
 
     CREATE OR REPLACE VIEW pivot_vals AS
     SELECT
-        code_id AS nk_codetable_substance_id,
+        norm_id AS nk_codetable_substance_id,
         id_type,
         MAX(CASE WHEN language = 'en' THEN value END) AS EN,
         MAX(CASE WHEN language = 'de' THEN value END) AS DE,
         MAX(CASE WHEN language = 'fr' THEN value END) AS FR,
         MAX(CASE WHEN language = 'it' THEN value END) AS IT
     FROM code_typed
-    GROUP BY code_id, id_type;
+    GROUP BY norm_id, id_type;
 
     CREATE OR REPLACE TABLE ProductIngredientCode AS
     SELECT
@@ -34,9 +35,9 @@ def process_substance_code():
         p.IT
     FROM ProductIngredient i
     LEFT JOIN code_typed c
-        ON LOWER(i.nk_codetable_substance_id) = LOWER(c.code_id)
+        ON LOWER(TRIM(i.nk_codetable_substance_id)) = c.norm_id
     LEFT JOIN pivot_vals p
-        ON c.code_id = p.nk_codetable_substance_id;
+        ON c.norm_id = p.nk_codetable_substance_id;
     """
 
     con.execute(sql_script)

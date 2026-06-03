@@ -13,7 +13,7 @@ def process_application_area_code(db_path: str = 'data/processed/psmv-data.duckd
             MAX(CASE WHEN language = 'it' THEN value END) AS IT,
             MAX(min_interval_between_uses) AS min_interval_between_uses
         FROM Code
-        WHERE text_key = 'ApplicationComment'
+        WHERE text_key = 'ApplicationArea'
     GROUP BY code_id
     """)
 

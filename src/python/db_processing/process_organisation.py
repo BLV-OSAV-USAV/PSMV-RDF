@@ -13,7 +13,7 @@ def process_organisation(db_path: str = 'data/processed/psmv-data.duckdb'):
             SELECT code_id, MAX(value) AS city_name 
             FROM Code 
             GROUP BY code_id
-        ) c ON o.city_id = c.code_id
+        ) c ON LOWER(TRIM(o.city_id)) = LOWER(TRIM(c.code_id))
     """)
 
     row_count = con.execute("SELECT COUNT(*) FROM OrganisationCode").fetchone()[0]

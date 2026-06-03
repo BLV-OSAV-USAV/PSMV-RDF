@@ -2,12 +2,12 @@ import duckdb
 
 def process_indication_links(db_path: str = 'data/processed/psmv-data.duckdb'):
     tables = {
-        "ProductIndicationLink":    "SELECT DISTINCT product_ref_or_id, product_indication FROM Product WHERE product_ref_or_id IS NOT NULL AND product_indication IS NOT NULL",
-        "IndicationCultureLink":   "SELECT DISTINCT indication, culture_id FROM IndicationCulture WHERE indication IS NOT NULL AND culture_id IS NOT NULL",
-        "IndicationPestLink":      "SELECT DISTINCT indication, indication_pest_id FROM IndicationPest WHERE indication IS NOT NULL AND indication_pest_id IS NOT NULL",
-        "IndicationObligationLink":"SELECT DISTINCT indication, indication_obligation_id FROM IndicationObligation WHERE indication IS NOT NULL AND indication_obligation_id IS NOT NULL",
-        "ApplicationAreaLink":     "SELECT DISTINCT indication, application_area_id FROM ApplicationArea WHERE indication IS NOT NULL AND application_area_id IS NOT NULL",
-        "ApplicationCommentLink":  "SELECT DISTINCT indication, application_comment_id FROM ApplicationComment WHERE indication IS NOT NULL AND application_comment_id IS NOT NULL",
+    "ProductIndicationLink":    "SELECT DISTINCT LOWER(TRIM(product_ref_or_id)) AS product_ref_or_id, LOWER(TRIM(product_indication)) AS product_indication FROM Product WHERE product_ref_or_id IS NOT NULL AND product_indication IS NOT NULL",
+    "IndicationCultureLink":    "SELECT DISTINCT LOWER(TRIM(indication)) AS indication, LOWER(TRIM(culture_id)) AS culture_id FROM IndicationCulture WHERE indication IS NOT NULL AND culture_id IS NOT NULL",
+    "IndicationPestLink":       "SELECT DISTINCT LOWER(TRIM(indication)) AS indication, LOWER(TRIM(indication_pest_id)) AS indication_pest_id FROM IndicationPest WHERE indication IS NOT NULL AND indication_pest_id IS NOT NULL",
+    "IndicationObligationLink": "SELECT DISTINCT LOWER(TRIM(indication)) AS indication, LOWER(TRIM(indication_obligation_id)) AS indication_obligation_id FROM IndicationObligation WHERE indication IS NOT NULL AND indication_obligation_id IS NOT NULL",
+    "ApplicationAreaLink":      "SELECT DISTINCT LOWER(TRIM(indication)) AS indication, LOWER(TRIM(application_area_id)) AS application_area_id FROM ApplicationArea WHERE indication IS NOT NULL AND application_area_id IS NOT NULL",
+    "ApplicationCommentLink":   "SELECT DISTINCT LOWER(TRIM(indication)) AS indication, LOWER(TRIM(application_comment_id)) AS application_comment_id FROM ApplicationComment WHERE indication IS NOT NULL AND application_comment_id IS NOT NULL",
     }
 
     con = duckdb.connect(db_path)

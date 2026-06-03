@@ -93,16 +93,18 @@ def indication_ttl(
         (df["product_ref_or_id"] != "") & (df["indication"] != "")
     ].drop_duplicates()
 
-    ind_uri_map = {ind_id: ensure_indication(ind_id) for ind_id in df["indication"].unique()}
+    ind_uri_map  = {ind_id: ensure_indication(ind_id) for ind_id in df["indication"].unique()}
+    prod_uri_map = {pid: PRODUCT[pid] for pid in df["product_ref_or_id"].unique()}
 
-    graph.addN(
-        (ind_uri_map[ind_id], BASE.product, PRODUCT[prod_id], graph)
+    triples = [
+        (ind_uri_map[ind_id], BASE.product, prod_uri_map[prod_id], graph)
         for prod_id, ind_id in zip(df["product_ref_or_id"], df["indication"])
-    )
+    ]
+    graph.addN(triples)
 
     elapsed = time.perf_counter() - t0
     print(f"  {len(df):,} triples added in {elapsed:.2f}s")
-
+    
     # Map Indication -> Crop
     for _, row in cult_df.iterrows():
         if pd.isna(row.get("indication")) or pd.isna(row.get("culture_id")):

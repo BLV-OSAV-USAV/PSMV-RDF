@@ -7,11 +7,11 @@ def process_indication_product():
     CREATE OR REPLACE TABLE ProductIndicationExpanded AS
     SELECT 
         P.product_id,
-        P.product_ref_or_id,
-        PI.indication
+        LOWER(TRIM(P.product_ref_or_id)) AS product_ref_or_id,
+        LOWER(TRIM(PI.indication))       AS indication
     FROM Product P
     LEFT JOIN ProductIndication PI
-        ON PI.product_ref_or_id = P.product_ref_or_id;
+        ON LOWER(TRIM(PI.product_ref_or_id)) = LOWER(TRIM(P.product_ref_or_id));
     """)
     
     row_count = con.execute("SELECT COUNT(*) FROM ProductIndicationExpanded").fetchone()[0]
