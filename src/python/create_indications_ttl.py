@@ -105,6 +105,7 @@ def indication_ttl(
     measure_dict       = group_to_dict(ind_measure_df, "indication")
     time_measure_dict  = group_to_dict(ind_time_measure_df, "indication")
     indication_pest_dict = group_to_dict(ind_pst, "indication")
+    dosage_dict           = group_to_dict(prod_ind_df, "indication")
 
     # Create indication triples
     for i, indication_id_str in enumerate(sorted(seen_indications)):
@@ -139,7 +140,7 @@ def indication_ttl(
                     graph.add((indication_uri, BASE.timeMeasure, time_measure_node))
                     graph.add((time_measure_node, RDF.type, BASE.TimeMeasure))
 
-                    add_lang_labels(graph, measure_node, SCHEMA.name, m_row)
+                    add_lang_labels(graph, time_measure_node, SCHEMA.name, mt_row)
 
             # Pest Type
             if indication_id_str in indication_pest_dict:
@@ -164,6 +165,30 @@ def indication_ttl(
                             BASE.pestType,
                             Literal(str(pest_row["pest_type"]).strip(), datatype=XSD.string)
                         ))
+            
+            # Dosage / Expenditure / Waiting Period
+            if indication_id_str in dosage_dict:
+                for d_row in dosage_dict[indication_id_str]:
+                    dosage_node = BNode()
+
+                    graph.add((indication_uri, BASE.dosage, dosage_node))
+                    graph.add((dosage_node, RDF.type, BASE.Dosage))
+
+                    for col, predicate in [
+                        ("dosage_from",      BASE.dosageFrom),
+                        ("dosage_to",        BASE.dosageTo),
+                        ("expenditure_from", BASE.expenditureFrom),
+                        ("expenditure_to",   BASE.expenditureTo),
+                        ("waiting_period",   BASE.waitingPeriod),
+                    ]:
+                        val = d_row.get(col)
+                        if pd.notna(val) and str(val).strip():
+                            graph.add((
+                                dosage_node,
+                                predicate,
+                                Literal(str(val).strip(), datatype=XSD.string)
+                            ))
+
 
         except Exception as error:
             print(f"Indication row {i} ({indication_id_str or 'unknown'}): {error}")
