@@ -338,6 +338,15 @@ schema:PostalAddress a owl:Class ;
     rdfs:domain :Indication ;
     rdfs:range :Pest .
 
+:pestFullEffect a owl:ObjectProperty ;
+    rdfs:subPropertyOf :pest .
+
+:pestSideEffect a owl:ObjectProperty ;
+    rdfs:subPropertyOf :pest .
+
+:pestPartialEffect a owl:ObjectProperty ;
+    rdfs:subPropertyOf :pest .
+
 :cultivation a owl:ObjectProperty ;
     schema:name
         "allowed on crop"@en,
