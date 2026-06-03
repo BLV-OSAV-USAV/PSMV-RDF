@@ -186,6 +186,7 @@ def parse_phone_numbers(raw_str):
 
 def ensure_indication(graph, seen_indications, ind_id, INDICATION, BASE):
     """Ensure the Indication node is declared only once."""
+    ind_id = ind_id.strip().lower()
     if ind_id not in seen_indications:
         ind_uri = INDICATION[ind_id]
         graph.add((ind_uri, RDF.type, BASE.Indication))
@@ -196,7 +197,7 @@ def ensure_indication(graph, seen_indications, ind_id, INDICATION, BASE):
 def group_to_dict(df: pd.DataFrame, key_col: str) -> dict:
     return (
         df.dropna(subset=[key_col])
-        .assign(**{key_col: lambda d: d[key_col].astype(str).str.strip()})
+        .assign(**{key_col: lambda d: d[key_col].astype(str).str.strip().str.lower()})
         .groupby(key_col, sort=False)
         .apply(lambda g: g.to_dict("records"), include_groups=False)
         .to_dict()

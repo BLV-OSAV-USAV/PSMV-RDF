@@ -57,7 +57,7 @@ def indication_ttl(
     ind_clt_frm_df = con.execute("SELECT * FROM IndicationCultureFormCode").df()
     ind_obl_df = con.execute("SELECT * FROM IndicationObligationCode").df()
     ind_pst = con.execute("SELECT * FROM IndicationPestCode").df()
-    
+
     # Map Indication -> Product
     seen_indications = set()
     df = (
@@ -102,10 +102,15 @@ def indication_ttl(
             graph.add((ind_uri, predicate, ns[row[id_col]]))
 
     # Create indication triples
-    measure_dict       = group_to_dict(ind_measure_df, "indication")
+    measure_dict = group_to_dict(ind_measure_df, "indication")
     time_measure_dict  = group_to_dict(ind_time_measure_df, "indication")
     indication_pest_dict = group_to_dict(ind_pst, "indication")
-    dosage_dict           = group_to_dict(prod_ind_df, "indication")
+    
+    dosage_cols = ["indication", "dosage_from", "dosage_to", "expenditure_from", "expenditure_to", "waiting_period"]
+    dosage_dict = group_to_dict(
+        prod_ind_df[dosage_cols].drop_duplicates(),
+        "indication"
+    )
 
     # Create indication triples
     for i, indication_id_str in enumerate(sorted(seen_indications)):
@@ -148,7 +153,7 @@ def indication_ttl(
                     if pd.isna(pest_row.get("indication_pest_id")):
                         continue
 
-                    pest_id = str(pest_row["indication_pest_id"]).strip()
+                    pest_id = str(pest_row["indication_pest_id"]).strip().lower()
 
                     if not pest_id:
                         continue
