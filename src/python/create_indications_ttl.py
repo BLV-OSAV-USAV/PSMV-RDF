@@ -224,18 +224,17 @@ def indication_ttl(
                     if not pest_id:
                         continue
 
-                    rel_node = BNode()
-
-                    graph.add((indication_uri, BASE.indicationPest, rel_node))
-                    graph.add((rel_node, RDF.type, BASE.IndicationPest))
-                    graph.add((rel_node, BASE.pest, PEST[pest_id]))
-
+                    pest_type = ""
                     if pd.notna(pest_row.get("pest_type")) and str(pest_row.get("pest_type")).strip():
-                        graph.add((
-                            rel_node,
-                            BASE.pestType,
-                            Literal(str(pest_row["pest_type"]).strip(), datatype=XSD.string)
-                        ))
+                        pest_type = str(pest_row["pest_type"]).strip().upper()
+                    if pest_type == "PEST_FULL_EFFECT":
+                        graph.add((indication_uri, BASE.pestFullEffect, PEST[pest_id]))
+                    elif pest_type == "PEST_PARTIAL_EFFECT":
+                        graph.add((indication_uri, BASE.pestPartialEffect, PEST[pest_id]))
+                    elif pest_type == "PEST_SIDE_EFFECT":
+                        graph.add((indication_uri, BASE.pestSideEffect, PEST[pest_id]))
+                    else:
+                        graph.add((indication_uri, BASE.pest, PEST[pest_id]))
 
         except Exception as error:
             print(f"Indication row {i} ({indication_id_str or 'unknown'}): {error}")
