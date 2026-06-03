@@ -23,7 +23,7 @@ def indication_ttl(
     PRODUCT = namespaces["product"]
     SCHEMA = namespaces["schema"]
     XSD = namespaces["xsd"]
-    
+
     # Fallback instantiations if explicitly missing in namespaces.yaml
     INDICATION = namespaces.get("indication", Namespace(str(BASE) + "indication/"))
     CROP = namespaces.get("crop", Namespace(str(BASE) + "crop/"))
@@ -107,7 +107,6 @@ def indication_ttl(
     indication_pest_dict = group_to_dict(ind_pst, "indication")
 
     # Create indication triples
-    
     for i, indication_id_str in enumerate(sorted(seen_indications)):
         try:
             if not indication_id_str:

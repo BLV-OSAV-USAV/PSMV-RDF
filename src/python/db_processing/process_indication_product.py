@@ -16,7 +16,6 @@ def process_indication_product():
     
     row_count = con.execute("SELECT COUNT(*) FROM ProductIndicationExpanded").fetchone()[0]
     print(f"[i] ProductIndicationExpanded created with {row_count} rows.")
-    print(con.execute("SELECT * FROM ProductIndicationExpanded LIMIT 10").df())
 
     con.close()
 
