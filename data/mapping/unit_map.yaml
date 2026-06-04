@@ -1,7 +1,7 @@
-kg/ha: KiloGM-PER-HectoARE
-l/ha: L-PER-HectoARE
-g/ha: GM-PER-HectoARE
-ml/ha: MilliL-PER-HectoARE
+kg/ha: KiloGM-PER-HA
+l/ha: L-PER-HA
+g/ha: GM-PER-HA
+ml/ha: MilliL-PER-HA
 
 kg: KiloGM
 l: L
