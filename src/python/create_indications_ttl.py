@@ -29,6 +29,7 @@ def indication_ttl(
     CROP = namespaces.get("crop", Namespace(str(BASE) + "crop/"))
     PEST = namespaces.get("pest", Namespace(str(BASE) + "pest/"))
     CODE = namespaces.get("code", Namespace(str(BASE) + "code/"))
+    PEST_EFFECT = namespaces.get("pest_effect", Namespace(str(BASE) + "pest_effect/"))
 
     # Create empty graph
     graph = Graph()
@@ -40,6 +41,7 @@ def indication_ttl(
     graph.bind("crop", CROP)
     graph.bind("pest", PEST)
     graph.bind("code", CODE)
+    graph.bind("pest_effect", PEST_EFFECT)
     graph.namespace_manager.bind("schema", SCHEMA, override=True, replace=True)
 
     # Read data
@@ -164,13 +166,11 @@ def indication_ttl(
                     graph.add((rel_node, RDF.type, BASE.IndicationPest))
                     graph.add((rel_node, BASE.pest, PEST[pest_id]))
 
-                    if pd.notna(pest_row.get("pest_type")) and str(pest_row.get("pest_type")).strip():
-                        graph.add((
-                            rel_node,
-                            BASE.pestType,
-                            Literal(str(pest_row["pest_type"]).strip(), datatype=XSD.string)
-                        ))
-            
+                    raw_effect = pest_row.get("pest_type")
+                    if pd.notna(raw_effect) and str(raw_effect).strip():
+                        pest_effect_slug = str(raw_effect).strip().upper().replace(" ", "_")
+                        graph.add((rel_node, BASE.pestEffect, PEST_EFFECT[pest_effect_slug]))
+
             # Dosage / Expenditure / Waiting Period
             if indication_id_str in dosage_dict:
                 for d_row in dosage_dict[indication_id_str]:
@@ -188,11 +188,11 @@ def indication_ttl(
                     ]:
                         val = d_row.get(col)
                         if pd.notna(val) and str(val).strip():
-                            graph.add((
-                                dosage_node,
-                                predicate,
-                                Literal(str(val).strip(), datatype=XSD.string)
-                            ))
+                            if col in {"dosage_from", "dosage_to", "expenditure_from", "expenditure_to"}:
+                                typed_val = Literal(float(val), datatype=XSD.decimal)
+                            elif col in {"waiting_period"}:
+                                typed_val = Literal(int(float(val)), datatype=XSD.integer)
+                            graph.add((dosage_node, predicate, typed_val))
 
 
         except Exception as error:

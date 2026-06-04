@@ -56,7 +56,7 @@ def application_area_ttl(
             if pd.notna(row.get("code_value")):
                 code_val = str(row["code_value"]).strip()
                 if code_val:
-                    graph.add((area_uri, SCHEMA.identifier, Literal(code_val, datatype=XSD.string)))
+                    graph.add((area_uri, SCHEMA.identifier, Literal(code_val)))
 
             # Add language-tagged Names
             add_lang_labels(graph, area_uri, SCHEMA.name, row)

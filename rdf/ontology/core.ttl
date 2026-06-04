@@ -335,8 +335,24 @@ schema:PostalAddress a owl:Class ;
         "zugelassen gegen Schadorganismus"@de,
         "autorisé contre un organisme nuisible"@fr,
         "autorizzato contro un organismo nocivo"@it ;
-    rdfs:domain :Indication ;
+    rdfs:domain :IndicationPest ;
     rdfs:range :Pest .
+
+:IndicationPest a owl:Class ;
+    schema:name
+        "Indication Pest"@en,
+        "Schadorganismus der Anwendung"@de,
+        "Organisme nuisible de l'utilisation"@fr,
+        "Organismo nocivo dell'impiego"@it .
+
+:pestEffect a owl:ObjectProperty ;
+    schema:name
+        "pest effect"@en,
+        "Schädlingswirkung"@de,
+        "effet sur l'organisme nuisible"@fr,
+        "effetto sull'organismo nocivo"@it ;
+    rdfs:domain :IndicationPest ;
+    rdfs:range skos:Concept .
 
 :cultivation a owl:ObjectProperty ;
     schema:name
