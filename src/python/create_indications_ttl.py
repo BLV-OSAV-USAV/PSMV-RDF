@@ -59,6 +59,7 @@ def indication_ttl(
     ind_clt_frm_df = con.execute("SELECT * FROM IndicationCultureFormCode").df()
     ind_obl_df = con.execute("SELECT * FROM IndicationObligationCode").df()
     ind_pst = con.execute("SELECT * FROM IndicationPestCode").df()
+    print(con.execute("DESCRIBE IndicationPest").fetchdf())
 
     # Load Unit map
     UNIT_MAP = load_unit_map(UNIT)

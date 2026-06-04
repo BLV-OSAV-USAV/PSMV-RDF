@@ -21,7 +21,9 @@ def process_indication_code():
     }
 
     for table, id_col in tables.items():
-        indication_col = "LOWER(TRIM(i.indication)) AS indication," if table in HAS_INDICATION else ""
+        has_ind = table in HAS_INDICATION
+        exclude_cols = f"{id_col}, indication" if has_ind else id_col
+        indication_col = "LOWER(TRIM(i.indication)) AS indication," if has_ind else ""
 
         sql_script = f"""
         CREATE OR REPLACE VIEW pivot_vals AS
@@ -46,6 +48,7 @@ def process_indication_code():
 
         CREATE OR REPLACE TABLE {table}Code AS
         SELECT
+            i.* EXCLUDE ({exclude_cols}),
             {indication_col}
             LOWER(TRIM(i.{id_col})) AS {id_col},
             p.EN,
