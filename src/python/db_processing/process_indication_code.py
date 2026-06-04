@@ -12,7 +12,17 @@ def process_indication_code():
         "IndicationPest":        "indication_pest_id",
     }
 
+    HAS_INDICATION = {
+        "IndicationCulture",
+        "IndicationMeasure",
+        "IndicationTimeMeasure",
+        "IndicationObligation",
+        "IndicationPest",
+    }
+
     for table, id_col in tables.items():
+        indication_col = "LOWER(TRIM(i.indication)) AS indication," if table in HAS_INDICATION else ""
+
         sql_script = f"""
         CREATE OR REPLACE VIEW pivot_vals AS
         SELECT
@@ -36,7 +46,8 @@ def process_indication_code():
 
         CREATE OR REPLACE TABLE {table}Code AS
         SELECT
-            i.*,
+            {indication_col}
+            LOWER(TRIM(i.{id_col})) AS {id_col},
             p.EN,
             p.DE,
             p.FR,

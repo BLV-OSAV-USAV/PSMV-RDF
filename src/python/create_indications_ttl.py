@@ -59,7 +59,7 @@ def indication_ttl(
     ind_clt_frm_df = con.execute("SELECT * FROM IndicationCultureFormCode").df()
     ind_obl_df = con.execute("SELECT * FROM IndicationObligationCode").df()
     ind_pst = con.execute("SELECT * FROM IndicationPestCode").df()
-    
+
     # Load Unit map
     UNIT_MAP = load_unit_map(UNIT)
 
@@ -163,10 +163,6 @@ def indication_ttl(
 
                 unit_uri = UNIT_MAP.get(unit_str) if unit_str else None
 
-                if unit_str and not unit_uri:
-                    print(f"Warning: Unknown unit: {unit_str}")
-                    unit_uri = None
-                    
                 for d_row in dosage_dict[indication_id_str]:
 
                     # Dosage
@@ -197,6 +193,8 @@ def indication_ttl(
                             graph.add((exp_node, SCHEMA.minValue, Literal(float(e_from), datatype=XSD.decimal)))
                         if pd.notna(e_to):
                             graph.add((exp_node, SCHEMA.maxValue, Literal(float(e_to), datatype=XSD.decimal)))
+                        if unit_str:
+                            graph.add((exp_node, SCHEMA.unitText, Literal(unit_str)))
                         if unit_uri:
                             graph.add((exp_node, SCHEMA.unitCode, unit_uri))
 
