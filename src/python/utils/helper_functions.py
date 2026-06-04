@@ -9,6 +9,7 @@ import pandas as pd
 import re
 from rdflib.namespace import RDF
 from rdflib import Literal
+from pathlib import Path
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT_DIR = os.path.abspath(os.path.join(BASE_DIR, "..", "..", "..")) 
@@ -203,9 +204,18 @@ def group_to_dict(df: pd.DataFrame, key_col: str) -> dict:
         .to_dict()
     )
 
-
 def add_lang_labels(graph, subject, predicate, row):
     for lang in ("EN", "DE", "FR", "IT"):
         val = row.get(lang)
         if pd.notna(val) and str(val).strip():
             graph.add((subject, predicate, Literal(str(val).strip(), lang=lang.lower())))
+
+def load_unit_map(unit_ns):
+    path = Path("data/mapping/unit_map.yaml")
+    with open(path, "r", encoding="utf-8") as f:
+        raw = yaml.safe_load(f)
+
+    return {
+        k: unit_ns[v]
+        for k, v in raw.items()
+    }

@@ -6,7 +6,7 @@ from rdflib.namespace import RDF
 from rdflib.namespace import NamespaceManager
 
 # local imports
-from src.python.utils.helper_functions import load_namespaces, ensure_indication, add_lang_labels, group_to_dict
+from src.python.utils.helper_functions import load_namespaces, ensure_indication, add_lang_labels, group_to_dict, load_unit_map
 
 def indication_ttl(
     db_path="data/processed/psmv-data.duckdb",
@@ -29,6 +29,7 @@ def indication_ttl(
     CROP = namespaces.get("crop", Namespace(str(BASE) + "crop/"))
     PEST = namespaces.get("pest", Namespace(str(BASE) + "pest/"))
     CODE = namespaces.get("code", Namespace(str(BASE) + "code/"))
+    UNIT = namespaces.get("unit", Namespace(str(BASE) + "unit/"))
 
     # Create empty graph
     graph = Graph()
@@ -40,6 +41,7 @@ def indication_ttl(
     graph.bind("crop", CROP)
     graph.bind("pest", PEST)
     graph.bind("code", CODE)
+    graph.bind("unit", UNIT)
     graph.namespace_manager.bind("schema", SCHEMA, override=True, replace=True)
 
     # Read data
@@ -57,7 +59,10 @@ def indication_ttl(
     ind_clt_frm_df = con.execute("SELECT * FROM IndicationCultureFormCode").df()
     ind_obl_df = con.execute("SELECT * FROM IndicationObligationCode").df()
     ind_pst = con.execute("SELECT * FROM IndicationPestCode").df()
-    print(ind_pst['pest_type'].unique().tolist())
+    
+    # Load Unit map
+    UNIT_MAP = load_unit_map(UNIT)
+
     # Map Indication -> Product
     seen_indications = set()
     df = (
@@ -127,26 +132,6 @@ def indication_ttl(
                 Literal(indication_id_str, datatype=XSD.string)
             ))
 
-            # Measure
-            if indication_id_str in measure_dict:
-                for m_row in measure_dict[indication_id_str]:
-                    measure_node = BNode()
-
-                    graph.add((indication_uri, BASE.measure, measure_node))
-                    graph.add((measure_node, RDF.type, BASE.Measure))
-
-                    add_lang_labels(graph, measure_node, SCHEMA.name, m_row)
-
-            # Time Measure
-            if indication_id_str in time_measure_dict:
-                for mt_row in time_measure_dict[indication_id_str]:
-                    time_measure_node = BNode()
-
-                    graph.add((indication_uri, BASE.timeMeasure, time_measure_node))
-                    graph.add((time_measure_node, RDF.type, BASE.TimeMeasure))
-
-                    add_lang_labels(graph, time_measure_node, SCHEMA.name, mt_row)
-
             # Pest Type
             if indication_id_str in indication_pest_dict:
                 for pest_row in indication_pest_dict[indication_id_str]:
@@ -173,27 +158,56 @@ def indication_ttl(
 
             # Dosage / Expenditure / Waiting Period
             if indication_id_str in dosage_dict:
+                m_rows = measure_dict.get(indication_id_str, [])
+                unit_str = m_rows[0].get("DE") or m_rows[0].get("EN") if m_rows else None
+
+                unit_uri = UNIT_MAP.get(unit_str) if unit_str else None
+
+                if unit_str and not unit_uri:
+                    print(f"Warning: Unknown unit: {unit_str}")
+                    unit_uri = None
+                    
                 for d_row in dosage_dict[indication_id_str]:
-                    dosage_node = BNode()
 
-                    graph.add((indication_uri, BASE.dosage, dosage_node))
-                    graph.add((dosage_node, RDF.type, BASE.Dosage))
+                    # Dosage
+                    v_dosage_from = d_row.get("dosage_from")
+                    v_dosage_to   = d_row.get("dosage_to")
+                    
+                    if pd.notna(v_dosage_from) or pd.notna(v_dosage_to):
+                        dosage_node = BNode()
+                        graph.add((indication_uri, BASE.dosage, dosage_node))
+                        graph.add((dosage_node, RDF.type, SCHEMA.QuantitativeValue))
+                        if pd.notna(v_dosage_from):
+                            graph.add((dosage_node, SCHEMA.minValue, Literal(float(v_dosage_from), datatype=XSD.decimal)))
+                        if pd.notna(v_dosage_to):
+                            graph.add((dosage_node, SCHEMA.maxValue, Literal(float(v_dosage_to), datatype=XSD.decimal)))
+                        if unit_str:
+                            graph.add((dosage_node, SCHEMA.unitText, Literal(unit_str)))
+                        if unit_uri:
+                            graph.add((dosage_node, SCHEMA.unitCode, unit_uri))
 
-                    for col, predicate in [
-                        ("dosage_from",      BASE.dosageFrom),
-                        ("dosage_to",        BASE.dosageTo),
-                        ("expenditure_from", BASE.expenditureFrom),
-                        ("expenditure_to",   BASE.expenditureTo),
-                        ("waiting_period",   BASE.waitingPeriod),
-                    ]:
-                        val = d_row.get(col)
-                        if pd.notna(val) and str(val).strip():
-                            if col in {"dosage_from", "dosage_to", "expenditure_from", "expenditure_to"}:
-                                typed_val = Literal(float(val), datatype=XSD.decimal)
-                            elif col in {"waiting_period"}:
-                                typed_val = Literal(int(float(val)), datatype=XSD.integer)
-                            graph.add((dosage_node, predicate, typed_val))
+                    # Expenditure
+                    e_from = d_row.get("expenditure_from")
+                    e_to   = d_row.get("expenditure_to")
+                    if pd.notna(e_from) or pd.notna(e_to):
+                        exp_node = BNode()
+                        graph.add((indication_uri, BASE.expenditure, exp_node))
+                        graph.add((exp_node, RDF.type, SCHEMA.QuantitativeValue))
+                        if pd.notna(e_from):
+                            graph.add((exp_node, SCHEMA.minValue, Literal(float(e_from), datatype=XSD.decimal)))
+                        if pd.notna(e_to):
+                            graph.add((exp_node, SCHEMA.maxValue, Literal(float(e_to), datatype=XSD.decimal)))
+                        if unit_uri:
+                            graph.add((exp_node, SCHEMA.unitCode, unit_uri))
 
+                    # Waiting Period
+                    wp = d_row.get("waiting_period")
+                    if pd.notna(wp) and str(wp).strip():
+                        wp_node = BNode()
+                        graph.add((indication_uri, BASE.waitingPeriod, wp_node))
+                        graph.add((wp_node, RDF.type, SCHEMA.QuantitativeValue))
+                        graph.add((wp_node, SCHEMA.value, Literal(int(float(wp)), datatype=XSD.integer)))
+                        graph.add((wp_node, SCHEMA.unitCode, UNIT.DAY))
 
         except Exception as error:
             print(f"Indication row {i} ({indication_id_str or 'unknown'}): {error}")
