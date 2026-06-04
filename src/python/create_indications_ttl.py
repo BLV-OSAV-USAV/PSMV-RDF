@@ -29,7 +29,6 @@ def indication_ttl(
     CROP = namespaces.get("crop", Namespace(str(BASE) + "crop/"))
     PEST = namespaces.get("pest", Namespace(str(BASE) + "pest/"))
     CODE = namespaces.get("code", Namespace(str(BASE) + "code/"))
-    PEST_EFFECT = namespaces.get("pest_effect", Namespace(str(BASE) + "pest_effect/"))
 
     # Create empty graph
     graph = Graph()
@@ -41,7 +40,6 @@ def indication_ttl(
     graph.bind("crop", CROP)
     graph.bind("pest", PEST)
     graph.bind("code", CODE)
-    graph.bind("pest_effect", PEST_EFFECT)
     graph.namespace_manager.bind("schema", SCHEMA, override=True, replace=True)
 
     # Read data
@@ -59,7 +57,7 @@ def indication_ttl(
     ind_clt_frm_df = con.execute("SELECT * FROM IndicationCultureFormCode").df()
     ind_obl_df = con.execute("SELECT * FROM IndicationObligationCode").df()
     ind_pst = con.execute("SELECT * FROM IndicationPestCode").df()
-
+    print(ind_pst['pest_type'].unique().tolist())
     # Map Indication -> Product
     seen_indications = set()
     df = (
@@ -160,16 +158,18 @@ def indication_ttl(
                     if not pest_id:
                         continue
 
-                    rel_node = BNode()
-
-                    graph.add((indication_uri, BASE.indicationPest, rel_node))
-                    graph.add((rel_node, RDF.type, BASE.IndicationPest))
-                    graph.add((rel_node, BASE.pest, PEST[pest_id]))
-
                     raw_effect = pest_row.get("pest_type")
                     if pd.notna(raw_effect) and str(raw_effect).strip():
                         pest_effect_slug = str(raw_effect).strip().upper().replace(" ", "_")
-                        graph.add((rel_node, BASE.pestEffect, PEST_EFFECT[pest_effect_slug]))
+                        pest_predicate = {
+                            "PEST_FULL_EFFECT": BASE.pestFullEffect,
+                            "PEST_SIDE_EFFECT": BASE.pestSideEffect,
+                            "PEST_PARTIAL_EFFECT": BASE.pestPartialEffect,
+                        }.get(pest_effect_slug, BASE.pest)
+                    else:
+                        pest_predicate = BASE.pest
+
+                    graph.add((indication_uri, pest_predicate, PEST[pest_id]))
 
             # Dosage / Expenditure / Waiting Period
             if indication_id_str in dosage_dict:

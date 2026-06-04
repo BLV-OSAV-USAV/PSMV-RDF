@@ -12,5 +12,4 @@ chebi: https://www.ebi.ac.uk/chebi/
 pubchem_compound: https://pubchem.ncbi.nlm.nih.gov/compound/
 pubchem_substance: https://pubchem.ncbi.nlm.nih.gov/substance/
 wikidata: https://www.wikidata.org/entity/
-pest_effect: "https://agriculture.ld.admin.ch/vocab/pestEffect/"
 
