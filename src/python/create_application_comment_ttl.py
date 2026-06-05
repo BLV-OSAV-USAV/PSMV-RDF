@@ -6,7 +6,7 @@ from rdflib import Graph, Namespace, URIRef, Literal, BNode
 from rdflib.namespace import RDF
 
 # local imports
-from src.python.utils.helper_functions import load_namespaces
+from src.python.utils.helper_functions import load_namespaces, add_lang_labels
 
 def application_comment_ttl(
     db_path="data/processed/psmv-data.duckdb",
@@ -56,14 +56,7 @@ def application_comment_ttl(
             graph.add((comment_uri, RDF.type, BASE.ApplicationComment))
 
             # Add language-tagged Descriptions (unescaping HTML entities like &gt;)
-            if pd.notna(row.get("DE")):
-                graph.add((comment_uri, SCHEMA.description, Literal(html.unescape(str(row["DE"]).strip()), lang="de")))
-            if pd.notna(row.get("EN")):
-                graph.add((comment_uri, SCHEMA.description, Literal(html.unescape(str(row["EN"]).strip()), lang="en")))
-            if pd.notna(row.get("FR")):
-                graph.add((comment_uri, SCHEMA.description, Literal(html.unescape(str(row["FR"]).strip()), lang="fr")))
-            if pd.notna(row.get("IT")):
-                graph.add((comment_uri, SCHEMA.description, Literal(html.unescape(str(row["IT"]).strip()), lang="it")))
+            add_lang_labels(graph, comment_uri, SCHEMA.name, row)
 
             # Add waiting period blank node if applicable
             if pd.notna(row.get("min_interval_between_uses")):

@@ -1,13 +1,12 @@
 import duckdb
 from pathlib import Path
-
 import pandas as pd
-from rdflib import Graph, Namespace, Literal, BNode
+from rdflib import Graph, Namespace, URIRef, Literal, BNode
 from rdflib.namespace import RDF
+from rdflib.namespace import NamespaceManager
 
 # local imports
-from src.python.utils.helper_functions import load_namespaces
-
+from src.python.utils.helper_functions import load_namespaces, ensure_indication, add_lang_labels, group_to_dict, load_unit_map
 
 def indication_ttl(
     db_path="data/processed/psmv-data.duckdb",
@@ -19,7 +18,7 @@ def indication_ttl(
     """
     # Set namespaces
     namespaces = load_namespaces()
-
+    
     BASE = namespaces["base"]
     PRODUCT = namespaces["product"]
     SCHEMA = namespaces["schema"]
@@ -30,10 +29,11 @@ def indication_ttl(
     CROP = namespaces.get("crop", Namespace(str(BASE) + "crop/"))
     PEST = namespaces.get("pest", Namespace(str(BASE) + "pest/"))
     CODE = namespaces.get("code", Namespace(str(BASE) + "code/"))
+    UNIT = namespaces.get("unit", Namespace(str(BASE) + "unit/"))
 
     # Create empty graph
     graph = Graph()
-
+    
     # Bind namespaces
     graph.bind("", BASE)
     graph.bind("product", PRODUCT)
@@ -41,128 +41,81 @@ def indication_ttl(
     graph.bind("crop", CROP)
     graph.bind("pest", PEST)
     graph.bind("code", CODE)
-    graph.bind("xsd", XSD)
+    graph.bind("unit", UNIT)
     graph.namespace_manager.bind("schema", SCHEMA, override=True, replace=True)
 
     # Read data
     con = duckdb.connect(db_path, read_only=True)
-
-    prod_ind_df = con.execute("SELECT * FROM ProductIndication").df()
+    
+    prod_ind_df = con.execute("SELECT * FROM ProductIndicationExpanded").df()
     cult_df = con.execute("SELECT * FROM IndicationCultureLink").df()
     obl_df = con.execute("SELECT * FROM IndicationObligationLink").df()
     app_area_df = con.execute("SELECT * FROM ApplicationAreaLink").df()
     app_comment_df = con.execute("SELECT * FROM ApplicationCommentLink").df()
-
-    ind_measure_df = con.execute("SELECT * FROM IndicationMeasureCode").df()
+    
+    ind_measure_df  = con.execute("SELECT * FROM IndicationMeasureCode").df()
     ind_time_measure_df = con.execute("SELECT * FROM IndicationTimeMeasureCode").df()
+    ind_clt_df = con.execute("SELECT * FROM IndicationCultureCode").df()
+    ind_clt_frm_df = con.execute("SELECT * FROM IndicationCultureFormCode").df()
+    ind_obl_df = con.execute("SELECT * FROM IndicationObligationCode").df()
     ind_pst = con.execute("SELECT * FROM IndicationPestCode").df()
 
-    con.close()
+    # Load Unit map
+    UNIT_MAP = load_unit_map(UNIT)
 
-    # Ensure indication
+    # Map Indication -> Product
     seen_indications = set()
+    df = (
+        prod_ind_df
+        .dropna(subset=["product_ref_or_id", "indication"])
+        [["product_ref_or_id", "indication"]]
+        .astype(str)
+        .apply(lambda c: c.str.strip())
+    )
+    df = df[
+        (df["product_ref_or_id"] != "") & (df["indication"] != "")
+    ].drop_duplicates()
 
-    def ensure_indication(ind_id):
-        """Helper to ensure the Indication node is declared only once."""
-        if ind_id not in seen_indications:
-            ind_uri = INDICATION[ind_id]
-            graph.add((ind_uri, RDF.type, BASE.Indication))
-            seen_indications.add(ind_id)
+    ind_uri_map  = {ind_id: ensure_indication(graph, seen_indications, ind_id, INDICATION, BASE) for ind_id in df["indication"].unique()}
+    prod_uri_map = {pid: PRODUCT[pid] for pid in df["product_ref_or_id"].unique()}
 
-        return INDICATION[ind_id]
+    triples = [
+        (ind_uri_map[ind_id], BASE.product, prod_uri_map[prod_id], graph)
+        for prod_id, ind_id in zip(df["product_ref_or_id"], df["indication"])
+    ]
+    graph.addN(triples)
 
-    # Map Product -> Indication
-    for _, row in prod_ind_df.iterrows():
-        if pd.isna(row.get("product_ref_or_id")) or pd.isna(row.get("product_indicator")):
-            continue
+    link_configs = [
+    (cult_df,"culture_id","crop", CROP),
+    (obl_df,"indication_obligation_id", "obligation", CODE),
+    (app_area_df,"application_area_id", "applicationArea",CODE),
+    (app_comment_df, "application_comment_id", "applicationComment", CODE),
+    ]
 
-        prod_id = str(row["product_ref_or_id"]).strip()
-        ind_id = str(row["product_indicator"]).strip()
+    # Map Indication -> Crop, Obligation, Area, Comment
+    for df_link, id_col, predicate_name, ns in link_configs:
+        predicate = BASE[predicate_name]
+        pairs = (
+            df_link.dropna(subset=["indication", id_col])
+            [["indication", id_col]]
+            .astype(str)
+            .apply(lambda c: c.str.strip())
+        )
+        pairs = pairs[(pairs["indication"] != "") & (pairs[id_col] != "")].drop_duplicates()
+        for _, row in pairs.iterrows():
+            ind_uri = ensure_indication(graph, seen_indications, row["indication"], INDICATION, BASE)
+            graph.add((ind_uri, predicate, ns[row[id_col]]))
 
-        if prod_id and ind_id:
-            ind_uri = ensure_indication(ind_id)
-            graph.add((PRODUCT[prod_id], BASE.indication, ind_uri))
-
-    # Map Indication -> Crop
-    for _, row in cult_df.iterrows():
-        if pd.isna(row.get("indication")) or pd.isna(row.get("culture_id")):
-            continue
-
-        ind_id = str(row["indication"]).strip()
-        cult_id = str(row["culture_id"]).strip()
-
-        if ind_id and cult_id:
-            ind_uri = ensure_indication(ind_id)
-            graph.add((ind_uri, BASE.crop, CROP[cult_id]))
-
-    # Map Indication -> Obligation
-    for _, row in obl_df.iterrows():
-        if pd.isna(row.get("indication")) or pd.isna(row.get("indication_obligation_id")):
-            continue
-
-        ind_id = str(row["indication"]).strip()
-        obl_id = str(row["indication_obligation_id"]).strip()
-
-        if ind_id and obl_id:
-            ind_uri = ensure_indication(ind_id)
-            graph.add((ind_uri, BASE.obligation, CODE[obl_id]))
-
-    # Map Indication -> Application Area
-    for _, row in app_area_df.iterrows():
-        if pd.isna(row.get("indication")) or pd.isna(row.get("application_area_id")):
-            continue
-
-        ind_id = str(row["indication"]).strip()
-        area_id = str(row["application_area_id"]).strip()
-
-        if ind_id and area_id:
-            ind_uri = ensure_indication(ind_id)
-            graph.add((ind_uri, BASE.applicationArea, CODE[area_id]))
-
-    # Map Indication -> Application Comment
-    for _, row in app_comment_df.iterrows():
-        if pd.isna(row.get("indication")) or pd.isna(row.get("application_comment_id")):
-            continue
-
-        ind_id = str(row["indication"]).strip()
-        comment_id = str(row["application_comment_id"]).strip()
-
-        if ind_id and comment_id:
-            ind_uri = ensure_indication(ind_id)
-            graph.add((ind_uri, BASE.applicationComment, CODE[comment_id]))
-
-    # Pre-process Measure links for O(1) lookup
-    measure_dict = {}
-    for _, row in ind_measure_df.iterrows():
-        if pd.isna(row.get("indication")):
-            continue
-
-        ind_id = str(row["indication"]).strip()
-
-        if ind_id:
-            measure_dict.setdefault(ind_id, []).append(row)
-
-    # Pre-process Time Measure links for O(1) lookup
-    time_measure_dict = {}
-    for _, row in ind_time_measure_df.iterrows():
-        if pd.isna(row.get("indication")):
-            continue
-
-        ind_id = str(row["indication"]).strip()
-
-        if ind_id:
-            time_measure_dict.setdefault(ind_id, []).append(row)
-
-    # Pre-process Pest links for O(1) lookup
-    indication_pest_dict = {}
-    for _, row in ind_pst.iterrows():
-        if pd.isna(row.get("indication")):
-            continue
-
-        ind_id = str(row["indication"]).strip()
-
-        if ind_id:
-            indication_pest_dict.setdefault(ind_id, []).append(row)
+    # Create indication triples
+    measure_dict = group_to_dict(ind_measure_df, "indication")
+    time_measure_dict  = group_to_dict(ind_time_measure_df, "indication")
+    indication_pest_dict = group_to_dict(ind_pst, "indication")
+    
+    dosage_cols = ["indication", "dosage_from", "dosage_to", "expenditure_from", "expenditure_to", "waiting_period"]
+    dosage_dict = group_to_dict(
+        prod_ind_df[dosage_cols].drop_duplicates(),
+        "indication"
+    )
 
     # Create indication triples
     for i, indication_id_str in enumerate(sorted(seen_indications)):
@@ -179,63 +132,80 @@ def indication_ttl(
                 Literal(indication_id_str, datatype=XSD.string)
             ))
 
-            # Measure
-            if indication_id_str in measure_dict:
-                for m_row in measure_dict[indication_id_str]:
-                    measure_node = BNode()
-
-                    graph.add((indication_uri, BASE.measure, measure_node))
-                    graph.add((measure_node, RDF.type, BASE.Measure))
-
-                    if pd.notna(m_row.get("EN")) and str(m_row.get("EN")).strip():
-                        graph.add((measure_node, SCHEMA.name, Literal(str(m_row["EN"]).strip(), lang="en")))
-                    if pd.notna(m_row.get("DE")) and str(m_row.get("DE")).strip():
-                        graph.add((measure_node, SCHEMA.name, Literal(str(m_row["DE"]).strip(), lang="de")))
-                    if pd.notna(m_row.get("FR")) and str(m_row.get("FR")).strip():
-                        graph.add((measure_node, SCHEMA.name, Literal(str(m_row["FR"]).strip(), lang="fr")))
-                    if pd.notna(m_row.get("IT")) and str(m_row.get("IT")).strip():
-                        graph.add((measure_node, SCHEMA.name, Literal(str(m_row["IT"]).strip(), lang="it")))
-
-            # Time Measure
-            if indication_id_str in time_measure_dict:
-                for mt_row in time_measure_dict[indication_id_str]:
-                    time_measure_node = BNode()
-
-                    graph.add((indication_uri, BASE.timeMeasure, time_measure_node))
-                    graph.add((time_measure_node, RDF.type, BASE.TimeMeasure))
-
-                    if pd.notna(mt_row.get("EN")) and str(mt_row.get("EN")).strip():
-                        graph.add((time_measure_node, SCHEMA.name, Literal(str(mt_row["EN"]).strip(), lang="en")))
-                    if pd.notna(mt_row.get("DE")) and str(mt_row.get("DE")).strip():
-                        graph.add((time_measure_node, SCHEMA.name, Literal(str(mt_row["DE"]).strip(), lang="de")))
-                    if pd.notna(mt_row.get("FR")) and str(mt_row.get("FR")).strip():
-                        graph.add((time_measure_node, SCHEMA.name, Literal(str(mt_row["FR"]).strip(), lang="fr")))
-                    if pd.notna(mt_row.get("IT")) and str(mt_row.get("IT")).strip():
-                        graph.add((time_measure_node, SCHEMA.name, Literal(str(mt_row["IT"]).strip(), lang="it")))
-
             # Pest Type
             if indication_id_str in indication_pest_dict:
                 for pest_row in indication_pest_dict[indication_id_str]:
                     if pd.isna(pest_row.get("indication_pest_id")):
                         continue
 
-                    pest_id = str(pest_row["indication_pest_id"]).strip()
+                    pest_id = str(pest_row["indication_pest_id"]).strip().lower()
 
                     if not pest_id:
                         continue
 
-                    rel_node = BNode()
+                    raw_effect = pest_row.get("pest_type")
+                    if pd.notna(raw_effect) and str(raw_effect).strip():
+                        pest_effect_slug = str(raw_effect).strip().upper().replace(" ", "_")
+                        pest_predicate = {
+                            "PEST_FULL_EFFECT": BASE.pestFullEffect,
+                            "PEST_SIDE_EFFECT": BASE.pestSideEffect,
+                            "PEST_PARTIAL_EFFECT": BASE.pestPartialEffect,
+                        }.get(pest_effect_slug, BASE.pest)
+                    else:
+                        pest_predicate = BASE.pest
 
-                    graph.add((indication_uri, BASE.indicationPest, rel_node))
-                    graph.add((rel_node, RDF.type, BASE.IndicationPest))
-                    graph.add((rel_node, BASE.pest, PEST[pest_id]))
+                    graph.add((indication_uri, pest_predicate, PEST[pest_id]))
 
-                    if pd.notna(pest_row.get("pest_type")) and str(pest_row.get("pest_type")).strip():
-                        graph.add((
-                            rel_node,
-                            BASE.pestType,
-                            Literal(str(pest_row["pest_type"]).strip(), datatype=XSD.string)
-                        ))
+            # Dosage / Expenditure / Waiting Period
+            if indication_id_str in dosage_dict:
+                m_rows = measure_dict.get(indication_id_str, [])
+                unit_str = m_rows[0].get("DE") or m_rows[0].get("EN") if m_rows else None
+
+                unit_uri = UNIT_MAP.get(unit_str) if unit_str else None
+
+                for d_row in dosage_dict[indication_id_str]:
+
+                    # Dosage
+                    v_dosage_from = d_row.get("dosage_from")
+                    v_dosage_to   = d_row.get("dosage_to")
+                    
+                    if pd.notna(v_dosage_from) or pd.notna(v_dosage_to):
+                        dosage_node = BNode()
+                        graph.add((indication_uri, BASE.dosage, dosage_node))
+                        graph.add((dosage_node, RDF.type, SCHEMA.QuantitativeValue))
+                        if pd.notna(v_dosage_from):
+                            graph.add((dosage_node, SCHEMA.minValue, Literal(float(v_dosage_from), datatype=XSD.decimal)))
+                        if pd.notna(v_dosage_to):
+                            graph.add((dosage_node, SCHEMA.maxValue, Literal(float(v_dosage_to), datatype=XSD.decimal)))
+                        if unit_str:
+                            graph.add((dosage_node, SCHEMA.unitText, Literal(unit_str)))
+                        if unit_uri:
+                            graph.add((dosage_node, SCHEMA.unitCode, unit_uri))
+
+                    # Expenditure
+                    e_from = d_row.get("expenditure_from")
+                    e_to   = d_row.get("expenditure_to")
+                    if pd.notna(e_from) or pd.notna(e_to):
+                        exp_node = BNode()
+                        graph.add((indication_uri, BASE.expenditure, exp_node))
+                        graph.add((exp_node, RDF.type, SCHEMA.QuantitativeValue))
+                        if pd.notna(e_from):
+                            graph.add((exp_node, SCHEMA.minValue, Literal(float(e_from), datatype=XSD.decimal)))
+                        if pd.notna(e_to):
+                            graph.add((exp_node, SCHEMA.maxValue, Literal(float(e_to), datatype=XSD.decimal)))
+                        if unit_str:
+                            graph.add((exp_node, SCHEMA.unitText, Literal(unit_str)))
+                        if unit_uri:
+                            graph.add((exp_node, SCHEMA.unitCode, unit_uri))
+
+                    # Waiting Period
+                    wp = d_row.get("waiting_period")
+                    if pd.notna(wp) and str(wp).strip():
+                        wp_node = BNode()
+                        graph.add((indication_uri, BASE.waitingPeriod, wp_node))
+                        graph.add((wp_node, RDF.type, SCHEMA.QuantitativeValue))
+                        graph.add((wp_node, SCHEMA.value, Literal(int(float(wp)), datatype=XSD.integer)))
+                        graph.add((wp_node, SCHEMA.unitCode, UNIT.DAY))
 
         except Exception as error:
             print(f"Indication row {i} ({indication_id_str or 'unknown'}): {error}")
@@ -245,11 +215,9 @@ def indication_ttl(
     out_file = Path(out_path)
     out_file.parent.mkdir(parents=True, exist_ok=True)
     graph.serialize(destination=str(out_file), format="turtle")
-
     print(f"\nSaved to `{out_file}`")
-
+    
     return graph
-
 
 if __name__ == "__main__":
     indication_ttl()

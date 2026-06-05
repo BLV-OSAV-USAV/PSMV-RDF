@@ -5,7 +5,7 @@ from rdflib import Graph, Namespace, Literal
 from rdflib.namespace import RDF
 
 # local imports
-from src.python.utils.helper_functions import load_namespaces
+from src.python.utils.helper_functions import load_namespaces, add_lang_labels
 
 def obligation_ttl(
     db_path="data/processed/psmv-data.duckdb",
@@ -58,14 +58,7 @@ def obligation_ttl(
 
             # Add language-tagged Descriptions
             # Using schema:description as requested
-            if pd.notna(row.get("DE")):
-                graph.add((obl_uri, SCHEMA.description, Literal(str(row["DE"]).strip(), lang="de")))
-            if pd.notna(row.get("EN")):
-                graph.add((obl_uri, SCHEMA.description, Literal(str(row["EN"]).strip(), lang="en")))
-            if pd.notna(row.get("FR")):
-                graph.add((obl_uri, SCHEMA.description, Literal(str(row["FR"]).strip(), lang="fr")))
-            if pd.notna(row.get("IT")):
-                graph.add((obl_uri, SCHEMA.description, Literal(str(row["IT"]).strip(), lang="it")))
+            add_lang_labels(graph, obl_uri, SCHEMA.name, row)
 
         except Exception as error:
             print(f"Row {i} (Obligation {code_id}): {error}")

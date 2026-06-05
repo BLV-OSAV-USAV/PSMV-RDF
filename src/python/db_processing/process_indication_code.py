@@ -12,7 +12,19 @@ def process_indication_code():
         "IndicationPest":        "indication_pest_id",
     }
 
+    HAS_INDICATION = {
+        "IndicationCulture",
+        "IndicationMeasure",
+        "IndicationTimeMeasure",
+        "IndicationObligation",
+        "IndicationPest",
+    }
+
     for table, id_col in tables.items():
+        has_ind = table in HAS_INDICATION
+        exclude_cols = f"{id_col}, indication" if has_ind else id_col
+        indication_col = "LOWER(TRIM(i.indication)) AS indication," if has_ind else ""
+
         sql_script = f"""
         CREATE OR REPLACE VIEW pivot_vals AS
         SELECT
@@ -31,12 +43,14 @@ def process_indication_code():
             MAX(c.unit_max_applications)   AS unit_max_applications,
             MAX(c.infofito_ref)            AS infofito_ref
         FROM {table} i
-        LEFT JOIN Code c ON i.{id_col} = c.code_id
+        LEFT JOIN Code c ON LOWER(TRIM(i.{id_col})) = LOWER(TRIM(c.code_id))
         GROUP BY i.{id_col};
 
         CREATE OR REPLACE TABLE {table}Code AS
         SELECT
-            i.*,
+            i.* EXCLUDE ({exclude_cols}),
+            {indication_col}
+            LOWER(TRIM(i.{id_col})) AS {id_col},
             p.EN,
             p.DE,
             p.FR,
@@ -51,7 +65,7 @@ def process_indication_code():
             p.unit_max_applications,
             p.infofito_ref
         FROM {table} i
-        LEFT JOIN pivot_vals p ON i.{id_col} = p.{id_col};
+        LEFT JOIN pivot_vals p ON LOWER(TRIM(i.{id_col})) = LOWER(TRIM(p.{id_col}));
         """
 
         con.execute(sql_script)
