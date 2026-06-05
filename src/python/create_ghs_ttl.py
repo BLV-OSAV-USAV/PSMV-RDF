@@ -8,7 +8,7 @@ from rdflib.namespace import RDF
 from rdflib.namespace import NamespaceManager
 
 # local imports
-from src.python.utils.helper_functions import load_namespaces
+from src.python.utils.helper_functions import load_namespaces, add_lang_labels
 
 def ghs_ttl(
     db_path="data/processed/psmv-data.duckdb",
@@ -73,14 +73,7 @@ def ghs_ttl(
                     graph.add((ghs_uri, SCHEMA.identifier, Literal(code_val)))
 
             # Add language-tagged Names
-            if pd.notna(row.get("DE")):
-                graph.add((ghs_uri, SCHEMA.name, Literal(str(row["DE"]).strip(), lang="de")))
-            if pd.notna(row.get("EN")):
-                graph.add((ghs_uri, SCHEMA.name, Literal(str(row["EN"]).strip(), lang="en")))
-            if pd.notna(row.get("FR")):
-                graph.add((ghs_uri, SCHEMA.name, Literal(str(row["FR"]).strip(), lang="fr")))
-            if pd.notna(row.get("IT")):
-                graph.add((ghs_uri, SCHEMA.name, Literal(str(row["IT"]).strip(), lang="it")))
+            add_lang_labels(graph, ghs_uri, SCHEMA.name, row)
 
         except Exception as error:
             print(f"Row {i} (GHS Entity {code_id}): {error}")

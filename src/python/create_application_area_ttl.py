@@ -7,7 +7,7 @@ from rdflib import Graph, Namespace, URIRef, Literal
 from rdflib.namespace import RDF
 
 # local imports
-from src.python.utils.helper_functions import load_namespaces
+from src.python.utils.helper_functions import load_namespaces, add_lang_labels
 
 def application_area_ttl(
     db_path="data/processed/psmv-data.duckdb",

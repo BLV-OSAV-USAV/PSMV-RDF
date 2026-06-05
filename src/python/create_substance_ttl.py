@@ -5,7 +5,7 @@ from rdflib import Graph, Namespace, URIRef, Literal
 from rdflib.namespace import RDF, OWL
 
 # local imports
-from src.python.utils.helper_functions import load_namespaces, load_rdf_mappings
+from src.python.utils.helper_functions import load_namespaces, load_rdf_mappings, add_lang_labels
 
 # Set namespaces
 namespaces = load_namespaces()
@@ -105,21 +105,8 @@ def substance_ttl(
             if pd.notna(row.get("IUPAC_name")):
                 graph.add((substance_uri, BASE.iupacName, Literal(str(row.get("IUPAC_name")).strip())))
 
-            # German  name
-            if pd.notna(row.get("DE")) and str(row.get("DE")).strip():
-                graph.add((substance_uri, SCHEMA.name, Literal(str(row.get("DE")).strip(), lang="de")))
-            
-            # English name
-            if pd.notna(row.get("EN")) and str(row.get("EN")).strip():
-                graph.add((substance_uri, SCHEMA.name, Literal(str(row.get("EN")).strip(), lang="en")))
-            
-            # French name
-            if pd.notna(row.get("FR")) and str(row.get("FR")).strip():
-                graph.add((substance_uri, SCHEMA.name, Literal(str(row.get("FR")).strip(), lang="fr")))
-            
-            # Italian name
-            if pd.notna(row.get("IT")) and str(row.get("IT")).strip():
-                graph.add((substance_uri, SCHEMA.name, Literal(str(row.get("IT")).strip(), lang="it")))
+             # Add language-tagged Names
+            add_lang_labels(graph, substance_uri, SCHEMA.name, row)
 
             # ChEBI identities
             if pd.notna(row.get("hasChebiIdentity")):
