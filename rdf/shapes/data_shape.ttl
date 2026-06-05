@@ -588,7 +588,7 @@ shape:QuantitativeValue a sh:NodeShape ;
         sh:name "Value"@en ;
         sh:order 2 ;
         sh:path schema:value ;
-        sh:minExclusive 0 ;
+        sh:minInclusive 0 ; # there are indeed cases waiting period = 0 days ...
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:decimal ]
