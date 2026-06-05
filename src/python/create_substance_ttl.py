@@ -90,7 +90,7 @@ def substance_ttl(
                 print(f"Substance row {i}: missing nk_codetable_substance_id -> skipped")
                 continue
         
-            nk_codetable_substance_id = str(row.get("nk_codetable_substance_id")).strip()
+            nk_codetable_substance_id = str(row.get("nk_codetable_substance_id")).strip().lower()
             substance_uri = SUBSTANCE[nk_codetable_substance_id]
 
             # Active substance or co-formulant

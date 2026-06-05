@@ -44,7 +44,7 @@ def pests_ttl(
                 print(f"Pest row {i}: missing code_id -> skipped")
                 continue
 
-            code_id = str(row["code_id"]).strip()
+            code_id = str(row["code_id"]).strip().lower()
             pest_uri = PEST[code_id]
 
             # Add Type
@@ -55,7 +55,7 @@ def pests_ttl(
 
             # Add Part
             if pd.notna(row.get("parent_id")) and str(row.get("parent_id")).strip():
-                parent_id = str(row["parent_id"]).strip()
+                parent_id = str(row["parent_id"]).strip().lower()
                 graph.add((pest_uri, SCHEMA.isPartOf, PEST[parent_id]))
 
             # Add language-tagged Names

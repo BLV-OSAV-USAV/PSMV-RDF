@@ -46,7 +46,7 @@ def crops_ttl(
                 print(f"Crop row {i}: missing code_id -> skipped")
                 continue
 
-            code_id = str(row["code_id"]).strip()
+            code_id = str(row["code_id"]).strip().lower()
             crop_uri = CROP[code_id]
 
             # Add Type
@@ -57,7 +57,7 @@ def crops_ttl(
 
             # Add Part
             if pd.notna(row.get("parent_id")) and str(row.get("parent_id")).strip():
-                parent_id = str(row["parent_id"]).strip()
+                parent_id = str(row["parent_id"]).strip().lower()
                 graph.add((crop_uri, SCHEMA.isPartOf, CROP[parent_id]))
 
             # Add language-tagged Names

@@ -45,7 +45,7 @@ def obligation_ttl(
                 print(f"Obligation row {i}: missing code_id -> skipped")
                 continue
 
-            code_id = str(row["code_id"]).strip()
+            code_id = str(row["code_id"]).strip().lower()
             obl_uri = CODE[code_id]
 
             # Add Type
