@@ -445,7 +445,7 @@ shape:ApplicationComment a sh:NodeShape ;
         "Anwendungskommentar"@de ;
     rdfs:comment "Captures precise textual directives and technical stipulations regarding the physical deployment of a product. These annotations often clarify exceptional conditions, temporal constraints, or best-practice methodologies necessary for efficacy."@en ;
     sh:targetClass :ApplicationComment ;
-    sh:property shape:multiLanguageDescription .
+    sh:property shape:multiLanguageName .
 
 shape:Crop a sh:NodeShape ;
     rdfs:label "Crop"@en,
@@ -467,7 +467,7 @@ shape:Obligation a sh:NodeShape ;
         "Auflage"@de ;
     rdfs:comment "Specifies statutory mandates, restrictions, or operational conditions that an applicator must strictly observe. These parameters are designed to mitigate environmental impact, safeguard human health, and ensure regulatory compliance."@en ;
     sh:targetClass :Obligation ;
-    sh:property shape:multiLanguageDescription .
+    sh:property shape:multiLanguageName .
 
 shape:Pest a sh:NodeShape ;
     rdfs:label "Pest"@en,
@@ -590,7 +590,10 @@ shape:QuantitativeValue a sh:NodeShape ;
         sh:path schema:value ;
         sh:minExclusive 0 ;
         sh:maxCount 1 ;
-        sh:datatype xsd:decimal ;
+        sh:or (
+            [ sh:datatype xsd:decimal ]
+            [ sh:datatype xsd:integer ]
+        ) ;
     ] ; 
     sh:property [ 
         sh:name "Minimum value"@en ;
@@ -598,7 +601,10 @@ shape:QuantitativeValue a sh:NodeShape ;
         sh:path schema:minValue ;
         sh:minExclusive 0 ;
         sh:maxCount 1 ;
-        sh:datatype xsd:decimal ;
+        sh:or (
+            [ sh:datatype xsd:decimal ]
+            [ sh:datatype xsd:integer ]
+        ) ;
     ] ;
     sh:property [
         sh:name "Maximum value"@en ;
@@ -606,14 +612,17 @@ shape:QuantitativeValue a sh:NodeShape ;
         sh:path schema:maxValue ;
         sh:minExclusive 0 ;
         sh:maxCount 1 ;
-        sh:datatype xsd:decimal ;
+        sh:or (
+            [ sh:datatype xsd:decimal ]
+            [ sh:datatype xsd:integer ]
+        ) ;
     ] ; 
     sh:property [ 
         sh:name "Unit"@en ;
         sh:order 5 ;
         sh:path schema:unitCode ;
         sh:nodeKind sh:IRI ;
-        sh:minCount 1 ;
+        sh:minCount 0 ;
         sh:maxCount 1 ;
     ] .
 
