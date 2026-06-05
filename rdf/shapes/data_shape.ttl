@@ -599,7 +599,7 @@ shape:QuantitativeValue a sh:NodeShape ;
         sh:name "Minimum value"@en ;
         sh:order 3 ;
         sh:path schema:minValue ;
-        sh:minExclusive 0 ;
+        sh:minInclusive 0 ; # same here -- debatable whether a minimal value of 0 makes sense
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:decimal ]
