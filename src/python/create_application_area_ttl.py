@@ -1,5 +1,3 @@
-# src/python/create_application_area_ttl.py
-
 import duckdb
 from pathlib import Path
 import pandas as pd
@@ -44,38 +42,6 @@ def application_area_ttl(
         print(f"[!] Could not read ApplicationAreaCode ({e}).")
         app_area_df = pd.DataFrame()
         
-    # As a fallback for the letters, we can also query the ApplicationArea link table and join it,
-    # but only if code_value is empty.
-    try:
-        link_df = con.execute("SELECT * FROM ApplicationArea").df()
-        
-        # Find the correct column for code_id
-        if 'application_area_id' in link_df.columns:
-            link_df['link_code_id'] = link_df['application_area_id']
-        elif 'NK_Codetable' in link_df.columns:
-            link_df['link_code_id'] = link_df['NK_Codetable']
-        elif 'nk_codetable' in link_df.columns:
-            link_df['link_code_id'] = link_df['nk_codetable']
-            
-        # Find the correct column for code_value
-        if 'short_name' in link_df.columns:
-            link_df['link_code_value'] = link_df['short_name']
-        elif 'SHORT_NAME' in link_df.columns:
-            link_df['link_code_value'] = link_df['SHORT_NAME']
-            
-        if 'link_code_id' in link_df.columns and 'link_code_value' in link_df.columns:
-            link_df = link_df[['link_code_id', 'link_code_value']].rename(columns={'link_code_id': 'code_id'}).drop_duplicates()
-            if not app_area_df.empty:
-                app_area_df = pd.merge(app_area_df, link_df, on='code_id', how='left')
-                if 'code_value' in app_area_df.columns:
-                    app_area_df['code_value'] = app_area_df['code_value'].fillna(app_area_df['link_code_value'])
-                else:
-                    app_area_df['code_value'] = app_area_df['link_code_value']
-            else:
-                app_area_df = link_df.rename(columns={'link_code_value': 'code_value'})
-    except Exception as e:
-        print(f"[i] Could not join link table for short names: {e}")
-        
     con.close()
 
     # Create application area triples
@@ -99,25 +65,7 @@ def application_area_ttl(
                     graph.add((area_uri, SCHEMA.identifier, Literal(code_val)))
 
             # Add language-tagged Names
-            has_name = False
-            if 'DE' in row and pd.notna(row.get("DE")) and str(row.get("DE")).strip():
-                graph.add((area_uri, SCHEMA.name, Literal(str(row["DE"]).strip(), lang="de")))
-                has_name = True
-            if 'EN' in row and pd.notna(row.get("EN")) and str(row.get("EN")).strip():
-                graph.add((area_uri, SCHEMA.name, Literal(str(row["EN"]).strip(), lang="en")))
-                has_name = True
-            if 'FR' in row and pd.notna(row.get("FR")) and str(row.get("FR")).strip():
-                graph.add((area_uri, SCHEMA.name, Literal(str(row["FR"]).strip(), lang="fr")))
-                has_name = True
-            if 'IT' in row and pd.notna(row.get("IT")) and str(row.get("IT")).strip():
-                graph.add((area_uri, SCHEMA.name, Literal(str(row["IT"]).strip(), lang="it")))
-                has_name = True
-                
-            # Fallback: If no translation is matched, enforce the letter as schema:name
-            if not has_name and 'code_value' in row and pd.notna(row.get("code_value")):
-                code_val = str(row["code_value"]).strip()
-                if code_val:
-                    graph.add((area_uri, SCHEMA.name, Literal(code_val, datatype=XSD.string)))
+            add_lang_labels(graph, area_uri, SCHEMA.name, row)
 
         except Exception as error:
             print(f"Application area row {i} ({code_id or 'unknown'}): {error}")

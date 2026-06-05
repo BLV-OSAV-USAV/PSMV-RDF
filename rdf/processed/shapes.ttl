@@ -75,7 +75,7 @@ shape:ApplicationComment a sh:NodeShape ;
     rdfs:label "Anwendungskommentar"@de,
         "Application Comment"@en ;
     rdfs:comment "Captures precise textual directives and technical stipulations regarding the physical deployment of a product. These annotations often clarify exceptional conditions, temporal constraints, or best-practice methodologies necessary for efficacy."@en ;
-    sh:property shape:multiLanguageDescription ;
+    sh:property shape:multiLanguageName ;
     sh:targetClass :ApplicationComment .
 
 shape:ClassProperty a sh:NodeShape ;
@@ -249,7 +249,7 @@ shape:Obligation a sh:NodeShape ;
     rdfs:label "Auflage"@de,
         "Obligation"@en ;
     rdfs:comment "Specifies statutory mandates, restrictions, or operational conditions that an applicator must strictly observe. These parameters are designed to mitigate environmental impact, safeguard human health, and ensure regulatory compliance."@en ;
-    sh:property shape:multiLanguageDescription ;
+    sh:property shape:multiLanguageName ;
     sh:targetClass :Obligation .
 
 shape:Organization a sh:NodeShape ;
@@ -437,26 +437,26 @@ shape:QuantitativeValue a sh:NodeShape ;
             sh:name "Display text"@en ;
             sh:order 1 ;
             sh:path schema:name ],
-        [ sh:datatype xsd:decimal ;
-            sh:maxCount 1 ;
-            sh:minExclusive 0 ;
+        [ sh:maxCount 1 ;
+            sh:minInclusive 0 ;
             sh:name "Value"@en ;
+            sh:or ( [ sh:datatype xsd:decimal ] [ sh:datatype xsd:integer ] ) ;
             sh:order 2 ;
             sh:path schema:value ],
-        [ sh:datatype xsd:decimal ;
-            sh:maxCount 1 ;
-            sh:minExclusive 0 ;
+        [ sh:maxCount 1 ;
+            sh:minInclusive 0 ;
             sh:name "Minimum value"@en ;
+            sh:or ( [ sh:datatype xsd:decimal ] [ sh:datatype xsd:integer ] ) ;
             sh:order 3 ;
             sh:path schema:minValue ],
-        [ sh:datatype xsd:decimal ;
-            sh:maxCount 1 ;
+        [ sh:maxCount 1 ;
             sh:minExclusive 0 ;
             sh:name "Maximum value"@en ;
+            sh:or ( [ sh:datatype xsd:decimal ] [ sh:datatype xsd:integer ] ) ;
             sh:order 4 ;
             sh:path schema:maxValue ],
         [ sh:maxCount 1 ;
-            sh:minCount 1 ;
+            sh:minCount 0 ;
             sh:name "Unit"@en ;
             sh:nodeKind sh:IRI ;
             sh:order 5 ;
@@ -509,13 +509,6 @@ shape:Substance a sh:NodeShape ;
     sh:property shape:multiLanguageName ;
     sh:targetClass :Substance .
 
-shape:identifier sh:maxCount 1 ;
-    sh:minCount 1 ;
-    sh:name "Identifikator"@de,
-        "Identifier"@en ;
-    sh:order 1 ;
-    sh:path schema:identifier .
-
 shape:multiLanguageDescription sh:datatype rdf:langString ;
     sh:description "Multilingual description. German ('de') and French ('fr') translations are mandatory. Italian ('it') and English ('en') are optional. Only one entry per language is allowed, and no other languages are permitted."@en ;
     sh:languageIn ( "de" "fr" "it" "en" ) ;
@@ -528,6 +521,13 @@ shape:multiLanguageDescription sh:datatype rdf:langString ;
     sh:qualifiedMinCount 2 ;
     sh:qualifiedValueShape [ sh:languageIn ( "de" "fr" ) ] ;
     sh:uniqueLang true .
+
+shape:identifier sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "Identifikator"@de,
+        "Identifier"@en ;
+    sh:order 1 ;
+    sh:path schema:identifier .
 
 shape:multiLanguageName sh:datatype rdf:langString ;
     sh:description "Multilingual name. German ('de') and French ('fr') translations are mandatory. Italian ('it') and English ('en') are optional. Only one entry per language is allowed, and no other languages are permitted."@en ;
