@@ -70,7 +70,7 @@ def indication_ttl(
         .dropna(subset=["product_ref_or_id", "indication"])
         [["product_ref_or_id", "indication"]]
         .astype(str)
-        .apply(lambda c: c.str.strip())
+        .apply(lambda c: c.str.strip().str.lower())
     )
     df = df[
         (df["product_ref_or_id"] != "") & (df["indication"] != "")
@@ -99,7 +99,7 @@ def indication_ttl(
             df_link.dropna(subset=["indication", id_col])
             [["indication", id_col]]
             .astype(str)
-            .apply(lambda c: c.str.strip())
+            .apply(lambda c: c.str.strip().str.lower())
         )
         pairs = pairs[(pairs["indication"] != "") & (pairs[id_col] != "")].drop_duplicates()
         for _, row in pairs.iterrows():

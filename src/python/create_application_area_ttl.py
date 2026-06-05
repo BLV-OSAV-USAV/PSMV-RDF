@@ -35,7 +35,13 @@ def application_area_ttl(
 
     # Read data
     con = duckdb.connect(db_path, read_only=True)
-    app_area_df = con.execute("SELECT * FROM ApplicationAreaCode").df()
+    
+    try:
+        app_area_df = con.execute("SELECT * FROM ApplicationAreaCode").df()
+    except Exception as e:
+        print(f"[!] Could not read ApplicationAreaCode ({e}).")
+        app_area_df = pd.DataFrame()
+        
     con.close()
 
     # Create application area triples
@@ -46,14 +52,14 @@ def application_area_ttl(
                 print(f"Application area row {i}: missing code_id -> skipped")
                 continue
 
-            code_id = str(row["code_id"]).strip()
+            code_id = str(row["code_id"]).strip().lower()
             area_uri = CODE[code_id]
 
             # Add Type
             graph.add((area_uri, RDF.type, BASE.ApplicationArea))
             
-            # Add Identifier (CODE_VALUE)
-            if pd.notna(row.get("code_value")):
+            # Add Identifier (CODE_VALUE) - The letter identifier
+            if 'code_value' in row and pd.notna(row.get("code_value")):
                 code_val = str(row["code_value"]).strip()
                 if code_val:
                     graph.add((area_uri, SCHEMA.identifier, Literal(code_val)))

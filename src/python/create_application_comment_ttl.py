@@ -49,7 +49,7 @@ def application_comment_ttl(
                 print(f"Application comment row {i}: missing code_id -> skipped")
                 continue
 
-            code_id = str(row["code_id"]).strip()
+            code_id = str(row["code_id"]).strip().lower()
             comment_uri = CODE[code_id]
 
             # Add Type

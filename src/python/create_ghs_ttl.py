@@ -54,7 +54,7 @@ def ghs_ttl(
             if pd.isna(row.get("code_id")):
                 continue
 
-            code_id = str(row["code_id"]).strip()
+            code_id = str(row["code_id"]).strip().lower()
             ghs_uri = CODE[code_id]
             
             text_key = str(row.get("text_key")).strip()

@@ -78,7 +78,7 @@ def organisation_ttl(
                 print(f"Organisation row {i}: missing organisation_name -> skipped")
                 continue
 
-            organisation_id = str(organisation_id).strip()
+            organisation_id = str(organisation_id).strip().lower()
             organisation_name = str(organisation_name).strip()
 
             # Create organisation URI

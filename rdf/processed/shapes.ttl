@@ -9,7 +9,6 @@
 @prefix schema: <http://schema.org/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix shape: <https://agriculture.ld.admin.ch/plant-protection/shape/> .
-@prefix shapes: <https://agriculture.ld.admin.ch/plant-protection/shapes/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix unit: <http://qudt.org/vocab/unit/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -76,7 +75,7 @@ shape:ApplicationComment a sh:NodeShape ;
     rdfs:label "Anwendungskommentar"@de,
         "Application Comment"@en ;
     rdfs:comment "Captures precise textual directives and technical stipulations regarding the physical deployment of a product. These annotations often clarify exceptional conditions, temporal constraints, or best-practice methodologies necessary for efficacy."@en ;
-    sh:property shape:multiLanguageDescription ;
+    sh:property shape:multiLanguageName ;
     sh:targetClass :ApplicationComment .
 
 shape:ClassProperty a sh:NodeShape ;
@@ -250,7 +249,7 @@ shape:Obligation a sh:NodeShape ;
     rdfs:label "Auflage"@de,
         "Obligation"@en ;
     rdfs:comment "Specifies statutory mandates, restrictions, or operational conditions that an applicator must strictly observe. These parameters are designed to mitigate environmental impact, safeguard human health, and ensure regulatory compliance."@en ;
-    sh:property shape:multiLanguageDescription ;
+    sh:property shape:multiLanguageName ;
     sh:targetClass :Obligation .
 
 shape:Organization a sh:NodeShape ;
@@ -438,26 +437,26 @@ shape:QuantitativeValue a sh:NodeShape ;
             sh:name "Display text"@en ;
             sh:order 1 ;
             sh:path schema:name ],
-        [ sh:datatype xsd:decimal ;
-            sh:maxCount 1 ;
-            sh:minExclusive 0 ;
+        [ sh:maxCount 1 ;
+            sh:minInclusive 0 ;
             sh:name "Value"@en ;
+            sh:or ( [ sh:datatype xsd:decimal ] [ sh:datatype xsd:integer ] ) ;
             sh:order 2 ;
             sh:path schema:value ],
-        [ sh:datatype xsd:decimal ;
-            sh:maxCount 1 ;
-            sh:minExclusive 0 ;
+        [ sh:maxCount 1 ;
+            sh:minInclusive 0 ;
             sh:name "Minimum value"@en ;
+            sh:or ( [ sh:datatype xsd:decimal ] [ sh:datatype xsd:integer ] ) ;
             sh:order 3 ;
             sh:path schema:minValue ],
-        [ sh:datatype xsd:decimal ;
-            sh:maxCount 1 ;
+        [ sh:maxCount 1 ;
             sh:minExclusive 0 ;
             sh:name "Maximum value"@en ;
+            sh:or ( [ sh:datatype xsd:decimal ] [ sh:datatype xsd:integer ] ) ;
             sh:order 4 ;
             sh:path schema:maxValue ],
         [ sh:maxCount 1 ;
-            sh:minCount 1 ;
+            sh:minCount 0 ;
             sh:name "Unit"@en ;
             sh:nodeKind sh:IRI ;
             sh:order 5 ;
@@ -510,96 +509,6 @@ shape:Substance a sh:NodeShape ;
     sh:property shape:multiLanguageName ;
     sh:targetClass :Substance .
 
-shapes:IngredientSubstanceAndShareShape a sh:NodeShape ;
-    sh:property [ schema:name "Substance reference"@en ;
-            sh:class :Substance ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:path :substance ],
-        [ schema:name "Share (Quantitative Value)"@en ;
-            sh:minCount 1 ;
-            sh:node shapes:ShareShape ;
-            sh:path :share ] .
-
-shapes:NoRdfsAnnotationsShape a sh:NodeShape ;
-    schema:name "Prohibition of RDFS annotations"@en ;
-    sh:property [ schema:name "Forbid rdfs:label"@en ;
-            sh:maxCount 0 ;
-            sh:message "Any use of rdfs:label is forbidden; the preferred property is schema:name."@en ;
-            sh:path rdfs:label ],
-        [ schema:name "Forbid rdfs:comment"@en ;
-            sh:maxCount 0 ;
-            sh:message "Any use of rdfs:comment is forbidden; the preferred property is schema:description."@en ;
-            sh:path rdfs:comment ] ;
-    sh:targetClass owl:Class,
-        owl:DatatypeProperty,
-        owl:ObjectProperty .
-
-shapes:OntologyDocumentationShape a sh:NodeShape ;
-    schema:name "Ontology documentation rules"@en ;
-    sh:property [ schema:name "No more than one name per language"@en ;
-            sh:message "There can be at most one name per language tag."@en ;
-            sh:path schema:name ;
-            sh:uniqueLang true ],
-        [ schema:name "Mandatory English name"@en ;
-            sh:message "A class or property must have at least one name in English."@en ;
-            sh:path schema:name ;
-            sh:qualifiedMinCount 1 ;
-            sh:qualifiedValueShape [ sh:languageIn ( "en" ) ] ],
-        [ schema:name "Maximally one description per language"@en ;
-            sh:message "A class or property can have at most one description per language."@en ;
-            sh:path schema:description ;
-            sh:uniqueLang true ] ;
-    sh:targetClass owl:Class,
-        owl:DatatypeProperty,
-        owl:ObjectProperty .
-
-shapes:OrganizationShape a sh:NodeShape ;
-    sh:property [ schema:name "Legal name required"@en ;
-            sh:datatype xsd:string ;
-            sh:minCount 1 ;
-            sh:path schema:legalName ] ;
-    sh:targetClass schema:Organization .
-
-shapes:ProductAdmissionAndIngredientShape a sh:NodeShape ;
-    sh:property [ schema:name "Permission holder must be an Organization"@en ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:node shapes:OrganizationShape ;
-            sh:path :permissionHolder ],
-        [ schema:name "Federal admission number syntax"@en ;
-            sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:message "The federal admission number must match the pattern 'L-DDDD' or 'L-DDDD-D', where L is an uppercase letter and D a digit."@en ;
-            sh:minCount 1 ;
-            sh:path :federalAdmissionNumber ;
-            sh:pattern "^[A-Z]-[0-9]{1,4}(-[0-9]{1,2})?$" ],
-        [ schema:name "Ingredient validation"@en ;
-            sh:minCount 1 ;
-            sh:node shapes:IngredientShape ;
-            sh:path :ingredient ] ;
-    sh:targetClass :Product .
-
-shapes:QuantitativeValueUnitAndPositiveValueShape a sh:NodeShape ;
-    sh:property [ schema:name "Positive value constraint"@en ;
-            sh:message "The ingredient share value must be strictly greater than 0."@en ;
-            sh:minExclusive 0 ;
-            sh:path schema:value ],
-        [ schema:name "Unit validation"@en ;
-            sh:in ( unit:PERCENT unit:GM-PER-L ) ;
-            sh:maxCount 1 ;
-            sh:message "The unit must be either % or g/l represented as a `qudt:Unit`."@en ;
-            sh:minCount 1 ;
-            sh:path schema:unitCode ] ;
-    sh:targetClass schema:QuantitativeValue .
-
-shape:identifier sh:maxCount 1 ;
-    sh:minCount 1 ;
-    sh:name "Identifikator"@de,
-        "Identifier"@en ;
-    sh:order 1 ;
-    sh:path schema:identifier .
-
 shape:multiLanguageDescription sh:datatype rdf:langString ;
     sh:description "Multilingual description. German ('de') and French ('fr') translations are mandatory. Italian ('it') and English ('en') are optional. Only one entry per language is allowed, and no other languages are permitted."@en ;
     sh:languageIn ( "de" "fr" "it" "en" ) ;
@@ -612,6 +521,13 @@ shape:multiLanguageDescription sh:datatype rdf:langString ;
     sh:qualifiedMinCount 2 ;
     sh:qualifiedValueShape [ sh:languageIn ( "de" "fr" ) ] ;
     sh:uniqueLang true .
+
+shape:identifier sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "Identifikator"@de,
+        "Identifier"@en ;
+    sh:order 1 ;
+    sh:path schema:identifier .
 
 shape:multiLanguageName sh:datatype rdf:langString ;
     sh:description "Multilingual name. German ('de') and French ('fr') translations are mandatory. Italian ('it') and English ('en') are optional. Only one entry per language is allowed, and no other languages are permitted."@en ;

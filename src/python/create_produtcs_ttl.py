@@ -77,8 +77,8 @@ def products_ttl(
     # Pre-process GHS mappings for O(1) lookup
     ghs_dict = {}
     for _, row in ghs_df.iterrows():
-        pid = str(row["product_ref_or_id"]).strip()
-        cid = str(row["code_id"]).strip()
+        pid = str(row["product_ref_or_id"]).strip().lower()
+        cid = str(row["code_id"]).strip().lower()
         if pid not in ghs_dict:
             ghs_dict[pid] = set()
         ghs_dict[pid].add(cid)
@@ -86,8 +86,8 @@ def products_ttl(
     # Pre-process Organisation links for O(1) lookup
     org_dict = {}
     for _, row in pro_org_link_df.iterrows():
-        pid = str(row["product_id"]).strip()
-        oid = str(row["organisation_id"]).strip()
+        pid = str(row["product_id"]).strip().lower()
+        oid = str(row["organisation_id"]).strip().lower()
         if pid not in org_dict:
             org_dict[pid] = []
         org_dict[pid].append(oid)
@@ -95,7 +95,7 @@ def products_ttl(
     # Pre-process Ingredient links for O(1) lookup
     ingredient_dict = {}
     for _, row in ingredient_df.iterrows():
-        pid = str(row["product_ref_or_id"]).strip()
+        pid = str(row["product_ref_or_id"]).strip().lower()
         if pid not in ingredient_dict:
             ingredient_dict[pid] = []
         ingredient_dict[pid].append(row)
@@ -103,7 +103,7 @@ def products_ttl(
     # Pre-process Product Categories for O(1) lookup
     cat_dict = {}
     for _, row in prod_cat_df.iterrows():
-        pid = str(row["product_ref_or_id"]).strip()
+        pid = str(row["product_ref_or_id"]).strip().lower()
         cid = str(row["code_id"]).strip().upper()
         if pid not in cat_dict:
             cat_dict[pid] = []
@@ -121,9 +121,9 @@ def products_ttl(
                 print(f"Product row {i}: missing schema:name -> skipped")
                 continue            
 
-            product_id_str = str(row.get("product_id")).strip()
+            product_id_str = str(row.get("product_id")).strip().lower()
             product_ref_id_str = (
-                str(row.get("product_ref_or_id")).strip()
+                str(row.get("product_ref_or_id")).strip().lower()
                 if pd.notna(row.get("product_ref_or_id"))
                 else product_id_str
             )
@@ -210,7 +210,7 @@ def products_ttl(
 
             # Add link to reference product
             if pd.notna(row.get("product_ref_or_id")):
-                ref_id_str = str(row.get("product_ref_or_id")).strip()
+                ref_id_str = str(row.get("product_ref_or_id")).strip().lower()
                 # Constraint: Only add triple if ID differs from Reference ID
                 if product_id_str != ref_id_str:
                     ref_product_uri = PRODUCT[ref_id_str]
@@ -219,7 +219,7 @@ def products_ttl(
             # Add ingredients as nested Blank Nodes
             if product_ref_id_str in ingredient_dict:
                 for ing_row in ingredient_dict[product_ref_id_str]:
-                    substance_id = str(ing_row.get("nk_codetable_substance_id")).strip()
+                    substance_id = str(ing_row.get("nk_codetable_substance_id")).strip().lower()
                     if substance_id == "nan" or not substance_id:
                         continue
                     
