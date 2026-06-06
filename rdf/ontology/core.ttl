@@ -339,12 +339,27 @@ schema:PostalAddress a owl:Class ;
     rdfs:range :Pest .
 
 :pestFullEffect a owl:ObjectProperty ;
+    schema:name
+        "volle Wirkung gegen Schadorganismus"@de,
+        "full effect against pest"@en,
+        "effet complet contre l'organisme nuisible"@fr,
+        "effetto completo contro l'organismo nocivo"@it ;
     rdfs:subPropertyOf :pest .
 
 :pestSideEffect a owl:ObjectProperty ;
+    schema:name
+        "Nebenwirkung gegen Schadorganismus"@de,
+        "side effect against pest"@en,
+        "effet secondaire contre l'organisme nuisible"@fr,
+        "effetto secondario contro l'organismo nocivo"@it ;
     rdfs:subPropertyOf :pest .
 
 :pestPartialEffect a owl:ObjectProperty ;
+    schema:name
+        "Teilwirkung gegen Schadorganismus"@de,
+        "partial effect against pest"@en,
+        "effet partiel contre l'organisme nuisible"@fr,
+        "effetto parziale contro l'organismo nocivo"@it ;
     rdfs:subPropertyOf :pest .
 
 :cultivation a owl:ObjectProperty ;
