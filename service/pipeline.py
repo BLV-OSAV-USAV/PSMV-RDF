@@ -8,6 +8,7 @@ import datetime
 # Third-party libraries
 import rdflib
 from pyshacl import validate as pyshacl_validate
+from rdflib.namespace import RDF, SH
 
 # Data processors
 from src.python.utils.helper_functions import parse_phone_numbers, ensure_jar, load_rdf_mappings, load_namespaces
