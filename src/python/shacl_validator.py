@@ -23,7 +23,7 @@ def run_shacl_validation(
     print(f"[+] SHACL validation complete in {elapsed:.3f}s")
     print(f"    Conforms   : {conforms}")
     
-    return conforms
+    return conforms, results_graph, results_text
 
 if __name__ == "__main__":
     run_shacl_validation()
