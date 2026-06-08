@@ -5,6 +5,8 @@
 @prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
 
 # ==============================================================================
 # OWL METADATA
@@ -17,7 +19,7 @@ ghs: a owl:Ontology ;
         "Schéma de classification des phrases GHS"@fr,
         "Schema di classificazione delle frasi GHS"@it ;
     dcterms:description
-        "Controlled vocabulary for hazard statements (H phrases) and precautionary statements (P phrases) based on the Globally Harmonized System of Classification and Labelling of Chemicals (GHS)."@en .
+        "Ontology for hazard statements (H phrases), precautionary statements (P phrases), signal words and hazard pictograms defined by the Globally Harmonized System of Classification and Labelling of Chemicals (GHS)"@en .
 
 # ==============================================================================
 # GHS CLASSIFICATION
@@ -233,21 +235,24 @@ ghs:H200 a ghs:HazardStatement ;
     schema:name "Instabil, explosiv"@de,
         "Unstable explosives"@en,
         "Explosif instable"@fr,
-        "Esplosivo instabile"@it .
+        "Esplosivo instabile"@it ;
+    skos:exactMatch wd:Q51804092 .
 
 ghs:H201 a ghs:HazardStatement ;
     schema:identifier "H201" ;
     schema:name "Explosiv, Gefahr der Massenexplosion"@de,
         "Explosive; mass explosion hazard"@en,
         "Explosif; danger d'explosion en masse"@fr,
-        "Esplosivo; pericolo di esplosione di massa"@it .
+        "Esplosivo; pericolo di esplosione di massa"@it ;
+    skos:exactMatch wd:Q51844096 .
 
 ghs:H202 a ghs:HazardStatement ;
     schema:identifier "H202" ;
     schema:name "Explosiv; große Gefahr durch Splitter, Spreng- und Wurfstücke"@de,
         "Explosive, severe projection hazard"@en,
         "Explosif; danger sérieux de projection"@fr,
-        "Esplosivo; grave pericolo di proiezione"@it .
+        "Esplosivo; grave pericolo di proiezione"@it ;
+    skos:exactMatch wd:Q51844104 .
 
 ghs:H203 a ghs:HazardStatement ;
     schema:identifier "H203" ;

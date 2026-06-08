@@ -109,7 +109,7 @@ def run_pipeline():
     # uncomment when we are sure what to validate via SHACL here
     conforms, results_graph, results_text = run_shacl_validation()
     error_count = len(list(results_graph.subjects(RDF.type, SH.ValidationResult)))
-    print(f"Es wurden {error_count} Fehler gefunden.")  
+    print(f"{error_count} errors were found.")  
     
     # Pipeline completed
     total = time.perf_counter() - pipeline_start
