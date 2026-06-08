@@ -30,7 +30,7 @@ from src.python.db_processing.process_substance_code import process_substance_co
 from src.python.db_processing.enrich_substances import load_substances_mapping
 
 # Class modules
-from src.python.create_produtcs_ttl import products_ttl
+from src.python.create_products_ttl import products_ttl
 from src.python.create_organisation_ttl import organisation_ttl
 from src.python.create_substance_ttl import substance_ttl
 from src.python.create_crops_ttl import crops_ttl
