@@ -142,8 +142,8 @@ shape:Product a sh:NodeShape ;
         sh:order 8 ;
         sh:name "GHS code"@en ;
         sh:description "The Globally Harmonized System of Classification and Labelling of Chemicals (GHS) hazard and precautionary statements."@en ;
-        sh:path :ghs ;
-        sh:node shape:GHSStatement ;
+        sh:path :hasGHSLabelling ;
+        sh:node shape:GHSLabelling ;
     ] ;
     sh:property [
         sh:order 9 ;
@@ -512,12 +512,12 @@ shape:Substance a sh:NodeShape ;
 # GHS CLASSES
 # ==============================================================================
 
-shape:GHSStatement a sh:NodeShape ;
+shape:GHSLabelling a sh:NodeShape ;
     sh:order 10 ;
-    rdfs:label "GHS statement"@en,
-        "GHS-Hinweis"@de ;
+    rdfs:label "GHS labelling"@en,
+        "GHS-Beschriftung"@de ;
     rdfs:comment "Encodes a standardized hazard or precautionary directive derived from the Globally Harmonized System of Classification and Labelling of Chemicals."@en ;
-    sh:targetClass ghs:GHSStatement ;
+    sh:targetClass ghs:GHSLabelling ;
     sh:property
         shape:multiLanguageName ,
         [
@@ -534,7 +534,7 @@ shape:SignalWord a sh:NodeShape ;
     rdfs:label "Signal word"@en, "Signalwort"@de ;
     rdfs:comment "A word used to indicate the relative level of severity of hazard and alert the reader to a potential hazard on the label."@en ;
     sh:targetClass ghs:SignalWord ;
-    sh:node shape:GHSStatement ;
+    sh:node shape:GHSLabelling ;
     sh:property shape:multiLanguageName .
 
 shape:HazardPictogram a sh:NodeShape ;
@@ -542,7 +542,7 @@ shape:HazardPictogram a sh:NodeShape ;
     rdfs:label "Hazard pictogram"@en, "Gefahrenpiktogramm"@de ;
     rdfs:comment "A graphical composition intended to convey specific hazard information."@en ;
     sh:targetClass ghs:HazardPictogram ;
-    sh:node shape:GHSStatement ;
+    sh:node shape:GHSLabelling ;
     sh:property
         [
             sh:path schema:identifier ;
@@ -566,7 +566,7 @@ shape:HazardStatement a sh:NodeShape ;
         "Gefahrenhinweis"@de ;
     rdfs:comment "A standard phrase assigned to a hazard class and category that describes the nature of the hazards."@en ;
     sh:targetClass ghs:HazardStatement ;
-    sh:node shape:GHSStatement ;
+    sh:node shape:GHSLabelling ;
     sh:property [
         sh:path schema:identifier ;
         sh:pattern "^H\\S*$" ;
@@ -580,12 +580,42 @@ shape:PrecautionaryStatement a sh:NodeShape ;
         "Sicherheitshinweis"@de ;
     rdfs:comment "A phrase that describes recommended measures to minimize or prevent adverse effects."@en ;
     sh:targetClass ghs:PrecautionaryStatement ;
-    sh:node shape:GHSStatement ;
+    sh:node shape:GHSLabelling ;
     sh:property [
         sh:path schema:identifier ;
         sh:pattern "^P\\S*$" ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
+    ] .
+
+# ==============================================================================
+# PlantProtectionStatement
+# ==============================================================================
+
+:PlantProtectionStatementShape
+    a sh:NodeShape ;
+    sh:targetClass :PlantProtectionStatement ;
+
+    sh:property [
+        sh:path schema:identifier ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A plant protection statement must have exactly one schema:identifier."@en ;
+    ] ;
+
+    sh:property [
+        sh:path schema:name ;
+        sh:datatype rdf:langString ;
+        sh:minCount 1 ;
+        sh:message "A plant protection statement must have at least one language-tagged schema:name."@en ;
+    ] ;
+
+    sh:property [
+        sh:path schema:name ;
+        sh:languageIn ( "en" "de" "fr" "it" ) ;
+        sh:uniqueLang true ;
+        sh:message "schema:name must use one of en, de, fr or it, with at most one value per language."@en ;
     ] .
 
 # ==============================================================================
