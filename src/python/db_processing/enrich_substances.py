@@ -48,6 +48,11 @@ def load_substances_mapping(
         );
     """)
 
+    result = result.astype({
+        col: "object"
+        for col in result.columns
+    })
+    
     con.register("df_substances", result)
 
     con.execute("""
