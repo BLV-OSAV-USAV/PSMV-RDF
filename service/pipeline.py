@@ -106,7 +106,6 @@ def run_pipeline():
     save_graph(graph, "rdf/processed/shapes.ttl")
 
     print("\n\033[1mChecking graph shape using SHACL...\033[0m")
-    # uncomment when we are sure what to validate via SHACL here
     conforms, results_graph, results_text = run_shacl_validation()
     error_count = len(list(results_graph.subjects(RDF.type, SH.ValidationResult)))
     print(f"{error_count} errors were found.")  

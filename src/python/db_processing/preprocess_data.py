@@ -94,7 +94,6 @@ def preprocess_data(
             print(f"[+] Applied value mappings ({len(value_map)} column(s) mapped)")
 
             # Write output
-            #con.execute(f"CREATE OR REPLACE TABLE {dataset_key} AS SELECT * FROM df")
             # Normalize pandas dtypes for DuckDB
             for col in df.columns:
                 if df[col].dtype == object or str(df[col].dtype) == "str":
