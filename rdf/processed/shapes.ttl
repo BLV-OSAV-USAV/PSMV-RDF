@@ -59,6 +59,22 @@ A comprehensive suite of advanced SPARQL query templates, demonstrating complex 
     dcterms:title "Swiss registry of plant protection products"@en ;
     owl:versionInfo "3.0.0" .
 
+:PlantProtectionStatementShape a sh:NodeShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "A plant protection statement must have exactly one schema:identifier."@en ;
+            sh:minCount 1 ;
+            sh:path schema:identifier ],
+        [ sh:datatype rdf:langString ;
+            sh:message "A plant protection statement must have at least one language-tagged schema:name."@en ;
+            sh:minCount 1 ;
+            sh:path schema:name ],
+        [ sh:languageIn ( "en" "de" "fr" "it" ) ;
+            sh:message "schema:name must use one of en, de, fr or it, with at most one value per language."@en ;
+            sh:path schema:name ;
+            sh:uniqueLang true ] ;
+    sh:targetClass :PlantProtectionStatement .
+
 shape:ApplicationArea a sh:NodeShape ;
     rdfs:label "Anwendungsbereich"@de,
         "Application Area"@en ;
@@ -122,9 +138,9 @@ shape:Crop a sh:NodeShape ;
         shape:multiLanguageName ;
     sh:targetClass :Crop .
 
-shape:GHSStatement a sh:NodeShape ;
-    rdfs:label "GHS-Hinweis"@de,
-        "GHS statement"@en ;
+shape:GHSLabelling a sh:NodeShape ;
+    rdfs:label "GHS-Beschriftung"@de,
+        "GHS labelling"@en ;
     rdfs:comment "Encodes a standardized hazard or precautionary directive derived from the Globally Harmonized System of Classification and Labelling of Chemicals."@en ;
     sh:order 10 ;
     sh:property [ sh:datatype xsd:string ;
@@ -134,13 +150,13 @@ shape:GHSStatement a sh:NodeShape ;
             sh:order 1 ;
             sh:path schema:identifier ],
         shape:multiLanguageName ;
-    sh:targetClass ghs:GHSStatement .
+    sh:targetClass ghs:GHSLabelling .
 
 shape:HazardPictogram a sh:NodeShape ;
     rdfs:label "Gefahrenpiktogramm"@de,
         "Hazard pictogram"@en ;
     rdfs:comment "A graphical composition intended to convey specific hazard information."@en ;
-    sh:node shape:GHSStatement ;
+    sh:node shape:GHSLabelling ;
     sh:order 12 ;
     sh:property [ sh:message "Hazard pictograms must follow the identifier pattern 'GHS0X' where X is a digit from 1 to 9."@en ;
             sh:minCount 1 ;
@@ -159,7 +175,7 @@ shape:HazardStatement a sh:NodeShape ;
     rdfs:label "Gefahrenhinweis"@de,
         "Hazard statement"@en ;
     rdfs:comment "A standard phrase assigned to a hazard class and category that describes the nature of the hazards."@en ;
-    sh:node shape:GHSStatement ;
+    sh:node shape:GHSLabelling ;
     sh:order 13 ;
     sh:property [ sh:maxCount 1 ;
             sh:minCount 1 ;
@@ -174,6 +190,15 @@ shape:Indication a sh:NodeShape ;
 The indication formally outlines an approved, highly specific usage profile for a plant protection product.
 It systematically links a target pest with the applicable cultivation domain and delineates parameters like dosage, legal obligations, and mandatory waiting periods.
 """@en ;
+    sh:or ( [ sh:property [ sh:class :Pest ;
+                        sh:minCount 1 ;
+                        sh:path :pest ] ] [ sh:property [ sh:class :Pest ;
+                        sh:minCount 1 ;
+                        sh:path :pestFullEffect ] ] [ sh:property [ sh:class :Pest ;
+                        sh:minCount 1 ;
+                        sh:path :pestSideEffect ] ] [ sh:property [ sh:class :Pest ;
+                        sh:minCount 1 ;
+                        sh:path :pestPartialEffect ] ] ) ;
     sh:property [ sh:class :ApplicationArea ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
@@ -185,36 +210,31 @@ It systematically links a target pest with the applicable cultivation domain and
             sh:name "Cultivation"@en ;
             sh:order 2 ;
             sh:path :crop ],
-        [ sh:class :Pest ;
-            sh:minCount 1 ;
-            sh:name "Pest"@en ;
-            sh:order 3 ;
-            sh:path :pest ],
         [ sh:class :ApplicationComment ;
             sh:name "Application Comment"@en ;
-            sh:order 4 ;
+            sh:order 3 ;
             sh:path :applicationComment ],
         [ sh:class :Obligation ;
             sh:name "Obligation"@en ;
-            sh:order 5 ;
+            sh:order 4 ;
             sh:path :obligation ],
         [ sh:maxCount 1 ;
             sh:name "Konzentration"@de,
                 "Dosage"@en ;
             sh:node shape:QuantitativeValue ;
-            sh:order 6 ;
+            sh:order 5 ;
             sh:path :dosage ],
         [ sh:maxCount 1 ;
             sh:name "Aufwandmenge"@de,
                 "Expenditure"@en ;
             sh:node shape:QuantitativeValue ;
-            sh:order 7 ;
+            sh:order 6 ;
             sh:path :expenditure ],
         [ sh:maxCount 1 ;
             sh:name "Wartefrist"@de,
                 "Waiting Period"@en ;
             sh:node shape:QuantitativeValue ;
-            sh:order 8 ;
+            sh:order 7 ;
             sh:path :waitingPeriod ] ;
     sh:targetClass :Indication .
 
@@ -354,7 +374,7 @@ shape:PrecautionaryStatement a sh:NodeShape ;
     rdfs:label "Sicherheitshinweis"@de,
         "Precautionary statement"@en ;
     rdfs:comment "A phrase that describes recommended measures to minimize or prevent adverse effects."@en ;
-    sh:node shape:GHSStatement ;
+    sh:node shape:GHSLabelling ;
     sh:order 14 ;
     sh:property [ sh:maxCount 1 ;
             sh:minCount 1 ;
@@ -406,9 +426,9 @@ shape:Product a sh:NodeShape ;
             sh:path :permissionHolder ],
         [ sh:description "The Globally Harmonized System of Classification and Labelling of Chemicals (GHS) hazard and precautionary statements."@en ;
             sh:name "GHS code"@en ;
-            sh:node shape:GHSStatement ;
+            sh:node shape:GHSLabelling ;
             sh:order 8 ;
-            sh:path :ghs ],
+            sh:path :hasGHSLabelling ],
         [ sh:description "The country where a plant protection product was produced."@en ;
             sh:in ( country:CHE country:DEU country:ITA country:FRA country:AUT country:BEL ) ;
             sh:maxCount 1 ;
@@ -497,7 +517,7 @@ shape:SignalWord a sh:NodeShape ;
     rdfs:label "Signalwort"@de,
         "Signal word"@en ;
     rdfs:comment "A word used to indicate the relative level of severity of hazard and alert the reader to a potential hazard on the label."@en ;
-    sh:node shape:GHSStatement ;
+    sh:node shape:GHSLabelling ;
     sh:order 11 ;
     sh:property shape:multiLanguageName ;
     sh:targetClass ghs:SignalWord .

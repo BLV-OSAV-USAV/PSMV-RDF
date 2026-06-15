@@ -5,6 +5,8 @@
 @prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
 
 # ==============================================================================
 # OWL METADATA
@@ -17,18 +19,18 @@ ghs: a owl:Ontology ;
         "Schéma de classification des phrases GHS"@fr,
         "Schema di classificazione delle frasi GHS"@it ;
     dcterms:description
-        "Controlled vocabulary for hazard statements (H phrases) and precautionary statements (P phrases) based on the Globally Harmonized System of Classification and Labelling of Chemicals (GHS)."@en .
+        "Ontology for hazard statements (H phrases), precautionary statements (P phrases), signal words and hazard pictograms defined by the Globally Harmonized System of Classification and Labelling of Chemicals (GHS)"@en .
 
 # ==============================================================================
 # GHS CLASSIFICATION
 # ==============================================================================
 
-ghs:GHSStatement a owl:Class ;
+ghs:GHSLabelling a owl:Class ;
     schema:name
-        "GHS statement"@en,
-        "GHS-Satz"@de,
-        "Phrase SGH"@fr,
-        "Frase GHS"@it ;
+        "GHS label"@en,
+        "GHS-Label"@de,
+        "Étiquette GHS"@fr,
+        "Etichetta GHS"@it ;
     rdfs:subClassOf
         [
             a owl:Restriction ;
@@ -49,7 +51,7 @@ ghs:HazardPictogram a owl:Class ;
         "Pittogramma di pericolo"@it ;
     rdfs:seeAlso <https://en.wikipedia.org/wiki/GHS_hazard_pictograms> ;
     rdfs:subClassOf
-        ghs:GHSStatement ,
+        ghs:GHSLabelling ,
         [
             a owl:Restriction ;
             owl:onProperty schema:image ;
@@ -72,7 +74,7 @@ ghs:HazardStatement a owl:Class ;
         "Ein Gefahrenhinweis ist eine standardisierte Beschreibung der Gefahren, die mit gefährlichen chemischen Stoffen verbunden sind."@de,
         "Une mention de danger est une description normalisée des dangers associés aux substances chimiques dangereuses."@fr,
         "Un'indicazione di pericolo è una descrizione standardizzata dei pericoli associati alle sostanze chimiche pericolose."@it ;
-    rdfs:subClassOf ghs:GHSStatement .
+    rdfs:subClassOf ghs:GHSLabelling .
 
 ghs:PrecautionaryStatement a owl:Class ;
     schema:name
@@ -90,7 +92,7 @@ ghs:PrecautionaryStatement a owl:Class ;
         "Ein Sicherheitshinweis ist eine standardisierte Sicherheitsanweisung für den Umgang, die Lagerung, die Entsorgung und Notfallmassnahmen im Zusammenhang mit gefährlichen chemischen Stoffen."@de,
         "Un conseil de prudence est une instruction de sécurité normalisée concernant la manipulation, le stockage, l'élimination et les mesures d'urgence relatives aux substances chimiques dangereuses."@fr,
         "Un consiglio di prudenza è un'istruzione di sicurezza standardizzata relativa alla manipolazione, allo stoccaggio, allo smaltimento e alle misure di emergenza riguardanti sostanze chimiche pericolose."@it ;
-    rdfs:subClassOf ghs:GHSStatement .
+    rdfs:subClassOf ghs:GHSLabelling .
 
 ghs:SignalWord a owl:Class ;
     schema:name
@@ -98,7 +100,7 @@ ghs:SignalWord a owl:Class ;
         "Signalwort"@de,
         "Mention d'avertissement"@fr,
         "Avvertenza"@it ;
-    rdfs:subClassOf ghs:GHSStatement .
+    rdfs:subClassOf ghs:GHSLabelling .
 
 ghs:PrecautionaryStatementCombination a owl:Class ;
     schema:name
@@ -233,21 +235,24 @@ ghs:H200 a ghs:HazardStatement ;
     schema:name "Instabil, explosiv"@de,
         "Unstable explosives"@en,
         "Explosif instable"@fr,
-        "Esplosivo instabile"@it .
+        "Esplosivo instabile"@it ;
+    skos:exactMatch wd:Q51804092 .
 
 ghs:H201 a ghs:HazardStatement ;
     schema:identifier "H201" ;
     schema:name "Explosiv, Gefahr der Massenexplosion"@de,
         "Explosive; mass explosion hazard"@en,
         "Explosif; danger d'explosion en masse"@fr,
-        "Esplosivo; pericolo di esplosione di massa"@it .
+        "Esplosivo; pericolo di esplosione di massa"@it ;
+    skos:exactMatch wd:Q51844096 .
 
 ghs:H202 a ghs:HazardStatement ;
     schema:identifier "H202" ;
     schema:name "Explosiv; große Gefahr durch Splitter, Spreng- und Wurfstücke"@de,
         "Explosive, severe projection hazard"@en,
         "Explosif; danger sérieux de projection"@fr,
-        "Esplosivo; grave pericolo di proiezione"@it .
+        "Esplosivo; grave pericolo di proiezione"@it ;
+    skos:exactMatch wd:Q51844104 .
 
 ghs:H203 a ghs:HazardStatement ;
     schema:identifier "H203" ;

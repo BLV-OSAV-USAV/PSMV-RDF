@@ -218,10 +218,10 @@ schema:PostalAddress a owl:Class ;
         :ParallelImport
     ) .
 
-:ghs a owl:ObjectProperty ;
-    schema:name "GHS statement"@en ;
+:hasGHSLabelling a owl:ObjectProperty ;
+    schema:name "has GHS labelling"@en ;
     rdfs:domain :Product ;
-    rdfs:range ghs:GHSStatement .
+    rdfs:range ghs:GHSLabelling .
 
 :indication a owl:ObjectProperty ;
     schema:name
@@ -314,6 +314,38 @@ schema:PostalAddress a owl:Class ;
     rdfs:range xsd:date .
 
 # ==============================================================================
+# PlantProtectionStatement
+# ==============================================================================
+
+:PlantProtectionStatement a owl:Class ;
+    schema:name
+        "Plant protection product statement"@en,
+        "Pflanzenschutzmittel-Satz"@de,
+        "Phrase pour produit phytosanitaire"@fr,
+        "Frase per prodotto fitosanitario"@it ;
+    schema:description
+        "A statement used to describe mandatory or advisory instructions, restrictions or conditions for the labelling, handling, storage, disposal or use of plant protection products."@en,
+        "Ein Satz zur Beschreibung obligatorischer oder empfehlender Anweisungen, Einschränkungen oder Bedingungen für Kennzeichnung, Umgang, Lagerung, Entsorgung oder Anwendung von Pflanzenschutzmitteln."@de,
+        "Une phrase utilisée pour décrire des instructions, restrictions ou conditions obligatoires ou recommandées concernant l'étiquetage, la manipulation, le stockage, l'élimination ou l'utilisation des produits phytosanitaires."@fr,
+        "Una frase utilizzata per descrivere istruzioni, restrizioni o condizioni obbligatorie o raccomandate relative all'etichettatura, alla manipolazione, allo stoccaggio, allo smaltimento o all'uso dei prodotti fitosanitari."@it ;
+    rdfs:subClassOf
+        [
+            a owl:Restriction ;
+            owl:onProperty schema:name ;
+            owl:allValuesFrom rdf:langString
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:onProperty schema:identifier ;
+            owl:allValuesFrom xsd:string
+        ] .
+
+:hasPlantProtectionStatement a owl:ObjectProperty ;
+    schema:name "has plant protection statement"@en ;
+    rdfs:domain :Product ;
+    rdfs:range :PlantProtectionStatement .
+
+# ==============================================================================
 # INDICATION CLASS DEFINITION AND PROPERTIES
 # ==============================================================================
 
@@ -339,12 +371,27 @@ schema:PostalAddress a owl:Class ;
     rdfs:range :Pest .
 
 :pestFullEffect a owl:ObjectProperty ;
+    schema:name
+        "volle Wirkung gegen Schadorganismus"@de,
+        "full effect against pest"@en,
+        "effet complet contre l'organisme nuisible"@fr,
+        "effetto completo contro l'organismo nocivo"@it ;
     rdfs:subPropertyOf :pest .
 
 :pestSideEffect a owl:ObjectProperty ;
+    schema:name
+        "Nebenwirkung gegen Schadorganismus"@de,
+        "side effect against pest"@en,
+        "effet secondaire contre l'organisme nuisible"@fr,
+        "effetto secondario contro l'organismo nocivo"@it ;
     rdfs:subPropertyOf :pest .
 
 :pestPartialEffect a owl:ObjectProperty ;
+    schema:name
+        "Teilwirkung gegen Schadorganismus"@de,
+        "partial effect against pest"@en,
+        "effet partiel contre l'organisme nuisible"@fr,
+        "effetto parziale contro l'organismo nocivo"@it ;
     rdfs:subPropertyOf :pest .
 
 :cultivation a owl:ObjectProperty ;

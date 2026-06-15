@@ -94,7 +94,14 @@ def preprocess_data(
             print(f"[+] Applied value mappings ({len(value_map)} column(s) mapped)")
 
             # Write output
-            con.execute(f"CREATE OR REPLACE TABLE {dataset_key} AS SELECT * FROM df")
+            # Normalize pandas dtypes for DuckDB
+            for col in df.columns:
+                if df[col].dtype == object or str(df[col].dtype) == "str":
+                    df[col] = df[col].astype("string")
+
+            con.register("tmp_df", df)
+            con.execute(f'CREATE OR REPLACE TABLE "{dataset_key}" AS SELECT * FROM tmp_df')
+            con.unregister("tmp_df")
             print(f"[+] Saved table '{dataset_key}' ({len(df):,} rows)")
 
         except Exception as e:
@@ -114,5 +121,5 @@ def preprocess_data(
         sys.exit(1)
 
 if __name__ == "__main__":
-    process_data()
+    preprocess_data()
     

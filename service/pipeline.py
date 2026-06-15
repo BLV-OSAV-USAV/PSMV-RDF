@@ -8,6 +8,7 @@ import datetime
 # Third-party libraries
 import rdflib
 from pyshacl import validate as pyshacl_validate
+from rdflib.namespace import RDF, SH
 
 # Data processors
 from src.python.utils.helper_functions import parse_phone_numbers, ensure_jar, load_rdf_mappings, load_namespaces
@@ -29,7 +30,7 @@ from src.python.db_processing.process_substance_code import process_substance_co
 from src.python.db_processing.enrich_substances import load_substances_mapping
 
 # Class modules
-from src.python.create_produtcs_ttl import products_ttl
+from src.python.create_products_ttl import products_ttl
 from src.python.create_organisation_ttl import organisation_ttl
 from src.python.create_substance_ttl import substance_ttl
 from src.python.create_crops_ttl import crops_ttl
@@ -104,9 +105,10 @@ def run_pipeline():
     graph = apply_rules(inputs, [])
     save_graph(graph, "rdf/processed/shapes.ttl")
 
-    # print("\n\033[1mChecking graph shape using SHACL...\033[0m")
-    # run_shacl_validation()
-    # uncomment when we are sure what to validate via SHACL here
+    print("\n\033[1mChecking graph shape using SHACL...\033[0m")
+    conforms, results_graph, results_text = run_shacl_validation()
+    error_count = len(list(results_graph.subjects(RDF.type, SH.ValidationResult)))
+    print(f"{error_count} errors were found.")  
     
     # Pipeline completed
     total = time.perf_counter() - pipeline_start

@@ -4,7 +4,7 @@ from pyshacl import validate as pyshacl_validate
 def run_shacl_validation(
     data_graph: str = "rdf/processed/graph.ttl",
     shacl_graph: str = "rdf/processed/shapes.ttl",
-    report_path: str = "docs/shacl_shape_report.ttl",
+    report_path: str = "rdf/processed/shacl_shape_report.ttl",
     serialize_report: bool = True,
 ):
     print(f"[*] Starting SHACL validation...")
@@ -19,11 +19,15 @@ def run_shacl_validation(
         serialize_report_graph=False,  
     )
 
+    if serialize_report:
+        results_graph.serialize(destination=report_path, format="turtle")
+        print(f"    Report     : {report_path}")
+
     elapsed = time.perf_counter() - start
     print(f"[+] SHACL validation complete in {elapsed:.3f}s")
     print(f"    Conforms   : {conforms}")
     
-    return conforms
+    return conforms, results_graph, results_text
 
 if __name__ == "__main__":
     run_shacl_validation()

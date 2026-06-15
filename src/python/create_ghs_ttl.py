@@ -42,10 +42,11 @@ def ghs_ttl(
     con.close()
 
     type_mapping = {
-        "SignalWords": GHS.SignalWord,
-        "DangerSymbol": GHS.HazardPictogram,
-        "CodeR": GHS.HazardStatement,
-        "CodeS": GHS.PrecautionaryStatement
+        "SignalWords": GHS.SignalWord, #Danger
+        "DangerSymbol": GHS.HazardPictogram, #GHS01
+        "CodeR": GHS.HazardStatement, #EUH und H
+        "CodeS": BASE.PlantProtectionStatement #PSM-Saetze
+        # GHS.PrecautionaryStatement
     }
 
     # Create GHS triples
