@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "psmv-rdf"
-version = "0.2.1"
+version = "0.2.2"
 description = "Pipeline for converting the Swiss plant protection product registry (PSMV) into RDF linked data."
 readme = { file = "README.md", content-type = "text/markdown" }
 license = { file = "LICENSE" }
