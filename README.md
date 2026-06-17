@@ -88,7 +88,7 @@ A more restricted data model is written in SHACL and [can be inspected here](htt
 
 Project dependencies are listed in [pyproject.toml](pyproject.toml).
 
-## Example queries for Lindas publication
+## Example queries
 
 [List all products](https://agriculture.ld.admin.ch/sparql/#query=PREFIX%20rdf%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0APREFIX%20rdfs%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0A%0ASELECT%20DISTINCT%20%3Fproduct%20%3Flabel%0AWHERE%20%7B%0A%20%20GRAPH%20%3Chttps%3A%2F%2Flindas.admin.ch%2Ffsvo%2Fplant-protection-products%3E%20%7B%0A%20%20%20%20%3Fproduct%20a%20%3Chttps%3A%2F%2Fagriculture.ld.admin.ch%2Fplant-protection%2FProduct%3E%20.%0A%20%20%20%20OPTIONAL%20%7B%20%3Fproduct%20rdfs%3Alabel%20%3Flabel%20%7D%0A%20%20%7D%0A%7D%0ALIMIT%2020&endpoint=https%3A%2F%2Fagriculture.ld.admin.ch%2Fquery&requestMethod=POST&tabTitle=Query&headers=%7B%7D&contentTypeConstruct=application%2Fn-triples%2C*%2F*%3Bq%3D0.9&contentTypeSelect=application%2Fsparql-results%2Bjson%2C*%2F*%3Bq%3D0.9&outputFormat=table)
 
