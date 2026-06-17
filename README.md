@@ -88,6 +88,14 @@ A more restricted data model is written in SHACL and [can be inspected here](htt
 
 Project dependencies are listed in [pyproject.toml](pyproject.toml).
 
+## Example queries for Lindas publication
+
+[List all products](https://agriculture.ld.admin.ch/sparql/#query=PREFIX%20rdf%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0APREFIX%20rdfs%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0A%0ASELECT%20DISTINCT%20%3Fproduct%20%3Flabel%0AWHERE%20%7B%0A%20%20GRAPH%20%3Chttps%3A%2F%2Flindas.admin.ch%2Ffsvo%2Fplant-protection-products%3E%20%7B%0A%20%20%20%20%3Fproduct%20a%20%3Chttps%3A%2F%2Fagriculture.ld.admin.ch%2Fplant-protection%2FProduct%3E%20.%0A%20%20%20%20OPTIONAL%20%7B%20%3Fproduct%20rdfs%3Alabel%20%3Flabel%20%7D%0A%20%20%7D%0A%7D%0ALIMIT%2020&endpoint=https%3A%2F%2Fagriculture.ld.admin.ch%2Fquery&requestMethod=POST&tabTitle=Query&headers=%7B%7D&contentTypeConstruct=application%2Fn-triples%2C*%2F*%3Bq%3D0.9&contentTypeSelect=application%2Fsparql-results%2Bjson%2C*%2F*%3Bq%3D0.9&outputFormat=table)
+
+[List a specific product by W-Number](https://agriculture.ld.admin.ch/sparql/#query=PREFIX%20rdfs%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0A%0ASELECT%20%3Fp%20%3Fo%0AWHERE%20%7B%0A%20%20GRAPH%20%3Chttps%3A%2F%2Flindas.admin.ch%2Ffsvo%2Fplant-protection-products%3E%20%7B%0A%20%20%20%20%3Chttps%3A%2F%2Fagriculture.ld.admin.ch%2Fplant-protection%2Fproduct%2FW-6847%3E%0A%20%20%20%20%20%20%3Fp%20%3Fo%20.%0A%20%20%7D%0A%7D%0A%0A&endpoint=https%3A%2F%2Fagriculture.ld.admin.ch%2Fquery&requestMethod=POST&tabTitle=Query&headers=%7B%7D&contentTypeConstruct=application%2Fn-triples%2C*%2F*%3Bq%3D0.9&contentTypeSelect=application%2Fsparql-results%2Bjson%2C*%2F*%3Bq%3D0.9&outputFormat=table)
+
+[List all prodcuts containing sulphur](https://agriculture.ld.admin.ch/sparql/#query=PREFIX%20fsvo%3A%20%3Chttps%3A%2F%2Fagriculture.ld.admin.ch%2Fplant-protection%2F%3E%0APREFIX%20schema%3A%20%3Chttp%3A%2F%2Fschema.org%2F%3E%0A%0ASELECT%20DISTINCT%20%3Fproduct%20%3Fname%0AWHERE%20%7B%0A%20%20GRAPH%20%3Chttps%3A%2F%2Flindas.admin.ch%2Ffsvo%2Fplant-protection-products%3E%20%7B%0A%0A%20%20%20%20%3Fproduct%20%3Fp%20%3Fingredient%20.%0A%20%20%20%20%3Fingredient%20fsvo%3Asubstance%20%3Fsubstance%20.%0A%0A%20%20%20%20%3Fsubstance%20schema%3Aname%20%3Fname%20.%0A%0A%20%20%20%20FILTER(%0A%20%20%20%20%20%20REGEX(STR(%3Fname)%2C%20%22sulphur%22%2C%20%22i%22)%0A%20%20%20%20)%0A%20%20%7D%0A%7D&endpoint=https%3A%2F%2Fagriculture.ld.admin.ch%2Fquery&requestMethod=POST&tabTitle=Query%201&headers=%7B%7D&contentTypeConstruct=application%2Fn-triples%2C*%2F*%3Bq%3D0.9&contentTypeSelect=application%2Fsparql-results%2Bjson%2C*%2F*%3Bq%3D0.9&outputFormat=table)
+
 ## Acknowledgments 
 
 - Built with [rdflib](https://github.com/RDFLib/rdflib)
