@@ -1,10 +1,10 @@
 [build-system]
-requires = ["setuptools>=68", "setuptools-scm"]
+requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "psmv-rdf"
-dynamic = ["version"]
+version = "0.2.0"
 description = "Pipeline for converting the Swiss plant protection product registry (PSMV) into RDF linked data."
 readme = { file = "README.md", content-type = "text/markdown" }
 license = { file = "LICENSE" }
