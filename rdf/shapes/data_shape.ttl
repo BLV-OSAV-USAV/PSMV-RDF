@@ -635,7 +635,7 @@ shape:HazardStatement a sh:NodeShape ;
     sh:targetClass :HazardStatement ;
     sh:property [
         sh:path schema:identifier ;
-        sh:pattern "^H\\S*$" ;
+        sh:pattern "^(EUH|H).*$" ; 
         sh:minCount 1 ;
         sh:maxCount 1 ;
     ] .
