@@ -127,14 +127,14 @@ shape:Product a sh:NodeShape ;
         sh:order 6 ;
         sh:name "Ingredient"@en ;
         sh:path :ingredient ;
-        sh:node shape:Ingredient ;
+        sh:class :Ingredient ;
     ] ;
     sh:property [
         sh:order 7 ;
         sh:name "Permission holder"@en ;
         sh:description "The legal entity authorized to place the product on the market [...]."@en ;
         sh:path :permissionHolder ;
-        sh:node shape:Organization ;
+        sh:class schema:Organization ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
     ] ;
@@ -268,7 +268,7 @@ shape:Organization a sh:NodeShape ;
             sh:name "Address"@en ;
             sh:description "The primary postal address of the organization."@en ;
             sh:path schema:address ;
-            sh:node shape:PostalAddress ;
+            sh:class schema:PostalAddress ;
             sh:minCount 1 ;
             sh:maxCount 1 ;
         ] ,
@@ -301,31 +301,49 @@ shape:PostalAddress a sh:NodeShape ;
     sh:order 6 ;
     rdfs:label "Address"@en, "Adresse"@de ;
     rdfs:comment "Defines the physical or postal routing information for an organization. It encapsulates granular fields required for proper geospatial identification, including country, specific street, postal routing code, and locality."@en ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
     sh:targetClass schema:PostalAddress ;
     sh:property
         [
+            sh:order 1 ;
+            sh:name "Street address"@en ;
+            sh:path schema:streetAddress ;
+            sh:datatype xsd:string ;
+            sh:minCount 1 ;
+            sh:maxCount 1 ;
+        ],
+        [
+            sh:order 2 ;
+            sh:name "Post office box number"@en ;
+            sh:description "The post office box number for post office box addresses."@en ;
+            sh:path schema:postOfficeBoxNumber ;
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+        ],
+        [
+            sh:order 3 ;
+            sh:name "Postal code"@en ;
+            sh:path schema:postalCode ;
+            sh:datatype xsd:string ;
+            sh:minCount 1 ;
+            sh:maxCount 1 ;
+        ],
+        [
+            sh:order 4 ;
+            sh:name "Address locality"@en ;
+            sh:path schema:addressLocality ;
+            sh:datatype xsd:string ;
+            sh:minCount 1 ;
+            sh:maxCount 1 ;
+        ],
+        [
+            sh:order 5 ;
             sh:name "Address country"@en ;
             sh:path schema:addressCountry ;
             sh:nodeKind sh:IRI ;
             sh:pattern "^https://ld\\.admin\\.ch/country/[A-Z0-9]{3}$" ;
-            sh:maxCount 1 ;
-        ] ,
-        [
-            sh:name "Street address"@en ;
-            sh:path schema:streetAddress ;
-            sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-        ] ,
-        [
-            sh:name "Postal code"@en ;
-            sh:path schema:postalCode ;
-            sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-        ] ,
-        [
-            sh:name "Address locality"@en ;
-            sh:path schema:addressLocality ;
-            sh:datatype xsd:string ;
+            sh:minCount 1 ;
             sh:maxCount 1 ;
         ] .
 
@@ -336,6 +354,8 @@ shape:PostalAddress a sh:NodeShape ;
 shape:Ingredient a sh:NodeShape ;
     rdfs:label "Ingredient"@en, "Inhaltsstoff"@de ;
     rdfs:comment "Represents a constituent component of a product. It specifies both the underlying chemical or biological substance and its corresponding quantitative share within the final formulation."@en ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
     sh:targetClass :Ingredient ;
     sh:nodeKind sh:BlankNode ;
     sh:property [
@@ -344,7 +364,6 @@ shape:Ingredient a sh:NodeShape ;
         sh:description "The substance that makes up this part of the formulation."@en ;
         sh:path :substance ;
         sh:class :Substance ;
-        sh:node shape:Substance ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
     ] ;
@@ -353,7 +372,7 @@ shape:Ingredient a sh:NodeShape ;
         sh:name "Share"@en, "Anteil"@de ;
         sh:description "The share of the substance of the total formulation, either provided in g/L and/or percent."@en ;
         sh:path :share ;
-        sh:node shape:QuantitativeValue ;
+        sh:class schema:QuantitativeValue ;
         sh:minCount 0 ;
         sh:maxCount 2 ;
         sh:property [
@@ -450,21 +469,21 @@ It systematically links a target pest with the applicable cultivation domain and
             sh:order 7 ;
             sh:name "Dosage"@en, "Konzentration"@de ;
             sh:path :dosage ;
-            sh:node shape:QuantitativeValue ;
+            sh:class schema:QuantitativeValue ;
             sh:maxCount 1 ;
         ] ,
         [
             sh:order 8 ;
             sh:name "Expenditure"@en, "Aufwandmenge"@de ;
             sh:path :expenditure ;
-            sh:node shape:QuantitativeValue ;
+            sh:class schema:QuantitativeValue ;
             sh:maxCount 1 ;
         ] ,
         [
             sh:order 9 ;
             sh:name "Waiting Period"@en, "Wartefrist"@de ;
             sh:path :waitingPeriod ;
-            sh:node shape:QuantitativeValue ;
+            sh:class schema:QuantitativeValue ;
             sh:maxCount 1 ;
         ] .
 
@@ -555,7 +574,6 @@ shape:GHSLabelling a sh:NodeShape ;
     rdfs:label "GHS labelling"@en,
         "GHS-Beschriftung"@de ;
     rdfs:comment "Encodes a standardized hazard or precautionary directive derived from the Globally Harmonized System of Classification and Labelling of Chemicals."@en ;
-    sh:targetClass ghs:GHSLabelling ;
     sh:property
         shape:multiLanguageName ,
         [
@@ -572,7 +590,6 @@ shape:SignalWord a sh:NodeShape ;
     rdfs:label "Signal word"@en, "Signalwort"@de ;
     rdfs:comment "A word used to indicate the relative level of severity of hazard and alert the reader to a potential hazard on the label."@en ;
     sh:targetClass ghs:SignalWord ;
-    sh:node shape:GHSLabelling ;
     sh:property shape:multiLanguageName .
 
 shape:HazardPictogram a sh:NodeShape ;
@@ -580,7 +597,6 @@ shape:HazardPictogram a sh:NodeShape ;
     rdfs:label "Hazard pictogram"@en, "Gefahrenpiktogramm"@de ;
     rdfs:comment "A graphical composition intended to convey specific hazard information."@en ;
     sh:targetClass ghs:HazardPictogram ;
-    sh:node shape:GHSLabelling ;
     sh:property
         [
             sh:path schema:identifier ;
@@ -604,7 +620,6 @@ shape:HazardStatement a sh:NodeShape ;
         "Gefahrenhinweis"@de ;
     rdfs:comment "A standard phrase assigned to a hazard class and category that describes the nature of the hazards."@en ;
     sh:targetClass ghs:HazardStatement ;
-    sh:node shape:GHSLabelling ;
     sh:property [
         sh:path schema:identifier ;
         sh:pattern "^H\\S*$" ;

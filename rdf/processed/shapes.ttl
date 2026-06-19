@@ -152,14 +152,12 @@ shape:GHSLabelling a sh:NodeShape ;
             sh:name "Identifier"@en ;
             sh:order 1 ;
             sh:path schema:identifier ],
-        shape:multiLanguageName ;
-    sh:targetClass ghs:GHSLabelling .
+        shape:multiLanguageName .
 
 shape:HazardPictogram a sh:NodeShape ;
     rdfs:label "Gefahrenpiktogramm"@de,
         "Hazard pictogram"@en ;
     rdfs:comment "A graphical composition intended to convey specific hazard information."@en ;
-    sh:node shape:GHSLabelling ;
     sh:order 12 ;
     sh:property [ sh:message "Hazard pictograms must follow the identifier pattern 'GHS0X' where X is a digit from 1 to 9."@en ;
             sh:minCount 1 ;
@@ -178,7 +176,6 @@ shape:HazardStatement a sh:NodeShape ;
     rdfs:label "Gefahrenhinweis"@de,
         "Hazard statement"@en ;
     rdfs:comment "A standard phrase assigned to a hazard class and category that describes the nature of the hazards."@en ;
-    sh:node shape:GHSLabelling ;
     sh:order 13 ;
     sh:property [ sh:maxCount 1 ;
             sh:minCount 1 ;
@@ -234,22 +231,22 @@ It systematically links a target pest with the applicable cultivation domain and
             sh:name "Obligation"@en ;
             sh:order 6 ;
             sh:path :obligation ],
-        [ sh:maxCount 1 ;
+        [ sh:class schema:QuantitativeValue ;
+            sh:maxCount 1 ;
             sh:name "Konzentration"@de,
                 "Dosage"@en ;
-            sh:node shape:QuantitativeValue ;
             sh:order 7 ;
             sh:path :dosage ],
-        [ sh:maxCount 1 ;
+        [ sh:class schema:QuantitativeValue ;
+            sh:maxCount 1 ;
             sh:name "Aufwandmenge"@de,
                 "Expenditure"@en ;
-            sh:node shape:QuantitativeValue ;
             sh:order 8 ;
             sh:path :expenditure ],
-        [ sh:maxCount 1 ;
+        [ sh:class schema:QuantitativeValue ;
+            sh:maxCount 1 ;
             sh:name "Wartefrist"@de,
                 "Waiting Period"@en ;
-            sh:node shape:QuantitativeValue ;
             sh:order 9 ;
             sh:path :waitingPeriod ] ;
     sh:targetClass :Indication .
@@ -258,6 +255,8 @@ shape:Ingredient a sh:NodeShape ;
     rdfs:label "Inhaltsstoff"@de,
         "Ingredient"@en ;
     rdfs:comment "Represents a constituent component of a product. It specifies both the underlying chemical or biological substance and its corresponding quantitative share within the final formulation."@en ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
     sh:nodeKind sh:BlankNode ;
     sh:property [ sh:class :Substance ;
             sh:description "The substance that makes up this part of the formulation."@en ;
@@ -265,15 +264,14 @@ shape:Ingredient a sh:NodeShape ;
             sh:minCount 1 ;
             sh:name "Wirkstoff"@de,
                 "Substance"@en ;
-            sh:node shape:Substance ;
             sh:order 1 ;
             sh:path :substance ],
-        [ sh:description "The share of the substance of the total formulation, either provided in g/L and/or percent."@en ;
+        [ sh:class schema:QuantitativeValue ;
+            sh:description "The share of the substance of the total formulation, either provided in g/L and/or percent."@en ;
             sh:maxCount 2 ;
             sh:minCount 0 ;
             sh:name "Anteil"@de,
                 "Share"@en ;
-            sh:node shape:QuantitativeValue ;
             sh:order 2 ;
             sh:path :share ;
             sh:property [ sh:in ( unit:PERCENT unit:GM-PER-L ) ;
@@ -311,11 +309,11 @@ shape:Organization a sh:NodeShape ;
             sh:nodeKind sh:Literal ;
             sh:path schema:legalName ;
             sh:uniqueLang true ],
-        [ sh:description "The primary postal address of the organization."@en ;
+        [ sh:class schema:PostalAddress ;
+            sh:description "The primary postal address of the organization."@en ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:name "Address"@en ;
-            sh:node shape:PostalAddress ;
             sh:path schema:address ],
         [ sh:datatype xsd:string ;
             sh:description "A telephone number associated with the organization. The validation pattern accommodates a flexible subset of the ITU-T E.164 recommendation, permitting common typographic separators such as spaces and hyphens."@en ;
@@ -384,24 +382,40 @@ shape:PostalAddress a sh:NodeShape ;
     rdfs:label "Adresse"@de,
         "Address"@en ;
     rdfs:comment "Defines the physical or postal routing information for an organization. It encapsulates granular fields required for proper geospatial identification, including country, specific street, postal routing code, and locality."@en ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
     sh:order 6 ;
-    sh:property [ sh:maxCount 1 ;
-            sh:name "Address country"@en ;
-            sh:nodeKind sh:IRI ;
-            sh:path schema:addressCountry ;
-            sh:pattern "^https://ld\\.admin\\.ch/country/[A-Z0-9]{3}$" ],
-        [ sh:datatype xsd:string ;
+    sh:property [ sh:datatype xsd:string ;
             sh:maxCount 1 ;
+            sh:minCount 1 ;
             sh:name "Street address"@en ;
+            sh:order 1 ;
             sh:path schema:streetAddress ],
         [ sh:datatype xsd:string ;
+            sh:description "The post office box number for post office box addresses."@en ;
             sh:maxCount 1 ;
+            sh:name "Post office box number"@en ;
+            sh:order 2 ;
+            sh:path schema:postOfficeBoxNumber ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
             sh:name "Postal code"@en ;
+            sh:order 3 ;
             sh:path schema:postalCode ],
         [ sh:datatype xsd:string ;
             sh:maxCount 1 ;
+            sh:minCount 1 ;
             sh:name "Address locality"@en ;
-            sh:path schema:addressLocality ] ;
+            sh:order 4 ;
+            sh:path schema:addressLocality ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "Address country"@en ;
+            sh:nodeKind sh:IRI ;
+            sh:order 5 ;
+            sh:path schema:addressCountry ;
+            sh:pattern "^https://ld\\.admin\\.ch/country/[A-Z0-9]{3}$" ] ;
     sh:targetClass schema:PostalAddress .
 
 shape:PrecautionaryStatement a sh:NodeShape ;
@@ -447,15 +461,15 @@ shape:Product a sh:NodeShape ;
             sh:name "Soldout deadline"@en ;
             sh:order 5 ;
             sh:path :soldOutDeadline ],
-        [ sh:name "Ingredient"@en ;
-            sh:node shape:Ingredient ;
+        [ sh:class :Ingredient ;
+            sh:name "Ingredient"@en ;
             sh:order 6 ;
             sh:path :ingredient ],
-        [ sh:description "The legal entity authorized to place the product on the market [...]."@en ;
+        [ sh:class schema:Organization ;
+            sh:description "The legal entity authorized to place the product on the market [...]."@en ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:name "Permission holder"@en ;
-            sh:node shape:Organization ;
             sh:order 7 ;
             sh:path :permissionHolder ],
         [ sh:description "The Globally Harmonized System of Classification and Labelling of Chemicals (GHS) hazard and precautionary statements."@en ;
@@ -546,7 +560,6 @@ shape:SignalWord a sh:NodeShape ;
     rdfs:label "Signalwort"@de,
         "Signal word"@en ;
     rdfs:comment "A word used to indicate the relative level of severity of hazard and alert the reader to a potential hazard on the label."@en ;
-    sh:node shape:GHSLabelling ;
     sh:order 11 ;
     sh:property shape:multiLanguageName ;
     sh:targetClass ghs:SignalWord .
