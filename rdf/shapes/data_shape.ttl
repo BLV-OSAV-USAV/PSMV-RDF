@@ -426,7 +426,7 @@ It systematically links a target pest with the applicable cultivation domain and
         [
             sh:order 4 ;
             sh:name "Obligation"@en ;
-            sh:path :hasObligation ;
+            sh:path :obligation ;
             sh:class :Obligation ;
         ] ,
         [

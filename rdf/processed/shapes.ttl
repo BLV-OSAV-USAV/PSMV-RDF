@@ -217,7 +217,7 @@ It systematically links a target pest with the applicable cultivation domain and
         [ sh:class :Obligation ;
             sh:name "Obligation"@en ;
             sh:order 4 ;
-            sh:path :hasObligation ],
+            sh:path :obligation ],
         [ sh:maxCount 1 ;
             sh:name "Konzentration"@de,
                 "Dosage"@en ;
