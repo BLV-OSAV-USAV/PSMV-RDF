@@ -86,6 +86,9 @@ All ontology documentation files are written to `rdf/ontology`.
 
 A more restricted data model is written in SHACL and [can be inspected here](https://blv-osav-usav.github.io/PSMV-RDF/shacl-documentation.html).
 
+> [!NOTE]
+> We should align the SHACL data model with this documentation: <https://github.com/user-attachments/files/28257903/177035312.Datenmodell.PSMV.docx>
+
 Project dependencies are listed in [pyproject.toml](pyproject.toml).
 
 ## Example queries
