@@ -369,7 +369,6 @@ The indication formally outlines an approved, highly specific usage profile for 
 It systematically links a target pest with the applicable cultivation domain and delineates parameters like dosage, legal obligations, and mandatory waiting periods.
 """@en ;
     sh:targetClass :Indication ;
-
     sh:or (
         [
             sh:property [
@@ -412,39 +411,47 @@ It systematically links a target pest with the applicable cultivation domain and
         ] ,
         [
             sh:order 2 ;
+            sh:name "Product"@en, "Produkt"@de ;
+            sh:description "Produkt, auf welches sich diese Indikation bezieht."@de ;
+            sh:path :product ;
+            sh:class :Product ;
+            sh:minCount 1 ;
+        ] ,
+        [
+            sh:order 3 ;
             sh:name "Cultivation"@en ;
             sh:path :crop ;
             sh:class :Crop ;
             sh:minCount 1 ;
         ] ,
         [
-            sh:order 3 ;
+            sh:order 4 ;
             sh:name "Application Comment"@en ;
             sh:path :applicationComment ;
             sh:class :ApplicationComment ;
         ] ,
         [
-            sh:order 4 ;
+            sh:order 5 ;
             sh:name "Obligation"@en ;
             sh:path :obligation ;
             sh:class :Obligation ;
         ] ,
         [
-            sh:order 5 ;
+            sh:order 6 ;
             sh:name "Dosage"@en, "Konzentration"@de ;
             sh:path :dosage ;
             sh:node shape:QuantitativeValue ;
             sh:maxCount 1 ;
         ] ,
         [
-            sh:order 6 ;
+            sh:order 7 ;
             sh:name "Expenditure"@en, "Aufwandmenge"@de ;
             sh:path :expenditure ;
             sh:node shape:QuantitativeValue ;
             sh:maxCount 1 ;
         ] ,
         [
-            sh:order 7 ;
+            sh:order 8 ;
             sh:name "Waiting Period"@en, "Wartefrist"@de ;
             sh:path :waitingPeriod ;
             sh:node shape:QuantitativeValue ;
