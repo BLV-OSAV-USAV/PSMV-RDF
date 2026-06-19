@@ -167,7 +167,6 @@ shape:RegularProduct a sh:NodeShape ;
         sh:path :federalAdmissionNumber ;
         sh:datatype xsd:string ;
         sh:pattern "^[A-Z]-[0-9]{1,4}(-[0-9]{1,2})?$" ; # Todo: Match only for regular products
-        sh:message "The federal admission number must match the pattern 'L-DDDD' or 'L-DDDD-D', where L is an uppercase letter and D a digit."@en ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
     ] .
@@ -183,8 +182,7 @@ shape:SalePermission a sh:NodeShape ;
         sh:description "An identifier assigned by the FSVO that uniquely identifies an admissions of a plant protection product."@en ;
         sh:path :federalAdmissionNumber ;
         sh:datatype xsd:string ;
-        sh:pattern "^[A-Z]-[0-9]{4}(-[0-9]{1,2})?$" ; # Todo: Match only for sale permissions products
-        sh:message "The federal admission number must match the pattern 'L-DDDD' or 'L-DDDD-D', where L is an uppercase letter and D a digit."@en ;
+        sh:pattern "^[A-Z]-[0-9]{1,4}(-[0-9]{1,2})?$" ; # Todo: Match only for sale permissions products
         sh:minCount 1 ;
         sh:maxCount 1 ;
     ] .
@@ -645,31 +643,11 @@ shape:PrecautionaryStatement a sh:NodeShape ;
 # PlantProtectionStatement
 # ==============================================================================
 
-:PlantProtectionStatementShape
-    a sh:NodeShape ;
+shape:PlantProtectionStatement a sh:NodeShape ;
+    rdfs:label "Plant protection statement"@en ;
     sh:targetClass :PlantProtectionStatement ;
-
-    sh:property [
-        sh:path schema:identifier ;
-        sh:datatype xsd:string ;
-        sh:minCount 1 ;
-        sh:maxCount 1 ;
-        sh:message "A plant protection statement must have exactly one schema:identifier."@en ;
-    ] ;
-
-    sh:property [
-        sh:path schema:name ;
-        sh:datatype rdf:langString ;
-        sh:minCount 1 ;
-        sh:message "A plant protection statement must have at least one language-tagged schema:name."@en ;
-    ] ;
-
-    sh:property [
-        sh:path schema:name ;
-        sh:languageIn ( "en" "de" "fr" "it" ) ;
-        sh:uniqueLang true ;
-        sh:message "schema:name must use one of en, de, fr or it, with at most one value per language."@en ;
-    ] .
+    sh:property shape:identifier,
+        shape:multiLanguageName .
 
 # ==============================================================================
 # QUANTITATIVE VALUE
