@@ -153,13 +153,6 @@ shape:Product a sh:NodeShape ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:in ( country:CHE country:DEU country:ITA country:FRA country:AUT country:BEL ) ;
-    ] ;
-    sh:property [
-        sh:order 10 ;
-        sh:name "Indications"@en ;
-        sh:description "The indications outlining allowed applications."@en ;
-        sh:path :indication ;
-        sh:node shape:Indication ;
     ] .
 
 shape:RegularProduct a sh:NodeShape ;
@@ -358,7 +351,7 @@ shape:Ingredient a sh:NodeShape ;
     sh:property [
         sh:order 2 ;
         sh:name "Share"@en, "Anteil"@de ;
-        sh:description "The share of the substance of the total formulation, typically provided in g/L and/or percent."@en ;
+        sh:description "The share of the substance of the total formulation, either provided in g/L and/or percent."@en ;
         sh:path :share ;
         sh:node shape:QuantitativeValue ;
         sh:minCount 0 ;
@@ -545,6 +538,12 @@ shape:Substance a sh:NodeShape ;
             sh:name "IUPAC name"@en, "IUPAC-Name"@de ;
             sh:path :iupacName ;
             sh:datatype xsd:string ;
+        ],
+        [
+            sh:order 3 ;
+            sh:name "Same as"@en ;
+            sh:description "This property links a substance with its definition in another database."@de ;
+            sh:path owl:sameAs ;
         ] .
 
 # ==============================================================================

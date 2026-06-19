@@ -41,7 +41,7 @@ PREFIX country: <https://ld.admin.ch/country/>
 PREFIX schema: <http://schema.org/>
 
 SELECT *
-FROM <https://lindas.admin.ch/foag/plant-protection>
+FROM <https://lindas.admin.ch/fsvo/plant-protection-products>
 WHERE {
   ?product a :ParallelImport ;
     schema:name ?name ;
@@ -129,7 +129,10 @@ shape:Crop a sh:NodeShape ;
     rdfs:label "Kultur"@de,
         "Crop"@en ;
     rdfs:comment "Denotes the specific agronomic crop, botanical grouping, or agricultural setting targeted for treatment. It forms the biological jurisdiction defining where the product may be legally utilized."@en ;
-    sh:property [ sh:maxCount 2 ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class :Crop ;
+            sh:maxCount 2 ;
             sh:minCount 0 ;
             sh:name "Übergeordnete Kultur"@de,
                 "Parent crop"@en ;
@@ -217,31 +220,37 @@ It systematically links a target pest with the applicable cultivation domain and
             sh:name "Cultivation"@en ;
             sh:order 3 ;
             sh:path :crop ],
+        [ sh:class :Pest ;
+            sh:description "The pest (biotic *or* abiotic threat) against which any product of this indication may be applied."@en ;
+            sh:minCount 1 ;
+            sh:name "Pest"@en ;
+            sh:order 4 ;
+            sh:path :pest ],
         [ sh:class :ApplicationComment ;
             sh:name "Application Comment"@en ;
-            sh:order 4 ;
+            sh:order 5 ;
             sh:path :applicationComment ],
         [ sh:class :Obligation ;
             sh:name "Obligation"@en ;
-            sh:order 5 ;
+            sh:order 6 ;
             sh:path :obligation ],
         [ sh:maxCount 1 ;
             sh:name "Konzentration"@de,
                 "Dosage"@en ;
             sh:node shape:QuantitativeValue ;
-            sh:order 6 ;
+            sh:order 7 ;
             sh:path :dosage ],
         [ sh:maxCount 1 ;
             sh:name "Aufwandmenge"@de,
                 "Expenditure"@en ;
             sh:node shape:QuantitativeValue ;
-            sh:order 7 ;
+            sh:order 8 ;
             sh:path :expenditure ],
         [ sh:maxCount 1 ;
             sh:name "Wartefrist"@de,
                 "Waiting Period"@en ;
             sh:node shape:QuantitativeValue ;
-            sh:order 8 ;
+            sh:order 9 ;
             sh:path :waitingPeriod ] ;
     sh:targetClass :Indication .
 
@@ -259,7 +268,7 @@ shape:Ingredient a sh:NodeShape ;
             sh:node shape:Substance ;
             sh:order 1 ;
             sh:path :substance ],
-        [ sh:description "The share of the substance of the total formulation, typically provided in g/L and/or percent."@en ;
+        [ sh:description "The share of the substance of the total formulation, either provided in g/L and/or percent."@en ;
             sh:maxCount 2 ;
             sh:minCount 0 ;
             sh:name "Anteil"@de,
@@ -271,6 +280,12 @@ shape:Ingredient a sh:NodeShape ;
                     sh:message "The unit of an ingredient share must be either percent or g/L."@en ;
                     sh:path schema:unitCode ] ] ;
     sh:targetClass :Ingredient .
+
+shape:MandatoryLanguages a sh:NodeShape ;
+    rdfs:label "Obligatorische Sprachen"@de,
+        "Mandatory Languages"@en ;
+    rdfs:comment "Language-tagged strings in mandatory languages German and French." ;
+    sh:languageIn ( "de" "fr" ) .
 
 shape:Obligation a sh:NodeShape ;
     rdfs:label "Auflage"@de,
@@ -333,24 +348,36 @@ shape:ParallelImport a sh:NodeShape ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:name "Federal admission number"@en ;
+            sh:order 1 ;
             sh:path :federalAdmissionNumber ;
             sh:pattern "^[A-Z]-[0-9]{4}(-[0-9]{1,2})?$" ],
-        [ sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:node shape:RegularProduct ;
-            sh:path :referenceProduct ],
         [ sh:datatype xsd:string ;
             sh:description "An identifier assigned by any foreign authority."@en ;
             sh:name "Foreign admission number"@en ;
+            sh:order 2 ;
+            sh:path :foreignAdmissionNumber ],
+        [ sh:datatype xsd:string ;
+            sh:name "Packungsbeilagenummer"@de,
+                "Package insert number"@en ;
             sh:order 3 ;
-            sh:path :foreignAdmissionNumber ] ;
+            sh:path :packageInsertNumber ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "Referenzprodukt"@de,
+                "Reference product"@en ;
+            sh:node shape:RegularProduct ;
+            sh:order 4 ;
+            sh:path :referenceProduct ] ;
     sh:targetClass :ParallelImport .
 
 shape:Pest a sh:NodeShape ;
     rdfs:label "Schadorganismus"@de,
         "Pest"@en ;
     rdfs:comment "Identifies the pathogenic, competitive, or destructive organism—such as an insect species, fungal strain, or weed profile—that the corresponding plant protection product is engineered to neutralize or suppress."@en ;
-    sh:property shape:multiLanguageName ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property shape:identifier,
+        shape:multiLanguageName ;
     sh:targetClass :Pest .
 
 shape:PostalAddress a sh:NodeShape ;
@@ -442,12 +469,7 @@ shape:Product a sh:NodeShape ;
             sh:minCount 1 ;
             sh:name "Producing country"@en ;
             sh:order 9 ;
-            sh:path schema:countryOfOrigin ],
-        [ sh:description "The indications outlining allowed applications."@en ;
-            sh:name "Indications"@en ;
-            sh:node shape:Indication ;
-            sh:order 10 ;
-            sh:path :indication ] ;
+            sh:path schema:countryOfOrigin ] ;
     sh:targetClass :Product .
 
 shape:QuantitativeValue a sh:NodeShape ;
@@ -533,10 +555,29 @@ shape:Substance a sh:NodeShape ;
     rdfs:label "Wirkstoff"@de,
         "Substance"@en ;
     rdfs:comment "Denotes the foundational chemical entity or active biological agent embedded within a formulation. It abstracts the physical formulation to reference the fundamental molecule or organism responsible for the product's protective action."@en ;
-    sh:property shape:multiLanguageName ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:name "IUPAC-Name"@de,
+                "IUPAC name"@en ;
+            sh:path :iupacName ],
+        [ sh:description "This property links a substance with its definition in another database."@de ;
+            sh:name "Same as"@en ;
+            sh:order 3 ;
+            sh:path owl:sameAs ],
+        shape:multiLanguageName ;
     sh:targetClass :Substance .
 
-shape:multiLanguageDescription sh:datatype rdf:langString ;
+shape:identifier a sh:PropertyShape ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "Identifikator"@de,
+        "Identifier"@en ;
+    sh:order 1 ;
+    sh:path schema:identifier .
+
+shape:multiLanguageDescription a sh:PropertyShape ;
+    sh:datatype rdf:langString ;
     sh:description "Multilingual description. German ('de') and French ('fr') translations are mandatory. Italian ('it') and English ('en') are optional. Only one entry per language is allowed, and no other languages are permitted."@en ;
     sh:languageIn ( "de" "fr" "it" "en" ) ;
     sh:maxCount 4 ;
@@ -546,17 +587,11 @@ shape:multiLanguageDescription sh:datatype rdf:langString ;
     sh:order 2 ;
     sh:path schema:description ;
     sh:qualifiedMinCount 2 ;
-    sh:qualifiedValueShape [ sh:languageIn ( "de" "fr" ) ] ;
+    sh:qualifiedValueShape shape:MandatoryLanguages ;
     sh:uniqueLang true .
 
-shape:identifier sh:maxCount 1 ;
-    sh:minCount 1 ;
-    sh:name "Identifikator"@de,
-        "Identifier"@en ;
-    sh:order 1 ;
-    sh:path schema:identifier .
-
-shape:multiLanguageName sh:datatype rdf:langString ;
+shape:multiLanguageName a sh:PropertyShape ;
+    sh:datatype rdf:langString ;
     sh:description "Multilingual name. German ('de') and French ('fr') translations are mandatory. Italian ('it') and English ('en') are optional. Only one entry per language is allowed, and no other languages are permitted."@en ;
     sh:languageIn ( "de" "fr" "it" "en" ) ;
     sh:maxCount 4 ;
@@ -565,6 +600,6 @@ shape:multiLanguageName sh:datatype rdf:langString ;
     sh:order 2 ;
     sh:path schema:name ;
     sh:qualifiedMinCount 2 ;
-    sh:qualifiedValueShape [ sh:languageIn ( "de" "fr" ) ] ;
+    sh:qualifiedValueShape shape:MandatoryLanguages ;
     sh:uniqueLang true .
 
