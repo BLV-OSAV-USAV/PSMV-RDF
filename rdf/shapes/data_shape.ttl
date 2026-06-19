@@ -700,14 +700,16 @@ shape:QuantitativeValue a sh:NodeShape ;
 # GENERIC PROPERTIES THAT ARE RE-USED
 # ==============================================================================
 
-shape:identifier sh:name "Identifier"@en,
+shape:identifier a sh:PropertyShape ;
+    sh:name "Identifier"@en,
         "Identifikator"@de ;
     sh:order 1 ;
     sh:path schema:identifier ;
     sh:minCount 1 ;
     sh:maxCount 1 .
 
-shape:multiLanguageName sh:name "Name"@en ;
+shape:multiLanguageName a sh:PropertyShape ;
+    sh:name "Name"@en ;
     sh:description """Multilingual name. German ('de') and French ('fr') translations are mandatory. Italian ('it') and English ('en') are optional. Only one entry per language is allowed, and no other languages are permitted."""@en ;
     sh:order 2 ;
     sh:path schema:name ;
@@ -721,7 +723,8 @@ shape:multiLanguageName sh:name "Name"@en ;
     ] ;
     sh:qualifiedMinCount 2 .
 
-shape:multiLanguageDescription sh:name "Description"@en,
+shape:multiLanguageDescription a sh:PropertyShape ;
+    sh:name "Description"@en,
         "Beschreibung"@de ;
     sh:description """Multilingual description. German ('de') and French ('fr') translations are mandatory. Italian ('it') and English ('en') are optional. Only one entry per language is allowed, and no other languages are permitted."""@en ;
     sh:order 2 ;
