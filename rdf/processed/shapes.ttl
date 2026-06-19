@@ -1,7 +1,6 @@
 @prefix : <https://agriculture.ld.admin.ch/plant-protection/> .
 @prefix country: <https://ld.admin.ch/country/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ghs: <https://agriculture.ld.admin.ch/plant-protection/ghs/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix product: <https://agriculture.ld.admin.ch/plant-protection/product/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -134,7 +133,7 @@ shape:Crop a sh:NodeShape ;
         shape:multiLanguageName ;
     sh:targetClass :Crop .
 
-shape:GHSLabelling a sh:NodeShape ;
+shape:GHSLabelElement a sh:NodeShape ;
     rdfs:label "GHS-Beschriftung"@de,
         "GHS labelling"@en ;
     rdfs:comment "Encodes a standardized hazard or precautionary directive derived from the Globally Harmonized System of Classification and Labelling of Chemicals."@en ;
@@ -163,7 +162,7 @@ shape:HazardPictogram a sh:NodeShape ;
             sh:nodeKind sh:IRI ;
             sh:path schema:image ],
         shape:multiLanguageName ;
-    sh:targetClass ghs:HazardPictogram .
+    sh:targetClass :HazardPictogram .
 
 shape:HazardStatement a sh:NodeShape ;
     rdfs:label "Gefahrenhinweis"@de,
@@ -174,7 +173,7 @@ shape:HazardStatement a sh:NodeShape ;
             sh:minCount 1 ;
             sh:path schema:identifier ;
             sh:pattern "^H\\S*$" ] ;
-    sh:targetClass ghs:HazardStatement .
+    sh:targetClass :HazardStatement .
 
 shape:Indication a sh:NodeShape ;
     rdfs:label "Indikation"@de,
@@ -427,13 +426,13 @@ shape:PrecautionaryStatement a sh:NodeShape ;
     rdfs:label "Sicherheitshinweis"@de,
         "Precautionary statement"@en ;
     rdfs:comment "A phrase that describes recommended measures to minimize or prevent adverse effects."@en ;
-    sh:node shape:GHSLabelling ;
+    sh:node shape:GHSLabelElement ;
     sh:order 14 ;
     sh:property [ sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:path schema:identifier ;
             sh:pattern "^P\\S*$" ] ;
-    sh:targetClass ghs:PrecautionaryStatement .
+    sh:targetClass :PrecautionaryStatement .
 
 shape:Product a sh:NodeShape ;
     rdfs:label "Produkt"@de,
@@ -479,7 +478,7 @@ shape:Product a sh:NodeShape ;
             sh:path :permissionHolder ],
         [ sh:description "The Globally Harmonized System of Classification and Labelling of Chemicals (GHS) hazard and precautionary statements."@en ;
             sh:name "GHS code"@en ;
-            sh:node shape:GHSLabelling ;
+            sh:node shape:GHSLabelElement ;
             sh:order 8 ;
             sh:path :ghsLabel ],
         [ sh:description "The country where a plant protection product was produced."@en ;
@@ -565,7 +564,7 @@ shape:SignalWord a sh:NodeShape ;
     rdfs:comment "A word used to indicate the relative level of severity of hazard and alert the reader to a potential hazard on the label."@en ;
     sh:order 11 ;
     sh:property shape:multiLanguageName ;
-    sh:targetClass ghs:SignalWord .
+    sh:targetClass :SignalWord .
 
 shape:Substance a sh:NodeShape ;
     rdfs:label "Wirkstoff"@de,

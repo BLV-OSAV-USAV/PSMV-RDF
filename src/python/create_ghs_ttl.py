@@ -42,9 +42,9 @@ def ghs_ttl(
     con.close()
 
     type_mapping = {
-        "SignalWords": GHS.SignalWord, #Danger
-        "DangerSymbol": GHS.HazardPictogram, #GHS01
-        "CodeR": GHS.HazardStatement, #EUH und H
+        "SignalWords": BASE.SignalWord, #Danger
+        "DangerSymbol": BASE.HazardPictogram, #GHS01
+        "CodeR": BASE.HazardStatement, #EUH und H
         "CodeS": BASE.PlantProtectionStatement #PSM-Saetze
         # GHS.PrecautionaryStatement
     }

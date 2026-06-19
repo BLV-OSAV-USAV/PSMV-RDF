@@ -23,7 +23,6 @@
 @prefix unit: <http://qudt.org/vocab/unit/> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix ghs: <https://agriculture.ld.admin.ch/plant-protection/ghs/> .
 
 
 # ==============================================================================
@@ -143,7 +142,7 @@ shape:Product a sh:NodeShape ;
         sh:name "GHS code"@en ;
         sh:description "The Globally Harmonized System of Classification and Labelling of Chemicals (GHS) hazard and precautionary statements."@en ;
         sh:path :ghsLabel ;
-        sh:node shape:GHSLabelling ;
+        sh:node shape:GHSLabelElement ;
     ] ;
     sh:property [
         sh:order 9 ;
@@ -583,7 +582,7 @@ shape:Substance a sh:NodeShape ;
 # GHS CLASSES
 # ==============================================================================
 
-shape:GHSLabelling a sh:NodeShape ;
+shape:GHSLabelElement a sh:NodeShape ;
     sh:order 10 ;
     rdfs:label "GHS labelling"@en,
         "GHS-Beschriftung"@de ;
@@ -603,14 +602,14 @@ shape:SignalWord a sh:NodeShape ;
     sh:order 11 ;
     rdfs:label "Signal word"@en, "Signalwort"@de ;
     rdfs:comment "A word used to indicate the relative level of severity of hazard and alert the reader to a potential hazard on the label."@en ;
-    sh:targetClass ghs:SignalWord ;
+    sh:targetClass :SignalWord ;
     sh:property shape:multiLanguageName .
 
 shape:HazardPictogram a sh:NodeShape ;
     sh:order 12 ;
     rdfs:label "Hazard pictogram"@en, "Gefahrenpiktogramm"@de ;
     rdfs:comment "A graphical composition intended to convey specific hazard information."@en ;
-    sh:targetClass ghs:HazardPictogram ;
+    sh:targetClass :HazardPictogram ;
     sh:property
         [
             sh:path schema:identifier ;
@@ -633,7 +632,7 @@ shape:HazardStatement a sh:NodeShape ;
     rdfs:label "Hazard statement"@en,
         "Gefahrenhinweis"@de ;
     rdfs:comment "A standard phrase assigned to a hazard class and category that describes the nature of the hazards."@en ;
-    sh:targetClass ghs:HazardStatement ;
+    sh:targetClass :HazardStatement ;
     sh:property [
         sh:path schema:identifier ;
         sh:pattern "^H\\S*$" ;
@@ -646,8 +645,8 @@ shape:PrecautionaryStatement a sh:NodeShape ;
     rdfs:label "Precautionary statement"@en,
         "Sicherheitshinweis"@de ;
     rdfs:comment "A phrase that describes recommended measures to minimize or prevent adverse effects."@en ;
-    sh:targetClass ghs:PrecautionaryStatement ;
-    sh:node shape:GHSLabelling ;
+    sh:targetClass :PrecautionaryStatement ;
+    sh:node shape:GHSLabelElement ;
     sh:property [
         sh:path schema:identifier ;
         sh:pattern "^P\\S*$" ;
