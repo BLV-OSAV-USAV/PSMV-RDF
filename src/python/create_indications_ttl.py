@@ -87,7 +87,7 @@ def indication_ttl(
 
     link_configs = [
     (cult_df,"culture_id","crop", CROP),
-    (obl_df,"indication_obligation_id", "obligation", CODE),
+    (obl_df,"indication_obligation_id", "hasObligation", CODE),
     (app_area_df,"application_area_id", "applicationArea",CODE),
     (app_comment_df, "application_comment_id", "applicationComment", CODE),
     ]

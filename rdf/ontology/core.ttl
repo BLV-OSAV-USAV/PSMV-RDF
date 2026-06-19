@@ -403,7 +403,7 @@ schema:PostalAddress a owl:Class ;
     rdfs:domain :Indication ;
     rdfs:range :Cultivation .
 
-:obligation a owl:ObjectProperty ;
+:hasObligation a owl:ObjectProperty ;
     schema:name
         "has obligation"@en,
         "hat Auflage"@de,

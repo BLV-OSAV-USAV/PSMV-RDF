@@ -92,7 +92,7 @@ IndicationTimeMeasure:
 IndicationObligation:
   NK_Codetable: indication_obligation_id
   NK_Indication: indication
-  NK_Obligation: obligation
+  NK_Obligation: hasObligation
   ObligationID: obligation_id
 
 IndicationPest:
