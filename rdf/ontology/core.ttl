@@ -376,7 +376,9 @@ schema:PostalAddress a owl:Class ;
         "full effect against pest"@en,
         "effet complet contre l'organisme nuisible"@fr,
         "effetto completo contro l'organismo nocivo"@it ;
-    rdfs:subPropertyOf :pest .
+    rdfs:subPropertyOf :pest ;
+    rdfs:domain :Indication ;
+    rdfs:range :Pest .
 
 :pestSideEffect a owl:ObjectProperty ;
     schema:name
@@ -384,7 +386,9 @@ schema:PostalAddress a owl:Class ;
         "side effect against pest"@en,
         "effet secondaire contre l'organisme nuisible"@fr,
         "effetto secondario contro l'organismo nocivo"@it ;
-    rdfs:subPropertyOf :pest .
+    rdfs:subPropertyOf :pest ;
+    rdfs:domain :Indication ;
+    rdfs:range :Pest .
 
 :pestPartialEffect a owl:ObjectProperty ;
     schema:name
@@ -392,7 +396,9 @@ schema:PostalAddress a owl:Class ;
         "partial effect against pest"@en,
         "effet partiel contre l'organisme nuisible"@fr,
         "effetto parziale contro l'organismo nocivo"@it ;
-    rdfs:subPropertyOf :pest .
+    rdfs:subPropertyOf :pest ;
+    rdfs:domain :Indication ;
+    rdfs:range :Pest .
 
 :cultivation a owl:ObjectProperty ;
     schema:name
