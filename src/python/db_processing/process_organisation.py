@@ -7,10 +7,14 @@ def process_organisation(db_path: str = 'data/processed/psmv-data.duckdb'):
         CREATE OR REPLACE TABLE OrganisationCode AS
         SELECT 
             o.*,
-            c.city_name
+            c.city_name,
+            c.postal_code
         FROM Organisation o
         LEFT JOIN (
-            SELECT code_id, MAX(value) AS city_name 
+            SELECT 
+                code_id, 
+                MAX(value) AS city_name,
+                MAX(code_value) AS postal_code
             FROM Code 
             GROUP BY code_id
         ) c ON LOWER(TRIM(o.city_id)) = LOWER(TRIM(c.code_id))
