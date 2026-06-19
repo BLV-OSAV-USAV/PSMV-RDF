@@ -64,7 +64,7 @@ PREFIX country: <https://ld.admin.ch/country/>
 PREFIX schema: <http://schema.org/>
 
 SELECT *
-FROM <https://lindas.admin.ch/foag/plant-protection>
+FROM <https://lindas.admin.ch/fsvo/plant-protection-products>
 WHERE {
   ?product a :ParallelImport ;
     schema:name ?name ;
