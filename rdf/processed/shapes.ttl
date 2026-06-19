@@ -205,36 +205,43 @@ It systematically links a target pest with the applicable cultivation domain and
             sh:name "Application Area"@en ;
             sh:order 1 ;
             sh:path :applicationArea ],
+        [ sh:class :Product ;
+            sh:description "Produkt, auf welches sich diese Indikation bezieht."@de ;
+            sh:minCount 1 ;
+            sh:name "Produkt"@de,
+                "Product"@en ;
+            sh:order 2 ;
+            sh:path :product ],
         [ sh:class :Crop ;
             sh:minCount 1 ;
             sh:name "Cultivation"@en ;
-            sh:order 2 ;
+            sh:order 3 ;
             sh:path :crop ],
         [ sh:class :ApplicationComment ;
             sh:name "Application Comment"@en ;
-            sh:order 3 ;
+            sh:order 4 ;
             sh:path :applicationComment ],
         [ sh:class :Obligation ;
             sh:name "Obligation"@en ;
-            sh:order 4 ;
+            sh:order 5 ;
             sh:path :obligation ],
         [ sh:maxCount 1 ;
             sh:name "Konzentration"@de,
                 "Dosage"@en ;
             sh:node shape:QuantitativeValue ;
-            sh:order 5 ;
+            sh:order 6 ;
             sh:path :dosage ],
         [ sh:maxCount 1 ;
             sh:name "Aufwandmenge"@de,
                 "Expenditure"@en ;
             sh:node shape:QuantitativeValue ;
-            sh:order 6 ;
+            sh:order 7 ;
             sh:path :expenditure ],
         [ sh:maxCount 1 ;
             sh:name "Wartefrist"@de,
                 "Waiting Period"@en ;
             sh:node shape:QuantitativeValue ;
-            sh:order 7 ;
+            sh:order 8 ;
             sh:path :waitingPeriod ] ;
     sh:targetClass :Indication .
 
