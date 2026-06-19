@@ -142,7 +142,7 @@ shape:Product a sh:NodeShape ;
         sh:order 8 ;
         sh:name "GHS code"@en ;
         sh:description "The Globally Harmonized System of Classification and Labelling of Chemicals (GHS) hazard and precautionary statements."@en ;
-        sh:path :hasGHSLabelling ;
+        sh:path :ghsLabel ;
         sh:node shape:GHSLabelling ;
     ] ;
     sh:property [

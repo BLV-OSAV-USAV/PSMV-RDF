@@ -428,7 +428,7 @@ shape:Product a sh:NodeShape ;
             sh:name "GHS code"@en ;
             sh:node shape:GHSLabelling ;
             sh:order 8 ;
-            sh:path :hasGHSLabelling ],
+            sh:path :ghsLabel ],
         [ sh:description "The country where a plant protection product was produced."@en ;
             sh:in ( country:CHE country:DEU country:ITA country:FRA country:AUT country:BEL ) ;
             sh:maxCount 1 ;

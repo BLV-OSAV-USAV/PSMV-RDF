@@ -218,7 +218,7 @@ schema:PostalAddress a owl:Class ;
         :ParallelImport
     ) .
 
-:hasGHSLabelling a owl:ObjectProperty ;
+:ghsLabel a owl:ObjectProperty ;
     schema:name "has GHS labelling"@en ;
     rdfs:domain :Product ;
     rdfs:range ghs:GHSLabelling .
