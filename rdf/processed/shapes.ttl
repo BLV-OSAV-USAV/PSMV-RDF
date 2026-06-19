@@ -194,11 +194,11 @@ It systematically links a target pest with the applicable cultivation domain and
                         sh:minCount 1 ;
                         sh:path :pest ] ] [ sh:property [ sh:class :Pest ;
                         sh:minCount 1 ;
-                        sh:path :pestFullEffect ] ] [ sh:property [ sh:class :Pest ;
+                        sh:path :fullEffect ] ] [ sh:property [ sh:class :Pest ;
                         sh:minCount 1 ;
-                        sh:path :pestSideEffect ] ] [ sh:property [ sh:class :Pest ;
+                        sh:path :sideEffect ] ] [ sh:property [ sh:class :Pest ;
                         sh:minCount 1 ;
-                        sh:path :pestPartialEffect ] ] ) ;
+                        sh:path :partialEffect ] ] ) ;
     sh:property [ sh:class :ApplicationArea ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
