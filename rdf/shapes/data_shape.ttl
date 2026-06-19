@@ -500,16 +500,20 @@ shape:Crop a sh:NodeShape ;
     rdfs:label "Crop"@en,
         "Kultur"@de ;
     rdfs:comment "Denotes the specific agronomic crop, botanical grouping, or agricultural setting targeted for treatment. It forms the biological jurisdiction defining where the product may be legally utilized."@en ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
     sh:targetClass :Crop ;
-    sh:property shape:multiLanguageName,
-    shape:identifier,
-    [
-        sh:name "Parent crop"@en,
-            "Übergeordnete Kultur"@de ;
-        sh:path schema:isPartOf ;
-        sh:minCount 0 ;
-        sh:maxCount 2 ;
-    ] .
+    sh:property
+        shape:multiLanguageName,
+        shape:identifier,
+        [
+            sh:name "Parent crop"@en,
+                "Übergeordnete Kultur"@de ;
+            sh:path schema:isPartOf ;
+            sh:class :Crop ;
+            sh:minCount 0 ;
+            sh:maxCount 2 ;
+        ] .
 
 shape:Obligation a sh:NodeShape ;
     rdfs:label "Obligation"@en,
@@ -522,15 +526,26 @@ shape:Pest a sh:NodeShape ;
     rdfs:label "Pest"@en,
         "Schadorganismus"@de ;
     rdfs:comment "Identifies the pathogenic, competitive, or destructive organism—such as an insect species, fungal strain, or weed profile—that the corresponding plant protection product is engineered to neutralize or suppress."@en ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
     sh:targetClass :Pest ;
-    sh:property shape:multiLanguageName .
+    sh:property shape:identifier,
+        shape:multiLanguageName .
 
 shape:Substance a sh:NodeShape ;
     rdfs:label "Substance"@en,
         "Wirkstoff"@de ;
     rdfs:comment "Denotes the foundational chemical entity or active biological agent embedded within a formulation. It abstracts the physical formulation to reference the fundamental molecule or organism responsible for the product's protective action."@en ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
     sh:targetClass :Substance ;
-    sh:property shape:multiLanguageName .
+    sh:property
+        shape:multiLanguageName,
+        [
+            sh:name "IUPAC name"@en, "IUPAC-Name"@de ;
+            sh:path :iupacName ;
+            sh:datatype xsd:string ;
+        ] .
 
 # ==============================================================================
 # GHS CLASSES
@@ -717,6 +732,12 @@ shape:identifier a sh:PropertyShape ;
     sh:minCount 1 ;
     sh:maxCount 1 .
 
+shape:MandatoryLanguages a sh:NodeShape ;
+    rdfs:label "Mandatory Languages"@en,
+        "Obligatorische Sprachen"@de ;
+    rdfs:comment "Language-tagged strings in mandatory languages German and French." ;
+    sh:languageIn ( "de" "fr" ) .
+
 shape:multiLanguageName a sh:PropertyShape ;
     sh:name "Name"@en ;
     sh:description """Multilingual name. German ('de') and French ('fr') translations are mandatory. Italian ('it') and English ('en') are optional. Only one entry per language is allowed, and no other languages are permitted."""@en ;
@@ -727,9 +748,7 @@ shape:multiLanguageName a sh:PropertyShape ;
     sh:datatype rdf:langString ;
     sh:uniqueLang true ;
     sh:languageIn ( "de" "fr" "it" "en" ) ;
-    sh:qualifiedValueShape [ 
-        sh:languageIn ( "de" "fr" ) ;
-    ] ;
+    sh:qualifiedValueShape shape:MandatoryLanguages ;
     sh:qualifiedMinCount 2 .
 
 shape:multiLanguageDescription a sh:PropertyShape ;
@@ -743,7 +762,5 @@ shape:multiLanguageDescription a sh:PropertyShape ;
     sh:datatype rdf:langString ;
     sh:uniqueLang true ;
     sh:languageIn ( "de" "fr" "it" "en" ) ;
-    sh:qualifiedValueShape [ 
-        sh:languageIn ( "de" "fr" ) ;
-    ] ;
+    sh:qualifiedValueShape shape:MandatoryLanguages ;
     sh:qualifiedMinCount 2 .
