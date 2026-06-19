@@ -25,6 +25,6 @@ Once your work is ready:
 Aligning with standard Semantic Web conventions, we enforce the following casing rules for URI local names:
 
 - **Classes** (e.g., `owl:Class`): Use **PascalCase** (a.k.a. UpperCamelCase).
-- **Properties** (e.g., `owl:ObjectProperty`, `owl:DatatypeProperty`): Use **camelCase** (a.k.a. lowerCamelCase).
+- **Properties** (e.g., `owl:ObjectProperty`, `owl:DatatypeProperty`): Use **camelCase** (a.k.a. lowerCamelCase). Don't add verbs that don't increase the meaning of the property. Hence, `:indication` is preferred over `:hasIndication`.
 
 Ensure identifiers are semantically meaningful and descriptive to facilitate readability and improve [DX](https://en.wikipedia.org/wiki/Developer_experience).
