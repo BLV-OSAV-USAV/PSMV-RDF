@@ -387,6 +387,8 @@ shape:Indication a sh:NodeShape ;
 The indication formally outlines an approved, highly specific usage profile for a plant protection product.
 It systematically links a target pest with the applicable cultivation domain and delineates parameters like dosage, legal obligations, and mandatory waiting periods.
 """@en ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type :fullEffect :partialEffect :sideEffect ) ;
     sh:targetClass :Indication ;
     sh:or (
         [
@@ -420,6 +422,7 @@ It systematically links a target pest with the applicable cultivation domain and
     ) ;
 
     sh:property
+        shape:identifier,
         [
             sh:order 1 ;
             sh:name "Application Area"@en ;
@@ -489,6 +492,8 @@ shape:ApplicationArea a sh:NodeShape ;
     rdfs:label "Application Area"@en,
         "Anwendungsbereich"@de ;
     rdfs:comment "Establishes the macro-environmental or physical operational theater in which a product's usage is legally authorized. Common delineations include enclosed greenhouse environments, open agricultural fields, or specialized storage facilities."@en ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
     sh:targetClass :ApplicationArea ;
     sh:property shape:multiLanguageName,
     [
@@ -503,8 +508,16 @@ shape:ApplicationComment a sh:NodeShape ;
     rdfs:label "Application Comment"@en,
         "Anwendungskommentar"@de ;
     rdfs:comment "Captures precise textual directives and technical stipulations regarding the physical deployment of a product. These annotations often clarify exceptional conditions, temporal constraints, or best-practice methodologies necessary for efficacy."@en ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
     sh:targetClass :ApplicationComment ;
-    sh:property shape:multiLanguageName .
+    sh:property shape:multiLanguageName,
+        [
+            sh:name "Waiting Period"@en, "Wartefrist"@de ;
+            sh:path :waitingPeriod ;
+            sh:class schema:QuantitativeValue ;
+            sh:maxCount 1 ;
+        ] .
 
 shape:Crop a sh:NodeShape ;
     rdfs:label "Crop"@en,
@@ -529,8 +542,11 @@ shape:Obligation a sh:NodeShape ;
     rdfs:label "Obligation"@en,
         "Auflage"@de ;
     rdfs:comment "Specifies statutory mandates, restrictions, or operational conditions that an applicator must strictly observe. These parameters are designed to mitigate environmental impact, safeguard human health, and ensure regulatory compliance."@en ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
     sh:targetClass :Obligation ;
-    sh:property shape:multiLanguageName .
+    sh:property shape:identifier,
+        shape:multiLanguageName .
 
 shape:Pest a sh:NodeShape ;
     rdfs:label "Pest"@en,
