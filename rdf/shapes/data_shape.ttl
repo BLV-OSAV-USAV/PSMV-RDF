@@ -202,8 +202,9 @@ shape:ParallelImport a sh:NodeShape ;
     rdfs:comment "Placing a plant protection product with a foreign authorisation onto the market, predicated on an equivalent reference product already authorised in Switzerland. The continued validity of this import permission requires the parallel validity of the domestic reference product (PSMV Art. 47 Abs. 1)."@en ;
     sh:targetClass :ParallelImport ;
     sh:node shape:Product ;
-    sh:node shape:Product ;
-        sh:property [
+    sh:property
+    [
+        sh:order 1 ;
         sh:name "Federal admission number"@en ;
         sh:description "An identifier assigned by the FSVO that uniquely identifies an admissions of a plant protection product."@en ;
         sh:path :federalAdmissionNumber ;
@@ -211,19 +212,27 @@ shape:ParallelImport a sh:NodeShape ;
         sh:pattern "^[A-Z]-[0-9]{4}(-[0-9]{1,2})?$" ; # Todo: match only for parallel imports
         sh:minCount 1 ;
         sh:maxCount 1 ;
-    ] ;
-    sh:property [
-        sh:path :referenceProduct ;
-        sh:node shape:RegularProduct ;
-        sh:minCount 1 ;
-        sh:maxCount 1 ;
-    ] ;
-    sh:property [
-        sh:order 3 ;
+    ],
+    [
+        sh:order 2 ;
         sh:name "Foreign admission number"@en ;
         sh:description "An identifier assigned by any foreign authority."@en ;
         sh:path :foreignAdmissionNumber ;
         sh:datatype xsd:string ;
+    ],
+    [
+        sh:order 3 ;
+        sh:name "Package insert number"@en, "Packungsbeilagenummer"@de ;
+        sh:path :packageInsertNumber ;
+        sh:datatype xsd:string ;
+    ],
+    [
+        sh:order 4 ;
+        sh:name "Reference product"@en, "Referenzprodukt"@de ;
+        sh:path :referenceProduct ;
+        sh:node shape:RegularProduct ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
     ] .
 
 # ==============================================================================
