@@ -108,7 +108,7 @@ def substance_ttl(
              # Add language-tagged Names
             add_lang_labels(graph, substance_uri, SCHEMA.name, row)
 
-            # ChEBI identities
+            # ChEBI identities  START HERE AGAIN
             if pd.notna(row.get("hasChebiIdentity")):
                 for chebi_id in str(row["hasChebiIdentity"]).split("|"):
                     chebi_id = chebi_id.strip().removeprefix("CHEBI:")
