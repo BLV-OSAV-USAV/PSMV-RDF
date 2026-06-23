@@ -193,7 +193,13 @@ It systematically links a target pest with the applicable cultivation domain and
                         sh:path :sideEffect ] ] [ sh:property [ sh:class :Pest ;
                         sh:minCount 1 ;
                         sh:path :partialEffect ] ] ) ;
-    sh:property [ sh:class :ApplicationArea ;
+    sh:property [ sh:class schema:QuantitativeValue ;
+            sh:maxCount 1 ;
+            sh:name "Wartefrist"@de,
+                "Waiting Period"@en ;
+            sh:order 9 ;
+            sh:path :waitingPeriod ],
+        [ sh:class :ApplicationArea ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:name "Application Area"@en ;
@@ -237,12 +243,6 @@ It systematically links a target pest with the applicable cultivation domain and
                 "Expenditure"@en ;
             sh:order 8 ;
             sh:path :expenditure ],
-        [ sh:class schema:QuantitativeValue ;
-            sh:maxCount 1 ;
-            sh:name "Wartefrist"@de,
-                "Waiting Period"@en ;
-            sh:order 9 ;
-            sh:path :waitingPeriod ],
         shape:identifier ;
     sh:targetClass :Indication .
 
