@@ -1,7 +1,6 @@
 @prefix : <https://agriculture.ld.admin.ch/plant-protection/> .
 @prefix country: <https://ld.admin.ch/country/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ghs: <https://agriculture.ld.admin.ch/plant-protection/ghs/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix product: <https://agriculture.ld.admin.ch/plant-protection/product/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -41,7 +40,7 @@ PREFIX country: <https://ld.admin.ch/country/>
 PREFIX schema: <http://schema.org/>
 
 SELECT *
-FROM <https://lindas.admin.ch/foag/plant-protection>
+FROM <https://lindas.admin.ch/fsvo/plant-protection-products>
 WHERE {
   ?product a :ParallelImport ;
     schema:name ?name ;
@@ -59,26 +58,12 @@ A comprehensive suite of advanced SPARQL query templates, demonstrating complex 
     dcterms:title "Swiss registry of plant protection products"@en ;
     owl:versionInfo "3.0.0" .
 
-:PlantProtectionStatementShape a sh:NodeShape ;
-    sh:property [ sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:message "A plant protection statement must have exactly one schema:identifier."@en ;
-            sh:minCount 1 ;
-            sh:path schema:identifier ],
-        [ sh:datatype rdf:langString ;
-            sh:message "A plant protection statement must have at least one language-tagged schema:name."@en ;
-            sh:minCount 1 ;
-            sh:path schema:name ],
-        [ sh:languageIn ( "en" "de" "fr" "it" ) ;
-            sh:message "schema:name must use one of en, de, fr or it, with at most one value per language."@en ;
-            sh:path schema:name ;
-            sh:uniqueLang true ] ;
-    sh:targetClass :PlantProtectionStatement .
-
 shape:ApplicationArea a sh:NodeShape ;
     rdfs:label "Anwendungsbereich"@de,
         "Application Area"@en ;
     rdfs:comment "Establishes the macro-environmental or physical operational theater in which a product's usage is legally authorized. Common delineations include enclosed greenhouse environments, open agricultural fields, or specialized storage facilities."@en ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
     sh:property [ sh:in ( "B" "F" "G" "L" "N" "O" "S" "W" "Z" "Ö" ) ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
@@ -91,7 +76,14 @@ shape:ApplicationComment a sh:NodeShape ;
     rdfs:label "Anwendungskommentar"@de,
         "Application Comment"@en ;
     rdfs:comment "Captures precise textual directives and technical stipulations regarding the physical deployment of a product. These annotations often clarify exceptional conditions, temporal constraints, or best-practice methodologies necessary for efficacy."@en ;
-    sh:property shape:multiLanguageName ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class schema:QuantitativeValue ;
+            sh:maxCount 1 ;
+            sh:name "Wartefrist"@de,
+                "Waiting Period"@en ;
+            sh:path :waitingPeriod ],
+        shape:multiLanguageName ;
     sh:targetClass :ApplicationComment .
 
 shape:ClassProperty a sh:NodeShape ;
@@ -129,7 +121,10 @@ shape:Crop a sh:NodeShape ;
     rdfs:label "Kultur"@de,
         "Crop"@en ;
     rdfs:comment "Denotes the specific agronomic crop, botanical grouping, or agricultural setting targeted for treatment. It forms the biological jurisdiction defining where the product may be legally utilized."@en ;
-    sh:property [ sh:maxCount 2 ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class :Crop ;
+            sh:maxCount 2 ;
             sh:minCount 0 ;
             sh:name "Übergeordnete Kultur"@de,
                 "Parent crop"@en ;
@@ -138,7 +133,7 @@ shape:Crop a sh:NodeShape ;
         shape:multiLanguageName ;
     sh:targetClass :Crop .
 
-shape:GHSLabelling a sh:NodeShape ;
+shape:GHSLabelElement a sh:NodeShape ;
     rdfs:label "GHS-Beschriftung"@de,
         "GHS labelling"@en ;
     rdfs:comment "Encodes a standardized hazard or precautionary directive derived from the Globally Harmonized System of Classification and Labelling of Chemicals."@en ;
@@ -149,14 +144,12 @@ shape:GHSLabelling a sh:NodeShape ;
             sh:name "Identifier"@en ;
             sh:order 1 ;
             sh:path schema:identifier ],
-        shape:multiLanguageName ;
-    sh:targetClass ghs:GHSLabelling .
+        shape:multiLanguageName .
 
 shape:HazardPictogram a sh:NodeShape ;
     rdfs:label "Gefahrenpiktogramm"@de,
         "Hazard pictogram"@en ;
     rdfs:comment "A graphical composition intended to convey specific hazard information."@en ;
-    sh:node shape:GHSLabelling ;
     sh:order 12 ;
     sh:property [ sh:message "Hazard pictograms must follow the identifier pattern 'GHS0X' where X is a digit from 1 to 9."@en ;
             sh:minCount 1 ;
@@ -169,19 +162,18 @@ shape:HazardPictogram a sh:NodeShape ;
             sh:nodeKind sh:IRI ;
             sh:path schema:image ],
         shape:multiLanguageName ;
-    sh:targetClass ghs:HazardPictogram .
+    sh:targetClass :HazardPictogram .
 
 shape:HazardStatement a sh:NodeShape ;
     rdfs:label "Gefahrenhinweis"@de,
         "Hazard statement"@en ;
     rdfs:comment "A standard phrase assigned to a hazard class and category that describes the nature of the hazards."@en ;
-    sh:node shape:GHSLabelling ;
     sh:order 13 ;
     sh:property [ sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:path schema:identifier ;
-            sh:pattern "^H\\S*$" ] ;
-    sh:targetClass ghs:HazardStatement .
+            sh:pattern "^(EUH|H).*$" ] ;
+    sh:targetClass :HazardStatement .
 
 shape:Indication a sh:NodeShape ;
     rdfs:label "Indikation"@de,
@@ -190,58 +182,76 @@ shape:Indication a sh:NodeShape ;
 The indication formally outlines an approved, highly specific usage profile for a plant protection product.
 It systematically links a target pest with the applicable cultivation domain and delineates parameters like dosage, legal obligations, and mandatory waiting periods.
 """@en ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type :fullEffect :partialEffect :sideEffect ) ;
     sh:or ( [ sh:property [ sh:class :Pest ;
                         sh:minCount 1 ;
                         sh:path :pest ] ] [ sh:property [ sh:class :Pest ;
                         sh:minCount 1 ;
-                        sh:path :pestFullEffect ] ] [ sh:property [ sh:class :Pest ;
+                        sh:path :fullEffect ] ] [ sh:property [ sh:class :Pest ;
                         sh:minCount 1 ;
-                        sh:path :pestSideEffect ] ] [ sh:property [ sh:class :Pest ;
+                        sh:path :sideEffect ] ] [ sh:property [ sh:class :Pest ;
                         sh:minCount 1 ;
-                        sh:path :pestPartialEffect ] ] ) ;
+                        sh:path :partialEffect ] ] ) ;
     sh:property [ sh:class :ApplicationArea ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:name "Application Area"@en ;
             sh:order 1 ;
             sh:path :applicationArea ],
+        [ sh:class :Product ;
+            sh:description "Produkt, auf welches sich diese Indikation bezieht."@de ;
+            sh:minCount 1 ;
+            sh:name "Produkt"@de,
+                "Product"@en ;
+            sh:order 2 ;
+            sh:path :product ],
         [ sh:class :Crop ;
             sh:minCount 1 ;
             sh:name "Cultivation"@en ;
-            sh:order 2 ;
+            sh:order 3 ;
             sh:path :crop ],
+        [ sh:class :Pest ;
+            sh:description "The pest (biotic *or* abiotic threat) against which any product of this indication may be applied."@en ;
+            sh:minCount 1 ;
+            sh:name "Pest"@en ;
+            sh:order 4 ;
+            sh:path :pest ],
         [ sh:class :ApplicationComment ;
             sh:name "Application Comment"@en ;
-            sh:order 3 ;
+            sh:order 5 ;
             sh:path :applicationComment ],
         [ sh:class :Obligation ;
             sh:name "Obligation"@en ;
-            sh:order 4 ;
+            sh:order 6 ;
             sh:path :obligation ],
-        [ sh:maxCount 1 ;
+        [ sh:class schema:QuantitativeValue ;
+            sh:maxCount 1 ;
             sh:name "Konzentration"@de,
                 "Dosage"@en ;
-            sh:node shape:QuantitativeValue ;
-            sh:order 5 ;
+            sh:order 7 ;
             sh:path :dosage ],
-        [ sh:maxCount 1 ;
+        [ sh:class schema:QuantitativeValue ;
+            sh:maxCount 1 ;
             sh:name "Aufwandmenge"@de,
                 "Expenditure"@en ;
-            sh:node shape:QuantitativeValue ;
-            sh:order 6 ;
+            sh:order 8 ;
             sh:path :expenditure ],
-        [ sh:maxCount 1 ;
+        [ sh:class schema:QuantitativeValue ;
+            sh:maxCount 1 ;
             sh:name "Wartefrist"@de,
                 "Waiting Period"@en ;
-            sh:node shape:QuantitativeValue ;
-            sh:order 7 ;
-            sh:path :waitingPeriod ] ;
+            sh:order 9 ;
+            sh:path :waitingPeriod ],
+        shape:identifier ;
     sh:targetClass :Indication .
 
 shape:Ingredient a sh:NodeShape ;
     rdfs:label "Inhaltsstoff"@de,
         "Ingredient"@en ;
     rdfs:comment "Represents a constituent component of a product. It specifies both the underlying chemical or biological substance and its corresponding quantitative share within the final formulation."@en ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
     sh:nodeKind sh:BlankNode ;
     sh:property [ sh:class :Substance ;
             sh:description "The substance that makes up this part of the formulation."@en ;
@@ -249,15 +259,14 @@ shape:Ingredient a sh:NodeShape ;
             sh:minCount 1 ;
             sh:name "Wirkstoff"@de,
                 "Substance"@en ;
-            sh:node shape:Substance ;
             sh:order 1 ;
             sh:path :substance ],
-        [ sh:description "The share of the substance of the total formulation, typically provided in g/L and/or percent."@en ;
+        [ sh:class schema:QuantitativeValue ;
+            sh:description "The share of the substance of the total formulation, either provided in g/L and/or percent."@en ;
             sh:maxCount 2 ;
             sh:minCount 0 ;
             sh:name "Anteil"@de,
                 "Share"@en ;
-            sh:node shape:QuantitativeValue ;
             sh:order 2 ;
             sh:path :share ;
             sh:property [ sh:in ( unit:PERCENT unit:GM-PER-L ) ;
@@ -265,11 +274,20 @@ shape:Ingredient a sh:NodeShape ;
                     sh:path schema:unitCode ] ] ;
     sh:targetClass :Ingredient .
 
+shape:MandatoryLanguages a sh:NodeShape ;
+    rdfs:label "Obligatorische Sprachen"@de,
+        "Mandatory Languages"@en ;
+    rdfs:comment "Language-tagged strings in mandatory languages German and French." ;
+    sh:languageIn ( "de" "fr" ) .
+
 shape:Obligation a sh:NodeShape ;
     rdfs:label "Auflage"@de,
         "Obligation"@en ;
     rdfs:comment "Specifies statutory mandates, restrictions, or operational conditions that an applicator must strictly observe. These parameters are designed to mitigate environmental impact, safeguard human health, and ensure regulatory compliance."@en ;
-    sh:property shape:multiLanguageName ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property shape:identifier,
+        shape:multiLanguageName ;
     sh:targetClass :Obligation .
 
 shape:Organization a sh:NodeShape ;
@@ -289,11 +307,11 @@ shape:Organization a sh:NodeShape ;
             sh:nodeKind sh:Literal ;
             sh:path schema:legalName ;
             sh:uniqueLang true ],
-        [ sh:description "The primary postal address of the organization."@en ;
+        [ sh:class schema:PostalAddress ;
+            sh:description "The primary postal address of the organization."@en ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:name "Address"@en ;
-            sh:node shape:PostalAddress ;
             sh:path schema:address ],
         [ sh:datatype xsd:string ;
             sh:description "A telephone number associated with the organization. The validation pattern accommodates a flexible subset of the ITU-T E.164 recommendation, permitting common typographic separators such as spaces and hyphens."@en ;
@@ -326,61 +344,95 @@ shape:ParallelImport a sh:NodeShape ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:name "Federal admission number"@en ;
+            sh:order 1 ;
             sh:path :federalAdmissionNumber ;
             sh:pattern "^[A-Z]-[0-9]{4}(-[0-9]{1,2})?$" ],
-        [ sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:node shape:RegularProduct ;
-            sh:path :referenceProduct ],
         [ sh:datatype xsd:string ;
             sh:description "An identifier assigned by any foreign authority."@en ;
             sh:name "Foreign admission number"@en ;
+            sh:order 2 ;
+            sh:path :foreignAdmissionNumber ],
+        [ sh:datatype xsd:string ;
+            sh:name "Packungsbeilagenummer"@de,
+                "Package insert number"@en ;
             sh:order 3 ;
-            sh:path :foreignAdmissionNumber ] ;
+            sh:path :packageInsertNumber ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "Referenzprodukt"@de,
+                "Reference product"@en ;
+            sh:node shape:RegularProduct ;
+            sh:order 4 ;
+            sh:path :referenceProduct ] ;
     sh:targetClass :ParallelImport .
 
 shape:Pest a sh:NodeShape ;
     rdfs:label "Schadorganismus"@de,
         "Pest"@en ;
     rdfs:comment "Identifies the pathogenic, competitive, or destructive organism—such as an insect species, fungal strain, or weed profile—that the corresponding plant protection product is engineered to neutralize or suppress."@en ;
-    sh:property shape:multiLanguageName ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property shape:identifier,
+        shape:multiLanguageName ;
     sh:targetClass :Pest .
+
+shape:PlantProtectionStatement a sh:NodeShape ;
+    rdfs:label "Plant protection statement"@en ;
+    sh:property shape:identifier,
+        shape:multiLanguageName ;
+    sh:targetClass :PlantProtectionStatement .
 
 shape:PostalAddress a sh:NodeShape ;
     rdfs:label "Adresse"@de,
         "Address"@en ;
     rdfs:comment "Defines the physical or postal routing information for an organization. It encapsulates granular fields required for proper geospatial identification, including country, specific street, postal routing code, and locality."@en ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
     sh:order 6 ;
-    sh:property [ sh:maxCount 1 ;
-            sh:name "Address country"@en ;
-            sh:nodeKind sh:IRI ;
-            sh:path schema:addressCountry ;
-            sh:pattern "^https://ld\\.admin\\.ch/country/[A-Z0-9]{3}$" ],
-        [ sh:datatype xsd:string ;
+    sh:property [ sh:datatype xsd:string ;
             sh:maxCount 1 ;
+            sh:minCount 1 ;
             sh:name "Street address"@en ;
+            sh:order 1 ;
             sh:path schema:streetAddress ],
         [ sh:datatype xsd:string ;
+            sh:description "The post office box number for post office box addresses."@en ;
             sh:maxCount 1 ;
+            sh:name "Post office box number"@en ;
+            sh:order 2 ;
+            sh:path schema:postOfficeBoxNumber ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
             sh:name "Postal code"@en ;
+            sh:order 3 ;
             sh:path schema:postalCode ],
         [ sh:datatype xsd:string ;
             sh:maxCount 1 ;
+            sh:minCount 1 ;
             sh:name "Address locality"@en ;
-            sh:path schema:addressLocality ] ;
+            sh:order 4 ;
+            sh:path schema:addressLocality ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "Address country"@en ;
+            sh:nodeKind sh:IRI ;
+            sh:order 5 ;
+            sh:path schema:addressCountry ;
+            sh:pattern "^https://ld\\.admin\\.ch/country/[A-Z0-9]{3}$" ] ;
     sh:targetClass schema:PostalAddress .
 
 shape:PrecautionaryStatement a sh:NodeShape ;
     rdfs:label "Sicherheitshinweis"@de,
         "Precautionary statement"@en ;
     rdfs:comment "A phrase that describes recommended measures to minimize or prevent adverse effects."@en ;
-    sh:node shape:GHSLabelling ;
+    sh:node shape:GHSLabelElement ;
     sh:order 14 ;
     sh:property [ sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:path schema:identifier ;
             sh:pattern "^P\\S*$" ] ;
-    sh:targetClass ghs:PrecautionaryStatement .
+    sh:targetClass :PrecautionaryStatement .
 
 shape:Product a sh:NodeShape ;
     rdfs:label "Produkt"@de,
@@ -413,34 +465,29 @@ shape:Product a sh:NodeShape ;
             sh:name "Soldout deadline"@en ;
             sh:order 5 ;
             sh:path :soldOutDeadline ],
-        [ sh:name "Ingredient"@en ;
-            sh:node shape:Ingredient ;
+        [ sh:class :Ingredient ;
+            sh:name "Ingredient"@en ;
             sh:order 6 ;
             sh:path :ingredient ],
-        [ sh:description "The legal entity authorized to place the product on the market [...]."@en ;
+        [ sh:class schema:Organization ;
+            sh:description "The legal entity authorized to place the product on the market [...]."@en ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:name "Permission holder"@en ;
-            sh:node shape:Organization ;
             sh:order 7 ;
             sh:path :permissionHolder ],
         [ sh:description "The Globally Harmonized System of Classification and Labelling of Chemicals (GHS) hazard and precautionary statements."@en ;
             sh:name "GHS code"@en ;
-            sh:node shape:GHSLabelling ;
+            sh:node shape:GHSLabelElement ;
             sh:order 8 ;
-            sh:path :hasGHSLabelling ],
+            sh:path :ghsLabel ],
         [ sh:description "The country where a plant protection product was produced."@en ;
             sh:in ( country:CHE country:DEU country:ITA country:FRA country:AUT country:BEL ) ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:name "Producing country"@en ;
             sh:order 9 ;
-            sh:path schema:countryOfOrigin ],
-        [ sh:description "The indications outlining allowed applications."@en ;
-            sh:name "Indications"@en ;
-            sh:node shape:Indication ;
-            sh:order 10 ;
-            sh:path :indication ] ;
+            sh:path schema:countryOfOrigin ] ;
     sh:targetClass :Product .
 
 shape:QuantitativeValue a sh:NodeShape ;
@@ -491,7 +538,6 @@ shape:RegularProduct a sh:NodeShape ;
     sh:property [ sh:datatype xsd:string ;
             sh:description "An identifier assigned by the FSVO that uniquely identifies an admissions of a plant protection product."@en ;
             sh:maxCount 1 ;
-            sh:message "The federal admission number must match the pattern 'L-DDDD' or 'L-DDDD-D', where L is an uppercase letter and D a digit."@en ;
             sh:minCount 1 ;
             sh:name "Federal admission number"@en ;
             sh:path :federalAdmissionNumber ;
@@ -506,30 +552,47 @@ shape:SalePermission a sh:NodeShape ;
     sh:property [ sh:datatype xsd:string ;
             sh:description "An identifier assigned by the FSVO that uniquely identifies an admissions of a plant protection product."@en ;
             sh:maxCount 1 ;
-            sh:message "The federal admission number must match the pattern 'L-DDDD' or 'L-DDDD-D', where L is an uppercase letter and D a digit."@en ;
             sh:minCount 1 ;
             sh:name "Federal admission number"@en ;
             sh:path :federalAdmissionNumber ;
-            sh:pattern "^[A-Z]-[0-9]{4}(-[0-9]{1,2})?$" ] ;
+            sh:pattern "^[A-Z]-[0-9]{1,4}(-[0-9]{1,2})?$" ] ;
     sh:targetClass :SalePermission .
 
 shape:SignalWord a sh:NodeShape ;
     rdfs:label "Signalwort"@de,
         "Signal word"@en ;
     rdfs:comment "A word used to indicate the relative level of severity of hazard and alert the reader to a potential hazard on the label."@en ;
-    sh:node shape:GHSLabelling ;
     sh:order 11 ;
     sh:property shape:multiLanguageName ;
-    sh:targetClass ghs:SignalWord .
+    sh:targetClass :SignalWord .
 
 shape:Substance a sh:NodeShape ;
     rdfs:label "Wirkstoff"@de,
         "Substance"@en ;
     rdfs:comment "Denotes the foundational chemical entity or active biological agent embedded within a formulation. It abstracts the physical formulation to reference the fundamental molecule or organism responsible for the product's protective action."@en ;
-    sh:property shape:multiLanguageName ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:name "IUPAC-Name"@de,
+                "IUPAC name"@en ;
+            sh:path :iupacName ],
+        [ sh:description "This property links a substance with its definition in another database."@de ;
+            sh:name "Same as"@en ;
+            sh:order 3 ;
+            sh:path owl:sameAs ],
+        shape:multiLanguageName ;
     sh:targetClass :Substance .
 
-shape:multiLanguageDescription sh:datatype rdf:langString ;
+shape:identifier a sh:PropertyShape ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "Identifikator"@de,
+        "Identifier"@en ;
+    sh:order 1 ;
+    sh:path schema:identifier .
+
+shape:multiLanguageDescription a sh:PropertyShape ;
+    sh:datatype rdf:langString ;
     sh:description "Multilingual description. German ('de') and French ('fr') translations are mandatory. Italian ('it') and English ('en') are optional. Only one entry per language is allowed, and no other languages are permitted."@en ;
     sh:languageIn ( "de" "fr" "it" "en" ) ;
     sh:maxCount 4 ;
@@ -539,17 +602,11 @@ shape:multiLanguageDescription sh:datatype rdf:langString ;
     sh:order 2 ;
     sh:path schema:description ;
     sh:qualifiedMinCount 2 ;
-    sh:qualifiedValueShape [ sh:languageIn ( "de" "fr" ) ] ;
+    sh:qualifiedValueShape shape:MandatoryLanguages ;
     sh:uniqueLang true .
 
-shape:identifier sh:maxCount 1 ;
-    sh:minCount 1 ;
-    sh:name "Identifikator"@de,
-        "Identifier"@en ;
-    sh:order 1 ;
-    sh:path schema:identifier .
-
-shape:multiLanguageName sh:datatype rdf:langString ;
+shape:multiLanguageName a sh:PropertyShape ;
+    sh:datatype rdf:langString ;
     sh:description "Multilingual name. German ('de') and French ('fr') translations are mandatory. Italian ('it') and English ('en') are optional. Only one entry per language is allowed, and no other languages are permitted."@en ;
     sh:languageIn ( "de" "fr" "it" "en" ) ;
     sh:maxCount 4 ;
@@ -558,6 +615,6 @@ shape:multiLanguageName sh:datatype rdf:langString ;
     sh:order 2 ;
     sh:path schema:name ;
     sh:qualifiedMinCount 2 ;
-    sh:qualifiedValueShape [ sh:languageIn ( "de" "fr" ) ] ;
+    sh:qualifiedValueShape shape:MandatoryLanguages ;
     sh:uniqueLang true .
 

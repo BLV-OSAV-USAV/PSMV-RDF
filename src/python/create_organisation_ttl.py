@@ -113,6 +113,10 @@ def organisation_ttl(
             if pd.notna(row.get("post_office_box")) and str(row.get("post_office_box")).strip():
                 graph.add((address_node, SCHEMA.postOfficeBoxNumber, Literal(str(row["post_office_box"]).strip(), datatype=XSD.string)))
 
+            # Add postal code
+            if pd.notna(row.get("postal_code")) and str(row.get("postal_code")).strip():
+                graph.add((address_node, SCHEMA.postalCode, Literal(str(row["postal_code"]).strip(), datatype=XSD.string)))
+
             # Add city
             if pd.notna(row.get("city_name")) and str(row.get("city_name")).strip():                
                 # Prefer the mapped city name from the Code table

@@ -245,7 +245,7 @@ def products_ttl(
             # Add GHS connections
             if product_ref_id_str in ghs_dict:
                 for code_id in ghs_dict[product_ref_id_str]:
-                    graph.add((product_uri, BASE.ghs, CODE[code_id]))
+                    graph.add((product_uri, BASE.ghsLabel, CODE[code_id]))
 
         except Exception as error:
             print(f"Row {i} (Product {product_id_str}): {error}")

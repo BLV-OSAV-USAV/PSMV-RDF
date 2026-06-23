@@ -74,7 +74,7 @@
 07:35:13.988 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding class partition for https://agriculture.ld.admin.ch/plant-protection/shape/ApplicationArea
 07:35:13.988 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for fac9262cd883897088de456f920abfab
 07:35:13.988 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName
-07:35:13.988 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding class partition for https://agriculture.ld.admin.ch/plant-protection/shape/GHSLabelling
+07:35:13.988 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding class partition for https://agriculture.ld.admin.ch/plant-protection/shape/GHSLabelElement
 07:35:13.988 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for ce1926854b46552e7afd9bb33934a6df
 07:35:13.988 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName
 07:35:13.988 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding class partition for https://agriculture.ld.admin.ch/plant-protection/PlantProtectionStatementShape

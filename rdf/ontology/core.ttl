@@ -4,7 +4,6 @@
 
 # Project-specific QNames ------------------------------------------------------
 @prefix : <https://agriculture.ld.admin.ch/plant-protection/> .
-@prefix ghs: <https://agriculture.ld.admin.ch/plant-protection/ghs/> .
 
 # General prefixes -------------------------------------------------------------
 @prefix dcterms: <http://purl.org/dc/terms/> .
@@ -218,10 +217,10 @@ schema:PostalAddress a owl:Class ;
         :ParallelImport
     ) .
 
-:hasGHSLabelling a owl:ObjectProperty ;
+:ghsLabel a owl:ObjectProperty ;
     schema:name "has GHS labelling"@en ;
     rdfs:domain :Product ;
-    rdfs:range ghs:GHSLabelling .
+    rdfs:range :GHSLabelElement .
 
 :indication a owl:ObjectProperty ;
     schema:name
@@ -370,29 +369,35 @@ schema:PostalAddress a owl:Class ;
     rdfs:domain :Indication ;
     rdfs:range :Pest .
 
-:pestFullEffect a owl:ObjectProperty ;
+:fullEffect a owl:ObjectProperty ;
     schema:name
         "volle Wirkung gegen Schadorganismus"@de,
         "full effect against pest"@en,
         "effet complet contre l'organisme nuisible"@fr,
         "effetto completo contro l'organismo nocivo"@it ;
-    rdfs:subPropertyOf :pest .
+    rdfs:subPropertyOf :pest ;
+    rdfs:domain :Indication ;
+    rdfs:range :Pest .
 
-:pestSideEffect a owl:ObjectProperty ;
+:sideEffect a owl:ObjectProperty ;
     schema:name
         "Nebenwirkung gegen Schadorganismus"@de,
         "side effect against pest"@en,
         "effet secondaire contre l'organisme nuisible"@fr,
         "effetto secondario contro l'organismo nocivo"@it ;
-    rdfs:subPropertyOf :pest .
+    rdfs:subPropertyOf :pest ;
+    rdfs:domain :Indication ;
+    rdfs:range :Pest .
 
-:pestPartialEffect a owl:ObjectProperty ;
+:partialEffect a owl:ObjectProperty ;
     schema:name
         "Teilwirkung gegen Schadorganismus"@de,
         "partial effect against pest"@en,
         "effet partiel contre l'organisme nuisible"@fr,
         "effetto parziale contro l'organismo nocivo"@it ;
-    rdfs:subPropertyOf :pest .
+    rdfs:subPropertyOf :pest ;
+    rdfs:domain :Indication ;
+    rdfs:range :Pest .
 
 :cultivation a owl:ObjectProperty ;
     schema:name
@@ -582,3 +587,84 @@ schema:QuantitativeValue a owl:Class ;
 schema:legalName rdfs:subPropertyOf schema:name .
 
 :productType rdfs:subPropertyOf rdf:type .
+
+# ==============================================================================
+# GHS CLASSIFICATION
+# ==============================================================================
+
+:GHSLabelElement a owl:Class ;
+    schema:name
+        "GHS label"@en,
+        "GHS-Label"@de,
+        "Étiquette GHS"@fr,
+        "Etichetta GHS"@it ;
+    rdfs:subClassOf
+        [
+            a owl:Restriction ;
+            owl:onProperty schema:name ;
+            owl:allValuesFrom rdf:langString ;
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:onProperty schema:identifier ;
+            owl:allValuesFrom xsd:string ;
+        ] .
+
+:HazardPictogram a owl:Class ;
+    schema:name
+        "Hazard pictogram"@en,
+        "Gefahrenpiktogramm"@de,
+        "Pictogramme de danger"@fr,
+        "Pittogramma di pericolo"@it ;
+    rdfs:seeAlso <https://en.wikipedia.org/wiki/GHS_hazard_pictograms> ;
+    rdfs:subClassOf
+        :GHSLabelElement ,
+        [
+            a owl:Restriction ;
+            owl:onProperty schema:image ;
+            owl:allValuesFrom rdfs:Resource ;
+        ] .
+
+:HazardStatement a owl:Class ;
+    schema:name
+        "Hazard statement"@en,
+        "Gefahrenhinweis"@de,
+        "Mention de danger"@fr,
+        "Indicazione di pericolo"@it ;
+    schema:alternateName
+        "R phrase"@en,
+        "R-Satz"@de,
+        "Phrase R"@fr,
+        "Frase R"@it ;
+    schema:description
+        "A hazard statement is a standardized description of the risks associated with hazardous chemical substances."@en,
+        "Ein Gefahrenhinweis ist eine standardisierte Beschreibung der Gefahren, die mit gefährlichen chemischen Stoffen verbunden sind."@de,
+        "Une mention de danger est une description normalisée des dangers associés aux substances chimiques dangereuses."@fr,
+        "Un'indicazione di pericolo è una descrizione standardizzata dei pericoli associati alle sostanze chimiche pericolose."@it ;
+    rdfs:subClassOf :GHSLabelElement .
+
+:PrecautionaryStatement a owl:Class ;
+    schema:name
+        "Precautionary statement"@en,
+        "Sicherheitshinweis"@de,
+        "Conseil de prudence"@fr,
+        "Consiglio di prudenza"@it ;
+    schema:alternateName
+        "S phrase"@en,
+        "S-Satz"@de,
+        "Phrase S"@fr,
+        "Frase S"@it ;
+    schema:description
+        "A precautionary statement is a standardized safety instruction for the handling, storage, disposal, and emergency response related to hazardous chemical substances."@en,
+        "Ein Sicherheitshinweis ist eine standardisierte Sicherheitsanweisung für den Umgang, die Lagerung, die Entsorgung und Notfallmassnahmen im Zusammenhang mit gefährlichen chemischen Stoffen."@de,
+        "Un conseil de prudence est une instruction de sécurité normalisée concernant la manipulation, le stockage, l'élimination et les mesures d'urgence relatives aux substances chimiques dangereuses."@fr,
+        "Un consiglio di prudenza è un'istruzione di sicurezza standardizzata relativa alla manipolazione, allo stoccaggio, allo smaltimento e alle misure di emergenza riguardanti sostanze chimiche pericolose."@it ;
+    rdfs:subClassOf :GHSLabelElement .
+
+:SignalWord a owl:Class ;
+    schema:name
+        "Signal word"@en,
+        "Signalwort"@de,
+        "Mention d'avertissement"@fr,
+        "Avvertenza"@it ;
+    rdfs:subClassOf :GHSLabelElement .

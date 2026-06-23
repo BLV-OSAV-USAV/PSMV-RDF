@@ -147,9 +147,9 @@ def indication_ttl(
                     if pd.notna(raw_effect) and str(raw_effect).strip():
                         pest_effect_slug = str(raw_effect).strip().upper().replace(" ", "_")
                         pest_predicate = {
-                            "PEST_FULL_EFFECT": BASE.pestFullEffect,
-                            "PEST_SIDE_EFFECT": BASE.pestSideEffect,
-                            "PEST_PARTIAL_EFFECT": BASE.pestPartialEffect,
+                            "PEST_FULL_EFFECT": BASE.fullEffect,
+                            "PEST_SIDE_EFFECT": BASE.sideEffect,
+                            "PEST_PARTIAL_EFFECT": BASE.partialEffect,
                         }.get(pest_effect_slug, BASE.pest)
                     else:
                         pest_predicate = BASE.pest
