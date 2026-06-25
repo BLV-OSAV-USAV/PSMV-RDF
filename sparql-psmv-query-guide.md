@@ -1,4 +1,4 @@
-# SPARQL Query Guide — Plant Protection Products (PSMV/PSV)
+# SPARQL Query Guide — Plant Protection Products (PSMV)
 
 **Graph:** `https://lindas.admin.ch/fsvo/plant-protection-products`  
 **Base namespace:** `https://agriculture.ld.admin.ch/plant-protection/`  
@@ -36,70 +36,23 @@ Product ──► Indication ──► Crop
 
 ---
 
-### SME Template 1 — Find products approved for a crop + pest combination
+### SME Template 1
 
 > *"Which products can I use on sugar maize against thrips?"*
 
 ```sparql
-PREFIX : <https://agriculture.ld.admin.ch/plant-protection/>
-PREFIX schema: <http://schema.org/>
-
-SELECT DISTINCT
-  ?product ?productName
-  ?cropName
-  ?pestName
-  ?areaName
-WHERE {
-  GRAPH <https://lindas.admin.ch/fsvo/plant-protection-products> {
-
-    ?indication a :Indication ;
-                :crop          ?crop ;
-                :pestFullEffect ?pest ;          # ← full efficacy only
-                :applicationArea ?area ;
-                :product       ?product .
-
-    ?product schema:name ?productName .
-    ?crop    schema:name ?cropName .
-    ?pest    schema:name ?pestName .
-    ?area    schema:name ?areaName .
-
-    FILTER (
-      lang(?productName) = "de" &&
-      lang(?cropName)    = "de" &&
-      lang(?pestName)    = "de" &&
-      lang(?areaName)    = "de" &&
-      CONTAINS(LCASE(?cropName), "zuckermais") &&
-      CONTAINS(LCASE(?pestName), "thripse")
-    )
-  }
-}
-ORDER BY ?productName
+Test
 ```
-
-**What to change:**
-- Replace `"zuckermais"` and `"thripse"` with your crop / pest keywords (lowercase, partial match is fine).
-- Change `lang(...)` values to `"fr"` or `"it"` for French / Italian results.
-- Swap `"de"` for a different language on each label independently if needed.
-
 ---
 
-### SME Template 2 — Include partial and side effects
+### SME Template 2
 
 > *"Show me ALL approved effects, not just full efficacy."*
 
 Replace the single `:pestFullEffect` triple with a `UNION` block:
 
 ```sparql
-    {
-      ?indication :pestFullEffect    ?pest .
-      BIND("Volle Wirkung" AS ?effectType)
-    } UNION {
-      ?indication :pestPartialEffect ?pest .
-      BIND("Teilwirkung" AS ?effectType)
-    } UNION {
-      ?indication :pestSideEffect    ?pest .
-      BIND("Nebenwirkung" AS ?effectType)
-    }
+Test
 ```
 
 Add `?effectType` to the `SELECT` clause so you can see which category each row belongs to.
@@ -111,40 +64,7 @@ Add `?effectType` to the `SELECT` clause so you can see which category each row 
 > *"What is product 'Karate Zeon' approved for?"*
 
 ```sparql
-PREFIX : <https://agriculture.ld.admin.ch/plant-protection/>
-PREFIX schema: <http://schema.org/>
-
-SELECT DISTINCT
-  ?productName ?cropName ?pestName ?areaName
-WHERE {
-  GRAPH <https://lindas.admin.ch/fsvo/plant-protection-products> {
-
-    ?indication a :Indication ;
-                :product         ?product ;
-                :crop            ?crop ;
-                :applicationArea ?area .
-    # Include any pest effect type
-    { ?indication :pestFullEffect    ?pest }
-    UNION
-    { ?indication :pestPartialEffect ?pest }
-    UNION
-    { ?indication :pestSideEffect    ?pest }
-
-    ?product schema:name ?productName .
-    ?crop    schema:name ?cropName .
-    ?pest    schema:name ?pestName .
-    ?area    schema:name ?areaName .
-
-    FILTER (
-      lang(?productName) = "de" &&
-      lang(?cropName)    = "de" &&
-      lang(?pestName)    = "de" &&
-      lang(?areaName)    = "de" &&
-      CONTAINS(LCASE(?productName), "karate zeon")
-    )
-  }
-}
-ORDER BY ?cropName ?pestName
+Test
 ```
 
 ---
@@ -156,9 +76,7 @@ ORDER BY ?cropName ?pestName
 ```
 Endpoint:  https://lindas.admin.ch/query
 Method:    GET or POST (application/x-www-form-urlencoded)
-Accept:    application/sparql-results+json   (recommended)
-           application/sparql-results+xml
-           text/csv
+Accept:    application/sparql-results+json
 Auth:      None required for public read access
 ```
 
