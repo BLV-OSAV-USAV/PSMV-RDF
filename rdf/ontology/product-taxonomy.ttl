@@ -16,138 +16,138 @@
 # PRODUCT TAXONOMY
 # ==============================================================================
 
-:BCA a owl:Class ;
+:BiologicalControlAgent a owl:Class ;
     rdfs:subClassOf :Product ;
     schema:name "Biological control agent"@en ;
     schema:description "A living organism or a product derived from it used to combat plant pests or pathogens. These include beneficial insects, mites, nematodes, fungi, bacteria, or viruses."@en .
 
-:CPP a owl:Class ;
+:ChemicalPlantProtectionProduct a owl:Class ;
     rdfs:subClassOf :Product ;
-    schema:name "Chemical Protection Product"@en ;
+    schema:name "Chemical plant protection product"@en ;
     schema:description "Any crop protection product that can be reasonably well described by its chemical ingredients/synthesis rather than biological origin."@en .
 
 # Biological Control Agents-----------------------------------------------------
 
-:ABA a owl:Class ;
-    rdfs:subClassOf :BCA ;
+:AntifungalBiologicalAgent a owl:Class ;
+    rdfs:subClassOf :BiologicalControlAgent ;
     schema:name "Antifungal biological agent"@en ;
     schema:description "Biological control agents used to protect plants from harmful fungi, based on natural organisms or their byproducts."@en .
 
-:BBA a owl:Class ;
-    rdfs:subClassOf :BCA ;
+:BacterialBiologicalAgent a owl:Class ;
+    rdfs:subClassOf :BiologicalControlAgent ;
     schema:name "Bacterial biological agent"@en ;
     schema:description "Biological control agents composed of or derived from bacteria, combating pests or diseases through mechanisms such as competition or antimicrobial production."@en .
 
-:FBA a owl:Class ;
-    rdfs:subClassOf :BCA ;
+:FungalBiologicalAgent a owl:Class ;
+    rdfs:subClassOf :BiologicalControlAgent ;
     schema:name "Fungal Biological Agent"@en ;
     schema:description "Biological control agents composed of or derived from fungi, combating pests, diseases, or weeds through mechanisms such as antagonism or parasitism."@en .
 
-:IVA a owl:Class ;
-    rdfs:subClassOf :BCA ;
+:InsectVirusAgent a owl:Class ;
+    rdfs:subClassOf :BiologicalControlAgent ;
     schema:name "Insect Virus Agent"@en ;
     schema:description "Biological control agents containing viruses that specifically target and harm insect pests."@en .
 
-:BIA a owl:Class ;
-    rdfs:subClassOf :BCA ;
+:BeneficialInsectAgent a owl:Class ;
+    rdfs:subClassOf :BiologicalControlAgent ;
     schema:name "Beneficial Insect Agent"@en ;
     schema:description "Biological control agents consisting of live or derived insect species used to combat other pests."@en .
 
-:BMA a owl:Class ;
-    rdfs:subClassOf :BCA ;
+:BeneficialMiteAgent a owl:Class ;
+    rdfs:subClassOf :BiologicalControlAgent ;
     schema:name "Beneficial Mite Agent"@en ;
     schema:description "Biological control agents containing beneficial mite species used to control harmful insects or other mites."@en .
 
-:BNA a owl:Class ;
-    rdfs:subClassOf :BCA ;
+:BeneficialNematodeAgent a owl:Class ;
+    rdfs:subClassOf :BiologicalControlAgent ;
     schema:name "Beneficial Nematode Agent"@en ;
     schema:description "Biological control agents containing live nematodes that specifically target harmful insects in soil or plants."@en .
 
 # Chemical Products ------------------------------------------------------------
 
-:ACA a owl:Class ;
-    rdfs:subClassOf :CPP ;
+:Acaricide a owl:Class ;
+    rdfs:subClassOf :ChemicalPlantProtectionProduct ;
     schema:name "Acaricide"@en ;
     schema:description "A chemical crop protection product used to control mites and ticks."@en .
 
-:WAA a owl:Class ;
-    rdfs:subClassOf :CPP ;
+:WettingAndAdhesionAgent a owl:Class ;
+    rdfs:subClassOf :ChemicalPlantProtectionProduct ;
     schema:name "Wetting and Adhesion Agent"@en ;
     schema:description "Chemical products used to distribute crop protection products evenly on plant surfaces and enhance their adhesion/efficacy."@en .
 
-:BAC a owl:Class ;
-    rdfs:subClassOf :CPP ;
+:Bactericide a owl:Class ;
+    rdfs:subClassOf :ChemicalPlantProtectionProduct ;
     schema:name "Bactericide"@en ;
     schema:description "A chemical product used to combat bacterial pathogens that harm agricultural crops, such as fire blight."@en .
 
-:DIS a owl:Class ;
-    rdfs:subClassOf :CPP ;
+:Disinfectant a owl:Class ;
+    rdfs:subClassOf :ChemicalPlantProtectionProduct ;
     schema:name "Disinfectant"@en ;
     schema:description "Chemical agents used to destroy or inhibit the growth of harmful organisms on equipment or storage surfaces."@en .
 
-:FUN a owl:Class ;
-    rdfs:subClassOf :CPP ;
+:Fungicide a owl:Class ;
+    rdfs:subClassOf :ChemicalPlantProtectionProduct ;
     schema:name "Fungicide"@en ;
     schema:description "A chemical product used to combat fungal diseases by killing fungi or inhibiting their spores/growth."@en .
 
-:HER a owl:Class ;
-    rdfs:subClassOf :CPP ;
+:Herbicide a owl:Class ;
+    rdfs:subClassOf :ChemicalPlantProtectionProduct ;
     schema:name "Herbicide"@en ;
     schema:description "A chemical product used to control or eliminate unwanted plants (weeds)."@en .
 
-:INS a owl:Class ;
-    rdfs:subClassOf :CPP ;
+:Insecticide a owl:Class ;
+    rdfs:subClassOf :ChemicalPlantProtectionProduct ;
     schema:name "Insecticide"@en ;
     schema:description "A chemical product specifically designed to control insect populations."@en .
 
-:MOL a owl:Class ;
-    rdfs:subClassOf :CPP ;
+:Molluscicide a owl:Class ;
+    rdfs:subClassOf :ChemicalPlantProtectionProduct ;
     schema:name "Molluscicide"@en ;
     schema:description "A chemical product used to control mollusks, particularly slugs and snails."@en .
 
-:PDI a owl:Class ;
-    rdfs:subClassOf :CPP ;
+:PlantDefenseInducer a owl:Class ;
+    rdfs:subClassOf :ChemicalPlantProtectionProduct ;
     schema:name "Plant Defense Inducer"@en ;
     schema:description "A chemical product that activates the natural defense mechanisms (immune system) of plants without directly targeting the pathogen."@en .
 
-:NEM a owl:Class ;
-    rdfs:subClassOf :CPP ;
+:Nematicide a owl:Class ;
+    rdfs:subClassOf :ChemicalPlantProtectionProduct ;
     schema:name "Nematicide"@en ;
     schema:description "A chemical product used to control nematodes (roundworms) that damage root systems."@en .
 
-:PGR a owl:Class ;
-    rdfs:subClassOf :CPP ;
+:PlantGrowthRegulator a owl:Class ;
+    rdfs:subClassOf :ChemicalPlantProtectionProduct ;
     schema:name "Plant Growth Regulator"@en ;
     schema:description "Chemical substances that influence the growth and development of plants (e.g. hormone mimics)."@en .
 
-:ROD a owl:Class ;
-    rdfs:subClassOf :CPP ;
+:Rodenticide a owl:Class ;
+    rdfs:subClassOf :ChemicalPlantProtectionProduct ;
     schema:name "Rodenticide"@en ;
     schema:description "Chemical agents used to control rodent infestations in agricultural settings."@en .
 
-:STP a owl:Class ;
-    rdfs:subClassOf :CPP ;
+:SeedTreatmentProduct a owl:Class ;
+    rdfs:subClassOf :ChemicalPlantProtectionProduct ;
     schema:name "Seed Treatment Product"@en ;
     schema:description "Chemicals applied to seeds prior to planting to protect them from pathogens and pests."@en .
 
-:SPP a owl:Class ;
-    rdfs:subClassOf :CPP ;
+:StorageProtectionProduct a owl:Class ;
+    rdfs:subClassOf :ChemicalPlantProtectionProduct ;
     schema:name "Storage Protection Product"@en ;
     schema:description "Products applied to protect harvested crops during storage."@en .
 
-:VIR a owl:Class ;
-    rdfs:subClassOf :CPP ;
+:Virucide a owl:Class ;
+    rdfs:subClassOf :ChemicalPlantProtectionProduct ;
     schema:name "Virucide"@en ;
     schema:description "Agents capable of neutralizing or destroying viruses affecting crops."@en .
 
 # Insecticide subclasses --------------------------------------------------------
 
-:PHE a owl:Class ;
-    rdfs:subClassOf :INS ;
+:Pheromone a owl:Class ;
+    rdfs:subClassOf :Insecticide ;
     schema:name "Pheromone"@en ;
     schema:description "Chemical substances secreted by insects (or synthetic analogues) used as attractants to monitor or control pest populations."@en .
 
-:SBI a owl:Class ;
-    rdfs:subClassOf :INS ;
+:SoapBasedInsecticide a owl:Class ;
+    rdfs:subClassOf :Insecticide ;
     schema:name "Soap-based Insecticide"@en ;
     schema:description "Insecticides derived from fatty acid salts (soaps) used for soft-body insect control."@en .
