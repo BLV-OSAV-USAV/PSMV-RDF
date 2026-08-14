@@ -34,9 +34,10 @@ Product ──► Indication ──► Crop
 `"de"` · `"fr"` · `"it"` · `"en"` — always add a `lang()` filter to avoid duplicate rows.
 
 
+## For Users and Subject Matter Experts
 ---
 
-### SME Template 1
+### Template 1
 
 > *"Which products can I use on sugar maize against thrips?"*
 
@@ -45,21 +46,18 @@ Test
 ```
 ---
 
-### SME Template 2
+### Template 2
 
 > *"Show me ALL approved effects, not just full efficacy."*
 
-Replace the single `:pestFullEffect` triple with a `UNION` block:
 
 ```sparql
 Test
 ```
 
-Add `?effectType` to the `SELECT` clause so you can see which category each row belongs to.
-
 ---
 
-### SME Template 3 — Look up a specific product by name
+### Template 3 
 
 > *"What is product 'Karate Zeon' approved for?"*
 
@@ -69,7 +67,7 @@ Test
 
 ---
 
-## For Frontend Developers
+## For developers
 
 ### Endpoint & authentication
 
