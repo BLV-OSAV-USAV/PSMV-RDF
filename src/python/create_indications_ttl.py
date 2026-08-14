@@ -161,14 +161,21 @@ def indication_ttl(
                 m_rows = measure_dict.get(indication_id_str, [])
                 unit_str = m_rows[0].get("DE") or m_rows[0].get("EN") if m_rows else None
 
-                unit_uri = UNIT_MAP.get(unit_str) if unit_str else None
+                unit_code = UNIT_MAP.get(unit_str) if unit_str else None
+                unit_uri = UNIT[unit_code] if unit_code else None
+
+                # time-measure lookup (Days / Week(s)) for waiting period unit
+                t_rows = time_measure_dict.get(indication_id_str, [])
+                time_unit_str = t_rows[0].get("EN") if t_rows else None
+                time_unit_code = UNIT_MAP.get(time_unit_str, "DAY") 
+                time_unit_uri = UNIT[time_unit_code]
 
                 for d_row in dosage_dict[indication_id_str]:
 
                     # Dosage
                     v_dosage_from = d_row.get("dosage_from")
                     v_dosage_to   = d_row.get("dosage_to")
-                    
+
                     if pd.notna(v_dosage_from) or pd.notna(v_dosage_to):
                         dosage_node = BNode()
                         graph.add((indication_uri, BASE.dosage, dosage_node))
@@ -205,7 +212,7 @@ def indication_ttl(
                         graph.add((indication_uri, BASE.waitingPeriod, wp_node))
                         graph.add((wp_node, RDF.type, SCHEMA.QuantitativeValue))
                         graph.add((wp_node, SCHEMA.value, Literal(int(float(wp)), datatype=XSD.integer)))
-                        graph.add((wp_node, SCHEMA.unitCode, UNIT.DAY))
+                        graph.add((wp_node, SCHEMA.unitCode, time_unit_uri))
 
         except Exception as error:
             print(f"Indication row {i} ({indication_id_str or 'unknown'}): {error}")
