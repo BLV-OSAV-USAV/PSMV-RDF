@@ -95,7 +95,7 @@ shape:Product a sh:NodeShape ;
         sh:order 0 ;
         sh:name "Product type"@en ;
         sh:path :productType ;
-        sh:in ( :BCA :ABA :BBA :FBA :IVA :BIA :BMA :BNA :CPP :ACA :WAA :BAC :DIS :FUN :HER :INS :PHE :SBI :MOL :PDI :NEM :PGR :ROD :STP :SPP :VIR :OTR ) ;
+        sh:in ( :BiologicalControlAgent :AntifungalBiologicalAgent :BacterialBiologicalAgent :FungalBiologicalAgent :InsectVirusAgent :BeneficialInsectAgent :BeneficialMiteAgent :BeneficialNematodeAgent :ChemicalPlantProtectionProduct :Acaricide :WettingAndAdhesionAgent :Bactericide :Disinfectant :Fungicide :Herbicide :Insecticide :Pheromone :SoapBasedInsecticide :Molluscicide :PlantDefenseInducer :Nematicide :PlantGrowthRegulator :Rodenticide :SeedTreatmentProduct :StorageProtectionProduct :Virucide ) ;
     ] ;
     sh:property [
         sh:order 1 ;

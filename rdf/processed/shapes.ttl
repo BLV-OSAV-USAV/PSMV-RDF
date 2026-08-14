@@ -193,13 +193,7 @@ It systematically links a target pest with the applicable cultivation domain and
                         sh:path :sideEffect ] ] [ sh:property [ sh:class :Pest ;
                         sh:minCount 1 ;
                         sh:path :partialEffect ] ] ) ;
-    sh:property [ sh:class schema:QuantitativeValue ;
-            sh:maxCount 1 ;
-            sh:name "Wartefrist"@de,
-                "Waiting Period"@en ;
-            sh:order 9 ;
-            sh:path :waitingPeriod ],
-        [ sh:class :ApplicationArea ;
+    sh:property [ sh:class :ApplicationArea ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:name "Application Area"@en ;
@@ -243,6 +237,12 @@ It systematically links a target pest with the applicable cultivation domain and
                 "Expenditure"@en ;
             sh:order 8 ;
             sh:path :expenditure ],
+        [ sh:class schema:QuantitativeValue ;
+            sh:maxCount 1 ;
+            sh:name "Wartefrist"@de,
+                "Waiting Period"@en ;
+            sh:order 9 ;
+            sh:path :waitingPeriod ],
         shape:identifier ;
     sh:targetClass :Indication .
 
@@ -442,7 +442,7 @@ shape:Product a sh:NodeShape ;
     sh:nodeKind sh:IRI ;
     sh:order 1 ;
     sh:pattern "^https://agriculture\\.ld\\.admin\\.ch/plant-protection/product/.+$" ;
-    sh:property [ sh:in ( :BCA :ABA :BBA :FBA :IVA :BIA :BMA :BNA :CPP :ACA :WAA :BAC :DIS :FUN :HER :INS :PHE :SBI :MOL :PDI :NEM :PGR :ROD :STP :SPP :VIR :OTR ) ;
+    sh:property [ sh:in ( :BiologicalControlAgent :AntifungalBiologicalAgent :BacterialBiologicalAgent :FungalBiologicalAgent :InsectVirusAgent :BeneficialInsectAgent :BeneficialMiteAgent :BeneficialNematodeAgent :ChemicalPlantProtectionProduct :Acaricide :WettingAndAdhesionAgent :Bactericide :Disinfectant :Fungicide :Herbicide :Insecticide :Pheromone :SoapBasedInsecticide :Molluscicide :PlantDefenseInducer :Nematicide :PlantGrowthRegulator :Rodenticide :SeedTreatmentProduct :StorageProtectionProduct :Virucide ) ;
             sh:name "Product type"@en ;
             sh:order 0 ;
             sh:path :productType ],
