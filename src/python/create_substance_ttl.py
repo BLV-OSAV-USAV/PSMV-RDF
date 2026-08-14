@@ -113,7 +113,7 @@ def substance_ttl(
                 for chebi_id in str(row["hasChebiIdentity"]).split("|"):
                     chebi_id = chebi_id.strip().removeprefix("CHEBI:")
                     if chebi_id and chebi_id.lower() != "nan":
-                        graph.add((substance_uri, CHEBI[chebi_id], CHEBI[chebi_id]))
+                        graph.add((substance_uri, BASE.chebi, CHEBI[f"CHEBI_{chebi_id}"]))
 
             # PubChem Compound identities
             if pd.notna(row.get("hasPubChemCompoundIdentity")):
@@ -134,7 +134,11 @@ def substance_ttl(
                 for taxon in str(row["isDefinedByBiologicalTaxon"]).split("|"):
                     taxon = taxon.strip()
                     if taxon:
-                        graph.add((substance_uri, RDFS.seeAlso, URIRef(taxon)))
+                        if taxon.lower().startswith("wikidata:"):
+                            qid = taxon.split(":", 1)[1]
+                            graph.add((substance_uri, RDFS.seeAlso, WIKIDATA[qid]))
+                        else:
+                            graph.add((substance_uri, RDFS.seeAlso, URIRef(taxon)))
 
         except Exception as error:
             print(
