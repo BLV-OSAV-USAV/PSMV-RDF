@@ -580,6 +580,16 @@ shape:Substance a sh:NodeShape ;
             sh:name "Same as"@en ;
             sh:order 3 ;
             sh:path owl:sameAs ],
+        [ sh:description "Links a substance to its ChEBI identity."@en ;
+            sh:name "ChEBI"@en ;
+            sh:nodeKind sh:IRI ;
+            sh:order 4 ;
+            sh:path :chebi ],
+        [ sh:description "Links a substance to related external resources (e.g. PubChem, biological taxon)."@en ;
+            sh:name "See also"@en ;
+            sh:nodeKind sh:IRI ;
+            sh:order 5 ;
+            sh:path rdfs:seeAlso ],
         shape:multiLanguageName ;
     sh:targetClass :Substance .
 

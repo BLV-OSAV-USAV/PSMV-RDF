@@ -576,6 +576,20 @@ shape:Substance a sh:NodeShape ;
             sh:name "Same as"@en ;
             sh:description "This property links a substance with its definition in another database."@de ;
             sh:path owl:sameAs ;
+        ],
+        [
+            sh:order 4 ;
+            sh:name "ChEBI"@en ;
+            sh:description "Links a substance to its ChEBI identity."@en ;
+            sh:path :chebi ;
+            sh:nodeKind sh:IRI ;
+        ],
+        [
+            sh:order 5 ;
+            sh:name "See also"@en ;
+            sh:description "Links a substance to related external resources (e.g. PubChem, biological taxon)."@en ;
+            sh:path rdfs:seeAlso ;
+            sh:nodeKind sh:IRI ;
         ] .
 
 # ==============================================================================

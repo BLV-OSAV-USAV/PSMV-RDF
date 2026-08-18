@@ -2,7 +2,7 @@ import duckdb
 from pathlib import Path
 import pandas as pd
 from rdflib import Graph, Namespace, URIRef, Literal
-from rdflib.namespace import RDF, OWL
+from rdflib.namespace import RDF, RDFS, OWL
 
 # local imports
 from src.python.utils.helper_functions import load_namespaces, load_rdf_mappings, add_lang_labels
@@ -108,33 +108,37 @@ def substance_ttl(
              # Add language-tagged Names
             add_lang_labels(graph, substance_uri, SCHEMA.name, row)
 
-            # ChEBI identities
+            # ChEBI identities  START HERE AGAIN
             if pd.notna(row.get("hasChebiIdentity")):
                 for chebi_id in str(row["hasChebiIdentity"]).split("|"):
-                    chebi_id = chebi_id.strip()
+                    chebi_id = chebi_id.strip().removeprefix("CHEBI:")
                     if chebi_id and chebi_id.lower() != "nan":
-                        graph.add((substance_uri, OWL.sameAs, CHEBI[chebi_id]))
+                        graph.add((substance_uri, BASE.chebi, CHEBI[f"CHEBI_{chebi_id}"]))
 
             # PubChem Compound identities
             if pd.notna(row.get("hasPubChemCompoundIdentity")):
                 for cid in str(row["hasPubChemCompoundIdentity"]).split("|"):
                     cid = cid.strip().removeprefix("CID:")
                     if cid and cid.lower() != "nan":
-                        graph.add((substance_uri, OWL.sameAs, PUBCHEM_COMPOUND[cid]))
+                        graph.add((substance_uri, RDFS.seeAlso, PUBCHEM_COMPOUND[cid]))
 
             # PubChem Substance identities
             if pd.notna(row.get("hasPubChemSubstanceIdentity")):
                 for sid in str(row["hasPubChemSubstanceIdentity"]).split("|"):
                     sid = sid.strip().removeprefix("SID:")
                     if sid and sid.lower() != "nan":
-                        graph.add((substance_uri, OWL.sameAs, PUBCHEM_SUBSTANCE[sid]))
+                        graph.add((substance_uri, RDFS.seeAlso, PUBCHEM_SUBSTANCE[sid]))
 
             # Biological taxon
             if pd.notna(row.get("isDefinedByBiologicalTaxon")):
                 for taxon in str(row["isDefinedByBiologicalTaxon"]).split("|"):
                     taxon = taxon.strip()
                     if taxon:
-                        graph.add((substance_uri, OWL.sameAs, URIRef(taxon)))
+                        if taxon.lower().startswith("wikidata:"):
+                            qid = taxon.split(":", 1)[1]
+                            graph.add((substance_uri, RDFS.seeAlso, WIKIDATA[qid]))
+                        else:
+                            graph.add((substance_uri, RDFS.seeAlso, URIRef(taxon)))
 
         except Exception as error:
             print(
