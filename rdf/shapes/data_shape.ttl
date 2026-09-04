@@ -152,6 +152,13 @@ shape:Product a sh:NodeShape ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:in ( country:CHE country:DEU country:ITA country:FRA country:AUT country:BEL ) ;
+    ] ; 
+    sh:property [
+        sh:order 10 ;
+        sh:name "Formulation"@en, "Formulierung"@de ;
+        sh:description "The physical form in which the product is supplied, coded according to the international CropLife two-letter system."@en ;
+        sh:path :formulation ;
+        sh:node shape:FormulationType ;
     ] .
 
 shape:RegularProduct a sh:NodeShape ;
@@ -667,6 +674,28 @@ shape:PrecautionaryStatement a sh:NodeShape ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
     ] .
+
+# ==============================================================================
+# FORMULATION
+# ==============================================================================
+
+shape:FormulationType a sh:NodeShape ;
+    sh:order 15 ;
+    rdfs:label "Formulation type"@en, "Formulierungsart"@de ;
+    rdfs:comment "Encodes the physical form in which a plant protection product is supplied, such as an emulsifiable concentrate or water dispersible granules."@en ;
+    sh:targetClass :FormulationType ;
+    sh:nodeKind sh:IRI ;
+    sh:property
+        shape:multiLanguageName ,
+        [
+            sh:name "Identifier"@en ;
+            sh:order 1 ;
+            sh:description "The CropLife formulation code, e.g. 'EC' or 'WG'."@en ;
+            sh:path schema:identifier ;
+            sh:datatype xsd:string ;
+            sh:minCount 1 ;
+            sh:maxCount 1 ;
+        ] .
 
 # ==============================================================================
 # PlantProtectionStatement

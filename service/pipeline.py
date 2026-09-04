@@ -40,6 +40,7 @@ from src.python.create_application_comment_ttl import application_comment_ttl
 from src.python.create_obligation_ttl import obligation_ttl
 from src.python.create_ghs_ttl import ghs_ttl
 from src.python.create_indications_ttl import indication_ttl
+from src.python.create_formulation import formulation_ttl
 
 # Reasoning
 from src.python.reason import load_inputs, apply_rules, save_graph
@@ -75,6 +76,7 @@ def run_pipeline():
 
     print("\n\033[1mGenerate RDF datasets (ttl)\033[0m")
     products_ttl()
+    formulation_ttl()
     organisation_ttl()
     substance_ttl()
     crops_ttl()

@@ -94,3 +94,8 @@ datasets:
     delimiter: ","
     encoding: "utf-8"
     description: "PSMV Export Product Indications"
+  ProductFormulationCode:
+    input: "data/raw/ProductFormulationCode.csv.gz"
+    delimter: ","
+    encoding: "utf-8"
+    description: "Product Formulierungscode"

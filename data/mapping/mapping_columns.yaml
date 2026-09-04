@@ -148,3 +148,8 @@ ProductIndication:
   NK_TimeMeasure: time_measure
   serialNumber: serial_number
   waitingPeriod: waiting_period
+
+ProductFormulationCode:
+  SHORT_NAME: short_name
+  NK_Codetable: code_id
+  NK_PROD_REF: product_ref_or_id

@@ -133,6 +133,22 @@ shape:Crop a sh:NodeShape ;
         shape:multiLanguageName ;
     sh:targetClass :Crop .
 
+shape:FormulationType a sh:NodeShape ;
+    rdfs:label "Formulierungsart"@de,
+        "Formulation type"@en ;
+    rdfs:comment "Encodes the physical form in which a plant protection product is supplied, such as an emulsifiable concentrate or water dispersible granules."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:order 15 ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "The CropLife formulation code, e.g. 'EC' or 'WG'."@en ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "Identifier"@en ;
+            sh:order 1 ;
+            sh:path schema:identifier ],
+        shape:multiLanguageName ;
+    sh:targetClass :FormulationType .
+
 shape:GHSLabelElement a sh:NodeShape ;
     rdfs:label "GHS-Beschriftung"@de,
         "GHS labelling"@en ;
@@ -193,7 +209,13 @@ It systematically links a target pest with the applicable cultivation domain and
                         sh:path :sideEffect ] ] [ sh:property [ sh:class :Pest ;
                         sh:minCount 1 ;
                         sh:path :partialEffect ] ] ) ;
-    sh:property [ sh:class :ApplicationArea ;
+    sh:property [ sh:class schema:QuantitativeValue ;
+            sh:maxCount 1 ;
+            sh:name "Wartefrist"@de,
+                "Waiting Period"@en ;
+            sh:order 9 ;
+            sh:path :waitingPeriod ],
+        [ sh:class :ApplicationArea ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:name "Application Area"@en ;
@@ -237,12 +259,6 @@ It systematically links a target pest with the applicable cultivation domain and
                 "Expenditure"@en ;
             sh:order 8 ;
             sh:path :expenditure ],
-        [ sh:class schema:QuantitativeValue ;
-            sh:maxCount 1 ;
-            sh:name "Wartefrist"@de,
-                "Waiting Period"@en ;
-            sh:order 9 ;
-            sh:path :waitingPeriod ],
         shape:identifier ;
     sh:targetClass :Indication .
 
@@ -487,7 +503,13 @@ shape:Product a sh:NodeShape ;
             sh:minCount 1 ;
             sh:name "Producing country"@en ;
             sh:order 9 ;
-            sh:path schema:countryOfOrigin ] ;
+            sh:path schema:countryOfOrigin ],
+        [ sh:description "The physical form in which the product is supplied, coded according to the international CropLife two-letter system."@en ;
+            sh:name "Formulierung"@de,
+                "Formulation"@en ;
+            sh:node shape:FormulationType ;
+            sh:order 10 ;
+            sh:path :formulation ] ;
     sh:targetClass :Product .
 
 shape:QuantitativeValue a sh:NodeShape ;

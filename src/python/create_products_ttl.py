@@ -71,6 +71,7 @@ def products_ttl(
     ingredient_df = con.execute("SELECT * FROM ProductIngredient").df()
     prod_cat_df = con.execute("SELECT * FROM ProductProductCategory").df()
     ghs_df= con.execute("SELECT * FROM ProductGHS").df()
+    prod_formulation = con.execute("SELECT * FROM ProductFormulation").df()
 
     con.close()
 
@@ -82,6 +83,17 @@ def products_ttl(
         if pid not in ghs_dict:
             ghs_dict[pid] = set()
         ghs_dict[pid].add(cid)
+
+    # Pre-process Formulation mappings for O(1) lookup
+    formulation_dict = {}
+    for _, row in prod_formulation.iterrows():
+        pid = str(row["product_ref_or_id"]).strip().lower()
+        cid = str(row["code_id"]).strip().lower()
+        if cid == "nan" or not cid:
+            continue
+        if pid not in formulation_dict:
+            formulation_dict[pid] = set()
+        formulation_dict[pid].add(cid)
 
     # Pre-process Organisation links for O(1) lookup
     org_dict = {}
@@ -247,6 +259,11 @@ def products_ttl(
                 for code_id in ghs_dict[product_ref_id_str]:
                     graph.add((product_uri, BASE.ghsLabel, CODE[code_id]))
 
+            # Add formulation code
+            if product_ref_id_str in formulation_dict:
+                for code_id in formulation_dict[product_ref_id_str]:
+                    graph.add((product_uri, BASE.formulation, CODE[code_id]))
+                    
         except Exception as error:
             print(f"Row {i} (Product {product_id_str}): {error}")
 

@@ -668,3 +668,39 @@ schema:legalName rdfs:subPropertyOf schema:name .
         "Mention d'avertissement"@fr,
         "Avvertenza"@it ;
     rdfs:subClassOf :GHSLabelElement .
+
+# ==============================================================================
+# FORMULATION
+# ==============================================================================
+
+:FormulationType a owl:Class ;
+    schema:name
+        "Formulation type"@en,
+        "Formulierungsart"@de,
+        "Type de formulation"@fr,
+        "Tipo di formulazione"@it ;
+    schema:description
+        "The physical form in which a plant protection product is supplied, coded according to the international CropLife two-letter system (e.g., EC for emulsifiable concentrate, WG for water dispersible granules)."@en,
+        "Die physikalische Form, in der ein Pflanzenschutzmittel geliefert wird, codiert nach dem internationalen zweibuchstabigen CropLife-System (z. B. EC für Emulsionskonzentrat, WG für wasserdispergierbares Granulat)."@de,
+        "La forme physique sous laquelle un produit phytosanitaire est fourni, codée selon le système international CropLife à deux lettres (p. ex. EC pour concentré émulsionnable, WG pour granulés dispersables dans l'eau)."@fr,
+        "La forma fisica in cui è fornito un prodotto fitosanitario, codificata secondo il sistema internazionale CropLife a due lettere (ad es. EC per concentrato emulsionabile, WG per granuli idrodispersibili)."@it ;
+    rdfs:subClassOf
+        [
+            a owl:Restriction ;
+            owl:onProperty schema:name ;
+            owl:allValuesFrom rdf:langString ;
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:onProperty schema:identifier ;
+            owl:allValuesFrom xsd:string ;
+        ] .
+
+:formulation a owl:ObjectProperty ;
+    schema:name
+        "has formulation"@en,
+        "hat Formulierung"@de,
+        "a pour formulation"@fr,
+        "ha come formulazione"@it ;
+    rdfs:domain :Product ;
+    rdfs:range :FormulationType .
