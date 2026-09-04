@@ -70,6 +70,8 @@ def run_pipeline():
     process_culture_code()
     process_application_area_code()
     process_application_comment_code()
+    process_product_formulation()
+    process_formulation_code()
     
     print("\n\033[1mValidate syntax of ontology turtle files and shacl shapes\033[0m")
     validate_ttl_files("rdf")
