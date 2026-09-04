@@ -1,2 +1,205 @@
-Error: LinkageError occurred while loading main class fr.sparna.rdf.shacl.app.Main
-	java.lang.UnsupportedClassVersionError: fr/sparna/rdf/shacl/app/Main has been compiled by a more recent version of the Java Runtime (class file version 61.0), this version of the Java Runtime only recognizes class file versions up to 55.0
+13:23:29,337 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+13:23:29,338 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback.groovy]
+13:23:29,338 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [jar:file:/home/runner/work/PSMV-RDF/PSMV-RDF/service/shacl_play/shacl-play-app-0.12.0-onejar.jar!/logback.xml]
+13:23:29,345 |-INFO in ch.qos.logback.core.joran.spi.ConfigurationWatchList@76707e36 - URL [jar:file:/home/runner/work/PSMV-RDF/PSMV-RDF/service/shacl_play/shacl-play-app-0.12.0-onejar.jar!/logback.xml] is not of type file
+13:23:29,688 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - debug attribute not set
+13:23:29,689 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.FileAppender]
+13:23:29,703 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [FILE]
+13:23:29,713 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+13:23:29,724 |-ERROR in ch.qos.logback.core.pattern.parser.Compiler@614ddd49 - There is no conversion class registered for conversion word [kvp]
+13:23:29,724 |-ERROR in ch.qos.logback.core.pattern.parser.Compiler@614ddd49 - [kvp] is not a valid conversion word
+13:23:29,773 |-INFO in ch.qos.logback.core.FileAppender[FILE] - File property is set to [shacl-play-app.log]
+13:23:29,774 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+13:23:29,774 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [STDOUT]
+13:23:29,775 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+13:23:29,776 |-ERROR in ch.qos.logback.core.pattern.parser.Compiler@1f554b06 - There is no conversion class registered for conversion word [kvp]
+13:23:29,776 |-ERROR in ch.qos.logback.core.pattern.parser.Compiler@1f554b06 - [kvp] is not a valid conversion word
+13:23:29,776 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.apache.http] to INFO
+13:23:29,776 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.apache.jena.riot.web] to INFO
+13:23:29,776 |-INFO in ch.qos.logback.classic.joran.action.RootLoggerAction - Setting level of ROOT logger to DEBUG
+13:23:29,776 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [FILE] to Logger[ROOT]
+13:23:29,777 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [STDOUT] to Logger[ROOT]
+13:23:29,777 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - End of configuration.
+13:23:29,782 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@694e1548 - Registering current configuration as safe fallback point
+
+13:23:30.010 [main] DEBUG o.a.j.r.s.stream.JenaIOEnvironment -%PARSER_ERROR[kvp]- Failed to find configuration: location-mapping.ttl;location-mapping.rdf;etc/location-mapping.rdf;etc/location-mapping.ttl
+13:23:30.249 [main] DEBUG f.s.rdf.shacl.app.InputModelReader -%PARSER_ERROR[kvp]- Reading input from : /home/runner/work/PSMV-RDF/PSMV-RDF/rdf/processed/shapes.ttl
+13:23:30.263 [main] DEBUG org.apache.jena.shared.LockMRSW -%PARSER_ERROR[kvp]- Lock : main
+13:23:30.263 [main] DEBUG org.apache.jena.shared.LockMRSW -%PARSER_ERROR[kvp]- Lock : main
+13:23:35.390 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding class partition for https://agriculture.ld.admin.ch/plant-protection/shape/ClassProperty
+13:23:35.391 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 6747061a8652ad9efa14539f245fdf16
+13:23:35.391 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for f94dca7359a4dfd6b48d9673b644fb13
+13:23:35.391 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 717e9423edc44383c084f59d0b620592
+13:23:35.391 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for b15eb8ca017fb3fe6f0b774d1cab9d51
+13:23:35.391 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for cdd6d24e3c6bcf3a7918668d483bfe0e
+13:23:35.391 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding class partition for https://agriculture.ld.admin.ch/plant-protection/shape/MandatoryLanguages
+13:23:35.392 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding class partition for https://agriculture.ld.admin.ch/plant-protection/shape/PrecautionaryStatement
+13:23:35.392 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 10eea4d8631fd9e032bb46ec06d64e98
+13:23:35.392 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding class partition for https://agriculture.ld.admin.ch/plant-protection/shape/Product
+13:23:35.392 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for a722e26b1b7f1cddd7af823532726db5
+13:23:35.392 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 3fc6b65896518e84a6295dfa92ba731b
+13:23:35.392 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for d9e366443e76833d7e238852673696ed
+13:23:35.392 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 633fc6975ec43dec2c51d193f8f367da
+13:23:35.392 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 01bd364aeebd936553d13fc1c190b4f9
+13:23:35.393 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 80cf830b83e4912d5b015832e4c2dbe9
+13:23:35.393 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for e3415df3c6f7c220cde3e0ed8f435dc1
+13:23:35.393 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for d4274caf1b9b4b79c3fa2bfb2a8d245f
+13:23:35.393 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 0e2453f9ad6b1ab225f8d2fbe882d0ee
+13:23:35.393 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding class partition for https://agriculture.ld.admin.ch/plant-protection/shape/Indication
+13:23:35.393 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 2807c183c50cba7b11ca635cb5e6abfb
+13:23:35.393 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 65ca1fde4805b649a6e7b241001a2fc0
+13:23:35.393 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for df292418051c24f928e307988bd2c19f
+13:23:35.393 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for e688b30710d006c4db5582d3f3ca7dd4
+13:23:35.394 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for https://agriculture.ld.admin.ch/plant-protection/shape/identifier
+13:23:35.394 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 804b3835cc9a3d86aad5c80fc784ed9d
+13:23:35.394 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 00a10623d33d8d7a1c911d3102aebdb2
+13:23:35.394 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 80594eebdfafe7983a57d50eb5980e8d
+13:23:35.394 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 9879f946dd47734de6fc13da0c9fe9b2
+13:23:35.394 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for b456a5f52f0315745a4a0a4777e65793
+13:23:35.394 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding class partition for https://agriculture.ld.admin.ch/plant-protection/shape/Crop
+13:23:35.394 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for https://agriculture.ld.admin.ch/plant-protection/shape/identifier
+13:23:35.394 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName
+13:23:35.395 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 40be9b1a90b42f84ec09b3d22d9fcf37
+13:23:35.395 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding class partition for https://agriculture.ld.admin.ch/plant-protection/shape/Organization
+13:23:35.395 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for b724842fd662acb515beb4f4f31d3f45
+13:23:35.395 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 9d81f9c3ac60cbe93d3e1d1414744e51
+13:23:35.395 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for c02af5356e72f8d3aefcb7ece2891b1b
+13:23:35.395 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 685795cc00072fd59419c837d734bcf9
+13:23:35.395 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 0d732162d67d6c2912cc0466635b03a4
+13:23:35.395 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding class partition for https://agriculture.ld.admin.ch/plant-protection/shape/Obligation
+13:23:35.395 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for https://agriculture.ld.admin.ch/plant-protection/shape/identifier
+13:23:35.395 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName
+13:23:35.395 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding class partition for https://agriculture.ld.admin.ch/plant-protection/shape/RegularProduct
+13:23:35.395 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for ccf0c2611c07b512affd1fa8369e8e84
+13:23:35.396 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding class partition for https://agriculture.ld.admin.ch/plant-protection/shape/Ingredient
+13:23:35.396 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 726d67abccfe998258141ee4b39f6584
+13:23:35.396 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 688615383a96a34368edb277fd0dedc1
+13:23:35.396 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding class partition for https://agriculture.ld.admin.ch/plant-protection/shape/Substance
+13:23:35.396 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for c9381f64bd03f508ba709051485e3817
+13:23:35.396 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 8736483c1393d71ca5e2c79e81574c8f
+13:23:35.396 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 9bde7a5baa8d6a623bc7260dd8c07aee
+13:23:35.396 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName
+13:23:35.396 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 959c08b5311add0a633c5da6ed592d60
+13:23:35.396 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding class partition for https://agriculture.ld.admin.ch/plant-protection/shape/ApplicationArea
+13:23:35.396 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 0d62dbe76c1398945ab8f66ab4b6237e
+13:23:35.396 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName
+13:23:35.397 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding class partition for https://agriculture.ld.admin.ch/plant-protection/shape/GHSLabelElement
+13:23:35.397 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for ceef7a9d8dc2f4ae94416dc14a43bb8d
+13:23:35.397 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName
+13:23:35.397 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding class partition for https://agriculture.ld.admin.ch/plant-protection/shape/PlantProtectionStatement
+13:23:35.397 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for https://agriculture.ld.admin.ch/plant-protection/shape/identifier
+13:23:35.397 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName
+13:23:35.397 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding class partition for https://agriculture.ld.admin.ch/plant-protection/shape/QuantitativeValue
+13:23:35.397 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 21608c917214e8af9335a316079b55e2
+13:23:35.397 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 1063aa7ae46a7fc0e1282da5da75a098
+13:23:35.397 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 52f758e29d71b7d6252c8e721e062941
+13:23:35.397 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 3193f332339561a3af7752ecf884a385
+13:23:35.397 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 1682a45a577fd855baed56d12818c696
+13:23:35.398 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding class partition for https://agriculture.ld.admin.ch/plant-protection/shape/Pest
+13:23:35.398 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for https://agriculture.ld.admin.ch/plant-protection/shape/identifier
+13:23:35.398 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName
+13:23:35.398 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding class partition for https://agriculture.ld.admin.ch/plant-protection/shape/ApplicationComment
+13:23:35.398 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 11562712f214245e48f466a970b0c41f
+13:23:35.398 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName
+13:23:35.398 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding class partition for https://agriculture.ld.admin.ch/plant-protection/shape/HazardStatement
+13:23:35.398 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 5097c6cd71fabbf9dd92ec637828accd
+13:23:35.398 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding class partition for https://agriculture.ld.admin.ch/plant-protection/shape/PostalAddress
+13:23:35.398 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for e07bc81d0ec9d7e6bc8c753d226e99a8
+13:23:35.398 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for bd3eb6b7b9b25c20805402eeffdc9ccf
+13:23:35.398 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 73279871fee63b3bf8b8282ec507c011
+13:23:35.398 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 37e9d3b998c9d27e3e85b31983d2f017
+13:23:35.398 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 0941f214966532406917e6f7b5f040aa
+13:23:35.399 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding class partition for https://agriculture.ld.admin.ch/plant-protection/shape/SalePermission
+13:23:35.399 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 19ae8863396f39663d0199d20757f4ea
+13:23:35.399 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding class partition for https://agriculture.ld.admin.ch/plant-protection/shape/ParallelImport
+13:23:35.399 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 36d1d2d8d46558b2af3954562cdb74fb
+13:23:35.399 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for da7a75e3949b3e0638d528177d856bcd
+13:23:35.399 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 3fe9ebbbf17dc2ddb074376abfdf9172
+13:23:35.399 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for b5a72b1347f4f06bf1f2396bc523ee27
+13:23:35.399 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding class partition for https://agriculture.ld.admin.ch/plant-protection/shape/SignalWord
+13:23:35.399 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName
+13:23:35.399 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding class partition for https://agriculture.ld.admin.ch/plant-protection/shape/HazardPictogram
+13:23:35.399 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for da6db202d4ccc19bdefb388370a5e87a
+13:23:35.399 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 7863a4cddbfa51c15e0a8a7d430ad616
+13:23:35.399 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName
+13:23:35.399 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding class partition for https://agriculture.ld.admin.ch/plant-protection/shape/FormulationType
+13:23:35.399 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for be0ba4b4d44e8fd7acff6db531a4f2b8
+13:23:35.400 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithStatisticsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName
+13:23:35.401 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithChartsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 3fc6b65896518e84a6295dfa92ba731b
+13:23:35.401 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithChartsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 0e2453f9ad6b1ab225f8d2fbe882d0ee
+13:23:35.401 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithChartsVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 0d62dbe76c1398945ab8f66ab4b6237e
+13:23:35.414 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 6747061a8652ad9efa14539f245fdf16
+13:23:35.415 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for f94dca7359a4dfd6b48d9673b644fb13
+13:23:35.415 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 717e9423edc44383c084f59d0b620592
+13:23:35.416 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for b15eb8ca017fb3fe6f0b774d1cab9d51
+13:23:35.416 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for cdd6d24e3c6bcf3a7918668d483bfe0e
+13:23:35.416 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 10eea4d8631fd9e032bb46ec06d64e98
+13:23:35.417 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for a722e26b1b7f1cddd7af823532726db5
+13:23:35.417 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 3fc6b65896518e84a6295dfa92ba731b
+13:23:35.417 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for d9e366443e76833d7e238852673696ed
+13:23:35.418 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 633fc6975ec43dec2c51d193f8f367da
+13:23:35.418 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 01bd364aeebd936553d13fc1c190b4f9
+13:23:35.418 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 80cf830b83e4912d5b015832e4c2dbe9
+13:23:35.418 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for e3415df3c6f7c220cde3e0ed8f435dc1
+13:23:35.419 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for d4274caf1b9b4b79c3fa2bfb2a8d245f
+13:23:35.419 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 0e2453f9ad6b1ab225f8d2fbe882d0ee
+13:23:35.419 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 2807c183c50cba7b11ca635cb5e6abfb
+13:23:35.419 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 65ca1fde4805b649a6e7b241001a2fc0
+13:23:35.420 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for df292418051c24f928e307988bd2c19f
+13:23:35.420 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for e688b30710d006c4db5582d3f3ca7dd4
+13:23:35.420 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for https://agriculture.ld.admin.ch/plant-protection/shape/identifier
+13:23:35.420 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 804b3835cc9a3d86aad5c80fc784ed9d
+13:23:35.421 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 00a10623d33d8d7a1c911d3102aebdb2
+13:23:35.421 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 80594eebdfafe7983a57d50eb5980e8d
+13:23:35.421 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 9879f946dd47734de6fc13da0c9fe9b2
+13:23:35.421 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for b456a5f52f0315745a4a0a4777e65793
+13:23:35.421 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for https://agriculture.ld.admin.ch/plant-protection/shape/identifier
+13:23:35.422 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName
+13:23:35.422 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 40be9b1a90b42f84ec09b3d22d9fcf37
+13:23:35.422 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for b724842fd662acb515beb4f4f31d3f45
+13:23:35.422 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 9d81f9c3ac60cbe93d3e1d1414744e51
+13:23:35.422 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for c02af5356e72f8d3aefcb7ece2891b1b
+13:23:35.422 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 685795cc00072fd59419c837d734bcf9
+13:23:35.423 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 0d732162d67d6c2912cc0466635b03a4
+13:23:35.423 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for https://agriculture.ld.admin.ch/plant-protection/shape/identifier
+13:23:35.423 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName
+13:23:35.423 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for ccf0c2611c07b512affd1fa8369e8e84
+13:23:35.423 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 726d67abccfe998258141ee4b39f6584
+13:23:35.423 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 688615383a96a34368edb277fd0dedc1
+13:23:35.424 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for c9381f64bd03f508ba709051485e3817
+13:23:35.424 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 8736483c1393d71ca5e2c79e81574c8f
+13:23:35.424 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 9bde7a5baa8d6a623bc7260dd8c07aee
+13:23:35.424 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName
+13:23:35.424 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 959c08b5311add0a633c5da6ed592d60
+13:23:35.424 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 0d62dbe76c1398945ab8f66ab4b6237e
+13:23:35.424 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName
+13:23:35.425 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for ceef7a9d8dc2f4ae94416dc14a43bb8d
+13:23:35.425 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName
+13:23:35.425 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for https://agriculture.ld.admin.ch/plant-protection/shape/identifier
+13:23:35.425 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName
+13:23:35.425 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 21608c917214e8af9335a316079b55e2
+13:23:35.425 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 1063aa7ae46a7fc0e1282da5da75a098
+13:23:35.425 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 52f758e29d71b7d6252c8e721e062941
+13:23:35.426 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 3193f332339561a3af7752ecf884a385
+13:23:35.426 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 1682a45a577fd855baed56d12818c696
+13:23:35.426 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for https://agriculture.ld.admin.ch/plant-protection/shape/identifier
+13:23:35.426 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName
+13:23:35.426 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 11562712f214245e48f466a970b0c41f
+13:23:35.426 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName
+13:23:35.426 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 5097c6cd71fabbf9dd92ec637828accd
+13:23:35.427 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for e07bc81d0ec9d7e6bc8c753d226e99a8
+13:23:35.427 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for bd3eb6b7b9b25c20805402eeffdc9ccf
+13:23:35.427 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 73279871fee63b3bf8b8282ec507c011
+13:23:35.427 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 37e9d3b998c9d27e3e85b31983d2f017
+13:23:35.427 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 0941f214966532406917e6f7b5f040aa
+13:23:35.427 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 19ae8863396f39663d0199d20757f4ea
+13:23:35.428 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 36d1d2d8d46558b2af3954562cdb74fb
+13:23:35.428 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for da7a75e3949b3e0638d528177d856bcd
+13:23:35.428 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 3fe9ebbbf17dc2ddb074376abfdf9172
+13:23:35.428 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for b5a72b1347f4f06bf1f2396bc523ee27
+13:23:35.428 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName
+13:23:35.429 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for da6db202d4ccc19bdefb388370a5e87a
+13:23:35.429 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for 7863a4cddbfa51c15e0a8a7d430ad616
+13:23:35.429 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName
+13:23:35.429 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for be0ba4b4d44e8fd7acff6db531a4f2b8
+13:23:35.429 [main] DEBUG f.s.r.s.d.r.EnrichDocumentationWithQuerySparqlVisitor -%PARSER_ERROR[kvp]- Cannot find corresponding property partition for https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName
