@@ -24,6 +24,8 @@ from src.python.db_processing.process_culture_code import process_culture_code
 from src.python.db_processing.process_organisation import process_organisation
 from src.python.db_processing.process_application_area_code import process_application_area_code
 from src.python.db_processing.process_application_comment_code import process_application_comment_code
+from src.python.db_processing.process_product_formulation import process_product_formulation
+from src.python.db_processing.process_product_formulation import process_formulation_code
 
 # Substances
 from src.python.db_processing.process_substance_code import process_substance_code
@@ -40,6 +42,7 @@ from src.python.create_application_comment_ttl import application_comment_ttl
 from src.python.create_obligation_ttl import obligation_ttl
 from src.python.create_ghs_ttl import ghs_ttl
 from src.python.create_indications_ttl import indication_ttl
+from src.python.create_formulation import formulation_ttl
 
 # Reasoning
 from src.python.reason import load_inputs, apply_rules, save_graph
@@ -69,12 +72,15 @@ def run_pipeline():
     process_culture_code()
     process_application_area_code()
     process_application_comment_code()
-    
+    process_product_formulation()
+    process_formulation_code()
+
     print("\n\033[1mValidate syntax of ontology turtle files and shacl shapes\033[0m")
     validate_ttl_files("rdf")
 
     print("\n\033[1mGenerate RDF datasets (ttl)\033[0m")
     products_ttl()
+    formulation_ttl()
     organisation_ttl()
     substance_ttl()
     crops_ttl()
