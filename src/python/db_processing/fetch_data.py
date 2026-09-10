@@ -3,6 +3,10 @@ import gzip
 import shutil
 from ftplib import FTP
 from pathlib import Path
+from dotenv import load_dotenv
+
+if not os.getenv("CI"):
+    load_dotenv()
 
 NEEDED_FILES = {
     "AllProducts.csv", "ApplicationArea.csv", "ApplicationComment.csv",
@@ -31,3 +35,8 @@ with FTP(os.environ["SFTP_HOST"]) as ftp:
 
         raw_path.unlink()  # remove uncompressed file
         print(f"Downloaded and compressed: {gz_path}")
+
+# Save fetch date
+with open(DEST / "fetch_metadata.yaml", "w", encoding="utf-8") as f:
+    yaml.safe_dump({"fetch_date": date.today()}, f)
+print(f"Saved fetch date: {DEST / 'fetch_metadata.yaml'}")
