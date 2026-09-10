@@ -35,7 +35,7 @@ shape: a owl:Ontology ;
     dcterms:creator "Sara Schärrer, Guy Schnidrig, Damian Oswald, Sara Schärrer, Ingrid Nyfeler, Martin Hertach" ;
     dcterms:title "Swiss registry of plant protection products"@en ;
     dcterms:created "2026-02-20"^^xsd:date ;
-    owl:versionInfo "3.0.0" ;
+    owl:versionInfo "3.1.0" ;
     dcterms:abstract
 """
 This data model describes the data of the Swiss registry for plant production products.
@@ -183,7 +183,9 @@ shape:SalePermission a sh:NodeShape ;
     rdfs:comment "Permission to market a plant protection product under an alternative nomenclature based on an existing regular authorisation. The legality of this permission is inextricably linked to the validity of the underlying basic authorisation pursuant to PSMV Art. 66."@en ;
     sh:targetClass :SalePermission ;
     sh:node shape:Product ;
-        sh:property [
+    sh:property
+    [
+        sh:order 1 ;
         sh:name "Federal admission number"@en ;
         sh:description "An identifier assigned by the FSVO that uniquely identifies an admissions of a plant protection product."@en ;
         sh:path :federalAdmissionNumber ;
@@ -191,7 +193,9 @@ shape:SalePermission a sh:NodeShape ;
         sh:pattern "^[A-Z]-[0-9]{1,4}(-[0-9]{1,2})?$" ; # Todo: Match only for sale permissions products
         sh:minCount 1 ;
         sh:maxCount 1 ;
-    ] .
+    ],
+    shape:referenceProduct,
+    shape:referenceProductId .
 
 shape:ParallelImport a sh:NodeShape ;
     sh:order 4 ;
@@ -223,14 +227,20 @@ shape:ParallelImport a sh:NodeShape ;
         sh:path :packageInsertNumber ;
         sh:datatype xsd:string ;
     ],
-    [
-        sh:order 4 ;
-        sh:name "Reference product"@en, "Referenzprodukt"@de ;
-        sh:path :referenceProduct ;
-        sh:node shape:RegularProduct ;
-        sh:minCount 1 ;
-        sh:maxCount 1 ;
-    ] .
+    shape:referenceProduct,
+    shape:referenceProductId .
+
+shape:DeprecatedProduct a sh:NodeShape ;
+    sh:order 4.5 ;
+    rdfs:label "Deprecated product"@en, "Nicht mehr zugelassenes Produkt"@de ;
+    rdfs:comment "Placeholder referenced by sale permissions and parallel imports whose reference product is no longer authorised and therefore no longer part of the dataset. Exactly one such node exists."@en ;
+    sh:targetClass :DeprecatedProduct ;
+    sh:nodeKind sh:IRI ;
+    sh:in ( product:deprecated ) ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property shape:multiLanguageName,
+        shape:multiLanguageDescription .
 
 # ==============================================================================
 # ORGANIZATION + ADDRESS
@@ -814,3 +824,24 @@ shape:multiLanguageDescription a sh:PropertyShape ;
     sh:languageIn ( "de" "fr" "it" "en" ) ;
     sh:qualifiedValueShape shape:MandatoryLanguages ;
     sh:qualifiedMinCount 2 .
+
+shape:referenceProduct a sh:PropertyShape ;
+    sh:order 4 ;
+    sh:name "Reference product"@en, "Referenzprodukt"@de ;
+    sh:description "The regular product this product is based on. If the reference product is no longer authorised, the value is the deprecated product placeholder."@en ;
+    sh:path :referenceProduct ;
+    sh:or (
+        [ sh:class :RegularProduct ; sh:node shape:RegularProduct ]
+        [ sh:class :DeprecatedProduct ]
+    ) ;
+    sh:minCount 1 ;
+    sh:maxCount 1 .
+
+shape:referenceProductId a sh:PropertyShape ;
+    sh:order 5 ;
+    sh:name "Reference product ID"@en, "Referenzprodukt-ID"@de ;
+    sh:description "Original identifier of a reference product that is no longer part of the dataset."@en ;
+    sh:path :referenceProductId ;
+    sh:datatype xsd:string ;
+    sh:pattern "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$" ;
+    sh:maxCount 1 .

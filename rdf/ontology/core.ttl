@@ -29,7 +29,7 @@
         "Sara Schärrer",
         "Guy Schnidrig" ;
     dcterms:title "Crop protection product ontology"@en ;
-    owl:versionInfo "3.0.0" .
+    owl:versionInfo "3.1.0" .
 
 # ==============================================================================
 # CORE PHYTOSANITARY CLASSES & PROPERTIES
@@ -217,6 +217,33 @@ schema:PostalAddress a owl:Class ;
         :ParallelImport
     ) .
 
+:DeprecatedProduct a owl:Class ;
+    owl:disjointWith :Product ;
+    schema:name
+        "Deprecated product"@en,
+        "Nicht mehr zugelassenes Produkt"@de,
+        "Produit qui n'est plus autorisé"@fr,
+        "Prodotto non più autorizzato"@it ;
+    schema:description
+        "Placeholder for reference products whose authorization is no longer valid and which are therefore no longer listed in the plant protection product directory."@en,
+        "Platzhalter für Referenzprodukte, deren Zulassung nicht mehr gültig ist und die daher nicht mehr im Pflanzenschutzmittelverzeichnis aufgeführt sind."@de,
+        "Espace réservé pour les produits de référence dont l'autorisation n'est plus valable et qui ne figurent donc plus dans le répertoire des produits phytosanitaires."@fr,
+        "Segnaposto per i prodotti di riferimento la cui autorizzazione non è più valida e che pertanto non figurano più nell'elenco dei prodotti fitosanitari."@it .
+
+:referenceProductId a owl:DatatypeProperty ;
+    schema:name
+        "Reference product ID"@en,
+        "Referenzprodukt-ID"@de,
+        "ID du produit de référence"@fr,
+        "ID del prodotto di riferimento"@it ;
+    schema:description
+        "Original identifier of a reference product that is no longer part of the dataset."@en,
+        "Ursprünglicher Identifikator eines Referenzprodukts, das nicht mehr im Datensatz enthalten ist."@de,
+        "Identifiant d'origine d'un produit de référence qui ne fait plus partie du jeu de données."@fr,
+        "Identificativo originale di un prodotto di riferimento che non fa più parte del set di dati."@it ;
+    rdfs:domain :Product ;
+    rdfs:range xsd:string .
+
 :ghsLabel a owl:ObjectProperty ;
     schema:name "has GHS labelling"@en ;
     rdfs:domain :Product ;
@@ -253,7 +280,10 @@ schema:PostalAddress a owl:Class ;
         "a pour produit de référence"@fr,
         "ha come prodotto di riferimento"@it ;
     rdfs:domain :Product ;
-    rdfs:range :Product .
+    rdfs:range [
+        a owl:Class ;
+        owl:unionOf ( :Product :DeprecatedProduct )
+    ] .
 
 :foreignAdmissionNumber a owl:DatatypeProperty ;
     schema:name
