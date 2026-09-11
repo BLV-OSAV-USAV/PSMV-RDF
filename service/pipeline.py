@@ -43,6 +43,7 @@ from src.python.create_obligation_ttl import obligation_ttl
 from src.python.create_ghs_ttl import ghs_ttl
 from src.python.create_indications_ttl import indication_ttl
 from src.python.create_formulation import formulation_ttl
+from src.python.create_data_shapes import dataset_ttl
 
 # Reasoning
 from src.python.reason import load_inputs, apply_rules, save_graph
@@ -90,6 +91,7 @@ def run_pipeline():
     obligation_ttl()
     ghs_ttl()
     indication_ttl()
+    dataset_ttl()
 
     print("\n\033[1mCreate a dedicated ontology file for subsequent WebVOWL visualization\033[0m")
     inputs = load_inputs(["rdf/ontology/*.ttl"])

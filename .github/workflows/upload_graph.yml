@@ -24,10 +24,18 @@ jobs:
       - name: Run pipeline script
         run: uv run python service/pipeline.py
 
-      - name: Upload to LINDAS
+      - name: Upload to LINDAS INT
+        env:
+          LINDAS_USER: ${{ secrets.LINDAS_USER }}
+          LINDAS_PASSWORD_INT: ${{ secrets.LINDAS_PASSWORD_INT }}
+          ENDPOINT_INT: ${{ secrets.ENDPOINT_INT }}
+          GRAPH_INT: ${{ secrets.GRAPH_INT }}
+        run: uv run python service/upload_graph.py int
+
+      - name: Upload to LINDAS PROD
         env:
           LINDAS_USER: ${{ secrets.LINDAS_USER }}
           LINDAS_PASSWORD: ${{ secrets.LINDAS_PASSWORD }}
           ENDPOINT: ${{ secrets.ENDPOINT }}
           GRAPH: ${{ secrets.GRAPH }}
-        run: uv run python service/upload_graph.py
+        run: uv run python service/upload_graph.py prod

@@ -267,6 +267,52 @@ def products_ttl(
         except Exception as error:
             print(f"Row {i} (Product {product_id_str}): {error}")
 
+    # Redirect dangling reference products to a shared placeholder
+    DEPRECATED_PRODUCT = PRODUCT["deprecated"]
+
+    labels = {
+    "de": (
+        "Nicht mehr bewilligtes Produkt",
+        "Platzhalter für Referenzprodukte, die nicht mehr bewilligt sind "
+        "und daher nicht im Datensatz enthalten sind.",
+    ),
+    "fr": (
+        "Produit qui n'est plus autorisé",
+        "Espace réservé pour les produits de référence qui ne sont plus autorisés "
+        "et ne figurent donc pas dans le jeu de données.",
+    ),
+    "it": (
+        "Prodotto non più autorizzato",
+        "Segnaposto per i prodotti di riferimento che non sono più autorizzati "
+        "e pertanto non figurano nel set di dati.",
+    ),
+    "en": (
+        "Deprecated product",
+        "Placeholder for reference products that are no longer registered "
+        "and therefore not part of the dataset.",
+    ),
+    }
+
+    dangling = [
+        (s, o)
+        for s, o in graph.subject_objects(BASE.referenceProduct)
+        if (o, RDF.type, None) not in graph
+    ]
+
+    if dangling:
+        graph.add((DEPRECATED_PRODUCT, RDF.type, BASE.Product))
+        for lang, (name, description) in labels.items():
+            graph.add((DEPRECATED_PRODUCT, SCHEMA.name, Literal(name, lang=lang)))
+            graph.add((DEPRECATED_PRODUCT, SCHEMA.description, Literal(description, lang=lang)))
+
+        for s, o in dangling:
+            graph.remove((s, BASE.referenceProduct, o))
+            graph.add((s, BASE.referenceProduct, DEPRECATED_PRODUCT))
+            graph.add((s, BASE.referenceProductId,
+                       Literal(str(o).removeprefix(str(PRODUCT)), datatype=XSD.string)))
+
+        print(f"[i] {len(dangling)} reference(s) redirected to {DEPRECATED_PRODUCT}")
+    
     # Print graph info
     print(f"[i] Total triples: {len(graph)}")
 

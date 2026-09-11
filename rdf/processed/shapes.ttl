@@ -3,6 +3,7 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix product: <https://agriculture.ld.admin.ch/plant-protection/product/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
@@ -56,7 +57,8 @@ However, to fully leverage the analytical capabilities of this schema, users are
 A comprehensive suite of advanced SPARQL query templates, demonstrating complex relational extraction and data aggregation, is maintained within the project's source control at [https://github.com/BLV-OSAV-USAV/PSMV-RDF/tree/main/src/sparql/examples](https://github.com/BLV-OSAV-USAV/PSMV-RDF/tree/main/src/sparql/examples).
 """@en ;
     dcterms:title "Swiss registry of plant protection products"@en ;
-    owl:versionInfo "3.0.0" .
+    owl:versionIRI shape:3.1.0 ;
+    owl:versionInfo "3.1.0" .
 
 shape:ApplicationArea a sh:NodeShape ;
     rdfs:label "Anwendungsbereich"@de,
@@ -132,6 +134,35 @@ shape:Crop a sh:NodeShape ;
         shape:identifier,
         shape:multiLanguageName ;
     sh:targetClass :Crop .
+
+shape:Dataset a sh:NodeShape ;
+    rdfs:label "Dataset"@en ;
+    rdfs:comment "Metadata about the published data, in particular which registry export it reflects."@en ;
+    sh:property [ sh:datatype xsd:date ;
+            sh:description "Date of the registry export this data reflects."@en ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "data as of"@en ;
+            sh:path dcterms:modified ],
+        [ sh:datatype xsd:dateTime ;
+            sh:description "Time the RDF was produced by the pipeline."@en ;
+            sh:maxCount 1 ;
+            sh:name "generated at"@en ;
+            sh:path prov:generatedAtTime ] ;
+    sh:targetClass schema:Dataset .
+
+shape:DeprecatedProduct a sh:NodeShape ;
+    rdfs:label "Nicht mehr zugelassenes Produkt"@de,
+        "Deprecated product"@en ;
+    rdfs:comment "Placeholder referenced by sale permissions and parallel imports whose reference product is no longer authorised and therefore no longer part of the dataset. Exactly one such node exists."@en ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:in ( product:deprecated ) ;
+    sh:nodeKind sh:IRI ;
+    sh:order 4.5 ;
+    sh:property shape:multiLanguageDescription,
+        shape:multiLanguageName ;
+    sh:targetClass :DeprecatedProduct .
 
 shape:FormulationType a sh:NodeShape ;
     rdfs:label "Formulierungsart"@de,
@@ -209,7 +240,23 @@ It systematically links a target pest with the applicable cultivation domain and
                         sh:path :sideEffect ] ] [ sh:property [ sh:class :Pest ;
                         sh:minCount 1 ;
                         sh:path :partialEffect ] ] ) ;
-    sh:property [ sh:class schema:QuantitativeValue ;
+    sh:property [ sh:class :Obligation ;
+            sh:name "Obligation"@en ;
+            sh:order 6 ;
+            sh:path :obligation ],
+        [ sh:class schema:QuantitativeValue ;
+            sh:maxCount 1 ;
+            sh:name "Konzentration"@de,
+                "Dosage"@en ;
+            sh:order 7 ;
+            sh:path :dosage ],
+        [ sh:class schema:QuantitativeValue ;
+            sh:maxCount 1 ;
+            sh:name "Aufwandmenge"@de,
+                "Expenditure"@en ;
+            sh:order 8 ;
+            sh:path :expenditure ],
+        [ sh:class schema:QuantitativeValue ;
             sh:maxCount 1 ;
             sh:name "Wartefrist"@de,
                 "Waiting Period"@en ;
@@ -243,22 +290,6 @@ It systematically links a target pest with the applicable cultivation domain and
             sh:name "Application Comment"@en ;
             sh:order 5 ;
             sh:path :applicationComment ],
-        [ sh:class :Obligation ;
-            sh:name "Obligation"@en ;
-            sh:order 6 ;
-            sh:path :obligation ],
-        [ sh:class schema:QuantitativeValue ;
-            sh:maxCount 1 ;
-            sh:name "Konzentration"@de,
-                "Dosage"@en ;
-            sh:order 7 ;
-            sh:path :dosage ],
-        [ sh:class schema:QuantitativeValue ;
-            sh:maxCount 1 ;
-            sh:name "Aufwandmenge"@de,
-                "Expenditure"@en ;
-            sh:order 8 ;
-            sh:path :expenditure ],
         shape:identifier ;
     sh:targetClass :Indication .
 
@@ -373,13 +404,8 @@ shape:ParallelImport a sh:NodeShape ;
                 "Package insert number"@en ;
             sh:order 3 ;
             sh:path :packageInsertNumber ],
-        [ sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "Referenzprodukt"@de,
-                "Reference product"@en ;
-            sh:node shape:RegularProduct ;
-            sh:order 4 ;
-            sh:path :referenceProduct ] ;
+        shape:referenceProduct,
+        shape:referenceProductId ;
     sh:targetClass :ParallelImport .
 
 shape:Pest a sh:NodeShape ;
@@ -576,8 +602,11 @@ shape:SalePermission a sh:NodeShape ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:name "Federal admission number"@en ;
+            sh:order 1 ;
             sh:path :federalAdmissionNumber ;
-            sh:pattern "^[A-Z]-[0-9]{1,4}(-[0-9]{1,2})?$" ] ;
+            sh:pattern "^[A-Z]-[0-9]{1,4}(-[0-9]{1,2})?$" ],
+        shape:referenceProduct,
+        shape:referenceProductId ;
     sh:targetClass :SalePermission .
 
 shape:SignalWord a sh:NodeShape ;
@@ -649,4 +678,25 @@ shape:multiLanguageName a sh:PropertyShape ;
     sh:qualifiedMinCount 2 ;
     sh:qualifiedValueShape shape:MandatoryLanguages ;
     sh:uniqueLang true .
+
+shape:referenceProduct a sh:PropertyShape ;
+    sh:description "The regular product this product is based on. If the reference product is no longer authorised, the value is the deprecated product placeholder."@en ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "Referenzprodukt"@de,
+        "Reference product"@en ;
+    sh:or ( [ sh:class :RegularProduct ;
+                sh:node shape:RegularProduct ] [ sh:class :DeprecatedProduct ] ) ;
+    sh:order 4 ;
+    sh:path :referenceProduct .
+
+shape:referenceProductId a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:description "Original identifier of a reference product that is no longer part of the dataset."@en ;
+    sh:maxCount 1 ;
+    sh:name "Referenzprodukt-ID"@de,
+        "Reference product ID"@en ;
+    sh:order 5 ;
+    sh:path :referenceProductId ;
+    sh:pattern "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$" .
 
