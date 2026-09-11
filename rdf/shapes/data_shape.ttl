@@ -81,25 +81,6 @@ However, to fully leverage the analytical capabilities of this schema, users are
 A comprehensive suite of advanced SPARQL query templates, demonstrating complex relational extraction and data aggregation, is maintained within the project's source control at [https://github.com/BLV-OSAV-USAV/PSMV-RDF/tree/main/src/sparql/examples](https://github.com/BLV-OSAV-USAV/PSMV-RDF/tree/main/src/sparql/examples).
 """@en .
 
-shape:Dataset a sh:NodeShape ;
-    sh:targetClass schema:Dataset ;
-    rdfs:label "Dataset"@en ;
-    rdfs:comment "Metadata about the published data, in particular which registry export it reflects."@en ;
-    sh:property [
-        sh:path dcterms:modified ;
-        sh:name "data as of"@en ;
-        sh:description "Date of the registry export this data reflects."@en ;
-        sh:datatype xsd:date ;
-        sh:minCount 1 ;
-        sh:maxCount 1 ;
-    ] , [
-        sh:path prov:generatedAtTime ;
-        sh:name "generated at"@en ;
-        sh:description "Time the RDF was produced by the pipeline."@en ;
-        sh:datatype xsd:dateTime ;
-        sh:maxCount 1 ;
-    ] .
-
 # ==============================================================================
 # PRODUCT (+ SUBCLASSES)
 # ==============================================================================
