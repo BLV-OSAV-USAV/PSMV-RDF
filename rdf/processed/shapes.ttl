@@ -3,7 +3,6 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix product: <https://agriculture.ld.admin.ch/plant-protection/product/> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
@@ -135,22 +134,6 @@ shape:Crop a sh:NodeShape ;
         shape:multiLanguageName ;
     sh:targetClass :Crop .
 
-shape:Dataset a sh:NodeShape ;
-    rdfs:label "Dataset"@en ;
-    rdfs:comment "Metadata about the published data, in particular which registry export it reflects."@en ;
-    sh:property [ sh:datatype xsd:date ;
-            sh:description "Date of the registry export this data reflects."@en ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "data as of"@en ;
-            sh:path dcterms:modified ],
-        [ sh:datatype xsd:dateTime ;
-            sh:description "Time the RDF was produced by the pipeline."@en ;
-            sh:maxCount 1 ;
-            sh:name "generated at"@en ;
-            sh:path prov:generatedAtTime ] ;
-    sh:targetClass schema:Dataset .
-
 shape:DeprecatedProduct a sh:NodeShape ;
     rdfs:label "Nicht mehr zugelassenes Produkt"@de,
         "Deprecated product"@en ;
@@ -240,17 +223,7 @@ It systematically links a target pest with the applicable cultivation domain and
                         sh:path :sideEffect ] ] [ sh:property [ sh:class :Pest ;
                         sh:minCount 1 ;
                         sh:path :partialEffect ] ] ) ;
-    sh:property [ sh:class :Obligation ;
-            sh:name "Obligation"@en ;
-            sh:order 6 ;
-            sh:path :obligation ],
-        [ sh:class schema:QuantitativeValue ;
-            sh:maxCount 1 ;
-            sh:name "Konzentration"@de,
-                "Dosage"@en ;
-            sh:order 7 ;
-            sh:path :dosage ],
-        [ sh:class schema:QuantitativeValue ;
+    sh:property [ sh:class schema:QuantitativeValue ;
             sh:maxCount 1 ;
             sh:name "Aufwandmenge"@de,
                 "Expenditure"@en ;
@@ -290,6 +263,16 @@ It systematically links a target pest with the applicable cultivation domain and
             sh:name "Application Comment"@en ;
             sh:order 5 ;
             sh:path :applicationComment ],
+        [ sh:class :Obligation ;
+            sh:name "Obligation"@en ;
+            sh:order 6 ;
+            sh:path :obligation ],
+        [ sh:class schema:QuantitativeValue ;
+            sh:maxCount 1 ;
+            sh:name "Konzentration"@de,
+                "Dosage"@en ;
+            sh:order 7 ;
+            sh:path :dosage ],
         shape:identifier ;
     sh:targetClass :Indication .
 
