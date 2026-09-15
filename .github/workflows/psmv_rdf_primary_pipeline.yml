@@ -1,4 +1,5 @@
 name: Primary Pipeline
+
 on:
   workflow_dispatch:
   push:
@@ -7,13 +8,26 @@ on:
       - 'data/raw/**'
   pull_request:
     branches: [main]
+    paths:
+      - 'data/raw/**'
+      - 'src/**'
+      - 'service/**'
+      - 'pyproject.toml'
+      - 'uv.lock'
+      - '.github/workflows/psmv_rdf_primary_pipeline.yml'
 
 permissions:
   contents: write
 
+concurrency:
+  group: primary-pipeline-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 jobs:
   run-pipeline:
+    if: ${{ !startsWith(github.head_ref, 'release-please--') }}
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v6
 
@@ -24,10 +38,12 @@ jobs:
           enable-caching: true
 
       - name: Install system dependencies
-        run: sudo apt-get install -y libssh2-1-dev
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends libssh2-1-dev
 
       - name: Install dependencies
-        run: uv sync
+        run: uv sync --frozen
 
       - name: Show installed packages
         run: uv pip list
@@ -43,6 +59,11 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add .
-          git diff --cached --quiet || git commit -m "Update pipeline outputs [skip ci]"
+          git add data/processed output
+          if git diff --cached --quiet; then
+            echo "No pipeline output changes"
+            exit 0
+          fi
+          git commit -m "Update pipeline outputs [skip ci]"
+          git pull --rebase origin main
           git push origin main
