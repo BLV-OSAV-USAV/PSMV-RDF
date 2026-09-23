@@ -2,8 +2,7 @@ name: Release Please
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
 
 permissions:
   contents: write
@@ -11,13 +10,13 @@ permissions:
 
 concurrency:
   group: release-please
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
-  release:
+  release-please:
     runs-on: ubuntu-latest
     steps:
       - uses: googleapis/release-please-action@v4
         with:
-          release-type: python
-          target-branch: main
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json
