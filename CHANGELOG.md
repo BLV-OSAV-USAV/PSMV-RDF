@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.5.0](https://github.com/BLV-OSAV-USAV/PSMV-RDF/compare/v0.4.0...v0.5.0) (2026-09-23)
+
+
+### Features
+
+* add sparql query guide and improve githubpages ([a8c0bf1](https://github.com/BLV-OSAV-USAV/PSMV-RDF/commit/a8c0bf10307b32d0f1ac7b8530da3efd0530898b))
+* add sparql query guide and improve githubpages ([510b758](https://github.com/BLV-OSAV-USAV/PSMV-RDF/commit/510b7583340a064b007b3883aa4034a9bd7c0f30))
+
 ## [0.4.0](https://github.com/BLV-OSAV-USAV/PSMV-RDF/compare/v0.3.0...v0.4.0) (2026-09-11)
 
 
