@@ -40,7 +40,7 @@ jobs:
 
       - name: Build SPARQL query guide
         run: |
-          pandoc docs/query-guide.md \
+          pandoc docs/sparql-psmv-query-guide.md \
             --standalone \
             --toc \
             --metadata title="SPARQL Query Guide: Plant Protection Products" \
