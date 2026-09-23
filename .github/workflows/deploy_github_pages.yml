@@ -5,11 +5,15 @@ on:
     branches: [main]
     paths:
       - "docs/**"
-  workflow_dispatch: 
+  workflow_run:
+    workflows: ["Generate Documentation"]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: false # Keep in-flight deployments "safe"
+  cancel-in-progress: false
 
 permissions:
   contents: read
@@ -18,19 +22,33 @@ permissions:
 
 jobs:
   deploy:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }} 
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - uses: actions/checkout@v6
+        with:
+          ref: main 
 
       - uses: actions/configure-pages@v5
+
+      - name: Install pandoc
+        run: sudo apt-get update && sudo apt-get install -y pandoc
+
+      - name: Build SPARQL query guide
+        run: |
+          pandoc docs/query-guide.md \
+            --standalone \
+            --toc \
+            --metadata title="SPARQL Query Guide: Plant Protection Products" \
+            -o docs/query-guide.html
 
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./docs
 
       - uses: actions/deploy-pages@v4
-        id: deployment 
+        id: deployment
