@@ -30,6 +30,8 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v6
+        with:
+            ssh-key: ${{ secrets.DEPLOY_KEY }}
 
       - name: Set up uv
         uses: astral-sh/setup-uv@v10.1.0
