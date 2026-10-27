@@ -215,7 +215,10 @@ def load_unit_map(unit_ns):
     with open(path, "r", encoding="utf-8") as f:
         raw = yaml.safe_load(f)
 
-    return {
-        k: unit_ns[v]
-        for k, v in raw.items()
-    }
+    out = {}
+    for k, v in raw.items():
+        v = str(v).strip()
+        if v.startswith("http"):
+            raise ValueError(f"unit_map.yaml: expected a local name, got IRI for '{k}': {v}")
+        out[str(k).strip()] = unit_ns[v]
+    return out
