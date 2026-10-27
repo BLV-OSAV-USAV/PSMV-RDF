@@ -161,14 +161,12 @@ def indication_ttl(
                 m_rows = measure_dict.get(indication_id_str, [])
                 unit_str = m_rows[0].get("DE") or m_rows[0].get("EN") if m_rows else None
 
-                unit_code = UNIT_MAP.get(unit_str) if unit_str else None
-                unit_uri = UNIT[unit_code] if unit_code else None
+                unit_uri = UNIT_MAP.get(unit_str) if unit_str else None
 
                 # time-measure lookup (Days / Week(s)) for waiting period unit
                 t_rows = time_measure_dict.get(indication_id_str, [])
                 time_unit_str = t_rows[0].get("EN") if t_rows else None
-                time_unit_code = UNIT_MAP.get(time_unit_str, "DAY") 
-                time_unit_uri = UNIT[time_unit_code]
+                time_unit_uri = UNIT_MAP.get(time_unit_str, UNIT.DAY)
 
                 for d_row in dosage_dict[indication_id_str]:
 

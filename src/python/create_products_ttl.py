@@ -208,7 +208,7 @@ def products_ttl(
                         date_str = dt.strftime("%Y-%m-%d")
                         graph.add((product_uri, BASE.soldOutDeadline, Literal(date_str, datatype=XSD.date)))
                     except ValueError:
-                        print(f"Product row {i}: invalid date '{exhaustion_raw}' -> skipped")  
+                        print(f"Product row {i}: invalid date '{sold_out_raw}' -> skipped")  
 
             rdf_type_uri = TYPE_MAPPING.get(raw_type, BASE.Product)
             graph.add((product_uri, RDF.type, rdf_type_uri))
