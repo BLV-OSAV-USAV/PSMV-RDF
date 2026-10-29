@@ -26,11 +26,11 @@ from src.python.db_processing.process_application_area_code import process_appli
 from src.python.db_processing.process_application_comment_code import process_application_comment_code
 from src.python.db_processing.process_product_formulation import process_product_formulation
 from src.python.db_processing.process_product_formulation import process_formulation_code
-from src.python.db_processing.process_additional_text_code import process_additional_text_code
 
 # Substances
 from src.python.db_processing.process_substance_code import process_substance_code
 from src.python.db_processing.enrich_substances import load_substances_mapping
+from src.python.db_processing.process_additional_text_code import process_additional_text_code
 
 # Class modules
 from src.python.create_products_ttl import products_ttl
@@ -77,7 +77,7 @@ def run_pipeline():
     process_application_comment_code()
     process_product_formulation()
     process_formulation_code()
-    process_additional_texts_ttl()
+    process_additional_text_code()
 
     print("\n\033[1mValidate syntax of ontology turtle files and shacl shapes\033[0m")
     validate_ttl_files("rdf")
