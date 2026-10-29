@@ -7,13 +7,13 @@ from rdflib.namespace import RDF
 # local imports
 from src.python.utils.helper_functions import load_namespaces, add_lang_labels
 
-def additional_texts_ttl(
+def process_additional_texts_ttl(
     db_path="data/processed/psmv-data.duckdb",
     out_path="rdf/data/additional_texts.ttl"
 ):
     """
     Creates an additional_texts_ttl graph extracting CropAdditionalText and
-    PestAdditionalText entities from the CodeEnriched table.
+    PestAdditionalText entities from the AdditionalTextCode table.
     """
     # Set namespaces
     namespaces = load_namespaces()
@@ -44,10 +44,7 @@ def additional_texts_ttl(
 
     # Read data
     con = duckdb.connect(db_path, read_only=True)
-    texts_df = con.execute("""
-        SELECT * FROM CodeEnriched
-        WHERE text_key IN ('CultureAdditionalText', 'PestAdditionalText')
-    """).df()
+    texts_df = con.execute("SELECT * FROM AdditionalTextCode").df()
     con.close()
 
     # Create additional text triples
@@ -86,4 +83,4 @@ def additional_texts_ttl(
     return graph
 
 if __name__ == "__main__":
-    additional_texts_ttl()
+    process_additional_texts_ttl()

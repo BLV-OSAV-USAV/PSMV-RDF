@@ -26,6 +26,7 @@ from src.python.db_processing.process_application_area_code import process_appli
 from src.python.db_processing.process_application_comment_code import process_application_comment_code
 from src.python.db_processing.process_product_formulation import process_product_formulation
 from src.python.db_processing.process_product_formulation import process_formulation_code
+from src.python.db_processing.process_additional_text_code import process_additional_text_code
 
 # Substances
 from src.python.db_processing.process_substance_code import process_substance_code
@@ -44,7 +45,7 @@ from src.python.create_ghs_ttl import ghs_ttl
 from src.python.create_indications_ttl import indication_ttl
 from src.python.create_formulation import formulation_ttl
 from src.python.create_data_shapes import dataset_ttl
-from src.python.create_additional_texts import additional_texts_ttl
+from src.python.create_additional_texts import process_additional_texts_ttl
 
 # Reasoning
 from src.python.reason import load_inputs, apply_rules, save_graph
@@ -76,6 +77,7 @@ def run_pipeline():
     process_application_comment_code()
     process_product_formulation()
     process_formulation_code()
+    process_additional_texts_ttl()
 
     print("\n\033[1mValidate syntax of ontology turtle files and shacl shapes\033[0m")
     validate_ttl_files("rdf")
@@ -87,7 +89,7 @@ def run_pipeline():
     substance_ttl()
     crops_ttl()
     pests_ttl()
-    additional_texts_ttl()
+    process_additional_texts_ttl()
     application_area_ttl()
     application_comment_ttl()
     obligation_ttl()
