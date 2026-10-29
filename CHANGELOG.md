@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.2](https://github.com/BLV-OSAV-USAV/PSMV-RDF/compare/psmv-rdf-v0.4.1...psmv-rdf-v0.4.2) (2026-10-29)
+
+
+### Features
+
+* new logic for coformulation ([2f3508c](https://github.com/BLV-OSAV-USAV/PSMV-RDF/commit/2f3508c1b8dac05524b354cb86f616909b57673c))
+* new logic for coformulation ([e98d9cd](https://github.com/BLV-OSAV-USAV/PSMV-RDF/commit/e98d9cdc649b961c56ef77975b77b731da5a8678))
+
 ## [0.4.1](https://github.com/BLV-OSAV-USAV/PSMV-RDF/compare/psmv-rdf-v0.4.0...psmv-rdf-v0.4.1) (2026-09-23)
 
 
