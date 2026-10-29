@@ -67,6 +67,20 @@ def substance_ttl(
     con = duckdb.connect(db_path, read_only=True)
     ingredient_df = con.execute("SELECT * FROM ProductIngredientCode").df()
     con.close()
+    
+    # Check: each substance must have one role across all products
+    # (assumption behind typing the role at substance level)
+    roles_per_substance = (
+        ingredient_df
+        .dropna(subset=["nk_codetable_substance_id"])
+        .assign(is_active=lambda d: d["active_substance_id"].notna())
+        .groupby("nk_codetable_substance_id")["is_active"]
+        .nunique()
+    )
+    mixed = roles_per_substance[roles_per_substance > 1]
+    if not mixed.empty:
+        print(f"[!] {len(mixed)} substances are active in some products and co-formulant in others: "
+              f"{list(mixed.index)}")
 
     # Deduplicate nk_codetable_substance_id
     substance_df = (ingredient_df[[
@@ -93,14 +107,16 @@ def substance_ttl(
             nk_codetable_substance_id = str(row.get("nk_codetable_substance_id")).strip().lower()
             substance_uri = SUBSTANCE[nk_codetable_substance_id]
 
-            # Active substance or co-formulant
+            # Every substance is a :Substance; role is derived from the code table:
+            # active substance table -> :ActiveSubstance
+            # co-formulant table or legacy entry -> :CoFormulant
+            # (co-formulants are shown as "Beistoff, zusätzlich zu deklarieren" in the PSM-Verzeichnis)
+            graph.add((substance_uri, RDF.type, BASE.Substance))
             if pd.notna(row.get("active_substance_id")):
                 graph.add((substance_uri, RDF.type, BASE.ActiveSubstance))
-            elif pd.notna(row.get("co_formulant_id")):
-                graph.add((substance_uri, RDF.type, BASE.CoFormulant))
             else:
-                graph.add((substance_uri, RDF.type, BASE.Substance))
-
+                graph.add((substance_uri, RDF.type, BASE.CoFormulant))
+                
             # IUPAC name
             if pd.notna(row.get("IUPAC_name")):
                 graph.add((substance_uri, BASE.iupacName, Literal(str(row.get("IUPAC_name")).strip())))

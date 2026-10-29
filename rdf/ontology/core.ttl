@@ -540,12 +540,19 @@ schema:PostalAddress a owl:Class ;
         "Beistoff"@de,
         "Coformulant"@fr,
         "Coformulante"@it ;
+    schema:alternateName
+        "Co-formulant, to be declared additionally"@en,
+        "Beistoff, zusätzlich zu deklarieren"@de,
+        "Coformulant, à déclarer en plus"@fr,
+        "Coformulante, da dichiarare in aggiunta"@it ;
     schema:description
-        "An inactive ingredient in a plant protection product that supports the formulation but has no direct pesticidal activity."@en,
-        "Ein inaktiver Bestandteil eines Pflanzenschutzmittels, der die Formulierung unterstützt, jedoch keine direkte pestizide Wirkung hat."@de,
-        "Un composant inactif d'un produit phytosanitaire qui soutient la formulation mais n'a pas d'activité pesticide directe."@fr,
-        "Un componente inattivo di un prodotto fitosanitario che supporta la formulazione ma non ha un'attività pesticida diretta."@it .
-
+        "An inactive ingredient in a plant protection product that supports the formulation but has no direct pesticidal activity. In the plant protection product registry, co-formulants are listed as substances to be declared in addition to the active substances."@en,
+        "Ein inaktiver Bestandteil eines Pflanzenschutzmittels, der die Formulierung unterstützt, jedoch keine direkte pestizide Wirkung hat. Im Pflanzenschutzmittelverzeichnis werden Beistoffe als zusätzlich zu den Wirkstoffen zu deklarierende Stoffe aufgeführt."@de,
+        "Un composant inactif d'un produit phytosanitaire qui soutient la formulation mais n'a pas d'activité pesticide directe. Dans l'index des produits phytosanitaires, les coformulants sont mentionnés comme substances à déclarer en plus des substances actives."@fr,
+        "Un componente inattivo di un prodotto fitosanitario che supporta la formulazione ma non ha un'attività pesticida diretta. Nell'elenco dei prodotti fitosanitari, i coformulanti sono indicati come sostanze da dichiarare in aggiunta alle sostanze attive."@it ;
+    rdfs:comment
+        "Includes entries from the co-formulant code table and legacy entries (numeric IDs) without a code table link. Typing is derived in substance_ttl: every substance without active_substance_id is a :CoFormulant."@en .
+        
 :substance a owl:ObjectProperty ;
     schema:name
         "has substance"@en,
