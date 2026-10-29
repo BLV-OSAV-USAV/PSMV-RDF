@@ -84,6 +84,30 @@
     rdfs:domain :Indication ;
     rdfs:range :ApplicationArea .
 
+:CropAdditionalText a owl:Class ;
+    schema:name
+        "Crop additional text"@en,
+        "Zusatztext Kultur"@de,
+        "Texte complémentaire culture"@fr,
+        "Testo supplementare coltura"@it ;
+    schema:description
+        "Qualifies a crop within an indication, e.g. seed or herbicide-tolerant varieties."@en,
+        "Präzisiert eine Kultur innerhalb einer Indikation, z. B. Saatgut oder herbizidtolerante Sorten."@de,
+        "Précise une culture dans le cadre d'une indication, p. ex. semences ou variétés tolérantes aux herbicides."@fr,
+        "Precisa una coltura nell'ambito di un'indicazione, ad es. sementi o varietà tolleranti agli erbicidi."@it .
+
+:PestAdditionalText a owl:Class ;
+    schema:name
+        "Pest additional text"@en,
+        "Zusatztext Schadorganismus"@de,
+        "Texte complémentaire organisme nuisible"@fr,
+        "Testo supplementare organismo nocivo"@it ;
+    schema:description
+        "Qualifies a pest within an indication, e.g. a specific pathogen genus."@en,
+        "Präzisiert einen Schadorganismus innerhalb einer Indikation, z. B. eine bestimmte Erregergattung."@de,
+        "Précise un organisme nuisible dans le cadre d'une indication, p. ex. un genre de pathogène spécifique."@fr,
+        "Precisa un organismo nocivo nell'ambito di un'indicazione, ad es. un genere di patogeno specifico."@it .
+
 # ==============================================================================
 # PERMISSION HOLDERS
 # ==============================================================================
@@ -552,7 +576,7 @@ schema:PostalAddress a owl:Class ;
         "Un componente inattivo di un prodotto fitosanitario che supporta la formulazione ma non ha un'attività pesticida diretta. Nell'elenco dei prodotti fitosanitari, i coformulanti sono indicati come sostanze da dichiarare in aggiunta alle sostanze attive."@it ;
     rdfs:comment
         "Includes entries from the co-formulant code table and legacy entries (numeric IDs) without a code table link. Typing is derived in substance_ttl: every substance without active_substance_id is a :CoFormulant."@en .
-        
+
 :substance a owl:ObjectProperty ;
     schema:name
         "has substance"@en,

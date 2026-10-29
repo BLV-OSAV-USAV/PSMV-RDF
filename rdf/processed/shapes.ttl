@@ -134,6 +134,16 @@ shape:Crop a sh:NodeShape ;
         shape:multiLanguageName ;
     sh:targetClass :Crop .
 
+shape:CropAdditionalText a sh:NodeShape ;
+    rdfs:label "Zusatztext Kultur"@de,
+        "Crop additional text"@en ;
+    rdfs:comment "Qualifies a crop within a specific indication, for instance restricting the authorisation to seed production or to herbicide-tolerant varieties. The text belongs to the indication and not to the crop itself, as the same crop appears without it in other indications."@en ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property shape:identifier,
+        shape:multiLanguageName ;
+    sh:targetClass :CropAdditionalText .
+
 shape:DeprecatedProduct a sh:NodeShape ;
     rdfs:label "Nicht mehr zugelassenes Produkt"@de,
         "Deprecated product"@en ;
@@ -400,6 +410,16 @@ shape:Pest a sh:NodeShape ;
     sh:property shape:identifier,
         shape:multiLanguageName ;
     sh:targetClass :Pest .
+
+shape:PestAdditionalText a sh:NodeShape ;
+    rdfs:label "Zusatztext Schadorganismus"@de,
+        "Pest additional text"@en ;
+    rdfs:comment "Qualifies a pest within a specific indication, for instance narrowing a disease complex down to a particular pathogen genus."@en ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property shape:identifier,
+        shape:multiLanguageName ;
+    sh:targetClass :PestAdditionalText .
 
 shape:PlantProtectionStatement a sh:NodeShape ;
     rdfs:label "Plant protection statement"@en ;

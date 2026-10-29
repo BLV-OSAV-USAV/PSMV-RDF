@@ -44,6 +44,7 @@ from src.python.create_ghs_ttl import ghs_ttl
 from src.python.create_indications_ttl import indication_ttl
 from src.python.create_formulation import formulation_ttl
 from src.python.create_data_shapes import dataset_ttl
+from src.python.create_additional_texts import additional_texts_ttl
 
 # Reasoning
 from src.python.reason import load_inputs, apply_rules, save_graph
@@ -86,6 +87,7 @@ def run_pipeline():
     substance_ttl()
     crops_ttl()
     pests_ttl()
+    additional_texts_ttl()
     application_area_ttl()
     application_comment_ttl()
     obligation_ttl()

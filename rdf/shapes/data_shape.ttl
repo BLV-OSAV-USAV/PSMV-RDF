@@ -576,6 +576,26 @@ shape:Pest a sh:NodeShape ;
     sh:property shape:identifier,
         shape:multiLanguageName .
 
+shape:CropAdditionalText a sh:NodeShape ;
+    rdfs:label "Crop additional text"@en,
+        "Zusatztext Kultur"@de ;
+    rdfs:comment "Qualifies a crop within a specific indication, for instance restricting the authorisation to seed production or to herbicide-tolerant varieties. The text belongs to the indication and not to the crop itself, as the same crop appears without it in other indications."@en ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:targetClass :CropAdditionalText ;
+    sh:property shape:identifier,
+        shape:multiLanguageName .
+
+shape:PestAdditionalText a sh:NodeShape ;
+    rdfs:label "Pest additional text"@en,
+        "Zusatztext Schadorganismus"@de ;
+    rdfs:comment "Qualifies a pest within a specific indication, for instance narrowing a disease complex down to a particular pathogen genus."@en ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:targetClass :PestAdditionalText ;
+    sh:property shape:identifier,
+        shape:multiLanguageName .
+
 shape:Substance a sh:NodeShape ;
     rdfs:label "Substance"@en,
         "Wirkstoff"@de ;
