@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 """Run SHACL validation, summarise the report, and gate CI on the result."""
 from __future__ import annotations
 
@@ -35,8 +34,8 @@ WHERE {
   BIND(REPLACE(STR(?component), "^.*#", "") AS ?constraint)
   BIND(
     IF(isBlank(?focus), "blank node",
-       REPLACE(STR(?focus),
-               "^https://agriculture\\.ld\\.admin\\.ch/plant-protection/([^/]+)/.*$", "$1"))
+        REPLACE(STR(?focus),
+                "^https://agriculture\\.ld\\.admin\\.ch/plant-protection/([^/]+)(/.*)?$", "$1"))
     AS ?kind)
 }
 GROUP BY ?severity ?kind ?path ?constraint
@@ -48,7 +47,10 @@ def short(v) -> str:
         return "-"
     if isinstance(v, BNode):
         return "_:bnode"  # stable key for complex paths / blank focus nodes
-    return str(v).replace(BASE, ":").replace("http://schema.org/", "schema:")
+    return (str(v)
+            .replace(BASE, ":")
+            .replace("http://schema.org/", "schema:")
+            .replace("http://www.w3.org/2000/01/rdf-schema#", "rdfs:"))
 
 
 def md(s: str, limit: int = 120) -> str:
