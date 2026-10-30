@@ -10,6 +10,7 @@ import re
 from rdflib.namespace import RDF
 from rdflib import Literal
 from pathlib import Path
+from decimal import Decimal, ROUND_HALF_UP
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT_DIR = os.path.abspath(os.path.join(BASE_DIR, "..", "..", "..")) 
@@ -222,3 +223,42 @@ def load_unit_map(unit_ns):
             raise ValueError(f"unit_map.yaml: expected a local name, got IRI for '{k}': {v}")
         out[str(k).strip()] = unit_ns[v]
     return out
+
+def to_decimal(value) -> Decimal:
+    """
+    Convert a numeric source value to an exact Decimal without float artifacts.
+
+    str() yields the shortest round-trip representation, so 0.1 stays 0.1
+    instead of 0.1000000000000000055511151231257827.
+    Trailing zeros are removed, integers keep plain notation (100, not 1E+2).
+    """
+    d = Decimal(str(value)).normalize()
+    if d == d.to_integral_value():
+        d = d.quantize(Decimal(1))
+    return d
+
+
+def format_psm(value) -> str:
+    """
+    Format a share value the same way as the PSM register.
+
+    Values > 0.1: rounded to 2 decimal places.
+    Values <= 0.1: rounded to 2 significant digits.
+    Trailing zeros are removed in both cases. Rounding is half away from zero,
+    matching SQL Server ROUND (Python's round() would round half to even).
+
+    Examples:
+        12.345   -> "12.35"
+        0.5      -> "0.5"
+        0.0023   -> "0.0023"
+        0.0100   -> "0.01"
+        0.00045  -> "0.00045"
+    """
+    d = to_decimal(value)
+    if d == 0:
+        return "0"
+    if d > Decimal("0.1"):
+        q = d.quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
+    else:
+        q = d.quantize(Decimal(1).scaleb(d.adjusted() - 1), rounding=ROUND_HALF_UP)
+    return format(q.normalize(), "f")
