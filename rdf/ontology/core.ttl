@@ -179,15 +179,20 @@ schema:PostalAddress a owl:Class ;
 
 :Product a owl:Class ;
     schema:name
+        "Approved product"@en,
+        "Zugelassenes Produkt"@de,
+        "Produit autorisé"@fr,
+        "Prodotto autorizzato"@it ;
+    schema:alternateName
         "Product"@en,
         "Produkt"@de,
         "Produit"@fr,
         "Prodotto"@it ;
     schema:description
-        "Represents any plant protection product that is officially registered and listed on <https://psm.admin.ch/>."@en,
-        "Repräsentiert ein Pflanzenschutzmittel, das offiziell registriert und im Pflanzenschutzmittelverzeichnis aufgeführt ist."@de,
-        "Représente un produit phytosanitaire officiellement enregistré et répertorié dans le répertoire des produits phytosanitaires."@fr,
-        "Rappresenta un prodotto fitosanitario ufficialmente registrato e iscritto nell'elenco dei prodotti fitosanitari."@it ;
+        "A plant protection product authorised in Switzerland and listed in the plant protection product directory <https://psm.admin.ch/>. Comprises regular products, sale permissions and parallel imports, including products in a sell-out or use-up period after withdrawal of the authorisation. Reference products that are no longer listed are modelled as deprecated products."@en,
+        "Ein in der Schweiz zugelassenes Pflanzenschutzmittel, das im Pflanzenschutzmittelverzeichnis <https://psm.admin.ch/> aufgeführt ist. Umfasst reguläre Produkte, Verkaufserlaubnisse und Parallelimporte, einschliesslich Produkte in einer Ausverkaufs- oder Aufbrauchfrist nach Widerruf der Zulassung. Referenzprodukte, die nicht mehr aufgeführt sind, werden als nicht mehr zugelassene Produkte modelliert."@de,
+        "Un produit phytosanitaire autorisé en Suisse et répertorié dans le répertoire des produits phytosanitaires <https://psm.admin.ch/>. Comprend les produits ordinaires, les autorisations de vente et les importations parallèles, y compris les produits en délai de vente ou d'utilisation après le retrait de l'autorisation. Les produits de référence qui ne sont plus répertoriés sont modélisés comme produits qui ne sont plus autorisés."@fr,
+        "Un prodotto fitosanitario autorizzato in Svizzera e iscritto nell'elenco dei prodotti fitosanitari <https://psm.admin.ch/>. Comprende prodotti ordinari, autorizzazioni di vendita e importazioni parallele, inclusi i prodotti in un periodo di smercio o di utilizzo dopo la revoca dell'autorizzazione. I prodotti di riferimento che non figurano più nell'elenco sono rappresentati come prodotti non più autorizzati."@it ;
     rdfs:subClassOf [
         a owl:Restriction ;
         owl:onProperty schema:countryOfOrigin ;
@@ -413,6 +418,19 @@ schema:PostalAddress a owl:Class ;
         "Anwendung"@de,
         "Application"@fr,
         "Applicazione"@it .
+
+:product a owl:ObjectProperty ;
+    schema:name
+        "applies to product"@en,
+        "gilt für Produkt"@de,
+        "s'applique au produit"@fr,
+        "si applica al prodotto"@it ;
+    owl:inverseOf :indication ;
+    rdfs:domain :Indication ;
+    rdfs:range [
+        a owl:Class ;
+        owl:unionOf ( :Product :DeprecatedProduct )
+    ] .
 
 :pest a owl:ObjectProperty ;
     schema:name
