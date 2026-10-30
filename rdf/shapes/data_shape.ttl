@@ -33,14 +33,14 @@
 # ==============================================================================
 
 shape: a owl:Ontology ;
-    dcterms:creator "Sara Schärrer, Guy Schnidrig, Damian Oswald, Sara Schärrer, Ingrid Nyfeler, Martin Hertach" ;
+    dcterms:creator "Guy Schnidrig, Damian Oswald, Sara Schärrer, Ingrid Nyfeler, Martin Hertach" ;
     dcterms:title "Swiss registry of plant protection products"@en ;
     dcterms:created "2026-02-20"^^xsd:date ;
     owl:versionInfo "3.2.0" ;
-    owl:versionIRI <https://agriculture.ld.admin.ch/plant-protection/shape/3.1.0> ;
+    owl:versionIRI <https://agriculture.ld.admin.ch/plant-protection/shape/3.2.0> ;
     dcterms:abstract
 """
-This data model describes the data of the Swiss registry for plant production products.
+This data model describes the data of the Swiss registry for plant protection products.
 It is supposed to help the reader understand the data.
 The actual data is available on [the linked data service LINDAS](https://lindas.admin.ch/).
 """@en ;
@@ -87,8 +87,8 @@ A comprehensive suite of advanced SPARQL query templates, demonstrating complex 
 
 shape:Product a sh:NodeShape ;
     sh:order 1 ;
-    rdfs:label "Product"@en, "Produkt"@de ;
-    rdfs:comment "Represents any plant protection product that is officially registered and listed on <https://psm.admin.ch/>. It serves as the abstract base class encompassing all regular products, sale permissions, and parallel imports."@en ;
+    rdfs:label "Approved product"@en, "Zugelassenes Produkt"@de ;
+    rdfs:comment "A plant protection product authorised in Switzerland and listed in the plant protection product directory <https://psm.admin.ch/>. Comprises regular products, sale permissions and parallel imports, including products in a sell-out or use-up period after withdrawal of the authorisation. Reference products that are no longer listed are modelled as deprecated products."@en ;
     sh:targetClass :Product ;
     sh:nodeKind sh:IRI ;
     sh:pattern "^https://agriculture\\.ld\\.admin\\.ch/plant-protection/product/.+$" ;
@@ -97,7 +97,7 @@ shape:Product a sh:NodeShape ;
         sh:order 0 ;
         sh:name "Product type"@en ;
         sh:path :productType ;
-        sh:in ( :BiologicalControlAgent :AntifungalBiologicalAgent :BacterialBiologicalAgent :FungalBiologicalAgent :InsectVirusAgent :BeneficialInsectAgent :BeneficialMiteAgent :BeneficialNematodeAgent :ChemicalPlantProtectionProduct :Acaricide :WettingAndAdhesionAgent :Bactericide :Disinfectant :Fungicide :Herbicide :Insecticide :Pheromone :SoapBasedInsecticide :Molluscicide :PlantDefenseInducer :Nematicide :PlantGrowthRegulator :Rodenticide :SeedTreatmentProduct :StorageProtectionProduct :Virucide ) ;
+        sh:in ( :BiologicalControlAgent :AntifungalBiologicalAgent :BacterialBiologicalAgent :FungalBiologicalAgent :InsectVirusAgent :BeneficialInsectAgent :BeneficialMiteAgent :BeneficialNematodeAgent :ChemicalPlantProtectionProduct :Acaricide :WettingAndAdhesionAgent :Bactericide :Disinfectant :Fungicide :Herbicide :Insecticide :Pheromone :SoapBasedInsecticide :Molluscicide :PlantDefenseInducer :Nematicide :PlantGrowthRegulator :Rodenticide :SeedTreatmentProduct :StorageProtectionProduct :Viricide ) ;
     ] ;
     sh:property [
         sh:order 1 ;
@@ -161,6 +161,13 @@ shape:Product a sh:NodeShape ;
         sh:description "The physical form in which the product is supplied, coded according to the international CropLife two-letter system."@en ;
         sh:path :formulation ;
         sh:node shape:FormulationType ;
+    ] ;
+    sh:property [
+        sh:order 11 ;
+        sh:name "Indication"@en, "Indikation"@de ;
+        sh:description "The indications in which this product may be used. Inverse of the product link on the indication, materialised during the merge."@en ;
+        sh:path :indication ;
+        sh:class :Indication ;
     ] .
 
 shape:RegularProduct a sh:NodeShape ;
@@ -316,23 +323,28 @@ shape:Organization a sh:NodeShape ;
 shape:PostalAddress a sh:NodeShape ;
     sh:order 6 ;
     rdfs:label "Address"@en, "Adresse"@de ;
-    rdfs:comment "Defines the physical or postal routing information for an organization. It encapsulates granular fields required for proper geospatial identification, including country, specific street, postal routing code, and locality."@en ;
+    rdfs:comment "Defines the physical or postal routing information for an organization. It encapsulates granular fields required for proper geospatial identification, including country, specific street or post office box, postal routing code, and locality."@en ;
     sh:closed true ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:targetClass schema:PostalAddress ;
+    sh:or (
+        [ sh:property [ sh:path schema:streetAddress ; sh:minCount 1 ] ]
+        [ sh:property [ sh:path schema:postOfficeBoxNumber ; sh:minCount 1 ] ]
+    ) ;
+    sh:message "An address must have either a street address or a post office box number."@en ;
     sh:property
         [
             sh:order 1 ;
             sh:name "Street address"@en ;
+            sh:description "The street address. Either this or a post office box number is required."@en ;
             sh:path schema:streetAddress ;
             sh:datatype xsd:string ;
-            sh:minCount 1 ;
             sh:maxCount 1 ;
         ],
         [
             sh:order 2 ;
             sh:name "Post office box number"@en ;
-            sh:description "The post office box number for post office box addresses."@en ;
+            sh:description "The post office box number for post office box addresses. Either this or a street address is required."@en ;
             sh:path schema:postOfficeBoxNumber ;
             sh:datatype xsd:string ;
             sh:maxCount 1 ;
@@ -452,7 +464,7 @@ It systematically links a target pest with the applicable cultivation domain and
         [
             sh:order 2 ;
             sh:name "Product"@en, "Produkt"@de ;
-            sh:description "Produkt, auf welches sich diese Indikation bezieht."@de ;
+            sh:description "Produkt, auf welches sich diese Indikation bezieht."@de, "Product to which this indication applies."@en ;
             sh:path :product ;
             sh:class :Product ;
             sh:minCount 1 ;
@@ -630,6 +642,56 @@ shape:PestAdditionalText a sh:NodeShape ;
     sh:property shape:identifier,
         shape:multiLanguageName .
 
+shape:CropWithAdditionalText a sh:NodeShape ;
+    rdfs:label "Crop with additional text"@en, "Kultur mit Zusatztext"@de ;
+    rdfs:comment "Combines a crop with an additional text that applies only within a specific indication. Only created where the registry specifies such a text."@en ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:targetClass :CropWithAdditionalText ;
+    sh:nodeKind sh:IRI ;
+    sh:property
+        [
+            sh:order 1 ;
+            sh:name "Crop"@en, "Kultur"@de ;
+            sh:path :crop ;
+            sh:class :Crop ;
+            sh:minCount 1 ;
+            sh:maxCount 1 ;
+        ] ,
+        [
+            sh:order 2 ;
+            sh:name "Additional text"@en, "Zusatztext"@de ;
+            sh:path :additionalText ;
+            sh:class :CropAdditionalText ;
+            sh:minCount 1 ;
+            sh:maxCount 1 ;
+        ] .
+
+shape:PestWithAdditionalText a sh:NodeShape ;
+    rdfs:label "Pest with additional text"@en, "Schadorganismus mit Zusatztext"@de ;
+    rdfs:comment "Combines a pest with an additional text that applies only within a specific indication. Only created where the registry specifies such a text."@en ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:targetClass :PestWithAdditionalText ;
+    sh:nodeKind sh:IRI ;
+    sh:property
+        [
+            sh:order 1 ;
+            sh:name "Pest"@en, "Schadorganismus"@de ;
+            sh:path :pest ;
+            sh:class :Pest ;
+            sh:minCount 1 ;
+            sh:maxCount 1 ;
+        ] ,
+        [
+            sh:order 2 ;
+            sh:name "Additional text"@en, "Zusatztext"@de ;
+            sh:path :additionalText ;
+            sh:class :PestAdditionalText ;
+            sh:minCount 1 ;
+            sh:maxCount 1 ;
+        ] .
+
 shape:Substance a sh:NodeShape ;
     rdfs:label "Substance"@en,
         "Wirkstoff"@de ;
@@ -647,7 +709,7 @@ shape:Substance a sh:NodeShape ;
         [
             sh:order 3 ;
             sh:name "Same as"@en ;
-            sh:description "This property links a substance with its definition in another database."@de ;
+            sh:description "This property links a substance with its definition in another database."@en ;
             sh:path owl:sameAs ;
         ],
         [
@@ -768,11 +830,26 @@ shape:FormulationType a sh:NodeShape ;
 # ==============================================================================
 
 shape:PlantProtectionStatement a sh:NodeShape ;
-    rdfs:label "Plant protection statement"@en ;
+    rdfs:label "Plant protection statement"@en, "Pflanzenschutz-Hinweis"@de ;
+    rdfs:comment "A safety or risk-mitigation statement printed on the product label. Standardised phrases carry a phrase code (e.g. SP 1, SPe 2, SPo 3); other label statements have none. The same phrase code can occur with differently worded texts."@en ;
     sh:targetClass :PlantProtectionStatement ;
-    sh:property shape:identifier,
-        shape:multiLanguageName .
-
+    sh:property
+        shape:multiLanguageName,
+        [
+            sh:order 1 ;
+            sh:name "Phrase code"@en, "Satzcode"@de ;
+            sh:description "Code of the standardised phrase, if the statement is one. Optional and not unique."@en ;
+            sh:path schema:identifier ;
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+        ] ,
+        [
+            sh:path schema:identifier ;
+            sh:pattern "^(SP[eor]?|KP) [0-9]+$" ;
+            sh:severity sh:Warning ;
+            sh:message "Phrase code does not follow the usual format (e.g. 'SPe 2'). Possibly a typo in the source."@en ;
+        ] .
+        
 # ==============================================================================
 # QUANTITATIVE VALUE
 # ==============================================================================
@@ -809,7 +886,7 @@ shape:QuantitativeValue a sh:NodeShape ;
         sh:name "Minimum value"@en ;
         sh:order 3 ;
         sh:path schema:minValue ;
-        sh:minInclusive 0 ; # same here -- debatable whether a minimal value of 0 makes sense
+        sh:minInclusive 0 ; 
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:decimal ]
@@ -833,6 +910,14 @@ shape:QuantitativeValue a sh:NodeShape ;
         sh:path schema:unitCode ;
         sh:nodeKind sh:IRI ;
         sh:minCount 0 ;
+        sh:maxCount 1 ;
+    ]  ;
+    sh:property [
+        sh:name "Unit text"@en ;
+        sh:order 6 ;
+        sh:description "The unit as written in the admission documents, e.g. 'l/ha'."@en ;
+        sh:path schema:unitText ;
+        sh:datatype xsd:string ;
         sh:maxCount 1 ;
     ] .
 
