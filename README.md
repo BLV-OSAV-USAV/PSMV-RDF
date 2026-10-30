@@ -35,20 +35,6 @@ A Python module for converting Swiss plant protection product data from CSV form
     python -m service.pipeline
     ```
     
-5. To upload the graph, first, place a `.env` file in the directory root:
-
-    ``` bash
-    LINDAS_USER=********
-    LINDAS_PASSWORD=************
-    ENDPOINT=https://graphdb.lindas.admin.ch/repositories/lindas/rdf-graphs/service
-    GRAPH=https://lindas.admin.ch/fsvo/plant-protection-products
-    ```
-
-    Then trigger the upload to LINDAS:
-
-    ``` bash
-    python -m service.upload_graph
-    ```
 
 ## Project Structure
 
