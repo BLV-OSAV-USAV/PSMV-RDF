@@ -14,7 +14,8 @@ def indication_ttl(
 ):
     """
     Creates an indications.ttl graph linking products, crops, pests,
-    obligations, application areas, and application comments.
+    obligations, application areas, application comments, and crops
+    and pests with additional texts.
     """
     # Set namespaces
     namespaces = load_namespaces()
@@ -30,6 +31,8 @@ def indication_ttl(
     PEST = namespaces.get("pest", Namespace(str(BASE) + "pest/"))
     CODE = namespaces.get("code", Namespace(str(BASE) + "code/"))
     UNIT = namespaces.get("unit", Namespace(str(BASE) + "unit/"))
+    CROPADDTEXT = namespaces.get("cropaddtext", Namespace(str(BASE) + "cropaddtext/"))
+    PESTADDTEXT = namespaces.get("pestaddtext", Namespace(str(BASE) + "pestaddtext/"))
 
     # Create empty graph
     graph = Graph()
@@ -42,11 +45,13 @@ def indication_ttl(
     graph.bind("pest", PEST)
     graph.bind("code", CODE)
     graph.bind("unit", UNIT)
+    graph.bind("cropaddtext", CROPADDTEXT)
+    graph.bind("pestaddtext", PESTADDTEXT)
     graph.namespace_manager.bind("schema", SCHEMA, override=True, replace=True)
 
     # Read data
     con = duckdb.connect(db_path, read_only=True)
-    
+
     prod_ind_df = con.execute("SELECT * FROM ProductIndicationExpanded").df()
     cult_df = con.execute("SELECT * FROM IndicationCultureLink").df()
     obl_df = con.execute("SELECT * FROM IndicationObligationLink").df()
@@ -59,6 +64,7 @@ def indication_ttl(
     ind_clt_frm_df = con.execute("SELECT * FROM IndicationCultureFormCode").df()
     ind_obl_df = con.execute("SELECT * FROM IndicationObligationCode").df()
     ind_pst = con.execute("SELECT * FROM IndicationPestCode").df()
+    valid_text_ids = set(con.execute("SELECT code_id FROM AdditionalTextCode").df()["code_id"])
 
     # Load Unit map
     UNIT_MAP = load_unit_map(UNIT)
@@ -105,6 +111,27 @@ def indication_ttl(
         for _, row in pairs.iterrows():
             ind_uri = ensure_indication(graph, seen_indications, row["indication"], INDICATION, BASE)
             graph.add((ind_uri, predicate, ns[row[id_col]]))
+
+    # Map Indication -> Crop with additional text
+    crop_text_cols = ["indication", "culture_id", "codetable_culture_additional_text"]
+    crop_text_pairs = (
+        ind_clt_df.dropna(subset=crop_text_cols)
+        [crop_text_cols]
+        .astype(str)
+        .apply(lambda c: c.str.strip().str.lower())
+        .drop_duplicates()
+    )
+    for _, row in crop_text_pairs.iterrows():
+        text_id = row["codetable_culture_additional_text"]
+        if text_id not in valid_text_ids:
+            print(f"Indication {row['indication']}: unknown crop additional text {text_id} -> skipped")
+            continue
+        ind_uri = ensure_indication(graph, seen_indications, row["indication"], INDICATION, BASE)
+        q_uri = URIRef(f"{ind_uri}/crop/{row['culture_id']}/{text_id}")
+        graph.add((ind_uri, BASE.cropWithAdditionalText, q_uri))
+        graph.add((q_uri, RDF.type, BASE.CropWithAdditionalText))
+        graph.add((q_uri, BASE.crop, CROP[row["culture_id"]]))
+        graph.add((q_uri, BASE.additionalText, CROPADDTEXT[text_id]))
 
     # Create indication triples
     measure_dict = group_to_dict(ind_measure_df, "indication")
@@ -155,6 +182,19 @@ def indication_ttl(
                         pest_predicate = BASE.pest
 
                     graph.add((indication_uri, pest_predicate, PEST[pest_id]))
+
+                    # Add Pest with additional text
+                    raw_text = pest_row.get("additional_text")
+                    if pd.notna(raw_text) and str(raw_text).strip():
+                        text_id = str(raw_text).strip().lower()
+                        if text_id in valid_text_ids:
+                            q_uri = URIRef(f"{indication_uri}/pest/{pest_id}/{text_id}")
+                            graph.add((indication_uri, BASE.pestWithAdditionalText, q_uri))
+                            graph.add((q_uri, RDF.type, BASE.PestWithAdditionalText))
+                            graph.add((q_uri, BASE.pest, PEST[pest_id]))
+                            graph.add((q_uri, BASE.additionalText, PESTADDTEXT[text_id]))
+                        else:
+                            print(f"Pest {pest_id}: unknown pest additional text {text_id} -> skipped")
 
             # Dosage / Expenditure / Waiting Period
             if indication_id_str in dosage_dict:

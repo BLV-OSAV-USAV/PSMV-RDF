@@ -29,7 +29,7 @@
         "Sara Schärrer",
         "Guy Schnidrig" ;
     dcterms:title "Crop protection product ontology"@en ;
-    owl:versionInfo "3.1.0" .
+    owl:versionInfo "3.2.0" .
 
 # ==============================================================================
 # CORE PHYTOSANITARY CLASSES & PROPERTIES
@@ -83,6 +83,30 @@
         "si applica al campo di applicazione"@it ;
     rdfs:domain :Indication ;
     rdfs:range :ApplicationArea .
+
+:CropAdditionalText a owl:Class ;
+    schema:name
+        "Crop additional text"@en,
+        "Zusatztext Kultur"@de,
+        "Texte complémentaire culture"@fr,
+        "Testo supplementare coltura"@it ;
+    schema:description
+        "Qualifies a crop within an indication, e.g. seed or herbicide-tolerant varieties."@en,
+        "Präzisiert eine Kultur innerhalb einer Indikation, z. B. Saatgut oder herbizidtolerante Sorten."@de,
+        "Précise une culture dans le cadre d'une indication, p. ex. semences ou variétés tolérantes aux herbicides."@fr,
+        "Precisa una coltura nell'ambito di un'indicazione, ad es. sementi o varietà tolleranti agli erbicidi."@it .
+
+:PestAdditionalText a owl:Class ;
+    schema:name
+        "Pest additional text"@en,
+        "Zusatztext Schadorganismus"@de,
+        "Texte complémentaire organisme nuisible"@fr,
+        "Testo supplementare organismo nocivo"@it ;
+    schema:description
+        "Qualifies a pest within an indication, e.g. a specific pathogen genus."@en,
+        "Präzisiert einen Schadorganismus innerhalb einer Indikation, z. B. eine bestimmte Erregergattung."@de,
+        "Précise un organisme nuisible dans le cadre d'une indication, p. ex. un genre de pathogène spécifique."@fr,
+        "Precisa un organismo nocivo nell'ambito di un'indicazione, ad es. un genere di patogeno specifico."@it .
 
 # ==============================================================================
 # PERMISSION HOLDERS
@@ -552,7 +576,7 @@ schema:PostalAddress a owl:Class ;
         "Un componente inattivo di un prodotto fitosanitario che supporta la formulazione ma non ha un'attività pesticida diretta. Nell'elenco dei prodotti fitosanitari, i coformulanti sono indicati come sostanze da dichiarare in aggiunta alle sostanze attive."@it ;
     rdfs:comment
         "Includes entries from the co-formulant code table and legacy entries (numeric IDs) without a code table link. Typing is derived in substance_ttl: every substance without active_substance_id is a :CoFormulant."@en .
-        
+
 :substance a owl:ObjectProperty ;
     schema:name
         "has substance"@en,
@@ -741,3 +765,80 @@ schema:legalName rdfs:subPropertyOf schema:name .
         "ha come formulazione"@it ;
     rdfs:domain :Product ;
     rdfs:range :FormulationType .
+
+# ==============================================================================
+# ADDITIONAL TEXTS
+# ==============================================================================
+
+:CropAdditionalText a owl:Class ;
+    schema:name
+        "Crop additional text"@en,
+        "Zusatztext Kultur"@de,
+        "Texte complémentaire culture"@fr,
+        "Testo supplementare coltura"@it ;
+    schema:description
+        "Qualifies a crop within an indication, e.g. seed or herbicide-tolerant varieties."@en,
+        "Präzisiert eine Kultur innerhalb einer Indikation, z. B. Saatgut oder herbizidtolerante Sorten."@de,
+        "Précise une culture dans le cadre d'une indication, p. ex. semences ou variétés tolérantes aux herbicides."@fr,
+        "Precisa una coltura nell'ambito di un'indicazione, ad es. sementi o varietà tolleranti agli erbicidi."@it .
+
+:PestAdditionalText a owl:Class ;
+    schema:name
+        "Pest additional text"@en,
+        "Zusatztext Schadorganismus"@de,
+        "Texte complémentaire organisme nuisible"@fr,
+        "Testo supplementare organismo nocivo"@it ;
+    schema:description
+        "Qualifies a pest within an indication, e.g. a specific pathogen genus."@en,
+        "Präzisiert einen Schadorganismus innerhalb einer Indikation, z. B. eine bestimmte Erregergattung."@de,
+        "Précise un organisme nuisible dans le cadre d'une indication, p. ex. un genre de pathogène spécifique."@fr,
+        "Precisa un organismo nocivo nell'ambito di un'indicazione, ad es. un genere di patogeno specifico."@it .
+
+:CropWithAdditionalText a owl:Class ;
+    schema:name
+        "Crop with additional text"@en,
+        "Kultur mit Zusatztext"@de,
+        "Culture avec texte complémentaire"@fr,
+        "Coltura con testo supplementare"@it ;
+    schema:description
+        "Combines a crop with an additional text that applies only within a specific indication."@en,
+        "Verbindet eine Kultur mit einem Zusatztext, der nur innerhalb einer bestimmten Indikation gilt."@de,
+        "Associe une culture à un texte complémentaire qui ne s'applique que dans une indication donnée."@fr,
+        "Associa una coltura a un testo supplementare valido solo nell'ambito di un'indicazione specifica."@it .
+
+:PestWithAdditionalText a owl:Class ;
+    schema:name
+        "Pest with additional text"@en,
+        "Schadorganismus mit Zusatztext"@de,
+        "Organisme nuisible avec texte complémentaire"@fr,
+        "Organismo nocivo con testo supplementare"@it ;
+    schema:description
+        "Combines a pest with an additional text that applies only within a specific indication."@en,
+        "Verbindet einen Schadorganismus mit einem Zusatztext, der nur innerhalb einer bestimmten Indikation gilt."@de,
+        "Associe un organisme nuisible à un texte complémentaire qui ne s'applique que dans une indication donnée."@fr,
+        "Associa un organismo nocivo a un testo supplementare valido solo nell'ambito di un'indicazione specifica."@it .
+
+:cropWithAdditionalText a owl:ObjectProperty ;
+    schema:name
+        "has crop with additional text"@en,
+        "hat Kultur mit Zusatztext"@de,
+        "a une culture avec texte complémentaire"@fr,
+        "ha una coltura con testo supplementare"@it ;
+    rdfs:domain :Indication ;
+    rdfs:range :CropWithAdditionalText .
+
+:pestWithAdditionalText a owl:ObjectProperty ;
+    schema:name
+        "has pest with additional text"@en,
+        "hat Schadorganismus mit Zusatztext"@de,
+        "a un organisme nuisible avec texte complémentaire"@fr,
+        "ha un organismo nocivo con testo supplementare"@it ;
+    rdfs:domain :Indication ;
+    rdfs:range :PestWithAdditionalText .
+
+:additionalText a owl:ObjectProperty ;
+    schema:name
+        "has additional text"@en,
+        "hat Zusatztext"@de,
+        "a un texte complémentaire"@fr,
+        "ha un testo supplementare"@it .
