@@ -36,7 +36,7 @@ shape: a owl:Ontology ;
     dcterms:creator "Sara Schärrer, Guy Schnidrig, Damian Oswald, Sara Schärrer, Ingrid Nyfeler, Martin Hertach" ;
     dcterms:title "Swiss registry of plant protection products"@en ;
     dcterms:created "2026-02-20"^^xsd:date ;
-    owl:versionInfo "3.1.0" ;
+    owl:versionInfo "3.2.0" ;
     owl:versionIRI <https://agriculture.ld.admin.ch/plant-protection/shape/3.1.0> ;
     dcterms:abstract
 """
@@ -406,7 +406,7 @@ The indication formally outlines an approved, highly specific usage profile for 
 It systematically links a target pest with the applicable cultivation domain and delineates parameters like dosage, legal obligations, and mandatory waiting periods.
 """@en ;
     sh:closed true ;
-    sh:ignoredProperties ( rdf:type :fullEffect :partialEffect :sideEffect ) ;
+    sh:ignoredProperties ( rdf:type ) ;
     sh:targetClass :Indication ;
     sh:or (
         [
@@ -465,12 +465,46 @@ It systematically links a target pest with the applicable cultivation domain and
             sh:minCount 1 ;
         ] ,
         [
+            sh:order 3.5 ;
+            sh:name "Cultivation with additional text"@en, "Kultur mit Zusatztext"@de ;
+            sh:description "A crop together with an additional text that restricts it within this indication, e.g. Gurken [Saatgut]. The crop is also listed under Cultivation."@en ;
+            sh:path :cropWithAdditionalText ;
+            sh:class :CropWithAdditionalText ;
+        ] ,
+        [
             sh:order 4 ;
             sh:name "Pest"@en ;
             sh:description "The pest (biotic *or* abiotic threat) against which any product of this indication may be applied."@en ;
             sh:path :pest ;
             sh:class :Pest ;
-            sh:minCount 1 ;
+        ] ,
+        [
+            sh:order 4.1 ;
+            sh:name "Full effect"@en, "Volle Wirkung"@de ;
+            sh:description "Pest against which the product has a full effect in this indication."@en ;
+            sh:path :fullEffect ;
+            sh:class :Pest ;
+        ] ,
+        [
+            sh:order 4.2 ;
+            sh:name "Partial effect"@en, "Teilwirkung"@de ;
+            sh:description "Pest against which the product has a partial effect in this indication."@en ;
+            sh:path :partialEffect ;
+            sh:class :Pest ;
+        ] ,
+        [
+            sh:order 4.3 ;
+            sh:name "Side effect"@en, "Nebenwirkung"@de ;
+            sh:description "Pest against which the product has a side effect in this indication."@en ;
+            sh:path :sideEffect ;
+            sh:class :Pest ;
+        ] ,
+        [
+            sh:order 4.5 ;
+            sh:name "Pest with additional text"@en, "Schadorganismus mit Zusatztext"@de ;
+            sh:description "A pest together with an additional text that restricts it within this indication. The pest is also listed under Pest or one of the effect properties."@en ;
+            sh:path :pestWithAdditionalText ;
+            sh:class :PestWithAdditionalText ;
         ] ,
         [
             sh:order 5 ;

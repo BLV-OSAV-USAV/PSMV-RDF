@@ -300,7 +300,7 @@ def products_ttl(
     ]
 
     if dangling:
-        graph.add((DEPRECATED_PRODUCT, RDF.type, BASE.Product))
+        graph.add((DEPRECATED_PRODUCT, RDF.type, BASE.DeprecatedProduct))
         for lang, (name, description) in labels.items():
             graph.add((DEPRECATED_PRODUCT, SCHEMA.name, Literal(name, lang=lang)))
             graph.add((DEPRECATED_PRODUCT, SCHEMA.description, Literal(description, lang=lang)))
