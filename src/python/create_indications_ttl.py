@@ -83,6 +83,8 @@ def indication_ttl(
     ].drop_duplicates()
 
     ind_uri_map  = {ind_id: ensure_indication(graph, seen_indications, ind_id, INDICATION, BASE) for ind_id in df["indication"].unique()}
+    # Only indications linked to a product are published
+    valid_indications = set(df["indication"])
     prod_uri_map = {pid: PRODUCT[pid] for pid in df["product_ref_or_id"].unique()}
 
     triples = [
@@ -108,6 +110,10 @@ def indication_ttl(
             .apply(lambda c: c.str.strip().str.lower())
         )
         pairs = pairs[(pairs["indication"] != "") & (pairs[id_col] != "")].drop_duplicates()
+        orphans = set(pairs["indication"]) - valid_indications
+        if orphans:
+            print(f"[!] {predicate_name}: {len(orphans)} indication(s) without product -> skipped")
+        pairs = pairs[pairs["indication"].isin(valid_indications)]
         for _, row in pairs.iterrows():
             ind_uri = ensure_indication(graph, seen_indications, row["indication"], INDICATION, BASE)
             graph.add((ind_uri, predicate, ns[row[id_col]]))
