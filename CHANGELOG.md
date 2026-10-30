@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.3](https://github.com/BLV-OSAV-USAV/PSMV-RDF/compare/psmv-rdf-v0.4.2...psmv-rdf-v0.4.3) (2026-10-30)
+
+
+### Features
+
+* Create additional text function and adapt onto + SHACL ([30e2463](https://github.com/BLV-OSAV-USAV/PSMV-RDF/commit/30e2463550392b209aaac58b3bc8c3145bed26be))
+
 ## [0.4.2](https://github.com/BLV-OSAV-USAV/PSMV-RDF/compare/psmv-rdf-v0.4.1...psmv-rdf-v0.4.2) (2026-10-29)
 
 
