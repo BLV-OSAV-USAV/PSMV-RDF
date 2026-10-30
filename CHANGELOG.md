@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.5](https://github.com/BLV-OSAV-USAV/PSMV-RDF/compare/psmv-rdf-v0.4.4...psmv-rdf-v0.4.5) (2026-10-30)
+
+
+### Features
+
+* Rounding in the nPSM register differs from the PSM register ([93e709c](https://github.com/BLV-OSAV-USAV/PSMV-RDF/commit/93e709c62bc42863f000e0d352f478d27be0033c))
+* Rounding in the nPSM register differs from the PSM register ([df7f8e1](https://github.com/BLV-OSAV-USAV/PSMV-RDF/commit/df7f8e1e6f20cd6fed18420e4bb97976a8a81619))
+
 ## [0.4.4](https://github.com/BLV-OSAV-USAV/PSMV-RDF/compare/psmv-rdf-v0.4.3...psmv-rdf-v0.4.4) (2026-10-30)
 
 
