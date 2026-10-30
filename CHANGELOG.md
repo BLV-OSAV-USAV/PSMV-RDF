@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.6](https://github.com/BLV-OSAV-USAV/PSMV-RDF/compare/psmv-rdf-v0.4.5...psmv-rdf-v0.4.6) (2026-10-30)
+
+
+### Features
+
+* update shacl rules and fix a indication bug ([2ce4074](https://github.com/BLV-OSAV-USAV/PSMV-RDF/commit/2ce4074b58a5dba892d7f08c1253f22de3bf3719))
+
 ## [0.4.5](https://github.com/BLV-OSAV-USAV/PSMV-RDF/compare/psmv-rdf-v0.4.4...psmv-rdf-v0.4.5) (2026-10-30)
 
 
