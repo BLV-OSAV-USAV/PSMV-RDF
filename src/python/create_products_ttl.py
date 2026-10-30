@@ -6,7 +6,7 @@ from rdflib.namespace import RDF, RDFS
 
 # local imports
 from src.python.utils.helper_functions import load_namespaces, load_rdf_mappings
-
+from src.python.utils.helper_functions import load_namespaces, load_rdf_mappings, to_decimal, format_psm
 def products_ttl(
     db_path = "data/processed/psmv-data.duckdb",
     product_organisation_link_path = "data/processed/ProductOrganisation.csv"):
@@ -239,20 +239,22 @@ def products_ttl(
                     graph.add((product_uri, BASE.ingredient, ingredient_node))
                     graph.add((ingredient_node, RDF.type, BASE.Ingredient))
                     graph.add((ingredient_node, BASE.substance, SUBSTANCE[substance_id]))
-                    
-                    if pd.notna(ing_row.get("in_gram_per_litre")):
-                        gpl_node = BNode()
-                        graph.add((ingredient_node, BASE.share, gpl_node))
-                        graph.add((gpl_node, RDF.type, SCHEMA.QuantitativeValue))
-                        graph.add((gpl_node, SCHEMA.value, Literal(float(ing_row.get("in_gram_per_litre")), datatype=XSD.decimal)))
-                        graph.add((gpl_node, SCHEMA.unitCode, URIRef(UNIT_MAPPING["gram_per_litre"])))
 
-                    if pd.notna(ing_row.get("in_percent")):
-                        pct_node = BNode()
-                        graph.add((ingredient_node, BASE.share, pct_node))
-                        graph.add((pct_node, RDF.type, SCHEMA.QuantitativeValue))
-                        graph.add((pct_node, SCHEMA.value, Literal(float(ing_row.get("in_percent")), datatype=XSD.decimal)))
-                        graph.add((pct_node, SCHEMA.unitCode, URIRef(UNIT_MAPPING["percent"])))
+                    share_columns = {
+                        "in_gram_per_litre": "gram_per_litre",
+                        "in_percent": "percent",
+                    }
+
+                    for col, unit_key in share_columns.items():
+                        raw = ing_row.get(col)
+                        if pd.isna(raw):
+                            continue
+                        value = to_decimal(raw)
+                        share_node = BNode()
+                        graph.add((ingredient_node, BASE.share, share_node))
+                        graph.add((share_node, RDF.type, SCHEMA.QuantitativeValue))
+                        graph.add((share_node, SCHEMA.value, Literal(value, datatype=XSD.decimal)))
+                        graph.add((share_node, SCHEMA.unitCode, URIRef(UNIT_MAPPING[unit_key])))
 
             # Add GHS connections
             if product_ref_id_str in ghs_dict:
