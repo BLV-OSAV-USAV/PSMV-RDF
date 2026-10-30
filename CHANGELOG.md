@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.4](https://github.com/BLV-OSAV-USAV/PSMV-RDF/compare/psmv-rdf-v0.4.3...psmv-rdf-v0.4.4) (2026-10-30)
+
+
+### Features
+
+* Add :product as inverse of :indication and renamed label of :Product to Approved Product ([8683a32](https://github.com/BLV-OSAV-USAV/PSMV-RDF/commit/8683a3211f6da7adbc759ee933221ee6db9e8686))
+* Add :product as inverse of :indication and renamed label of :Product to Approved Product ([94bf01b](https://github.com/BLV-OSAV-USAV/PSMV-RDF/commit/94bf01b20ece6707deca726c69c6d1df54147d62))
+
 ## [0.4.3](https://github.com/BLV-OSAV-USAV/PSMV-RDF/compare/psmv-rdf-v0.4.2...psmv-rdf-v0.4.3) (2026-10-30)
 
 
