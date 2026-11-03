@@ -1,0 +1,80 @@
+name: Check SHACL Play release
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"   # Mondays 06:00 UTC (07:00/08:00 Zurich)
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: shacl-play-update
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.RELEASE_PLEASE_TOKEN_PSMV }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          token: ${{ secrets.RELEASE_PLEASE_TOKEN_PSMV }}
+
+      - name: Compare pinned and latest version
+        id: ver
+        run: |
+          current=$(python3 -c "import tomllib; print(tomllib.load(open('pyproject.toml','rb'))['tool']['shacl-docgen']['shacl_play_version'])")
+          latest=$(gh release view --repo sparna-git/shacl-play --json tagName -q .tagName)
+          echo "Pinned: $current, latest: $latest"
+          echo "current=$current" >> "$GITHUB_OUTPUT"
+          echo "latest=$latest" >> "$GITHUB_OUTPUT"
+          if [ "$current" = "$latest" ]; then
+            echo "update=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "update=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Verify the JAR asset exists
+        if: steps.ver.outputs.update == 'true'
+        env:
+          LATEST: ${{ steps.ver.outputs.latest }}
+        run: |
+          expected="shacl-play-app-${LATEST}-onejar.jar"
+          if ! gh release view "$LATEST" --repo sparna-git/shacl-play --json assets -q '.assets[].name' | grep -qx "$expected"; then
+            echo "::error::Release $LATEST has no asset named $expected. The naming scheme may have changed; check shacl_play.py."
+            exit 1
+          fi
+
+      - name: Open bump PR
+        if: steps.ver.outputs.update == 'true'
+        env:
+          CURRENT: ${{ steps.ver.outputs.current }}
+          LATEST: ${{ steps.ver.outputs.latest }}
+        run: |
+          branch="automation/shacl-play-${LATEST}"
+          if git ls-remote --exit-code --heads origin "$branch" >/dev/null; then
+            echo "Branch $branch already exists, PR presumably open. Nothing to do."
+            exit 0
+          fi
+
+          sed -i -E "s/^(shacl_play_version = \")[^\"]+(\")/\1${LATEST}\2/" pyproject.toml
+
+          # Make sure the edit actually landed
+          check=$(python3 -c "import tomllib; print(tomllib.load(open('pyproject.toml','rb'))['tool']['shacl-docgen']['shacl_play_version'])")
+          [ "$check" = "$LATEST" ] || { echo "::error::pyproject.toml edit failed"; exit 1; }
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "$branch"
+          git commit -am "chore(deps): update shacl-play to ${LATEST}"
+          git push origin "$branch"
+
+          gh pr create --base main --head "$branch" \
+            --title "chore(deps): update shacl-play to ${LATEST}" \
+            --body "Updates SHACL Play from \`${CURRENT}\` to \`${LATEST}\`.
+
+          Release notes: https://github.com/sparna-git/shacl-play/releases/tag/${LATEST}
+
+          The documentation workflow runs on this PR with the new JAR. Check the generated docs before merging."

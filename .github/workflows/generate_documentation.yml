@@ -5,10 +5,12 @@ on:
     branches: [main]
     paths:
       - 'rdf/processed/shapes.ttl'
+      - 'pyproject.toml'
   pull_request:
     branches: [main]
     paths:
       - 'rdf/processed/shapes.ttl'
+      - 'pyproject.toml'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -17,16 +19,60 @@ concurrency:
 permissions:
   contents: read
 
-env:
-  SHACL_PLAY_VERSION: "0.12.0"
-
 jobs:
-  run-pipeline:
+  changes:
     runs-on: ubuntu-latest
+    outputs:
+      run: ${{ steps.check.outputs.run }}
+      version: ${{ steps.check.outputs.version }}
     steps:
       - uses: actions/checkout@v6
         with:
           fetch-depth: 0
+
+      - name: Check whether docs need rebuilding
+        id: check
+        env:
+          EVENT: ${{ github.event_name }}
+          PR_HEAD: ${{ github.event.pull_request.head.sha }}
+          PUSH_BEFORE: ${{ github.event.before }}
+        run: |
+          get_version() {
+            python3 -c "import sys, tomllib; print(tomllib.loads(sys.stdin.read())['tool']['shacl-docgen']['shacl_play_version'])"
+          }
+
+          if [ "$EVENT" = "pull_request" ]; then
+            HEAD_REF="$PR_HEAD"
+            BASE=$(git merge-base "origin/$GITHUB_BASE_REF" "$PR_HEAD" 2>/dev/null || true)
+          else
+            HEAD_REF="HEAD"
+            BASE="$PUSH_BEFORE"
+          fi
+
+          new=$(git show "$HEAD_REF:pyproject.toml" | get_version)
+          echo "version=$new" >> "$GITHUB_OUTPUT"
+
+          # Manual runs, or no usable base commit: always build
+          if [ "$EVENT" = "workflow_dispatch" ] || [ -z "$BASE" ] || ! git cat-file -e "$BASE" 2>/dev/null; then
+            echo "run=true" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+
+          old=$(git show "$BASE:pyproject.toml" 2>/dev/null | get_version 2>/dev/null || echo none)
+
+          if ! git diff --quiet "$BASE" "$HEAD_REF" -- rdf/processed/shapes.ttl || [ "$old" != "$new" ]; then
+            echo "Rebuild: shapes changed or SHACL Play $old -> $new"
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "Skip: pyproject.toml changed, but not the SHACL Play version"
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          fi
+
+  run-pipeline:
+    needs: changes
+    if: needs.changes.outputs.run == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
 
       - name: Set up uv
         uses: astral-sh/setup-uv@v5
@@ -45,18 +91,17 @@ jobs:
         uses: actions/cache/restore@v4
         with:
           path: service/shacl_play
-          key: shacl-play-jar-${{ env.SHACL_PLAY_VERSION }}
-
+          key: shacl-play-jar-${{ needs.changes.outputs.version }}
+          
       - name: Run documentation script
-        run: |
-          uv run python service/shacl_docgen.py --diagram
+        run: uv run python service/shacl_docgen.py
 
       - name: Save SHACL-Play JAR cache
         if: steps.cache-jar.outputs.cache-hit != 'true'
         uses: actions/cache/save@v4
         with:
           path: service/shacl_play
-          key: shacl-play-jar-${{ env.SHACL_PLAY_VERSION }}
+          key: shacl-play-jar-${{ needs.changes.outputs.version }}
 
       - name: Upload generated docs
         if: github.event_name != 'pull_request'
