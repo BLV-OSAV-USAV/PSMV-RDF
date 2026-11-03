@@ -5,7 +5,7 @@ import datetime
 import rdflib
 
 # local imports
-from src.python.generate_shacl_documentation import generate_documentation
+from src.python.utils.shacl_play import ensure_jar, SHACL_PLAY_JAR_PATH
 from src.python.utils.helper_functions import *
 
 def generate_documentaion():
