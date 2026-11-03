@@ -26,7 +26,7 @@ jobs:
       run: ${{ steps.check.outputs.run }}
       version: ${{ steps.check.outputs.version }}
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
@@ -72,10 +72,10 @@ jobs:
     if: needs.changes.outputs.run == 'true'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Set up uv
-        uses: astral-sh/setup-uv@v5
+        uses: astral-sh/setup-uv@v7
         with:
           python-version: "3.12"
           enable-caching: true
@@ -88,7 +88,7 @@ jobs:
 
       - name: Restore SHACL-Play JAR cache
         id: cache-jar
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v6
         with:
           path: service/shacl_play
           key: shacl-play-jar-${{ needs.changes.outputs.version }}
@@ -98,14 +98,14 @@ jobs:
 
       - name: Save SHACL-Play JAR cache
         if: steps.cache-jar.outputs.cache-hit != 'true'
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v6
         with:
           path: service/shacl_play
           key: shacl-play-jar-${{ needs.changes.outputs.version }}
 
       - name: Upload generated docs
         if: github.event_name != 'pull_request'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: shacl-docs
           path: docs/
