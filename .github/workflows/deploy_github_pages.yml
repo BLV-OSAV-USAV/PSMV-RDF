@@ -19,6 +19,7 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  actions: read
 
 jobs:
   deploy:
@@ -31,7 +32,35 @@ jobs:
     steps:
       - uses: actions/checkout@v6
         with:
-          ref: main 
+          ref: main
+
+      - name: Find docs run
+        id: run
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_run" ]; then
+            echo "id=${{ github.event.workflow_run.id }}" >> "$GITHUB_OUTPUT"
+          else
+            id=$(gh run list \
+              --repo "${{ github.repository }}" \
+              --workflow "Generate Documentation" \
+              --branch main --status success --limit 1 \
+              --json databaseId -q '.[0].databaseId')
+            if [ -z "$id" ]; then
+              echo "::error::No successful 'Generate Documentation' run on main found. Run it manually first."
+              exit 1
+            fi
+            echo "id=$id" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Download generated docs
+        uses: actions/download-artifact@v4
+        with:
+          name: shacl-docs
+          path: docs/
+          run-id: ${{ steps.run.outputs.id }}
+          github-token: ${{ github.token }}
 
       - uses: actions/configure-pages@v5
 
