@@ -4,7 +4,7 @@ import argparse
 import shutil
 import subprocess
 
-from src.python.utils.helper_functions import ensure_jar, SHACL_PLAY_JAR_PATH
+from src.python.utils.shacl_play import ensure_jar, SHACL_PLAY_JAR_PATH
 
 DEFAULT_SHAPES_FILE = "rdf/processed/shapes.ttl"
 DEFAULT_OUTPUT_FILE = "docs/shacl-documentation.html"

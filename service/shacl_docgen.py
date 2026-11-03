@@ -1,4 +1,5 @@
 from src.python.generate_shacl_documentation import generate_documentation
+from src.python.utils.shacl_play import ensure_jar, SHACL_PLAY_JAR_PATH
 
 GREEN = "\033[92m"
 RESET = "\033[0m"
