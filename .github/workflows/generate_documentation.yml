@@ -67,7 +67,7 @@ jobs:
             echo "run=false" >> "$GITHUB_OUTPUT"
           fi
 
-  run-pipeline:
+  generate-docs:
     needs: changes
     if: needs.changes.outputs.run == 'true'
     runs-on: ubuntu-latest
