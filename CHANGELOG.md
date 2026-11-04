@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.8](https://github.com/BLV-OSAV-USAV/PSMV-RDF/compare/psmv-rdf-v0.4.7...psmv-rdf-v0.4.8) (2026-11-04)
+
+
+### Bug Fixes
+
+* add pytest and pipeline fixes ([c01127c](https://github.com/BLV-OSAV-USAV/PSMV-RDF/commit/c01127c960973a62c46530f8542e74f166678862))
+* make tests scripts pytest safe ([8773669](https://github.com/BLV-OSAV-USAV/PSMV-RDF/commit/87736698a717e785860810d158faa5a832f5547a))
+
 ## [0.4.7](https://github.com/BLV-OSAV-USAV/PSMV-RDF/compare/psmv-rdf-v0.4.6...psmv-rdf-v0.4.7) (2026-11-04)
 
 
