@@ -14,25 +14,26 @@ A Python module for converting Swiss plant protection product data from CSV form
 
 ## Reproduce the data integration pipeline
 
-1. Set up the virtual environment
+> If `uv` is not yet installed: `curl -LsSf https://astral.sh/uv/install.sh | sh`
 
-   > If `uv` is not yet installed: `curl -LsSf https://astral.sh/uv/install.sh | sh`
-    ``` bash
-    uv venv psmv-rdf
-    source psmv-rdf/bin/activate  
-    ```
-   
-    
-3. Install the package in editable mode
+1. Install the project and its development dependencies
 
     ``` bash
-    uv pip install -e .
+    uv sync --extra dev
     ```
 
-4. Start the data integration pipeline
+    This creates the virtual environment in `.venv` and installs the package in editable mode, using the exact versions from `uv.lock`.
+
+2. Start the data integration pipeline
 
     ``` bash
-    python -m service.pipeline
+    uv run python -m service.pipeline
+    ```
+
+3. Run the tests
+
+    ``` bash
+    uv run pytest -v
     ```
     
 
