@@ -1,6 +1,9 @@
 import os
-import sys
 from ftplib import FTP
+
+import pytest
+
+pytestmark = pytest.mark.network
 
 NEEDED_FILES = {
     "AllProducts.csv", "ApplicationArea.csv", "ApplicationComment.csv",
@@ -9,26 +12,23 @@ NEEDED_FILES = {
     "IndicationTimeMeasure.csv", "ProductCodeR.csv", "ProductCodeS.csv",
     "ProductDangerSymbol.csv", "ProductFormulationCode.csv", "ProductIngredient.csv",
     "ProductPermissionHolder.csv", "ProductProductCategory.csv",
-    "ProductSignalWords.csv", "PsmvPermissionholder.csv", "ProductIndication.csv"
+    "ProductSignalWords.csv", "PsmvPermissionholder.csv", "ProductIndication.csv",
 }
 
-try:
-    with FTP(os.environ["SFTP_HOST"]) as ftp:
+
+@pytest.fixture(scope="module")
+def remote_files():
+    """Connect once, log in, return the file names in PSM_Verzeichnis."""
+    with FTP(os.environ["SFTP_HOST"], timeout=30) as ftp:
         ftp.login(user=os.environ["SFTP_USERNAME"], passwd=os.environ["SFTP_PASSWORD"])
         ftp.cwd("PSM_Verzeichnis")
-        remote_files = set(ftp.nlst())
+        return set(ftp.nlst())
 
-    found = NEEDED_FILES & remote_files
+
+def test_directory_is_not_empty(remote_files):
+    assert remote_files, "PSM_Verzeichnis is empty"
+
+
+def test_all_needed_files_present(remote_files):
     missing = NEEDED_FILES - remote_files
-
-    for filename in sorted(found):
-        print(f"OK: {filename}")
-
-    if missing:
-        for filename in sorted(missing):
-            print(f"MISSING: {filename}", file=sys.stderr)
-        sys.exit(1)
-
-except Exception as e:
-    print(f"ERROR: {e}", file=sys.stderr)
-    sys.exit(1)
+    assert not missing, f"missing on server: {sorted(missing)}"

@@ -6,10 +6,6 @@ on:
     branches: [main]
     paths:
       - 'data/raw/**'
-  pull_request:
-    branches: [main]
-    paths:
-      - 'data/raw/**'
       - 'data/mapping/**'
       - 'rdf/ontology/**'
       - 'rdf/shapes/**'
@@ -17,7 +13,8 @@ on:
       - 'service/**'
       - 'pyproject.toml'
       - 'uv.lock'
-      - '.github/workflows/psmv_rdf_primary_pipeline.yml'
+  pull_request:
+    branches: [main]
 
 permissions:
   contents: write
@@ -28,7 +25,9 @@ concurrency:
 
 jobs:
   primary-pipeline:
-    if: ${{ !startsWith(github.head_ref, 'release-please--') }}
+    if: >-
+      ${{ !startsWith(github.head_ref, 'release-please--')
+          && !startsWith(github.event.head_commit.message, 'chore(main): release') }}
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -49,7 +48,7 @@ jobs:
           sudo apt-get install -y --no-install-recommends libssh2-1-dev
 
       - name: Install dependencies
-        run: uv sync --frozen
+        run: uv sync --frozen --extra dev
 
       - name: Show installed packages
         run: uv pip list
@@ -60,11 +59,14 @@ jobs:
       - name: Run pipeline script
         run: uv run python service/pipeline.py
 
+      - name: Tests
+        run: uv run pytest -v -rs
+
       - name: Commit and push changes
-        if: github.event_name != 'pull_request'
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add .
-          git diff --cached --quiet || git commit -m "Update pipeline outputs [skip ci]"
+          git diff --cached --quiet || git commit -m "chore: update pipeline outputs [skip ci]"
           git push origin main

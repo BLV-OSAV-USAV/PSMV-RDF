@@ -1,0 +1,20 @@
+name: Server health
+
+on:
+  schedule:
+    - cron: "0 6 * * 1-5"   # weekdays 06:00 UTC
+  workflow_dispatch:         # manual "Run workflow" button
+
+jobs:
+  server-health:
+    name: server-health
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync --extra dev
+      - run: uv run pytest -m network -v
+        env:
+          SFTP_HOST: ${{ secrets.SFTP_HOST }}
+          SFTP_USER: ${{ secrets.SFTP_USER }}
+          SFTP_KEY: ${{ secrets.SFTP_KEY }}

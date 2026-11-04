@@ -24,6 +24,7 @@ dist/
 
 .env
 .env.*
+!.env.example
 .envrc
 venv/
 env/
@@ -38,19 +39,17 @@ conda_pkgs_dir/
 .conda/
 
 # =============================================================================
-# Testing & Coverage
+# Testing, Linting & Coverage
 # =============================================================================
 
 .pytest_cache/
 .mypy_cache/
+.ruff_cache/
 .cache/
 htmlcov/
 .coverage
 .coverage.*
 coverage.xml
-nosetests.xml
-*.cover
-*.py,cover
 
 # =============================================================================
 # IDEs & Editors
@@ -92,13 +91,18 @@ rdf/data/**
 rdf/processed/**
 rdf/processed/graph.ttl
 !rdf/processed/shapes.ttl
+*.duckdb
+*.duckdb.wal
+*.jar
+shacl-documentation-log.txt
 
 # =============================================================================
 # Tests
 # =============================================================================
 
-tests/*
-!tests/test_connection.py
+# Local test scripts (not part of the pytest suite)
+src/python/local_tests/
+
 
 # =============================================================================
 # Specific RDF files
