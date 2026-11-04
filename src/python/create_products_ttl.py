@@ -5,7 +5,6 @@ from rdflib import Graph, Namespace, URIRef, Literal, BNode
 from rdflib.namespace import RDF, RDFS
 
 # local imports
-from src.python.utils.helper_functions import load_namespaces, load_rdf_mappings
 from src.python.utils.helper_functions import load_namespaces, load_rdf_mappings, to_decimal, format_psm
 def products_ttl(
     db_path = "data/processed/psmv-data.duckdb",
@@ -249,7 +248,7 @@ def products_ttl(
                         raw = ing_row.get(col)
                         if pd.isna(raw):
                             continue
-                        value = to_decimal(raw)
+                        value = format_psm(raw)
                         share_node = BNode()
                         graph.add((ingredient_node, BASE.share, share_node))
                         graph.add((share_node, RDF.type, SCHEMA.QuantitativeValue))
