@@ -33,7 +33,8 @@ jobs:
     steps:
       - uses: actions/checkout@v7
         with:
-            ssh-key: ${{ secrets.DEPLOY_KEY }}
+          # Deploy key only where we push; PRs use HTTPS
+          ssh-key: ${{ github.event_name != 'pull_request' && secrets.DEPLOY_KEY || '' }}
 
       - name: Set up uv
         uses: astral-sh/setup-uv@v7
@@ -69,4 +70,10 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add .
           git diff --cached --quiet || git commit -m "chore: update pipeline outputs [skip ci]"
-          git push origin main
+          for i in 1 2 3 4 5; do
+            git push origin main && exit 0
+            echo "Push failed (attempt $i), retrying in $((i * 10))s..."
+            sleep $((i * 10))
+          done
+          echo "Push failed after 5 attempts"
+          exit 1

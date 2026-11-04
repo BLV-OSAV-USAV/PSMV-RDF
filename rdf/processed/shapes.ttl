@@ -94,8 +94,8 @@ shape:ClassProperty a sh:NodeShape ;
             sh:order 1 ;
             sh:path schema:name ;
             sh:qualifiedMinCount 1 ;
-            sh:qualifiedValueShape [ sh:languageIn ( "en" ) ] ],
-        [ sh:description "Preferred name of the class or property"@de ;
+            sh:qualifiedValueShape shape:EnglishLanguage ],
+        [ sh:description "Preferred name of the class or property"@en ;
             sh:message "There can be at most one name per language tag."@en ;
             sh:name "Name"@en ;
             sh:order 2 ;
@@ -106,13 +106,13 @@ shape:ClassProperty a sh:NodeShape ;
             sh:order 3 ;
             sh:path schema:description ;
             sh:uniqueLang true ],
-        [ schema:name "Forbid rdfs:label"@en ;
-            sh:maxCount 0 ;
+        [ sh:maxCount 0 ;
             sh:message "Any use of rdfs:label is forbidden; the preferred property is schema:name."@en ;
+            sh:name "Forbid rdfs:label"@en ;
             sh:path rdfs:label ],
-        [ schema:name "Forbid rdfs:comment"@en ;
-            sh:maxCount 0 ;
+        [ sh:maxCount 0 ;
             sh:message "Any use of rdfs:comment is forbidden; the preferred property is schema:description."@en ;
+            sh:name "Forbid rdfs:comment"@en ;
             sh:path rdfs:comment ] ;
     sh:targetClass owl:Class,
         owl:DatatypeProperty,
@@ -179,6 +179,11 @@ shape:DeprecatedProduct a sh:NodeShape ;
     sh:property shape:multiLanguageDescription,
         shape:multiLanguageName ;
     sh:targetClass :DeprecatedProduct .
+
+shape:EnglishLanguage a sh:NodeShape ;
+    rdfs:label "English language"@en ;
+    rdfs:comment "Language-tagged strings in English."@en ;
+    sh:languageIn ( "en" ) .
 
 shape:FormulationType a sh:NodeShape ;
     rdfs:label "Formulierungsart"@de,

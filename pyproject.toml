@@ -28,12 +28,13 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-dev = [
-    "pytest>=9.2.0",
-    "pytest-cov",
-    "ruff",
-    "mypy",
-]
+ dev = [
+     "pytest>=9.2.0",
+     "pytest-cov",
+     "ruff",
+     "mypy",
+     "actionlint-py>=1.7.12.25",
+ ]
 
 [project.scripts]
 psmv-rdf = "service.pipeline:run_pipeline"
