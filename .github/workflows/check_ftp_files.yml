@@ -8,10 +8,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - uses: actions/setup-python@v7
+      - uses: astral-sh/setup-uv@v7
         with:
           python-version: "3.12"
-      - run: python tests/test_sftp.py
+      - run: uv sync --frozen --extra dev
+      - run: uv run pytest -m network -v tests/test_sftp.py
         env:
           SFTP_HOST: ${{ secrets.SFTP_HOST }}
           SFTP_USERNAME: ${{ secrets.SFTP_USERNAME }}
