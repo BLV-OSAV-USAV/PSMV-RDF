@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.9](https://github.com/BLV-OSAV-USAV/PSMV-RDF/compare/psmv-rdf-v0.4.8...psmv-rdf-v0.4.9) (2026-11-04)
+
+
+### Bug Fixes
+
+* update onto shape ([3daac69](https://github.com/BLV-OSAV-USAV/PSMV-RDF/commit/3daac69773e3df8e96fc76cdaf0c9e560559d6c1))
+* update onto shape ([d9c8c4a](https://github.com/BLV-OSAV-USAV/PSMV-RDF/commit/d9c8c4a61959c0067fe89ef9d7ea115e4f7bf9ae))
+
 ## [0.4.8](https://github.com/BLV-OSAV-USAV/PSMV-RDF/compare/psmv-rdf-v0.4.7...psmv-rdf-v0.4.8) (2026-11-04)
 
 
