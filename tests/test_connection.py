@@ -3,6 +3,9 @@ import sys
 
 import requests
 from dotenv import load_dotenv
+import pytest
+
+pytestmark = pytest.mark.network
 
 load_dotenv()  # never overrides variables already set, e.g. CI secrets
 

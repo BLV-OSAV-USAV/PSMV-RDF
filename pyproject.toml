@@ -29,7 +29,7 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = [
-    "pytest>=8.0",
+    "pytest>=9.2.0",
     "pytest-cov",
     "ruff",
     "mypy",
@@ -44,3 +44,11 @@ include = ["service*", "src*"]
 
 [tool.shacl-docgen]
 shacl_play_version = "0.12.3"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+markers = [
+    "network: needs external servers (SFTP, LINDAS); excluded by default",
+]
+addopts = "-m 'not network'"

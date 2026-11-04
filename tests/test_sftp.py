@@ -1,6 +1,9 @@
 import os
 import sys
 from ftplib import FTP
+import pytest
+
+pytestmark = pytest.mark.network
 
 NEEDED_FILES = {
     "AllProducts.csv", "ApplicationArea.csv", "ApplicationComment.csv",
