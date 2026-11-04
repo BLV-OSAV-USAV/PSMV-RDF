@@ -17,16 +17,14 @@ shape:ClassProperty a sh:NodeShape ;
         sh:name "English name"@en ;
         sh:description "Preferred name of the class or property in English"@en ;
         sh:path schema:name ;
-        sh:qualifiedValueShape [
-            sh:languageIn ( "en" ) ;
-        ] ;
+        sh:qualifiedValueShape shape:EnglishLanguage ;
         sh:qualifiedMinCount 1 ;
         sh:message "Any class or property must have at least one name in English."@en ;
     ] ;
     sh:property [
         sh:order 2 ;
         sh:name "Name"@en ;
-        sh:description "Preferred name of the class or property"@de ;
+        sh:description "Preferred name of the class or property"@en ;
         sh:path schema:name ;
         sh:uniqueLang true ;
         sh:message "There can be at most one name per language tag."@en ;
@@ -39,14 +37,19 @@ shape:ClassProperty a sh:NodeShape ;
         sh:message "A class or property can have at most one description per language."@en ;
     ] ;
     sh:property [
-        schema:name "Forbid rdfs:label"@en ;
+        sh:name "Forbid rdfs:label"@en ;
         sh:path rdfs:label ;
         sh:maxCount 0 ;
         sh:message "Any use of rdfs:label is forbidden; the preferred property is schema:name."@en ;
     ] ;
     sh:property [
-        schema:name "Forbid rdfs:comment"@en ;
+        sh:name "Forbid rdfs:comment"@en ;
         sh:path rdfs:comment ;
         sh:maxCount 0 ;
         sh:message "Any use of rdfs:comment is forbidden; the preferred property is schema:description."@en ;
     ] .
+
+shape:EnglishLanguage a sh:NodeShape ;
+    rdfs:label "English language"@en ;
+    rdfs:comment "Language-tagged strings in English."@en ;
+    sh:languageIn ( "en" ) .
