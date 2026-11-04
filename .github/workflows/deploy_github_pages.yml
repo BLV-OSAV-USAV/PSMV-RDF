@@ -22,8 +22,41 @@ permissions:
   actions: read
 
 jobs:
-  deploy:
+  find-docs:
     if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    outputs:
+      run-id: ${{ steps.find.outputs.run_id }}
+    steps:
+      - name: Find run with generated docs
+        id: find
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          EVENT: ${{ github.event_name }}
+          TRIGGER_RUN: ${{ github.event.workflow_run.id }}
+        run: |
+          if [ "$EVENT" = "workflow_run" ]; then
+            n=$(gh api "repos/$REPO/actions/runs/$TRIGGER_RUN/artifacts" \
+                  --jq '[.artifacts[] | select(.name == "shacl-docs" and .expired == false)] | length')
+            if [ "$n" -eq 0 ]; then
+              echo "Docs were not rebuilt in run $TRIGGER_RUN, nothing to deploy"
+              exit 0
+            fi
+            echo "run_id=$TRIGGER_RUN" >> "$GITHUB_OUTPUT"
+          else
+            id=$(gh api "repos/$REPO/actions/artifacts?name=shacl-docs&per_page=100" \
+                  --jq '[.artifacts[] | select(.expired == false and .workflow_run.head_branch == "main")][0].workflow_run.id // empty')
+            if [ -z "$id" ]; then
+              echo "::error::No unexpired shacl-docs artifact on main. Run 'Generate Documentation' manually first."
+              exit 1
+            fi
+            echo "run_id=$id" >> "$GITHUB_OUTPUT"
+          fi
+
+  deploy:
+    needs: find-docs
+    if: needs.find-docs.outputs.run-id != ''
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -34,32 +67,12 @@ jobs:
         with:
           ref: main
 
-      - name: Find docs run
-        id: run
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          if [ "${{ github.event_name }}" = "workflow_run" ]; then
-            echo "id=${{ github.event.workflow_run.id }}" >> "$GITHUB_OUTPUT"
-          else
-            id=$(gh run list \
-              --repo "${{ github.repository }}" \
-              --workflow "Generate Documentation" \
-              --branch main --status success --limit 1 \
-              --json databaseId -q '.[0].databaseId')
-            if [ -z "$id" ]; then
-              echo "::error::No successful 'Generate Documentation' run on main found. Run it manually first."
-              exit 1
-            fi
-            echo "id=$id" >> "$GITHUB_OUTPUT"
-          fi
-
       - name: Download generated docs
         uses: actions/download-artifact@v8
         with:
           name: shacl-docs
           path: docs/
-          run-id: ${{ steps.run.outputs.id }}
+          run-id: ${{ needs.find-docs.outputs.run-id }}
           github-token: ${{ github.token }}
 
       - uses: actions/configure-pages@v6
