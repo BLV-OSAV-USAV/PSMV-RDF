@@ -220,7 +220,7 @@ def format_psm(value) -> str:
     d = to_decimal(value)
     if d == 0:
         return "0"
-    if d > Decimal("0.1"):
+    if abs(d) > Decimal("0.1"):
         q = d.quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
     else:
         q = d.quantize(Decimal(1).scaleb(d.adjusted() - 1), rounding=ROUND_HALF_UP)
