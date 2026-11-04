@@ -1,5 +1,5 @@
 version = 1
-revision = 5
+revision = 3
 requires-python = ">=3.12"
 resolution-markers = [
     "python_full_version >= '3.15' and sys_platform == 'win32'",
@@ -831,7 +831,7 @@ wheels = [
 
 [[package]]
 name = "psmv-rdf"
-version = "0.4.6"
+version = "0.4.7"
 source = { editable = "." }
 dependencies = [
     { name = "duckdb" },
@@ -862,7 +862,7 @@ requires-dist = [
     { name = "pandas", specifier = ">=2.3.3" },
     { name = "pysftp", specifier = ">=0.2.9" },
     { name = "pyshacl", specifier = ">=0.31.0" },
-    { name = "pytest", marker = "extra == 'dev'", specifier = ">=8.0" },
+    { name = "pytest", marker = "extra == 'dev'", specifier = ">=9.2.0" },
     { name = "pytest-cov", marker = "extra == 'dev'" },
     { name = "python-dotenv", specifier = ">=1.2.0" },
     { name = "pyyaml", specifier = ">=6.0.3" },
