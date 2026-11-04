@@ -10,11 +10,18 @@ jobs:
     name: server-health
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: astral-sh/setup-uv@v6
-      - run: uv sync --extra dev
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v7
+        with:
+          python-version: "3.12"
+      - run: uv sync --frozen --extra dev
       - run: uv run pytest -m network -v
         env:
           SFTP_HOST: ${{ secrets.SFTP_HOST }}
-          SFTP_USER: ${{ secrets.SFTP_USER }}
-          SFTP_KEY: ${{ secrets.SFTP_KEY }}
+          SFTP_USERNAME: ${{ secrets.SFTP_USERNAME }}
+          SFTP_PASSWORD: ${{ secrets.SFTP_PASSWORD }}
+          LINDAS_USER: ${{ secrets.LINDAS_USER }}
+          LINDAS_PASSWORD: ${{ secrets.LINDAS_PASSWORD }}
+          LINDAS_PASSWORD_INT: ${{ secrets.LINDAS_PASSWORD_INT }}
+          ENDPOINT: ${{ secrets.ENDPOINT }}
+          ENDPOINT_INT: ${{ secrets.ENDPOINT_INT }}
