@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.4.10](https://github.com/BLV-OSAV-USAV/PSMV-RDF/compare/psmv-rdf-v0.4.9...psmv-rdf-v0.4.10) (2026-11-04)
+
+
+### Bug Fixes
+
+* fix permission ([830c40e](https://github.com/BLV-OSAV-USAV/PSMV-RDF/commit/830c40e0efd91eb24e421758901089416087fa0c))
+* fix permission ([ea33912](https://github.com/BLV-OSAV-USAV/PSMV-RDF/commit/ea33912d859781423cc9ee266ec93c7da4ae7d72))
+* update some dependencies ([991979f](https://github.com/BLV-OSAV-USAV/PSMV-RDF/commit/991979fc4f764a91d82cbc43eb1eb27da81beb0d))
+
 ## [0.4.9](https://github.com/BLV-OSAV-USAV/PSMV-RDF/compare/psmv-rdf-v0.4.8...psmv-rdf-v0.4.9) (2026-11-04)
 
 
