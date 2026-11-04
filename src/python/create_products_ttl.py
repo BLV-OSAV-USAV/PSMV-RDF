@@ -28,6 +28,7 @@ def products_ttl(
     
     # Required for GHS linking
     CODE = namespaces.get("code", Namespace(str(BASE) + "code/"))
+    INGREDIENTADDTEXT = namespaces.get("ingredientaddtext", Namespace(str(BASE) + "ingredientaddtext/"))
 
     # Load all RDF mappings
     # Explicitly specify which namespace each mapping uses
@@ -59,6 +60,7 @@ def products_ttl(
     graph.bind("unit", UNIT)
     graph.bind("country", COUNTRY)
     graph.bind("code", CODE)
+    graph.bind("ingredientaddtext", INGREDIENTADDTEXT)
     graph.bind("rdfs", RDFS)
     graph.bind("xsd", XSD)
     graph.namespace_manager.bind("schema", SCHEMA, override=True, replace=True)
@@ -71,6 +73,11 @@ def products_ttl(
     prod_cat_df = con.execute("SELECT * FROM ProductProductCategory").df()
     ghs_df= con.execute("SELECT * FROM ProductGHS").df()
     prod_formulation = con.execute("SELECT * FROM ProductFormulation").df()
+    ingredient_text_df = con.execute("""
+        SELECT code_id
+        FROM AdditionalTextCode
+        WHERE text_key = 'IngredientAdditionalText'
+    """).df()
 
     con.close()
 
@@ -110,6 +117,11 @@ def products_ttl(
         if pid not in ingredient_dict:
             ingredient_dict[pid] = []
         ingredient_dict[pid].append(row)
+
+    # Pre-process Ingredient additional texts for O(1) lookup
+    ingredient_text_ids = set(
+        ingredient_text_df["code_id"].astype(str).str.strip().str.lower()
+    )
 
     # Pre-process Product Categories for O(1) lookup
     cat_dict = {}
@@ -238,6 +250,11 @@ def products_ttl(
                     graph.add((product_uri, BASE.ingredient, ingredient_node))
                     graph.add((ingredient_node, RDF.type, BASE.Ingredient))
                     graph.add((ingredient_node, BASE.substance, SUBSTANCE[substance_id]))
+
+                    # Link additional text code (e.g. "entspricht 35 % Kupfer")
+                    text_id = str(ing_row.get("nk_additional_text_id")).strip().lower()
+                    if text_id in ingredient_text_ids:
+                        graph.add((ingredient_node, BASE.additionalText, INGREDIENTADDTEXT[text_id]))
 
                     share_columns = {
                         "in_gram_per_litre": "gram_per_litre",

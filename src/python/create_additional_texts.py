@@ -12,8 +12,9 @@ def process_additional_texts_ttl(
     out_path="rdf/data/additional_texts.ttl"
 ):
     """
-    Creates an additional_texts_ttl graph extracting CropAdditionalText and
-    PestAdditionalText entities from the AdditionalTextCode table.
+    Creates an additional_texts_ttl graph extracting CropAdditionalText,
+    PestAdditionalText and IngredientAdditionalText entities from the
+    AdditionalTextCode table.
     """
     # Set namespaces
     namespaces = load_namespaces()
@@ -25,11 +26,13 @@ def process_additional_texts_ttl(
     # Fallback instantiation if they are not explicitly present in namespaces.yaml
     CROPADDTEXT = namespaces.get("cropaddtext", Namespace(str(BASE) + "cropaddtext/"))
     PESTADDTEXT = namespaces.get("pestaddtext", Namespace(str(BASE) + "pestaddtext/"))
+    INGREDIENTADDTEXT = namespaces.get("ingredientaddtext", Namespace(str(BASE) + "ingredientaddtext/"))
 
     # Map text_key to namespace and class
     text_types = {
         "CultureAdditionalText": (CROPADDTEXT, BASE.CropAdditionalText),
         "PestAdditionalText": (PESTADDTEXT, BASE.PestAdditionalText),
+        "IngredientAdditionalText": (INGREDIENTADDTEXT, BASE.IngredientAdditionalText),
     }
 
     # Create empty graph
@@ -39,6 +42,7 @@ def process_additional_texts_ttl(
     graph.bind("", BASE)
     graph.bind("cropaddtext", CROPADDTEXT)
     graph.bind("pestaddtext", PESTADDTEXT)
+    graph.bind("ingredientaddtext", INGREDIENTADDTEXT)
     graph.bind("xsd", XSD)
     graph.namespace_manager.bind("schema", SCHEMA, override=True, replace=True)
 

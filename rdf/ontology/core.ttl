@@ -29,7 +29,7 @@
         "Sara Schärrer",
         "Guy Schnidrig" ;
     dcterms:title "Crop protection product ontology"@en ;
-    owl:versionInfo "3.2.0" .
+    owl:versionInfo "3.3.0" .
 
 # ==============================================================================
 # CORE PHYTOSANITARY CLASSES & PROPERTIES
@@ -860,3 +860,15 @@ schema:legalName rdfs:subPropertyOf schema:name .
         "hat Zusatztext"@de,
         "a un texte complémentaire"@fr,
         "ha un testo supplementare"@it .
+
+:IngredientAdditionalText a owl:Class ;
+    schema:name
+        "Ingredient additional text"@en,
+        "Zusatztext Inhaltsstoff"@de,
+        "Texte complémentaire composant"@fr,
+        "Testo supplementare componente"@it ;
+    schema:description
+        "Qualifies the content of an ingredient in a product, e.g. the corresponding content of copper."@en,
+        "Präzisiert den Gehalt eines Inhaltsstoffs in einem Produkt, z. B. den entsprechenden Gehalt an Kupfer."@de,
+        "Précise la teneur d'un composant dans un produit, p. ex. la teneur correspondante en cuivre."@fr,
+        "Precisa il contenuto di un componente in un prodotto, ad es. il contenuto corrispondente di rame."@it .
