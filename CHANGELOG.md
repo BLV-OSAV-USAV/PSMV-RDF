@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.11](https://github.com/BLV-OSAV-USAV/PSMV-RDF/compare/psmv-rdf-v0.4.10...psmv-rdf-v0.4.11) (2026-11-04)
+
+
+### Bug Fixes
+
+* fix server health ([6dc8c29](https://github.com/BLV-OSAV-USAV/PSMV-RDF/commit/6dc8c2942ea983e6ecad1a76f6394eeea9af23ca))
+* fix server health ([281d48a](https://github.com/BLV-OSAV-USAV/PSMV-RDF/commit/281d48a0271102597c660be16af24f2472c4c5db))
+
 ## [0.4.10](https://github.com/BLV-OSAV-USAV/PSMV-RDF/compare/psmv-rdf-v0.4.9...psmv-rdf-v0.4.10) (2026-11-04)
 
 
