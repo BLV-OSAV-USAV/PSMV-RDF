@@ -5,16 +5,32 @@ def process_additional_text_code():
 
     sql_script = """
     CREATE OR REPLACE TABLE AdditionalTextCode AS
+    WITH latest AS (
+        SELECT
+            LOWER(TRIM(code_id)) AS code_id,
+            text_key,
+            language,
+            NULLIF(TRIM(value), '') AS value
+        FROM Code
+        WHERE text_key IN (
+            'CultureAdditionalText',
+            'PestAdditionalText',
+            'IngredientAdditionalText'
+        )
+        QUALIFY ROW_NUMBER() OVER (
+            PARTITION BY LOWER(TRIM(code_id)), text_key, language
+            ORDER BY version DESC
+        ) = 1
+    )
     SELECT
-        LOWER(TRIM(code_id)) AS code_id,
+        code_id,
         text_key,
         MAX(CASE WHEN language = 'en' THEN value END) AS EN,
         MAX(CASE WHEN language = 'de' THEN value END) AS DE,
         MAX(CASE WHEN language = 'fr' THEN value END) AS FR,
         MAX(CASE WHEN language = 'it' THEN value END) AS IT
-    FROM Code
-    WHERE text_key IN ('CultureAdditionalText', 'PestAdditionalText')
-    GROUP BY LOWER(TRIM(code_id)), text_key;
+    FROM latest
+    GROUP BY code_id, text_key;
     """
 
     con.execute(sql_script)

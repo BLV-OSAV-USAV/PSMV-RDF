@@ -36,7 +36,7 @@ shape: a owl:Ontology ;
     dcterms:creator "Guy Schnidrig, Damian Oswald, Sara Schärrer, Ingrid Nyfeler, Martin Hertach" ;
     dcterms:title "Swiss registry of plant protection products"@en ;
     dcterms:created "2026-02-20"^^xsd:date ;
-    owl:versionInfo "3.2.0" ;
+    owl:versionInfo "3.3.0" ;
     owl:versionIRI <https://agriculture.ld.admin.ch/plant-protection/shape/3.2.0> ;
     dcterms:abstract
 """
@@ -408,6 +408,15 @@ shape:Ingredient a sh:NodeShape ;
             sh:in ( unit:PERCENT unit:GM-PER-L ) ;
             sh:message "The unit of an ingredient share must be either percent or g/L."@en ;
         ] ;
+    ] ;
+    sh:property [
+        sh:order 3 ;
+        sh:name "Additional text"@en, "Zusatztext"@de ;
+        sh:description "Qualifies the ingredient content, e.g. the corresponding copper content. Only present where the registry specifies such a text."@en ;
+        sh:path :additionalText ;
+        sh:class :IngredientAdditionalText ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
     ] .
 
 shape:Indication a sh:NodeShape ;
@@ -639,6 +648,16 @@ shape:PestAdditionalText a sh:NodeShape ;
     sh:closed true ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:targetClass :PestAdditionalText ;
+    sh:property shape:identifier,
+        shape:multiLanguageName .
+
+shape:IngredientAdditionalText a sh:NodeShape ;
+    rdfs:label "Ingredient additional text"@en,
+        "Zusatztext Inhaltsstoff"@de ;
+    rdfs:comment "Qualifies the content of an ingredient within a specific product, for instance stating the corresponding content of the active element, such as copper for copper hydroxide. The text belongs to the product's ingredient and not to the substance itself, as the same substance appears without it in other products."@en ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:targetClass :IngredientAdditionalText ;
     sh:property shape:identifier,
         shape:multiLanguageName .
 

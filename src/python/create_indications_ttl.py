@@ -64,7 +64,9 @@ def indication_ttl(
     ind_clt_frm_df = con.execute("SELECT * FROM IndicationCultureFormCode").df()
     ind_obl_df = con.execute("SELECT * FROM IndicationObligationCode").df()
     ind_pst = con.execute("SELECT * FROM IndicationPestCode").df()
-    valid_text_ids = set(con.execute("SELECT code_id FROM AdditionalTextCode").df()["code_id"])
+    text_ids_df = con.execute("SELECT code_id, text_key FROM AdditionalTextCode").df()
+    crop_text_ids = set(text_ids_df.loc[text_ids_df["text_key"] == "CultureAdditionalText", "code_id"])
+    pest_text_ids = set(text_ids_df.loc[text_ids_df["text_key"] == "PestAdditionalText", "code_id"])
 
     # Load Unit map
     UNIT_MAP = load_unit_map(UNIT)
@@ -129,7 +131,7 @@ def indication_ttl(
     )
     for _, row in crop_text_pairs.iterrows():
         text_id = row["codetable_culture_additional_text"]
-        if text_id not in valid_text_ids:
+        if text_id not in crop_text_ids:
             print(f"Indication {row['indication']}: unknown crop additional text {text_id} -> skipped")
             continue
         ind_uri = ensure_indication(graph, seen_indications, row["indication"], INDICATION, BASE)
@@ -193,7 +195,7 @@ def indication_ttl(
                     raw_text = pest_row.get("additional_text")
                     if pd.notna(raw_text) and str(raw_text).strip():
                         text_id = str(raw_text).strip().lower()
-                        if text_id in valid_text_ids:
+                        if text_id in pest_text_ids:
                             q_uri = URIRef(f"{indication_uri}/pest/{pest_id}/{text_id}")
                             graph.add((indication_uri, BASE.pestWithAdditionalText, q_uri))
                             graph.add((q_uri, RDF.type, BASE.PestWithAdditionalText))

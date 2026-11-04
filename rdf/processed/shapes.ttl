@@ -57,7 +57,7 @@ A comprehensive suite of advanced SPARQL query templates, demonstrating complex 
 """@en ;
     dcterms:title "Swiss registry of plant protection products"@en ;
     owl:versionIRI shape:3.2.0 ;
-    owl:versionInfo "3.2.0" .
+    owl:versionInfo "3.3.0" .
 
 shape:ApplicationArea a sh:NodeShape ;
     rdfs:label "Anwendungsbereich"@de,
@@ -261,7 +261,12 @@ It systematically links a target pest with the applicable cultivation domain and
                         sh:path :sideEffect ] ] [ sh:property [ sh:class :Pest ;
                         sh:minCount 1 ;
                         sh:path :partialEffect ] ] ) ;
-    sh:property [ sh:class :CropWithAdditionalText ;
+    sh:property [ sh:class :Crop ;
+            sh:minCount 1 ;
+            sh:name "Cultivation"@en ;
+            sh:order 3 ;
+            sh:path :crop ],
+        [ sh:class :CropWithAdditionalText ;
             sh:description "A crop together with an additional text that restricts it within this indication, e.g. Gurken [Saatgut]. The crop is also listed under Cultivation."@en ;
             sh:name "Kultur mit Zusatztext"@de,
                 "Cultivation with additional text"@en ;
@@ -336,11 +341,6 @@ It systematically links a target pest with the applicable cultivation domain and
                 "Product"@en ;
             sh:order 2 ;
             sh:path :product ],
-        [ sh:class :Crop ;
-            sh:minCount 1 ;
-            sh:name "Cultivation"@en ;
-            sh:order 3 ;
-            sh:path :crop ],
         shape:identifier ;
     sh:targetClass :Indication .
 
@@ -369,8 +369,26 @@ shape:Ingredient a sh:NodeShape ;
             sh:path :share ;
             sh:property [ sh:in ( unit:PERCENT unit:GM-PER-L ) ;
                     sh:message "The unit of an ingredient share must be either percent or g/L."@en ;
-                    sh:path schema:unitCode ] ] ;
+                    sh:path schema:unitCode ] ],
+        [ sh:class :IngredientAdditionalText ;
+            sh:description "Qualifies the ingredient content, e.g. the corresponding copper content. Only present where the registry specifies such a text."@en ;
+            sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:name "Zusatztext"@de,
+                "Additional text"@en ;
+            sh:order 3 ;
+            sh:path :additionalText ] ;
     sh:targetClass :Ingredient .
+
+shape:IngredientAdditionalText a sh:NodeShape ;
+    rdfs:label "Zusatztext Inhaltsstoff"@de,
+        "Ingredient additional text"@en ;
+    rdfs:comment "Qualifies the content of an ingredient within a specific product, for instance stating the corresponding content of the active element, such as copper for copper hydroxide. The text belongs to the product's ingredient and not to the substance itself, as the same substance appears without it in other products."@en ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property shape:identifier,
+        shape:multiLanguageName ;
+    sh:targetClass :IngredientAdditionalText .
 
 shape:MandatoryLanguages a sh:NodeShape ;
     rdfs:label "Obligatorische Sprachen"@de,
