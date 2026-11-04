@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.7](https://github.com/BLV-OSAV-USAV/PSMV-RDF/compare/psmv-rdf-v0.4.6...psmv-rdf-v0.4.7) (2026-11-04)
+
+
+### Bug Fixes
+
+* **products:** apply PSM register formatting to ingredient shares ([625d1b0](https://github.com/BLV-OSAV-USAV/PSMV-RDF/commit/625d1b0504a9c68895eb7e47123ebd01c609a277))
+* **products:** apply PSM register formatting to ingredient shares ([a05f28c](https://github.com/BLV-OSAV-USAV/PSMV-RDF/commit/a05f28c1d28bd21570fcb6757f1c5b131a4cfcc8))
+
 ## [0.4.6](https://github.com/BLV-OSAV-USAV/PSMV-RDF/compare/psmv-rdf-v0.4.5...psmv-rdf-v0.4.6) (2026-10-30)
 
 
