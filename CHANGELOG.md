@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.12](https://github.com/BLV-OSAV-USAV/PSMV-RDF/compare/psmv-rdf-v0.4.11...psmv-rdf-v0.4.12) (2026-11-04)
+
+
+### Features
+
+* add additional text to ingredient ([2eb0240](https://github.com/BLV-OSAV-USAV/PSMV-RDF/commit/2eb0240c53846f037c5c856b635bcdee3726243d))
+* add additional text to ingredient ([9479265](https://github.com/BLV-OSAV-USAV/PSMV-RDF/commit/94792654d354c90479f274e016b50ef6f11c237f))
+
 ## [0.4.11](https://github.com/BLV-OSAV-USAV/PSMV-RDF/compare/psmv-rdf-v0.4.10...psmv-rdf-v0.4.11) (2026-11-04)
 
 
