@@ -29,7 +29,9 @@
         "Sara Schärrer",
         "Guy Schnidrig" ;
     dcterms:title "Crop protection product ontology"@en ;
-    owl:versionInfo "3.3.0" .
+    dcterms:modified "2026-11-05"^^xsd:date ;
+    owl:versionInfo "3.4.0" ;
+    owl:versionIRI <https://agriculture.ld.admin.ch/plant-protection/3.3.0> .
 
 # ==============================================================================
 # CORE PHYTOSANITARY CLASSES & PROPERTIES
@@ -47,7 +49,7 @@
         "Pest"@en,
         "Schadorganismus"@de,
         "Organisme nuisible"@fr,
-        "Agenti patogeni"@it .
+        "Organismo nocivo"@it .
 
 :ApplicationComment a owl:Class ;
     schema:name
@@ -84,29 +86,6 @@
     rdfs:domain :Indication ;
     rdfs:range :ApplicationArea .
 
-:CropAdditionalText a owl:Class ;
-    schema:name
-        "Crop additional text"@en,
-        "Zusatztext Kultur"@de,
-        "Texte complémentaire culture"@fr,
-        "Testo supplementare coltura"@it ;
-    schema:description
-        "Qualifies a crop within an indication, e.g. seed or herbicide-tolerant varieties."@en,
-        "Präzisiert eine Kultur innerhalb einer Indikation, z. B. Saatgut oder herbizidtolerante Sorten."@de,
-        "Précise une culture dans le cadre d'une indication, p. ex. semences ou variétés tolérantes aux herbicides."@fr,
-        "Precisa una coltura nell'ambito di un'indicazione, ad es. sementi o varietà tolleranti agli erbicidi."@it .
-
-:PestAdditionalText a owl:Class ;
-    schema:name
-        "Pest additional text"@en,
-        "Zusatztext Schadorganismus"@de,
-        "Texte complémentaire organisme nuisible"@fr,
-        "Testo supplementare organismo nocivo"@it ;
-    schema:description
-        "Qualifies a pest within an indication, e.g. a specific pathogen genus."@en,
-        "Präzisiert einen Schadorganismus innerhalb einer Indikation, z. B. eine bestimmte Erregergattung."@de,
-        "Précise un organisme nuisible dans le cadre d'une indication, p. ex. un genre de pathogène spécifique."@fr,
-        "Precisa un organismo nocivo nell'ambito di un'indicazione, ad es. un genere di patogeno specifico."@it .
 
 # ==============================================================================
 # PERMISSION HOLDERS
@@ -274,7 +253,11 @@ schema:PostalAddress a owl:Class ;
     rdfs:range xsd:string .
 
 :ghsLabel a owl:ObjectProperty ;
-    schema:name "has GHS labelling"@en ;
+    schema:name
+        "has GHS labelling"@en,
+        "hat GHS-Kennzeichnung"@de,
+        "a pour étiquetage SGH"@fr,
+        "ha come etichettatura GHS"@it ;
     rdfs:domain :Product ;
     rdfs:range :GHSLabelElement .
 
@@ -300,7 +283,7 @@ schema:PostalAddress a owl:Class ;
         "Il numero federale di autorizzazione identifica in modo univoco un'autorizzazione di prodotto. È costituito da un numero W nel caso delle autorizzazioni federali (ad es. W-18) oppure da un numero di importazione parallela che include l'iniziale del Paese d'origine nel codice (ad es. I-2789 per un'importazione parallela dall'Italia). I numeri con un suffisso dopo un trattino (ad es. W-18-1, W-18-2) identificano prodotti equivalenti detenuti da soggetti giuridici diversi, mentre i numeri senza suffisso (ad es. W-18) identificano l'autorizzazione originaria."@it ;
     rdfs:subPropertyOf schema:identifier ;
     rdfs:domain :Product ;
-    rdfs:range xsd:NCName .
+    rdfs:range xsd:string .
 
 :referenceProduct a owl:ObjectProperty ;
     schema:name
@@ -322,7 +305,7 @@ schema:PostalAddress a owl:Class ;
         "Numero di autorizzazione estero"@it ;
     rdfs:subPropertyOf schema:identifier ;
     rdfs:domain :ParallelImport ;
-    rdfs:range xsd:NCName .
+    rdfs:range xsd:string .
 
 :packageInsertNumber a owl:DatatypeProperty ;
     schema:name
@@ -399,7 +382,11 @@ schema:PostalAddress a owl:Class ;
         ] .
 
 :hasPlantProtectionStatement a owl:ObjectProperty ;
-    schema:name "has plant protection statement"@en ;
+    schema:name
+        "has plant protection statement"@en,
+        "hat Pflanzenschutz-Hinweis"@de,
+        "a pour phrase phytosanitaire"@fr,
+        "ha come frase fitosanitaria"@it ;
     rdfs:domain :Product ;
     rdfs:range :PlantProtectionStatement .
 
@@ -438,7 +425,7 @@ schema:PostalAddress a owl:Class ;
         "zugelassen gegen Schadorganismus"@de,
         "autorisé contre un organisme nuisible"@fr,
         "autorizzato contro un organismo nocivo"@it ;
-    rdfs:domain :Indication ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( :Indication :PestWithAdditionalText ) ] ;
     rdfs:range :Pest .
 
 :fullEffect a owl:ObjectProperty ;
@@ -471,14 +458,14 @@ schema:PostalAddress a owl:Class ;
     rdfs:domain :Indication ;
     rdfs:range :Pest .
 
-:cultivation a owl:ObjectProperty ;
+:crop a owl:ObjectProperty ;
     schema:name
         "allowed on crop"@en,
         "zugelassen für Kultur"@de,
         "autorisé pour la culture"@fr,
         "autorizzato per la coltura"@it ;
-    rdfs:domain :Indication ;
-    rdfs:range :Cultivation .
+    rdfs:domain [ a owl:Class ; owl:unionOf ( :Indication :CropWithAdditionalText ) ] ;
+    rdfs:range :Crop .
 
 :obligation a owl:ObjectProperty ;
     schema:name
@@ -523,10 +510,10 @@ schema:PostalAddress a owl:Class ;
         "a pour délai d'attente"@fr,
         "ha come periodo di attesa"@it ;
     schema:description
-        "The required time interval after a treatment during which the same product should not be applied again to the same crop."@en,
-        "Der erforderliche Zeitraum nach einer Behandlung, während dessen dasselbe Produkt nicht erneut auf derselben Kultur angewendet werden darf."@de,
-        "Délai requis après un traitement pendant lequel le même produit ne doit pas être appliqué à nouveau sur la même culture."@fr,
-        "Intervallo di tempo richiesto dopo un trattamento durante il quale lo stesso prodotto non deve essere applicato nuovamente sulla stessa coltura."@it ;
+        "The minimum time between the last application of the product and the harvest of the treated crop."@en,
+        "Die Mindestzeit zwischen der letzten Anwendung des Produkts und der Ernte der behandelten Kultur."@de,
+        "Le délai minimal entre la dernière application du produit et la récolte de la culture traitée."@fr,
+        "Il tempo minimo tra l'ultima applicazione del prodotto e il raccolto della coltura trattata."@it ;
     rdfs:domain :Indication ;
     rdfs:range schema:QuantitativeValue .
 
@@ -541,17 +528,17 @@ schema:PostalAddress a owl:Class ;
         "Composant"@fr,
         "Componente"@it ;
     schema:description
-        "A composition entry linking a product to a substance with a specified concentration."@en,
-        "Ein Zusammensetzungseintrag, der ein Produkt mit einem Stoff und einer angegebenen Konzentration verknüpft."@de,
-        "Une entrée de composition reliant un produit à une substance avec une concentration spécifiée."@fr,
-        "Una voce di composizione che collega un prodotto a una sostanza con una concentrazione specificata."@it ;
+        "A composition entry linking a product to a substance and, where specified, its share in the formulation."@en,
+        "Ein Zusammensetzungseintrag, der ein Produkt mit einem Stoff und, sofern angegeben, dessen Anteil an der Formulierung verknüpft."@de,
+        "Une entrée de composition reliant un produit à une substance et, le cas échéant, à sa part dans la formulation."@fr,
+        "Una voce di composizione che collega un prodotto a una sostanza e, se indicata, alla sua quota nella formulazione."@it ;
     rdfs:subClassOf [
         a owl:Restriction ;
         owl:onProperty :substance ;
         owl:someValuesFrom :Substance
     ], [
         a owl:Restriction ;
-        owl:onProperty :concentration ;
+        owl:onProperty :share ;
         owl:allValuesFrom schema:QuantitativeValue
     ] .
 
@@ -604,16 +591,16 @@ schema:PostalAddress a owl:Class ;
     rdfs:domain :Ingredient ;
     rdfs:range :Substance .
 
-:concentration a owl:ObjectProperty ;
+:share a owl:ObjectProperty ;
     schema:name
-        "has concentration"@en,
-        "hat Konzentration"@de,
-        "a pour concentration"@fr,
-        "ha come concentrazione"@it ;
+        "has share"@en,
+        "hat Anteil"@de,
+        "a pour part"@fr,
+        "ha come quota"@it ;
     rdfs:domain :Ingredient ;
     rdfs:range schema:QuantitativeValue .
 
-:hasIngredient a owl:ObjectProperty ;
+:ingredient a owl:ObjectProperty ;
     schema:name
         "has ingredient"@en,
         "hat Bestandteil"@de,
@@ -651,12 +638,16 @@ schema:QuantitativeValue a owl:Class ;
         owl:allValuesFrom xsd:decimal
     ], [
         a owl:Restriction ;
-        owl:onProperty qudt:unit ;
+        owl:onProperty schema:unitCode ;
         owl:allValuesFrom qudt:Unit
     ], [
         a owl:Restriction ;
-        owl:onProperty schema:name ;
+        owl:onProperty schema:unitText ;
         owl:allValuesFrom xsd:string
+    ], [
+        a owl:Restriction ;
+        owl:onProperty schema:name ;
+        owl:allValuesFrom rdf:langString
     ] .
 
 # ==============================================================================
@@ -665,7 +656,14 @@ schema:QuantitativeValue a owl:Class ;
 
 schema:legalName rdfs:subPropertyOf schema:name .
 
-:productType rdfs:subPropertyOf rdf:type .
+:productType a owl:ObjectProperty ;
+    schema:name "has product type"@en, "hat Produkttyp"@de, "a pour type de produit"@fr, "ha come tipo di prodotto"@it ;
+    schema:description "The product type of the product. Each value is also asserted as rdf:type of the product."@en ;
+    rdfs:domain :Product .
+
+:chebi a owl:ObjectProperty ;
+    schema:name "ChEBI entry"@en, "ChEBI-Eintrag"@de, "entrée ChEBI"@fr, "voce ChEBI"@it ;
+    rdfs:domain :Substance .
 
 # ==============================================================================
 # GHS CLASSIFICATION
