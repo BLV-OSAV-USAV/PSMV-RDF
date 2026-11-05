@@ -69,7 +69,7 @@ More example queries, including aggregations and queries combining several parts
     owl:versionIRI shape:3.4.0 ;
     owl:versionInfo "3.4.0" ;
     adms:versionNotes "Version 3.4.0: Updated additional texts for pests and crops. Latest published version: https://blv-osav-usav.github.io/PSMV-RDF/shacl-documentation.html"@en ;
-    dcat:distribution [ dcterms:format "text/turtle" ;
+    dcat:distribution [ dcterms:format <https://www.iana.org/assignments/media-types/text/turtle> ;
             dcat:downloadURL <https://raw.githubusercontent.com/BLV-OSAV-USAV/PSMV-RDF/main/rdf/shapes/data_shape.ttl> ] .
 
 shape:ApplicationArea a sh:NodeShape ;

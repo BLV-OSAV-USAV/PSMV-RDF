@@ -46,7 +46,7 @@ shape: a owl:Ontology ;
     doap:repository <https://github.com/BLV-OSAV-USAV/PSMV-RDF> ;
     dcat:distribution [
         dcat:downloadURL <https://raw.githubusercontent.com/BLV-OSAV-USAV/PSMV-RDF/main/rdf/shapes/data_shape.ttl> ;
-        dcterms:format "text/turtle"
+        dcterms:format <https://www.iana.org/assignments/media-types/text/turtle>
     ] ;
     dcterms:abstract
 """
