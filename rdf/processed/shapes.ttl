@@ -1,6 +1,9 @@
 @prefix : <https://agriculture.ld.admin.ch/plant-protection/> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
 @prefix country: <https://ld.admin.ch/country/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix product: <https://agriculture.ld.admin.ch/plant-protection/product/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -19,45 +22,55 @@ It is supposed to help the reader understand the data.
 The actual data is available on [the linked data service LINDAS](https://lindas.admin.ch/).
 """@en ;
     dcterms:created "2026-02-20"^^xsd:date ;
-    dcterms:creator "Guy Schnidrig, Damian Oswald, Sara Schärrer, Ingrid Nyfeler, Martin Hertach" ;
+    dcterms:creator "Damian Oswald",
+        "Guy Schnidrig",
+        "Ingrid Nyfeler",
+        "Martin Hertach",
+        "Sara Schärrer" ;
     dcterms:description """
 **NOTE:** This is filler text. Proper introduction needs to be written, still.
 
-The data model in this document describes the data of the Swiss registry of plant protection products (SRPPP), encoded via the Shapes Constraint Language (SHACL).
+The data model in this document describes the data of the Swiss registry of plant protection products, encoded via the Shapes Constraint Language (SHACL).
 
 Fundamentally, the data model describes plant protection products and their attributes.
 
-All data described in this SHACL data model in is hosted on LINDAS (Linked Data Service), the semantic web infrastructure of the Swiss federal government.
-The complete, dynamically updated dataset resides at <https://lindas.admin.ch/>.
-To interact with this knowledge graph, practitioners must employ the [SPARQL Protocol and RDF Query Language](https://www.w3.org/TR/sparql11-overview/).
-Querying the LINDAS endpoint allows users to execute highly specific, multi-dimensional graph traversals. 
+All data described by this SHACL data model is hosted on LINDAS (Linked Data Service), the linked data platform of the Swiss federal administration.
+The complete dataset is updated regularly and available at <https://lindas.admin.ch/>.
+The data can be queried with [SPARQL](https://www.w3.org/TR/sparql11-overview/), the standard query language for RDF.
+This allows precise queries across products, indications, crops, pests and substances.
 
-An introductory query is provided below to demonstrate the fundamental semantic extraction of arbitrary triples:
+The example query below lists ten parallel imports from Germany, with their names and federal admission numbers:
 
 ``` rq
 PREFIX : <https://agriculture.ld.admin.ch/plant-protection/>
 PREFIX country: <https://ld.admin.ch/country/>
 PREFIX schema: <http://schema.org/>
 
-SELECT *
+SELECT ?product ?name ?admissionNumber
 FROM <https://lindas.admin.ch/fsvo/plant-protection-products>
 WHERE {
   ?product a :ParallelImport ;
     schema:name ?name ;
     schema:countryOfOrigin country:DEU ;
-    :federalAdmissionNumber ?wNumber .
+    :federalAdmissionNumber ?admissionNumber .
 }
 LIMIT 10
 ```
 
-To run this query, you may visit the [LINDAS SPARQL GUI](https://s.zazuko.com/23Aw5hp).
+You can run this query in the [LINDAS SPARQL editor](https://lindas.admin.ch/sparql/#) by copying it into the query field.
 
-However, to fully leverage the analytical capabilities of this schema, users are directed to the centralized query repository.
-A comprehensive suite of advanced SPARQL query templates, demonstrating complex relational extraction and data aggregation, is maintained within the project's source control at [https://github.com/BLV-OSAV-USAV/PSMV-RDF/tree/main/src/sparql/examples](https://github.com/BLV-OSAV-USAV/PSMV-RDF/tree/main/src/sparql/examples).
+More example queries, including aggregations and queries combining several parts of the data model, are available in the [query guide](https://blv-osav-usav.github.io/PSMV-RDF/query-guide.html).
 """@en ;
+    dcterms:modified "2026-11-05"^^xsd:date ;
+    dcterms:publisher <https://www.blv.admin.ch> ;
     dcterms:title "Swiss registry of plant protection products"@en ;
-    owl:versionIRI shape:3.2.0 ;
-    owl:versionInfo "3.3.0" .
+    doap:repository <https://github.com/BLV-OSAV-USAV/PSMV-RDF> ;
+    owl:priorVersion shape:3.3.0 ;
+    owl:versionIRI shape:3.4.0 ;
+    owl:versionInfo "3.4.0" ;
+    adms:versionNotes "Version 3.4.0: Updated additional texts for pests and crops. Latest published version: https://blv-osav-usav.github.io/PSMV-RDF/shacl-documentation.html"@en ;
+    dcat:distribution [ dcterms:format "text/turtle" ;
+            dcat:downloadURL <https://raw.githubusercontent.com/BLV-OSAV-USAV/PSMV-RDF/main/rdf/shapes/data_shape.ttl> ] .
 
 shape:ApplicationArea a sh:NodeShape ;
     rdfs:label "Anwendungsbereich"@de,
@@ -170,7 +183,7 @@ shape:CropWithAdditionalText a sh:NodeShape ;
 shape:DeprecatedProduct a sh:NodeShape ;
     rdfs:label "Nicht mehr zugelassenes Produkt"@de,
         "Deprecated product"@en ;
-    rdfs:comment "Placeholder referenced by sale permissions and parallel imports whose reference product is no longer authorised and therefore no longer part of the dataset. Exactly one such node exists."@en ;
+    rdfs:comment "Placeholder referenced by sale permissions and parallel imports whose reference product is no longer authorised and therefore no longer part of the dataset."@en ;
     sh:closed true ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:in ( product:deprecated ) ;
@@ -189,15 +202,22 @@ shape:FormulationType a sh:NodeShape ;
     rdfs:label "Formulierungsart"@de,
         "Formulation type"@en ;
     rdfs:comment "Encodes the physical form in which a plant protection product is supplied, such as an emulsifiable concentrate or water dispersible granules."@en ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
     sh:nodeKind sh:IRI ;
     sh:order 15 ;
     sh:property [ sh:datatype xsd:string ;
             sh:description "The CropLife formulation code, e.g. 'EC' or 'WG'."@en ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
-            sh:name "Identifier"@en ;
+            sh:name "Formulierungscode"@de,
+                "Identifier"@en ;
             sh:order 1 ;
             sh:path schema:identifier ],
+        [ sh:message "Formulation code does not follow the CropLife two-letter format (e.g. 'EC'). Possibly a typo in the source."@en ;
+            sh:path schema:identifier ;
+            sh:pattern "^[A-Z]{2}$" ;
+            sh:severity sh:Warning ],
         shape:multiLanguageName ;
     sh:targetClass :FormulationType .
 
@@ -261,7 +281,21 @@ It systematically links a target pest with the applicable cultivation domain and
                         sh:path :sideEffect ] ] [ sh:property [ sh:class :Pest ;
                         sh:minCount 1 ;
                         sh:path :partialEffect ] ] ) ;
-    sh:property [ sh:class :Crop ;
+    sh:property [ sh:class :ApplicationArea ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "Application Area"@en ;
+            sh:order 1 ;
+            sh:path :applicationArea ],
+        [ sh:class :Product ;
+            sh:description "Produkt, auf welches sich diese Indikation bezieht."@de,
+                "Product to which this indication applies."@en ;
+            sh:minCount 1 ;
+            sh:name "Produkt"@de,
+                "Product"@en ;
+            sh:order 2 ;
+            sh:path :product ],
+        [ sh:class :Crop ;
             sh:minCount 1 ;
             sh:name "Cultivation"@en ;
             sh:order 3 ;
@@ -327,20 +361,6 @@ It systematically links a target pest with the applicable cultivation domain and
                 "Waiting Period"@en ;
             sh:order 9 ;
             sh:path :waitingPeriod ],
-        [ sh:class :ApplicationArea ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "Application Area"@en ;
-            sh:order 1 ;
-            sh:path :applicationArea ],
-        [ sh:class :Product ;
-            sh:description "Produkt, auf welches sich diese Indikation bezieht."@de,
-                "Product to which this indication applies."@en ;
-            sh:minCount 1 ;
-            sh:name "Produkt"@de,
-                "Product"@en ;
-            sh:order 2 ;
-            sh:path :product ],
         shape:identifier ;
     sh:targetClass :Indication .
 
@@ -579,7 +599,7 @@ shape:PostalAddress a sh:NodeShape ;
             sh:nodeKind sh:IRI ;
             sh:order 5 ;
             sh:path schema:addressCountry ;
-            sh:pattern "^https://ld\\.admin\\.ch/country/[A-Z0-9]{3}$" ] ;
+            sh:pattern "^https://ld\\.admin\\.ch/country/[A-Z]{3}$" ] ;
     sh:targetClass schema:PostalAddress .
 
 shape:PrecautionaryStatement a sh:NodeShape ;
@@ -598,7 +618,7 @@ shape:Product a sh:NodeShape ;
     rdfs:label "Zugelassenes Produkt"@de,
         "Approved product"@en ;
     rdfs:comment "A plant protection product authorised in Switzerland and listed in the plant protection product directory <https://psm.admin.ch/>. Comprises regular products, sale permissions and parallel imports, including products in a sell-out or use-up period after withdrawal of the authorisation. Reference products that are no longer listed are modelled as deprecated products."@en ;
-    skos:example product:01967F79-C3AA-4417-BBEB-89B678003DD8 ;
+    skos:example product:W-7010 ;
     sh:nodeKind sh:IRI ;
     sh:order 1 ;
     sh:pattern "^https://agriculture\\.ld\\.admin\\.ch/plant-protection/product/.+$" ;
@@ -614,7 +634,7 @@ shape:Product a sh:NodeShape ;
             sh:order 1 ;
             sh:path schema:name ],
         [ sh:datatype xsd:date ;
-            sh:description "The date by which the product must no longer be used, typically after the product registration has been revoked."@en ;
+            sh:description "The date after which the product may no longer be used, typically after the product registration has been revoked."@en ;
             sh:maxCount 1 ;
             sh:name "Exhaustion deadline"@en ;
             sh:order 4 ;
@@ -622,7 +642,7 @@ shape:Product a sh:NodeShape ;
         [ sh:datatype xsd:date ;
             sh:description "The date by which the product can no longer be sold, typically after the product registration has been revoked"@en ;
             sh:maxCount 1 ;
-            sh:name "Soldout deadline"@en ;
+            sh:name "Sold-out deadline"@en ;
             sh:order 5 ;
             sh:path :soldOutDeadline ],
         [ sh:class :Ingredient ;
@@ -630,14 +650,15 @@ shape:Product a sh:NodeShape ;
             sh:order 6 ;
             sh:path :ingredient ],
         [ sh:class schema:Organization ;
-            sh:description "The legal entity authorized to place the product on the market [...]."@en ;
+            sh:description "The company that holds the Swiss authorisation for the product and is responsible for placing it on the market."@en ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:name "Permission holder"@en ;
             sh:order 7 ;
             sh:path :permissionHolder ],
         [ sh:description "The Globally Harmonized System of Classification and Labelling of Chemicals (GHS) hazard and precautionary statements."@en ;
-            sh:name "GHS code"@en ;
+            sh:name "GHS-Kennzeichnung"@de,
+                "GHS labelling"@en ;
             sh:node shape:GHSLabelElement ;
             sh:order 8 ;
             sh:path :ghsLabel ],
@@ -655,11 +676,16 @@ shape:Product a sh:NodeShape ;
             sh:order 10 ;
             sh:path :formulation ],
         [ sh:class :Indication ;
-            sh:description "The indications in which this product may be used. Inverse of the product link on the indication, materialised during the merge."@en ;
+            sh:description "The indications for which this product is authorised. Inverse of the product link on the indication"@en ;
             sh:name "Indikation"@de,
                 "Indication"@en ;
             sh:order 11 ;
-            sh:path :indication ] ;
+            sh:path :indication ],
+        [ sh:class :PlantProtectionStatement ;
+            sh:name "Pflanzenschutz-Hinweis"@de,
+                "Plant protection statement"@en ;
+            sh:order 12 ;
+            sh:path :hasPlantProtectionStatement ] ;
     sh:targetClass :Product .
 
 shape:QuantitativeValue a sh:NodeShape ;
@@ -829,4 +855,6 @@ shape:referenceProductId a sh:PropertyShape ;
     sh:order 5 ;
     sh:path :referenceProductId ;
     sh:pattern "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$" .
+
+<https://www.blv.admin.ch> rdfs:label "Federal Food Safety and Veterinary Office (FSVO)"@en .
 
