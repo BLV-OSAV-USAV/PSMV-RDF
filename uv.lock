@@ -837,7 +837,7 @@ wheels = [
 
 [[package]]
 name = "psmv-rdf"
-version = "0.4.12"
+version = "0.4.13"
 source = { editable = "." }
 dependencies = [
     { name = "duckdb" },
