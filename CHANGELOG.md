@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.13](https://github.com/BLV-OSAV-USAV/PSMV-RDF/compare/psmv-rdf-v0.4.12...psmv-rdf-v0.4.13) (2026-11-05)
+
+
+### Bug Fixes
+
+* update shacl and ontology ([920cc21](https://github.com/BLV-OSAV-USAV/PSMV-RDF/commit/920cc2160422bdbd483152a47663fc2320cc2d55))
+* update shacl and ontology ([a3324ce](https://github.com/BLV-OSAV-USAV/PSMV-RDF/commit/a3324cea0d2ff042e3832f0238bc61e5e6cf3de1))
+
 ## [0.4.12](https://github.com/BLV-OSAV-USAV/PSMV-RDF/compare/psmv-rdf-v0.4.11...psmv-rdf-v0.4.12) (2026-11-04)
 
 
