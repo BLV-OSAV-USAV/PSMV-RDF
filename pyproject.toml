@@ -51,5 +51,6 @@ testpaths = ["tests"]
 pythonpath = ["."]
 markers = [
     "network: needs external servers (SFTP, LINDAS); excluded by default",
+    "graph: needs the generated rdf/processed/graph.ttl; skipped if missing",
 ]
 addopts = "-m 'not network'"

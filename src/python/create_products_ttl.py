@@ -71,12 +71,22 @@ def products_ttl(
     pro_org_link_df = con.execute("SELECT * FROM ProductOrganisation").df()
     ingredient_df = con.execute("SELECT * FROM ProductIngredient").df()
     prod_cat_df = con.execute("SELECT * FROM ProductProductCategory").df()
-    ghs_df= con.execute("SELECT * FROM ProductGHS").df()
     prod_formulation = con.execute("SELECT * FROM ProductFormulation").df()
     ingredient_text_df = con.execute("""
         SELECT code_id
         FROM AdditionalTextCode
         WHERE text_key = 'IngredientAdditionalText'
+    """).df()
+    ghs_df = con.execute("""
+        SELECT g.product_ref_or_id, g.code_id, c.text_key, c.code_value
+        FROM ProductGHS g
+        LEFT JOIN (
+            SELECT LOWER(TRIM(code_id)) AS code_id,
+                MAX(text_key)   AS text_key,
+                MAX(code_value) AS code_value
+            FROM Code
+            GROUP BY 1
+        ) c ON LOWER(TRIM(g.code_id)) = c.code_id
     """).df()
 
     con.close()
@@ -89,6 +99,18 @@ def products_ttl(
         if pid not in ghs_dict:
             ghs_dict[pid] = set()
         ghs_dict[pid].add(cid)
+    
+    # Parallel imports inherit only SP sentences (CodeS with an SP code: SP, SPe, SPo, SPr).
+    # CodeS also holds uncoded/KP sentences (e.g. "Darf nicht in die Hände von Kindern gelangen"),
+    # which the PSM directory does not show for PIs (checked against I-4822).
+    is_sp = (
+        (ghs_df["text_key"] == "CodeS")
+        & ghs_df["code_value"].fillna("").str.strip().str.upper().str.startswith("SP")
+    )
+    pi_inheritable_ghs = set(
+    ghs_df.loc[is_sp, "code_id"]   
+    .astype(str).str.strip().str.lower()
+    )
 
     # Pre-process Formulation mappings for O(1) lookup
     formulation_dict = {}
@@ -155,6 +177,7 @@ def products_ttl(
             graph.add((product_uri, SCHEMA.name, Literal(str(row.get("schema:name")).strip())))
 
             raw_type = row.get("rdf:type")
+            is_parallel_import = raw_type == "PARALLEL_IMPORT"
             
             # Case 1: Regular Product
             if raw_type == "REGULAR":
@@ -242,6 +265,10 @@ def products_ttl(
             # Add ingredients as nested Blank Nodes
             if product_ref_id_str in ingredient_dict:
                 for ing_row in ingredient_dict[product_ref_id_str]:
+                    # Parallel imports do not expose co-formulants of the reference product
+                    if is_parallel_import and pd.isna(ing_row.get("active_substance_id")):
+                        continue
+
                     substance_id = str(ing_row.get("nk_codetable_substance_id")).strip().lower()
                     if substance_id == "nan" or not substance_id:
                         continue
@@ -275,7 +302,11 @@ def products_ttl(
             # Add GHS connections
             if product_ref_id_str in ghs_dict:
                 for code_id in ghs_dict[product_ref_id_str]:
+                    # Parallel imports keep only SP sentences from the reference product
+                    if is_parallel_import and code_id not in pi_inheritable_ghs:
+                        continue
                     graph.add((product_uri, BASE.ghsLabel, CODE[code_id]))
+
 
             # Add formulation code
             if product_ref_id_str in formulation_dict:

@@ -30,8 +30,8 @@
         "Guy Schnidrig" ;
     dcterms:title "Crop protection product ontology"@en ;
     dcterms:modified "2026-11-05"^^xsd:date ;
-    owl:versionInfo "3.4.0" ;
-    owl:versionIRI <https://agriculture.ld.admin.ch/plant-protection/3.3.0> .
+    owl:versionInfo "3.4.1" ;
+    owl:versionIRI <https://agriculture.ld.admin.ch/plant-protection/3.4.1> .
 
 # ==============================================================================
 # CORE PHYTOSANITARY CLASSES & PROPERTIES
@@ -212,10 +212,10 @@ schema:PostalAddress a owl:Class ;
         "Importation parallèle"@fr,
         "Importazione parallela"@it ;
     schema:description
-        "Products with a foreign marketing authorization holder for which an equivalent regular product (in terms of chemical composition and formulation) exists. This product is referred to as the reference product. All information in the plant protection product directory for parallel imports, except for the product name, authorization numbers, and authorization holder, is taken from the reference product. The same applications apply to parallel imports as to the reference product."@en,
-        "Produkte mit einer ausländischen Zulassungsinhaberin oder einem ausländischen Zulassungsinhaber, für die ein äquivalentes reguläres Produkt (hinsichtlich chemischer Zusammensetzung und Formulierung) existiert. Dieses Produkt wird als Referenzprodukt bezeichnet. Alle Angaben im Pflanzenschutzmittelverzeichnis für Parallelimporte – mit Ausnahme von Produktname, Zulassungsnummern und Zulassungsinhaber – werden vom Referenzprodukt übernommen. Für Parallelimporte gelten dieselben Anwendungen wie für das Referenzprodukt."@de,
-        "Produits dont le titulaire de l'autorisation de mise sur le marché est établi à l'étranger et pour lesquels il existe un produit ordinaire équivalent (du point de vue de la composition chimique et de la formulation). Ce produit est appelé produit de référence. Toutes les informations figurant dans le répertoire des produits phytosanitaires pour les importations parallèles, à l'exception du nom du produit, des numéros d'autorisation et du titulaire de l'autorisation, sont reprises du produit de référence. Les mêmes utilisations s'appliquent aux importations parallèles qu'au produit de référence."@fr,
-        "Prodotti con un titolare dell'autorizzazione all'immissione in commercio all'estero per i quali esiste un prodotto ordinario equivalente (in termini di composizione chimica e formulazione). Tale prodotto è definito prodotto di riferimento. Tutte le informazioni contenute nell'elenco dei prodotti fitosanitari per le importazioni parallele, ad eccezione del nome del prodotto, dei numeri di autorizzazione e del titolare dell'autorizzazione, sono riprese dal prodotto di riferimento. Alle importazioni parallele si applicano gli stessi impieghi del prodotto di riferimento."@it .
+        "Products with a foreign marketing authorization holder for which an equivalent regular product (in terms of chemical composition and formulation) exists. This product is referred to as the reference product. Apart from the product name, authorization numbers and authorization holder, the information in the plant protection product directory for parallel imports is taken from the reference product, with two exceptions: co-formulants to be declared and GHS hazard labelling (signal word, hazard pictograms, hazard statements) are not taken over, as the classification and labelling of the foreign original label applies, and of the plant protection statements only the SP sentences are taken over. The same applications apply to parallel imports as to the reference product."@en,
+        "Produkte mit einer ausländischen Zulassungsinhaberin oder einem ausländischen Zulassungsinhaber, für die ein äquivalentes reguläres Produkt (hinsichtlich chemischer Zusammensetzung und Formulierung) existiert. Dieses Produkt wird als Referenzprodukt bezeichnet. Mit Ausnahme von Produktname, Zulassungsnummern und Zulassungsinhaber werden die Angaben im Pflanzenschutzmittelverzeichnis für Parallelimporte vom Referenzprodukt übernommen. Nicht übernommen werden die zu deklarierenden Beistoffe sowie die GHS-Gefahrenkennzeichnung (Signalwort, Gefahrensymbole, Gefahrenbezeichnungen), da die Einstufung und Kennzeichnung der ausländischen Originaletikette gilt. Von den Pflanzenschutzmittel-Sätzen werden nur die SP-Sätze übernommen. Für Parallelimporte gelten dieselben Anwendungen wie für das Referenzprodukt."@de,
+        "Produits dont le titulaire de l'autorisation de mise sur le marché est établi à l'étranger et pour lesquels il existe un produit ordinaire équivalent (du point de vue de la composition chimique et de la formulation). Ce produit est appelé produit de référence. À l'exception du nom du produit, des numéros d'autorisation et du titulaire de l'autorisation, les informations figurant dans le répertoire des produits phytosanitaires pour les importations parallèles sont reprises du produit de référence. Les coformulants à déclarer et l'étiquetage de danger SGH (mention d'avertissement, pictogrammes de danger, mentions de danger) ne sont pas repris, car la classification et l'étiquetage de l'étiquette originale étrangère s'appliquent. Parmi les phrases pour produits phytosanitaires, seules les phrases SP sont reprises. Les mêmes utilisations s'appliquent aux importations parallèles qu'au produit de référence."@fr,
+        "Prodotti con un titolare dell'autorizzazione all'immissione in commercio all'estero per i quali esiste un prodotto ordinario equivalente (in termini di composizione chimica e formulazione). Tale prodotto è definito prodotto di riferimento. Ad eccezione del nome del prodotto, dei numeri di autorizzazione e del titolare dell'autorizzazione, le informazioni contenute nell'elenco dei prodotti fitosanitari per le importazioni parallele sono riprese dal prodotto di riferimento. I coformulanti da dichiarare e l'etichettatura di pericolo GHS (avvertenza, pittogrammi di pericolo, indicazioni di pericolo) non vengono ripresi, poiché si applicano la classificazione e l'etichettatura dell'etichetta originale estera. Delle frasi per prodotti fitosanitari vengono riprese solo le frasi SP. Alle importazioni parallele si applicano gli stessi impieghi del prodotto di riferimento."@it .
 
 # Logical statement: All subclasses based on permissions are disjoint from each other
 [] a owl:AllDisjointClasses ;
@@ -259,7 +259,10 @@ schema:PostalAddress a owl:Class ;
         "a pour étiquetage SGH"@fr,
         "ha come etichettatura GHS"@it ;
     rdfs:domain :Product ;
-    rdfs:range :GHSLabelElement .
+    rdfs:range [
+        a owl:Class ;
+        owl:unionOf ( :GHSLabelElement :PlantProtectionStatement )
+    ] .
 
 :indication a owl:ObjectProperty ;
     schema:name
@@ -381,14 +384,7 @@ schema:PostalAddress a owl:Class ;
             owl:allValuesFrom xsd:string
         ] .
 
-:hasPlantProtectionStatement a owl:ObjectProperty ;
-    schema:name
-        "has plant protection statement"@en,
-        "hat Pflanzenschutz-Hinweis"@de,
-        "a pour phrase phytosanitaire"@fr,
-        "ha come frase fitosanitaria"@it ;
-    rdfs:domain :Product ;
-    rdfs:range :PlantProtectionStatement .
+
 
 # ==============================================================================
 # INDICATION CLASS DEFINITION AND PROPERTIES
