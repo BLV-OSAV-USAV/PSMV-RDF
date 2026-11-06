@@ -65,10 +65,10 @@ More example queries, including aggregations and queries combining several parts
     dcterms:publisher <https://www.blv.admin.ch> ;
     dcterms:title "Swiss registry of plant protection products"@en ;
     doap:repository <https://github.com/BLV-OSAV-USAV/PSMV-RDF> ;
-    owl:priorVersion shape:3.3.0 ;
-    owl:versionIRI shape:3.4.0 ;
-    owl:versionInfo "3.4.0" ;
-    adms:versionNotes "Version 3.4.0: Updated additional texts for pests and crops. Latest published version: https://blv-osav-usav.github.io/PSMV-RDF/shacl-documentation.html"@en ;
+    owl:priorVersion shape:3.4.0 ;
+    owl:versionIRI shape:3.4.1 ;
+    owl:versionInfo "3.4.1" ;
+    adms:versionNotes "Version 3.4.1: Updated additional texts for pests and crops. Latest published version: https://blv-osav-usav.github.io/PSMV-RDF/shacl-documentation.html"@en ;
     dcat:distribution [ dcterms:format <https://www.iana.org/assignments/media-types/text/turtle> ;
             dcat:downloadURL <https://raw.githubusercontent.com/BLV-OSAV-USAV/PSMV-RDF/main/rdf/shapes/data_shape.ttl> ] .
 
@@ -493,6 +493,25 @@ shape:ParallelImport a sh:NodeShape ;
                 "Package insert number"@en ;
             sh:order 3 ;
             sh:path :packageInsertNumber ],
+        [ sh:class :PlantProtectionStatement ;
+            sh:description "A parallel import carries only the SP sentences of its reference product. Hazard statements, pictograms, signal words and uncoded label statements are not inherited, as the classification and labelling of the foreign original label applies."@en ;
+            sh:message "A parallel import may only carry SP sentences of its reference product."@en ;
+            sh:name "Übernommene PSM-Sätze"@de,
+                "Inherited plant protection statements"@en ;
+            sh:node [ sh:property [ sh:flags "i" ;
+                            sh:minCount 1 ;
+                            sh:path schema:identifier ;
+                            sh:pattern "^SP" ] ] ;
+            sh:order 6 ;
+            sh:path :ghsLabel ],
+        [ sh:class :ActiveSubstance ;
+            sh:description "A parallel import lists only the active substances of its reference product. Co-formulants to be declared are not inherited."@en ;
+            sh:message "A parallel import should not list co-formulants of its reference product."@en ;
+            sh:name "Übernommene Inhaltsstoffe"@de,
+                "Inherited ingredients"@en ;
+            sh:order 7 ;
+            sh:path ( :ingredient :substance ) ;
+            sh:severity sh:Warning ],
         shape:referenceProduct,
         shape:referenceProductId ;
     sh:targetClass :ParallelImport .
@@ -680,12 +699,7 @@ shape:Product a sh:NodeShape ;
             sh:name "Indikation"@de,
                 "Indication"@en ;
             sh:order 11 ;
-            sh:path :indication ],
-        [ sh:class :PlantProtectionStatement ;
-            sh:name "Pflanzenschutz-Hinweis"@de,
-                "Plant protection statement"@en ;
-            sh:order 12 ;
-            sh:path :hasPlantProtectionStatement ] ;
+            sh:path :indication ] ;
     sh:targetClass :Product .
 
 shape:QuantitativeValue a sh:NodeShape ;
