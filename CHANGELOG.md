@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.14](https://github.com/BLV-OSAV-USAV/PSMV-RDF/compare/psmv-rdf-v0.4.13...psmv-rdf-v0.4.14) (2026-11-06)
+
+
+### Features
+
+* **products:** stop inheriting co-formulants and GHS labelling for parallel imports ([be44c1d](https://github.com/BLV-OSAV-USAV/PSMV-RDF/commit/be44c1d47785ae7be7f2ff2be450f34723fd7339))
+* **products:** stop inheriting co-formulants and GHS labelling for PI ([a0b0134](https://github.com/BLV-OSAV-USAV/PSMV-RDF/commit/a0b01345ea8b75db787dc583d772c5d9082315b4))
+
 ## [0.4.13](https://github.com/BLV-OSAV-USAV/PSMV-RDF/compare/psmv-rdf-v0.4.12...psmv-rdf-v0.4.13) (2026-11-05)
 
 
