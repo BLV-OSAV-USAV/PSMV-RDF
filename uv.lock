@@ -1,5 +1,5 @@
 version = 1
-revision = 5
+revision = 3
 requires-python = ">=3.12"
 resolution-markers = [
     "python_full_version >= '3.15' and sys_platform == 'win32'",
@@ -843,6 +843,7 @@ dependencies = [
     { name = "duckdb" },
     { name = "otsrdflib" },
     { name = "pandas" },
+    { name = "pyrudof" },
     { name = "pysftp" },
     { name = "pyshacl" },
     { name = "python-dotenv" },
@@ -868,6 +869,7 @@ requires-dist = [
     { name = "mypy", marker = "extra == 'dev'" },
     { name = "otsrdflib", specifier = ">=0.2.9" },
     { name = "pandas", specifier = ">=2.3.3" },
+    { name = "pyrudof", specifier = ">=0.3.39" },
     { name = "pysftp", specifier = ">=0.2.9" },
     { name = "pyshacl", specifier = ">=0.31.0" },
     { name = "pytest", marker = "extra == 'dev'", specifier = ">=9.2.0" },
@@ -941,6 +943,19 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/f3/91/9c6ee907786a473bf81c5f53cf703ba0957b23ab84c264080fb5a450416f/pyparsing-3.3.2.tar.gz", hash = "sha256:c777f4d763f140633dcb6d8a3eda953bf7a214dc4eff598413c070bcdc117cbc", size = 6851574, upload-time = "2026-01-21T03:57:59.36Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/10/bd/c038d7cc38edc1aa5bf91ab8068b63d4308c66c4c8bb3cbba7dfbc049f9c/pyparsing-3.3.2-py3-none-any.whl", hash = "sha256:850ba148bd908d7e2411587e247a1e4f0327839c40e2e5e6d05a007ecc69911d", size = 122781, upload-time = "2026-01-21T03:57:55.912Z" },
+]
+
+[[package]]
+name = "pyrudof"
+version = "0.3.39"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/5a/3e/5e0c1922d94572ed68d8fd23f268a8757de6c80ed435f30f09e060723c9d/pyrudof-0.3.39.tar.gz", hash = "sha256:d58282087fd05242a0268a77aa80b162506f3e961072dee9ce57e07491dd9523", size = 5090815, upload-time = "2026-11-10T13:22:40.955Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/91/cb/c72b3eb7bf2df153b91c012edbfc5ef5759aa6eabe7fd677d801ced0ac25/pyrudof-0.3.39-cp310-abi3-macosx_13_0_arm64.whl", hash = "sha256:4d7454ba89b355dd7bcef0078533219daae23ae4004aa7cd05d39cbf14723aea", size = 17226116, upload-time = "2026-11-10T13:22:28.245Z" },
+    { url = "https://files.pythonhosted.org/packages/14/ad/8a3d5a237a1872c9a0c1640ecba3626a63e3ca84c2e97d57f36ab57518ab/pyrudof-0.3.39-cp310-abi3-macosx_13_0_x86_64.whl", hash = "sha256:0fa610e6144c044581ae59b0cdeeaa7eb6e8cc39b90634c695a1871df637f5f3", size = 18401765, upload-time = "2026-11-10T13:22:31.064Z" },
+    { url = "https://files.pythonhosted.org/packages/be/8c/006a0b189d157c11f34198794ca12e0f6f1b96da986a61f1230554743511/pyrudof-0.3.39-cp310-abi3-manylinux_2_34_aarch64.whl", hash = "sha256:1d29b52c81002e4bf26205c329fd6ef6fe8c94ed0289e8a8ec29a9752f0cac2b", size = 25312430, upload-time = "2026-11-10T13:22:33.358Z" },
+    { url = "https://files.pythonhosted.org/packages/07/a6/613a3d4a088f23c78375c62e8b29db5f5dfbac3a3202dd7f9dcc33098a42/pyrudof-0.3.39-cp310-abi3-manylinux_2_34_x86_64.whl", hash = "sha256:63c920489adcf0b11931e5d77f3e46862cf9dca5cc1a04f7044143c54895af55", size = 25633097, upload-time = "2026-11-10T13:22:36.021Z" },
+    { url = "https://files.pythonhosted.org/packages/ef/54/93cec099e066a1d3eae2b3f464495e1657862c58462bb83b8c42edc76e93/pyrudof-0.3.39-cp310-abi3-win_amd64.whl", hash = "sha256:c9f445b5745d1aa7f3fdc1d56ed720a90aad4bd46029a73e89f0e346a9a058c7", size = 19976872, upload-time = "2026-11-10T13:22:38.926Z" },
 ]
 
 [[package]]
