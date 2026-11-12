@@ -1,0 +1,36 @@
+PREFIX : <https://agriculture.ld.admin.ch/plant-protection/>
+PREFIX schema: <http://schema.org/>
+PREFIX unit: <http://qudt.org/vocab/unit/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT
+  ?id
+  ?iri
+  ?source_system_id
+  ?designation_de
+  ?designation_en
+  ?designation_fr
+  ?designation_it
+  ?waiting_period
+  ?waiting_period_source_value
+  ?waiting_period_source_unit
+FROM <https://lindas.admin.ch/fsvo/plant-protection-products>
+WHERE {
+  ?iri a :ApplicationComment .
+  BIND(REPLACE(STR(?iri), "^.*/", "") AS ?id)
+  BIND("LINDAS_PSMV" AS ?source_system_id)
+  OPTIONAL { ?iri schema:name ?designation_de FILTER(LANG(?designation_de) = "de") }
+  OPTIONAL { ?iri schema:name ?designation_en FILTER(LANG(?designation_en) = "en") }
+  OPTIONAL { ?iri schema:name ?designation_fr FILTER(LANG(?designation_fr) = "fr") }
+  OPTIONAL { ?iri schema:name ?designation_it FILTER(LANG(?designation_it) = "it") }
+  OPTIONAL {
+    ?iri :waitingPeriod ?wp .
+    ?wp schema:unitCode ?wpUnit .
+    OPTIONAL { ?wp schema:value ?wpValue }
+    OPTIONAL { ?wp schema:minValue ?wpMin }
+    BIND(COALESCE(?wpValue, ?wpMin) AS ?waiting_period_source_value)
+    BIND(REPLACE(STR(?wpUnit), "^.*/", "") AS ?waiting_period_source_unit)
+    BIND(xsd:integer(IF(?wpUnit = unit:WK, ?waiting_period_source_value * 7, ?waiting_period_source_value)) AS ?waiting_period)
+  }
+}
+ORDER BY ?designation_de

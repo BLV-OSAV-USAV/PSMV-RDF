@@ -1,0 +1,27 @@
+PREFIX : <https://agriculture.ld.admin.ch/plant-protection/>
+PREFIX schema: <http://schema.org/>
+
+SELECT DISTINCT
+  ?indication_id
+  ?plant_protection_product_culture_id
+  ?additional_text_de
+  ?additional_text_en
+  ?additional_text_fr
+  ?additional_text_it
+FROM <https://lindas.admin.ch/fsvo/plant-protection-products>
+WHERE {
+  ?indication a :Indication ;
+    schema:identifier ?indication_id ;
+    :product / a :Product ;
+    :crop ?crop .
+  BIND(REPLACE(STR(?crop), "^.*/", "") AS ?plant_protection_product_culture_id)
+  OPTIONAL {
+    ?indication :cropWithAdditionalText ?cw .
+    ?cw :crop ?crop ; :additionalText ?text .
+    OPTIONAL { ?text schema:name ?additional_text_de FILTER(LANG(?additional_text_de) = "de") }
+    OPTIONAL { ?text schema:name ?additional_text_en FILTER(LANG(?additional_text_en) = "en") }
+    OPTIONAL { ?text schema:name ?additional_text_fr FILTER(LANG(?additional_text_fr) = "fr") }
+    OPTIONAL { ?text schema:name ?additional_text_it FILTER(LANG(?additional_text_it) = "it") }
+  }
+}
+ORDER BY ?indication_id ?plant_protection_product_culture_id

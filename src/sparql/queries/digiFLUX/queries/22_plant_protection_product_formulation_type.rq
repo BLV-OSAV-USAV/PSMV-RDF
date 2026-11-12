@@ -1,0 +1,14 @@
+PREFIX : <https://agriculture.ld.admin.ch/plant-protection/>
+PREFIX schema: <http://schema.org/>
+
+SELECT
+  ?plant_protection_product_id
+  ?formulation_type_id
+FROM <https://lindas.admin.ch/fsvo/plant-protection-products>
+WHERE {
+  ?product a :Product ;
+    :federalAdmissionNumber ?plant_protection_product_id ;
+    :formulation ?formulation .
+  BIND(REPLACE(STR(?formulation), "^.*/", "") AS ?formulation_type_id)
+}
+ORDER BY ?plant_protection_product_id ?formulation_type_id

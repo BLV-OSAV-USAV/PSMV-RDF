@@ -1,0 +1,13 @@
+PREFIX : <https://agriculture.ld.admin.ch/plant-protection/>
+
+SELECT
+  ?plant_protection_product_id
+  ?hazard_label_id
+FROM <https://lindas.admin.ch/fsvo/plant-protection-products>
+WHERE {
+  ?product a :Product ;
+    :federalAdmissionNumber ?plant_protection_product_id ;
+    :ghsLabel ?element .
+  BIND(REPLACE(STR(?element), "^.*/", "") AS ?hazard_label_id)
+}
+ORDER BY ?plant_protection_product_id ?hazard_label_id

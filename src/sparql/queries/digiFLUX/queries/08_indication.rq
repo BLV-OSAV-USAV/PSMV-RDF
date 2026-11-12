@@ -1,0 +1,54 @@
+PREFIX : <https://agriculture.ld.admin.ch/plant-protection/>
+PREFIX schema: <http://schema.org/>
+PREFIX unit: <http://qudt.org/vocab/unit/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT
+  ?id
+  ?iri
+  ?plant_protection_product_id
+  ?application_area_id
+  ?source_system_id
+  ?dosage_from
+  ?dosage_to
+  ?unit
+  ?waiting_period
+  ?expenditure_from
+  ?expenditure_to
+  ?expenditure_unit
+  ?waiting_period_source_value
+  ?waiting_period_source_unit
+FROM <https://lindas.admin.ch/fsvo/plant-protection-products>
+WHERE {
+  ?iri a :Indication ;
+    schema:identifier ?id ;
+    :product ?product .
+  ?product a :Product ;
+    :federalAdmissionNumber ?plant_protection_product_id .
+  BIND("LINDAS_PSMV" AS ?source_system_id)
+
+  OPTIONAL {
+    ?iri :applicationArea ?area .
+    BIND(REPLACE(STR(?area), "^.*/", "") AS ?application_area_id)
+  }
+  OPTIONAL {
+    ?iri :dosage ?dosage .
+    OPTIONAL { ?dosage schema:minValue ?dosage_from }
+    OPTIONAL { ?dosage schema:maxValue ?dosage_to }
+    OPTIONAL { ?dosage schema:unitText ?unit }
+  }
+  OPTIONAL {
+    ?iri :expenditure ?expenditure .
+    OPTIONAL { ?expenditure schema:minValue ?expenditure_from }
+    OPTIONAL { ?expenditure schema:maxValue ?expenditure_to }
+    OPTIONAL { ?expenditure schema:unitText ?expenditure_unit }
+  }
+  OPTIONAL {
+    ?iri :waitingPeriod ?wp .
+    ?wp schema:value ?waiting_period_source_value ;
+        schema:unitCode ?wpUnit .
+    BIND(REPLACE(STR(?wpUnit), "^.*/", "") AS ?waiting_period_source_unit)
+    BIND(xsd:integer(IF(?wpUnit = unit:WK, ?waiting_period_source_value * 7, ?waiting_period_source_value)) AS ?waiting_period)
+  }
+}
+ORDER BY ?plant_protection_product_id ?id

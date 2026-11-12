@@ -1,0 +1,21 @@
+PREFIX : <https://agriculture.ld.admin.ch/plant-protection/>
+
+SELECT
+  ?plant_protection_product_id
+  ?plant_protection_product_category_id
+FROM <https://lindas.admin.ch/fsvo/plant-protection-products>
+WHERE {
+  ?product a :Product ;
+    :federalAdmissionNumber ?plant_protection_product_id ;
+    :productType ?type .
+  BIND(REPLACE(STR(?type), "^.*[/#]", "") AS ?localName)
+  BIND(
+    UCASE(
+      REPLACE(
+        REPLACE(?localName, "([a-z0-9])([A-Z])", "$1_$2"),
+        "([A-Z])([A-Z][a-z])", "$1_$2"
+      )
+    ) AS ?plant_protection_product_category_id
+  )
+}
+ORDER BY ?plant_protection_product_id ?plant_protection_product_category_id

@@ -1,0 +1,19 @@
+PREFIX : <https://agriculture.ld.admin.ch/plant-protection/>
+
+SELECT
+  ?plant_protection_product_id
+  ?value
+  ?source_system_id
+FROM <https://lindas.admin.ch/fsvo/plant-protection-products>
+WHERE {
+  ?product a :Product ;
+    :federalAdmissionNumber ?plant_protection_product_id .
+  {
+    ?product :foreignAdmissionNumber ?value .
+    BIND("FOREIGN_ADMISSION_NUMBER" AS ?source_system_id)
+  } UNION {
+    ?product :packageInsertNumber ?value .
+    BIND("PACKAGE_INSERT_NUMBER" AS ?source_system_id)
+  }
+}
+ORDER BY ?plant_protection_product_id ?source_system_id ?value

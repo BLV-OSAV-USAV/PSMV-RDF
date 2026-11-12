@@ -1,0 +1,42 @@
+PREFIX : <https://agriculture.ld.admin.ch/plant-protection/>
+PREFIX schema: <http://schema.org/>
+PREFIX unit: <http://qudt.org/vocab/unit/>
+
+SELECT
+  ?plant_protection_product_id
+  ?substance_id
+  ?quantity
+  ?unit
+  ?quantity2
+  ?unit2
+  ?designation_de
+  ?designation_en
+  ?designation_fr
+  ?designation_it
+FROM <https://lindas.admin.ch/fsvo/plant-protection-products>
+WHERE {
+  ?product a :Product ;
+    :federalAdmissionNumber ?plant_protection_product_id ;
+    :ingredient ?ingredient .
+  ?ingredient :substance ?substance .
+  BIND(REPLACE(STR(?substance), "^.*/", "") AS ?substance_id)
+
+  OPTIONAL {
+    ?ingredient :share ?sharePct .
+    ?sharePct schema:unitCode unit:PERCENT ; schema:value ?quantity .
+    BIND("%" AS ?unit)
+  }
+  OPTIONAL {
+    ?ingredient :share ?shareGl .
+    ?shareGl schema:unitCode unit:GM-PER-L ; schema:value ?quantity2 .
+    BIND("g/l" AS ?unit2)
+  }
+  OPTIONAL {
+    ?ingredient :additionalText ?text .
+    OPTIONAL { ?text schema:name ?designation_de FILTER(LANG(?designation_de) = "de") }
+    OPTIONAL { ?text schema:name ?designation_en FILTER(LANG(?designation_en) = "en") }
+    OPTIONAL { ?text schema:name ?designation_fr FILTER(LANG(?designation_fr) = "fr") }
+    OPTIONAL { ?text schema:name ?designation_it FILTER(LANG(?designation_it) = "it") }
+  }
+}
+ORDER BY ?plant_protection_product_id ?substance_id

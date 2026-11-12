@@ -1,0 +1,33 @@
+PREFIX : <https://agriculture.ld.admin.ch/plant-protection/>
+PREFIX schema: <http://schema.org/>
+
+SELECT
+  ?id
+  ?iri
+  ?code
+  ?designation_de
+  ?designation_en
+  ?designation_fr
+  ?designation_it
+  ?element_type
+FROM <https://lindas.admin.ch/fsvo/plant-protection-products>
+WHERE {
+  VALUES ?class { :SignalWord :HazardPictogram :HazardStatement :PlantProtectionStatement }
+  ?iri a ?class .
+  BIND(REPLACE(STR(?iri), "^.*/", "") AS ?id)
+  BIND(REPLACE(STR(?class), "^.*[/#]", "") AS ?localName)
+  BIND(
+    UCASE(
+      REPLACE(
+        REPLACE(?localName, "([a-z0-9])([A-Z])", "$1_$2"),
+        "([A-Z])([A-Z][a-z])", "$1_$2"
+      )
+    ) AS ?element_type
+  )
+  OPTIONAL { ?iri schema:identifier ?code }
+  OPTIONAL { ?iri schema:name ?designation_de FILTER(LANG(?designation_de) = "de") }
+  OPTIONAL { ?iri schema:name ?designation_en FILTER(LANG(?designation_en) = "en") }
+  OPTIONAL { ?iri schema:name ?designation_fr FILTER(LANG(?designation_fr) = "fr") }
+  OPTIONAL { ?iri schema:name ?designation_it FILTER(LANG(?designation_it) = "it") }
+}
+ORDER BY ?element_type ?code ?designation_de

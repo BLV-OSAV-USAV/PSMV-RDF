@@ -1,0 +1,50 @@
+PREFIX : <https://agriculture.ld.admin.ch/plant-protection/>
+PREFIX schema: <http://schema.org/>
+
+SELECT
+  ?id
+  ?iri
+  ?designation_de
+  ?designation_en
+  ?designation_fr
+  ?designation_it
+  ?exhaustion_deadline
+  ?sold_out_deadline
+  ?permission_holder_id
+  ?reference_product_id
+  ?product_class
+  ?country_of_origin
+  ?reference_product_source_id
+FROM <https://lindas.admin.ch/fsvo/plant-protection-products>
+WHERE {
+  VALUES ?productClassIri { :RegularProduct :SalePermission :ParallelImport }
+  ?iri a ?productClassIri ;
+    :federalAdmissionNumber ?id ;
+    schema:name ?name .
+  BIND(STR(?name) AS ?designation_de)
+  BIND(STR(?name) AS ?designation_en)
+  BIND(STR(?name) AS ?designation_fr)
+  BIND(STR(?name) AS ?designation_it)
+  BIND(REPLACE(STR(?productClassIri), "^.*[/#]", "") AS ?localName)
+  BIND(
+    UCASE(
+      REPLACE(
+        REPLACE(?localName, "([a-z0-9])([A-Z])", "$1_$2"),
+        "([A-Z])([A-Z][a-z])", "$1_$2"
+      )
+    ) AS ?product_class
+  )
+  OPTIONAL { ?iri :exhaustionDeadline ?exhaustion_deadline }
+  OPTIONAL { ?iri :soldOutDeadline ?sold_out_deadline }
+  OPTIONAL {
+    ?iri :permissionHolder ?holder .
+    BIND(REPLACE(STR(?holder), "^.*/", "") AS ?permission_holder_id)
+  }
+  OPTIONAL { ?iri :referenceProduct/:federalAdmissionNumber ?reference_product_id }
+  OPTIONAL {
+    ?iri schema:countryOfOrigin ?countryIri .
+    BIND(REPLACE(STR(?countryIri), "^.*/", "") AS ?country_of_origin)
+  }
+  OPTIONAL { ?iri :referenceProductId ?reference_product_source_id }
+}
+ORDER BY ?id

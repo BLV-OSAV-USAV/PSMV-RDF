@@ -1,0 +1,15 @@
+PREFIX : <https://agriculture.ld.admin.ch/plant-protection/>
+PREFIX schema: <http://schema.org/>
+
+SELECT
+  ?indication_id
+  ?obligation_id
+FROM <https://lindas.admin.ch/fsvo/plant-protection-products>
+WHERE {
+  ?indication a :Indication ;
+    schema:identifier ?indication_id ;
+    :product / a :Product ;
+    :obligation ?obligation .
+  BIND(REPLACE(STR(?obligation), "^.*/", "") AS ?obligation_id)
+}
+ORDER BY ?indication_id ?obligation_id
