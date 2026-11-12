@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.15](https://github.com/BLV-OSAV-USAV/PSMV-RDF/compare/psmv-rdf-v0.4.14...psmv-rdf-v0.4.15) (2026-11-12)
+
+
+### Features
+
+* switch SHACL validation engine ([d1c1716](https://github.com/BLV-OSAV-USAV/PSMV-RDF/commit/d1c17165aabfa06ccc77c9aca25a491e938a9959))
+* switch SHACL validation engine ([d7d8f28](https://github.com/BLV-OSAV-USAV/PSMV-RDF/commit/d7d8f28870da0772e04f00e1eea3353af908bab8))
+
 ## [0.4.14](https://github.com/BLV-OSAV-USAV/PSMV-RDF/compare/psmv-rdf-v0.4.13...psmv-rdf-v0.4.14) (2026-11-06)
 
 
