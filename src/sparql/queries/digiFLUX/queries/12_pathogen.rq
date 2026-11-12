@@ -1,0 +1,24 @@
+PREFIX : <https://agriculture.ld.admin.ch/plant-protection/>
+PREFIX schema: <http://schema.org/>
+
+SELECT
+  ?id
+  ?iri
+  ?code
+  ?source_system_id
+  ?designation_de
+  ?designation_en
+  ?designation_fr
+  ?designation_it
+FROM <https://lindas.admin.ch/fsvo/plant-protection-products>
+WHERE {
+  ?iri a :Pest .
+  BIND(REPLACE(STR(?iri), "^.*/", "") AS ?id)
+  BIND(?id AS ?code)
+  BIND("LINDAS_PSMV" AS ?source_system_id)
+  OPTIONAL { ?iri schema:name ?designation_de FILTER(LANG(?designation_de) = "de") }
+  OPTIONAL { ?iri schema:name ?designation_en FILTER(LANG(?designation_en) = "en") }
+  OPTIONAL { ?iri schema:name ?designation_fr FILTER(LANG(?designation_fr) = "fr") }
+  OPTIONAL { ?iri schema:name ?designation_it FILTER(LANG(?designation_it) = "it") }
+}
+ORDER BY ?designation_de

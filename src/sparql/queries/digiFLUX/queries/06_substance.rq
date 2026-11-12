@@ -1,0 +1,51 @@
+PREFIX : <https://agriculture.ld.admin.ch/plant-protection/>
+PREFIX schema: <http://schema.org/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT
+  ?id
+  ?iri
+  ?active_substance_category
+  ?designation_de
+  ?designation_en
+  ?designation_fr
+  ?designation_it
+  ?iupac_name
+  ?chebi
+  ?see_also
+FROM <https://lindas.admin.ch/fsvo/plant-protection-products>
+WHERE {
+  ?iri a :Substance .
+  BIND(REPLACE(STR(?iri), "^.*/", "") AS ?id)
+  OPTIONAL {
+    VALUES ?cat { :ActiveSubstance :CoFormulant }
+    ?iri a ?cat .
+    BIND(REPLACE(STR(?cat), "^.*[/#]", "") AS ?localName)
+    BIND(
+      UCASE(
+        REPLACE(
+          REPLACE(?localName, "([a-z0-9])([A-Z])", "$1_$2"),
+          "([A-Z])([A-Z][a-z])", "$1_$2"
+        )
+      ) AS ?active_substance_category
+    )
+  }
+  OPTIONAL { ?iri schema:name ?designation_de FILTER(LANG(?designation_de) = "de") }
+  OPTIONAL { ?iri schema:name ?designation_en FILTER(LANG(?designation_en) = "en") }
+  OPTIONAL { ?iri schema:name ?designation_fr FILTER(LANG(?designation_fr) = "fr") }
+  OPTIONAL { ?iri schema:name ?designation_it FILTER(LANG(?designation_it) = "it") }
+  OPTIONAL {
+    SELECT ?iri
+      (GROUP_CONCAT(DISTINCT ?iupac; separator=" | ") AS ?iupac_name)
+      (GROUP_CONCAT(DISTINCT STR(?ch); separator=" | ") AS ?chebi)
+      (GROUP_CONCAT(DISTINCT STR(?see); separator=" | ") AS ?see_also)
+    WHERE {
+      ?iri a :Substance .
+      OPTIONAL { ?iri :iupacName ?iupac }
+      OPTIONAL { ?iri :chebi ?ch }
+      OPTIONAL { ?iri rdfs:seeAlso ?see }
+    }
+    GROUP BY ?iri
+  }
+}
+ORDER BY ?designation_de

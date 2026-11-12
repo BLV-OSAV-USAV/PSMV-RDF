@@ -1,0 +1,41 @@
+PREFIX : <https://agriculture.ld.admin.ch/plant-protection/>
+PREFIX schema: <http://schema.org/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT
+  ?id
+  ?iri
+  ?organisation_name
+  ?street
+  ?address_line1
+  ?post_office_box_number
+  ?town
+  ?swiss_zip_code
+  ?foreign_zip_code
+  ?country_id_iso2
+  ?country_name_short
+WHERE {
+  GRAPH <https://lindas.admin.ch/fsvo/plant-protection-products> {
+    ?iri a schema:Organization ;
+      schema:legalName ?organisation_name ;
+      schema:address ?address .
+    OPTIONAL { ?address schema:streetAddress ?street }
+    OPTIONAL { ?address schema:addressLocality ?town }
+    OPTIONAL { ?address schema:postalCode ?postalCode }
+    OPTIONAL { ?address schema:addressCountry ?countryIri }
+    OPTIONAL { ?address schema:postOfficeBoxNumber ?pobox }
+  }
+  BIND(REPLACE(STR(?iri), "^.*/", "") AS ?id)
+  BIND(IF(REGEX(STR(?pobox), "^[0-9]+$"), xsd:integer(?pobox), ?undef) AS ?post_office_box_number)
+  BIND(IF(REGEX(STR(?pobox), "^[0-9]+$"), ?undef, ?pobox) AS ?address_line1)
+  OPTIONAL {
+    GRAPH <https://lindas.admin.ch/territorial> {
+      ?countryIri schema:identifier ?iso3 .
+      OPTIONAL { ?countryIri schema:alternateName ?country_id_iso2 . FILTER(STRLEN(?country_id_iso2) = 2) }
+      OPTIONAL { ?countryIri schema:name ?country_name_short . FILTER(LANG(?country_name_short) = "en") }
+    }
+  }
+  BIND(IF(?iso3 = "CHE" && REGEX(STR(?postalCode), "^[0-9]+$"), xsd:integer(?postalCode), ?undef) AS ?swiss_zip_code)
+  BIND(IF(?iso3 = "CHE" && REGEX(STR(?postalCode), "^[0-9]+$"), ?undef, ?postalCode) AS ?foreign_zip_code)
+}
+ORDER BY ?organisation_name

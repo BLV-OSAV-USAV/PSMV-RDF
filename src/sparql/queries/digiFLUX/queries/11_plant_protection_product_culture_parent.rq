@@ -1,0 +1,14 @@
+PREFIX : <https://agriculture.ld.admin.ch/plant-protection/>
+PREFIX schema: <http://schema.org/>
+
+SELECT
+  ?plant_protection_product_culture_id
+  ?parent_plant_protection_product_culture_id
+FROM <https://lindas.admin.ch/fsvo/plant-protection-products>
+WHERE {
+  ?crop a :Crop ;
+    schema:isPartOf ?parent .
+  BIND(REPLACE(STR(?crop), "^.*/", "") AS ?plant_protection_product_culture_id)
+  BIND(REPLACE(STR(?parent), "^.*/", "") AS ?parent_plant_protection_product_culture_id)
+}
+ORDER BY ?plant_protection_product_culture_id ?parent_plant_protection_product_culture_id

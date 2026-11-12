@@ -1,0 +1,34 @@
+PREFIX : <https://agriculture.ld.admin.ch/plant-protection/>
+PREFIX schema: <http://schema.org/>
+
+SELECT DISTINCT
+  ?id
+  ?iri
+  ?code
+  ?source_system_id
+  ?designation_de
+  ?designation_en
+  ?designation_fr
+  ?designation_it
+  ?explanation
+FROM <https://lindas.admin.ch/fsvo/plant-protection-products>
+WHERE {
+  { SELECT DISTINCT ?iri WHERE { ?product :productType ?iri } }
+  BIND(REPLACE(STR(?iri), "^.*[/#]", "") AS ?localName)
+  BIND(
+    UCASE(
+      REPLACE(
+        REPLACE(?localName, "([a-z0-9])([A-Z])", "$1_$2"),
+        "([A-Z])([A-Z][a-z])", "$1_$2"
+      )
+    ) AS ?id
+  )
+  BIND(?id AS ?code)
+  BIND("LINDAS_PSMV" AS ?source_system_id)
+  OPTIONAL { ?iri schema:name ?designation_de FILTER(LANG(?designation_de) = "de") }
+  OPTIONAL { ?iri schema:name ?designation_en FILTER(LANG(?designation_en) = "en") }
+  OPTIONAL { ?iri schema:name ?designation_fr FILTER(LANG(?designation_fr) = "fr") }
+  OPTIONAL { ?iri schema:name ?designation_it FILTER(LANG(?designation_it) = "it") }
+  OPTIONAL { ?iri schema:description ?explanation FILTER(LANG(?explanation) = "en") }
+}
+ORDER BY ?id
