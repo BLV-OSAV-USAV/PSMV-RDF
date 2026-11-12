@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.16](https://github.com/BLV-OSAV-USAV/PSMV-RDF/compare/psmv-rdf-v0.4.15...psmv-rdf-v0.4.16) (2026-11-12)
+
+
+### Features
+
+* Add digiFLUX integration scripts ([6b8c9f2](https://github.com/BLV-OSAV-USAV/PSMV-RDF/commit/6b8c9f2763e0711c69ae02f51341c9a9bced05e5))
+
 ## [0.4.15](https://github.com/BLV-OSAV-USAV/PSMV-RDF/compare/psmv-rdf-v0.4.14...psmv-rdf-v0.4.15) (2026-11-12)
 
 
