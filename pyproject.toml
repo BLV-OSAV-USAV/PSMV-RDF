@@ -45,7 +45,7 @@ where = ["."]
 include = ["service*", "src*"]
 
 [tool.shacl-docgen]
-shacl_play_version = "0.12.6"
+shacl_play_version = "0.12.7"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
