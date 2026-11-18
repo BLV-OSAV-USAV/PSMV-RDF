@@ -5,8 +5,9 @@ from pathlib import Path
 import pandas as pd
 import yaml
 from rdflib import Literal, Namespace
-from rdflib.namespace import RDF
+from rdflib.namespace import RDF, XSD
 
+SCHEMA = Namespace("http://schema.org/")
 
 def load_namespaces(path="data/namespaces/namespaces.yaml"):
     """
@@ -229,3 +230,14 @@ def format_psm(value) -> str:
 # Placeholder for products whose register entry only names the category
 # ("Netz- und Haftmittel") without any substance
 UNSPECIFIED_ADJUVANT_ID = "unspecified-wetting-and-adhesion-agent"
+
+def add_amount(graph, node, v_from, v_to):
+    """Single value -> schema:value, range -> schema:minValue/maxValue."""
+    has_from, has_to = pd.notna(v_from), pd.notna(v_to)
+    if has_from and (not has_to or float(v_from) == float(v_to)):
+        graph.add((node, SCHEMA.value, Literal(float(v_from), datatype=XSD.decimal)))
+        return
+    if has_from:
+        graph.add((node, SCHEMA.minValue, Literal(float(v_from), datatype=XSD.decimal)))
+    if has_to:
+        graph.add((node, SCHEMA.maxValue, Literal(float(v_to), datatype=XSD.decimal)))
