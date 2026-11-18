@@ -39,10 +39,10 @@ shape: a owl:Ontology ;
     dcterms:created "2026-02-20"^^xsd:date ;
     dcterms:modified "2026-11-05"^^xsd:date ;
     dcterms:publisher <https://www.blv.admin.ch> ;
-    owl:versionInfo "3.5.0" ;
-    owl:versionIRI <https://agriculture.ld.admin.ch/plant-protection/shape/3.5.0> ;
-    owl:priorVersion <https://agriculture.ld.admin.ch/plant-protection/shape/3.4.1> ;
-    adms:versionNotes "Version 3.4.1: Updated additional texts for pests and crops. Latest published version: https://blv-osav-usav.github.io/PSMV-RDF/shacl-documentation.html"@en ;
+    owl:versionInfo "3.6.0" ;
+    owl:versionIRI <https://agriculture.ld.admin.ch/plant-protection/shape/3.6.0> ;
+    owl:priorVersion <https://agriculture.ld.admin.ch/plant-protection/shape/3.5.0> ;
+    adms:versionNotes "Version 3.6.0: Added placeholder :UnspecifiedSubstance for wetting and adhesion agents without declared substances; products without ingredient now raise a warning. Latest published version: https://blv-osav-usav.github.io/PSMV-RDF/shacl-documentation.html"@en ;
     doap:repository <https://github.com/BLV-OSAV-USAV/PSMV-RDF> ;
     dcat:distribution [
         dcat:downloadURL <https://raw.githubusercontent.com/BLV-OSAV-USAV/PSMV-RDF/main/rdf/shapes/data_shape.ttl> ;
@@ -140,6 +140,12 @@ shape:Product a sh:NodeShape ;
         sh:name "Ingredient"@en ;
         sh:path :ingredient ;
         sh:class :Ingredient ;
+    ] ;
+    sh:property [
+        sh:path :ingredient ;
+        sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "Product has no ingredient. Check the source data or the placeholder fallback in products_ttl."@en ;
     ] ;
     sh:property [
         sh:order 7 ;
@@ -266,9 +272,12 @@ shape:ParallelImport a sh:NodeShape ;
     [
         sh:order 7 ;
         sh:name "Inherited ingredients"@en, "Übernommene Inhaltsstoffe"@de ;
-        sh:description "A parallel import lists only the active substances of its reference product. Co-formulants to be declared are not inherited."@en ;
+        sh:description "A parallel import lists only the active substances of its reference product. Co-formulants to be declared are not inherited. Adjuvants without declared substances carry the unspecified substance placeholder."@en ;
         sh:path ( :ingredient :substance ) ;
-        sh:class :ActiveSubstance ;
+        sh:or (
+            [ sh:class :ActiveSubstance ]
+            [ sh:class :UnspecifiedSubstance ]
+        ) ;
         sh:severity sh:Warning ;
         sh:message "A parallel import should not list co-formulants of its reference product."@en ;
     ],
@@ -811,6 +820,19 @@ shape:Substance a sh:NodeShape ;
             sh:nodeKind sh:IRI ;
         ] .
 
+
+shape:UnspecifiedSubstance a sh:NodeShape ;
+    rdfs:label "Unspecified substance"@en, "Nicht spezifizierter Stoff"@de ;
+    rdfs:comment "Placeholder substance for products whose entry in the plant protection product directory names no substance but only the product category (e.g. wetting and adhesion agent)."@en ;
+    sh:targetClass :UnspecifiedSubstance ;
+    sh:nodeKind sh:IRI ;
+    sh:in ( <https://agriculture.ld.admin.ch/plant-protection/substance/unspecified-wetting-and-adhesion-agent> ) ;
+    sh:property
+        [ sh:path :iupacName ; sh:maxCount 0 ] ,
+        [ sh:path :chebi ; sh:maxCount 0 ] ,
+        [ sh:path rdfs:seeAlso ; sh:maxCount 0 ] ,
+        [ sh:path owl:sameAs ; sh:maxCount 0 ] .
+        
 # ==============================================================================
 # GHS CLASSES
 # ==============================================================================

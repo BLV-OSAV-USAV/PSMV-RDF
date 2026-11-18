@@ -5,7 +5,7 @@ from rdflib import Graph, Namespace, URIRef, Literal
 from rdflib.namespace import RDF, RDFS, OWL
 
 # local imports
-from src.python.utils.helper_functions import load_namespaces, load_rdf_mappings, add_lang_labels
+from src.python.utils.helper_functions import load_namespaces, load_rdf_mappings, add_lang_labels, UNSPECIFIED_ADJUVANT_ID
 
 # Set namespaces
 namespaces = load_namespaces()
@@ -36,7 +36,22 @@ rdf_mappings = load_rdf_mappings(namespaces, namespace_map=namespace_config)
 COUNTRY_MAPPING = rdf_mappings["country_mapping"]
 TYPE_MAPPING = rdf_mappings["type_mapping"]
 
-# Create Products
+def add_unspecified_adjuvant(graph: Graph) -> URIRef:
+    """Placeholder substance for adjuvants without declared ingredients."""
+    uri = SUBSTANCE[UNSPECIFIED_ADJUVANT_ID]
+    graph.add((uri, RDF.type, BASE.Substance))
+    graph.add((uri, RDF.type, BASE.UnspecifiedSubstance))
+    labels = {
+        "de": "Netz- und Haftmittel (nicht spezifiziert)",
+        "fr": "Mouillant et adhésif (non spécifié)",
+        "it": "Bagnante e adesivo (non specificato)",
+        "en": "Wetting and adhesion agent (unspecified)",
+    }
+    for lang, label in labels.items():
+        graph.add((uri, SCHEMA.name, Literal(label, lang=lang)))
+    return uri
+
+# Create substances
 def substance_ttl(
     db_path = "data/processed/psmv-data.duckdb",
     out_path: str = "rdf/data/substance.ttl"):
@@ -156,12 +171,16 @@ def substance_ttl(
                         else:
                             graph.add((substance_uri, RDFS.seeAlso, URIRef(taxon)))
 
+      
+
         except Exception as error:
             print(
                 f"Substance row {i} "
                 f"({substance_uri or 'unknown'}): {error}"
             )
 
+    add_unspecified_adjuvant(graph)
+    
     # Print graph info
     print(f"[i] Total substance triples: {len(graph)}")
 

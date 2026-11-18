@@ -6,7 +6,7 @@ from rdflib.namespace import RDF
 from rdflib.namespace import NamespaceManager
 
 # local imports
-from src.python.utils.helper_functions import load_namespaces, ensure_indication, add_lang_labels, group_to_dict, load_unit_map
+from src.python.utils.helper_functions import load_namespaces, ensure_indication, add_lang_labels, group_to_dict, load_unit_map, add_amount
 
 def indication_ttl(
     db_path="data/processed/psmv-data.duckdb",
@@ -72,6 +72,16 @@ def indication_ttl(
 
     # Load Unit map
     UNIT_MAP = load_unit_map(UNIT)
+
+    # Dosage (Konzentration) is always a percentage in the PSM directory.
+    # Reuse the existing "%" measure node so the dosage keeps its translations.
+    pct_ids = (
+        ind_measure_df.loc[ind_measure_df["DE"].astype(str).str.strip() == "%", "indication_measure_id"]
+        .dropna().astype(str).str.strip().str.lower().unique()
+    )
+    PERCENT_MEASURE = MEASURE[pct_ids[0]] if len(pct_ids) else None
+    if PERCENT_MEASURE is None:
+        print("[!] No '%' measure found in IndicationMeasureCode -> dosages without :measure")
 
     # Map Indication -> Product
     seen_indications = set()
@@ -232,16 +242,13 @@ def indication_ttl(
                         dosage_node = BNode()
                         graph.add((indication_uri, BASE.dosage, dosage_node))
                         graph.add((dosage_node, RDF.type, SCHEMA.QuantitativeValue))
-                        if pd.notna(v_dosage_from):
-                            graph.add((dosage_node, SCHEMA.minValue, Literal(float(v_dosage_from), datatype=XSD.decimal)))
-                        if pd.notna(v_dosage_to):
-                            graph.add((dosage_node, SCHEMA.maxValue, Literal(float(v_dosage_to), datatype=XSD.decimal)))
-                        if unit_str:
-                            graph.add((dosage_node, SCHEMA.unitText, Literal(unit_str)))
-                        if unit_uri:
-                            graph.add((dosage_node, SCHEMA.unitCode, unit_uri))
-                        if measure_uri:
-                            graph.add((dosage_node, BASE.measure, measure_uri))
+                        add_amount(graph, dosage_node, v_dosage_from, v_dosage_to)
+                        # Dosage (Konzentration) is always in percent; the indication's
+                        # measure belongs to the expenditure (Aufwandmenge) only
+                        graph.add((dosage_node, SCHEMA.unitText, Literal("%")))
+                        graph.add((dosage_node, SCHEMA.unitCode, UNIT.PERCENT))
+                        if PERCENT_MEASURE:
+                            graph.add((dosage_node, BASE.measure, PERCENT_MEASURE))
 
                     # Expenditure
                     e_from = d_row.get("expenditure_from")
@@ -250,10 +257,7 @@ def indication_ttl(
                         exp_node = BNode()
                         graph.add((indication_uri, BASE.expenditure, exp_node))
                         graph.add((exp_node, RDF.type, SCHEMA.QuantitativeValue))
-                        if pd.notna(e_from):
-                            graph.add((exp_node, SCHEMA.minValue, Literal(float(e_from), datatype=XSD.decimal)))
-                        if pd.notna(e_to):
-                            graph.add((exp_node, SCHEMA.maxValue, Literal(float(e_to), datatype=XSD.decimal)))
+                        add_amount(graph, exp_node, e_from, e_to)
                         if unit_str:
                             graph.add((exp_node, SCHEMA.unitText, Literal(unit_str)))
                         if unit_uri:
