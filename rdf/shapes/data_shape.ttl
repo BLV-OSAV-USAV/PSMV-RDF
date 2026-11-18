@@ -39,9 +39,9 @@ shape: a owl:Ontology ;
     dcterms:created "2026-02-20"^^xsd:date ;
     dcterms:modified "2026-11-05"^^xsd:date ;
     dcterms:publisher <https://www.blv.admin.ch> ;
-    owl:versionInfo "3.4.1" ;
-    owl:versionIRI <https://agriculture.ld.admin.ch/plant-protection/shape/3.4.1> ;
-    owl:priorVersion <https://agriculture.ld.admin.ch/plant-protection/shape/3.4.0> ;
+    owl:versionInfo "3.5.0" ;
+    owl:versionIRI <https://agriculture.ld.admin.ch/plant-protection/shape/3.5.0> ;
+    owl:priorVersion <https://agriculture.ld.admin.ch/plant-protection/shape/3.4.1> ;
     adms:versionNotes "Version 3.4.1: Updated additional texts for pests and crops. Latest published version: https://blv-osav-usav.github.io/PSMV-RDF/shacl-documentation.html"@en ;
     doap:repository <https://github.com/BLV-OSAV-USAV/PSMV-RDF> ;
     dcat:distribution [
@@ -657,6 +657,35 @@ shape:Obligation a sh:NodeShape ;
     sh:property shape:identifier,
         shape:multiLanguageName .
 
+shape:Measure a sh:NodeShape ;
+    rdfs:label "Measure"@en,
+        "Masseinheit"@de ;
+    rdfs:comment "Unit of a dosage or application rate as written in the admission documents, with translations. Not every unit is translated in the source, so only German is mandatory. Where a QUDT unit with the same meaning exists, it is linked via skos:exactMatch."@en ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:targetClass :Measure ;
+    sh:property shape:identifier,
+        [
+            sh:name "Name"@en ;
+            sh:order 2 ;
+            sh:path schema:name ;
+            sh:minCount 1 ;
+            sh:maxCount 4 ;
+            sh:datatype rdf:langString ;
+            sh:uniqueLang true ;
+            sh:languageIn ( "de" "fr" "it" "en" ) ;
+            sh:qualifiedValueShape [ sh:languageIn ( "de" ) ] ;
+            sh:qualifiedMinCount 1 ;
+        ],
+        [
+            sh:name "QUDT unit"@en, "QUDT-Einheit"@de ;
+            sh:order 3 ;
+            sh:path skos:exactMatch ;
+            sh:nodeKind sh:IRI ;
+            sh:pattern "^http://qudt\\.org/vocab/unit/" ;
+            sh:maxCount 1 ;
+        ] .
+
 shape:Pest a sh:NodeShape ;
     rdfs:label "Pest"@en,
         "Schadorganismus"@de ;
@@ -981,6 +1010,14 @@ shape:QuantitativeValue a sh:NodeShape ;
         sh:description "The unit as written in the admission documents, e.g. 'l/ha'."@en ;
         sh:path schema:unitText ;
         sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:name "Measure"@en, "Masseinheit"@de ;
+        sh:order 7 ;
+        sh:description "The unit as a node with translations. Present for dosages and application rates. Where a QUDT unit with the same meaning exists, it is also given in Unit."@en ;
+        sh:path :measure ;
+        sh:class :Measure ;
         sh:maxCount 1 ;
     ] .
 

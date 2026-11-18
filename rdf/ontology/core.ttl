@@ -30,8 +30,8 @@
         "Guy Schnidrig" ;
     dcterms:title "Crop protection product ontology"@en ;
     dcterms:modified "2026-11-05"^^xsd:date ;
-    owl:versionInfo "3.4.1" ;
-    owl:versionIRI <https://agriculture.ld.admin.ch/plant-protection/3.4.1> .
+    owl:versionInfo "3.5.0" ;
+    owl:versionIRI <https://agriculture.ld.admin.ch/plant-protection/3.5.0> .
 
 # ==============================================================================
 # CORE PHYTOSANITARY CLASSES & PROPERTIES
@@ -69,6 +69,16 @@
         "Auflage"@de,
         "Charge"@fr,
         "Restrizione"@it .
+
+:Measure a owl:Class ;
+    schema:name
+        "Measure"@en,
+        "Masseinheit"@de,
+        "Unité de mesure"@fr,
+        "Unità di misura"@it ;
+    schema:description
+        "Unit of a dosage or application rate as written in the admission documents, with translations. Linked to the corresponding QUDT unit where one exists."@en,
+        "Einheit einer Dosierung oder Aufwandmenge, wie in den Zulassungsunterlagen geschrieben, mit Übersetzungen. Wo vorhanden mit der entsprechenden QUDT-Einheit verknüpft."@de .
 
 :ApplicationArea a owl:Class ;
     schema:name
@@ -489,6 +499,15 @@ schema:PostalAddress a owl:Class ;
         "ha come dosaggio"@it ;
     rdfs:domain :Indication ;
     rdfs:range schema:QuantitativeValue .
+
+:measure a owl:ObjectProperty ;
+    schema:name
+        "has measure"@en,
+        "hat Masseinheit"@de,
+        "a pour unité de mesure"@fr,
+        "ha come unità di misura"@it ;
+    rdfs:domain schema:QuantitativeValue ;
+    rdfs:range :Measure .
 
 :expenditure a owl:ObjectProperty ;
     schema:name

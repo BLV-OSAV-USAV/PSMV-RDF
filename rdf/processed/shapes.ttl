@@ -65,9 +65,9 @@ More example queries, including aggregations and queries combining several parts
     dcterms:publisher <https://www.blv.admin.ch> ;
     dcterms:title "Swiss registry of plant protection products"@en ;
     doap:repository <https://github.com/BLV-OSAV-USAV/PSMV-RDF> ;
-    owl:priorVersion shape:3.4.0 ;
-    owl:versionIRI shape:3.4.1 ;
-    owl:versionInfo "3.4.1" ;
+    owl:priorVersion shape:3.4.1 ;
+    owl:versionIRI shape:3.5.0 ;
+    owl:versionInfo "3.5.0" ;
     adms:versionNotes "Version 3.4.1: Updated additional texts for pests and crops. Latest published version: https://blv-osav-usav.github.io/PSMV-RDF/shacl-documentation.html"@en ;
     dcat:distribution [ dcterms:format <https://www.iana.org/assignments/media-types/text/turtle> ;
             dcat:downloadURL <https://raw.githubusercontent.com/BLV-OSAV-USAV/PSMV-RDF/main/rdf/shapes/data_shape.ttl> ] .
@@ -416,6 +416,32 @@ shape:MandatoryLanguages a sh:NodeShape ;
     rdfs:comment "Language-tagged strings in mandatory languages German and French." ;
     sh:languageIn ( "de" "fr" ) .
 
+shape:Measure a sh:NodeShape ;
+    rdfs:label "Masseinheit"@de,
+        "Measure"@en ;
+    rdfs:comment "Unit of a dosage or application rate as written in the admission documents, with translations. Not every unit is translated in the source, so only German is mandatory. Where a QUDT unit with the same meaning exists, it is linked via skos:exactMatch."@en ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype rdf:langString ;
+            sh:languageIn ( "de" "fr" "it" "en" ) ;
+            sh:maxCount 4 ;
+            sh:minCount 1 ;
+            sh:name "Name"@en ;
+            sh:order 2 ;
+            sh:path schema:name ;
+            sh:qualifiedMinCount 1 ;
+            sh:qualifiedValueShape [ sh:languageIn ( "de" ) ] ;
+            sh:uniqueLang true ],
+        [ sh:maxCount 1 ;
+            sh:name "QUDT-Einheit"@de,
+                "QUDT unit"@en ;
+            sh:nodeKind sh:IRI ;
+            sh:order 3 ;
+            sh:path skos:exactMatch ;
+            sh:pattern "^http://qudt\\.org/vocab/unit/" ],
+        shape:identifier ;
+    sh:targetClass :Measure .
+
 shape:Obligation a sh:NodeShape ;
     rdfs:label "Auflage"@de,
         "Obligation"@en ;
@@ -745,7 +771,14 @@ shape:QuantitativeValue a sh:NodeShape ;
             sh:maxCount 1 ;
             sh:name "Unit text"@en ;
             sh:order 6 ;
-            sh:path schema:unitText ] ;
+            sh:path schema:unitText ],
+        [ sh:class :Measure ;
+            sh:description "The unit as a node with translations. Present for dosages and application rates. Where a QUDT unit with the same meaning exists, it is also given in Unit."@en ;
+            sh:maxCount 1 ;
+            sh:name "Masseinheit"@de,
+                "Measure"@en ;
+            sh:order 7 ;
+            sh:path :measure ] ;
     sh:targetClass schema:QuantitativeValue .
 
 shape:RegularProduct a sh:NodeShape ;

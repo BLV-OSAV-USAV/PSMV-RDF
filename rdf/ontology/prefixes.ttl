@@ -7,6 +7,7 @@
 @prefix crop:        <https://agriculture.ld.admin.ch/plant-protection/crop/> .
 @prefix ghs:         <https://agriculture.ld.admin.ch/plant-protection/ghs/> .
 @prefix ingredient:  <https://agriculture.ld.admin.ch/plant-protection/ingredient/> .
+@prefix measure:     <https://agriculture.ld.admin.ch/plant-protection/measure/> .
 @prefix product:     <https://agriculture.ld.admin.ch/plant-protection/product/> .
 @prefix shape:       <https://agriculture.ld.admin.ch/plant-protection/shape/> .
 @prefix shapes:      <https://agriculture.ld.admin.ch/plant-protection/shapes/> .

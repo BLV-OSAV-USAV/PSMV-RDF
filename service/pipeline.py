@@ -10,6 +10,7 @@ from src.python.db_processing.process_indication_product import process_indicati
 from src.python.db_processing.process_product_code import process_product_code
 from src.python.db_processing.process_pest_code import process_pest_code
 from src.python.db_processing.process_obligation_code import process_obligation_code
+from src.python.db_processing.process_measure_code import process_measure_code
 from src.python.db_processing.process_culture_code import process_culture_code
 from src.python.db_processing.process_organisation import process_organisation
 from src.python.db_processing.process_application_area_code import process_application_area_code
@@ -31,6 +32,7 @@ from src.python.create_pests_ttl import pests_ttl
 from src.python.create_application_area_ttl import application_area_ttl
 from src.python.create_application_comment_ttl import application_comment_ttl
 from src.python.create_obligation_ttl import obligation_ttl
+from src.python.create_measure_ttl import measure_ttl
 from src.python.create_ghs_ttl import ghs_ttl
 from src.python.create_indications_ttl import indication_ttl
 from src.python.create_formulation import formulation_ttl
@@ -59,6 +61,7 @@ def run_pipeline():
     process_product_code()
     process_pest_code()
     process_obligation_code()
+    process_measure_code()
     process_organisation()
     process_indication_links()
     process_indication_product()
@@ -83,6 +86,7 @@ def run_pipeline():
     application_area_ttl()
     application_comment_ttl()
     obligation_ttl()
+    measure_ttl()
     ghs_ttl()
     indication_ttl()
     dataset_ttl()
