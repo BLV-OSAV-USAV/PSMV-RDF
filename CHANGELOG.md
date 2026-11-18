@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.4.19](https://github.com/BLV-OSAV-USAV/PSMV-RDF/compare/psmv-rdf-v0.4.18...psmv-rdf-v0.4.19) (2026-11-18)
+
+
+### Features
+
+* add placeholder substance for wetting agents without ingredients ([d556d53](https://github.com/BLV-OSAV-USAV/PSMV-RDF/commit/d556d53d33b0f776057382c722fd6d97c3a2ddfa))
+* add placeholder substance for wetting agents without ingredients ([add3d3f](https://github.com/BLV-OSAV-USAV/PSMV-RDF/commit/add3d3fd08b31c92bdbebb07c34df701d0da405b))
+* fix a bug in indication and percentages ([3cdf70a](https://github.com/BLV-OSAV-USAV/PSMV-RDF/commit/3cdf70a46e44b3a467655272e76a6e6df12b3c6a))
+
+
+### Bug Fixes
+
+* chagne max to value logic ([0841189](https://github.com/BLV-OSAV-USAV/PSMV-RDF/commit/08411892edce1ab7b947a78a84796ec1c4650284))
+
 ## [0.4.18](https://github.com/BLV-OSAV-USAV/PSMV-RDF/compare/psmv-rdf-v0.4.17...psmv-rdf-v0.4.18) (2026-11-18)
 
 
