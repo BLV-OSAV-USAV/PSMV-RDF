@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.4.17](https://github.com/BLV-OSAV-USAV/PSMV-RDF/compare/psmv-rdf-v0.4.16...psmv-rdf-v0.4.17) (2026-11-18)
+
+
+### Features
+
+* add measure nodes with translations for dosage and expenditure units ([c8ec7be](https://github.com/BLV-OSAV-USAV/PSMV-RDF/commit/c8ec7becdc635faa67154d232d1a264642fdae73))
+* add measure nodes with translations for dosage and expenditure units ([fd48512](https://github.com/BLV-OSAV-USAV/PSMV-RDF/commit/fd485129ed99432c2c170481d24cce3d2c23b9c7))
+* add smoke test for digiflux queries ([c8ec7be](https://github.com/BLV-OSAV-USAV/PSMV-RDF/commit/c8ec7becdc635faa67154d232d1a264642fdae73))
+* Smoke test for the digiFLUX export queries against LINDAS ([0c4dd7b](https://github.com/BLV-OSAV-USAV/PSMV-RDF/commit/0c4dd7bb387e5170ff488d260c071496b8a1bb8a))
+
+
+### Bug Fixes
+
+* rename file ([4732d30](https://github.com/BLV-OSAV-USAV/PSMV-RDF/commit/4732d301f25a9f23ee32d2176414af1400de323c))
+
 ## [0.4.16](https://github.com/BLV-OSAV-USAV/PSMV-RDF/compare/psmv-rdf-v0.4.15...psmv-rdf-v0.4.16) (2026-11-12)
 
 
