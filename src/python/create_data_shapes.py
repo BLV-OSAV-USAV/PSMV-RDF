@@ -49,9 +49,12 @@ def dataset_ttl(
     out_path="rdf/data/dataset.ttl"
 ):
     """
-    Creates the dataset metadata graph: a single `:dataset` node stating which
+    Creates the dataset metadata graph: a single dataset node stating which
     registry export the data reflects, when the RDF was generated and which
     version of the data model it conforms to.
+
+    The dataset IRI is the named graph IRI (`graph` in namespaces.yaml),
+    so it stays stable across runs.
 
     The date is taken from `data_as_of` if given, otherwise from the fetch date
     in `metadata_path`, otherwise today's date.
@@ -60,6 +63,7 @@ def dataset_ttl(
     namespaces = load_namespaces()
 
     BASE = namespaces["base"]
+    GRAPH = namespaces["graph"]
     SCHEMA = namespaces["schema"]
     XSD = namespaces["xsd"]
 
@@ -76,6 +80,9 @@ def dataset_ttl(
         as_of = _read_fetch_date(metadata_path)
     version_iri = _model_version_iri(shapes_path, URIRef(str(SHAPE)))
     generated_at = datetime.now(timezone.utc).replace(microsecond=0)
+    
+    # Dataset IRI == named graph IRI, stable across runs
+    dataset_uri = URIRef(str(GRAPH))
 
     # Create empty graph
     graph = Graph()
@@ -87,8 +94,6 @@ def dataset_ttl(
     graph.bind("prov", PROV)
     graph.bind("xsd", XSD)
     graph.namespace_manager.bind("schema", SCHEMA, override=True, replace=True)
-
-    dataset_uri = BASE["dataset"]
 
     # Add Types
     graph.add((dataset_uri, RDF.type, SCHEMA.Dataset))
@@ -108,6 +113,7 @@ def dataset_ttl(
     print(f"[i] Data as of: {as_of.isoformat()}")
     print(f"[i] Data model: {version_iri}")
     print(f"[i] Total dataset triples: {len(graph)}")
+    print(f"[i] Dataset IRI: {dataset_uri}")
 
     # Save to file
     out_file = Path(out_path)
@@ -119,5 +125,4 @@ def dataset_ttl(
 
 
 if __name__ == "__main__":
-    # Optional: date as first argument, otherwise the fetch date is used
     dataset_ttl(sys.argv[1] if len(sys.argv) > 1 else None)
