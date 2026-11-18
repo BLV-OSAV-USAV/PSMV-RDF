@@ -5,7 +5,8 @@ from rdflib import Graph, Namespace, URIRef, Literal, BNode
 from rdflib.namespace import RDF, RDFS
 
 # local imports
-from src.python.utils.helper_functions import load_namespaces, load_rdf_mappings, to_decimal, format_psm
+from src.python.utils.helper_functions import load_namespaces, load_rdf_mappings, to_decimal, format_psm, UNSPECIFIED_ADJUVANT_ID
+
 def products_ttl(
     db_path = "data/processed/psmv-data.duckdb",
     product_organisation_link_path = "data/processed/ProductOrganisation.csv"):
@@ -263,42 +264,53 @@ def products_ttl(
                     graph.add((product_uri, BASE.referenceProduct, ref_product_uri))
                     
             # Add ingredients as nested Blank Nodes
-            if product_ref_id_str in ingredient_dict:
-                for ing_row in ingredient_dict[product_ref_id_str]:
-                    # Parallel imports do not expose co-formulants of the reference product
-                    if is_parallel_import and pd.isna(ing_row.get("active_substance_id")):
+            added_ingredient = False
+            for ing_row in ingredient_dict.get(product_ref_id_str, []):
+                # Parallel imports do not expose co-formulants of the reference product
+                if is_parallel_import and pd.isna(ing_row.get("active_substance_id")):
+                    continue
+
+                substance_id = str(ing_row.get("nk_codetable_substance_id")).strip().lower()
+                if substance_id == "nan" or not substance_id:
+                    continue
+
+                ingredient_node = BNode()
+                graph.add((product_uri, BASE.ingredient, ingredient_node))
+                graph.add((ingredient_node, RDF.type, BASE.Ingredient))
+                graph.add((ingredient_node, BASE.substance, SUBSTANCE[substance_id]))
+                added_ingredient = True
+
+                # Link additional text code (e.g. "entspricht 35 % Kupfer")
+                text_id = str(ing_row.get("nk_additional_text_id")).strip().lower()
+                if text_id in ingredient_text_ids:
+                    graph.add((ingredient_node, BASE.additionalText, INGREDIENTADDTEXT[text_id]))
+
+                share_columns = {
+                    "in_gram_per_litre": "gram_per_litre",
+                    "in_percent": "percent",
+                }
+
+                for col, unit_key in share_columns.items():
+                    raw = ing_row.get(col)
+                    if pd.isna(raw):
                         continue
+                    value = format_psm(raw)
+                    share_node = BNode()
+                    graph.add((ingredient_node, BASE.share, share_node))
+                    graph.add((share_node, RDF.type, SCHEMA.QuantitativeValue))
+                    graph.add((share_node, SCHEMA.value, Literal(value, datatype=XSD.decimal)))
+                    graph.add((share_node, SCHEMA.unitCode, URIRef(UNIT_MAPPING[unit_key])))
 
-                    substance_id = str(ing_row.get("nk_codetable_substance_id")).strip().lower()
-                    if substance_id == "nan" or not substance_id:
-                        continue
-                    
-                    ingredient_node = BNode()
-                    graph.add((product_uri, BASE.ingredient, ingredient_node))
-                    graph.add((ingredient_node, RDF.type, BASE.Ingredient))
-                    graph.add((ingredient_node, BASE.substance, SUBSTANCE[substance_id]))
-
-                    # Link additional text code (e.g. "entspricht 35 % Kupfer")
-                    text_id = str(ing_row.get("nk_additional_text_id")).strip().lower()
-                    if text_id in ingredient_text_ids:
-                        graph.add((ingredient_node, BASE.additionalText, INGREDIENTADDTEXT[text_id]))
-
-                    share_columns = {
-                        "in_gram_per_litre": "gram_per_litre",
-                        "in_percent": "percent",
-                    }
-
-                    for col, unit_key in share_columns.items():
-                        raw = ing_row.get(col)
-                        if pd.isna(raw):
-                            continue
-                        value = format_psm(raw)
-                        share_node = BNode()
-                        graph.add((ingredient_node, BASE.share, share_node))
-                        graph.add((share_node, RDF.type, SCHEMA.QuantitativeValue))
-                        graph.add((share_node, SCHEMA.value, Literal(value, datatype=XSD.decimal)))
-                        graph.add((share_node, SCHEMA.unitCode, URIRef(UNIT_MAPPING[unit_key])))
-
+            # Adjuvants without any ingredient row: the PSM register only shows the
+            # category name ("Netz- und Haftmittel"), so link to a shared placeholder
+            is_adjuvant = (product_uri, BASE.productType, BASE.WettingAndAdhesionAgent) in graph
+            has_source_rows = bool(ingredient_dict.get(product_ref_id_str))
+            if is_adjuvant and not has_source_rows:
+                ingredient_node = BNode()
+                graph.add((product_uri, BASE.ingredient, ingredient_node))
+                graph.add((ingredient_node, RDF.type, BASE.Ingredient))
+                graph.add((ingredient_node, BASE.substance, SUBSTANCE[UNSPECIFIED_ADJUVANT_ID]))
+                
             # Add GHS connections
             if product_ref_id_str in ghs_dict:
                 for code_id in ghs_dict[product_ref_id_str]:

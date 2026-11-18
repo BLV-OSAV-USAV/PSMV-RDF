@@ -225,3 +225,7 @@ def format_psm(value) -> str:
     else:
         q = d.quantize(Decimal(1).scaleb(d.adjusted() - 1), rounding=ROUND_HALF_UP)
     return format(q.normalize(), "f")
+
+# Placeholder for products whose register entry only names the category
+# ("Netz- und Haftmittel") without any substance
+UNSPECIFIED_ADJUVANT_ID = "unspecified-wetting-and-adhesion-agent"

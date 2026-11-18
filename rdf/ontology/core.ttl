@@ -30,8 +30,8 @@
         "Guy Schnidrig" ;
     dcterms:title "Crop protection product ontology"@en ;
     dcterms:modified "2026-11-05"^^xsd:date ;
-    owl:versionInfo "3.5.0" ;
-    owl:versionIRI <https://agriculture.ld.admin.ch/plant-protection/3.5.0> .
+    owl:versionInfo "3.6.0" ;
+    owl:versionIRI <https://agriculture.ld.admin.ch/plant-protection/3.6.0> .
 
 # ==============================================================================
 # CORE PHYTOSANITARY CLASSES & PROPERTIES
@@ -595,7 +595,23 @@ schema:PostalAddress a owl:Class ;
         "Un composant inactif d'un produit phytosanitaire qui soutient la formulation mais n'a pas d'activité pesticide directe. Dans l'index des produits phytosanitaires, les coformulants sont mentionnés comme substances à déclarer en plus des substances actives."@fr,
         "Un componente inattivo di un prodotto fitosanitario che supporta la formulazione ma non ha un'attività pesticida diretta. Nell'elenco dei prodotti fitosanitari, i coformulanti sono indicati come sostanze da dichiarare in aggiunta alle sostanze attive."@it ;
     rdfs:comment
-        "Includes entries from the co-formulant code table and legacy entries (numeric IDs) without a code table link. Typing is derived in substance_ttl: every substance without active_substance_id is a :CoFormulant."@en .
+        "Includes entries from the co-formulant code table and legacy entries (numeric IDs) without a code table link. Typing is derived in substance_ttl: every substance from the code table without active_substance_id is a :CoFormulant (the :UnspecifiedSubstance placeholder is not part of the code table)."@en .
+
+:UnspecifiedSubstance a owl:Class ;
+    rdfs:subClassOf :Substance ;
+    owl:disjointWith :ActiveSubstance, :CoFormulant ;
+    schema:name
+        "Unspecified substance"@en,
+        "Nicht spezifizierter Stoff"@de,
+        "Substance non spécifiée"@fr,
+        "Sostanza non specificata"@it ;
+    schema:description
+        "Placeholder for products whose entry in the plant protection product directory names no substance but only the product category (e.g. wetting and adhesion agent)."@en,
+        "Platzhalter für Produkte, deren Eintrag im Pflanzenschutzmittelverzeichnis keinen Stoff ausweist, sondern nur die Produktkategorie (z. B. Netz- und Haftmittel)."@de,
+        "Espace réservé pour les produits dont l'entrée dans le répertoire des produits phytosanitaires ne mentionne aucune substance, mais seulement la catégorie de produit (p. ex. mouillant et adhésif)."@fr,
+        "Segnaposto per i prodotti la cui voce nell'elenco dei prodotti fitosanitari non indica alcuna sostanza, ma solo la categoria di prodotto (ad es. bagnante e adesivo)."@it ;
+    rdfs:comment
+        "Assigned in products_ttl to products of type :WettingAndAdhesionAgent without any row in ProductIngredient. The single instance is created in substance_ttl (UNSPECIFIED_ADJUVANT_ID)."@en .
 
 :substance a owl:ObjectProperty ;
     schema:name
