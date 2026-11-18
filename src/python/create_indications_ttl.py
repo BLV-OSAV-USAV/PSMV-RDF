@@ -31,6 +31,7 @@ def indication_ttl(
     PEST = namespaces.get("pest", Namespace(str(BASE) + "pest/"))
     CODE = namespaces.get("code", Namespace(str(BASE) + "code/"))
     UNIT = namespaces.get("unit", Namespace(str(BASE) + "unit/"))
+    MEASURE = namespaces.get("measure", Namespace(str(BASE) + "measure/"))
     CROPADDTEXT = namespaces.get("cropaddtext", Namespace(str(BASE) + "cropaddtext/"))
     PESTADDTEXT = namespaces.get("pestaddtext", Namespace(str(BASE) + "pestaddtext/"))
 
@@ -45,6 +46,7 @@ def indication_ttl(
     graph.bind("pest", PEST)
     graph.bind("code", CODE)
     graph.bind("unit", UNIT)
+    graph.bind("measure", MEASURE)
     graph.bind("cropaddtext", CROPADDTEXT)
     graph.bind("pestaddtext", PESTADDTEXT)
     graph.namespace_manager.bind("schema", SCHEMA, override=True, replace=True)
@@ -211,6 +213,10 @@ def indication_ttl(
 
                 unit_uri = UNIT_MAP.get(unit_str) if unit_str else None
 
+                # Measure node (carries the translations of the unit)
+                measure_id = m_rows[0].get("indication_measure_id") if m_rows else None
+                measure_uri = MEASURE[str(measure_id).strip().lower()] if pd.notna(measure_id) and str(measure_id).strip() else None
+
                 # time-measure lookup (Days / Week(s)) for waiting period unit
                 t_rows = time_measure_dict.get(indication_id_str, [])
                 time_unit_str = t_rows[0].get("EN") if t_rows else None
@@ -234,6 +240,8 @@ def indication_ttl(
                             graph.add((dosage_node, SCHEMA.unitText, Literal(unit_str)))
                         if unit_uri:
                             graph.add((dosage_node, SCHEMA.unitCode, unit_uri))
+                        if measure_uri:
+                            graph.add((dosage_node, BASE.measure, measure_uri))
 
                     # Expenditure
                     e_from = d_row.get("expenditure_from")
@@ -250,6 +258,8 @@ def indication_ttl(
                             graph.add((exp_node, SCHEMA.unitText, Literal(unit_str)))
                         if unit_uri:
                             graph.add((exp_node, SCHEMA.unitCode, unit_uri))
+                        if measure_uri:
+                            graph.add((exp_node, BASE.measure, measure_uri))
 
                     # Waiting Period
                     wp = d_row.get("waiting_period")
