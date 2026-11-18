@@ -232,12 +232,15 @@ def format_psm(value) -> str:
 UNSPECIFIED_ADJUVANT_ID = "unspecified-wetting-and-adhesion-agent"
 
 def add_amount(graph, node, v_from, v_to):
-    """Single value -> schema:value, range -> schema:minValue/maxValue."""
+    """Single value -> schema:value, range -> schema:minValue/maxValue.
+
+    A value given only as 'from' or only as 'to' is a single value:
+    the PSM directory shows e.g. "1.1 kg/ha", not "bis 1.1 kg/ha".
+    """
     has_from, has_to = pd.notna(v_from), pd.notna(v_to)
-    if has_from and (not has_to or float(v_from) == float(v_to)):
-        graph.add((node, SCHEMA.value, Literal(float(v_from), datatype=XSD.decimal)))
+    if has_from != has_to or (has_from and float(v_from) == float(v_to)):
+        single = v_from if has_from else v_to
+        graph.add((node, SCHEMA.value, Literal(float(single), datatype=XSD.decimal)))
         return
-    if has_from:
-        graph.add((node, SCHEMA.minValue, Literal(float(v_from), datatype=XSD.decimal)))
-    if has_to:
-        graph.add((node, SCHEMA.maxValue, Literal(float(v_to), datatype=XSD.decimal)))
+    graph.add((node, SCHEMA.minValue, Literal(float(v_from), datatype=XSD.decimal)))
+    graph.add((node, SCHEMA.maxValue, Literal(float(v_to), datatype=XSD.decimal)))
