@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.18](https://github.com/BLV-OSAV-USAV/PSMV-RDF/compare/psmv-rdf-v0.4.17...psmv-rdf-v0.4.18) (2026-11-18)
+
+
+### Features
+
+* use named graph IRI as stable dataset IRI ([207af83](https://github.com/BLV-OSAV-USAV/PSMV-RDF/commit/207af837b6d3cc7868762565961b299ff8e0f5b9))
+* use named graph IRI as stable dataset IRI ([39ea58b](https://github.com/BLV-OSAV-USAV/PSMV-RDF/commit/39ea58b17fed77ea90b913a499026e654d2f6166))
+
 ## [0.4.17](https://github.com/BLV-OSAV-USAV/PSMV-RDF/compare/psmv-rdf-v0.4.16...psmv-rdf-v0.4.17) (2026-11-18)
 
 
