@@ -30,8 +30,27 @@
         "Guy Schnidrig" ;
     dcterms:title "Crop protection product ontology"@en ;
     dcterms:modified "2026-11-05"^^xsd:date ;
-    owl:versionInfo "3.6.0" ;
+    owl:versionInfo "3.6.1" ;
     owl:versionIRI <https://agriculture.ld.admin.ch/plant-protection/3.6.0> .
+
+# ==============================================================================
+# DATASET
+# ==============================================================================
+
+:dataAsOf a owl:DatatypeProperty, owl:FunctionalDataProperty ;
+    schema:name
+        "Data as of"@en,
+        "Datenstand"@de,
+        "État des données"@fr,
+        "Stato dei dati"@it ;
+    schema:description
+        "Date on which the data was fetched from the nightly dump of the source registry. Defines the state of the data. A rebuild without a new fetch keeps this date."@en,
+        "Datum, an dem die Daten aus dem nächtlichen Export des Quellregisters abgerufen wurden. Bestimmt den Datenstand. Bei einem Neuaufbau ohne neuen Abruf bleibt dieses Datum erhalten."@de,
+        "Date à laquelle les données ont été extraites de l'export nocturne du registre source. Définit l'état des données. Une reconstruction sans nouvelle extraction conserve cette date."@fr,
+        "Data in cui i dati sono stati estratti dall'esportazione notturna del registro di origine. Definisce lo stato dei dati. Una ricostruzione senza nuova estrazione mantiene questa data."@it ;
+    rdfs:subPropertyOf dcterms:date ;
+    rdfs:domain schema:Dataset ;
+    rdfs:range xsd:date .
 
 # ==============================================================================
 # CORE PHYTOSANITARY CLASSES & PROPERTIES

@@ -21,7 +21,10 @@ def _read_fetch_date(metadata_path):
             fetch_date = (yaml.safe_load(f) or {}).get("fetch_date")
         if fetch_date:
             return date.fromisoformat(str(fetch_date))
-
+    raise ValueError(
+        f"No `fetch_date` in `{metadata_path}`. Run the fetch script "
+        f"or pass the date explicitly."
+    )
     print(f"[i] No fetch date found in `{metadata_path}`, using today's date")
     return date.today()
 
@@ -91,7 +94,6 @@ def dataset_ttl(
     graph.bind("", BASE)
     graph.bind("dcterms", DCTERMS)
     graph.bind("dcat", DCAT)
-    graph.bind("prov", PROV)
     graph.bind("xsd", XSD)
     graph.namespace_manager.bind("schema", SCHEMA, override=True, replace=True)
 
@@ -99,13 +101,12 @@ def dataset_ttl(
     graph.add((dataset_uri, RDF.type, SCHEMA.Dataset))
     graph.add((dataset_uri, RDF.type, DCAT.Dataset))
 
-    # Add fetch date ("data as of")
-    graph.add((dataset_uri, DCTERMS.modified, Literal(as_of, datatype=XSD.date)))
-    graph.add((dataset_uri, SCHEMA.dateModified, Literal(as_of, datatype=XSD.date)))
+    # Data as of = fetch date = state of the source data
+    graph.add((dataset_uri, BASE.dataAsOf, Literal(as_of, datatype=XSD.date)))
 
-    # Add generation time of this RDF
-    graph.add((dataset_uri, PROV.generatedAtTime, Literal(generated_at, datatype=XSD.dateTime)))
-
+    # Last modification of this RDF (used by the cache)
+    graph.add((dataset_uri, SCHEMA.dateModified, Literal(generated_at, datatype=XSD.dateTime)))
+    
     # Add data model version
     graph.add((dataset_uri, DCTERMS.conformsTo, version_iri))
 
