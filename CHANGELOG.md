@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.4.20](https://github.com/BLV-OSAV-USAV/PSMV-RDF/compare/psmv-rdf-v0.4.19...psmv-rdf-v0.4.20) (2026-11-19)
+
+
+### Features
+
+* add CultureForm to graph ([06797d5](https://github.com/BLV-OSAV-USAV/PSMV-RDF/commit/06797d5361eabbc0da57741e859aabcccfaac78e))
+* add CultureForm to graph ([6e48fa0](https://github.com/BLV-OSAV-USAV/PSMV-RDF/commit/6e48fa08d5b026c323b2df1a96b7a6edbe8b9a5e))
+* fix dateModifed for cache ([d3c2a84](https://github.com/BLV-OSAV-USAV/PSMV-RDF/commit/d3c2a849c3527fa16cbb35337caf1d6f8a32edbf))
+* fix dateModifed for cache ([55ff1e7](https://github.com/BLV-OSAV-USAV/PSMV-RDF/commit/55ff1e76458ea6967753bfcca147c206d035735c))
+
 ## [0.4.19](https://github.com/BLV-OSAV-USAV/PSMV-RDF/compare/psmv-rdf-v0.4.18...psmv-rdf-v0.4.19) (2026-11-18)
 
 
