@@ -501,6 +501,43 @@ schema:PostalAddress a owl:Class ;
     rdfs:domain :Indication ;
     rdfs:range :Obligation .
 
+:CultureForm a owl:Class ;
+    schema:name
+        "Culture form"@en,
+        "Kulturform"@de,
+        "Forme de culture"@fr,
+        "Forma di coltura"@it ;
+    schema:description
+        "Cultivation setting an indication applies to: open field or greenhouse."@en,
+        "Anbauform, für die eine Indikation gilt: Freiland oder Gewächshaus."@de,
+        "Mode de culture auquel s'applique une indication : plein air ou serre."@fr,
+        "Modalità di coltivazione a cui si applica un impiego: pieno campo o serra."@it ;
+    rdfs:subClassOf
+        [
+            a owl:Restriction ;
+            owl:onProperty schema:name ;
+            owl:allValuesFrom rdf:langString ;
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:onProperty schema:identifier ;
+            owl:allValuesFrom xsd:string ;
+        ] .
+
+:cultureForm a owl:ObjectProperty ;
+    schema:name
+        "applies to culture form"@en,
+        "gilt für Kulturform"@de,
+        "s'applique à la forme de culture"@fr,
+        "si applica alla forma di coltura"@it ;
+    schema:description
+        "Optional; an indication may apply to both culture forms."@en,
+        "Optional; eine Indikation kann für beide Kulturformen gelten."@de,
+        "Facultatif ; une indication peut s'appliquer aux deux formes de culture."@fr,
+        "Facoltativo; un impiego può valere per entrambe le forme di coltura."@it ;
+    rdfs:domain :Indication ;
+    rdfs:range :CultureForm .
+    
 :applicationComment a owl:ObjectProperty ;
     schema:name
         "has application comment"@en,

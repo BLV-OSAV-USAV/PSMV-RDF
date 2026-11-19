@@ -14,8 +14,9 @@ def indication_ttl(
 ):
     """
     Creates an indications.ttl graph linking products, crops, pests,
-    obligations, application areas, application comments, and crops
-    and pests with additional texts.
+    obligations, application areas, application comments, culture forms,
+    and crops and pests with additional texts. Also creates the culture
+    form code nodes (Freiland & Gewächshaus).
     """
     # Set namespaces
     namespaces = load_namespaces()
@@ -112,6 +113,7 @@ def indication_ttl(
     (obl_df,"indication_obligation_id", "obligation", CODE),
     (app_area_df,"application_area_id", "applicationArea",CODE),
     (app_comment_df, "application_comment_id", "applicationComment", CODE),
+    (ind_clt_frm_df, "culture_form_id", "cultureForm", CODE),
     ]
 
     # Map Indication -> Crop, Obligation, Area, Comment
@@ -131,6 +133,37 @@ def indication_ttl(
         for _, row in pairs.iterrows():
             ind_uri = ensure_indication(graph, seen_indications, row["indication"], INDICATION, BASE)
             graph.add((ind_uri, predicate, ns[row[id_col]]))
+
+    # Culture form code nodes (Freiland / Gewächshaus) with labels.
+    # Source labels take precedence; fallbacks fill missing EN.
+    CULTURE_FORM_FALLBACK_LABELS = {
+        "6407": {"en": "greenhouse"},
+        "6414": {"en": "open-field"},
+    }
+
+    cf_codes = (
+        ind_clt_frm_df
+        .dropna(subset=["culture_form_id"])
+        .assign(culture_form_id=lambda d: d["culture_form_id"].astype(str).str.strip().str.lower())
+        .drop_duplicates(subset=["culture_form_id"])
+    )
+    for _, row in cf_codes.iterrows():
+        cf_uri = CODE[row["culture_form_id"]]
+        notation = str(int(row["code"])) if pd.notna(row["code"]) else None
+
+        graph.add((cf_uri, RDF.type, BASE.CultureForm))
+        if notation:
+            graph.add((cf_uri, SCHEMA.identifier, Literal(notation, datatype=XSD.string)))
+
+        fallback = CULTURE_FORM_FALLBACK_LABELS.get(notation, {})
+        for lang in ["de", "fr", "it", "en"]:
+            label = row.get(lang.upper())
+            if pd.notna(label) and str(label).strip():
+                graph.add((cf_uri, SCHEMA.name, Literal(str(label).strip(), lang=lang)))
+            elif lang in fallback:
+                graph.add((cf_uri, SCHEMA.name, Literal(fallback[lang], lang=lang)))
+            else:
+                print(f"[!] cultureForm {notation}: no '{lang}' label")
 
     # Map Indication -> Crop with additional text
     crop_text_cols = ["indication", "culture_id", "codetable_culture_additional_text"]
