@@ -190,13 +190,13 @@ shape:Dataset a sh:NodeShape ;
     sh:nodeKind sh:IRI ;
     sh:order 16 ;
     sh:property [ sh:datatype xsd:date ;
-            sh:description "Date on which the data was fetched from the nightly dump of the source registry. Defines the release and the state of the data. A rebuild without a new fetch keeps this date."@en ;
+            sh:description "Date on which the data was fetched from the nightly dump of the source registry. Defines the state of the data. A rebuild without a new fetch keeps this date."@en ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:name "Datenstand"@de,
-                "Release date"@en ;
+                "Data as of"@en ;
             sh:order 1 ;
-            sh:path :releaseDate ],
+            sh:path :dataAsOf ],
         [ sh:datatype xsd:dateTime ;
             sh:description "Time at which this RDF was last generated. Changes with every build and is used for cache invalidation."@en ;
             sh:maxCount 1 ;
