@@ -30,6 +30,8 @@ country_mapping:
   "95635aeb-5ebb-4948-9595-6894b4ac0773": "HUN"
   "cda1f206-edb0-40d2-8ff6-15b29ead6c7f": "IND"
   "51f6122d-47ec-4051-97cc-01d7cf8e4758": "NLD"
+  "db550664-2a72-4bfa-97cd-375c5b57f532": "BEL"
+  "e276f659-56bf-4fa6-91a8-f36beacfa98a": "NLD"
 
 type_mapping:
   "REGULAR": "RegularProduct"
