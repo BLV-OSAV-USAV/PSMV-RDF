@@ -853,7 +853,7 @@ dependencies = [
     { name = "sparqlwrapper" },
 ]
 
-[package.optional-dependencies]
+[package.dev-dependencies]
 dev = [
     { name = "actionlint-py" },
     { name = "mypy" },
@@ -864,24 +864,27 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "actionlint-py", marker = "extra == 'dev'", specifier = ">=1.7.12.25" },
     { name = "duckdb", specifier = ">=1.5.0" },
-    { name = "mypy", marker = "extra == 'dev'" },
     { name = "otsrdflib", specifier = ">=0.2.9" },
     { name = "pandas", specifier = ">=2.3.3" },
     { name = "pyrudof", specifier = ">=0.3.39" },
     { name = "pysftp", specifier = ">=0.2.9" },
     { name = "pyshacl", specifier = ">=0.31.0" },
-    { name = "pytest", marker = "extra == 'dev'", specifier = ">=9.2.0" },
-    { name = "pytest-cov", marker = "extra == 'dev'" },
     { name = "python-dotenv", specifier = ">=1.2.0" },
     { name = "pyyaml", specifier = ">=6.0.3" },
     { name = "rdflib", specifier = ">=7.4.0" },
     { name = "requests", specifier = ">=2.32.5" },
-    { name = "ruff", marker = "extra == 'dev'" },
     { name = "sparqlwrapper", specifier = ">=2.0.0" },
 ]
-provides-extras = ["dev"]
+
+[package.metadata.requires-dev]
+dev = [
+    { name = "actionlint-py", specifier = ">=1.7.12.25" },
+    { name = "mypy" },
+    { name = "pytest", specifier = ">=9.2.0" },
+    { name = "pytest-cov" },
+    { name = "ruff" },
+]
 
 [[package]]
 name = "pycparser"
