@@ -61,14 +61,14 @@ You can run this query in the [LINDAS SPARQL editor](https://lindas.admin.ch/spa
 
 More example queries, including aggregations and queries combining several parts of the data model, are available in the [query guide](https://blv-osav-usav.github.io/PSMV-RDF/query-guide.html).
 """@en ;
-    dcterms:modified "2026-11-05"^^xsd:date ;
+    dcterms:modified "2026-11-20"^^xsd:date ;
     dcterms:publisher <https://www.blv.admin.ch> ;
     dcterms:title "Swiss registry of plant protection products"@en ;
     doap:repository <https://github.com/BLV-OSAV-USAV/PSMV-RDF> ;
-    owl:priorVersion shape:3.6.0 ;
-    owl:versionIRI shape:3.6.1 ;
-    owl:versionInfo "3.6.1" ;
-    adms:versionNotes "Version 3.6.1: Added dataset shape with :releaseDate (state of the source data) and schema:dateModified (build time, used for caching). Latest published version: https://blv-osav-usav.github.io/PSMV-RDF/shacl-documentation.html"@en ;
+    owl:priorVersion shape:3.6.1 ;
+    owl:versionIRI shape:3.7.0 ;
+    owl:versionInfo "3.7.0" ;
+    adms:versionNotes "Version 3.7.0: Removed telephone and fax numbers (schema:telephone, schema:faxNumber) from organizations. Latest published version: https://blv-osav-usav.github.io/PSMV-RDF/shacl-documentation.html"@en ;
     dcat:distribution [ dcterms:format <https://www.iana.org/assignments/media-types/text/turtle> ;
             dcat:downloadURL <https://raw.githubusercontent.com/BLV-OSAV-USAV/PSMV-RDF/main/rdf/shapes/data_shape.ttl> ] .
 
@@ -183,7 +183,7 @@ shape:CropWithAdditionalText a sh:NodeShape ;
 shape:CultureForm a sh:NodeShape ;
     rdfs:label "Kulturform"@de,
         "Culture form"@en ;
-    rdfs:comment "Cultivation setting an indication applies to: open-field (Freiland) or greenhouse (Gewächshaus). English labels are added by the pipeline, as the source provides none."@en ;
+    rdfs:comment "Cultivation setting an indication applies to: open-field (Freiland) or greenhouse (Gewächshaus). The source provides no English labels; they were added for this dataset."@en ;
     sh:closed true ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:nodeKind sh:IRI ;
@@ -408,6 +408,7 @@ It systematically links a target pest with the applicable cultivation domain and
             sh:order 8 ;
             sh:path :expenditure ],
         [ sh:class schema:QuantitativeValue ;
+            sh:description "Minimum time between the last application and the harvest. A waiting period of 0 in the source is not given; the indication then has no waiting period."@en ;
             sh:maxCount 1 ;
             sh:name "Wartefrist"@de,
                 "Waiting Period"@en ;
@@ -429,15 +430,7 @@ shape:Ingredient a sh:NodeShape ;
     sh:closed true ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:nodeKind sh:BlankNode ;
-    sh:property [ sh:class :IngredientAdditionalText ;
-            sh:description "Qualifies the ingredient content, e.g. the corresponding copper content. Only present where the registry specifies such a text."@en ;
-            sh:maxCount 1 ;
-            sh:minCount 0 ;
-            sh:name "Zusatztext"@de,
-                "Additional text"@en ;
-            sh:order 3 ;
-            sh:path :additionalText ],
-        [ sh:class :Substance ;
+    sh:property [ sh:class :Substance ;
             sh:description "The substance that makes up this part of the formulation."@en ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
@@ -455,7 +448,15 @@ shape:Ingredient a sh:NodeShape ;
             sh:path :share ;
             sh:property [ sh:in ( unit:PERCENT unit:GM-PER-L ) ;
                     sh:message "The unit of an ingredient share must be either percent or g/L."@en ;
-                    sh:path schema:unitCode ] ] ;
+                    sh:path schema:unitCode ] ],
+        [ sh:class :IngredientAdditionalText ;
+            sh:description "Qualifies the ingredient content, e.g. the corresponding copper content. Only present where the registry specifies such a text."@en ;
+            sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:name "Zusatztext"@de,
+                "Additional text"@en ;
+            sh:order 3 ;
+            sh:path :additionalText ] ;
     sh:targetClass :Ingredient .
 
 shape:IngredientAdditionalText a sh:NodeShape ;
@@ -533,18 +534,6 @@ shape:Organization a sh:NodeShape ;
             sh:minCount 1 ;
             sh:name "Address"@en ;
             sh:path schema:address ],
-        [ sh:datatype xsd:string ;
-            sh:description "A telephone number associated with the organization. The validation pattern accommodates a flexible subset of the ITU-T E.164 recommendation, permitting common typographic separators such as spaces and hyphens."@en ;
-            sh:message "Telephone number must be a valid format, optionally starting with '+' and containing only numbers, spaces, hyphens, or parentheses."@en ;
-            sh:name "Telephone"@en ;
-            sh:path schema:telephone ;
-            sh:pattern "^\\+?[0-9\\s\\-()]{7,20}$" ],
-        [ sh:datatype xsd:string ;
-            sh:description "A facsimile number associated with the organization. The validation pattern accommodates a flexible subset of the ITU-T E.164 recommendation, permitting common typographic separators."@en ;
-            sh:message "Fax number must be a valid format, optionally starting with '+' and containing only numbers, spaces, hyphens, or parentheses."@en ;
-            sh:name "Fax number"@en ;
-            sh:path schema:faxNumber ;
-            sh:pattern "^\\+?[0-9\\s\\-()]{7,20}$" ],
         [ sh:datatype xsd:string ;
             sh:description "An electronic mail address associated with the organization. The validation pattern enforces an approximation of the RFC 5322 specification syntax for internet message formats."@en ;
             sh:message "Email must be a valid address format (e.g., user@example.com)."@en ;
@@ -748,7 +737,7 @@ shape:Product a sh:NodeShape ;
             sh:name "Ingredient"@en ;
             sh:order 6 ;
             sh:path :ingredient ],
-        [ sh:message "Product has no ingredient. Check the source data or the placeholder fallback in products_ttl."@en ;
+        [ sh:message "Product has no ingredient. Check the source data."@en ;
             sh:minCount 1 ;
             sh:path :ingredient ;
             sh:severity sh:Warning ],
