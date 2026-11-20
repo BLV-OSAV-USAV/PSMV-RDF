@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.4.21](https://github.com/BLV-OSAV-USAV/PSMV-RDF/compare/psmv-rdf-v0.4.20...psmv-rdf-v0.4.21) (2026-11-20)
+
+
+### Features
+
+* remove telephone and fix waiting period ([27c9495](https://github.com/BLV-OSAV-USAV/PSMV-RDF/commit/27c9495deac9af2a3d3544dff2a5d19d3001e991))
+* update country mapping and add new data ([e269a38](https://github.com/BLV-OSAV-USAV/PSMV-RDF/commit/e269a38a1c4b453ca011dc6bfd30692de2d0dc54))
+* update country mapping and add newdata ([74e4d82](https://github.com/BLV-OSAV-USAV/PSMV-RDF/commit/74e4d82be4324ce40cc710234a0e0c596dbdad5d))
+
 ## [0.4.20](https://github.com/BLV-OSAV-USAV/PSMV-RDF/compare/psmv-rdf-v0.4.19...psmv-rdf-v0.4.20) (2026-11-19)
 
 
