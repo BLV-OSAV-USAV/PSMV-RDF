@@ -10,7 +10,7 @@
 
 ## Plant Protection Products (PSMV) as Linked Data
 
-A Python module for converting Swiss plant protection product data from CSV format to RDF and publishing it to the LINDAS Linked Data Service.
+A Python module for converting Swiss plant protection product data from the source to RDF and publishing it to the LINDAS Linked Data Service.
 
 ## Reproduce the data integration pipeline
 
