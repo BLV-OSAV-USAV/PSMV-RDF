@@ -19,7 +19,7 @@ jobs:
         run: sudo apt-get install -y libssh2-1-dev
 
       - name: Install dependencies
-        run: uv sync
+        run: uv sync --locked
 
       - name: Run pipeline script
         run: uv run python service/pipeline.py

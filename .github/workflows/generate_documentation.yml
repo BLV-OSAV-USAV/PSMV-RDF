@@ -84,7 +84,7 @@ jobs:
         run: sudo apt-get install -y libssh2-1-dev graphviz
 
       - name: Install dependencies
-        run: uv sync
+        run: uv sync --locked
 
       - name: Restore SHACL-Play JAR cache
         id: cache-jar

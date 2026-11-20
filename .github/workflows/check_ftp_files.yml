@@ -11,7 +11,7 @@ jobs:
       - uses: astral-sh/setup-uv@v7
         with:
           python-version: "3.12"
-      - run: uv sync --frozen --extra dev
+      - run: uv sync --locked
       - run: uv run pytest -m network -v tests/test_sftp.py
         env:
           SFTP_HOST: ${{ secrets.SFTP_HOST }}
