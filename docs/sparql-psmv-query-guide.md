@@ -2,7 +2,7 @@
 
 **Graph:** `https://lindas.admin.ch/fsvo/plant-protection-products`  
 **Base namespace:** `https://agriculture.ld.admin.ch/plant-protection/`  
-**SPARQL endpoint:** `https://lindas.admin.ch/query`
+**SPARQL endpoint:** `https://lindas.admin.ch/sparql/`
 
 ---
 
@@ -170,7 +170,7 @@ ORDER BY ?cropName ?pestName ?effectType
 ### Endpoint & authentication
 
 ```
-Endpoint:  https://lindas.admin.ch/query
+Endpoint:  https://lindas.admin.ch/sparql/
 Method:    GET or POST (application/x-www-form-urlencoded)
 Accept:    application/sparql-results+json
 Auth:      None required for public read access
@@ -179,7 +179,7 @@ Auth:      None required for public read access
 ### Minimal fetch (vanilla JS)
 
 ```js
-const ENDPOINT = "https://lindas.admin.ch/query";
+const ENDPOINT = "https://lindas.admin.ch/sparql/";
 
 async function querySparql(sparql) {
   const url = new URL(ENDPOINT);
@@ -244,7 +244,7 @@ console.table(rows);
 This query lists all plant protection products containing sulphur, showing for each its name, federal admission number, formulation, permission holder and product type.
 
 ```js
-const ENDPOINT = "https://lindas.admin.ch/query";
+const ENDPOINT = "https://lindas.admin.ch/sparql/";
 
 async function querySparql(sparql) {
   const url = new URL(ENDPOINT);
