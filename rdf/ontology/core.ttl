@@ -29,9 +29,9 @@
         "Sara Schärrer",
         "Guy Schnidrig" ;
     dcterms:title "Crop protection product ontology"@en ;
-    dcterms:modified "2026-11-05"^^xsd:date ;
-    owl:versionInfo "3.6.1" ;
-    owl:versionIRI <https://agriculture.ld.admin.ch/plant-protection/3.6.0> .
+    dcterms:modified "2026-11-20"^^xsd:date ;
+    owl:versionInfo "3.7.0" ;
+    owl:versionIRI <https://agriculture.ld.admin.ch/plant-protection/3.7.0> .
 
 # ==============================================================================
 # DATASET
@@ -135,16 +135,6 @@ schema:Organization a owl:Class ;
         a owl:Restriction ;
         owl:onProperty schema:address ;
         owl:allValuesFrom schema:PostalAddress ;
-    ] ,
-    [
-        a owl:Restriction ;
-        owl:onProperty schema:telephone ;
-        owl:allValuesFrom xsd:string ;
-    ] ,
-    [
-        a owl:Restriction ;
-        owl:onProperty schema:faxNumber ;
-        owl:allValuesFrom xsd:string ;
     ] ,
     [
         a owl:Restriction ;
@@ -581,10 +571,10 @@ schema:PostalAddress a owl:Class ;
         "a pour délai d'attente"@fr,
         "ha come periodo di attesa"@it ;
     schema:description
-        "The minimum time between the last application of the product and the harvest of the treated crop."@en,
-        "Die Mindestzeit zwischen der letzten Anwendung des Produkts und der Ernte der behandelten Kultur."@de,
-        "Le délai minimal entre la dernière application du produit et la récolte de la culture traitée."@fr,
-        "Il tempo minimo tra l'ultima applicazione del prodotto e il raccolto della coltura trattata."@it ;
+        "The minimum time between the last application of the product and the harvest of the treated crop. A waiting period of 0 in the source is not given."@en,
+        "Die Mindestzeit zwischen der letzten Anwendung des Produkts und der Ernte der behandelten Kultur. Eine Wartefrist von 0 in der Quelle wird nicht angegeben."@de,
+        "Le délai minimal entre la dernière application du produit et la récolte de la culture traitée. Un délai d'attente de 0 dans la source n'est pas indiqué."@fr,
+        "Il tempo minimo tra l'ultima applicazione del prodotto e il raccolto della coltura trattata. Un periodo di attesa pari a 0 nella fonte non viene indicato."@it ;
     rdfs:domain :Indication ;
     rdfs:range schema:QuantitativeValue .
 
@@ -651,7 +641,7 @@ schema:PostalAddress a owl:Class ;
         "Un composant inactif d'un produit phytosanitaire qui soutient la formulation mais n'a pas d'activité pesticide directe. Dans l'index des produits phytosanitaires, les coformulants sont mentionnés comme substances à déclarer en plus des substances actives."@fr,
         "Un componente inattivo di un prodotto fitosanitario che supporta la formulazione ma non ha un'attività pesticida diretta. Nell'elenco dei prodotti fitosanitari, i coformulanti sono indicati come sostanze da dichiarare in aggiunta alle sostanze attive."@it ;
     rdfs:comment
-        "Includes entries from the co-formulant code table and legacy entries (numeric IDs) without a code table link. Typing is derived in substance_ttl: every substance from the code table without active_substance_id is a :CoFormulant (the :UnspecifiedSubstance placeholder is not part of the code table)."@en .
+        "Every substance that is not an active substance is a co-formulant, including older entries that the source identifies only by a numeric ID. The :UnspecifiedSubstance placeholder is not a co-formulant."@en .
 
 :UnspecifiedSubstance a owl:Class ;
     rdfs:subClassOf :Substance ;
@@ -667,7 +657,7 @@ schema:PostalAddress a owl:Class ;
         "Espace réservé pour les produits dont l'entrée dans le répertoire des produits phytosanitaires ne mentionne aucune substance, mais seulement la catégorie de produit (p. ex. mouillant et adhésif)."@fr,
         "Segnaposto per i prodotti la cui voce nell'elenco dei prodotti fitosanitari non indica alcuna sostanza, ma solo la categoria di prodotto (ad es. bagnante e adesivo)."@it ;
     rdfs:comment
-        "Assigned in products_ttl to products of type :WettingAndAdhesionAgent without any row in ProductIngredient. The single instance is created in substance_ttl (UNSPECIFIED_ADJUVANT_ID)."@en .
+        "Assigned to wetting and adhesion agents (:WettingAndAdhesionAgent) for which the source lists no substance. The class has exactly one instance."@en .
 
 :substance a owl:ObjectProperty ;
     schema:name

@@ -8,7 +8,7 @@ from rdflib.namespace import RDF
 from rdflib import BNode
 
 # local imports
-from src.python.utils.helper_functions import load_namespaces, load_rdf_mappings, parse_phone_numbers
+from src.python.utils.helper_functions import load_namespaces, load_rdf_mappings
 
 # Set namespaces
 namespaces = load_namespaces()
@@ -42,7 +42,7 @@ def organisation_ttl(
     out_path: str = "rdf/data/organisation.ttl"):
 
     """
-    Creates RDF descriptions for organisations and their contact information.
+    Creates RDF descriptions for organisations and their postal addresses.
     """
 
     # Create empty graph
@@ -90,17 +90,6 @@ def organisation_ttl(
             # Add organisation name
             if pd.notna(row.get("organisation_name")):
                 graph.add((org_uri, SCHEMA.legalName, Literal(organisation_name, datatype=XSD.string)))
-
-            # Add contact info
-            if pd.notna(row.get("phone_number")) and str(row.get("phone_number")).strip():                
-                phones = parse_phone_numbers(row.get("phone_number"))
-                for p in phones:
-                    graph.add((org_uri, SCHEMA.telephone, Literal(p, datatype=XSD.string)))
-                    
-            if pd.notna(row.get("FAX")) and str(row.get("FAX")).strip():                
-                faxes = parse_phone_numbers(row.get("FAX"))
-                for f in faxes:
-                    graph.add((org_uri, SCHEMA.faxNumber, Literal(f, datatype=XSD.string)))
 
             # Add address node
             address_node = BNode()

@@ -298,14 +298,20 @@ def indication_ttl(
                         if measure_uri:
                             graph.add((exp_node, BASE.measure, measure_uri))
 
-                    # Waiting Period
+                    # Waiting Period (0 means no waiting period -> no entry)
                     wp = d_row.get("waiting_period")
                     if pd.notna(wp) and str(wp).strip():
-                        wp_node = BNode()
-                        graph.add((indication_uri, BASE.waitingPeriod, wp_node))
-                        graph.add((wp_node, RDF.type, SCHEMA.QuantitativeValue))
-                        graph.add((wp_node, SCHEMA.value, Literal(int(float(wp)), datatype=XSD.integer)))
-                        graph.add((wp_node, SCHEMA.unitCode, time_unit_uri))
+                        try:
+                            wp_value = int(float(wp))
+                        except ValueError:
+                            print(f"Indication {indication_id_str}: invalid waiting_period '{wp}' -> skipped")
+                            wp_value = 0
+                        if wp_value > 0:
+                            wp_node = BNode()
+                            graph.add((indication_uri, BASE.waitingPeriod, wp_node))
+                            graph.add((wp_node, RDF.type, SCHEMA.QuantitativeValue))
+                            graph.add((wp_node, SCHEMA.value, Literal(wp_value, datatype=XSD.integer)))
+                            graph.add((wp_node, SCHEMA.unitCode, time_unit_uri))
 
         except Exception as error:
             print(f"Indication row {i} ({indication_id_str or 'unknown'}): {error}")

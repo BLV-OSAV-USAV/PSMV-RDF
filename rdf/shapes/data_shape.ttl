@@ -36,12 +36,12 @@ shape: a owl:Ontology ;
     dcterms:creator "Guy Schnidrig", "Damian Oswald", "Sara Schärrer", "Ingrid Nyfeler", "Martin Hertach" ;
     dcterms:title "Swiss registry of plant protection products"@en ;
     dcterms:created "2026-02-20"^^xsd:date ;
-    dcterms:modified "2026-11-05"^^xsd:date ;
+    dcterms:modified "2026-11-20"^^xsd:date ;
     dcterms:publisher <https://www.blv.admin.ch> ;
-    owl:versionInfo "3.6.1" ;
-    owl:versionIRI <https://agriculture.ld.admin.ch/plant-protection/shape/3.6.1> ;
-    owl:priorVersion <https://agriculture.ld.admin.ch/plant-protection/shape/3.6.0> ;
-    adms:versionNotes "Version 3.6.1: Added dataset shape with :releaseDate (state of the source data) and schema:dateModified (build time, used for caching). Latest published version: https://blv-osav-usav.github.io/PSMV-RDF/shacl-documentation.html"@en ;
+    owl:versionInfo "3.7.0" ;
+    owl:versionIRI <https://agriculture.ld.admin.ch/plant-protection/shape/3.7.0> ;
+    owl:priorVersion <https://agriculture.ld.admin.ch/plant-protection/shape/3.6.1> ;
+    adms:versionNotes "Version 3.7.0: Removed telephone and fax numbers (schema:telephone, schema:faxNumber) from organizations. Latest published version: https://blv-osav-usav.github.io/PSMV-RDF/shacl-documentation.html"@en ;
     doap:repository <https://github.com/BLV-OSAV-USAV/PSMV-RDF> ;
     dcat:distribution [
         dcat:downloadURL <https://raw.githubusercontent.com/BLV-OSAV-USAV/PSMV-RDF/main/rdf/shapes/data_shape.ttl> ;
@@ -187,7 +187,7 @@ shape:Product a sh:NodeShape ;
         sh:path :ingredient ;
         sh:minCount 1 ;
         sh:severity sh:Warning ;
-        sh:message "Product has no ingredient. Check the source data or the placeholder fallback in products_ttl."@en ;
+        sh:message "Product has no ingredient. Check the source data."@en ;
     ] ;
     sh:property [
         sh:order 7 ;
@@ -381,22 +381,6 @@ shape:Organization a sh:NodeShape ;
             sh:class schema:PostalAddress ;
             sh:minCount 1 ;
             sh:maxCount 1 ;
-        ] ,
-        [
-            sh:name "Telephone"@en ;
-            sh:description "A telephone number associated with the organization. The validation pattern accommodates a flexible subset of the ITU-T E.164 recommendation, permitting common typographic separators such as spaces and hyphens."@en ;
-            sh:path schema:telephone ;
-            sh:datatype xsd:string ;
-            sh:pattern "^\\+?[0-9\\s\\-()]{7,20}$" ;
-            sh:message "Telephone number must be a valid format, optionally starting with '+' and containing only numbers, spaces, hyphens, or parentheses."@en ;
-        ] ,
-        [
-            sh:name "Fax number"@en ;
-            sh:description "A facsimile number associated with the organization. The validation pattern accommodates a flexible subset of the ITU-T E.164 recommendation, permitting common typographic separators."@en ;
-            sh:path schema:faxNumber ;
-            sh:datatype xsd:string ;
-            sh:pattern "^\\+?[0-9\\s\\-()]{7,20}$" ;
-            sh:message "Fax number must be a valid format, optionally starting with '+' and containing only numbers, spaces, hyphens, or parentheses."@en ;
         ] ,
         [
             sh:name "Email"@en ;
@@ -643,6 +627,7 @@ It systematically links a target pest with the applicable cultivation domain and
         [
             sh:order 9 ;
             sh:name "Waiting Period"@en, "Wartefrist"@de ;
+            sh:description "Minimum time between the last application and the harvest. A waiting period of 0 in the source is not given; the indication then has no waiting period."@en ;
             sh:path :waitingPeriod ;
             sh:class schema:QuantitativeValue ;
             sh:maxCount 1 ;
@@ -657,7 +642,7 @@ It systematically links a target pest with the applicable cultivation domain and
 
 shape:CultureForm a sh:NodeShape ;
     rdfs:label "Culture form"@en, "Kulturform"@de ;
-    rdfs:comment "Cultivation setting an indication applies to: open-field (Freiland) or greenhouse (Gewächshaus). English labels are added by the pipeline, as the source provides none."@en ;
+    rdfs:comment "Cultivation setting an indication applies to: open-field (Freiland) or greenhouse (Gewächshaus). The source provides no English labels; they were added for this dataset."@en ;
     sh:closed true ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:targetClass :CultureForm ;
@@ -1055,7 +1040,7 @@ shape:QuantitativeValue a sh:NodeShape ;
         sh:name "Value"@en ;
         sh:order 2 ;
         sh:path schema:value ;
-        sh:minInclusive 0 ; # there are indeed cases waiting period = 0 days ...
+        sh:minInclusive 0 ;
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:decimal ]
