@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.22](https://github.com/BLV-OSAV-USAV/PSMV-RDF/compare/psmv-rdf-v0.4.21...psmv-rdf-v0.4.22) (2026-11-24)
+
+
+### Features
+
+* link waiting periods to TimeMeasure register units via :measure ([0c7780b](https://github.com/BLV-OSAV-USAV/PSMV-RDF/commit/0c7780bbb93c7a9e72fcdd22e67e0c98cc7e42fd))
+* link waiting periods to TimeMeasure register units via :measure ([bfb956a](https://github.com/BLV-OSAV-USAV/PSMV-RDF/commit/bfb956a4ee84b3db09480805a46f3e02350425bd))
+
 ## [0.4.21](https://github.com/BLV-OSAV-USAV/PSMV-RDF/compare/psmv-rdf-v0.4.20...psmv-rdf-v0.4.21) (2026-11-20)
 
 
