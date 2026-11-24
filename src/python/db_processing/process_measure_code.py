@@ -5,14 +5,14 @@ def process_measure_code(db_path: str = 'data/processed/psmv-data.duckdb'):
 
     con.execute("""
         CREATE OR REPLACE TABLE MeasureCode AS
-        SELECT 
+        SELECT
             code_id,
             MAX(CASE WHEN language = 'en' THEN value END) AS EN,
             MAX(CASE WHEN language = 'de' THEN value END) AS DE,
             MAX(CASE WHEN language = 'fr' THEN value END) AS FR,
             MAX(CASE WHEN language = 'it' THEN value END) AS IT
         FROM Code
-        WHERE text_key = 'Measure'
+        WHERE text_key IN ('Measure', 'TimeMeasure')
         GROUP BY code_id
     """)
 

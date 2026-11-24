@@ -12,15 +12,18 @@ shape:ClassProperty a sh:NodeShape ;
     sh:targetClass owl:Class,
         owl:ObjectProperty,
         owl:DatatypeProperty ;
-    sh:property [
-        sh:order 1 ;
-        sh:name "English name"@en ;
-        sh:description "Preferred name of the class or property in English"@en ;
-        sh:path schema:name ;
-        sh:qualifiedValueShape shape:EnglishLanguage ;
-        sh:qualifiedMinCount 1 ;
-        sh:message "Any class or property must have at least one name in English."@en ;
-    ] ;
+    # Anonymous classes (blank nodes, e.g. owl:unionOf in rdfs:domain/rdfs:range) need no English name
+    sh:or (
+        [ sh:nodeKind sh:BlankNode ]
+        [
+            sh:property [
+                sh:path schema:name ;
+                sh:qualifiedValueShape shape:EnglishLanguage ;
+                sh:qualifiedMinCount 1 ;
+            ]
+        ]
+    ) ;
+    sh:message "Any named class or property must have at least one name in English."@en ;
     sh:property [
         sh:order 2 ;
         sh:name "Name"@en ;

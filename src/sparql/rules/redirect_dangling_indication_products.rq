@@ -1,0 +1,10 @@
+PREFIX :        <https://agriculture.ld.admin.ch/plant-protection/>
+PREFIX product: <https://agriculture.ld.admin.ch/plant-protection/product/>
+
+DELETE { ?indication :product ?missing }
+INSERT { ?indication :product product:deprecated }
+WHERE {
+  ?indication a :Indication ;
+              :product ?missing .
+  FILTER NOT EXISTS { ?missing a ?anyType }
+}

@@ -12,7 +12,8 @@ def measure_ttl(
     out_path="rdf/data/measures.ttl"
 ):
     """
-    Creates a measures_ttl graph extracting Measure entities from the MeasureCode table.
+    Creates a measures_ttl graph extracting Measure entities from the MeasureCode table
+    (code lists 'Measure' and 'TimeMeasure', see process_measure_code).
     """
     # Set namespaces
     namespaces = load_namespaces()

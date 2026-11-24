@@ -29,9 +29,9 @@
         "Sara Schärrer",
         "Guy Schnidrig" ;
     dcterms:title "Crop protection product ontology"@en ;
-    dcterms:modified "2026-11-20"^^xsd:date ;
-    owl:versionInfo "3.7.0" ;
-    owl:versionIRI <https://agriculture.ld.admin.ch/plant-protection/3.7.0> .
+    dcterms:modified "2026-11-24"^^xsd:date ;
+    owl:versionInfo "3.8.0" ;
+    owl:versionIRI <https://agriculture.ld.admin.ch/plant-protection/3.8.0> .
 
 # ==============================================================================
 # DATASET
@@ -96,8 +96,10 @@
         "Unité de mesure"@fr,
         "Unità di misura"@it ;
     schema:description
-        "Unit of a dosage or application rate as written in the admission documents, with translations. Linked to the corresponding QUDT unit where one exists."@en,
-        "Einheit einer Dosierung oder Aufwandmenge, wie in den Zulassungsunterlagen geschrieben, mit Übersetzungen. Wo vorhanden mit der entsprechenden QUDT-Einheit verknüpft."@de .
+        "Unit of a dosage, application rate or waiting period as written in the admission documents, with translations. Linked to the corresponding QUDT unit where one exists."@en,
+        "Einheit einer Dosierung, Aufwandmenge oder Wartefrist, wie in den Zulassungsunterlagen geschrieben, mit Übersetzungen. Wo vorhanden mit der entsprechenden QUDT-Einheit verknüpft."@de,
+        "Unité d'un dosage, d'une quantité d'application ou d'un délai d'attente telle qu'indiquée dans les documents d'autorisation, avec traductions. Reliée à l'unité QUDT correspondante lorsqu'elle existe."@fr,
+        "Unità di un dosaggio, di una quantità di applicazione o di un periodo di attesa come indicata nei documenti di autorizzazione, con traduzioni. Collegata all'unità QUDT corrispondente, se esiste."@it .
 
 :ApplicationArea a owl:Class ;
     schema:name
@@ -640,7 +642,7 @@ schema:PostalAddress a owl:Class ;
         "Ein inaktiver Bestandteil eines Pflanzenschutzmittels, der die Formulierung unterstützt, jedoch keine direkte pestizide Wirkung hat. Im Pflanzenschutzmittelverzeichnis werden Beistoffe als zusätzlich zu den Wirkstoffen zu deklarierende Stoffe aufgeführt."@de,
         "Un composant inactif d'un produit phytosanitaire qui soutient la formulation mais n'a pas d'activité pesticide directe. Dans l'index des produits phytosanitaires, les coformulants sont mentionnés comme substances à déclarer en plus des substances actives."@fr,
         "Un componente inattivo di un prodotto fitosanitario che supporta la formulazione ma non ha un'attività pesticida diretta. Nell'elenco dei prodotti fitosanitari, i coformulanti sono indicati come sostanze da dichiarare in aggiunta alle sostanze attive."@it ;
-    rdfs:comment
+    skos:scopeNote
         "Every substance that is not an active substance is a co-formulant, including older entries that the source identifies only by a numeric ID. The :UnspecifiedSubstance placeholder is not a co-formulant."@en .
 
 :UnspecifiedSubstance a owl:Class ;
@@ -656,7 +658,7 @@ schema:PostalAddress a owl:Class ;
         "Platzhalter für Produkte, deren Eintrag im Pflanzenschutzmittelverzeichnis keinen Stoff ausweist, sondern nur die Produktkategorie (z. B. Netz- und Haftmittel)."@de,
         "Espace réservé pour les produits dont l'entrée dans le répertoire des produits phytosanitaires ne mentionne aucune substance, mais seulement la catégorie de produit (p. ex. mouillant et adhésif)."@fr,
         "Segnaposto per i prodotti la cui voce nell'elenco dei prodotti fitosanitari non indica alcuna sostanza, ma solo la categoria di prodotto (ad es. bagnante e adesivo)."@it ;
-    rdfs:comment
+    skos:scopeNote
         "Assigned to wetting and adhesion agents (:WettingAndAdhesionAgent) for which the source lists no substance. The class has exactly one instance."@en .
 
 :substance a owl:ObjectProperty ;
@@ -735,7 +737,9 @@ schema:legalName rdfs:subPropertyOf schema:name .
 
 :productType a owl:ObjectProperty ;
     schema:name "has product type"@en, "hat Produkttyp"@de, "a pour type de produit"@fr, "ha come tipo di prodotto"@it ;
-    schema:description "The product type of the product. Each value is also asserted as rdf:type of the product."@en ;
+    schema:description
+        "The product type of the product according to the plant protection product directory. Product types are classes in the product taxonomy; their hierarchy can be queried via rdfs:subClassOf."@en,
+        "Der Produkttyp des Produkts gemäss Pflanzenschutzmittelverzeichnis. Produkttypen sind Klassen der Produkttaxonomie; ihre Hierarchie lässt sich über rdfs:subClassOf abfragen."@de ;
     rdfs:domain :Product .
 
 :chebi a owl:ObjectProperty ;
