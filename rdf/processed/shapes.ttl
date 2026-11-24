@@ -480,7 +480,7 @@ shape:MandatoryLanguages a sh:NodeShape ;
 shape:Measure a sh:NodeShape ;
     rdfs:label "Masseinheit"@de,
         "Measure"@en ;
-    rdfs:comment "Unit of a dosage or application rate as written in the admission documents, with translations. Not every unit is translated in the source, so only German is mandatory. Where a QUDT unit with the same meaning exists, it is linked via skos:exactMatch."@en ;
+    rdfs:comment "Unit of a dosage, application rate or waiting period as written in the admission documents, with translations. Not every unit is translated in the source, so only German is mandatory. Where a QUDT unit with the same meaning exists, it is linked via skos:exactMatch."@en ;
     sh:closed true ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:property [ sh:datatype rdf:langString ;
@@ -849,7 +849,7 @@ shape:QuantitativeValue a sh:NodeShape ;
             sh:order 6 ;
             sh:path schema:unitText ],
         [ sh:class :Measure ;
-            sh:description "The unit as a node with translations. Present for dosages and application rates. Where a QUDT unit with the same meaning exists, it is also given in Unit."@en ;
+            sh:description "The unit as a node with translations. Present for dosages, application rates and waiting periods. Where a QUDT unit with the same meaning exists, it is also given in Unit."@en ;
             sh:maxCount 1 ;
             sh:name "Masseinheit"@de,
                 "Measure"@en ;
