@@ -99,6 +99,7 @@ def run_pipeline():
     print("\n\033[1mMerge all data into one graph for subsequent LINDAS upload\033[0m")
     inputs = load_inputs(["rdf/ontology/*.ttl", "rdf/data/*.ttl", "rdf/shapes/*.ttl"])
     graph = apply_rules(inputs, [
+        "src/sparql/rules/redirect_dangling_indication_products.rq",
         "src/sparql/rules/inverse.rq",
         "src/sparql/rules/subclass.rq",
         "src/sparql/rules/subproperty.rq",

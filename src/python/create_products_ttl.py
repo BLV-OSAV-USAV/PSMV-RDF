@@ -89,6 +89,13 @@ def products_ttl(
             GROUP BY 1
         ) c ON LOWER(TRIM(g.code_id)) = c.code_id
     """).df()
+    cat_labels = con.execute("""
+        SELECT upper(trim(code_id)) AS code_id, language, value
+        FROM Code
+        WHERE text_key = 'ProductCategory'
+          AND language IN ('de', 'fr', 'it')
+          AND nullif(trim(value), '') IS NOT NULL
+    """).df()
 
     con.close()
 
@@ -140,12 +147,12 @@ def products_ttl(
         if pid not in ingredient_dict:
             ingredient_dict[pid] = []
         ingredient_dict[pid].append(row)
-
+    
     # Pre-process Ingredient additional texts for O(1) lookup
     ingredient_text_ids = set(
         ingredient_text_df["code_id"].astype(str).str.strip().str.lower()
     )
-
+    
     # Pre-process Product Categories for O(1) lookup
     cat_dict = {}
     for _, row in prod_cat_df.iterrows():
@@ -154,6 +161,24 @@ def products_ttl(
         if pid not in cat_dict:
             cat_dict[pid] = []
         cat_dict[pid].append(cid)
+
+    # Add multilingual labels for product categories
+    # UUIDs whose texts are only used as alternative names (register synonyms)
+    ALT_CATEGORY_IDS = {"F60B64E7-8599-4D47-A381-1C71751C3F60"}
+
+    cat_labels = cat_labels.assign(is_alt=cat_labels["code_id"].isin(ALT_CATEGORY_IDS))
+
+    for _, r in cat_labels.sort_values(["is_alt", "code_id", "language"]).iterrows():
+        cat_uri = CATEGORY_MAPPING.get(r["code_id"])
+        if cat_uri is None:
+            continue
+        graph.add((cat_uri, RDF.type, BASE.ProductType))
+        lit = Literal(str(r["value"]).strip(), lang=r["language"])
+        if r["is_alt"]:
+            if (cat_uri, SCHEMA.name, lit) not in graph:
+                graph.add((cat_uri, SCHEMA.alternateName, lit))
+        else:
+            graph.add((cat_uri, SCHEMA.name, lit))
 
     # Create product triples
     for i, row in products_df.iterrows():
@@ -376,7 +401,7 @@ def products_ttl(
     
     # Print graph info
     print(f"[i] Total triples: {len(graph)}")
-
+    
     # Save to file
     out_path = Path("rdf/data/products.ttl")
     out_path.parent.mkdir(parents=True, exist_ok=True)

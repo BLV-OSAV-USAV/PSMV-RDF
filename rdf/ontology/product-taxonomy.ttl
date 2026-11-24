@@ -140,6 +140,16 @@
     schema:name "Virucide"@en ;
     schema:description "Agents capable of neutralizing or destroying viruses affecting crops."@en .
 
+:GameRepellent a owl:Class ;
+    rdfs:subClassOf :ChemicalPlantProtectionProduct ;
+    schema:name "Game repellent"@en ;
+    schema:description "A product applied to plants to deter game animals such as deer or hares from browsing or bark stripping."@en .
+
+:WoundSealant a owl:Class ;
+    rdfs:subClassOf :ChemicalPlantProtectionProduct ;
+    schema:name "Wound sealant"@en ;
+    schema:description "A product applied to wounds on trees and shrubs, for example after pruning, to seal them and protect them against infection."@en .
+
 # Insecticide subclasses --------------------------------------------------------
 
 :Pheromone a owl:Class ;

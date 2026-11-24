@@ -68,8 +68,14 @@ def indication_ttl(
     ind_obl_df = con.execute("SELECT * FROM IndicationObligationCode").df()
     ind_pst = con.execute("SELECT * FROM IndicationPestCode").df()
     text_ids_df = con.execute("SELECT code_id, text_key FROM AdditionalTextCode").df()
-    crop_text_ids = set(text_ids_df.loc[text_ids_df["text_key"] == "CultureAdditionalText", "code_id"])
-    pest_text_ids = set(text_ids_df.loc[text_ids_df["text_key"] == "PestAdditionalText", "code_id"])
+    crop_text_ids = set(text_ids_df.loc[text_ids_df["text_key"] == "CultureAdditionalText", "code_id"].str.strip().str.lower())
+    pest_text_ids = set(text_ids_df.loc[text_ids_df["text_key"] == "PestAdditionalText", "code_id"].str.strip().str.lower())
+    
+    # Unit of the waiting period per indication (TimeMeasure code -> measure node)
+    time_measure_by_indication = dict(zip(
+        ind_time_measure_df["indication"].astype(str).str.strip().str.lower(),
+        ind_time_measure_df["indication_time_measure_id"].astype(str).str.strip().str.lower(),
+    ))
 
     # Load Unit map
     UNIT_MAP = load_unit_map(UNIT)
@@ -312,6 +318,13 @@ def indication_ttl(
                             graph.add((wp_node, RDF.type, SCHEMA.QuantitativeValue))
                             graph.add((wp_node, SCHEMA.value, Literal(wp_value, datatype=XSD.integer)))
                             graph.add((wp_node, SCHEMA.unitCode, time_unit_uri))
+                            tm_id = time_measure_by_indication.get(indication_id_str.strip().lower())
+                            if tm_id:
+                                graph.add((wp_node, BASE.measure, MEASURE[tm_id]))
+                            else:
+                                # No unit in the source: same default as time_unit_uri (days)
+                                print(f"Indication {indication_id_str}: waiting period without unit in source, assuming days")
+                                graph.add((wp_node, BASE.measure, MEASURE["095eeb98-31d5-472e-91db-cb2ef4306eed"]))
 
         except Exception as error:
             print(f"Indication row {i} ({indication_id_str or 'unknown'}): {error}")

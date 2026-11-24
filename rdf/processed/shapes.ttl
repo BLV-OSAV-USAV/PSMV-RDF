@@ -61,14 +61,14 @@ You can run this query in the [LINDAS SPARQL editor](https://lindas.admin.ch/spa
 
 More example queries, including aggregations and queries combining several parts of the data model, are available in the [query guide](https://blv-osav-usav.github.io/PSMV-RDF/query-guide.html).
 """@en ;
-    dcterms:modified "2026-11-20"^^xsd:date ;
+    dcterms:modified "2026-11-24"^^xsd:date ;
     dcterms:publisher <https://www.blv.admin.ch> ;
     dcterms:title "Swiss registry of plant protection products"@en ;
     doap:repository <https://github.com/BLV-OSAV-USAV/PSMV-RDF> ;
-    owl:priorVersion shape:3.6.1 ;
-    owl:versionIRI shape:3.7.0 ;
-    owl:versionInfo "3.7.0" ;
-    adms:versionNotes "Version 3.7.0: Removed telephone and fax numbers (schema:telephone, schema:faxNumber) from organizations. Latest published version: https://blv-osav-usav.github.io/PSMV-RDF/shacl-documentation.html"@en ;
+    owl:priorVersion shape:3.7.0 ;
+    owl:versionIRI shape:3.8.0 ;
+    owl:versionInfo "3.8.0" ;
+    adms:versionNotes "Version 3.8.0: Product types get German, French and Italian names from the source registry. New product types :GameRepellent and :WoundSealant (subclasses of :ChemicalPlantProtectionProduct). :Viricide renamed to :Virucide. Permission holder cardinality is now a warning. Producing country accepts any LINDAS country. Indications whose product is no longer listed point to the deprecated product placeholder. Subclass shapes no longer nest shape:Product, so warnings are no longer escalated to violations. Latest published version: https://blv-osav-usav.github.io/PSMV-RDF/shacl-documentation.html"@en ;
     dcat:distribution [ dcterms:format <https://www.iana.org/assignments/media-types/text/turtle> ;
             dcat:downloadURL <https://raw.githubusercontent.com/BLV-OSAV-USAV/PSMV-RDF/main/rdf/shapes/data_shape.ttl> ] .
 
@@ -101,14 +101,11 @@ shape:ApplicationComment a sh:NodeShape ;
     sh:targetClass :ApplicationComment .
 
 shape:ClassProperty a sh:NodeShape ;
-    sh:property [ sh:description "Preferred name of the class or property in English"@en ;
-            sh:message "Any class or property must have at least one name in English."@en ;
-            sh:name "English name"@en ;
-            sh:order 1 ;
-            sh:path schema:name ;
-            sh:qualifiedMinCount 1 ;
-            sh:qualifiedValueShape shape:EnglishLanguage ],
-        [ sh:description "Preferred name of the class or property"@en ;
+    sh:message "Any named class or property must have at least one name in English."@en ;
+    sh:or ( [ sh:nodeKind sh:BlankNode ] [ sh:property [ sh:path schema:name ;
+                        sh:qualifiedMinCount 1 ;
+                        sh:qualifiedValueShape shape:EnglishLanguage ] ] ) ;
+    sh:property [ sh:description "Preferred name of the class or property"@en ;
             sh:message "There can be at most one name per language tag."@en ;
             sh:name "Name"@en ;
             sh:order 2 ;
@@ -201,7 +198,7 @@ shape:Dataset a sh:NodeShape ;
         "Dataset"@en ;
     rdfs:comment "Metadata of the dataset: the state of the source data it reflects, when this RDF was last written and which version of the data model it conforms to."@en ;
     sh:closed true ;
-    sh:ignoredProperties ( rdf:type ) ;
+    sh:ignoredProperties ( rdf:type dcterms:date ) ;
     sh:in ( <https://lindas.admin.ch/fsvo/plant-protection-products> ) ;
     sh:nodeKind sh:IRI ;
     sh:order 16 ;
@@ -235,13 +232,18 @@ shape:Dataset a sh:NodeShape ;
 shape:DeprecatedProduct a sh:NodeShape ;
     rdfs:label "Nicht mehr zugelassenes Produkt"@de,
         "Deprecated product"@en ;
-    rdfs:comment "Placeholder referenced by sale permissions and parallel imports whose reference product is no longer authorised and therefore no longer part of the dataset."@en ;
+    rdfs:comment "Placeholder for products that are no longer authorised and therefore no longer part of the dataset, but are still referenced by sale permissions and parallel imports (as reference product) or by indications."@en ;
     sh:closed true ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:in ( product:deprecated ) ;
     sh:nodeKind sh:IRI ;
     sh:order 4.5 ;
-    sh:property shape:multiLanguageDescription,
+    sh:property [ sh:class :Indication ;
+            sh:description "Indications whose product is no longer part of the dataset."@en ;
+            sh:name "Indikation"@de,
+                "Indication"@en ;
+            sh:path :indication ],
+        shape:multiLanguageDescription,
         shape:multiLanguageName ;
     sh:targetClass :DeprecatedProduct .
 
@@ -339,12 +341,12 @@ It systematically links a target pest with the applicable cultivation domain and
             sh:name "Application Area"@en ;
             sh:order 1 ;
             sh:path :applicationArea ],
-        [ sh:class :Product ;
-            sh:description "Produkt, auf welches sich diese Indikation bezieht."@de,
-                "Product to which this indication applies."@en ;
+        [ sh:description "Produkt, auf welches sich diese Indikation bezieht. Ist das Produkt nicht mehr zugelassen, verweist der Wert auf den Platzhalter für nicht mehr zugelassene Produkte."@de,
+                "Product to which this indication applies. If the product is no longer authorised, the value is the deprecated product placeholder."@en ;
             sh:minCount 1 ;
             sh:name "Produkt"@de,
                 "Product"@en ;
+            sh:or ( [ sh:class :Product ] [ sh:class :DeprecatedProduct ] ) ;
             sh:order 2 ;
             sh:path :product ],
         [ sh:class :Crop ;
@@ -546,7 +548,6 @@ shape:ParallelImport a sh:NodeShape ;
     rdfs:label "Parallelimport"@de,
         "Parallel Import"@en ;
     rdfs:comment "Placing a plant protection product with a foreign authorisation onto the market, predicated on an equivalent reference product already authorised in Switzerland. The continued validity of this import permission requires the parallel validity of the domestic reference product (PSMV Art. 47 Abs. 1)."@en ;
-    sh:node shape:Product ;
     sh:order 4 ;
     sh:property [ sh:datatype xsd:string ;
             sh:description "An identifier assigned by the FSVO that uniquely identifies an admissions of a plant protection product."@en ;
@@ -742,29 +743,33 @@ shape:Product a sh:NodeShape ;
             sh:path :ingredient ;
             sh:severity sh:Warning ],
         [ sh:class schema:Organization ;
-            sh:description "The company that holds the Swiss authorisation for the product and is responsible for placing it on the market."@en ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
+            sh:description "The company that holds the Swiss authorisation for the product and is responsible for placing it on the market. Usually exactly one; in the source registry some products have two or none."@en ;
             sh:name "Permission holder"@en ;
             sh:order 7 ;
             sh:path :permissionHolder ],
+        [ sh:maxCount 1 ;
+            sh:message "Product does not have exactly one permission holder. Check the source data."@en ;
+            sh:minCount 1 ;
+            sh:path :permissionHolder ;
+            sh:severity sh:Warning ],
         [ sh:description "The Globally Harmonized System of Classification and Labelling of Chemicals (GHS) hazard and precautionary statements."@en ;
             sh:name "GHS-Kennzeichnung"@de,
                 "GHS labelling"@en ;
-            sh:node shape:GHSLabelElement ;
+            sh:or ( [ sh:class :GHSLabelElement ] [ sh:class :PlantProtectionStatement ] ) ;
             sh:order 8 ;
             sh:path :ghsLabel ],
         [ sh:description "The country where a plant protection product was produced."@en ;
-            sh:in ( country:CHE country:DEU country:ITA country:FRA country:AUT country:BEL ) ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:name "Producing country"@en ;
+            sh:nodeKind sh:IRI ;
             sh:order 9 ;
-            sh:path schema:countryOfOrigin ],
-        [ sh:description "The physical form in which the product is supplied, coded according to the international CropLife two-letter system."@en ;
+            sh:path schema:countryOfOrigin ;
+            sh:pattern "^https://ld\\.admin\\.ch/country/[A-Z]{3}$" ],
+        [ sh:class :FormulationType ;
+            sh:description "The physical form in which the product is supplied, coded according to the international CropLife two-letter system."@en ;
             sh:name "Formulierung"@de,
                 "Formulation"@en ;
-            sh:node shape:FormulationType ;
             sh:order 10 ;
             sh:path :formulation ],
         [ sh:class :Indication ;
@@ -773,11 +778,31 @@ shape:Product a sh:NodeShape ;
                 "Indication"@en ;
             sh:order 11 ;
             sh:path :indication ],
-        [ sh:in ( :BiologicalControlAgent :AntifungalBiologicalAgent :BacterialBiologicalAgent :FungalBiologicalAgent :InsectVirusAgent :BeneficialInsectAgent :BeneficialMiteAgent :BeneficialNematodeAgent :ChemicalPlantProtectionProduct :Acaricide :WettingAndAdhesionAgent :Bactericide :Disinfectant :Fungicide :Herbicide :Insecticide :Pheromone :SoapBasedInsecticide :Molluscicide :PlantDefenseInducer :Nematicide :PlantGrowthRegulator :Rodenticide :SeedTreatmentProduct :StorageProtectionProduct :Viricide ) ;
-            sh:name "Product type"@en ;
+        [ sh:description "Product category according to the plant protection product directory. A product can have several product types. Product types are classes of the product taxonomy; groups such as biological control agents can be queried via rdfs:subClassOf."@en ;
+            sh:in ( :AntifungalBiologicalAgent :BacterialBiologicalAgent :FungalBiologicalAgent :InsectVirusAgent :BeneficialInsectAgent :BeneficialMiteAgent :BeneficialNematodeAgent :Acaricide :WettingAndAdhesionAgent :Bactericide :Disinfectant :Fungicide :GameRepellent :Herbicide :Insecticide :Pheromone :Molluscicide :PlantDefenseInducer :Nematicide :PlantGrowthRegulator :Rodenticide :SeedTreatmentProduct :StorageProtectionProduct :Virucide :WoundSealant ) ;
+            sh:name "Produkttyp"@de,
+                "Product type"@en ;
             sh:order 0 ;
             sh:path :productType ] ;
     sh:targetClass :Product .
+
+shape:ProductType a sh:NodeShape ;
+    rdfs:label "Produkttyp"@de,
+        "Product type"@en ;
+    rdfs:comment "Product type of a plant protection product according to the plant protection product directory, e.g. herbicide or fungicide. German, French and Italian names are taken from the source registry, English names and descriptions from the product taxonomy."@en ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type rdfs:subClassOf schema:description ) ;
+    sh:nodeKind sh:IRI ;
+    sh:order 17 ;
+    sh:property [ sh:datatype rdf:langString ;
+            sh:description "Synonym used in the source registry for the same product type, e.g. 'Mittel zum Schutz von Erntegütern' for storage protection products."@en ;
+            sh:languageIn ( "de" "fr" "it" "en" ) ;
+            sh:name "Alternativname"@de,
+                "Alternative name"@en ;
+            sh:order 3 ;
+            sh:path schema:alternateName ],
+        shape:multiLanguageName ;
+    sh:targetObjectsOf :productType .
 
 shape:QuantitativeValue a sh:NodeShape ;
     rdfs:label "Quantitativer Wert"@de,
@@ -835,7 +860,6 @@ shape:QuantitativeValue a sh:NodeShape ;
 shape:RegularProduct a sh:NodeShape ;
     rdfs:label "Regular product"@en ;
     rdfs:comment "A plant protection product with a standard Swiss authorisation. This represents the primary admission granted by the federal authorities, acting as the foundation for derivative market permissions."@en ;
-    sh:node shape:Product ;
     sh:order 2 ;
     sh:property [ sh:datatype xsd:string ;
             sh:description "An identifier assigned by the FSVO that uniquely identifies an admissions of a plant protection product."@en ;
@@ -849,7 +873,6 @@ shape:RegularProduct a sh:NodeShape ;
 shape:SalePermission a sh:NodeShape ;
     rdfs:label "Sale Permission"@en ;
     rdfs:comment "Permission to market a plant protection product under an alternative nomenclature based on an existing regular authorisation. The legality of this permission is inextricably linked to the validity of the underlying basic authorisation pursuant to PSMV Art. 66."@en ;
-    sh:node shape:Product ;
     sh:order 3 ;
     sh:property [ sh:datatype xsd:string ;
             sh:description "An identifier assigned by the FSVO that uniquely identifies an admissions of a plant protection product."@en ;
@@ -955,8 +978,7 @@ shape:referenceProduct a sh:PropertyShape ;
     sh:minCount 1 ;
     sh:name "Referenzprodukt"@de,
         "Reference product"@en ;
-    sh:or ( [ sh:class :RegularProduct ;
-                sh:node shape:RegularProduct ] [ sh:class :DeprecatedProduct ] ) ;
+    sh:or ( [ sh:class :RegularProduct ] [ sh:class :DeprecatedProduct ] ) ;
     sh:order 4 ;
     sh:path :referenceProduct .
 

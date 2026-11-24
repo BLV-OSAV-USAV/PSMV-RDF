@@ -25,6 +25,7 @@ def application_comment_ttl(
     
     # Fallback instantiation if explicitly missing in namespaces.yaml
     CODE = namespaces.get("code", Namespace(str(BASE) + "code/"))
+    MEASURE = namespaces.get("measure", Namespace(str(BASE) + "measure/"))
 
     # Create empty graph
     graph = Graph()
@@ -34,6 +35,7 @@ def application_comment_ttl(
     graph.bind("code", CODE)
     graph.bind("unit", UNIT)
     graph.bind("xsd", XSD)
+    graph.bind("measure", MEASURE)
     graph.namespace_manager.bind("schema", SCHEMA, override=True, replace=True)
 
     # Read data
@@ -62,18 +64,20 @@ def application_comment_ttl(
             if pd.notna(row.get("min_interval_between_uses")):
                 interval_val = str(row["min_interval_between_uses"]).strip()
                 if interval_val:
-                    wp_node = BNode()
-                    graph.add((comment_uri, BASE.waitingPeriod, wp_node))
-                    graph.add((wp_node, RDF.type, SCHEMA.QuantitativeValue))
-                    graph.add((wp_node, SCHEMA.unitCode, UNIT.DAY))
-                    
                     try:
-                        # Parse string to an integer
                         num_val = int(float(interval_val))
-                        graph.add((wp_node, SCHEMA.minValue, Literal(num_val, datatype=XSD.integer)))
                     except ValueError:
-                        # Fallback for unexpected non-numeric formats
-                        graph.add((wp_node, SCHEMA.minValue, Literal(interval_val, datatype=XSD.integer)))
+                        print(f"Application comment {code_id}: invalid min_interval_between_uses '{interval_val}' -> skipped")
+                        num_val = None
+
+                    if num_val is not None:
+                        wp_node = BNode()
+                        graph.add((comment_uri, BASE.waitingPeriod, wp_node))
+                        graph.add((wp_node, RDF.type, SCHEMA.QuantitativeValue))
+                        graph.add((wp_node, SCHEMA.minValue, Literal(num_val, datatype=XSD.integer)))
+                        graph.add((wp_node, SCHEMA.unitCode, UNIT.DAY))
+                        graph.add((wp_node, BASE.measure, MEASURE["095eeb98-31d5-472e-91db-cb2ef4306eed"]))   # days
+                    
 
         except Exception as error:
             print(f"Application comment row {i} ({code_id or 'unknown'}): {error}")
