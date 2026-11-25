@@ -45,6 +45,7 @@ from src.python.reason import load_inputs, apply_rules, save_graph
 # Validation
 from src.python.validate import validate_ttl_files
 from src.python.shacl_validator import run_shacl_validation
+from src.python.utils.stabilize_code_iris import stabilize_code_iris
 
 def run_pipeline():
 
@@ -90,6 +91,9 @@ def run_pipeline():
     ghs_ttl()
     indication_ttl()
     dataset_ttl()
+
+    print("\n\033[1mStabilize code IRIs\033[0m")
+    stabilize_code_iris()
 
     print("\n\033[1mCreate a dedicated ontology file for subsequent WebVOWL visualization\033[0m")
     inputs = load_inputs(["rdf/ontology/*.ttl"])

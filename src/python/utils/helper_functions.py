@@ -7,6 +7,9 @@ import yaml
 from rdflib import Literal, Namespace
 from rdflib.namespace import RDF, XSD
 
+import unicodedata
+import uuid
+
 SCHEMA = Namespace("http://schema.org/")
 
 def load_namespaces(path="data/namespaces/namespaces.yaml"):
@@ -158,6 +161,7 @@ def format_psm(value) -> str:
         q = d.quantize(Decimal(1).scaleb(d.adjusted() - 1), rounding=ROUND_HALF_UP)
     return format(q.normalize(), "f")
 
+
 # Placeholder for products whose register entry only names the category
 # ("Netz- und Haftmittel") without any substance
 UNSPECIFIED_ADJUVANT_ID = "unspecified-wetting-and-adhesion-agent"
@@ -175,3 +179,15 @@ def add_amount(graph, node, v_from, v_to):
         return
     graph.add((node, SCHEMA.minValue, Literal(float(v_from), datatype=XSD.decimal)))
     graph.add((node, SCHEMA.maxValue, Literal(float(v_to), datatype=XSD.decimal)))
+
+# Fixed namespace for stable code IDs. NEVER change: all code IRIs derive from it.
+PSMV_CODE_NS = uuid.UUID("ed8d125e-8622-4d9a-853d-a58d45e2fcc3")
+
+def normalize_label(label: str) -> str:
+    s = unicodedata.normalize("NFC", label)
+    s = re.sub(r"\s+", " ", s).strip()
+    return s.casefold()
+
+
+def code_uuid(label_de: str, scheme: str) -> str:
+    return str(uuid.uuid3(PSMV_CODE_NS, f"{scheme}|{normalize_label(label_de)}"))
