@@ -29,8 +29,8 @@
         "Sara Schärrer",
         "Guy Schnidrig" ;
     dcterms:title "Crop protection product ontology"@en ;
-    dcterms:modified "2026-11-24"^^xsd:date ;
-    owl:versionInfo "3.8.0" ;
+    dcterms:modified "2026-11-25"^^xsd:date ;
+    owl:versionInfo "4.0.0" ;
     owl:versionIRI <https://agriculture.ld.admin.ch/plant-protection/3.8.0> .
 
 # ==============================================================================

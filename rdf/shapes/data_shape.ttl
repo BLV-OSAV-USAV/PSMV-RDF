@@ -36,12 +36,12 @@ shape: a owl:Ontology ;
     dcterms:creator "Guy Schnidrig", "Damian Oswald", "Sara Schärrer", "Ingrid Nyfeler", "Martin Hertach" ;
     dcterms:title "Swiss registry of plant protection products"@en ;
     dcterms:created "2026-02-20"^^xsd:date ;
-    dcterms:modified "2026-11-24"^^xsd:date ;
+    dcterms:modified "2026-11-25"^^xsd:date ;
     dcterms:publisher <https://www.blv.admin.ch> ;
-    owl:versionInfo "3.8.0" ;
-    owl:versionIRI <https://agriculture.ld.admin.ch/plant-protection/shape/3.8.0> ;
-    owl:priorVersion <https://agriculture.ld.admin.ch/plant-protection/shape/3.7.0> ;
-    adms:versionNotes "Version 3.8.0: Product types get German, French and Italian names from the source registry. New product types :GameRepellent and :WoundSealant (subclasses of :ChemicalPlantProtectionProduct). :Viricide renamed to :Virucide. Permission holder cardinality is now a warning. Producing country accepts any LINDAS country. Indications whose product is no longer listed point to the deprecated product placeholder. Subclass shapes no longer nest shape:Product, so warnings are no longer escalated to violations. Latest published version: https://blv-osav-usav.github.io/PSMV-RDF/shacl-documentation.html"@en ;
+    owl:versionInfo "4.0.0" ;
+    owl:versionIRI <https://agriculture.ld.admin.ch/plant-protection/shape/4.0.0> ;
+    owl:priorVersion <https://agriculture.ld.admin.ch/plant-protection/shape/3.8.0> ;
+    adms:versionNotes "Version 4.0.0: Code IRIs (obligations, application areas and comments, culture forms, GHS and plant protection statements, formulation types) are now derived from class and German name and stay stable across source dumps; all code IRIs change once with this version. Identical codes are merged. Unstable source IDs are no longer used as schema:identifier; plant protection statements without a phrase code and application comments carry no identifier, culture forms keep their source codes. Latest published version: https://blv-osav-usav.github.io/PSMV-RDF/shacl-documentation.html"@en ;
     doap:repository <https://github.com/BLV-OSAV-USAV/PSMV-RDF> ;
     dcat:distribution [
         dcat:downloadURL <https://raw.githubusercontent.com/BLV-OSAV-USAV/PSMV-RDF/main/rdf/shapes/data_shape.ttl> ;
@@ -670,7 +670,7 @@ shape:CultureForm a sh:NodeShape ;
             sh:datatype xsd:string ;
             sh:minCount 1 ;
             sh:maxCount 1 ;
-            sh:in ( "6407" "6414" ) ;
+            sh:pattern "^[0-9a-f]{8}-[0-9a-f]{4}-3[0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$" ;
         ] .
 
 shape:ApplicationArea a sh:NodeShape ;
