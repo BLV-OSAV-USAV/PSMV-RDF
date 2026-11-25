@@ -80,6 +80,26 @@ def indication_ttl(
     # Load Unit map
     UNIT_MAP = load_unit_map(UNIT)
 
+    # Waiting period units by German label.
+    # "Stunde(n)" is a known source error: these waiting periods are in days.
+    TIME_UNITS = {
+        "Tage": UNIT.DAY,
+        "Woche(n)": UNIT.WK,
+    }
+    HOURS_AS_DAYS = "Stunde(n)"
+    n_hours_fixed = 0
+    
+    # Default unit for waiting periods without a unit in the source: days.
+    # Looked up by label, so it does not depend on the source GUID.
+    days_ids = (
+        ind_time_measure_df.loc[ind_time_measure_df["DE"].astype(str).str.strip() == "Tage",
+                                "indication_time_measure_id"]
+        .dropna().astype(str).str.strip().str.lower().unique()
+    )
+    DAYS_MEASURE = MEASURE[days_ids[0]] if len(days_ids) else None
+    if DAYS_MEASURE is None:
+        print("[!] No 'Tage' measure found in IndicationTimeMeasureCode -> waiting periods without unit get no :measure")
+
     # Dosage (Konzentration) is always a percentage in the PSM directory.
     # Reuse the existing "%" measure node so the dosage keeps its translations.
     pct_ids = (
@@ -143,8 +163,8 @@ def indication_ttl(
     # Culture form code nodes (Freiland / Gewächshaus) with labels.
     # Source labels take precedence; fallbacks fill missing EN.
     CULTURE_FORM_FALLBACK_LABELS = {
-        "6407": {"en": "greenhouse"},
-        "6414": {"en": "open-field"},
+        "Gewächshaus": {"en": "greenhouse"},
+        "Freiland": {"en": "open-field"},
     }
 
     cf_codes = (
@@ -161,7 +181,7 @@ def indication_ttl(
         if notation:
             graph.add((cf_uri, SCHEMA.identifier, Literal(notation, datatype=XSD.string)))
 
-        fallback = CULTURE_FORM_FALLBACK_LABELS.get(notation, {})
+        fallback = CULTURE_FORM_FALLBACK_LABELS.get(str(row.get("DE", "")).strip(), {})
         for lang in ["de", "fr", "it", "en"]:
             label = row.get(lang.upper())
             if pd.notna(label) and str(label).strip():
@@ -266,10 +286,13 @@ def indication_ttl(
                 measure_id = m_rows[0].get("indication_measure_id") if m_rows else None
                 measure_uri = MEASURE[str(measure_id).strip().lower()] if pd.notna(measure_id) and str(measure_id).strip() else None
 
-                # time-measure lookup (Days / Week(s)) for waiting period unit
+                # time-measure lookup by German label (EN is missing for some units)
                 t_rows = time_measure_dict.get(indication_id_str, [])
-                time_unit_str = t_rows[0].get("EN") if t_rows else None
-                time_unit_uri = UNIT_MAP.get(time_unit_str, UNIT.DAY)
+                time_unit_de = str(t_rows[0].get("DE", "")).strip() if t_rows else ""
+                hours_as_days = time_unit_de == HOURS_AS_DAYS
+                time_unit_uri = TIME_UNITS.get(time_unit_de, UNIT.DAY)
+                if t_rows and time_unit_de not in TIME_UNITS and not hours_as_days:
+                    print(f"[!] Indication {indication_id_str}: unknown time unit '{time_unit_de}', assuming days")
 
                 for d_row in dosage_dict[indication_id_str]:
 
@@ -319,15 +342,25 @@ def indication_ttl(
                             graph.add((wp_node, SCHEMA.value, Literal(wp_value, datatype=XSD.integer)))
                             graph.add((wp_node, SCHEMA.unitCode, time_unit_uri))
                             tm_id = time_measure_by_indication.get(indication_id_str.strip().lower())
-                            if tm_id:
+                            if hours_as_days:
+                                # Known source error: "Stunde(n)" means days
+                                n_hours_fixed += 1
+                                if DAYS_MEASURE:
+                                    graph.add((wp_node, BASE.measure, DAYS_MEASURE))
+                            elif tm_id:
                                 graph.add((wp_node, BASE.measure, MEASURE[tm_id]))
                             else:
                                 # No unit in the source: same default as time_unit_uri (days)
                                 print(f"Indication {indication_id_str}: waiting period without unit in source, assuming days")
-                                graph.add((wp_node, BASE.measure, MEASURE["095eeb98-31d5-472e-91db-cb2ef4306eed"]))
+                                if DAYS_MEASURE:
+                                    graph.add((wp_node, BASE.measure, DAYS_MEASURE))
 
         except Exception as error:
             print(f"Indication row {i} ({indication_id_str or 'unknown'}): {error}")
+    
+    if n_hours_fixed:
+        print(f"\033[93m[!] {n_hours_fixed} waiting period(s) with unit 'Stunde(n)' in the source "
+              f"treated as days (known source error)\033[0m")
 
     print(f"[i] Total indication triples: {len(graph)}")
 

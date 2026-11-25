@@ -1,14 +1,16 @@
 """Rewrite PSMV code IRIs to stable IDs derived from class + German name.
 
 Phase 1: build old -> new IRI map from all .ttl files and write code_registry.csv
-Phase 2: per file, rewrite IRIs, clean up identifiers and names, write once
+Phase 2: per file, rewrite IRIs, clean up identifiers and names,
+         deduplicate identical blank nodes, write once
 """
 import csv
+import os
 import re
 from collections import defaultdict
 from pathlib import Path
 
-from rdflib import Graph, Literal, Namespace, URIRef, BNode
+from rdflib import BNode, Graph, Literal, Namespace, URIRef
 from rdflib.namespace import RDF
 
 from src.python.utils.helper_functions import code_uuid
@@ -18,10 +20,17 @@ CODE = "https://agriculture.ld.admin.ch/plant-protection/code/"
 FILES = sorted(Path("rdf/data").glob("*.ttl"))
 REGISTRY_FILE = "data/processed/code_registry.csv"
 
-# Classes whose shape does not allow schema:identifier (sh:closed without it)
+# Classes that get no fallback identifier when only unstable source IDs exist:
+# ApplicationComment (closed shape without schema:identifier),
+# PlantProtectionStatement (identifier is an optional phrase code)
 NO_IDENTIFIER = {
     "https://agriculture.ld.admin.ch/plant-protection/ApplicationComment",
+    "https://agriculture.ld.admin.ch/plant-protection/PlantProtectionStatement",
 }
+
+# Classes whose numeric identifiers are real, stable codes: never touch them
+KEEP_IDENTIFIER: set[str] = set()
+
 # Source IDs that change every dump: GUIDs, 36-char hex, plain numbers
 UNSTABLE = re.compile(
     r"^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}"
@@ -39,6 +48,7 @@ def rewrite(g: Graph, id_map: dict) -> Graph:
     out = Graph()
     for prefix, ns in g.namespaces():
         out.bind(prefix, ns, override=True, replace=True)
+    out.bind("schema", SCHEMA, override=True, replace=True)
     for s, p, o in g:
         out.add((id_map.get(s, s), p, id_map.get(o, o)))
     return out
@@ -48,10 +58,13 @@ def cleanup(g: Graph) -> tuple[int, int]:
     """Drop unstable identifiers and keep one schema:name per language."""
     n_ids = n_names = 0
     for s in {s for s in g.subjects() if str(s).startswith(CODE)}:
+        cls = str(g.value(s, RDF.type))
+
+        # identifiers
         ids = list(g.objects(s, SCHEMA.identifier))
-        if ids:
+        if ids and cls not in KEEP_IDENTIFIER:
             keep = [i for i in ids if not UNSTABLE.match(str(i))]
-            if not keep and str(g.value(s, RDF.type)) not in NO_IDENTIFIER:
+            if not keep and cls not in NO_IDENTIFIER:
                 keep = [Literal(str(s).rsplit("/", 1)[-1], datatype=ids[0].datatype)]
             if set(keep) != set(ids):
                 g.remove((s, SCHEMA.identifier, None))
@@ -59,6 +72,7 @@ def cleanup(g: Graph) -> tuple[int, int]:
                     g.add((s, SCHEMA.identifier, i))
                 n_ids += 1
 
+        # one name per language
         by_lang = defaultdict(list)
         for o in g.objects(s, SCHEMA.name):
             by_lang[o.language].append(o)
@@ -70,7 +84,6 @@ def cleanup(g: Graph) -> tuple[int, int]:
                         g.remove((s, SCHEMA.name, o))
                 n_names += 1
     return n_ids, n_names
-
 
 def dedupe_bnodes(g: Graph) -> int:
     """On code nodes, keep one blank node per (predicate, identical content)."""
@@ -88,8 +101,6 @@ def dedupe_bnodes(g: Graph) -> int:
             else:
                 seen[sig] = b
     return removed
-
-import os
 
 
 def report_registry_changes(path: str, new_rows: list[tuple], max_lines: int = 20) -> None:
