@@ -1,0 +1,435 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+_:b0 sh:result _:b1 , _:b2 , _:b3 , _:b4 , _:b5 , _:b6 , _:b7 , _:b8 , _:b9 , _:b10 , _:b11 , _:b12 , _:b13 , _:b14 , _:b15 , _:b16 , _:b17 , _:b18 , _:b19 , _:b20 , _:b21 , _:b22 , _:b23 , _:b24 , _:b25 , _:b26 , _:b27 , _:b28 , _:b29 , _:b30 , _:b31 , _:b32 , _:b33 , _:b34 , _:b35 , _:b36 , _:b37 , _:b38 , _:b39 , _:b40 , _:b41 , _:b42 , _:b43 , _:b44 , _:b45 , _:b46 , _:b47 , _:b48 , _:b49 , _:b50 , _:b51 , _:b52 , _:b53 , _:b54 , _:b55 ;
+	a sh:ValidationReport ;
+	sh:conforms false .
+_:b1 a sh:ValidationResult ;
+	sh:resultPath <http://schema.org/name> ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape <https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName> ;
+	sh:sourceConstraintComponent sh:QualifiedMinCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/code/da4287ff-a191-38be-8d81-91f8df278950> ;
+	sh:resultMessage "QualifiedValueShape: only 1 nodes conform to shape https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName, which is less than minCount: 2. Focus node: <https://agriculture.ld.admin.ch/plant-protection/code/da4287ff-a191-38be-8d81-91f8df278950>" .
+_:b2 a sh:ValidationResult ;
+	sh:resultPath <http://schema.org/name> ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape <https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName> ;
+	sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/code/03cb13ef-ecb8-33d3-9613-9aada4d534ba> ;
+	sh:resultMessage "MinCount(2) not satisfied" .
+_:b3 a sh:ValidationResult ;
+	sh:resultPath <http://schema.org/name> ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape <https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName> ;
+	sh:sourceConstraintComponent sh:QualifiedMinCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/code/03cb13ef-ecb8-33d3-9613-9aada4d534ba> ;
+	sh:resultMessage "QualifiedValueShape: only 1 nodes conform to shape https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName, which is less than minCount: 2. Focus node: <https://agriculture.ld.admin.ch/plant-protection/code/03cb13ef-ecb8-33d3-9613-9aada4d534ba>" .
+_:b4 a sh:ValidationResult ;
+	sh:resultPath <http://schema.org/name> ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape <https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName> ;
+	sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/code/d6bb8c2e-9500-4e67-afec-0ec1090c4ace> ;
+	sh:resultMessage "MinCount(2) not satisfied" .
+_:b5 a sh:ValidationResult ;
+	sh:resultPath <http://schema.org/name> ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape <https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName> ;
+	sh:sourceConstraintComponent sh:QualifiedMinCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/code/d6bb8c2e-9500-4e67-afec-0ec1090c4ace> ;
+	sh:resultMessage "QualifiedValueShape: only 1 nodes conform to shape https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName, which is less than minCount: 2. Focus node: <https://agriculture.ld.admin.ch/plant-protection/code/d6bb8c2e-9500-4e67-afec-0ec1090c4ace>" .
+_:b6 a sh:ValidationResult ;
+	sh:resultPath <http://schema.org/name> ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape <https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName> ;
+	sh:sourceConstraintComponent sh:QualifiedMinCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/code/e504b70e-bee2-4c40-a948-fab9124e1962> ;
+	sh:resultMessage "QualifiedValueShape: only 1 nodes conform to shape https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName, which is less than minCount: 2. Focus node: <https://agriculture.ld.admin.ch/plant-protection/code/e504b70e-bee2-4c40-a948-fab9124e1962>" .
+_:b7 a sh:ValidationResult ;
+	sh:resultPath <http://schema.org/name> ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape <https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName> ;
+	sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/code/9b7b8d57-e888-4374-94b1-9feb2b81bbb3> ;
+	sh:resultMessage "MinCount(2) not satisfied" .
+_:b8 a sh:ValidationResult ;
+	sh:resultPath <http://schema.org/name> ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape <https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName> ;
+	sh:sourceConstraintComponent sh:QualifiedMinCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/code/9b7b8d57-e888-4374-94b1-9feb2b81bbb3> ;
+	sh:resultMessage "QualifiedValueShape: only 1 nodes conform to shape https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName, which is less than minCount: 2. Focus node: <https://agriculture.ld.admin.ch/plant-protection/code/9b7b8d57-e888-4374-94b1-9feb2b81bbb3>" .
+_:b9 a sh:ValidationResult ;
+	sh:resultPath <http://schema.org/name> ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape <https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName> ;
+	sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/code/18fe6955-c646-4a7b-8971-d3fd424a93ab> ;
+	sh:resultMessage "MinCount(2) not satisfied" .
+_:b10 a sh:ValidationResult ;
+	sh:resultPath <http://schema.org/name> ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape <https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName> ;
+	sh:sourceConstraintComponent sh:QualifiedMinCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/code/18fe6955-c646-4a7b-8971-d3fd424a93ab> ;
+	sh:resultMessage "QualifiedValueShape: only 1 nodes conform to shape https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName, which is less than minCount: 2. Focus node: <https://agriculture.ld.admin.ch/plant-protection/code/18fe6955-c646-4a7b-8971-d3fd424a93ab>" .
+_:b11 a sh:ValidationResult ;
+	sh:resultPath <http://schema.org/name> ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape <https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName> ;
+	sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/code/1963a69f-1837-38ea-844a-bb2f53c8715e> ;
+	sh:resultMessage "MinCount(2) not satisfied" .
+_:b12 a sh:ValidationResult ;
+	sh:resultPath <http://schema.org/name> ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape <https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName> ;
+	sh:sourceConstraintComponent sh:QualifiedMinCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/code/1963a69f-1837-38ea-844a-bb2f53c8715e> ;
+	sh:resultMessage "QualifiedValueShape: only 1 nodes conform to shape https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName, which is less than minCount: 2. Focus node: <https://agriculture.ld.admin.ch/plant-protection/code/1963a69f-1837-38ea-844a-bb2f53c8715e>" .
+_:b13 a sh:ValidationResult ;
+	sh:resultPath <http://schema.org/name> ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape <https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName> ;
+	sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/code/ed6b7dcf-117e-39da-8182-995a116e2f61> ;
+	sh:resultMessage "MinCount(2) not satisfied" .
+_:b14 a sh:ValidationResult ;
+	sh:resultPath <http://schema.org/name> ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape <https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName> ;
+	sh:sourceConstraintComponent sh:QualifiedMinCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/code/ed6b7dcf-117e-39da-8182-995a116e2f61> ;
+	sh:resultMessage "QualifiedValueShape: only 1 nodes conform to shape https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName, which is less than minCount: 2. Focus node: <https://agriculture.ld.admin.ch/plant-protection/code/ed6b7dcf-117e-39da-8182-995a116e2f61>" .
+_:b15 a sh:ValidationResult ;
+	sh:resultPath <http://schema.org/image> ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape _:b56 ;
+	sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/code/b538a5a8-a2e7-45b9-8d0f-0b6e7e3bf053> ;
+	sh:resultMessage "MinCount(1) not satisfied" .
+_:b16 a sh:ValidationResult ;
+	sh:resultPath <http://schema.org/image> ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape _:b56 ;
+	sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/code/7db4f6bc-8ccd-4d50-97be-9cf716e32827> ;
+	sh:resultMessage "MinCount(1) not satisfied" .
+_:b17 a sh:ValidationResult ;
+	sh:resultPath <http://schema.org/image> ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape _:b56 ;
+	sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/code/ee50eefb-471a-4175-9676-8f5582e87bf1> ;
+	sh:resultMessage "MinCount(1) not satisfied" .
+_:b18 a sh:ValidationResult ;
+	sh:resultPath <http://schema.org/image> ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape _:b56 ;
+	sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/code/365e11ea-828d-43f3-93dc-f99e816a4092> ;
+	sh:resultMessage "MinCount(1) not satisfied" .
+_:b19 a sh:ValidationResult ;
+	sh:resultPath <http://schema.org/image> ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape _:b56 ;
+	sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/code/165aaa1a-0c69-4230-9119-be53811b329c> ;
+	sh:resultMessage "MinCount(1) not satisfied" .
+_:b20 a sh:ValidationResult ;
+	sh:resultPath <http://schema.org/image> ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape _:b56 ;
+	sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/code/1acacce6-e914-4f44-a528-9a46d04603ce> ;
+	sh:resultMessage "MinCount(1) not satisfied" .
+_:b21 a sh:ValidationResult ;
+	sh:resultPath <http://schema.org/image> ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape _:b56 ;
+	sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/code/54cfb3c1-e4bc-4e59-9a7d-3a46d4d3d360> ;
+	sh:resultMessage "MinCount(1) not satisfied" .
+_:b22 a sh:ValidationResult ;
+	sh:resultPath <http://schema.org/image> ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape _:b56 ;
+	sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/code/e0948f5d-1838-461e-81de-a1d5d927c143> ;
+	sh:resultMessage "MinCount(1) not satisfied" .
+_:b23 a sh:ValidationResult ;
+	sh:resultPath <http://schema.org/name> ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape <https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName> ;
+	sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/ingredientaddtext/77811502-6758-4cd5-a0a6-c4e890299055> ;
+	sh:resultMessage "MinCount(2) not satisfied" .
+_:b24 a sh:ValidationResult ;
+	sh:resultPath <http://schema.org/name> ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape <https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName> ;
+	sh:sourceConstraintComponent sh:QualifiedMinCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/ingredientaddtext/77811502-6758-4cd5-a0a6-c4e890299055> ;
+	sh:resultMessage "QualifiedValueShape: only 1 nodes conform to shape https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName, which is less than minCount: 2. Focus node: <https://agriculture.ld.admin.ch/plant-protection/ingredientaddtext/77811502-6758-4cd5-a0a6-c4e890299055>" .
+_:b25 a sh:ValidationResult ;
+	sh:resultPath <http://schema.org/name> ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape <https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName> ;
+	sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/ingredientaddtext/44c21daa-a016-4557-a265-ae02bfcb9c5a> ;
+	sh:resultMessage "MinCount(2) not satisfied" .
+_:b26 a sh:ValidationResult ;
+	sh:resultPath <http://schema.org/name> ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape <https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName> ;
+	sh:sourceConstraintComponent sh:QualifiedMinCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/ingredientaddtext/44c21daa-a016-4557-a265-ae02bfcb9c5a> ;
+	sh:resultMessage "QualifiedValueShape: only 1 nodes conform to shape https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName, which is less than minCount: 2. Focus node: <https://agriculture.ld.admin.ch/plant-protection/ingredientaddtext/44c21daa-a016-4557-a265-ae02bfcb9c5a>" .
+_:b27 a sh:ValidationResult ;
+	sh:resultPath <http://schema.org/name> ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape <https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName> ;
+	sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/ingredientaddtext/13a4e9c0-80c7-4c55-b2c1-90a507af2f29> ;
+	sh:resultMessage "MinCount(2) not satisfied" .
+_:b28 a sh:ValidationResult ;
+	sh:resultPath <http://schema.org/name> ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape <https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName> ;
+	sh:sourceConstraintComponent sh:QualifiedMinCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/ingredientaddtext/13a4e9c0-80c7-4c55-b2c1-90a507af2f29> ;
+	sh:resultMessage "QualifiedValueShape: only 1 nodes conform to shape https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName, which is less than minCount: 2. Focus node: <https://agriculture.ld.admin.ch/plant-protection/ingredientaddtext/13a4e9c0-80c7-4c55-b2c1-90a507af2f29>" .
+_:b29 a sh:ValidationResult ;
+	sh:resultPath <http://schema.org/name> ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape <https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName> ;
+	sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/ingredientaddtext/aee7ae60-5e6e-4607-9daa-2a0d311705ff> ;
+	sh:resultMessage "MinCount(2) not satisfied" .
+_:b30 a sh:ValidationResult ;
+	sh:resultPath <http://schema.org/name> ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape <https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName> ;
+	sh:sourceConstraintComponent sh:QualifiedMinCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/ingredientaddtext/aee7ae60-5e6e-4607-9daa-2a0d311705ff> ;
+	sh:resultMessage "QualifiedValueShape: only 1 nodes conform to shape https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName, which is less than minCount: 2. Focus node: <https://agriculture.ld.admin.ch/plant-protection/ingredientaddtext/aee7ae60-5e6e-4607-9daa-2a0d311705ff>" .
+_:b31 a sh:ValidationResult ;
+	sh:resultPath <http://schema.org/name> ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape <https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName> ;
+	sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/pest/c0a8bb35-a064-4f80-b835-da0679fd066c> ;
+	sh:resultMessage "MinCount(2) not satisfied" .
+_:b32 a sh:ValidationResult ;
+	sh:resultPath <http://schema.org/name> ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape <https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName> ;
+	sh:sourceConstraintComponent sh:QualifiedMinCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/pest/c0a8bb35-a064-4f80-b835-da0679fd066c> ;
+	sh:resultMessage "QualifiedValueShape: only 1 nodes conform to shape https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName, which is less than minCount: 2. Focus node: <https://agriculture.ld.admin.ch/plant-protection/pest/c0a8bb35-a064-4f80-b835-da0679fd066c>" .
+_:b33 a sh:ValidationResult ;
+	sh:resultPath <http://schema.org/name> ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape <https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName> ;
+	sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/pest/bfa5f7eb-3190-4efa-865a-6b94b8df4b8d> ;
+	sh:resultMessage "MinCount(2) not satisfied" .
+_:b34 a sh:ValidationResult ;
+	sh:resultPath <http://schema.org/name> ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape <https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName> ;
+	sh:sourceConstraintComponent sh:QualifiedMinCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/pest/bfa5f7eb-3190-4efa-865a-6b94b8df4b8d> ;
+	sh:resultMessage "QualifiedValueShape: only 1 nodes conform to shape https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName, which is less than minCount: 2. Focus node: <https://agriculture.ld.admin.ch/plant-protection/pest/bfa5f7eb-3190-4efa-865a-6b94b8df4b8d>" .
+_:b35 a sh:ValidationResult ;
+	sh:resultPath <http://schema.org/identifier> ;
+	sh:resultSeverity sh:Warning ;
+	sh:sourceShape _:b57 ;
+	sh:sourceConstraintComponent sh:PatternConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/code/5b1bb1ae-9deb-438b-b3f3-c185bfa8d26d> ;
+	sh:value "Spe 1" ;
+	sh:resultMessage "Pattern(^(SP[eor]?|KP) [0-9]+$) not satisfied" , "Phrase code does not follow the usual format (e.g. 'SPe 2'). Possibly a typo in the source."@en .
+_:b36 a sh:ValidationResult ;
+	sh:detail _:b58 , _:b59 ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape <https://agriculture.ld.admin.ch/plant-protection/shape/PostalAddress> ;
+	sh:sourceConstraintComponent sh:OrConstraintComponent ;
+	sh:focusNode _:b60 ;
+	sh:value _:b60 ;
+	sh:resultMessage "OR not satisfied" .
+_:b58 a sh:ValidationResult ;
+	sh:resultPath <http://schema.org/streetAddress> ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape _:b61 ;
+	sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+	sh:focusNode _:b60 ;
+	sh:resultMessage "MinCount(1) not satisfied" .
+_:b59 a sh:ValidationResult ;
+	sh:resultPath <http://schema.org/postOfficeBoxNumber> ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape _:b62 ;
+	sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+	sh:focusNode _:b60 ;
+	sh:resultMessage "MinCount(1) not satisfied" .
+_:b37 a sh:ValidationResult ;
+	sh:detail _:b63 , _:b64 ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape <https://agriculture.ld.admin.ch/plant-protection/shape/PostalAddress> ;
+	sh:sourceConstraintComponent sh:OrConstraintComponent ;
+	sh:focusNode _:b65 ;
+	sh:value _:b65 ;
+	sh:resultMessage "OR not satisfied" .
+_:b63 a sh:ValidationResult ;
+	sh:resultPath <http://schema.org/streetAddress> ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape _:b61 ;
+	sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+	sh:focusNode _:b65 ;
+	sh:resultMessage "MinCount(1) not satisfied" .
+_:b64 a sh:ValidationResult ;
+	sh:resultPath <http://schema.org/postOfficeBoxNumber> ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape _:b62 ;
+	sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+	sh:focusNode _:b65 ;
+	sh:resultMessage "MinCount(1) not satisfied" .
+_:b38 a sh:ValidationResult ;
+	sh:detail _:b66 , _:b67 ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape <https://agriculture.ld.admin.ch/plant-protection/shape/PostalAddress> ;
+	sh:sourceConstraintComponent sh:OrConstraintComponent ;
+	sh:focusNode _:b68 ;
+	sh:value _:b68 ;
+	sh:resultMessage "OR not satisfied" .
+_:b66 a sh:ValidationResult ;
+	sh:resultPath <http://schema.org/streetAddress> ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape _:b61 ;
+	sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+	sh:focusNode _:b68 ;
+	sh:resultMessage "MinCount(1) not satisfied" .
+_:b67 a sh:ValidationResult ;
+	sh:resultPath <http://schema.org/postOfficeBoxNumber> ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape _:b62 ;
+	sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+	sh:focusNode _:b68 ;
+	sh:resultMessage "MinCount(1) not satisfied" .
+_:b39 a sh:ValidationResult ;
+	sh:resultPath <https://agriculture.ld.admin.ch/plant-protection/permissionHolder> ;
+	sh:resultSeverity sh:Warning ;
+	sh:sourceShape _:b69 ;
+	sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/product/D-7556> ;
+	sh:resultMessage "MinCount(1) not satisfied" , "Product does not have exactly one permission holder. Check the source data."@en .
+_:b40 a sh:ValidationResult ;
+	sh:resultPath <https://agriculture.ld.admin.ch/plant-protection/permissionHolder> ;
+	sh:resultSeverity sh:Warning ;
+	sh:sourceShape _:b69 ;
+	sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/product/B-7515> ;
+	sh:resultMessage "MinCount(1) not satisfied" , "Product does not have exactly one permission holder. Check the source data."@en .
+_:b41 a sh:ValidationResult ;
+	sh:resultPath <https://agriculture.ld.admin.ch/plant-protection/permissionHolder> ;
+	sh:resultSeverity sh:Warning ;
+	sh:sourceShape _:b69 ;
+	sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/product/B-7511> ;
+	sh:resultMessage "MinCount(1) not satisfied" , "Product does not have exactly one permission holder. Check the source data."@en .
+_:b42 a sh:ValidationResult ;
+	sh:resultPath <https://agriculture.ld.admin.ch/plant-protection/permissionHolder> ;
+	sh:resultSeverity sh:Warning ;
+	sh:sourceShape _:b69 ;
+	sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/product/D-7514> ;
+	sh:resultMessage "MinCount(1) not satisfied" , "Product does not have exactly one permission holder. Check the source data."@en .
+_:b43 a sh:ValidationResult ;
+	sh:resultPath <https://agriculture.ld.admin.ch/plant-protection/permissionHolder> ;
+	sh:resultSeverity sh:Warning ;
+	sh:sourceShape _:b69 ;
+	sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/product/F-7512> ;
+	sh:resultMessage "MinCount(1) not satisfied" , "Product does not have exactly one permission holder. Check the source data."@en .
+_:b44 a sh:ValidationResult ;
+	sh:resultPath <https://agriculture.ld.admin.ch/plant-protection/permissionHolder> ;
+	sh:resultSeverity sh:Warning ;
+	sh:sourceShape _:b69 ;
+	sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/product/D-7557> ;
+	sh:resultMessage "MinCount(1) not satisfied" , "Product does not have exactly one permission holder. Check the source data."@en .
+_:b45 a sh:ValidationResult ;
+	sh:resultPath <https://agriculture.ld.admin.ch/plant-protection/permissionHolder> ;
+	sh:resultSeverity sh:Warning ;
+	sh:sourceShape _:b69 ;
+	sh:sourceConstraintComponent sh:MaxCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/product/W-6886> ;
+	sh:resultMessage "MaxCount(1) not satisfied" , "Product does not have exactly one permission holder. Check the source data."@en .
+_:b46 a sh:ValidationResult ;
+	sh:resultPath <https://agriculture.ld.admin.ch/plant-protection/permissionHolder> ;
+	sh:resultSeverity sh:Warning ;
+	sh:sourceShape _:b69 ;
+	sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/product/A-7513> ;
+	sh:resultMessage "MinCount(1) not satisfied" , "Product does not have exactly one permission holder. Check the source data."@en .
+_:b47 a sh:ValidationResult ;
+	sh:resultPath <http://schema.org/name> ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape <https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName> ;
+	sh:sourceConstraintComponent sh:QualifiedMinCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/substance/770d088d-14a6-4f93-a4e3-d509374561ac> ;
+	sh:resultMessage "QualifiedValueShape: only 1 nodes conform to shape https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName, which is less than minCount: 2. Focus node: <https://agriculture.ld.admin.ch/plant-protection/substance/770d088d-14a6-4f93-a4e3-d509374561ac>" .
+_:b48 a sh:ValidationResult ;
+	sh:resultPath <http://schema.org/name> ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape <https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName> ;
+	sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/substance/ec3c7b55-00b8-4f82-8ac4-1e6347b667be> ;
+	sh:resultMessage "MinCount(2) not satisfied" .
+_:b49 a sh:ValidationResult ;
+	sh:resultPath <http://schema.org/name> ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape <https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName> ;
+	sh:sourceConstraintComponent sh:QualifiedMinCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/substance/ec3c7b55-00b8-4f82-8ac4-1e6347b667be> ;
+	sh:resultMessage "QualifiedValueShape: only 1 nodes conform to shape https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName, which is less than minCount: 2. Focus node: <https://agriculture.ld.admin.ch/plant-protection/substance/ec3c7b55-00b8-4f82-8ac4-1e6347b667be>" .
+_:b50 a sh:ValidationResult ;
+	sh:resultPath <http://schema.org/name> ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape <https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName> ;
+	sh:sourceConstraintComponent sh:QualifiedMinCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/substance/c1474dfb-76ee-48a0-a35f-414020614990> ;
+	sh:resultMessage "QualifiedValueShape: only 1 nodes conform to shape https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName, which is less than minCount: 2. Focus node: <https://agriculture.ld.admin.ch/plant-protection/substance/c1474dfb-76ee-48a0-a35f-414020614990>" .
+_:b51 a sh:ValidationResult ;
+	sh:resultPath <http://schema.org/name> ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape <https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName> ;
+	sh:sourceConstraintComponent sh:QualifiedMinCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/substance/42d93818-a3dd-4042-9fc7-000dcd63487b> ;
+	sh:resultMessage "QualifiedValueShape: only 1 nodes conform to shape https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName, which is less than minCount: 2. Focus node: <https://agriculture.ld.admin.ch/plant-protection/substance/42d93818-a3dd-4042-9fc7-000dcd63487b>" .
+_:b52 a sh:ValidationResult ;
+	sh:resultPath <http://schema.org/name> ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape <https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName> ;
+	sh:sourceConstraintComponent sh:QualifiedMinCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/substance/2f2bb896-cc0b-4c22-99bf-67943cd35ed1> ;
+	sh:resultMessage "QualifiedValueShape: only 1 nodes conform to shape https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName, which is less than minCount: 2. Focus node: <https://agriculture.ld.admin.ch/plant-protection/substance/2f2bb896-cc0b-4c22-99bf-67943cd35ed1>" .
+_:b53 a sh:ValidationResult ;
+	sh:resultPath <http://schema.org/name> ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape <https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName> ;
+	sh:sourceConstraintComponent sh:QualifiedMinCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/substance/df02e1be-72ed-493e-9480-940bfea54a8f> ;
+	sh:resultMessage "QualifiedValueShape: only 1 nodes conform to shape https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName, which is less than minCount: 2. Focus node: <https://agriculture.ld.admin.ch/plant-protection/substance/df02e1be-72ed-493e-9480-940bfea54a8f>" .
+_:b54 a sh:ValidationResult ;
+	sh:resultPath <http://schema.org/name> ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape <https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName> ;
+	sh:sourceConstraintComponent sh:QualifiedMinCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/substance/4f2b376c-2cc8-42ea-a1e7-ccbfff8f2b40> ;
+	sh:resultMessage "QualifiedValueShape: only 1 nodes conform to shape https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName, which is less than minCount: 2. Focus node: <https://agriculture.ld.admin.ch/plant-protection/substance/4f2b376c-2cc8-42ea-a1e7-ccbfff8f2b40>" .
+_:b55 a sh:ValidationResult ;
+	sh:resultPath <http://schema.org/name> ;
+	sh:resultSeverity sh:Violation ;
+	sh:sourceShape <https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName> ;
+	sh:sourceConstraintComponent sh:QualifiedMinCountConstraintComponent ;
+	sh:focusNode <https://agriculture.ld.admin.ch/plant-protection/substance/a6be5f34-7963-4282-8985-7e7a2c1490e9> ;
+	sh:resultMessage "QualifiedValueShape: only 1 nodes conform to shape https://agriculture.ld.admin.ch/plant-protection/shape/multiLanguageName, which is less than minCount: 2. Focus node: <https://agriculture.ld.admin.ch/plant-protection/substance/a6be5f34-7963-4282-8985-7e7a2c1490e9>" .

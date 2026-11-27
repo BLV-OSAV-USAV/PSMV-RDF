@@ -109,7 +109,7 @@ src/python/local_tests/
 # =============================================================================
 
 # SHACL valication report
-rdf/processed/shacl-report.ttl
+!shacl_shape_report.ttl
 
 # =============================================================================
 # Notes
