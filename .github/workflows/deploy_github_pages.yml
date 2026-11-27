@@ -63,11 +63,12 @@ jobs:
         with:
           ref: main
 
+      # Separate folder, so the artifact cannot overwrite the current files in docs/
       - name: Download generated docs
         uses: actions/download-artifact@v8
         with:
           name: shacl-docs
-          path: docs/
+          path: site/
           run-id: ${{ needs.find-docs.outputs.run-id }}
           github-token: ${{ github.token }}
 
@@ -76,22 +77,30 @@ jobs:
       - name: Install pandoc
         run: sudo apt-get update && sudo apt-get install -y pandoc
 
+      # Always build from the checked-out (current) Markdown
       - name: Build SPARQL query guide
         run: |
           pandoc docs/sparql-psmv-query-guide.md \
             --standalone \
             --toc \
             --metadata title="SPARQL Query Guide: Plant Protection Products" \
-            -o docs/query-guide.html
+            -o site/query-guide.html
+          cp docs/sparql-psmv-query-guide.md site/
+
+      - name: Link query guide from index
+        run: |
+          if [ -f site/index.html ] && ! grep -q 'query-guide.html' site/index.html; then
+            sed -i 's#<body\([^>]*\)>#<body\1><p><a href="query-guide.html">SPARQL Query Guide</a></p>#' site/index.html
+          fi
 
       - name: Show what will be deployed
         run: |
-          ls -la docs/
-          echo "Files: $(find docs -type f | wc -l)"
+          ls -la site/
+          echo "Files: $(find site -type f | wc -l)"
 
       - uses: actions/upload-pages-artifact@v5
         with:
-          path: ./docs
+          path: ./site
 
   deploy:
     needs: build
