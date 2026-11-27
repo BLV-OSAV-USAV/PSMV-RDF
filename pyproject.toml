@@ -55,3 +55,6 @@ markers = [
     "graph: needs the generated rdf/processed/graph.ttl; skipped if missing",
 ]
 addopts = "-m 'not network'"
+
+[tool.uv]
+required-version = "==0.13.9"
