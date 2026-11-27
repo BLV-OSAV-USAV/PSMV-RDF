@@ -5,6 +5,7 @@ from pathlib import Path
 import yaml
 from rdflib import Graph, Literal, Namespace, URIRef
 from rdflib.namespace import OWL, RDF
+from datetime import date, timedelta
 
 # local imports
 from src.python.utils.helper_functions import load_namespaces
@@ -12,21 +13,21 @@ from src.python.utils.helper_functions import load_namespaces
 
 def _read_fetch_date(metadata_path):
     """
-    Reads `fetch_date` from the YAML written by the fetch script.
-    Falls back to today's date if the file or the key is missing.
+    Reads `fetch_date` from the YAML written by the fetch script and
+    returns the day before it, because the data is regenerated overnight
+    and reflects the previous day.
+    Raises ValueError if the file or the key is missing.
     """
     path = Path(metadata_path)
     if path.exists():
         with open(path, encoding="utf-8") as f:
             fetch_date = (yaml.safe_load(f) or {}).get("fetch_date")
         if fetch_date:
-            return date.fromisoformat(str(fetch_date))
+            return date.fromisoformat(str(fetch_date)) - timedelta(days=1)
     raise ValueError(
         f"No `fetch_date` in `{metadata_path}`. Run the fetch script "
         f"or pass the date explicitly."
     )
-    print(f"[i] No fetch date found in `{metadata_path}`, using today's date")
-    return date.today()
 
 
 def _model_version_iri(shapes_path, shape_doc_iri):
