@@ -5,7 +5,14 @@
       "release-type": "python",
       "package-name": "psmv-rdf",
       "bump-minor-pre-major": true,
-      "bump-patch-for-minor-pre-major": true
+      "bump-patch-for-minor-pre-major": true,
+      "extra-files": [
+        {
+          "type": "toml",
+          "path": "uv.lock",
+          "jsonpath": "$.package[?(@.name.value=='psmv-rdf')].version"
+        }
+      ]
     }
   }
 }
