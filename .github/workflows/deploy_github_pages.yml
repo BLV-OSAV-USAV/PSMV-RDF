@@ -54,14 +54,10 @@ jobs:
             echo "run_id=$id" >> "$GITHUB_OUTPUT"
           fi
 
-  deploy:
+  build:
     needs: find-docs
     if: needs.find-docs.outputs.run-id != ''
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
     steps:
       - uses: actions/checkout@v7
         with:
@@ -88,9 +84,21 @@ jobs:
             --metadata title="SPARQL Query Guide: Plant Protection Products" \
             -o docs/query-guide.html
 
+      - name: Show what will be deployed
+        run: |
+          ls -la docs/
+          echo "Files: $(find docs -type f | wc -l)"
+
       - uses: actions/upload-pages-artifact@v5
         with:
           path: ./docs
 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - uses: actions/deploy-pages@v5
         id: deployment
