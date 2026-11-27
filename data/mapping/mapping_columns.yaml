@@ -16,6 +16,7 @@ Product:
   isSalePermission: sale_permission
   packageInsert: w_number_of_reference_product
   terminationReason: termination_reason
+  NK_USE_IN_SETTLEMENT_AREA: settlement_area
 
 Organisation:
   NK_PermissionHolder: organisation_id
