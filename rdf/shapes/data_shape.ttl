@@ -108,7 +108,7 @@ shape:Dataset a sh:NodeShape ;
         [
             sh:order 1 ;
             sh:name "Data as of"@en, "Datenstand"@de ;
-            sh:description "Date on which the data was fetched from the nightly dump of the source registry. Defines the state of the data. A rebuild without a new fetch keeps this date."@en ;
+            sh:description "Date of the data state in the source registry. The registry dump is regenerated overnight, so this is the day before the fetch date. A rebuild without a new fetch keeps this date."@en ;
             sh:path :dataAsOf ;
             sh:datatype xsd:date ;
             sh:minCount 1 ;
